@@ -165,3 +165,4 @@ modelScores=portalScore(yTest, yPred, returnMean=FALSE)
 ##############################
 #Scoring xTest and yTest is actually just a niave model, since ytest is month X and xTest is month X-1
 naiveScores=portalScore(yTest, xTest, returnMean=FALSE)
+
