@@ -82,10 +82,11 @@ testSize=0.2
 set.seed(2)
 testSet = sample(nrow(y), nrow(y)*testSize)
 
-xTrain=x[-testSet,]
+# put a vector in [] and it selects those elements, a -vector selects everything but those elemens
 xTest=x[testSet,]
-yTrain=y[-testSet,]
+xTrain=x[-testSet,]
 yTest=y[testSet,]
+yTrain=y[-testSet,]
 
 rm(testSize, testSet)
 #########################
@@ -144,7 +145,7 @@ net = mistnet(
 net$fit(iterations = 500)
 
 yPred=predict(net, newdata = xTest, n.importance.samples = 1)
-#mistnet outputs in a funny way, so I have to go thru and build a matrix from it manually.
+#mistnet outputs in a funny way, so I have to go thru and build a matrix from the results manually.
 tempMatrix=matrix(data=NA, nrow=nrow(yTest), ncol=ncol(yTest))
 colLength=nrow(yTest)
 colEnd=nrow(yTest)
