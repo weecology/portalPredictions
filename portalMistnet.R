@@ -1,14 +1,10 @@
-setwd('~/projects/portalStuff')
+setwd('~/projects/portalPredictions')
 library(plyr)
 library(mistnet)
-library(reshape2)
-#library(caret)
-#library(stringr)
-#library(ggplot2)
-#library(RColorBrewer)
 
-#rodents=read.csv('~/data/PortalMammals_main.csv', na.strings=c("","NA"))
-rodents=read.csv('~/data/allrodents_1978-2012.csv', na.strings=c("","NA"))
+
+rodents=read.csv('~/data/portal/PortalMammals_main.csv', na.strings=c("","NA"))
+#rodents=read.csv('~/data/portal/allrodents_1978-2012.csv', na.strings=c("","NA"))
 
 ##########################################
 #Clean up data a bit
@@ -28,18 +24,32 @@ rodents=rodents[rodents$plot==2 | rodents$plot==4 | rodents$plot==8 | rodents$pl
 #The period value does not equal this exactly since some months are skipped and period numbers are not
 rodents$projectMonth=with(rodents, (yr-1978)*12 + mo-1)
 
+
+if(length(unique(rodents$period[rodents$projectMonth==thisMonth & rodents$plot==thisPlot]))>1){
+  monthPrior=nrow(rodents[rodents$projectMonth==thisMonth-1 & rodents$plot==thisPlot,])
+  monthNext=nrow(rodents[rodents$projectMonth==thisMonth+1 & rodents$plot==thisPlot,])
+  
+  print(paste('Month:',thisMonth,'DataNextMonth:',monthNext,'DataPriorMonth:',monthPrior,sep=' '))
+}
 ##########################################
 #Prepare data matrix's
 #The response variables will be the current months abundances, predictor variables the prior months abundances.
 #Other predictors, like weather and time of year, added in later.
 
 #summarize data 
-rodents=ddply(rodents, c('species','yr','mo','projectMonth','plot'), summarize, N=length(species))
+rodents=ddply(rodents, c('species','yr','mo','projectMonth','plot','period'), summarize, N=length(species))
 
 #Get variables to iterate thru
 projectMonths=unique(rodents$projectMonth)
 speciesList=unique(rodents$species)
 plots=unique(rodents$plot)
+
+#Account for blue moons, where two samples are in 1 month
+#If 2 periods share a single projectMonth, set the higher period to projectMonth+0.5
+#Can then account for this in setting up the data matrixes
+for(thisMonth in projectMonths){
+  if(length(unique(rodents$period[rodents$projectMonth==thisMonth & rodents$plot==thisPlot]))>1){
+}
 
 #Not all species are caught every month. This data frame will put in zeros
 #for species not caught as we move through the data.
@@ -53,18 +63,26 @@ y=matrix(ncol=length(speciesList))
 # ie. if there is no month 142, do not put together months 141 and 143.
 for(thisPlot in plots){
   for(thisMonth in projectMonths){
+    if(nrow(rodents[rodents$projectMonth==thisMonth-0.5 & rodents$plot==thisPlot,])>0){
+      priorMonth=thisMonth-0.5
+    }else if(nrow(rodents[rodents$projectMonth==thisMonth-1 & rodents$plot==thisPlot,])>0){
+      priorMonth=thisMonth-1
+    }else {
+      priorMonth=FALSE
+    }
     #Check that the prior period for this plot exists
-    if(nrow(rodents[rodents$projectMonth==thisMonth-1 & rodents$plot==thisPlot,])>0){
+    if(priorMonth){
       #Gather this months abundances, fill in zeros for non-present species
       yToAdd=merge(blankSpeciesAbundance, rodents[rodents$projectMonth==thisMonth & rodents$plot==thisPlot,], by='species', all.x=TRUE)
       yToAdd$N[is.na(yToAdd$N)]=0
       yToAdd=yToAdd[order(yToAdd$species),]
       #same thing with the prior months abundances
-      xToAdd=merge(blankSpeciesAbundance, rodents[rodents$projectMonth==thisMonth-1 & rodents$plot==thisPlot,], by='species', all.x=TRUE)
+      xToAdd=merge(blankSpeciesAbundance, rodents[rodents$projectMonth==priorMonth & rodents$plot==thisPlot,], by='species', all.x=TRUE)
       xToAdd$N[is.na(xToAdd$N)]=0
       xToAdd=xToAdd[order(xToAdd$species),]
     
       #Add this month/plot combo to the response matrix y, last month/plot is added to response matrix x
+      #This produces a bunch of errors about columns lengths not matching, but they totally do. 
       y=rbind(y, yToAdd$N)
       x=rbind(x, xToAdd$N)
     }
@@ -123,11 +141,6 @@ net = mistnet(
       prior = gaussian.prior(mean = 0, sd = 0.1)
     ),
     defineLayer(
-      nonlinearity = rectify.nonlinearity(),
-      size = 30,
-      prior = gaussian.prior(mean = 0, sd = 0.1)
-    ),
-    defineLayer(
       nonlinearity = linear.nonlinearity(),
       size = ncol(y),
       prior = gaussian.prior(mean = 0, sd = 0.1)
@@ -135,7 +148,7 @@ net = mistnet(
   ),
   loss = squaredLoss(),
   updater = adagrad.updater(learning.rate = .01),
-  sampler = gaussian.sampler(ncol = 10L, sd = 1),
+  sampler = gaussian.sampler(ncol = 0L, sd = 1),
   n.importance.samples = 30,
   n.minibatch = 10,
   training.iterations = 0
@@ -162,8 +175,10 @@ rm(tempMatrix, colLength, colEnd, colStart, thisCol)
 #test cross validation
 yPred[yPred<0]=0
 modelScores=portalScore(yTest, yPred, returnMean=FALSE)
+print(mean(modelScores))
 
 ##############################
 #Scoring xTest and yTest is actually just a niave model, since ytest is month X and xTest is month X-1
 naiveScores=portalScore(yTest, xTest, returnMean=FALSE)
+print(mean(naiveScores))
 
