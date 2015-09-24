@@ -3,8 +3,8 @@ library(plyr)
 library(mistnet)
 
 
-rodents=read.csv('~/data/portal/PortalMammals_main.csv', na.strings=c("","NA"))
-#rodents=read.csv('~/data/portal/allrodents_1978-2012.csv', na.strings=c("","NA"))
+#rodents=read.csv('~/data/portal/PortalMammals_main.csv', na.strings=c("","NA"))
+rodents=read.csv('~/data/portal/allrodents_1978-2012.csv', na.strings=c("","NA"))
 
 ##########################################
 #Clean up data a bit
@@ -24,13 +24,6 @@ rodents=rodents[rodents$plot==2 | rodents$plot==4 | rodents$plot==8 | rodents$pl
 #The period value does not equal this exactly since some months are skipped and period numbers are not
 rodents$projectMonth=with(rodents, (yr-1978)*12 + mo-1)
 
-
-if(length(unique(rodents$period[rodents$projectMonth==thisMonth & rodents$plot==thisPlot]))>1){
-  monthPrior=nrow(rodents[rodents$projectMonth==thisMonth-1 & rodents$plot==thisPlot,])
-  monthNext=nrow(rodents[rodents$projectMonth==thisMonth+1 & rodents$plot==thisPlot,])
-  
-  print(paste('Month:',thisMonth,'DataNextMonth:',monthNext,'DataPriorMonth:',monthPrior,sep=' '))
-}
 ##########################################
 #Prepare data matrix's
 #The response variables will be the current months abundances, predictor variables the prior months abundances.
@@ -47,9 +40,23 @@ plots=unique(rodents$plot)
 #Account for blue moons, where two samples are in 1 month
 #If 2 periods share a single projectMonth, set the higher period to projectMonth+0.5
 #Can then account for this in setting up the data matrixes
+#possibly need to account for 0 rodents being trapped in a plot here
+#Also when a single sample spans 2 months (ie. 31st and 1st)
 for(thisMonth in projectMonths){
-  if(length(unique(rodents$period[rodents$projectMonth==thisMonth & rodents$plot==thisPlot]))>1){
+  for(thisPlot in plots){
+    if(length(unique(rodents$period[rodents$projectMonth==thisMonth & rodents$plot==thisPlot]))>1){
+      monthPeriods=sort(unique(rodents$period[rodents$projectMonth==thisMonth & rodents$plot==thisPlot]), decreasing=TRUE)
+      if(length(monthPeriods)>2){
+        stop('Greater than 2 periods in 1 month') #Shouldn't happen, but still...
+        }
+      rodents$projectMonth[rodents$period==monthPeriods[1]]=thisMonth+0.5
+    }
+  }
 }
+
+#redo to get the new 0.5 months
+projectMonths=unique(rodents$projectMonth)
+
 
 #Not all species are caught every month. This data frame will put in zeros
 #for species not caught as we move through the data.
@@ -62,6 +69,9 @@ y=matrix(ncol=length(speciesList))
 #For each projectMonth in each plot, add that month to y (response) and the prior month to x (predictor), if that matchup exists.
 # ie. if there is no month 142, do not put together months 141 and 143.
 for(thisPlot in plots){
+  #1st check for a prior sample 0.5 months prior (a blue moon sample, see above)
+  #Then check for the normal sample thisMonth-1
+  #If those don't exsit then there probably a missed month, so skip this entry.
   for(thisMonth in projectMonths){
     if(nrow(rodents[rodents$projectMonth==thisMonth-0.5 & rodents$plot==thisPlot,])>0){
       priorMonth=thisMonth-0.5
@@ -93,7 +103,7 @@ for(thisPlot in plots){
 x=x[-1,]
 y=y[-1,]
 
-rm(blankSpeciesAbundance, yToAdd, xToAdd, thisPlot, thisMonth, projectMonths, speciesList, plots, thisPlot, )
+rm(blankSpeciesAbundance, yToAdd, xToAdd, thisPlot, thisMonth, projectMonths, speciesList, plots, thisPlot )
 #########################
 #Setup a test set for cross validation
 testSize=0.2
@@ -137,7 +147,7 @@ net = mistnet(
   layer.definitions = list(
     defineLayer(
       nonlinearity = rectify.nonlinearity(),
-      size = 30,
+      size = 50,
       prior = gaussian.prior(mean = 0, sd = 0.1)
     ),
     defineLayer(
@@ -150,7 +160,7 @@ net = mistnet(
   updater = adagrad.updater(learning.rate = .01),
   sampler = gaussian.sampler(ncol = 0L, sd = 1),
   n.importance.samples = 30,
-  n.minibatch = 10,
+  n.minibatch = 50,
   training.iterations = 0
 )
 
