@@ -1,4 +1,3 @@
-setwd('~/projects/portalPredictions')
 library(plyr)
 library(mistnet)
 
@@ -103,12 +102,15 @@ for(thisPlot in plots){
 x=x[-1,]
 y=y[-1,]
 
-rm(blankSpeciesAbundance, yToAdd, xToAdd, thisPlot, thisMonth, projectMonths, speciesList, plots, thisPlot )
+rm(blankSpeciesAbundance, yToAdd, xToAdd, thisMonth, projectMonths, speciesList, plots, thisPlot )
 #########################
 #Setup a test set for cross validation
-testSize=0.2
+testSize=0.3
 set.seed(2)
-testSet = sample(nrow(y), nrow(y)*testSize)
+#Randomly pick months throughout the time series
+#testSet = sample(nrow(y), nrow(y)*testSize)
+#Pick the last testSize % of months from the tail end of the time series
+testSet= (nrow(y)-(nrow(y)*testSize)):nrow(y)
 
 # put a vector in [] and it selects those elements, a -vector selects everything but those elemens
 xTest=x[testSet,]
@@ -146,20 +148,20 @@ net = mistnet(
   y = yTrain,
   layer.definitions = list(
     defineLayer(
-      nonlinearity = rectify.nonlinearity(),
+      nonlinearity = leaky.rectify.nonlinearity(),
       size = 50,
       prior = gaussian.prior(mean = 0, sd = 0.1)
     ),
     defineLayer(
-      nonlinearity = linear.nonlinearity(),
+      nonlinearity = exp.nonlinearity(),
       size = ncol(y),
       prior = gaussian.prior(mean = 0, sd = 0.1)
     )
   ),
-  loss = squaredLoss(),
-  updater = adagrad.updater(learning.rate = .01),
+  loss = poissonLoss(),
+  updater = adagrad.updater(learning.rate = 0.1),
   sampler = gaussian.sampler(ncol = 0L, sd = 1),
-  n.importance.samples = 30,
+  n.importance.samples = 50,
   n.minibatch = 50,
   training.iterations = 0
 )
