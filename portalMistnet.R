@@ -1,9 +1,9 @@
 library(plyr)
 library(mistnet)
 
-
-#rodents=read.csv('~/data/portal/PortalMammals_main.csv', na.strings=c("","NA"))
-rodents=read.csv('~/data/portal/allrodents_1978-2012.csv', na.strings=c("","NA"))
+dataFolder='~/data/portal/'
+rodents=read.csv(paste(dataFolder, 'RodentsAsOfSep2015.csv', sep=''), na.strings=c("","NA"))
+sppCodes=read.csv(paste(dataFolder, 'PortalMammals_species.csv', sep=''))
 
 ##########################################
 #Clean up data a bit
@@ -18,10 +18,14 @@ rodents=rodents[!is.na(rodents$species),]
 rodents=rodents[rodents$plot==2 | rodents$plot==4 | rodents$plot==8 | rodents$plot==11 |
                 rodents$plot==12 | rodents$plot==14 | rodents$plot==17 | rodents$plot==22,]
 
+#Get ride of non-rodents
+rodents=merge(rodents, sppCodes[,c('new_code','rodent')], by.x='species', by.y='new_code',all.x=TRUE, all.y=FALSE)
+rodents=rodents[rodents$rodent==1,]
+rm(sppCodes)
 #Represent time as months since the 1st trapping (Jan, 1978)
 #It's much easier to represent the time series as one continuous number, instead of months and years.
 #The period value does not equal this exactly since some months are skipped and period numbers are not
-rodents$projectMonth=with(rodents, (yr-1978)*12 + mo-1)
+rodents$projectMonth=with(rodents, (yr-1977)*12 + mo-1)
 
 ##########################################
 #Prepare data matrix's
@@ -30,6 +34,7 @@ rodents$projectMonth=with(rodents, (yr-1978)*12 + mo-1)
 
 #summarize data 
 rodents=ddply(rodents, c('species','yr','mo','projectMonth','plot','period'), summarize, N=length(species))
+rodents=rodents[!is.na(rodents$species),]
 
 #Get variables to iterate thru
 projectMonths=unique(rodents$projectMonth)
@@ -47,7 +52,7 @@ for(thisMonth in projectMonths){
       monthPeriods=sort(unique(rodents$period[rodents$projectMonth==thisMonth & rodents$plot==thisPlot]), decreasing=TRUE)
       if(length(monthPeriods)>2){
         stop('Greater than 2 periods in 1 month') #Shouldn't happen, but still...
-        }
+      }
       rodents$projectMonth[rodents$period==monthPeriods[1]]=thisMonth+0.5
     }
   }
@@ -181,11 +186,16 @@ for(thisCol in 1:ncol(yTest)){
   colEnd=colEnd+colLength
 }
 yPred=tempMatrix
+
+#Neural networks have linear equations embedded in them, so negative numbers from extrapolation
+#are possible. Set any of these to just 0. 
+yPred[yPred<0]=0
+
 rm(tempMatrix, colLength, colEnd, colStart, thisCol)
 
 ##############################
 #test cross validation
-yPred[yPred<0]=0
+
 modelScores=portalScore(yTest, yPred, returnMean=FALSE)
 print(mean(modelScores))
 
