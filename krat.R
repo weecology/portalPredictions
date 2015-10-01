@@ -24,14 +24,17 @@ plots = read_csv("data/portal_plots.txt", col_names = FALSE)
 precip = read_excel("data/corrected monthly ppt totals and est.xls")
 
 
+
+# Munge precip data -------------------------------------------------------
+
 precip$Season = NA
 precip$Season[precip$Month %in% c(11:12, 1:2)] = "winter"
 precip$Season[precip$Month %in% (7:10)] = "summer"
 
 
+# Munge rodent abundances -------------------------------------------------
+
 control_nums = plots[grep("Spectab|Control", plots$X4), ][[1]]
-
-
 
 precip %>% group_by(Year, Season) %>% summarise(sum(`TotPrecip(cm)`)) %>%
   na.omit %>% arrange(Year, desc(Season))
