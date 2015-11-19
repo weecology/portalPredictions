@@ -33,7 +33,7 @@ weatherRaw = read.csv(paste0(dataFolder,'Hourly_PPT_mm_1989_present_fixed.csv'))
 
 weather = weatherRaw %>%
   filter((Hour>=1800 & Hour <=2400) | (Hour>=100 & Hour<=600)) %>%
-  mutate(date = safe_ifelse(TimeOfDay == "morning", date, date - 1)) %>%
+  mutate(date = safe_ifelse(TimeOfDay == "morning", date, date + 1)) %>%
   group_by(date) %>%
   summarize(precip = sum(Precipitation), lowTemp = min(TempAir))
 
