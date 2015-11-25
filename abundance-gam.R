@@ -1,6 +1,7 @@
 library(dplyr)
 library(lubridate)
 library(mgcv)
+library(tidyr)
 
 dataFolder='~/data/portal/'
 
@@ -57,25 +58,44 @@ controlPlots=c(2,4,8,11,12,14,17,22) #controls
 kratPlots=c(3,6,13,18,19,20) #krat exclosure
 
 
+rodents$treatment = "full_exclosure"
+rodents$treatment[rodents$plot %in% controlPlots] = "control"
+rodents$treatment[rodents$plot %in% kratPlots] = "krat_exclosure"
+
 
 # Note that yr_continuous may drift a bit with leap years, but should never be
 # more than one day from the correct value
 munge_species = function(sp){
   rodents %>% 
-    group_by(plot, date) %>%
+    group_by(plot, date, treatment) %>%
     summarize(abundance = sum(species == sp)) %>%
     ungroup() %>%
     inner_join(climate, "date") %>%
-    mutate(is_control = plot %in% controlPlots) %>% 
-    mutate(is_exclosure = plot %in% kratPlots) %>%
     mutate(yday = yday(date)) %>%
     mutate(yr_continuous = julian(date, origin = as.Date("1900-01-01")) / 365.24 + 1900) %>%
     mutate(date_factor = factor(date)) %>%
-    mutate(plot_factor = factor(plot))
+    mutate(plot_factor = factor(plot)) %>%
+    mutate(species = sp)
 }
 
+spp = names(sort(table(rodents$species), decreasing = TRUE))
+
+abundances = lapply(spp, munge_species) %>%
+  bind_rows %>%
+  spread(species, abundance) %>%
+  mutate(total_abundance = rowSums(.[ , spp]))
+
+
+
+
 fit_gam = function(species){
-  data = munge_species(species)
+  
+  # A "success" occurs when the species is found in a trap
+  successes = abundances[[species]]
+  
+  # A "failure" occurs only when a trap is empty (not when it's occupied by
+  # a nontarget species; this is neither a success nor a failure)
+  failures = 49 - abundances[["total_abundance"]]
   
   # note the periodic spline for yday with knots between 1 and 365.24
   # This distribution/family may not be ideal for this data set.
@@ -87,14 +107,15 @@ fit_gam = function(species){
   # basis won't work with this many dates, unfortunately. Eventually, we should 
   # switch to the random effects in gamm or gamm4.
   gam(
-    cbind(abundance, 49 - abundance) ~ is_control + is_exclosure + 
+    cbind(successes, failures) ~ 
+      treatment + 
       s(totalPrecip) + s(precip) + s(lowTemp) + 
       s(yday, bs = "cc") + s(yr_continuous) + 
       s(plot_factor, bs = "re"),
-    data = data,
+    data = abundances,
     family = binomial,
     knots=list(yday=c(1,365.24)),
-    weights = rep(1/10, nrow(data))
+    weights = rep(1/10, nrow(abundances))
   )
 }
 
