@@ -1,9 +1,9 @@
 library(dplyr)
 library(lubridate)
-library(mgcv)
+library(gamm4)
 library(tidyr)
 
-dataFolder='~/data/portal/'
+dataFolder='/home/harrisd/portalPredictions/data/'
 
 
 rodents=read.csv(paste(dataFolder, 'RodentsAsOfSep2015.csv', sep=''), na.strings=c("","NA"), colClasses=c('tag'='character'))
@@ -89,7 +89,6 @@ abundances = lapply(spp, munge_species) %>%
 
 
 fit_gam = function(species){
-  
   # A "success" occurs when the species is found in a trap
   successes = abundances[[species]]
   
@@ -98,24 +97,21 @@ fit_gam = function(species){
   failures = 49 - abundances[["total_abundance"]]
   
   # note the periodic spline for yday with knots between 1 and 365.24
+  
+  data = cbind(successes = successes, failures = failures, abundances)
+  
+  
   # This distribution/family may not be ideal for this data set.
   
-  # Note the weights are reduced as a cheap hack to flatten the likelihood surface.
-  # The intuition is that---without random effects on date---the model thinks that
-  # it's seen more independent data points than it really has. 
-  # The reduced weights are a clumsy way to counteract that effect. The "re"
-  # basis won't work with this many dates, unfortunately. Eventually, we should 
-  # switch to the random effects in gamm or gamm4.
-  gam(
+  gamm4(
     cbind(successes, failures) ~ 
       treatment + 
       s(totalPrecip) + s(precip) + s(lowTemp) + 
-      s(yday, bs = "cc") + s(yr_continuous) + 
-      s(plot_factor, bs = "re"),
-    data = abundances,
+      s(yday, bs = "cc") + s(yr_continuous),
+    random = ~(1|plot_factor) + (1|date_factor),
+    data = data,
     family = binomial,
-    knots=list(yday=c(1,365.24)),
-    weights = rep(1/10, nrow(abundances))
+    knots=list(yday=c(1,365.24))
   )
 }
 
@@ -126,15 +122,4 @@ fit_gam = function(species){
 # yr_continuous : long-term trend
 # The last plot is special: it shows the plot-level random effects
 
-
-plot(fit_gam("PP"), pages = 1, n = 1000, main = "PP", shade = TRUE, cex.lab = 1.5)
-plot(fit_gam("DM"), pages = 1, n = 1000, main = "DM", shade = TRUE, cex.lab = 1.5)
-plot(fit_gam("DO"), pages = 1, n = 1000, main = "DO", shade = TRUE, cex.lab = 1.5)
-plot(fit_gam("OT"), pages = 1, n = 1000, main = "OT", shade = TRUE, cex.lab = 1.5)
-plot(fit_gam("RM"), pages = 1, n = 1000, main = "RM", shade = TRUE, cex.lab = 1.5)
-
-
-# The model loses its mind when it sees zero PBs thousands of times in
-# a row during the early 1990's because it can't explain that many "independent" 
-# results all turning out the same way without extreme measures
-plot(fit_gam("PB"), pages = 1, n = 1000, main = "PB", shade = TRUE, cex.lab = 1.5)
+saveRDS(fit_gam("PP"), file = "PP_gamm4.rds")
