@@ -1,6 +1,6 @@
 #Compile the raw landsat data obtained USGS (credit: Erica)
 #The raw data used a 2km x 2km square around the portal size, and gives averages for the 
-#mean, 
+#mean,  
 
 library(dplyr)
 
