@@ -195,9 +195,11 @@ species = rodents %>%
   filter(total > 25, species != "all_absent") %>% 
   extract2("species")
 
-mclapply(
-  species,
-  fit_gam,
-  mc.cores = mc.cores
+saveRDS(
+  mclapply(
+    species,
+    fit_gam,
+    mc.cores = mc.cores
+  ),
+  "models.rds"
 )
-
