@@ -2,6 +2,9 @@ library(dplyr)
 library(lubridate)
 library(gamm4)
 library(tidyr)
+library(parallel)
+
+mc.cores = 8
 
 rodents=read.csv('data/RodentsAsOfSep2015.csv', na.strings=c("","NA"), colClasses=c('tag'='character'), stringsAsFactors = FALSE)
 
@@ -124,12 +127,31 @@ fit_gam = function(species){
     knots=list(yday=c(1,365.24))
   )
   
-  pdf(paste0(sp, ".pdf"))
-  plot(model$gam, , pages = 1, n = 1000, main = sp, shade = TRUE, cex.lab = 1.5)
   
+  # Plotting
+  pdf(paste0(sp, ".pdf"))
+  
+  # Plot the splines
+  plot(model$gam, pages = 1, n = 1000, main = sp, shade = TRUE, cex.lab = 1.5)
+  
+  
+  # Plot the period-level random effects
   plot(
-    x = as.Date(row.names(ranef(model$mer)$date_factor)),
-    y = ranef(model$mer)$date_factor[[1]],
+    x = row.names(ranef(model$mer)$period),
+    y = ranef(model$mer)$period[[1]],
+    pch = 16,
+    cex = .5,
+    main = "Period residuals",
+    ylab = "Residual for the period"
+  )
+  abline(0, 0, col = "#00000020")
+  
+  
+  
+  # Plot the date-level random effects
+  plot(
+    x = as.Date(row.names(ranef(model$mer)$date)),
+    y = ranef(model$mer)$date[[1]],
     pch = 16,
     cex = .5,
     main = "Daily residuals",
@@ -137,15 +159,15 @@ fit_gam = function(species){
   )
   abline(0, 0, col = "#00000020")
   
-  
+  # Plot the treatment effects
   plot(
     summary(model$gam)$p.table[-1, "Estimate"] ~ factor(names(summary(model$gam)$p.table[-1, "Estimate"])),
     ylab = "Treatment effect"
   )
   
-  
+  # Plot the plot-level effects
   plot(
-    ranef(model$mer)$plot_factor[[1]],
+  ranef(model$mer)$plot[[1]],
     cex = .5,
     pch = 16,
     col = "darkgray",
@@ -153,7 +175,7 @@ fit_gam = function(species){
   )
   text(
     1:24,
-    ranef(model$mer)$plot_factor[[1]],
+    ranef(model$mer)$plot[[1]],
     1:24
   )
   abline(0, 0, col = "#00000020")
@@ -162,7 +184,12 @@ fit_gam = function(species){
   return(model)
 }
 
+species = sort(unique(rodents$species))
+species = species[nchar(species) == 2] # drop the pseudo-species ("all_absent")
 
-saveRDS(fit_gam("PP"), file = "PP_gamm4.rds")
-
+mclapply(
+  species,
+  fit_gam,
+  mc.cores = mc.cores
+)
 
