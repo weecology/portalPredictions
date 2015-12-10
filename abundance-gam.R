@@ -1,4 +1,5 @@
 library(dplyr)
+library(magrittr)
 library(lubridate)
 library(gamm4)
 library(tidyr)
@@ -22,7 +23,7 @@ rodents=rodents[!is.na(rodents$species),]
 rodents=rodents[rodents$period>0,]
 rodents=rodents[!is.na(rodents$plot),]
 
-# Some weather data is spotty before 1990
+# Some weather data is missing before 1990
 rodents=rodents[rodents$yr>=1990,]
 
 
@@ -115,6 +116,7 @@ fit_gam = function(species){
   # lowTemp       : lowest temp over the previous night
   # yday          : periodic/seasonal trend (knots at year endpoints)
   # yr_continuous : long-term trend
+  # treatment     : control, k-rat exclosure, or full exclosure
   
   model = gamm4(
     cbind(successes, failures) ~ 
@@ -184,8 +186,14 @@ fit_gam = function(species){
   return(model)
 }
 
-species = sort(unique(rodents$species))
-species = species[nchar(species) == 2] # drop the pseudo-species ("all_absent")
+
+# Run the model for all species -------------------------------------------
+
+species = rodents %>% 
+  group_by(species) %>% 
+  summarize(total = n()) %>% 
+  filter(total > 25, species != "all_absent") %>% 
+  extract2("species")
 
 mclapply(
   species,
