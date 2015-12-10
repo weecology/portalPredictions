@@ -40,4 +40,5 @@
 module load R
 
 #The actual command to run your script like you would from the command line.
-Rscript -e "source(\"/home/harrisd/portalPredictions/abundance-gam.R\")"
+cd portalPredictions
+Rscript -e "source('abundance-gam.R')"
