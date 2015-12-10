@@ -25,7 +25,7 @@
 #Using more than 1 node requires your script to have cross server communication built into it, so for most work we'll
 #probably just use single nodes.
 #ppn should match the number of threads/cores you setup in your script. Our max for the lab at the moment is 32.
-#PBS -l nodes=1:ppn=1
+#PBS -l nodes=1:ppn=8
 
 #The amount of memory that your script will require. This can be just a rough guess with some buffer added on.
 #PBS -l pmem=8192mb
@@ -33,12 +33,11 @@
 #The length of time your script will run. again this can be a rought guess with some buffer time added.
 #PBS -l walltime=336:00:00
 
-#Not sure what this does exactly, it was in the example I downloaded.
-#Let's try commenting it out: cd $PBS_O_WORKDIR
+# Set the working directory to wherever qsub was called from
+cd $PBS_O_WORKDIR
 
 #Loads R, or whatever thing your working with.
 module load R
 
 #The actual command to run your script like you would from the command line.
-cd portalPredictions
 Rscript -e "source('abundance-gam.R')"
