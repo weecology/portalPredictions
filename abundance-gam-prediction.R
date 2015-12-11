@@ -95,4 +95,4 @@ bind_rows(ci_predictions) %>%
       filter(level == 95) %>% 
       rename(lower = V2, upper = V3)
   ) %>%
-  write.csv(file = "2015-12-12_predictions from 2015-12-11.csv", row.names = FALSE)
+  write.csv(file = "predictions/2015-12-12_predictions from 2015-12-11.csv", row.names = FALSE)
