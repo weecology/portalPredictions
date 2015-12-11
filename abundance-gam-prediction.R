@@ -8,7 +8,7 @@ new_yday = yday(new_date)
 models = readRDS("models.rds")
 
 CIs = function(sp){
-  model = models[[which(species == "OL")]]
+  model = models[[which(species == sp)]]
   
   is_nearby = abs(abundances$yday - new_yday) < 30 | abundances$yday - new_yday + 365 < 30
   
