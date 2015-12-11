@@ -131,10 +131,10 @@ fit_gam = function(species){
   
   
   # Plotting
-  pdf(paste0(sp, ".pdf"))
+  pdf(paste0(species, ".pdf"))
   
   # Plot the splines
-  plot(model$gam, pages = 1, n = 1000, main = sp, shade = TRUE, cex.lab = 1.5)
+  plot(model$gam, pages = 1, n = 1000, main = species, shade = TRUE, cex.lab = 1.5)
   
   
   # Plot the period-level random effects
