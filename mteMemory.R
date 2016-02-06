@@ -7,7 +7,9 @@ library(rstan)
 
 dataFolder='~/data/portal/'
 rodents=read.csv(paste(dataFolder, 'RodentsAsOfSep2015.csv', sep=''), na.strings=c("","NA"))
-sppCodes=read.csv(paste(dataFolder, 'PortalMammals_species.csv', sep=''))
+sppCodes=read.csv(paste(dataFolder, 'PortalMammals_species.csv', sep='')) 
+
+
 
 ##########################################
 #Clean up data a bit
@@ -20,13 +22,17 @@ rodents=rodents %>%
 rodents=rodents %>%
   filter(plot %in% c(2,4,8,11,12,14,17,22))
 
-#Get ride of non-rodents
+#Get ride of non-rodents; and non-granivore rodents
 rodents=rodents %>%
   left_join(select(sppCodes, new_code, rodent), by=c('species'='new_code')) %>%
   filter(rodent==1)
 
 rodents=rodents %>%
   filter(!is.na(wgt))
+
+#Only granivores
+rodents=rodents %>%
+  left_join()
 
 #Represent time as months since the 1st trapping (Jan, 1978)
 #It's much easier to represent the time series as one continuous number, instead of months and years.
@@ -69,19 +75,20 @@ timeSeriesStart=32
 timeSeriesStop=77  
 
 #Up to 6 seasons of lag (including current season)
-timeLag=5
+precipTimeLag=5
 
 #Initialize precip variables with lags
-precipLagColNames=paste('precipLag_T-',0:timeLag,sep='')
+precipLagColNames=paste('precipLag_T-',0:precipTimeLag,sep='')
 totalMTE[,precipLagColNames]=0
 
 for(thisSeason in timeSeriesStart:timeSeriesStop){
-  precip=weatherRaw %>% 
-    filter(projectSeason %in% thisSeason:(thisSeason-timeLag)) %>%
+  laggedPrecip=weatherRaw %>% 
+    filter(projectSeason %in% thisSeason:(thisSeason-precipTimeLag)) %>%
     arrange(-projectSeason) %>%
     extract2('precip')
-  totalMTE[totalMTE$projectSeason==thisSeason, precipLagColNames]=precip
+  totalMTE[totalMTE$projectSeason==thisSeason, precipLagColNames]=laggedPrecip
 }
+
 
 
 totalMTE=totalMTE %>%
@@ -91,55 +98,54 @@ totalMTE=totalMTE %>%
 
 
 N=nrow(totalMTE)
-numLags=timeLag+1
+numPrecipLags=precipTimeLag+1
 mte=extract2(totalMTE, 'mte')
 precip=as.matrix(totalMTE[,precipLagColNames])
-precipWeightPrior=rep(1,numLags)
+precipWeightPrior=rep(1,numPrecipLags)
 
-stanData=list(N=N, numLags=numLags, mte=mte,precip=precip, wPPTprior=precipWeightPrior)
+stanData=list(N=N, mte=mte,precip=precip,
+              numPrecipLags=numPrecipLags,  wPPTprior=precipWeightPrior)
 
 stanCode= "
 data {
   int N;   //number of time points
-  int numLags;  //length of lag 
+  int numPrecipLags;  //length of precip lag 
+
   real<lower=0> mte[N]; //mte data
-  real<lower=0> precip[N,numLags]; // precip data, with lag already organized in R
-  vector<lower=0>[numLags] wPPTprior;
+  real<lower=0> precip[N,numPrecipLags]; // precip data, with lag already organized in R
+
+  vector<lower=0>[numPrecipLags] wPPTprior;
+
 }
 
 parameters{
   //real mu[N]; //process model mean MTE
-  real a[4]; //for the process model 
-  real obsSD; //observation model sd
+  real a[3]; //for the process model 
+  real obsSD; //observation model error
 
-  simplex[numLags] wPPT; //weights for the time lags. this is the memory. needs to be simplex for dirichlet dist.
-
-  real<lower=0> latentStart; //a starting point for the time series latent process. there is probably a better way to do this
+  simplex[numPrecipLags] wPPT; //weights for the time lags. this is the memory. needs to be simplex for dirichlet dist.
 }
 
 model {
-  real weightedPrecip;
-  real weightedPrecipVector[numLags];
+  real weightedPrecip[N];
+  real weightedPrecipVector[numPrecipLags];
+
   real mu[N];
   //priors
   a ~ normal(0, 10);
   obsSD ~ gamma(1,1);
 
+
   wPPT ~ dirichlet(wPPTprior);
-
-  latentStart ~ normal(1200, 500); //large prior around the observed mte
-
-  mu[1] <- latentStart;
 
   for(i in 2:N){
     //Get weighted PPT with mmemory  
-    for(thisLag in 1:numLags){
+    for(thisLag in 1:numPrecipLags){
       weightedPrecipVector[thisLag] <- precip[i,thisLag] * wPPT[thisLag];
     }
-    weightedPrecip <- sum(weightedPrecipVector);
+    weightedPrecip[i] <- sum(weightedPrecipVector);
 
-    mu[i] <- a[1] + a[2]*mu[i-1] + a[3]*weightedPrecip + a[4]*weightedPrecip*mu[i-1]; //ps. need error term
-    //mu[i] <- a[1] + a[2]*weightedPrecip;    
+    mu[i] <- a[1] + a[2]*mte[i-1] + a[3]*weightedPrecip[i];
 
     mte[i] ~ normal(mu[i], obsSD);
   }
@@ -147,11 +153,10 @@ model {
 }
 "
 
-initials=list(list(a=c(0.1,0.1,0.1,0.1),
+initials=list(list(a=c(0.1,0.1,0.1),
               obsSD=0.001,
-              wPPT=rep(1/numLags, numLags),
-              latentStart=1100))
+              wPPT=rep(1/numPrecipLags, numPrecipLags)))
 
-fit = stan(model_code=stanCode, data=stanData, iter=200, warmup=20, thin=1, chains=1, init=initials)
-#fit = stan(model_code=stanCode, data=stanData, iter=20000, warmup=500, thin=2, chains=1, init=initials)
+#fit = stan(model_code=stanCode, data=stanData, iter=200, warmup=20, thin=1, chains=1, init=initials)
+fit = stan(model_code=stanCode, data=stanData, iter=2000, warmup=200, thin=2, chains=1, init=initials)
 
