@@ -30,33 +30,40 @@ rodents=rodents %>%
 rodents=rodents %>%
   filter(!is.na(wgt))
 
+#Only granivores
+rodents=rodents %>%
+  left_join()
 
 #Represent time as months since the 1st trapping (Jan, 1978)
 #It's much easier to represent the time series as one continuous number, instead of months and years.
 #The period value does not equal this exactly since some months are skipped and period numbers are not
-rodents$projectMonth=with(rodents, (yr-1977)*12 + mo-1)
+#rodents$projectMonth=with(rodents, (yr-1977)*12 + mo-1)
 
-####
-##Need to fix period spanning >1 month
-####
 totalMTE=rodents %>%
   mutate(mte=wgt*0.75) %>%
-  group_by(period, yr, projectMonth) %>%
+  mutate(season=ifelse(mo<=6, 'spring','fall')) %>%
+  group_by(period, yr, season) %>%
   summarize(mte=sum(mte)) %>%
-  ungroup()
+  ungroup() %>%
+  group_by(yr, season) %>%
+  summarize(mte=mean(mte))
 
+#interpret time periods as "seasons since spring 1977"
+totalMTE$projectSeason=with(totalMTE, (yr-1977)*2 + ifelse(season=='spring',1,2))
 
-
-totalMTE= totalMTE %>% arrange(projectMonth)
+totalMTE= totalMTE %>% arrange(projectSeason)
 
 
 ############################################################################
 #Weather. Get total precip by season.
 
 weatherRaw = read.csv('data/Hourly_PPT_mm_1989_present_fixed.csv') %>%
-  mutate(projectMonth=(Year-1977)*12 + Month-1) %>%
-  group_by(Year, projectMonth) %>%
+  group_by(Year, Month) %>%
   summarize(precip=sum(Precipitation)) %>%
+  ungroup() %>%
+  mutate(season=ifelse(Month<=6,'spring','fall'), projectSeason = (Year-1977)*2 + ifelse(season=='spring',1,2)) %>%
+  group_by(Year, projectSeason) %>%
+  summarize(precip=sum(precip)) %>%
   ungroup() %>%
   rename(yr=Year)
 
