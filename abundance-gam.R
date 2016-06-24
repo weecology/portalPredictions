@@ -8,6 +8,8 @@ library(parallel)
 mc.cores = 8
 
 rodents=read.csv('data/RodentsAsOfSep2015.csv', na.strings=c("","NA"), colClasses=c('tag'='character'), stringsAsFactors = FALSE)
+sppCodes=read.csv('data/PortalMammals_species.csv') %>%
+  select(species=new_code, rodent, unknown)
 
 rodents = rodents %>% mutate(date = as.Date(paste(yr, mo, dy, sep = "-")))
 
@@ -26,7 +28,11 @@ rodents=rodents[!is.na(rodents$plot),]
 # Some weather data is missing before 1990
 rodents=rodents[rodents$yr>=1990,]
 
-
+# Remove non-rodents and unidentified rodents
+rodents = rodents %>%
+  left_join(sppCodes, by=c('species')) %>%
+  filter(rodent==1, unknown==0) %>%
+  select(-rodent, -unknown)
 
 # Treatment ---------------------------------------------------------------
 
