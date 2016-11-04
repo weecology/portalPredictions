@@ -1,0 +1,43 @@
+#!/bin/sh
+#These are variables to pass to the job handler, see http://wiki.rc.ufl.edu/doc/Annotated_PBS_Script and
+#http://wiki.rc.ufl.edu/doc/PBS_Directives for more details
+
+#Do not rerun the job if it fails
+#PBS -r n
+
+#The name of the job
+#PBS -N gam
+
+#The file that output will be written to
+#PBS -o gam.out
+
+#The file that errors will be written to
+#PBS -e gam.err
+
+#Notifications options. a=notify when job is aborted, b=notify when job begins, e=notify when job terminates
+#PBS -m abe
+
+#Email to send notifications to
+#PBS -M harris.d@ufl.edu
+
+#These are the important ones, the amount of resources you want to use.
+#Nodes are the number of seperate servers that you want to use. ppn is processors per node.
+#Using more than 1 node requires your script to have cross server communication built into it, so for most work we'll
+#probably just use single nodes.
+#ppn should match the number of threads/cores you setup in your script. Our max for the lab at the moment is 32.
+#PBS -l nodes=1:ppn=8
+
+#The amount of memory that your script will require. This can be just a rough guess with some buffer added on.
+#PBS -l pmem=8192mb
+
+#The length of time your script will run. again this can be a rought guess with some buffer time added.
+#PBS -l walltime=336:00:00
+
+# Set the working directory to wherever qsub was called from
+cd $PBS_O_WORKDIR
+
+#Loads R, or whatever thing your working with.
+module load R
+
+#The actual command to run your script like you would from the command line.
+Rscript -e "source('abundance-gam.R')"
