@@ -2,12 +2,16 @@ library(tscount)
 library(forecast)
 library(lubridate)
 library(dplyr)
+library(testit)
 
 
 #get Portal Data
-source("~/PortalData/DataSummaryScripts/RodentAbundances.R"); abundances=abundance(level="Site",type="Rodents")
-abundances$total = rowSums(abundances[,-1]); abundances=subset(abundances,period>202)
+source("~/PortalData/DataSummaryScripts/RodentAbundances.R"); abundances=abundance(level="Treatment",type="Rodents")
+abundances$total = rowSums(abundances[,-(1:2)]); 
+abundances=subset(abundances,treatment=="control",select=-treatment)
+abundances=subset(abundances,period>202)
 source("~/PortalData/DataSummaryScripts/Weather.R"); weather=weather("Monthly") 
+
 
 forecastmonth=month(Sys.Date() %m+% months(0:11))
 forecastyear=year(Sys.Date() %m+% months(0:11))
@@ -48,14 +52,26 @@ forecasts=rbind(forecasts,newpred)
 }
 
 
-#Time Series model with environmental covariates, max and min temperature and precipitation with 6 month lag
-weatherforeast=weather[388:428,] %>% group_by(Month) %>% 
-  summarize(MeanTemp=mean(MeanTemp),Precipitation=sum(Precipitation)) %>% slice(match(c(11,12,1:10), Month))
+#Time Series model with environmental covariates, max, min and mean temp, precip and NDVI with 6 month lag
 
-for(s in 2:23) {
+##Get 6 month weather forecast from monthly means
+weatherforeast=weather[388:428,] %>% group_by(Month) %>% 
+  summarize(MinTemp=mean(MinTemp),MaxTemp=mean(MaxTemp),MeanTemp=mean(MeanTemp),Precipitation=mean(Precipitation),NDVI=mean(NDVI,na.rm=T)) %>%
+                      slice(match(c(12,1:11), Month))
+
+##Create environmental covariate models
+X=list(c(3:6,9),c(4:6,9),c(3,4,6,9),c(3:6),c(6,9),c(3,9),3,4,5,6,9)
   
-  model=tsglm(abundances[[s]],model=list(past_obs=1,past_mean=11),distr="poisson",xreg=weather[173:424,-(1:4)])
-  pred=predict(model,12,level=0.9,newdata=weatherforecast[-1,]) 
+for(s in 2:23) {
+  ##Find best covariate model
+  model=tsglm(abundances[[s]],model=list(past_obs=1,past_mean=11),distr="poisson",xreg=weather[173:425,unlist(X[1])],link = "log")
+  modelaic=ifelse(has_error(summary(model))==T,Inf,summary(model)$AIC)
+  for(i in 2:11) {
+    newmodel=tsglm(abundances[[s]],model=list(past_obs=1,past_mean=11),distr="poisson",xreg=weather[173:425,unlist(X[i])],link = "log")
+    newmodelaic=ifelse(has_error(summary(newmodel))==T,Inf,summary(newmodel)$AIC)  
+    if(newmodelaic < modelaic) {model=newmodel}}
+  
+  pred=predict(model,12,level=0.9,newdata=weatherforecast) 
   newpred=data.frame(date=rep(Sys.Date(),12), forecastmonth=forecastmonth,
                      forecastyear=forecastyear, model=rep("Poisson Env",12), 
                      species=rep(species[s],12), estimate=pred$pred, LowerPI=pred$interval[,1],UpperPI=pred$interval[,2])
@@ -63,4 +79,4 @@ for(s in 2:23) {
 }
 
 
-write.csv(forecasts,"forecasts.csv")
+write.csv(forecasts,"controlsforecasts.csv")
