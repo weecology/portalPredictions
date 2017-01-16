@@ -1,3 +1,4 @@
+mc.cores = 8 # How many species to run in parallel
 new_yday = yday(Sys.Date()) # Replace Sys.Date with the next Portal sampling date
 
 library(MASS)
@@ -8,8 +9,6 @@ library(gamm4)
 library(tidyr)
 library(parallel)
 library(coda)
-
-mc.cores = 8
 
 rodents = read.csv('data/RodentsAsOfSep2015.csv', na.strings = c("","NA"), 
                    colClasses = c('tag' = 'character'), 
@@ -240,7 +239,8 @@ CIs = function(sp, new_date, n_samples = 10000){
   
   nearby_precip = get_nearby("precip")
   
-  
+  # Random samples for possible environmental conditions at the next sampling
+  # event
   samples = data.frame(
     date_ranef = rnorm(n_samples, sd = attr(summary(model$mer)$varcor$date, "stddev")),
     period_ranef = rnorm(n_samples, sd = attr(summary(model$mer)$varcor$period, "stddev")),
@@ -248,13 +248,13 @@ CIs = function(sp, new_date, n_samples = 10000){
     precip = rexp(n_samples, 
                   median(nearby_precip[nearby_precip > 0])) * 
                     rbinom(n_samples, size = 1, prob = mean(nearby_precip > 0)))
-  
+  # Make every combination of plot and sample
   grid = expand.grid(plot = 1:24, sample = 1:n_samples)
-  
   full_samples = cbind(samples[grid$sample, ], plot = grid$plot)
   
   plot_effects = data.frame(plot = 1:24, plot_ranef = ranef(model$mer)$plot[[1]])
   
+  # to feed to predict()
   newx = abundances %>%
     dplyr::select(plot, treatment) %>%
     distinct() %>%
@@ -263,7 +263,6 @@ CIs = function(sp, new_date, n_samples = 10000){
     mutate(yday = yday(new_date)) %>%
     inner_join(full_samples, "plot") %>%
     inner_join(plot_effects, "plot")
-  
   
   
   raw.predictions = predict(model$gam, newx, type = "link")
