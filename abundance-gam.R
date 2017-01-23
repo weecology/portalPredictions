@@ -52,7 +52,7 @@ rodents$treatment[rodents$plot %in% kratPlots] = "krat_exclosure"
 
 # Weather -----------------------------------------------------------------
 
-# Total precip over a long time period ≈ "resources"
+# Total precip over a long time period ??? "resources"
 precipMonthLag = 6
 precipDayLag = 30 * precipMonthLag # assuming 30-day months
 
@@ -180,7 +180,7 @@ fit_gam = function(species){
   
   # Plot the plot-level effects
   plot(
-  ranef(model$mer)$plot[[1]],
+    ranef(model$mer)$plot[[1]],
     cex = .5,
     pch = 16,
     col = "darkgray",
@@ -247,7 +247,7 @@ CIs = function(sp, new_date, n_samples = 10000){
     lowTemp = rnorm(n_samples, mean(get_nearby("lowTemp")), sd(get_nearby("lowTemp"))),
     precip = rexp(n_samples, 
                   median(nearby_precip[nearby_precip > 0])) * 
-                    rbinom(n_samples, size = 1, prob = mean(nearby_precip > 0)))
+      rbinom(n_samples, size = 1, prob = mean(nearby_precip > 0)))
   # Make every combination of plot and sample
   grid = expand.grid(plot = 1:24, sample = 1:n_samples)
   full_samples = cbind(samples[grid$sample, ], plot = grid$plot)
