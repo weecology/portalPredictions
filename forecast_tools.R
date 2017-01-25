@@ -17,7 +17,7 @@ plot_sp_predicts <- function(data){
   ggplot(data = data, aes(x = estimate, y = reorder(species, estimate), xmin = LowerPI, xmax = UpperPI))+
   geom_point()+
   geom_errorbarh()+
-  ggtitle(paste(data$forecast_date[2])) +
+  ggtitle(paste(data$Date[2])) +
   ylab("Species")+
   xlab("Abundance")
 }
