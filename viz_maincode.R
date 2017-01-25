@@ -6,3 +6,4 @@ source("https://raw.githubusercontent.com/weecology/PortalData/master/DataSummar
 data = read.csv("./predictions/PortalForecasts.csv")
 ensemble = make_ensemble(data)
 
+plot_sp_predicts(ensemble)
