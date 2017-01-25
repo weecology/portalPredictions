@@ -1,8 +1,6 @@
 library(dplyr)
 library(lubridate)
 
-
-
 #Create the ensemble model from all other forecasts
 #Currently just the mean of the esimates and confidence intervals.
 make_ensemble=function(all_forecasts, model_weights=NA, models_to_use=NA){
@@ -13,6 +11,15 @@ make_ensemble=function(all_forecasts, model_weights=NA, models_to_use=NA){
   return(ensemble)
 }
 
+plot_sp_predicts <- function(data){
+	# make a plot with mean and confidence intervals for species-specific predictions
+  ggplot(data = data, aes(x = estimate, y = reorder(species, estimate), xmin = LowerPI, xmax = UpperPI))+
+  geom_point()+
+  geom_errorbarh()+
+  ggtitle(paste(data$forecast_date[2])) +
+  ylab("Species")+
+  xlab("Abundance")
+}
 
 #forecast_data = read.csv('/home/shawn/data/portal-forecasts/PortalForecasts.csv', na.strings = '')
 #ensemble_model = make_ensemble(forecast_data)
