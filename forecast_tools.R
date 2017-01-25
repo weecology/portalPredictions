@@ -17,19 +17,20 @@ plot_sp_predicts <- function(data){
 	## make a plot with mean and confidence intervals for species-specific predictions
   
   # filter data
+  
   data = transform(data, forecast_date = as.yearmon(paste(forecastmonth,"/",forecastyear, sep=""), format="%m/%Y")) %>% 
-         transform(Date = as.Date(Date, "%m/%d/%Y"))
-  data = filter(data, treatment == 'all',
-                    species != 'Total', species != 'total',
-                    forecast_date == min(forecast_date),
-                    Date == max(Date))
+    transform(Date = as.Date(Date, "%m/%d/%Y"))
+  data1 = filter(data, treatment == 'All',
+                 species != 'Total', species != 'total',
+                 Date == max(Date))
+  data2 = filter(data1, forecast_date == min(forecast_date))
   # make plot
-  ggplot(data = data, aes(x = estimate, y = reorder(species, estimate), xmin = LowerPI, xmax = UpperPI))+
-  geom_point()+
-  geom_errorbarh()+
-  ggtitle(paste(data$forecast_date[2]))+ # should make title better somehow
-  ylab("Species")+
-  xlab("Abundance")
+  ggplot(data = data2, aes(x = estimate, y = reorder(species, estimate), xmin = LowerPI, xmax = UpperPI))+
+    geom_point()+
+    geom_errorbarh()+
+    ggtitle(paste(data$forecast_date[2]))+ # should make title better somehow
+    ylab("Species")+
+    xlab("Abundance")
 }
 
 #forecast_data = read.csv('/home/shawn/data/portal-forecasts/PortalForecasts.csv', na.strings = '')
