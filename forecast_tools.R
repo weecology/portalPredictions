@@ -1,5 +1,6 @@
 library(dplyr)
 library(lubridate)
+library(zoo)
 library(ggplot2)
 
 #Create the ensemble model from all other forecasts
@@ -13,11 +14,20 @@ make_ensemble=function(all_forecasts, model_weights=NA, models_to_use=NA){
 }
 
 plot_sp_predicts <- function(data){
-	# make a plot with mean and confidence intervals for species-specific predictions
+	## make a plot with mean and confidence intervals for species-specific predictions
+  
+  # filter data
+  data = transform(data, forecast_date = as.yearmon(paste(forecastmonth,"/",forecastyear, sep=""), format="%m/%Y")) %>% 
+         transform(Date = as.Date(Date, "%m/%d/%Y"))
+  data = filter(data, treatment == 'all',
+                    species != 'Total', species != 'total',
+                    forecast_date == min(forecast_date),
+                    Date == max(Date))
+  # make plot
   ggplot(data = data, aes(x = estimate, y = reorder(species, estimate), xmin = LowerPI, xmax = UpperPI))+
   geom_point()+
   geom_errorbarh()+
-  ggtitle(paste(data$Date[2])) +
+  ggtitle(paste(data$forecast_date[2]))+ # should make title better somehow
   ylab("Species")+
   xlab("Abundance")
 }
