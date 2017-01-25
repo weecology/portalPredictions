@@ -1,5 +1,6 @@
 library(dplyr)
 library(lubridate)
+library(ggplot2)
 
 #Create the ensemble model from all other forecasts
 #Currently just the mean of the esimates and confidence intervals.
