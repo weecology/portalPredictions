@@ -13,10 +13,10 @@ controls=subset(controls,treatment=="control",select=-treatment)
 controls=subset(controls,period>202)
 controls=inner_join(moons,controls,by=c("Period"="period")) %>% select(-NewMoonDate,-CensusDate,-Period)
 
-abundances=abundance(level="Site",type="Rodents",length="all")
-abundances$total = rowSums(abundances[,-(1)])
-abundances=subset(abundances,period>202)
-abundances=inner_join(moons,abundances,by=c("Period"="period")) %>% select(-NewMoonDate,-CensusDate,-Period)
+all=abundance(level="Site",type="Rodents",length="all")
+all$total = rowSums(all[,-(1)])
+all=subset(abundances,period>202)
+all=inner_join(moons,all,by=c("Period"="period")) %>% select(-NewMoonDate,-CensusDate,-Period)
 
 #get weather data
 source("~/PortalData/DataSummaryScripts/Weather.R"); weather=weather("Monthly")
@@ -29,11 +29,16 @@ weather=right_join(weather,moons)
 ##Get 6 month weather forecast from monthly means of past 3 years
 weatherforecast=weather[dim(weather)[1]-36:dim(weather)[1],] %>% group_by(Month) %>% 
   summarize(MinTemp=mean(MinTemp,na.rm=T),MaxTemp=mean(MaxTemp,na.rm=T),MeanTemp=mean(MeanTemp,na.rm=T),Precipitation=mean(Precipitation,na.rm=T),NDVI=mean(NDVI,na.rm=T)) %>%
-  slice(match(c(7:12,1:6), Month))
+  slice(match(c(8:12,1:7), Month))
 
 NewMoonNumber= max(abundances$NewMoonNumber) + 1:12
 forecastmonth=month(Sys.Date() %m+% months(0:11))
 forecastyear=year(Sys.Date() %m+% months(0:11))
+
+#####Forecasting wrapper function for all models########################
+
+forecastall(abundances,weather,weatherforecast) {
+
 
 ##Community level predictions
 
@@ -93,4 +98,8 @@ for(s in 2:23) {
 }
 
 
-write.csv(forecasts,"forecasts.csv",row.names=FALSE,append = T)
+write.csv(forecasts,paste(as.character(sysDate()),as.character(Data),"forecasts.csv"),row.names=FALSE) }
+
+forecastall(all,weather,weatherforecast)
+forecastall(controls,weather,weatherforecast)
+

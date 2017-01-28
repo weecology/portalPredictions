@@ -10,13 +10,14 @@ library(tidyr)
 library(parallel)
 library(coda)
 
-rodents = read.csv('data/RodentsAsOfSep2015.csv', na.strings = c("","NA"), 
+rodents = read.csv('PortalData/Rodents/Portal_rodent.csv', na.strings = c("","NA"), 
                    colClasses = c('tag' = 'character'), 
                    stringsAsFactors = FALSE)
-sppCodes = read.csv('data/PortalMammals_species.csv') %>%
-  dplyr::select(species = new_code, rodent, unknown)
+sppCodes = read.csv('PortalData/Rodents/Portal_rodent_species.csv') %>%
+  dplyr::select(species = Species.Code, Rodent, Unidentified)
 
 rodents = rodents %>% mutate(date = as.Date(paste(yr, mo, dy, sep = "-")))
+plots=read.csv('~/PortalData/SiteandMethods/Portal_plots.csv')
 
 
 # Discard unnecessary rows ------------------------------------------------
@@ -36,18 +37,13 @@ rodents = rodents[rodents$yr >= 1990,]
 # Remove non-rodents and unidentified rodents
 rodents = rodents %>%
   left_join(sppCodes, by = c('species')) %>%
-  filter(rodent == 1, unknown == 0) %>%
-  select(-rodent, -unknown)
+  filter(Rodent == 1, Unidentified == 0) %>%
+  select(-Rodent, -Unidentified)
 
 # Treatment ---------------------------------------------------------------
 
 # Identify control and k-rat exclosure plots
-controlPlots = c(2,4,8,11,12,14,17,22) #controls
-kratPlots = c(3,6,13,18,19,20) #krat exclosure
-
-rodents$treatment = "full_exclosure"
-rodents$treatment[rodents$plot %in% controlPlots] = "control"
-rodents$treatment[rodents$plot %in% kratPlots] = "krat_exclosure"
+rodents = left_join(rodents,plots)
 
 
 # Weather -----------------------------------------------------------------
@@ -56,7 +52,7 @@ rodents$treatment[rodents$plot %in% kratPlots] = "krat_exclosure"
 precipMonthLag = 6
 precipDayLag = 30 * precipMonthLag # assuming 30-day months
 
-weatherRaw = read.csv('data/Hourly_PPT_mm_1989_present_fixed.csv') %>%
+weatherRaw = read.csv('PortalData/Weather/Portal_weather.csv') %>%
   mutate(TimeOfDay = ifelse(Hour > 1200, "evening", "morning")) %>%
   mutate(date = as.Date(paste(Year, Month, Day, sep = "-")))
 
@@ -101,7 +97,7 @@ abundances = rodents %>%
   do(data.frame(x = table(.$species))) %>% 
   spread(x.Var1, x.Freq) %>%
   ungroup() %>%
-  select(-all_absent) %>% 
+ # select(-all_absent) %>% 
   inner_join(climate, "date") %>%
   mutate(yday = yday(date)) %>%
   mutate(yr_continuous = julian(date, origin = as.Date("1900-01-01")) / 365.24 + 1900)
@@ -207,8 +203,8 @@ species = rodents %>%
   extract2("species")
 
 models = mclapply(species,
-                  fit_gam,
-                  mc.cores = mc.cores)
+                  fit_gam)
+                  #mc.cores = mc.cores)
 saveRDS(
   models,
   "models.rds"
