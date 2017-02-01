@@ -222,12 +222,13 @@ CIs = function(sp, new_date, n_samples = 10000){
   # that can be expected around new_date, based on comparing to the same season
   # of other years.  The is_nearby stuff has to do with spanning
   # annual boundaries
+  
   abundances$is_nearby = abs(abundances$yday - new_yday) < 30 | 
     abundances$yday - new_yday + 365 < 30
   
   get_nearby = function(colname){
     abundances %>%
-      select_("yr_continuous", colname, "yday") %>%
+      select_("yr_continuous", colname, "yday","is_nearby") %>%
       filter(is_nearby) %>%
       distinct() %>%
       extract2(colname)
@@ -286,31 +287,19 @@ CIs = function(sp, new_date, n_samples = 10000){
   )
   axis(1, seq(0, max(simulated_totals), 
               25 * ceiling(max(simulated_totals)/10 / 25)))
-  abline(v = HPDinterval(simulated_totals, .95), col = 2, lty = 2)
-  abline(v = HPDinterval(simulated_totals, .5), col = 2, lty = 1)
+  abline(v = names(sort(table(simulated_totals),decreasing=TRUE))[1], col = 2, lwd=2)
+  abline(v = HPDinterval(as.mcmc(simulated_totals), .95), col = 2, lty = 2)
+  abline(v = HPDinterval(as.mcmc(simulated_totals), .9), col = 2, lty = 3)
+  abline(v = HPDinterval(as.mcmc(simulated_totals), .5), col = 2, lty = 1)
   
-  cbind(
-    sp,
-    as.data.frame(
-      rbind(
-        c(type = "50% interval", as.numeric(HPDinterval(simulated_totals, .5))),
-        c(type = "95% interval", as.numeric(HPDinterval(simulated_totals,.95)))
-      )
-    ),
-    stringsAsFactors = FALSE
+  data.frame(
+    species = sp, estimate = as.numeric(names(sort(table(simulated_totals),decreasing=TRUE))[1]),
+        t(as.numeric(HPDinterval(as.mcmc(simulated_totals), .9)))
   )
   
 }
 
-ci_predictions = lapply(species, CIs, new_yday = new_yday)
+ci_predictions = lapply(species, CIs, new_date=Sys.Date())
 
-bind_rows(ci_predictions) %>%
-  filter(level == 50) %>%
-  rename(lower = V2, upper = V3) %>%
-  bind_rows(
-    bind_rows(ci_predictions) %>%
-      filter(level == 95) %>%
-      rename(lower = V2, upper = V3)
-  ) %>%
-  write.csv(file = "predictions/2015-12-12_predictions from 2015-12-11.csv", 
-            row.names = FALSE)
+return(bind_rows(ci_predictions) %>%
+  rename(LowerPI = X1, UpperPI = X2))
