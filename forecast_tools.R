@@ -7,23 +7,23 @@ library(ggplot2)
 #Currently just the mean of the esimates and confidence intervals.
 make_ensemble=function(all_forecasts, model_weights=NA, models_to_use=NA){
   ensemble = all_forecasts %>%
-    group_by(Date, forecastmonth, forecastyear,level, species) %>%
+    group_by(Date, NewMoonNumber, forecastmonth, forecastyear,level, currency, species) %>%
     summarise(estimate = mean(estimate), LowerPI=mean(LowerPI), UpperPI=mean(UpperPI))
   ensemble$model='Ensemble'
   return(ensemble)
 }
 
-plot_sp_predicts <- function(data){
+plot_sp_predicts <- function(data, level){
 	## make a plot with mean and confidence intervals for species-specific predictions
   
   # filter data
   
   data = transform(data, forecast_date = as.yearmon(paste(forecastmonth,"/",forecastyear, sep=""), format="%m/%Y")) %>% 
     transform(Date = as.Date(Date, "%m/%d/%Y"))
-  data1 = filter(data, level == 'All',
+  data1 = filter(data, level == level,
                  species != 'Total', species != 'total',
                  Date == max(Date))
-  data2 = filter(data1, forecast_date == min(forecast_date))
+  data2 = filter(data1, forecast_date == min(NewMoonNumber))
   # make plot
   ggplot(data = data2, aes(x = estimate, y = reorder(species, estimate), xmin = LowerPI, xmax = UpperPI))+
     geom_point()+
