@@ -13,17 +13,17 @@ make_ensemble=function(all_forecasts, model_weights=NA, models_to_use=NA){
   return(ensemble)
 }
 
-plot_sp_predicts <- function(data){
+plot_sp_predicts <- function(data, level){
 	## make a plot with mean and confidence intervals for species-specific predictions
   
   # filter data
   
   data = transform(data, forecast_date = as.yearmon(paste(forecastmonth,"/",forecastyear, sep=""), format="%m/%Y")) %>% 
     transform(Date = as.Date(Date, "%m/%d/%Y"))
-  data1 = filter(data, level == 'All',
+  data1 = filter(data, level == level,
                  species != 'Total', species != 'total',
                  Date == max(Date))
-  data2 = filter(data1, forecast_date == min(forecast_date))
+  data2 = filter(data1, forecast_date == min(NewMoonNumber))
   # make plot
   ggplot(data = data2, aes(x = estimate, y = reorder(species, estimate), xmin = LowerPI, xmax = UpperPI))+
     geom_point()+
