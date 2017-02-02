@@ -25,10 +25,11 @@ plot_sp_predicts <- function(data, lvl){
   data2 = filter(data1, NewMoonNumber == min(NewMoonNumber))
   
   # make plot
+  title = paste(data$forecast_date[2],lvl, sep=" ")
   ggplot(data = data2, aes(x = estimate, y = reorder(species, estimate), xmin = LowerPI, xmax = UpperPI))+
     geom_point()+
     geom_errorbarh()+
-    ggtitle(paste(data$forecast_date[2]))+ # should make title better somehow
+    ggtitle(title)+ # should make title better somehow
     ylab("Species")+
     xlab("Abundance")
 }
