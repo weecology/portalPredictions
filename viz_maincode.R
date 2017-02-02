@@ -6,4 +6,4 @@ source("https://raw.githubusercontent.com/weecology/PortalData/master/DataSummar
 data = compile_forecasts()
 ensemble = make_ensemble(data)
 
-plot_sp_predicts(ensemble)
+plot_sp_predicts(ensemble, lvl='All')
