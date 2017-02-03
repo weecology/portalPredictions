@@ -20,7 +20,6 @@ plot_sp_predicts <- function(data, lvl){
   data = transform(data, forecast_date = as.yearmon(paste(forecastmonth,"/",forecastyear, sep=""), format="%m/%Y")) %>% 
     transform(Date = as.Date(Date, "%Y-%m-%d"))
   data1 = filter(data, level == lvl,
-                 species != 'Total',
                  Date == max(as.Date(Date)))
   data2 = filter(data1, NewMoonNumber == min(NewMoonNumber))
   
