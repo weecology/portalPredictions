@@ -13,26 +13,36 @@ make_ensemble=function(all_forecasts, model_weights=NA, models_to_use=NA){
   return(ensemble)
 }
 
-plot_sp_predicts <- function(data, lvl){
-  ## make a plot with mean and confidence intervals for species-specific predictions
-  
-  # filter data
-  data = transform(data, forecast_date = as.yearmon(paste(forecastmonth,"/",forecastyear, sep=""), format="%m/%Y")) %>% 
-    transform(Date = as.Date(Date, "%Y-%m-%d"))
+plot_sp_predicts = function(data, lvl, kind) {
+  data = transform(data, forecast_date = as.yearmon(paste(forecastmonth, "/", forecastyear, sep =
+                                                            ""), format = "%m/%Y")) %>% transform(Date = as.Date(Date, "%Y-%m-%d"))
   data1 = filter(data, level == lvl,
                  Date == max(as.Date(Date)))
-  data2 = filter(data1, NewMoonNumber == min(NewMoonNumber))
-  
-  # make plot
-  title = paste(data$forecast_date[2],lvl, sep=" ")
-  ggplot(data = data2, aes(x = estimate, y = reorder(species, estimate), xmin = LowerPI, xmax = UpperPI))+
-    geom_point()+
-    geom_errorbarh()+
-    ggtitle(title)+ # should make title better somehow
-    ylab("Species")+
-    xlab("Abundance")
+  target_moon = min(data1$NewMoonNumber)
+  data2 = filter(data1, NewMoonNumber == target_moon)
+  title = paste(data2$forecast_date[2], lvl, sep = " ")
+  plot_data(data2, title, kind)
 }
 
+plot_data = function(data, title, kind) {
+  if (kind == 'forecast') {
+    ggplot(data,
+           aes(
+             x = estimate,
+             y = reorder(species, estimate),
+             xmin = LowerPI,
+             xmax = UpperPI
+           )) +
+      geom_point() +
+      geom_errorbarh() +
+      ggtitle(title) + # should make title better somehow
+      ylab("Species") +
+      xlab("Abundance")
+  }
+  else{
+    print("not available")
+  }
+}
 
 #' Ensure that a forecast file is in the correct format
 #' 
