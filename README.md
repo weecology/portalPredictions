@@ -7,5 +7,5 @@ Portalforecasts.R is the main function used to produce forecasts. Multiple model
 
 Models currently in use are in the main directory. Models that were used or we're developing but not currently using are under DevelopingModels.
 
-Predictions contains all predictions made thusfar. The file PortalForecasts.csv contains all predictions used for model comparison and visualization.
+Predictions contains all predictions made thusfar. Each new prediction made on a particular time series (varies by level and currency) is saved in a new file in this directory.
 
