@@ -4,10 +4,10 @@
 
 
 library(dplyr)
+library(RCurl)
 
-setwd('C:/Users/EC/Desktop/git/portalPredictions')
-rdat = read.csv('../PortalData/Rodents/Portal_rodent.csv',na.strings = '',stringsAsFactors = F)
-
+rdat = read.csv(text=getURL("https://raw.githubusercontent.com/weecology/PortalData/master/Rodents/Portal_rodent.csv"), 
+                na.strings=c(""), colClasses=c('tag'='character'), stringsAsFactors = FALSE)
 
 extract_recent_census_data = function(rdat,newperiod) {
   # this function summarizes captures from the specified period (newperiod)
