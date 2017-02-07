@@ -57,7 +57,7 @@ forecast_is_valid=function(forecast_df, verbose=FALSE){
   is_valid=TRUE
   violations=c()
   #Define valid valeus
-  valid_columns = c('Date','forecastmonth','forecastyear','NewMoonNumber','model','currency',
+  valid_columns = c('date','forecastmonth','forecastyear','NewMoonNumber','model','currency',
                     'level','species','estimate','LowerPI','UpperPI')
   valid_currencies = c('abundance','richness','biomass','energy')
   valid_levels = paste('Plot',1:24,' ', sep = '')
