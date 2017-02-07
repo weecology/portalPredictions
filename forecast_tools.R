@@ -7,7 +7,7 @@ library(ggplot2)
 #Currently just the mean of the esimates and confidence intervals.
 make_ensemble=function(all_forecasts, model_weights=NA, models_to_use=NA){
   ensemble = all_forecasts %>%
-    group_by(Date, NewMoonNumber, forecastmonth, forecastyear,level, currency, species) %>%
+    group_by(date, NewMoonNumber, forecastmonth, forecastyear,level, currency, species) %>%
     summarise(estimate = mean(estimate), LowerPI=mean(LowerPI), UpperPI=mean(UpperPI))
   ensemble$model='Ensemble'
   return(ensemble)
