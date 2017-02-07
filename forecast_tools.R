@@ -68,7 +68,7 @@ forecast_is_valid=function(forecast_df, verbose=FALSE){
   #The rest of the check depend on valid column names, so bail out early
   #if this does not pass. 
   if(!(all(colnames(forecast_df) %in% valid_columns) & all(valid_columns %in% colnames(forecast_df)))){
-    if(verbose) warning('Forecast file column names invalid')
+    if(verbose) print('Forecast file column names invalid')
     return(FALSE)
   }
   
@@ -81,7 +81,7 @@ forecast_is_valid=function(forecast_df, verbose=FALSE){
   if(sum(is.na(forecast_df$LowerPI))>0) { is_valid=FALSE; violations = c('NA LowerPI', violations) }
   if(sum(is.na(forecast_df$UpperPI))>0) { is_valid=FALSE; violations = c('NA UpperPI', violations) }
   
-  if(verbose) warning(paste('Forecast file invalid: ', violations), sep='')
+  if(verbose) print(paste('Forecast file invalid: ', violations), sep='')
   return(is_valid)
 }
 
