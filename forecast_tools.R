@@ -78,7 +78,7 @@ forecast_is_valid=function(forecast_df, verbose=FALSE){
   #doesn't match this exactly. 
   #TODO: Account for dates that are formatted correctly but potentially many years off.
   forecast_df$date = base::as.Date(forecast_df$date, '%Y-%m-%d')
-  if(sum(is.na(forecast_df$date))>0) { is_valid=FALSE; violations = c('date', violations) }
+  if(any(is.na(forecast_df$date))) { is_valid=FALSE; violations = c('date', violations) }
   
   #All of these must be ones listed in the forecast format wiki. 
   if(!all(unique(forecast_df$currency) %in% valid_currencies)) { is_valid=FALSE; violations = c('currency', violations) }
@@ -86,9 +86,9 @@ forecast_is_valid=function(forecast_df, verbose=FALSE){
   if(!all(unique(forecast_df$species) %in% valid_species)) { is_valid=FALSE; violations = c('species', violations) }
   
   #Estimates and PI's cannot have NA values
-  if(sum(is.na(forecast_df$estimate))>0) { is_valid=FALSE; violations = c('NA esimates', violations) }
-  if(sum(is.na(forecast_df$LowerPI))>0) { is_valid=FALSE; violations = c('NA LowerPI', violations) }
-  if(sum(is.na(forecast_df$UpperPI))>0) { is_valid=FALSE; violations = c('NA UpperPI', violations) }
+  if(any(is.na(forecast_df$estimate))) { is_valid=FALSE; violations = c('NA esimates', violations) }
+  if(any(is.na(forecast_df$LowerPI))) { is_valid=FALSE; violations = c('NA LowerPI', violations) }
+  if(any(is.na(forecast_df$UpperPI))) { is_valid=FALSE; violations = c('NA UpperPI', violations) }
   
   if(verbose & length(violations)>0) print(paste('Forecast validation failed: ', violations), sep='')
   return(is_valid)
