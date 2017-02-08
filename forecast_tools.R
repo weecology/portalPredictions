@@ -141,3 +141,50 @@ compile_forecasts=function(forecast_folder='./predictions', verbose=FALSE){
   return(all_forecasts)
 }
 
+#' Download the portal observations
+#' 
+#' This downloads the portal data regardless if they are
+#' new or not.
+#' 
+#' TODO: incorperate data retriever into this when it's pointed at the github repo
+#' @return None
+download_observations = function(observations_folder='./observations/'){
+  download_list = c('https://raw.githubusercontent.com/weecology/PortalData/master/Rodents/Portal_rodent.csv',
+                    'https://raw.githubusercontent.com/weecology/PortalData/master/Rodents/Portal_rodent_trapping.csv',
+                    'https://raw.githubusercontent.com/weecology/PortalData/master/Rodents/moon_dates.csv',
+                    'https://raw.githubusercontent.com/weecology/PortalData/master/Rodents/Portal_rodent_species.csv')
+  
+  for(file in download_list){
+    download.file(file, paste0(observations_folder, basename(file)), quiet = TRUE)
+  }
+  
+}
+
+#' Check if there are new rodent observations
+#' 
+#' @return bool True if new observations are available
+observations_are_new = function(observations_folder='./observations/'){
+  md5_file = paste0(observations_folder,'Portal_rodent.md5')
+  rodent_file= paste0(observations_folder,'Portal_rodent.csv')
+  if(!file.exists(rodent_file)) stop('Rodent observations not present. Please run download_observations()')
+  
+  if(!file.exists(md5_file)) {
+    old_md5=''
+  } else {
+    old_md5 = read.csv(md5_file, header = FALSE, stringsAsFactors = FALSE)$V1
+  }
+  
+  new_md5 = as.character(tools::md5sum(rodent_file))
+  
+  if(old_md5 == new_md5){
+    return(FALSE)
+  } else {
+    sink(md5_file)
+    writeLines(new_md5)
+    sink()
+    return(TRUE)
+  }
+  
+}
+
+
