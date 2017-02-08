@@ -24,7 +24,7 @@ all$total = rowSums(all[,-(1)])
 all=inner_join(moons,all,by=c("Period"="period"))
   
 #get weather data
-source("~/PortalData/DataSummaryScripts/Weather.R"); weather=weather("Monthly")
+source("~/PortalDataSummaries/Weather.R"); weather=weather("Monthly")
 NDVI=read.csv("~/Dropbox/Portal/PORTAL_primary_data/NDVI/CompositeNDVI/monthly_NDVI.csv")
 NDVI$Month=as.numeric(gsub( ".*-", "", NDVI$Date )); NDVI$Year=as.numeric(gsub( "-.*$", "", NDVI$Date ))
 weather=full_join(weather,NDVI) %>% select(-Date, -X) %>% arrange(Year,Month)
