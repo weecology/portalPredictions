@@ -2,7 +2,6 @@
 # which can then be plotted against the prediction.
 # EMC 2/2017
 
-
 library(dplyr)
 library(RCurl)
 

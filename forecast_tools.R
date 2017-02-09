@@ -13,35 +13,41 @@ make_ensemble=function(all_forecasts, model_weights=NA, models_to_use=NA){
   return(ensemble)
 }
 
-plot_sp_predicts = function(data, lvl, kind) {
+plot_sp_predicts = function(data, lvl, observed = NULL) {
   data = transform(data, forecast_date = as.yearmon(paste(forecastmonth, "/", forecastyear, sep =
                                                             ""), format = "%m/%Y")) %>% transform(date = as.Date(date, "%Y-%m-%d"))
   data1 = filter(data, level == lvl,
                  date == max(as.Date(date)))
   target_moon = min(data1$NewMoonNumber)
   data2 = filter(data1, NewMoonNumber == target_moon)
+  if (!is.null(observed)){
+    observed = filter(observed, level == lvl)
+  }
   title = paste(data2$forecast_date[2], lvl, sep = " ")
-  plot_data(data2, title, kind)
+  plot_data(data2, title, observed)
 }
 
-plot_data = function(data, title, kind) {
-  if (kind == 'forecast') {
-    ggplot(data,
-           aes(
-             x = estimate,
-             y = reorder(species, estimate),
-             xmin = LowerPI,
-             xmax = UpperPI
-           )) +
-      geom_point() +
-      geom_errorbarh() +
-      ggtitle(title) + # should make title better somehow
-      ylab("Species") +
-      xlab("Abundance")
+plot_data = function(data, title, observed) {
+  sp_predict = ggplot(data,
+                       aes(
+                         x = estimate,
+                         y = reorder(species, estimate),
+                         xmin = LowerPI,
+                         xmax = UpperPI
+                         )) +
+    geom_point() +
+    geom_errorbarh() +
+    ggtitle(title) + # should make title better somehow
+    ylab("Species") +
+    xlab("Abundance")
+  if (!is.null(observed)) {
+    joined_data = left_join(data, observed, by = "species")
+    joined_data[is.na(joined_data)] = 0
+    sp_predict = sp_predict +
+      geom_point(data = joined_data, mapping = aes(x = actual, y = species),
+                 color = "blue")
   }
-  else{
-    print("not available")
-  }
+  plot(sp_predict)
 }
 
 #' Ensure that a forecast file is in the correct format
