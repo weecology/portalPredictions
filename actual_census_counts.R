@@ -6,7 +6,7 @@
 library(dplyr)
 library(RCurl)
 
-extract_recent_census_data = function(rdat,newperiod) {
+extract_recent_census_data = function(newperiod) {
   # this function summarizes captures from the specified period (newperiod)
   # and returns a data frame of species, count, level (all or control) and period
 
@@ -21,8 +21,8 @@ extract_recent_census_data = function(rdat,newperiod) {
     select(period,plot,species)
   spcountC = aggregate(recent_c$species,by=list(species=recent_c$species),FUN=length)
   names(spcountC) = c('species','actual')
-  controls = rbind(spcountC,c('total',sum(spcountC$actual)))
-  controls$level = rep('Controls')
+  controls = rbind(spcountC, data.frame(species = 'total', actual = sum(spcountC$actual)))
+  controls$level = 'Controls'
 
   # create data frame of species counts and total counts on all plots
 
@@ -34,8 +34,8 @@ extract_recent_census_data = function(rdat,newperiod) {
   recent_all = rbind(recent_ex,recent_c)
   spcountA = aggregate(recent_all$species,by=list(species=recent_all$species),FUN=length)
   names(spcountA) = c('species','actual')
-  allplots = rbind(spcountA,c('total',sum(spcountA$actual)))
-  allplots$level = rep('All')
+  allplots = rbind(spcountA, data.frame(species = 'total', actual = sum(spcountA$actual)))
+  allplots$level = 'All'
 
 
   # bind control data and allplot data into one data frame
