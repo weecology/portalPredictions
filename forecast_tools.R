@@ -61,7 +61,7 @@ plot_data = function(data, title, observed) {
 #' @param forecasts dataframe passes the forecast validity check. Must have matching values in
 #'                  the comparison columns
 #' @param error_metric chr either 'mse' for mean squared error or 'likelihood' for the likelihood of the observation
-#' assumring the estimate and PI's fit a normal distribution
+#' assuming the estimate and PI's fit a normal distribution
 #' @param ci_value int The value of the forecast confidence interval to scale PI values for the likelihood metric
 #' @return data.frame Data.frame with the columns model, error, lead_time, level, species, currency
 #' 
@@ -70,9 +70,9 @@ calculate_forecast_error = function(observations, forecasts, error_metric='MSE',
   observations = as.data.frame(observations)
   forecasts = as.data.frame(forecasts)
   
-  if(!forecast_is_valid(forecasts)) stop('Forecast datafarme not valid')
+  if(!forecast_is_valid(forecasts)) stop('Forecast dataframe not valid')
   
-  valid_observation_columns=c('NewMoonNumber','currency','level','species','actual')
+  valid_observation_columns = c('NewMoonNumber','currency','level','species','actual')
   if(!all(valid_observation_columns %in% colnames(observations))) stop('observation data.frame does not have valid column names')
   
   #At least 1 matching value must be in each of these columns in the observations and forecasts
@@ -85,7 +85,7 @@ calculate_forecast_error = function(observations, forecasts, error_metric='MSE',
   
   #Calculate error
   if(error_metric == 'MSE'){
-    comparison = forecasts %>%
+    comparisons = forecasts %>%
       inner_join(observations, by=c('NewMoonNumber','currency','level','species')) %>%
       group_by(date, model, NewMoonNumber, currency, level, species) %>%
       summarise(error=(estimate-actual)^2) %>%
@@ -99,21 +99,21 @@ calculate_forecast_error = function(observations, forecasts, error_metric='MSE',
   #Summarize to mean error by lead time. Lead time is number of new moons ahead of when the forecast was made.
   #This assumes a forecast was made with only the data available prior to the first NewMoonDate in the series.
   #TODO: Make the lead time the actual days or weeks once more frequent forecasts are being made( see #37)
-  forecast_date_new_moon_number = comparison %>%
+  forecast_date_new_moon_number = comparisons %>%
     group_by(date) %>%
     summarise(new_moon_of_forecast = min(NewMoonNumber)-1) %>%
     ungroup()
   
-  comparison = comparison %>%
+  comparisons_with_lead_time = comparisons %>%
     left_join(forecast_date_new_moon_number, by='date') %>%
     mutate(lead_time=NewMoonNumber - new_moon_of_forecast) %>%
     select(-new_moon_of_forecast, -NewMoonNumber, -date)
   
-  comparison = comparison %>%
+  comparisons_model_summary = comparisons_with_lead_time %>%
     group_by(model, currency, level, species, lead_time) %>%
     summarize(error=mean(error))
   
-  return(comparison)
+  return(comparisons_model_summary)
 }
 
 #' Plot the output of calculate_forecast_error(). Lead time on the x-axis,
@@ -127,10 +127,10 @@ calculate_forecast_error = function(observations, forecasts, error_metric='MSE',
 plot_lead_time_errors=function(error_df, level, species, currency, error_metric){
   plot_title = paste0('Level: ',level,', Species: ',species,', Currency: ',currency)
   
-  graph=ggplot(error_df, aes(x=lead_time, y=error, group=model, color=model)) +
-          geom_point()+
-          geom_line() +
-          labs(y=error_metric,x='Lead Time (New Moons)', title=plot_title)
+  graph = ggplot(error_df, aes(x=lead_time, y=error, group=model, color=model)) +
+            geom_point()+
+            geom_line() +
+            labs(y=error_metric,x='Lead Time (New Moons)', title=plot_title)
   plot(graph)
 }
 

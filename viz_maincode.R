@@ -18,7 +18,7 @@ plot_sp_predicts(ensemble, 'All', observed = obs_data)
 
 new_moons=read.csv('~/PortalData/Rodents/moon_dates.csv')
 
-#Format raw observations ot match forecast comparison columns and include NewMoonNumbers
+#Format raw observations to match forecast comparison columns and include NewMoonNumbers
 #level='Site' in abundance() corresponds to level='All' from the portal forecasting spec. It should be changed in the abundance script.
 #TODO: add a more generic function to generate this
 all_observations = abundance(shape='flat', level='Site') %>%
