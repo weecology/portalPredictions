@@ -13,12 +13,12 @@ make_ensemble=function(all_forecasts, model_weights=NA, models_to_use=NA){
   return(ensemble)
 }
 
-plot_sp_predicts = function(data, lvl, observed = NULL) {
+plot_sp_predicts = function(data, lvl, lead_time, observed = NULL) {
   data = transform(data, forecast_date = as.yearmon(paste(forecastmonth, "/", forecastyear, sep =
                                                             ""), format = "%m/%Y")) %>% transform(date = as.Date(date, "%Y-%m-%d"))
   data1 = filter(data, level == lvl,
                  date == max(as.Date(date)))
-  target_moon = min(data1$NewMoonNumber)
+  target_moon = min(data1$NewMoonNumber) + (lead_time - 1)
   data2 = filter(data1, NewMoonNumber == target_moon)
   if (!is.null(observed)){
     observed = filter(observed, level == lvl)
