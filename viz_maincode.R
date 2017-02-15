@@ -11,10 +11,10 @@ ensemble = make_ensemble(data)
 obs_data = extract_recent_census_data(458)
 
 # Plot just the forecasts
-plot_sp_predicts(ensemble, 'All')
+plot_sp_predicts(ensemble, 'All', lead_time = 1)
 
 # Plot forecasts and outcomes
-plot_sp_predicts(ensemble, 'All', observed = obs_data)
+plot_sp_predicts(ensemble, 'All', lead_time = 1, observed = obs_data)
 
 new_moons=read.csv('~/PortalData/Rodents/moon_dates.csv')
 
