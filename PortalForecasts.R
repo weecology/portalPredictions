@@ -3,9 +3,10 @@ library(forecast)
 library(lubridate)
 library(dplyr)
 library(testit)
+library(RCurl)
 
 #get new moon number
-current=489; last=current + 11
+current=490; last=current + 11
 NewMoonNumber= current:last
 forecastmonth=month(Sys.Date() %m+% months(0:11))
 forecastyear=year(Sys.Date() %m+% months(0:11))
@@ -16,7 +17,7 @@ moons$Year=year(moons$NewMoonDate); moons$Month=month(moons$NewMoonDate)
 source("~/PortalDataSummaries/RodentAbundances.R"); controls=abundance(level="Treatment",type="Rodents",length="Longterm")
 controls$total = rowSums(controls[,-(1:2)])
 controls=subset(controls,treatment=="control",select=-treatment)
-controls=inner_join(moons,controls,by=c("Period"="period")) %>% subset(Period>202) %>% 
+controls=inner_join(moons,controls,by=c("Period"="period")) %>% subset(NewMoonNumber>216) %>% 
   select(-NewMoonDate,-CensusDate,-Period,-Year,-Month)
 
 all=abundance(level="Site",type="Rodents",length="all")
