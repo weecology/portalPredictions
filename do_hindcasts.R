@@ -17,17 +17,17 @@ backdate_observed_data=function(period_info){
   period_info$month      = lubridate::month(period_info$CensusDate)
   period_info$year       = lubridate::year(period_info$CensusDate)
   
-  rodents = read_csv(rodents_filename)
+  rodents = read_csv(rodents_filename, col_types = cols())
   rodents = rodents %>%
     filter(period<=period_info$Period)
   write_csv(rodents, rodents_filename)
   
-  new_moons = read_csv(new_moon_filename)
+  new_moons = read_csv(new_moon_filename, col_types = cols())
   new_moons = new_moons %>%
     filter(Period<=period_info$Period)
   write_csv(new_moons, new_moon_filename)
   
-  weather = read_csv(weather_filename)
+  weather = read_csv(weather_filename, col_types = cols())
   weather = weather %>%
     filter((Year<period_info$year | ((Year==period_info$year) & (Month<=period_info$month))))
   write_csv(weather, weather_filename)
@@ -50,6 +50,7 @@ initial_times_info = new_moons %>%
 
 for(i in seq_along(initial_times_info)){
   backdate_observed_data(initial_times_info[i,])
+  download_observations()
 }
 
 #for initial_time in the past
