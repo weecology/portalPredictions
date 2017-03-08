@@ -17,7 +17,7 @@ sppCodes = read.csv('PortalData/Rodents/Portal_rodent_species.csv') %>%
   dplyr::select(species = Species.Code, Rodent, Unidentified)
 
 rodents = rodents %>% mutate(date = as.Date(paste(yr, mo, dy, sep = "-")))
-plots=read.csv('~/PortalData/SiteandMethods/Portal_plots.csv')
+plots=read.csv('~/PortalData/SiteandMethods/new_Portal_plots.csv')
 
 
 # Discard unnecessary rows ------------------------------------------------
@@ -43,7 +43,7 @@ rodents = rodents %>%
 # Treatment ---------------------------------------------------------------
 
 # Identify control and k-rat exclosure plots
-rodents = left_join(rodents,plots)
+rodents = left_join(rodents,plots,by=c("yr","mo"="month","plot"))
 
 
 # Weather -----------------------------------------------------------------
