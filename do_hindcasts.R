@@ -20,17 +20,17 @@ backdate_observed_data=function(period_info){
   rodents = read_csv(rodents_filename, col_types = cols())
   rodents = rodents %>%
     filter(period<=period_info$Period)
-  write_csv(rodents, rodents_filename)
+  write_csv(rodents, rodents_filename, na = '')
   
   new_moons = read_csv(new_moon_filename, col_types = cols())
   new_moons = new_moons %>%
     filter(Period<=period_info$Period)
-  write_csv(new_moons, new_moon_filename)
+  write_csv(new_moons, new_moon_filename, na = '')
   
   weather = read_csv(weather_filename, col_types = cols())
   weather = weather %>%
     filter((Year<period_info$year | ((Year==period_info$year) & (Month<=period_info$month))))
-  write_csv(weather, weather_filename)
+  write_csv(weather, weather_filename, na = '')
 }
 
 
