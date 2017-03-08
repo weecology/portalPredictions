@@ -5,16 +5,20 @@ library(dplyr)
 library(testit)
 library(RCurl)
 
-#get new moon number
-current=491; last=current + 11
+#Get the newmoon number of the  most recent sample
+moons <- read.csv("~/PortalData/Rodents/moon_dates.csv",header=T)
+most_recent_period = moons$NewMoonNumber[which.max(moons$Period)]
+
+current=most_recent_period+1
+last=current + 11
 NewMoonNumber= current:last
 forecastmonth=month(Sys.Date() %m+% months(0:11))
 forecastyear=year(Sys.Date() %m+% months(0:11))
 
 #get Portal Data
-moons <- read.csv("~/PortalData/Rodents/moon_dates.csv",header=T)
 moons$Year=year(moons$NewMoonDate); moons$Month=month(moons$NewMoonDate)
-source("~/Github/PortalDataSummaries/RodentAbundances.R"); controls=abundance(level="Treatment",type="Rodents",length="Longterm")
+source("https://raw.githubusercontent.com/weecology/PortalDataSummaries/master/RodentAbundances.R")
+controls=abundance(level="Treatment",type="Rodents",length="Longterm")
 controls$total = rowSums(controls[,-(1:2)])
 controls=subset(controls,treatment=="control",select=-treatment)
 controls=inner_join(moons,controls,by=c("Period"="period")) %>% subset(NewMoonNumber>216) %>% 
@@ -25,10 +29,13 @@ all$total = rowSums(all[,-(1)])
 all=inner_join(moons,all,by=c("Period"="period"))
   
 #get weather data
-source("~/Github/PortalDataSummaries/Weather.R"); weather=weather("Monthly")
+source("https://raw.githubusercontent.com/weecology/PortalDataSummaries/master/Weather.R")
+weather=weather("Monthly")
+
+#TODO: update NDVI automatically
 NDVI=read.csv("~/Dropbox/Portal/PORTAL_primary_data/NDVI/CompositeNDVI/monthly_NDVI.csv")
 NDVI$Month=as.numeric(gsub( ".*-", "", NDVI$Date )); NDVI$Year=as.numeric(gsub( "-.*$", "", NDVI$Date ))
-weather=full_join(weather,NDVI) %>% select(-Date, -X1) %>% arrange(Year,Month)
+weather=full_join(weather,NDVI) %>% select(-Date) %>% arrange(Year,Month)
 weather=right_join(weather,all) %>% subset(NewMoonNumber>210) %>% select(Year,Month,MinTemp,MaxTemp,MeanTemp,Precipitation,NDVI,NewMoonNumber)
 
 ##Get 6 month weather forecast by combining stations data and monthly means of past 3 years
