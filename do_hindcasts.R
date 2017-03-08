@@ -17,7 +17,7 @@ backdate_observed_data=function(period_info){
   period_info$month      = lubridate::month(period_info$CensusDate)
   period_info$year       = lubridate::year(period_info$CensusDate)
   
-  rodents = read_csv(rodents_filename, col_types = cols())
+  rodents = read.csv(rodents_filename, na.strings=c(""), colClasses=c('tag'='character'), stringsAsFactors = FALSE)
   rodents = rodents %>%
     filter(period<=period_info$Period)
   write_csv(rodents, rodents_filename, na = '')
