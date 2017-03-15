@@ -13,21 +13,19 @@ make_ensemble=function(all_forecasts, model_weights=NA, models_to_use=NA){
   return(ensemble)
 }
 
-plot_sp_predicts = function(data, lvl, lead_time, observed = NULL) {
+get_sp_predicts = function(data, lvl, lead_time) {
   data = transform(data, forecast_date = as.yearmon(paste(forecastmonth, "/", forecastyear, sep =
                                                             ""), format = "%m/%Y")) %>% transform(date = as.Date(date, "%Y-%m-%d"))
   data1 = filter(data, level == lvl,
                  date == max(as.Date(date)))
   target_moon = min(data1$NewMoonNumber) + (lead_time - 1)
   data2 = filter(data1, NewMoonNumber == target_moon)
+}
+
+plot_data = function(data, lvl, observed = NULL) {
   if (!is.null(observed)){
     observed = filter(observed, level == lvl)
   }
-  title = paste(data2$forecast_date[2], lvl, sep = " ")
-  plot_data(data2, title, observed)
-}
-
-plot_data = function(data, title, observed) {
   sp_predict = ggplot(data,
                        aes(
                          x = estimate,
@@ -37,7 +35,7 @@ plot_data = function(data, title, observed) {
                          )) +
     geom_point() +
     geom_errorbarh() +
-    ggtitle(title) + # should make title better somehow
+    ggtitle(paste(data$forecast_date[2], lvl, sep = " ")) + # should make title better somehow
     ylab("Species") +
     xlab("Abundance")
   if (!is.null(observed)) {
@@ -54,9 +52,9 @@ plot_data = function(data, title, observed) {
 #' Compares forecasts to observations over different lead times.
 #' Error can be any function. The level, species, and currency columns from
 #' observations and forecasts must have matching values.
-#' 
+#'
 #' Will only return values where there are matching comparison columns (currency, level, species)
-#' 
+#'
 #' @param observations dataframe Has the columns NewMoonNumber, currency, level, species, actual
 #' @param forecasts dataframe passes the forecast validity check. Must have matching values in
 #'                  the comparison columns
@@ -64,17 +62,17 @@ plot_data = function(data, title, observed) {
 #' assuming the estimate and PI's fit a normal distribution
 #' @param ci_value int The value of the forecast confidence interval to scale PI values for the likelihood metric
 #' @return data.frame Data.frame with the columns model, error, lead_time, level, species, currency
-#' 
+#'
 calculate_forecast_error = function(observations, forecasts, error_metric='MSE', ci_value=90){
   #The tibble datatype output from dplyr causes issues here
   observations = as.data.frame(observations)
   forecasts = as.data.frame(forecasts)
-  
+
   if(!forecast_is_valid(forecasts)) stop('Forecast dataframe not valid')
-  
+
   valid_observation_columns = c('NewMoonNumber','currency','level','species','actual')
   if(!all(valid_observation_columns %in% colnames(observations))) stop('observation data.frame does not have valid column names')
-  
+
   #At least 1 matching value must be in each of these columns in the observations and forecasts
   #TODO: Ensure matching rows in all 3 columns at once instead of just one at a time.
   column_check=c()
@@ -82,7 +80,7 @@ calculate_forecast_error = function(observations, forecasts, error_metric='MSE',
     if(!any(unique(observations[,column]) %in% unique(forecasts[,column]))) column_check=c(column_check, column)
   }
   if(length(column_check)>0) stop(paste('Comparison columns do not match: ',column_check, collaps=' '))
-  
+
   #Calculate error
   if(error_metric == 'MSE'){
     comparisons = forecasts %>%
@@ -95,7 +93,7 @@ calculate_forecast_error = function(observations, forecasts, error_metric='MSE',
   } else {
     stop(paste0('Error metric unknown: ',error_metric))
   }
-  
+
   #Summarize to mean error by lead time. Lead time is number of new moons ahead of when the forecast was made.
   #This assumes a forecast was made with only the data available prior to the first NewMoonDate in the series.
   #TODO: Make the lead time the actual days or weeks once more frequent forecasts are being made( see #37)
@@ -103,22 +101,22 @@ calculate_forecast_error = function(observations, forecasts, error_metric='MSE',
     group_by(date) %>%
     summarise(new_moon_of_forecast = min(NewMoonNumber)-1) %>%
     ungroup()
-  
+
   comparisons_with_lead_time = comparisons %>%
     left_join(forecast_date_new_moon_number, by='date') %>%
     mutate(lead_time=NewMoonNumber - new_moon_of_forecast) %>%
     select(-new_moon_of_forecast, -NewMoonNumber, -date)
-  
+
   comparisons_model_summary = comparisons_with_lead_time %>%
     group_by(model, currency, level, species, lead_time) %>%
     summarize(error=mean(error))
-  
+
   return(comparisons_model_summary)
 }
 
 #' Plot the output of calculate_forecast_error(). Lead time on the x-axis,
-#' error on the y-axis, different colored lines are different models. 
-#' 
+#' error on the y-axis, different colored lines are different models.
+#'
 #' @param error_df data.frame The output from calculate_foreast_error()
 #' @param level str Valid level
 #' @param species str Valid species
@@ -126,7 +124,7 @@ calculate_forecast_error = function(observations, forecasts, error_metric='MSE',
 #' @param error_metric str error metric used
 plot_lead_time_errors=function(error_df, level, species, currency, error_metric){
   plot_title = paste0('Level: ',level,', Species: ',species,', Currency: ',currency)
-  
+
   graph = ggplot(error_df, aes(x=lead_time, y=error, group=model, color=model)) +
             geom_point()+
             geom_line() +
@@ -232,10 +230,10 @@ compile_forecasts=function(forecast_folder='./predictions', verbose=FALSE){
 }
 
 #' Download the PortalData repo
-#' 
+#'
 #' This downloads the latest portal data regardless if they are
 #' actually updated or not.
-#' 
+#'
 #' TODO: incorperate data retriever into this when it's pointed at the github repo
 #' @return None
 download_observations = function(base_folder='~/'){
@@ -245,7 +243,7 @@ download_observations = function(base_folder='~/'){
   download.file(zip_download_path, zip_download_dest, quiet = TRUE)
 
   final_data_folder=paste0(base_folder,'PortalData')
-  
+
   #Clear out the old files in the data folder without doing potentially dangerous
   #recursive deleting.
   if(file.exists(final_data_folder)) {
@@ -254,32 +252,32 @@ download_observations = function(base_folder='~/'){
     old_dirs=list.files(final_data_folder, full.names = TRUE, recursive = TRUE, include.dirs = TRUE)
     file.remove(old_dirs)
   }
-  
-  #Github serves this up with the -master extension. Unzip and rename to remove that. 
+
+  #Github serves this up with the -master extension. Unzip and rename to remove that.
   unzip(zip_download_dest, exdir=base_folder)
   file.remove(zip_download_dest)
   file.rename(paste0(base_folder,'PortalData-master'), final_data_folder)
 }
 
 #' Check if there are new rodent observations. This only checks the
-#' Portal_rodent.csv file. If other things are updated this function 
+#' Portal_rodent.csv file. If other things are updated this function
 #' will not show that there is new data available.
-#' 
+#'
 #' @return bool True if new observations are available
 observations_are_new = function(base_folder='~/'){
   base_folder=path.expand(base_folder)
   md5_file = './Portal_rodent.md5'
   rodent_file= path.expand(paste0(base_folder,'PortalData/Rodents/Portal_rodent.csv'))
   if(!file.exists(rodent_file)) stop('Rodent observations not present. Please run download_observations()')
-  
+
   if(!file.exists(md5_file)) {
     old_md5=''
   } else {
     old_md5 = read.csv(md5_file, header = FALSE, stringsAsFactors = FALSE)$V1
   }
-  
+
   new_md5 = as.character(tools::md5sum(rodent_file))
-  
+
   if(old_md5 == new_md5){
     return(FALSE)
   } else {
@@ -288,7 +286,7 @@ observations_are_new = function(base_folder='~/'){
     sink()
     return(TRUE)
   }
-  
+
 }
 
 
