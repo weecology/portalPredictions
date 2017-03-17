@@ -165,8 +165,8 @@ forecastall <- function(abundances,level,weather,weatherforecast) {
     forecasts=rbind(forecasts,newpred)
   }
   
-  return(forecasts)
   write.csv(forecasts,paste(as.character(Sys.Date()),level,"forecasts.csv",sep=""),row.names=FALSE) 
+  return(forecasts)
 }
 
 ##########################################################################
