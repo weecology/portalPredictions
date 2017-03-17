@@ -24,7 +24,7 @@ backdate_observed_data=function(period_info){
   
   new_moons = read_csv(new_moon_filename, col_types = cols())
   new_moons = new_moons %>%
-    filter(Period<=period_info$Period)
+    filter(NewMoonNumber<=period_info$NewMoonNumber)
   write_csv(new_moons, new_moon_filename, na = '')
   
   weather = read_csv(weather_filename, col_types = cols())
