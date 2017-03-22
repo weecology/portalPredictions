@@ -155,11 +155,19 @@ forecastall <- function(abundances,level,weather,weatherforecast) {
     forecasts=rbind(forecasts,newpred)
   }
   
+  #Species level time time series model with the best environmental covariates chosen by AIC
   
-  #Time Series model with environmental covariates, max, min and mean temp, precip and NDVI with 6 month lag
-  
-  ##Create environmental covariate models
-  X=list(c(3:7),c(4:7),c(3,4,6,7),c(3:6),c(6,7),c(3,7),3,4,5,6,7)
+  #List of candiate environmental covariate models
+  model_covariates = list(c('MaxTemp','MeanTemp','Precipitation','NDVI'),
+                          c('MaxTemp','MinTemp','Precipitation','NDVI'),
+                          c('MinTemp','MaxTemp','MeanTemp','Precipitation'),
+                          c('Precipitation','NDVI'),
+                          c('MinTemp','NDVI'),
+                          c('MinTemp'),
+                          c('MaxTemp'),
+                          c('MeanTemp'),
+                          c('Precipitation'),
+                          c('NDVI'))
   
   for(s in species) {
     species_abundance = abundances %>% 
@@ -168,21 +176,31 @@ forecastall <- function(abundances,level,weather,weatherforecast) {
     if(sum(species_abundance) == 0){
       pred = zero_abund_forecast
     } else {
-      ##Find best covariate model
-      model=tsglm(species_abundance,model=list(past_obs=1,past_mean=12),distr="poisson",xreg=weather[,unlist(X[1])],link = "log")
-      modelaic=ifelse(has_error(summary(model))==T,Inf,summary(model)$AIC)
-      for(i in 2:11) {
-        newmodel=tsglm(species_abundance,model=list(past_obs=1,past_mean=12),distr="poisson",xreg=weather[,unlist(X[7])],link = "log")
-        newmodelaic=ifelse(has_error(summary(newmodel))==T,Inf,summary(newmodel)$AIC)  
-        if(newmodelaic < modelaic) {model=newmodel}
+      best_model_aic = Inf
+      best_model = NA
+      for(proposed_model_covariates in model_covariates){
+        proposed_model = tsglm(species_abundance,model=list(past_obs=1,past_mean=12),distr="poisson",xreg=weather[,unlist(proposed_model_covariates)],link = "log")
+        #tsglm sometimes outputs an error when the time series have many 0's, in that case set the AIC
+        #to Inf to this proposed model covariate set get skipped
+        proposed_model_aic = ifelse(has_error(summary(proposed_model))==T,Inf,summary(proposed_model)$AIC)
+        if(proposed_model_aic < best_model_aic){
+          best_model = proposed_model
+          best_model_aic = proposed_model_aic
+        }
       }
-      
-      pred=predict(model,12,level=0.9,newdata=weathermeans) 
     }
-    newpred=data.frame(date=rep(Sys.Date(),12), forecastmonth=forecast_months,forecastyear=forecast_years,NewMoonNumber=forecast_newmoons,
-                       currency="abundance",model=rep("Poisson Env",12),level=level, 
-                       species=rep(s,12), estimate=pred$pred, LowerPI=pred$interval[,1],UpperPI=pred$interval[,2])
-    forecasts=rbind(forecasts,newpred)
+    #If no best model was chosen, ie. they all had infinit AIC's due to errors in model building
+    #then forecast 0's
+    if(is.na(best_model)){
+      pred = zero_abund_forecast
+    } else {
+      pred = predict(best_model,12,level=0.9,newdata=weathermeans) 
+    }
+    
+    newpred = data.frame(date=rep(Sys.Date(),12), forecastmonth=forecast_months,forecastyear=forecast_years,NewMoonNumber=forecast_newmoons,
+                        currency="abundance",model=rep("Poisson Env",12),level=level, 
+                        species=rep(s,12), estimate=pred$pred, LowerPI=pred$interval[,1],UpperPI=pred$interval[,2])
+    forecasts = rbind(forecasts,newpred)
   }
   
   return(forecasts)
