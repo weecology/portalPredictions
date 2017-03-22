@@ -2,6 +2,7 @@ library(tscount)
 library(forecast)
 library(lubridate)
 library(dplyr)
+library(magrittr)
 library(testit)
 library(RCurl)
 
@@ -136,13 +137,16 @@ forecastall <- function(abundances,level,weather,weatherforecast) {
   forecasts=rbind(forecasts01,forecasts02)
   
   ##Time Series Model and Species level predictions
-  species=colnames(abundances)
+  species=c('BA','DM','DO','DS','NA','OL','OT','PB','PE','PF','PH','PI','PL','PM','PP','RF','RM','RO','SF','SH','SO')
   
-  for(s in 2:23) {
-    if(sum(abundances[[s]]) == 0){
+  for(s in species) {
+    species_abundance = abundances %>% 
+      extract2(s)
+    
+    if(sum(species_abundance) == 0){
       pred = zero_abund_forecast
     } else {
-      model=tsglm(abundances[[s]],model=list(past_obs=1,past_mean=12),distr="nbinom")
+      model=tsglm(species_abundance,model=list(past_obs=1,past_mean=12),distr="nbinom")
       pred=predict(model,12,level=0.9) 
     }
     newpred=data.frame(date=rep(Sys.Date(),12), forecastmonth=forecast_months,forecastyear=forecast_years,NewMoonNumber=forecast_newmoons,
@@ -157,15 +161,18 @@ forecastall <- function(abundances,level,weather,weatherforecast) {
   ##Create environmental covariate models
   X=list(c(3:7),c(4:7),c(3,4,6,7),c(3:6),c(6,7),c(3,7),3,4,5,6,7)
   
-  for(s in 2:23) {
-    if(sum(abundances[[s]]) == 0){
+  for(s in species) {
+    species_abundance = abundances %>% 
+      extract2(s)
+    
+    if(sum(species_abundance) == 0){
       pred = zero_abund_forecast
     } else {
       ##Find best covariate model
-      model=tsglm(abundances[[s]],model=list(past_obs=1,past_mean=12),distr="poisson",xreg=weather[,unlist(X[1])],link = "log")
+      model=tsglm(species_abundance,model=list(past_obs=1,past_mean=12),distr="poisson",xreg=weather[,unlist(X[1])],link = "log")
       modelaic=ifelse(has_error(summary(model))==T,Inf,summary(model)$AIC)
       for(i in 2:11) {
-        newmodel=tsglm(abundances[[s]],model=list(past_obs=1,past_mean=12),distr="poisson",xreg=weather[,unlist(X[i])],link = "log")
+        newmodel=tsglm(species_abundance,model=list(past_obs=1,past_mean=12),distr="poisson",xreg=weather[,unlist(X[7])],link = "log")
         newmodelaic=ifelse(has_error(summary(newmodel))==T,Inf,summary(newmodel)$AIC)  
         if(newmodelaic < modelaic) {model=newmodel}
       }
