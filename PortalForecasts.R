@@ -137,7 +137,7 @@ forecastall <- function(abundances,level,weather,weatherforecast) {
   forecasts=rbind(forecasts01,forecasts02)
   
   ##Time Series Model and Species level predictions
-  species=c('BA','DM','DO','DS','NA','OL','OT','PB','PE','PF','PH','PI','PL','PM','PP','RF','RM','RO','SF','SH','SO')
+  species=c('BA','DM','DO','DS','NA','OL','OT','PB','PE','PF','PH','PI','PL','PM','PP','RF','RM','RO','SF','SH','SO','total')
   
   for(s in species) {
     species_abundance = abundances %>% 
@@ -151,7 +151,7 @@ forecastall <- function(abundances,level,weather,weatherforecast) {
     }
     newpred=data.frame(date=rep(Sys.Date(),12), forecastmonth=forecast_months,forecastyear=forecast_years,NewMoonNumber=forecast_newmoons,
                        currency="abundance",model=rep("NegBinom Time Series",12),level=level,
-                       species=rep(species[s],12), estimate=pred$pred, LowerPI=pred$interval[,1],UpperPI=pred$interval[,2])
+                       species=rep(s,12), estimate=pred$pred, LowerPI=pred$interval[,1],UpperPI=pred$interval[,2])
     forecasts=rbind(forecasts,newpred)
   }
   
@@ -181,7 +181,7 @@ forecastall <- function(abundances,level,weather,weatherforecast) {
     }
     newpred=data.frame(date=rep(Sys.Date(),12), forecastmonth=forecast_months,forecastyear=forecast_years,NewMoonNumber=forecast_newmoons,
                        currency="abundance",model=rep("Poisson Env",12),level=level, 
-                       species=rep(species[s],12), estimate=pred$pred, LowerPI=pred$interval[,1],UpperPI=pred$interval[,2])
+                       species=rep(s,12), estimate=pred$pred, LowerPI=pred$interval[,1],UpperPI=pred$interval[,2])
     forecasts=rbind(forecasts,newpred)
   }
   
