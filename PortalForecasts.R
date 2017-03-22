@@ -3,10 +3,10 @@ library(forecast)
 library(lubridate)
 library(dplyr)
 library(testit)
-library(RCurl)
 
+#####Get Data and organize################################################
 #get new moon number
-current=491; last=current + 11
+current=492; last=current + 11
 NewMoonNumber= current:last
 forecastmonth=month(Sys.Date() %m+% months(0:11))
 forecastyear=year(Sys.Date() %m+% months(0:11))
@@ -14,39 +14,38 @@ forecastyear=year(Sys.Date() %m+% months(0:11))
 #get Portal Data
 moons <- read.csv("~/PortalData/Rodents/moon_dates.csv",header=T)
 moons$Year=year(moons$NewMoonDate); moons$Month=month(moons$NewMoonDate)
-source("~/Github/PortalDataSummaries/RodentAbundances.R"); controls=abundance(level="Treatment",type="Rodents",length="Longterm")
+source("~/PortalDataSummaries/RodentAbundances.R"); controls=abundance(level="Treatment",type="Rodents",length="Longterm",incomplete=T)
 controls$total = rowSums(controls[,-(1:2)])
 controls=subset(controls,treatment=="control",select=-treatment)
 controls=inner_join(moons,controls,by=c("Period"="period")) %>% subset(NewMoonNumber>216) %>% 
-  select(-NewMoonDate,-CensusDate,-Period,-Year,-Month)
+  select(-NewMoonDate,-CensusDate,-Period,-Year,-Month,-PH,-PI,-RF,-SO)
 
-all=abundance(level="Site",type="Rodents",length="all")
+all=abundance(level="Site",type="Rodents",length="all",incomplete=T)
 all$total = rowSums(all[,-(1)])
 all=inner_join(moons,all,by=c("Period"="period"))
   
 #get weather data
-source("~/Github/PortalDataSummaries/Weather.R"); weather=weather("Monthly")
-NDVI=read.csv("~/Dropbox/Portal/PORTAL_primary_data/NDVI/CompositeNDVI/monthly_NDVI.csv")
-NDVI$Month=as.numeric(gsub( ".*-", "", NDVI$Date )); NDVI$Year=as.numeric(gsub( "-.*$", "", NDVI$Date ))
-weather=full_join(weather,NDVI) %>% select(-Date, -X1) %>% arrange(Year,Month)
+source("~/PortalDataSummaries/Weather.R"); weather=weather("Monthly")
 weather=right_join(weather,all) %>% subset(NewMoonNumber>210) %>% select(Year,Month,MinTemp,MaxTemp,MeanTemp,Precipitation,NDVI,NewMoonNumber)
-
-##Get 6 month weather forecast by combining stations data and monthly means of past 3 years
-weatherforecast=subset(weather,NewMoonNumber>=current-5) %>% subset(NewMoonNumber<=last-5)
-weathermeans=weather[dim(weather)[1]-36:dim(weather)[1],] %>% group_by(Month) %>% 
-  summarize(MinTemp=mean(MinTemp,na.rm=T),MaxTemp=mean(MaxTemp,na.rm=T),MeanTemp=mean(MeanTemp,na.rm=T),
-            Precipitation=mean(Precipitation,na.rm=T),NDVI=mean(NDVI,na.rm=T)) %>%
-  slice(match(weatherforecast$Month, Month))
-
-weather=subset(weather,NewMoonNumber<current-6) %>% 
+weather=weather %>% group_by(Month) %>%
   mutate(NDVI = ifelse(is.na(NDVI), mean(NDVI, na.rm = T), NDVI)) %>% 
   mutate(MinTemp = ifelse(is.na(MinTemp), mean(MinTemp, na.rm = T), MinTemp)) %>% 
   mutate(MaxTemp = ifelse(is.na(MaxTemp), mean(MaxTemp, na.rm = T), MaxTemp)) %>% 
   mutate(MeanTemp = ifelse(is.na(MeanTemp), mean(MeanTemp, na.rm = T), MeanTemp)) %>% 
   mutate(Precipitation = ifelse(is.na(Precipitation), mean(Precipitation, na.rm = T), Precipitation))
 
+##Organize 6 month weather forecast by combining station data and monthly means of past 3 years
+weatherforecast=weather[(dim(controls)[1]+1):dim(weather)[1],] %>% select(-Year,-NewMoonNumber)
+weathermeans=subset(weather,Year>year(Sys.Date())-4) %>% group_by(Month) %>% 
+  summarize(MinTemp=mean(MinTemp,na.rm=T),MaxTemp=mean(MaxTemp,na.rm=T),MeanTemp=mean(MeanTemp,na.rm=T),
+            Precipitation=mean(Precipitation,na.rm=T),NDVI=mean(NDVI,na.rm=T)) %>%
+  slice(match(forecastmonth[1:6],Month)) 
+weatherforecast=bind_rows(weatherforecast,weathermeans)
+
+weather=weather[1:dim(controls)[1],]
+
 all=subset(all,Period>202) %>%
-  select(-NewMoonDate,-CensusDate,-Period,-Year,-Month) 
+  select(-NewMoonDate,-CensusDate,-Period,-Year,-Month,-PH,-PI,-RF,-SO) 
 
 
 #####Forecasting wrapper function for all models########################
@@ -79,7 +78,7 @@ forecastall <- function(abundances,level,weather,weatherforecast) {
   ##Time Series Model and Species level predictions
   species=colnames(abundances)
   
-  for(s in 2:23) {
+  for(s in 2:19) {
     
     model=tsglm(abundances[[s]],model=list(past_obs=1,past_mean=12),distr="nbinom")
     pred=predict(model,12,level=0.9) 
@@ -93,9 +92,9 @@ forecastall <- function(abundances,level,weather,weatherforecast) {
   #Time Series model with environmental covariates, max, min and mean temp, precip and NDVI with 6 month lag
   
   ##Create environmental covariate models
-  X=list(c(3:7),c(4:7),c(3,4,6,7),c(3:6),c(6,7),c(3,7),3,4,5,6,7)
+  X=list(c(2:6),c(3:6),c(2,3,5,6),c(2:5),c(5,6),c(2,6),2,3,4,5,6)
   
-  for(s in 2:23) {
+  for(s in 2:19) {
     ##Find best covariate model
     model=tsglm(abundances[[s]],model=list(past_obs=1,past_mean=12),distr="poisson",xreg=weather[,unlist(X[1])],link = "log")
     modelaic=ifelse(has_error(summary(model))==T,Inf,summary(model)$AIC)
@@ -115,6 +114,7 @@ forecastall <- function(abundances,level,weather,weatherforecast) {
   write.csv(forecasts,paste(as.character(Sys.Date()),level,"forecasts.csv",sep=""),row.names=FALSE) 
 }
 
+######Run Models########################################################
 allforecasts=forecastall(all,"All",weather,weathermeans)
 controlsforecasts=forecastall(controls,"Controls",weather,weathermeans)
 
