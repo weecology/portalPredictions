@@ -36,7 +36,8 @@ backdate_observed_data=function(period_info){
 
 #Hindcast will set the initial time period based on these periods. For each one
 #a hindcast will be made which pretends that sampleing period had just happened. 
-initial_time_periods=421:430
+#381 to 445 is Jan,2010 - Jan,2016. 
+initial_time_periods=381:445
 
 #Get the latest to obtatain the latest new moon info
 download_observations()
@@ -48,13 +49,9 @@ new_moons=read.csv('~/PortalData/Rodents/moon_dates.csv')
 initial_times_info = new_moons %>%
   filter(Period %in% initial_time_periods)
 
-for(i in seq_along(initial_times_info)){
+#Run the portal forecasts script in an external command so it has it's own namespace. 
+for(i in 1:nrow(initial_times_info)){
   backdate_observed_data(initial_times_info[i,])
+  system('Rscript PortalForecasts.R hindcast')
   download_observations()
 }
-
-#for initial_time in the past
-# download data & filter all to be before or after that date
-# IDEA: Go by period number. Get period number, get sample date from new_moon_csv, filter everything to before that date.
-# 
-# run forecast script
