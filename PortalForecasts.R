@@ -4,7 +4,6 @@ library(lubridate)
 library(dplyr)
 library(magrittr)
 library(testit)
-library(RCurl)
 
 #Period 203/NewMoonNumber 217 will be when the training data timeseries
 #begins. Corresponding to Jan 1995
@@ -42,7 +41,7 @@ forecast_years=year(forecast_date %m+% months(0:11))
 #get Portal abundance data for the entire site and for control plots only.
 moons$Year=year(moons$NewMoonDate); moons$Month=month(moons$NewMoonDate)
 source("https://raw.githubusercontent.com/weecology/PortalDataSummaries/master/RodentAbundances.R")
-controls=abundance(level="Treatment",type="Rodents",length="Longterm")
+controls=abundance(level="Treatment",type="Rodents",length="Longterm", incomplete = FALSE)
 
 #Control plots
 #The total rodent count in each treatment
@@ -56,7 +55,7 @@ controls = controls %>%
   select(-NewMoonDate,-CensusDate,-period,-Year,-Month)
 
 #All plots
-all=abundance(level="Site",type="Rodents",length="all")
+all=abundance(level="Site",type="Rodents",length="all", incomplete = FALSE)
 #The total rodent count across the entire site
 all$total = rowSums(all[,-(1)])
 all=inner_join(moons,all,by=c("Period"="period"))
@@ -71,6 +70,7 @@ weather=weather("Monthly") %>%
 
 #Add in NDVI
 #TODO: update NDVI automatically
+#TODO: get NDVI automatically from Glenda's updated script
 NDVI=read.csv("~/Dropbox/Portal/PORTAL_primary_data/NDVI/CompositeNDVI/monthly_NDVI.csv")
 NDVI$Month=as.numeric(gsub( ".*-", "", NDVI$Date )); NDVI$Year=as.numeric(gsub( "-.*$", "", NDVI$Date ))
 weather=full_join(weather,NDVI, by=c('Year','Month')) %>% 
@@ -116,7 +116,6 @@ weather=weather %>%
 all=all %>%
   select(-NewMoonDate,-CensusDate,-Period,-Year,-Month) 
 
-
 #tscount::tsglm() will not model a timeseries of all 0's. So for those species, which are
 #ones that just haven't been observed in a while, make a forecast of all 0's. 
 zero_abund_forecast = list(pred=rep(0,12), interval=matrix(rep(0,24), ncol=2))
@@ -155,7 +154,7 @@ forecastall <- function(abundances,level,weather,weatherforecast) {
   for(s in species) {
     species_abundance = abundances %>% 
       extract2(s)
-    
+
     if(sum(species_abundance) == 0){
       pred = zero_abund_forecast
     } else {
@@ -185,7 +184,7 @@ forecastall <- function(abundances,level,weather,weatherforecast) {
   for(s in species) {
     species_abundance = abundances %>% 
       extract2(s)
-    
+
     if(sum(species_abundance) == 0){
       pred = zero_abund_forecast
     } else {
@@ -220,8 +219,8 @@ forecastall <- function(abundances,level,weather,weatherforecast) {
   return(forecasts)
 }
 
-##########################################################################
 
+######Run Models########################################################
 allforecasts=forecastall(all,"All",weather,weathermeans)
 controlsforecasts=forecastall(controls,"Controls",weather,weathermeans)
 
