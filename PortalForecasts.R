@@ -40,7 +40,8 @@ weathermeans=subset(weather,Year>year(Sys.Date())-4) %>% group_by(Month) %>%
   summarize(MinTemp=mean(MinTemp,na.rm=T),MaxTemp=mean(MaxTemp,na.rm=T),MeanTemp=mean(MeanTemp,na.rm=T),
             Precipitation=mean(Precipitation,na.rm=T),NDVI=mean(NDVI,na.rm=T)) %>%
   slice(match(forecastmonth[1:6],Month)) 
-weatherforecast=bind_rows(weatherforecast,weathermeans)
+weatherforecast=bind_rows(weatherforecast,weathermeans) 
+weatherforecast=cbind(Year=2017,as.data.frame(weatherforecast))
 
 weather=weather[1:dim(controls)[1],]
 
@@ -92,18 +93,19 @@ forecastall <- function(abundances,level,weather,weatherforecast) {
   #Time Series model with environmental covariates, max, min and mean temp, precip and NDVI with 6 month lag
   
   ##Create environmental covariate models
-  X=list(c(2:6),c(3:6),c(2,3,5,6),c(2:5),c(5,6),c(2,6),2,3,4,5,6)
+  X=list(c(3:7),c(4:7),c(3,4,6,7),c(3:6),c(6,7),c(3,7),3,4,5,6,7)
   
   for(s in 2:19) {
     ##Find best covariate model
     model=tsglm(abundances[[s]],model=list(past_obs=1,past_mean=12),distr="poisson",xreg=weather[,unlist(X[1])],link = "log")
     modelaic=ifelse(has_error(summary(model))==T,Inf,summary(model)$AIC)
+    modelnum=1
     for(i in 2:11) {
       newmodel=tsglm(abundances[[s]],model=list(past_obs=1,past_mean=12),distr="poisson",xreg=weather[,unlist(X[i])],link = "log")
       newmodelaic=ifelse(has_error(summary(newmodel))==T,Inf,summary(newmodel)$AIC)  
-      if(newmodelaic < modelaic) {model=newmodel}}
+      if(newmodelaic < modelaic) {model=newmodel; modelnum=i}}
     
-    pred=predict(model,12,level=0.9,newdata=newweather) 
+    pred=predict(model,12,level=0.9,newdata=weatherforecast[,unlist(X[modelnum])]) 
     newpred=data.frame(date=rep(Sys.Date(),12), forecastmonth=forecastmonth,forecastyear=forecastyear,NewMoonNumber=NewMoonNumber,
                        currency="abundance",model=rep("Poisson Env",12),level=level, 
                        species=rep(species[s],12), estimate=pred$pred, LowerPI=pred$interval[,1],UpperPI=pred$interval[,2])
@@ -115,6 +117,6 @@ forecastall <- function(abundances,level,weather,weatherforecast) {
 }
 
 ######Run Models########################################################
-allforecasts=forecastall(all,"All",weather,weathermeans)
-controlsforecasts=forecastall(controls,"Controls",weather,weathermeans)
+allforecasts=forecastall(all,"All",weather,weatherforecast)
+controlsforecasts=forecastall(controls,"Controls",weather,weatherforecast)
 

@@ -1,5 +1,4 @@
 mc.cores = 8 # How many species to run in parallel
-new_yday = yday(Sys.Date()) # Replace Sys.Date with the next Portal sampling date
 
 library(MASS)
 library(dplyr)
@@ -10,6 +9,8 @@ library(tidyr)
 library(parallel)
 library(coda)
 
+new_yday = yday(Sys.Date()) # Replace Sys.Date with the next Portal sampling date
+
 rodents = read.csv('PortalData/Rodents/Portal_rodent.csv', na.strings = c("","NA"), 
                    colClasses = c('tag' = 'character'), 
                    stringsAsFactors = FALSE)
@@ -17,7 +18,7 @@ sppCodes = read.csv('PortalData/Rodents/Portal_rodent_species.csv') %>%
   dplyr::select(species = Species.Code, Rodent, Unidentified)
 
 rodents = rodents %>% mutate(date = as.Date(paste(yr, mo, dy, sep = "-")))
-plots=read.csv('~/PortalData/SiteandMethods/new_Portal_plots.csv')
+plots=read.csv('~/PortalData/SiteandMethods/Portal_plots.csv')
 
 
 # Discard unnecessary rows ------------------------------------------------
@@ -52,7 +53,9 @@ rodents = left_join(rodents,plots,by=c("yr","mo"="month","plot"))
 precipMonthLag = 6
 precipDayLag = 30 * precipMonthLag # assuming 30-day months
 
-weatherRaw = read.csv('PortalData/Weather/Portal_weather.csv') %>%
+weather1=read.csv('PortalData/Weather/Portal_weather19892017.csv')
+weather2=read.csv('PortalData/Weather/Portal_weather.csv') %>% select(Year,Month,Day,Hour,TempAir=AirTC_Avg,Precipitation=Rain_mm_Tot)
+weatherRaw =  bind_rows(weather1,weather2) %>% group_by(Year,Month,Day,Hour) %>% summarise(TempAir = mean(TempAir),Precipitation=mean(Precipitation)) %>%
   mutate(TimeOfDay = ifelse(Hour > 1200, "evening", "morning")) %>%
   mutate(date = as.Date(paste(Year, Month, Day, sep = "-")))
 
@@ -301,5 +304,7 @@ CIs = function(sp, new_date, n_samples = 10000){
 
 ci_predictions = lapply(species, CIs, new_date=Sys.Date())
 
-return(bind_rows(ci_predictions) %>%
-  rename(LowerPI = X1, UpperPI = X2))
+done=bind_rows(ci_predictions) %>%
+  rename(LowerPI = X1, UpperPI = X2)
+
+return(cbind(date=Sys.Date(),forecastmonth=month(Sys.Date()),forecastyear=year(Sys.Date()),NewMoonNumber=NA,currency="abundance",model="GAM",level="All",done))
