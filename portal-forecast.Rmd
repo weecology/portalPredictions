@@ -6,6 +6,7 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(dplyr)
+source("forecast_tools.R")
 ```
 
 ## Total Abundance Forecast
@@ -20,7 +21,16 @@ obs_data = abundance()
 obs_data$total = rowSums(select(obs_data, -period))
 new_moons = read.csv('~/PortalData/Rodents/moon_dates.csv')
 obs_data_newmoon = inner_join(obs_data, new_moons, by = c("period" = "Period"))
-for_data = read.csv("predictions/2017-02-24Allforecasts.csv")
+#for_data = read.csv("predictions/2017-02-24Allforecasts.csv")
+
+for_data = compile_forecasts() %>%
+  make_ensemble() %>%
+  dplyr::filter(level == 'All', date == max(date))
+
+most_recent_forecast = max(for_data$date)
+for_data = filter(for_data, date == most_recent_forecast)
+
+for_data$model = "ensemble"
 
 forecast_viz(obs_data = obs_data_newmoon,
              obs_date_col_name = "NewMoonNumber",
@@ -28,7 +38,7 @@ forecast_viz(obs_data = obs_data_newmoon,
              for_data = for_data,
              for_date_col_name = "NewMoonNumber",
              for_val_col_name = "estimate",
-             for_model_name = "NegBinom Time Series",
+             for_model_name = "ensemble",
              for_lowerpi_col_name = "LowerPI",
              for_upperpi_col_name = "UpperPI",
              start_newmoon = 300)
@@ -61,7 +71,7 @@ for (species in as.vector(most_abund_sp$species)) {
                for_data = for_data,
                for_date_col_name = "NewMoonNumber",
                for_val_col_name = "estimate",
-               for_model_name = "NegBinom Time Series",
+               for_model_name = "ensemble",
                for_lowerpi_col_name = "LowerPI",
                for_upperpi_col_name = "UpperPI",
                start_newmoon = 300)
