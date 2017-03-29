@@ -66,15 +66,7 @@ all=subset(all,Period >= historic_start_period)
 #get weather data
 source("https://raw.githubusercontent.com/weecology/PortalDataSummaries/master/Weather.R")
 weather=weather("Monthly") %>%
-  ungroup()
-
-#Add in NDVI
-#TODO: update NDVI automatically
-#TODO: get NDVI automatically from Glenda's updated script
-NDVI=read.csv("~/Dropbox/Portal/PORTAL_primary_data/NDVI/CompositeNDVI/monthly_NDVI.csv")
-NDVI$Month=as.numeric(gsub( ".*-", "", NDVI$Date )); NDVI$Year=as.numeric(gsub( "-.*$", "", NDVI$Date ))
-weather=full_join(weather,NDVI, by=c('Year','Month')) %>% 
-  select(-Date) %>% arrange(Year,Month) %>%
+  ungroup() %>%
   left_join(moons, by=c('Year','Month'))
 
 #Offset the NewMoonNumber to create a 6 month lag between
@@ -219,8 +211,6 @@ forecastall <- function(abundances,level,weather,weatherforecast) {
   return(forecasts)
 }
 
-
 ######Run Models########################################################
 allforecasts=forecastall(all,"All",weather,weathermeans)
 controlsforecasts=forecastall(controls,"Controls",weather,weathermeans)
-
