@@ -65,17 +65,17 @@ all=subset(all,Period >= historic_start_period)
 ###################################################################################
 #get weather data
 source("https://raw.githubusercontent.com/weecology/PortalDataSummaries/master/Weather.R")
-weather=weather("Monthly") %>%
+weather_data=weather("Monthly") %>%
   ungroup() %>%
   left_join(moons, by=c('Year','Month'))
 
 #Offset the NewMoonNumber to create a 6 month lag between
 #rodent observations and weather
-weather$NewMoonNumber_with_lag = weather$NewMoonNumber + 6
+weather_data$NewMoonNumber_with_lag = weather_data$NewMoonNumber + 6
 
 #Assign weather using lag to rodent observations.
 #This will match weather row numbers to corrosponding rows in all and controls
-weather = weather %>%
+weather_data = weather_data %>%
   select(-NewMoonDate, -CensusDate, -Period, -Year, -Month) %>%
   right_join(all, by=c('NewMoonNumber_with_lag'='NewMoonNumber')) %>%
   select(Year,Month,MinTemp,MaxTemp,MeanTemp,Precipitation,NDVI,NewMoonNumber, NewMoonNumber_with_lag)
@@ -90,14 +90,14 @@ weather_forecast_months = moons %>%
 #  x=subset(weather,NewMoonNumber>=first_forecast_newmoon-5) %>% 
 #  subset(NewMoonNumber<=last_forecast_newmoon-5)
 
-weathermeans=weather[dim(weather)[1]-36:dim(weather)[1],] %>% 
+weathermeans=weather_data[dim(weather_data)[1]-36:dim(weather_data)[1],] %>% 
   group_by(Month) %>% 
   summarize(MinTemp=mean(MinTemp,na.rm=T),MaxTemp=mean(MaxTemp,na.rm=T),MeanTemp=mean(MeanTemp,na.rm=T),
             Precipitation=mean(Precipitation,na.rm=T),NDVI=mean(NDVI,na.rm=T)) %>%
   slice(match(weather_forecast_months$Month, Month))
 
-#Insert longterm means where there is missing data in the historic wweather
-weather=weather %>%
+#Insert longterm means where there is missing data in the historic weather
+weather_data=weather_data %>%
   mutate(NDVI = ifelse(is.na(NDVI), mean(NDVI, na.rm = T), NDVI)) %>% 
   mutate(MinTemp = ifelse(is.na(MinTemp), mean(MinTemp, na.rm = T), MinTemp)) %>% 
   mutate(MaxTemp = ifelse(is.na(MaxTemp), mean(MaxTemp, na.rm = T), MaxTemp)) %>% 
@@ -115,7 +115,7 @@ colnames(zero_abund_forecast$interval) = c('lower','upper')
 
 #####Forecasting wrapper function for all models########################
 
-forecastall <- function(abundances,level,weather,weatherforecast) {
+forecastall <- function(abundances,level,weather_data,weatherforecast) {
   
   
   ##Community level predictions
@@ -183,7 +183,7 @@ forecastall <- function(abundances,level,weather,weatherforecast) {
       best_model_aic = Inf
       best_model = NA
       for(proposed_model_covariates in model_covariates){
-        proposed_model = tsglm(species_abundance,model=list(past_obs=1,past_mean=12),distr="poisson",xreg=weather[,unlist(proposed_model_covariates)],link = "log")
+        proposed_model = tsglm(species_abundance,model=list(past_obs=1,past_mean=12),distr="poisson",xreg=weather_data[,unlist(proposed_model_covariates)],link = "log")
         #tsglm sometimes outputs an error when the time series have many 0's, in that case set the AIC
         #to Inf to this proposed model covariate set get skipped
         proposed_model_aic = ifelse(has_error(summary(proposed_model))==T,Inf,summary(proposed_model)$AIC)
@@ -212,5 +212,5 @@ forecastall <- function(abundances,level,weather,weatherforecast) {
 }
 
 ######Run Models########################################################
-allforecasts=forecastall(all,"All",weather,weathermeans)
-controlsforecasts=forecastall(controls,"Controls",weather,weathermeans)
+allforecasts=forecastall(all,"All",weather_data,weathermeans)
+controlsforecasts=forecastall(controls,"Controls",weather_data,weathermeans)
