@@ -141,7 +141,8 @@ forecastall <- function(abundances,level,weather_data,weatherforecast) {
   forecasts=rbind(forecasts01,forecasts02)
   
   ##Time Series Model and Species level predictions
-  species=c('BA','DM','DO','DS','NA','OL','OT','PB','PE','PF','PH','PI','PL','PM','PP','RF','RM','RO','SF','SH','SO','total')
+  #Note: PI is missing. It has an error in the Poison Env model which produces NA values. 
+  species=c('BA','DM','DO','DS','NA','OL','OT','PB','PE','PF','PH','PL','PM','PP','RF','RM','RO','SF','SH','SO','total')
   
   for(s in species) {
     species_abundance = abundances %>% 
