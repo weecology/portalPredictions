@@ -3,12 +3,36 @@ library(lubridate)
 library(zoo)
 library(ggplot2)
 
+#Get all weights in the forecast folder in a single data.frame
+#calculate delta AIC, with the best model being 0
+compile_aic_weights = function(forecast_folder='./predictions'){
+  weight_filenames = list.files(forecast_folder, full.names = TRUE, recursive = TRUE)
+  weight_filenames = weight_filenames[grepl('aic_weights',weight_filenames)]
+  all_weights=data.frame()
+  
+  for(this_weight_file in weight_filenames){
+    this_weight_data = try(read.csv(this_weight_file, na.strings = '', stringsAsFactors = FALSE))
+    all_weights = all_weights %>%
+      dplyr::bind_rows(this_weight_data)
+  }
+  
+  all_weights = all_weights %>%
+    group_by(date,currency, level, species) %>%
+    mutate(delta_aic = aic-min(aic), weight = exp(1-delta_aic) / sum(exp(1-delta_aic))) %>%
+    ungroup()
+  return(all_weights)
+}
+
 #Create the ensemble model from all other forecasts
 #Currently just the mean of the esimates and confidence intervals.
 make_ensemble=function(all_forecasts, model_weights=NA, models_to_use=NA){
+  weights = compile_aic_weights()
+  
   ensemble = all_forecasts %>%
+    left_join(weights, by=c('date','model','currency','level','species')) %>%
     group_by(date, NewMoonNumber, forecastmonth, forecastyear,level, currency, species) %>%
-    summarise(estimate = mean(estimate), LowerPI=mean(LowerPI), UpperPI=mean(UpperPI))
+    summarise(estimate = sum(estimate*weight), LowerPI=sum(LowerPI*weight), UpperPI=sum(UpperPI*weight))
+  
   ensemble$model='Ensemble'
   return(ensemble)
 }
@@ -195,6 +219,8 @@ forecast_is_valid=function(forecast_df, verbose=FALSE){
 #' @return dataframe combined forecasts
 compile_forecasts=function(forecast_folder='./predictions', verbose=FALSE){
   forecast_filenames = list.files(forecast_folder, full.names = TRUE, recursive = TRUE)
+  #aic_weight files are also stored here and there can be many. 
+  forecast_filenames = forecast_filenames[!grepl('aic_weights',forecast_filenames)]
   all_forecasts=data.frame()
 
   for(this_forecast_file in forecast_filenames){
