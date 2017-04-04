@@ -1,4 +1,4 @@
-library(tidyverse)
+library(dplyr)
 library(lubridate)
 source('forecast_tools.R')
 
@@ -39,7 +39,7 @@ backdate_observed_data=function(period_info){
 #381 to 458 is Jan,2010 - Jan,2017. 
 initial_time_periods=381:458
 
-#Get the latest to obtatain the latest new moon info
+#Get the latest to obtain the latest new moon info
 download_observations()
 
 
