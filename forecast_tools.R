@@ -3,8 +3,7 @@ library(lubridate)
 library(zoo)
 library(ggplot2)
 
-#Get all weights in the forecast folder in a single data.frame
-#calculate delta AIC, with the best model being 0
+#Get all model aic values and calculate akaike weights
 compile_aic_weights = function(forecast_folder='./predictions'){
   weight_filenames = list.files(forecast_folder, full.names = TRUE, recursive = TRUE)
   weight_filenames = weight_filenames[grepl('aic_weights',weight_filenames)]
@@ -18,7 +17,7 @@ compile_aic_weights = function(forecast_folder='./predictions'){
   
   all_weights = all_weights %>%
     group_by(date,currency, level, species) %>%
-    mutate(delta_aic = aic-min(aic), weight = exp(1-delta_aic) / sum(exp(1-delta_aic))) %>%
+    mutate(delta_aic = aic-min(aic), weight = exp(-0.5*delta_aic) / sum(exp(-0.5*delta_aic))) %>%
     ungroup()
   return(all_weights)
 }
