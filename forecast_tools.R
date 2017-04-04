@@ -5,17 +5,13 @@ library(ggplot2)
 
 #Get all model aic values and calculate akaike weights
 compile_aic_weights = function(forecast_folder='./predictions'){
-  weight_filenames = list.files(forecast_folder, full.names = TRUE, recursive = TRUE)
-  weight_filenames = weight_filenames[grepl('aic_weights',weight_filenames)]
-  all_weights=data.frame()
-  
-  for(this_weight_file in weight_filenames){
-    this_weight_data = try(read.csv(this_weight_file, na.strings = '', stringsAsFactors = FALSE))
-    all_weights = all_weights %>%
-      dplyr::bind_rows(this_weight_data)
-  }
-  
-  all_weights = all_weights %>%
+  model_aic_filenames = list.files(forecast_folder, full.names = TRUE, recursive = TRUE)
+  model_aic_filenames = weight_filenames[grepl('aic_weights',weight_filenames)]
+
+  all_model_aic = purrr::map(model_aic_filenames, ~read.csv(.x, na.strings = '', stringsAsFactors = FALSE)) %>% 
+    bind_rows()
+
+  all_weights = all_model_aic %>%
     group_by(date,currency, level, species) %>%
     mutate(delta_aic = aic-min(aic), weight = exp(-0.5*delta_aic) / sum(exp(-0.5*delta_aic))) %>%
     ungroup()
