@@ -15,7 +15,6 @@ library(ggplot2)
 #' FullPath('PortalData/Rodents/Portal_rodent.csv', '~')
 FullPath <- function( ReferencePath, BasePath=getwd()){
   BasePath = normalizePath(BasePath)
-  ReferencePath = normalizePath(ReferencePath)
   Path = normalizePath(file.path(BasePath, ReferencePath), mustWork = FALSE)
   return (Path)
 }
@@ -253,13 +252,12 @@ compile_forecasts=function(forecast_folder='./predictions', verbose=FALSE){
 #'
 #' TODO: incorperate data retriever into this when it's pointed at the github repo
 #' @return None
-download_observations = function(base_folder='~/'){
-  base_folder=path.expand(base_folder)
+download_observations = function(base_folder=normalizePath('~')){
   zip_download_path='https://github.com/weecology/PortalData/archive/master.zip'
   zip_download_dest=paste0(base_folder,'PortalData.zip')
   download.file(zip_download_path, zip_download_dest, quiet = TRUE)
 
-  final_data_folder=paste0(base_folder,'PortalData')
+  final_data_folder=FullPath('PortalData', base_folder)
 
   #Clear out the old files in the data folder without doing potentially dangerous
   #recursive deleting.
@@ -273,7 +271,7 @@ download_observations = function(base_folder='~/'){
   #Github serves this up with the -master extension. Unzip and rename to remove that.
   unzip(zip_download_dest, exdir=base_folder)
   file.remove(zip_download_dest)
-  file.rename(paste0(base_folder,'PortalData-master'), final_data_folder)
+  file.rename(FullPath('PortalData-master',base_folder), final_data_folder)
 }
 
 #' Check if there are new rodent observations. This only checks the
