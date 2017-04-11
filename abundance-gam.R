@@ -9,33 +9,18 @@ library(gamm4)
 library(tidyr)
 library(parallel)
 library(coda)
+source('forecast_tools.R')
 
-#' Return normalized path for all operating systems
-#'
-#' @param ReferencePath a path to join with current working directory
-#' @param BasePath Current working directory else path given
-#'
-#' @return
-#' @export
-#' @examples
-#' FullPath('PortalData/Rodents/Portal_rodent.csv')
-#' FullPath('PortalData/Rodents/Portal_rodent.csv', '~')
-FullPath <- function( ReferencePath, BasePath=getwd()){
-  BasePath = normalizePath(BasePath)
-  ReferencePath = normalizePath(ReferencePath)
-  Path = normalizePath(file.path(BasePath, ReferencePath), mustWork = FALSE)
-  return (Path)
-}
+base_folder = normalizePath('~')
 
-
-rodents = read.csv(FullPath('PortalData/Rodents/Portal_rodent.csv'), na.strings = c("","NA"), 
+rodents = read.csv(FullPath('PortalData/Rodents/Portal_rodent.csv', base_folder), na.strings = c("","NA"), 
                    colClasses = c('tag' = 'character'), 
                    stringsAsFactors = FALSE)
-sppCodes = read.csv(FullPath('PortalData/Rodents/Portal_rodent_species.csv')) %>%
+sppCodes = read.csv(FullPath('PortalData/Rodents/Portal_rodent_species.csv', base_folder)) %>%
   dplyr::select(species = Species.Code, Rodent, Unidentified)
 
 rodents = rodents %>% mutate(date = as.Date(paste(yr, mo, dy, sep = "-")))
-plots=read.csv(FullPath('PortalData/SiteandMethods/new_Portal_plots.csv', '~'))
+plots=read.csv(FullPath('PortalData/SiteandMethods/new_Portal_plots.csv', base_folder))
 
 
 # Discard unnecessary rows ------------------------------------------------
@@ -70,7 +55,7 @@ rodents = left_join(rodents,plots,by=c("yr","mo"="month","plot"))
 precipMonthLag = 6
 precipDayLag = 30 * precipMonthLag # assuming 30-day months
 
-weatherRaw = read.csv(FullPath('PortalData/Weather/Portal_weather.csv')) %>%
+weatherRaw = read.csv(FullPath('PortalData/Weather/Portal_weather.csv', base_folder)) %>%
   mutate(TimeOfDay = ifelse(Hour > 1200, "evening", "morning")) %>%
   mutate(date = as.Date(paste(Year, Month, Day, sep = "-")))
 

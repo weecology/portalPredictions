@@ -4,23 +4,7 @@ library(lubridate)
 library(dplyr)
 library(magrittr)
 library(testit)
-
-#' Return normalized path for all operating systems
-#'
-#' @param ReferencePath a path to join with current working directory
-#' @param BasePath Current working directory else path given
-#'
-#' @return
-#' @export
-#' @examples
-#' FullPath('PortalData/Rodents/Portal_rodent.csv')
-#' FullPath('PortalData/Rodents/Portal_rodent.csv', '~')
-FullPath <- function( ReferencePath, BasePath=getwd()){
-  BasePath = normalizePath(BasePath)
-  ReferencePath = normalizePath(ReferencePath)
-  Path = normalizePath(file.path(BasePath, ReferencePath), mustWork = FALSE)
-  return (Path)
-}
+source('forecast_tools.R')
 
 #Period 203/NewMoonNumber 217 will be when the training data timeseries
 #begins. Corresponding to Jan 1995

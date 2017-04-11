@@ -254,7 +254,7 @@ compile_forecasts=function(forecast_folder='./predictions', verbose=FALSE){
 #' @return None
 download_observations = function(base_folder=normalizePath('~')){
   zip_download_path='https://github.com/weecology/PortalData/archive/master.zip'
-  zip_download_dest=paste0(base_folder,'PortalData.zip')
+  zip_download_dest=FullPath('PortalData.zip', base_folder)
   download.file(zip_download_path, zip_download_dest, quiet = TRUE)
 
   final_data_folder=FullPath('PortalData', base_folder)
