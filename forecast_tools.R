@@ -6,7 +6,7 @@ library(ggplot2)
 #Get all model aic values and calculate akaike weights
 compile_aic_weights = function(forecast_folder='./predictions'){
   model_aic_filenames = list.files(forecast_folder, full.names = TRUE, recursive = TRUE)
-  model_aic_filenames = weight_filenames[grepl('aic_weights',weight_filenames)]
+  model_aic_filenames = model_aic_filenames[grepl('aic_weights',model_aic_filenames)]
 
   all_model_aic = purrr::map(model_aic_filenames, ~read.csv(.x, na.strings = '', stringsAsFactors = FALSE)) %>% 
     bind_rows()
@@ -19,14 +19,25 @@ compile_aic_weights = function(forecast_folder='./predictions'){
 }
 
 #Create the ensemble model from all other forecasts
-#Currently just the mean of the esimates and confidence intervals.
-make_ensemble=function(all_forecasts, model_weights=NA, models_to_use=NA){
+#Uses the weighted mean and weighted sample variance
+#https://en.wikipedia.org/wiki/Weighted_arithmetic_mean
+make_ensemble=function(all_forecasts, models_to_use=NA, CI_level = 0.9){
   weights = compile_aic_weights()
   
-  ensemble = all_forecasts %>%
+  CI_sd = qnorm((1-CI_level)/2, lower.tail = FALSE)
+  
+  weighted_estimates = all_forecasts %>%
     left_join(weights, by=c('date','model','currency','level','species')) %>%
     group_by(date, NewMoonNumber, forecastmonth, forecastyear,level, currency, species) %>%
-    summarise(estimate = sum(estimate*weight), LowerPI=sum(LowerPI*weight), UpperPI=sum(UpperPI*weight))
+    summarise(weighted_estimate = sum(estimate*weight), 
+              weighted_var = sum((weight*(estimate - weighted_estimate))^2)) %>%
+    ungroup()
+  
+  ensemble = weighted_estimates %>%
+    mutate(LowerPI= weighted_estimate - sqrt(weighted_var)*CI_sd, 
+           UpperPI= weighted_estimate + sqrt(weighted_var)*CI_sd) %>%
+    rename(estimate = weighted_estimate) %>%
+    select(-weighted_var)
   
   ensemble$model='Ensemble'
   return(ensemble)
