@@ -3,6 +3,23 @@ library(lubridate)
 library(zoo)
 library(ggplot2)
 
+#' Return normalized path for all operating systems
+#'
+#' @param ReferencePath a path to join with current working directory
+#' @param BasePath Current working directory else path given
+#'
+#' @return
+#' @export
+#' @examples
+#' FullPath('PortalData/Rodents/Portal_rodent.csv')
+#' FullPath('PortalData/Rodents/Portal_rodent.csv', '~')
+FullPath <- function( ReferencePath, BasePath=getwd()){
+  BasePath = normalizePath(BasePath)
+  ReferencePath = normalizePath(ReferencePath)
+  Path = normalizePath(file.path(BasePath, ReferencePath), mustWork = FALSE)
+  return (Path)
+}
+
 #Get all model aic values and calculate akaike weights
 compile_aic_weights = function(forecast_folder='./predictions'){
   model_aic_filenames = list.files(forecast_folder, full.names = TRUE, recursive = TRUE)
@@ -296,10 +313,9 @@ download_observations = function(base_folder='~/'){
 #' will not show that there is new data available.
 #'
 #' @return bool True if new observations are available
-observations_are_new = function(base_folder='~/'){
-  base_folder=path.expand(base_folder)
-  md5_file = './Portal_rodent.md5'
-  rodent_file= path.expand(paste0(base_folder,'PortalData/Rodents/Portal_rodent.csv'))
+observations_are_new = function(base_folder=normalizePath('~')){
+  md5_file = FullPath('Portal_rodent.md5')
+  rodent_file = FullPath('PortalData/Rodents/Portal_rodent.csv', base_folder)
   if(!file.exists(rodent_file)) stop('Rodent observations not present. Please run download_observations()')
 
   if(!file.exists(md5_file)) {

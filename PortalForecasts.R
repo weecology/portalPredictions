@@ -5,13 +5,30 @@ library(dplyr)
 library(magrittr)
 library(testit)
 
+#' Return normalized path for all operating systems
+#'
+#' @param ReferencePath a path to join with current working directory
+#' @param BasePath Current working directory else path given
+#'
+#' @return
+#' @export
+#' @examples
+#' FullPath('PortalData/Rodents/Portal_rodent.csv')
+#' FullPath('PortalData/Rodents/Portal_rodent.csv', '~')
+FullPath <- function( ReferencePath, BasePath=getwd()){
+  BasePath = normalizePath(BasePath)
+  ReferencePath = normalizePath(ReferencePath)
+  Path = normalizePath(file.path(BasePath, ReferencePath), mustWork = FALSE)
+  return (Path)
+}
+
 #Period 203/NewMoonNumber 217 will be when the training data timeseries
 #begins. Corresponding to Jan 1995
 historic_start_period=203
 historic_start_newmoon=217
 
 #Get the newmoon number of the  most recent sample
-moons <- read.csv("~/PortalData/Rodents/moon_dates.csv",header=T)
+moons <- read.csv(FullPath('PortalData/Rodents/moon_dates.csv', '~'), header=T)
 most_recent_newmoon = moons$NewMoonNumber[which.max(moons$Period)]
 
 #Add in year and month to join with the rest of the data
