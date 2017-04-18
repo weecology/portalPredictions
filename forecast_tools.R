@@ -41,20 +41,20 @@ compile_aic_weights = function(forecast_folder='./predictions'){
 make_ensemble=function(all_forecasts, models_to_use=NA, CI_level = 0.9){
   weights = compile_aic_weights()
   
-  CI_sd = qnorm((1-CI_level)/2, lower.tail = FALSE)
-  
+  CI_quantile = qnorm((1-CI_level)/2, lower.tail = FALSE)
+
   weighted_estimates = all_forecasts %>%
     left_join(weights, by=c('date','model','currency','level','species')) %>%
     group_by(date, NewMoonNumber, forecastmonth, forecastyear,level, currency, species) %>%
     summarise(weighted_estimate = sum(estimate*weight), 
-              weighted_var = sum((weight*(estimate - weighted_estimate))^2)) %>%
+              weighted_offset = sqrt(sum((weight*(estimate - weighted_estimate))^2)) * CI_quantile) %>%
     ungroup()
   
   ensemble = weighted_estimates %>%
-    mutate(LowerPI= weighted_estimate - sqrt(weighted_var)*CI_sd, 
-           UpperPI= weighted_estimate + sqrt(weighted_var)*CI_sd) %>%
+    mutate(LowerPI= weighted_estimate - weighted_offset, 
+           UpperPI= weighted_estimate + weighted_offset) %>%
     rename(estimate = weighted_estimate) %>%
-    select(-weighted_var)
+    select(-weighted_offset)
   
   ensemble$model='Ensemble'
   return(ensemble)
