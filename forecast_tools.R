@@ -20,12 +20,42 @@ FullPath <- function( ReferencePath, BasePath=getwd()){
   return (Path)
 }
 
+#Get all model aic values and calculate akaike weights
+compile_aic_weights = function(forecast_folder='./predictions'){
+  model_aic_filenames = list.files(forecast_folder, full.names = TRUE, recursive = TRUE)
+  model_aic_filenames = model_aic_filenames[grepl('aic_weights',model_aic_filenames)]
+
+  all_model_aic = purrr::map(model_aic_filenames, ~read.csv(.x, na.strings = '', stringsAsFactors = FALSE)) %>% 
+    bind_rows()
+
+  all_weights = all_model_aic %>%
+    group_by(date,currency, level, species) %>%
+    mutate(delta_aic = aic-min(aic), weight = exp(-0.5*delta_aic) / sum(exp(-0.5*delta_aic))) %>%
+    ungroup()
+  return(all_weights)
+}
+
 #Create the ensemble model from all other forecasts
-#Currently just the mean of the esimates and confidence intervals.
-make_ensemble=function(all_forecasts, model_weights=NA, models_to_use=NA){
-  ensemble = all_forecasts %>%
+#Uses the weighted mean and weighted sample variance
+#https://en.wikipedia.org/wiki/Weighted_arithmetic_mean
+make_ensemble=function(all_forecasts, models_to_use=NA, CI_level = 0.9){
+  weights = compile_aic_weights()
+  
+  CI_quantile = qnorm((1-CI_level)/2, lower.tail = FALSE)
+
+  weighted_estimates = all_forecasts %>%
+    left_join(weights, by=c('date','model','currency','level','species')) %>%
     group_by(date, NewMoonNumber, forecastmonth, forecastyear,level, currency, species) %>%
-    summarise(estimate = mean(estimate), LowerPI=mean(LowerPI), UpperPI=mean(UpperPI))
+    summarise(weighted_estimate = sum(estimate*weight), 
+              weighted_offset = sqrt(sum((weight*(estimate - weighted_estimate))^2)) * CI_quantile) %>%
+    ungroup()
+  
+  ensemble = weighted_estimates %>%
+    mutate(LowerPI= weighted_estimate - weighted_offset, 
+           UpperPI= weighted_estimate + weighted_offset) %>%
+    rename(estimate = weighted_estimate) %>%
+    select(-weighted_offset)
+  
   ensemble$model='Ensemble'
   return(ensemble)
 }
@@ -212,6 +242,8 @@ forecast_is_valid=function(forecast_df, verbose=FALSE){
 #' @return dataframe combined forecasts
 compile_forecasts=function(forecast_folder='./predictions', verbose=FALSE){
   forecast_filenames = list.files(forecast_folder, full.names = TRUE, recursive = TRUE)
+  #aic_weight files are also stored here and there can be many. 
+  forecast_filenames = forecast_filenames[!grepl('aic_weights',forecast_filenames)]
   all_forecasts=data.frame()
 
   for(this_forecast_file in forecast_filenames){
