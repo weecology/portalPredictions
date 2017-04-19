@@ -19,17 +19,19 @@ most_recent_newmoon = moons$NewMoonNumber[which.max(moons$Period)]
 moons$Year=year(moons$NewMoonDate)
 moons$Month=month(moons$NewMoonDate)
 
-#Set the date that the forecast is made. By default it will be todays date.
-#If hindcasting is being done (by doing `Rscript PortalForecasts.R hindcast`)
-#then set the date to the most most recent sample simulated date + 1 day
+#By default name files YYYY-MM-DDXXXforecasts.csv. If hindcasting is being done
+#(signified by hindcast CLI argument) then name them  YYYY-MM-DDXXXhindcast.csv
 args=commandArgs(trailingOnly = TRUE)
 if(is.na(args[1])){
-  forecast_date = Sys.Date()
+  filename_suffix = 'forecasts'
 } else if(args[1]=='hindcast') {
-  forecast_date = as.Date(moons$CensusDate[which.max(moons$Period)]) + lubridate::days(1)
+  filename_suffix = 'hindcasts'
 } else {
   stop(paste('Argument uknown: ', args[1]))
 }
+
+#The date this forecast model is run. Always todays date.
+forecast_date = Sys.Date()
 
 #Beginning and end of the forecast timeperiod
 first_forecast_newmoon=most_recent_newmoon+1
@@ -225,8 +227,8 @@ forecastall <- function(abundances, level, weather_data, weatherforecast, CI_lev
       bind_rows(data.frame(date=forecast_date, model='Poisson Env', currency='abundance', level=level, species=s, aic=model_aic))
   }
   
-  write.csv(forecasts,paste(as.character(forecast_date),level,"forecasts.csv",sep=""),row.names=FALSE) 
-  write.csv(model_aic,paste(as.character(forecast_date),level,"forecasts_model_aic.csv",sep=""),row.names=FALSE) 
+  write.csv(forecasts, paste(as.character(forecast_date),level,filename_suffix,".csv",sep=""),           row.names=FALSE) 
+  write.csv(model_aic, paste(as.character(forecast_date),level,filename_suffix,"_model_aic.csv",sep=""), row.names=FALSE) 
   
   return(forecasts)
 }
