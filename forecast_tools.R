@@ -22,7 +22,7 @@ FullPath <- function( ReferencePath, BasePath=getwd()){
 #Get all model aic values and calculate akaike weights
 compile_aic_weights = function(forecast_folder='./predictions'){
   model_aic_filenames = list.files(forecast_folder, full.names = TRUE, recursive = TRUE)
-  model_aic_filenames = model_aic_filenames[grepl('aic_weights',model_aic_filenames)]
+  model_aic_filenames = model_aic_filenames[grepl('model_aic',model_aic_filenames)]
 
   all_model_aic = purrr::map(model_aic_filenames, ~read.csv(.x, na.strings = '', stringsAsFactors = FALSE)) %>% 
     bind_rows()
@@ -242,7 +242,7 @@ forecast_is_valid=function(forecast_df, verbose=FALSE){
 compile_forecasts=function(forecast_folder='./predictions', verbose=FALSE){
   forecast_filenames = list.files(forecast_folder, full.names = TRUE, recursive = TRUE)
   #aic_weight files are also stored here and there can be many. 
-  forecast_filenames = forecast_filenames[!grepl('aic_weights',forecast_filenames)]
+  forecast_filenames = forecast_filenames[!grepl('model_aic',forecast_filenames)]
   all_forecasts=data.frame()
 
   for(this_forecast_file in forecast_filenames){
