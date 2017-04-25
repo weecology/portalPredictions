@@ -4,7 +4,11 @@ library(lubridate)
 library(dplyr)
 library(magrittr)
 library(testit)
+library(PortalDataSummaries)
 source('forecast_tools.R')
+
+#Download the most recent data
+PortalDataSummaries::download_observations()
 
 #Period 203/NewMoonNumber 217 will be when the training data timeseries
 #begins. Corresponding to Jan 1995
