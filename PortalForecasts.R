@@ -225,8 +225,10 @@ forecastall <- function(abundances, level, weather_data, weatherforecast, CI_lev
       bind_rows(data.frame(date=forecast_date, model='Poisson Env', currency='abundance', level=level, species=s, aic=model_aic))
   }
 
-  write.csv(forecasts, paste(as.character(forecast_date),level,filename_suffix,".csv",sep=""),           row.names=FALSE)
-  write.csv(all_model_aic, paste(as.character(forecast_date),level,filename_suffix,"_model_aic.csv",sep=""), row.names=FALSE)
+  forecast_file_name = paste(as.character(forecast_date), level, filename_suffix, ".csv", sep="")
+  model_aic_file_name = paste(as.character(forecast_date), level, filename_suffix, "_model_aic.csv", sep="")
+  write.csv(forecasts, file.path('predictions', forecast_file_name), row.names=FALSE)
+  write.csv(all_model_aic, file.path('predictions', model_aic_file_name), row.names=FALSE)
 
   return(forecasts)
 }
