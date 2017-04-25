@@ -19,17 +19,19 @@ most_recent_newmoon = moons$NewMoonNumber[which.max(moons$Period)]
 moons$Year=year(moons$NewMoonDate)
 moons$Month=month(moons$NewMoonDate)
 
-#Set the date that the forecast is made. By default it will be todays date.
-#If hindcasting is being done (by doing `Rscript PortalForecasts.R hindcast`)
-#then set the date to the most most recent sample simulated date + 1 day
+#By default name files YYYY-MM-DDXXXforecasts.csv. If hindcasting is being done
+#(signified by hindcast CLI argument) then name them  YYYY-MM-DDXXXhindcast.csv
 args=commandArgs(trailingOnly = TRUE)
 if(is.na(args[1])){
-  forecast_date = Sys.Date()
+  filename_suffix = 'forecasts'
 } else if(args[1]=='hindcast') {
-  forecast_date = as.Date(moons$CensusDate[which.max(moons$Period)]) + lubridate::days(1)
+  filename_suffix = 'hindcasts'
 } else {
   stop(paste('Argument uknown: ', args[1]))
 }
+
+#The date this forecast model is run. Always todays date.
+forecast_date = Sys.Date()
 
 #Beginning and end of the forecast timeperiod
 first_forecast_newmoon=most_recent_newmoon+1
@@ -41,8 +43,7 @@ forecast_years=year(forecast_date %m+% months(0:11))
 ####################################################################################
 #get Portal abundance data for the entire site and for control plots only.
 moons$Year=year(moons$NewMoonDate); moons$Month=month(moons$NewMoonDate)
-source("https://raw.githubusercontent.com/weecology/PortalDataSummaries/master/RodentAbundances.R")
-controls=abundance(level="Treatment",type="Rodents",length="Longterm", incomplete = FALSE)
+controls=PortalDataSummaries::abundance(level="Treatment",type="Rodents",length="Longterm", incomplete = FALSE)
 
 #Control plots
 #The total rodent count in each treatment
@@ -56,7 +57,7 @@ controls = controls %>%
   select(-NewMoonDate,-CensusDate,-period,-Year,-Month)
 
 #All plots
-all=abundance(level="Site",type="Rodents",length="all", incomplete = FALSE)
+all=PortalDataSummaries::abundance(level="Site",type="Rodents",length="all", incomplete = FALSE)
 #The total rodent count across the entire site
 all$total = rowSums(all[,-(1)])
 all=inner_join(moons,all,by=c("Period"="period"))
@@ -65,8 +66,7 @@ all=subset(all,Period >= historic_start_period)
 
 ###################################################################################
 #get weather data
-source("https://raw.githubusercontent.com/weecology/PortalDataSummaries/master/Weather.R")
-weather_data=weather("Monthly") %>%
+weather_data=PortalDataSummaries::weather("Monthly") %>%
   ungroup() %>%
   left_join(moons, by=c('Year','Month'))
 
@@ -117,7 +117,7 @@ colnames(zero_abund_forecast$interval) = c('lower','upper')
 #####Forecasting wrapper function for all models########################
 
 forecastall <- function(abundances, level, weather_data, weatherforecast, CI_level = 0.9, num_forecast_months = 12) {
-  model_aic = data.frame()
+  all_model_aic = data.frame()
   
   ##Community level predictions
   
@@ -128,7 +128,7 @@ forecastall <- function(abundances, level, weather_data, weatherforecast, CI_lev
                          currency="abundance",model="Forecast", level=level, species="total", estimate=model01$mean, 
                          LowerPI=model01$lower[,which(model01$level==CI_level*100)], UpperPI=model01$upper[,which(model01$level==CI_level*100)])
   forecasts01[sapply(forecasts01, is.ts)] <- lapply(forecasts01[sapply(forecasts01, is.ts)],unclass)
-  model_aic = model_aic %>%
+  all_model_aic = all_model_aic %>%
     bind_rows(data.frame(date=forecast_date, model='Forecast', currency='abundance', level=level, species='total', aic=model01$model$aic))
   
   model02=forecast(auto.arima(abundances$total,lambda = 0),h=num_forecast_months,level=CI_level,fan=T)
@@ -137,7 +137,7 @@ forecastall <- function(abundances, level, weather_data, weatherforecast, CI_lev
                          currency="abundance", model="AutoArima", level=level, species="total", estimate=model02$mean, 
                          LowerPI=model02$lower[,which(model02$level==CI_level*100)], UpperPI=model02$upper[,which(model02$level==CI_level*100)])
   forecasts02[sapply(forecasts02, is.ts)] <- lapply(forecasts02[sapply(forecasts02, is.ts)],unclass)
-  model_aic = model_aic %>%
+  all_model_aic = all_model_aic %>%
     bind_rows(data.frame(date=forecast_date, model='AutoArima', currency='abundance', level=level, species='total', aic=model02$model$aic))
   
   #Start builing results table
@@ -166,7 +166,7 @@ forecastall <- function(abundances, level, weather_data, weatherforecast, CI_lev
                        LowerPI=pred$interval[,1], UpperPI=pred$interval[,2])
     forecasts=rbind(forecasts,newpred)
     
-    model_aic = model_aic %>%
+    all_model_aic = all_model_aic %>%
       bind_rows(data.frame(date=forecast_date, model='NegBinom Time Series', currency='abundance', level=level, species=s, aic=model_aic))
   }
   
@@ -221,12 +221,12 @@ forecastall <- function(abundances, level, weather_data, weatherforecast, CI_lev
                          level=level, species=rep(s,num_forecast_months), estimate=pred$pred, 
                          LowerPI=pred$interval[,1],UpperPI=pred$interval[,2])
     forecasts = rbind(forecasts,newpred)
-    model_aic = model_aic %>%
+    all_model_aic = all_model_aic %>%
       bind_rows(data.frame(date=forecast_date, model='Poisson Env', currency='abundance', level=level, species=s, aic=model_aic))
   }
   
-  write.csv(forecasts,paste(as.character(forecast_date),level,"forecasts.csv",sep=""),row.names=FALSE) 
-  write.csv(model_aic,paste(as.character(forecast_date),level,"forecasts_model_aic.csv",sep=""),row.names=FALSE) 
+  write.csv(forecasts, paste(as.character(forecast_date),level,filename_suffix,".csv",sep=""),           row.names=FALSE) 
+  write.csv(all_model_aic, paste(as.character(forecast_date),level,filename_suffix,"_model_aic.csv",sep=""), row.names=FALSE) 
   
   return(forecasts)
 }
