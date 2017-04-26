@@ -15,7 +15,6 @@ source("forecast_tools.R")
 This is the forecast for next month's sampling of rodents at Portal.
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
-source('forecast-viz.R', echo = FALSE)
 obs_data = PortalDataSummaries::abundance()
 obs_data$total = rowSums(select(obs_data, -period))
 new_moons = read.csv('~/PortalData/Rodents/moon_dates.csv')
@@ -46,7 +45,6 @@ forecast_viz(obs_data = obs_data_newmoon,
 ## Species-Level Forecasts
 
 ```{r speciesforecasts, echo=FALSE, message=FALSE, warning=FALSE}
-source("forecast-viz.R")
 source("forecast_tools.R")
 source("actual_census_counts.R")
 

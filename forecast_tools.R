@@ -335,4 +335,19 @@ observations_are_new = function(base_folder=normalizePath('~')){
 
 }
 
-
+#' Visualize a time-series forecast
+#' Plots the observed time-series and the 1-step forecasts within it
+#' Plots the forecast time-series along with the prediction interval for future observations
+#' obs_data is a data.frame
+#' date_col_name is a string with the name for the date column
+#' val_col_name is a string with the name for the column of the value being forecast
+forecast_viz <- function(obs_data, obs_date_col_name, obs_val_col_name, for_data,
+                         for_date_col_name, for_val_col_name, for_model_name,
+                         for_lowerpi_col_name, for_upperpi_col_name, start_newmoon){
+  for_data_sub = filter(for_data, species == obs_val_col_name, model == for_model_name)
+  obs_data_sub = filter(obs_data, NewMoonNumber >= start_newmoon)
+  ggplot(obs_data_sub, aes_string(x = obs_date_col_name)) +
+    geom_ribbon(data = for_data_sub, mapping = aes_string(x = for_date_col_name, ymin = for_lowerpi_col_name, ymax = for_upperpi_col_name), fill = "lightblue") +
+    geom_line(aes_string(y = obs_val_col_name)) +
+    geom_line(data = for_data_sub, mapping = aes_string(x = for_date_col_name, y = for_val_col_name), color = "blue")
+}
