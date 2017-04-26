@@ -52,16 +52,21 @@ make_ensemble=function(all_forecasts, models_to_use=NA, CI_level = 0.9){
     left_join(weights, by=c('date','model','currency','level','species')) %>%
     group_by(date, NewMoonNumber, forecastmonth, forecastyear,level, currency, species) %>%
     summarise(ensemble_estimate = sum(estimate*weight), 
-              ensemble_var   = sum(model_var * weight) + (sum((weight*(estimate - ensemble_estimate))^2)) / (n()*sum(weight)-1)) %>%
-    ungroup()
+              weighted_ss = sum(weight * (estimate - ensemble_estimate)^2) ,
+              ensemble_var   = sum(model_var * weight) + weighted_ss / (n()*sum(weight)-1),
+              sum_weight = round(sum(weight), 10)) %>% #round because the numbers get very very small
+    ungroup() 
               
+  #Assert that the summed weight of all the model ensembles is 1, as that's what the above variance estimates assume.
+  #summed weights can also be NA if there are not weights availble for that ensemble. 
+  if(!all(weighted_estimates$sum_weight == 1 | is.na(weighted_estimates$sum_weight))){ stop('Summed weights do not equal 1')}
 
   ensemble = weighted_estimates %>%
     mutate(LowerPI = ensemble_estimate - (sqrt(ensemble_var) * CI_quantile),
            UpperPI = ensemble_estimate + (sqrt(ensemble_var) * CI_quantile)) %>%
     mutate(LowerPI = ifelse(LowerPI<0, 0, LowerPI)) %>%
     rename(estimate = ensemble_estimate) %>%
-    select(-ensemble_var)
+    select(-ensemble_var, -weighted_ss, -sum_weight)
   
   ensemble$model='Ensemble'
   return(ensemble)
