@@ -4,6 +4,7 @@ library(lubridate)
 library(dplyr)
 library(magrittr)
 library(testit)
+library(rmarkdown)
 source('forecast_tools.R')
 
 #Period 203/NewMoonNumber 217 will be when the training data timeseries
@@ -236,3 +237,7 @@ forecastall <- function(abundances, level, weather_data, weatherforecast, CI_lev
 ######Run Models########################################################
 allforecasts=forecastall(all,"All",weather_data,weathermeans)
 controlsforecasts=forecastall(controls,"Controls",weather_data,weathermeans)
+
+######Update Website####################################################
+rmarkdown::render('portal-forecast.Rmd', output_format = "html_document",
+                  output_file = 'index.html', output_dir = 'docs')
