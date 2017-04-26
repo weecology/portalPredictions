@@ -6,6 +6,7 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(dplyr)
+library(PortalDataSummaries)
 source("forecast_tools.R")
 ```
 
@@ -16,8 +17,7 @@ This is the forecast for next month's sampling of rodents at Portal.
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 source('forecast-viz.R', echo = FALSE)
 obs = download_observations()
-source('https://raw.githubusercontent.com/weecology/PortalDataSummaries/master/RodentAbundances.R', echo = FALSE)
-obs_data = abundance()
+obs_data = PortalDataSummaries::abundance()
 obs_data$total = rowSums(select(obs_data, -period))
 new_moons = read.csv('~/PortalData/Rodents/moon_dates.csv')
 obs_data_newmoon = inner_join(obs_data, new_moons, by = c("period" = "Period"))
@@ -50,7 +50,6 @@ forecast_viz(obs_data = obs_data_newmoon,
 source("forecast-viz.R")
 source("forecast_tools.R")
 source("actual_census_counts.R")
-source("https://raw.githubusercontent.com/weecology/PortalDataSummaries/master/RodentAbundances.R")
 
 data = compile_forecasts()
 ensemble = make_ensemble(data)
