@@ -22,7 +22,7 @@ FullPath <- function( ReferencePath, BasePath=getwd()){
 #Get all model aic values and calculate akaike weights
 compile_aic_weights = function(forecast_folder='./predictions'){
   model_aic_filenames = list.files(forecast_folder, full.names = TRUE, recursive = TRUE)
-  model_aic_filenames = model_aic_filenames[grepl('aic_weights',model_aic_filenames)]
+  model_aic_filenames = model_aic_filenames[grepl('model_aic',model_aic_filenames)]
 
   all_model_aic = purrr::map(model_aic_filenames, ~read.csv(.x, na.strings = '', stringsAsFactors = FALSE)) %>% 
     bind_rows()
@@ -242,7 +242,7 @@ forecast_is_valid=function(forecast_df, verbose=FALSE){
 compile_forecasts=function(forecast_folder='./predictions', verbose=FALSE){
   forecast_filenames = list.files(forecast_folder, full.names = TRUE, recursive = TRUE)
   #aic_weight files are also stored here and there can be many. 
-  forecast_filenames = forecast_filenames[!grepl('aic_weights',forecast_filenames)]
+  forecast_filenames = forecast_filenames[!grepl('model_aic',forecast_filenames)]
   all_forecasts=data.frame()
 
   for(this_forecast_file in forecast_filenames){
@@ -335,4 +335,19 @@ observations_are_new = function(base_folder=normalizePath('~')){
 
 }
 
-
+#' Visualize a time-series forecast
+#' Plots the observed time-series and the 1-step forecasts within it
+#' Plots the forecast time-series along with the prediction interval for future observations
+#' obs_data is a data.frame
+#' date_col_name is a string with the name for the date column
+#' val_col_name is a string with the name for the column of the value being forecast
+forecast_viz <- function(obs_data, obs_date_col_name, obs_val_col_name, for_data,
+                         for_date_col_name, for_val_col_name, for_model_name,
+                         for_lowerpi_col_name, for_upperpi_col_name, start_newmoon){
+  for_data_sub = filter(for_data, species == obs_val_col_name, model == for_model_name)
+  obs_data_sub = filter(obs_data, NewMoonNumber >= start_newmoon)
+  ggplot(obs_data_sub, aes_string(x = obs_date_col_name)) +
+    geom_ribbon(data = for_data_sub, mapping = aes_string(x = for_date_col_name, ymin = for_lowerpi_col_name, ymax = for_upperpi_col_name), fill = "lightblue") +
+    geom_line(aes_string(y = obs_val_col_name)) +
+    geom_line(data = for_data_sub, mapping = aes_string(x = for_date_col_name, y = for_val_col_name), color = "blue")
+}
