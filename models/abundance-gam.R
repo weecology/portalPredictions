@@ -1,3 +1,5 @@
+abundance-gam=function(level,date,forecastmonth,forecastyear,NewMoonNumber,CI_level) {
+
 mc.cores = 8 # How many species to run in parallel
 new_yday = yday(Sys.Date()) # Replace Sys.Date with the next Portal sampling date
 
@@ -40,8 +42,8 @@ rodents = rodents[rodents$yr >= 1990,]
 # Remove non-rodents and unidentified rodents
 rodents = rodents %>%
   left_join(sppCodes, by = c('species')) %>%
-  filter(Rodent == 1, Unidentified == 0) %>%
-  select(-Rodent, -Unidentified)
+  filter(Rodent == 1, Unidentified == 0) 
+rodents = subset(rodents,select=-c(Rodent,Unidentified))
 
 # Treatment ---------------------------------------------------------------
 
@@ -105,7 +107,24 @@ abundances = rodents %>%
   mutate(yday = yday(date)) %>%
   mutate(yr_continuous = julian(date, origin = as.Date("1900-01-01")) / 365.24 + 1900)
 
+# keep only long-term controls if forecasting control abundances
 
+if(level="Controls") {
+  rodents = rodents %>% 
+    filter(plot %in%
+             c(3, 4, 10, 11, 14, 15, 16, 17, 19, 21, 23))
+  
+  abundances = rodents %>% 
+    mutate(species = factor(species)) %>% 
+    group_by(plot, date, treatment, period) %>%
+    do(data.frame(x = table(.$species))) %>% 
+    spread(x.Var1, x.Freq) %>%
+    ungroup() %>%
+    # select(-all_absent) %>% 
+    inner_join(climate, "date") %>%
+    mutate(yday = yday(date)) %>%
+    mutate(yr_continuous = julian(date, origin = as.Date("1900-01-01")) / 365.24 + 1900)
+}
 
 # Model fitting -----------------------------------------------------------
 
@@ -140,58 +159,58 @@ fit_gam = function(species){
   )
   
   
-  # Plotting
-  pdf(paste0(species, ".pdf"))
+  # # Plotting
+  # pdf(paste0(species, ".pdf"))
+  # 
+  # # Plot the splines
+  # plot(model$gam, pages = 1, n = 1000, main = species, shade = TRUE, cex.lab = 1.5)
+  # 
   
-  # Plot the splines
-  plot(model$gam, pages = 1, n = 1000, main = species, shade = TRUE, cex.lab = 1.5)
+  # # Plot the period-level random effects
+  # plot(
+  #   x = row.names(ranef(model$mer)$period),
+  #   y = ranef(model$mer)$period[[1]],
+  #   pch = 16,
+  #   cex = .5,
+  #   main = "Period residuals",
+  #   ylab = "Residual for the period"
+  # )
+  # abline(0, 0, col = "#00000020")
+  # 
+  # 
   
+  # # Plot the date-level random effects
+  # plot(
+  #   x = as.Date(row.names(ranef(model$mer)$date)),
+  #   y = ranef(model$mer)$date[[1]],
+  #   pch = 16,
+  #   cex = .5,
+  #   main = "Daily residuals",
+  #   ylab = "Residual for the day"
+  # )
+  # abline(0, 0, col = "#00000020")
+  # 
+  # # Plot the treatment effects
+  # plot(
+  #   summary(model$gam)$p.table[-1, "Estimate"] ~ factor(names(summary(model$gam)$p.table[-1, "Estimate"])),
+  #   ylab = "Treatment effect"
+  # )
   
-  # Plot the period-level random effects
-  plot(
-    x = row.names(ranef(model$mer)$period),
-    y = ranef(model$mer)$period[[1]],
-    pch = 16,
-    cex = .5,
-    main = "Period residuals",
-    ylab = "Residual for the period"
-  )
-  abline(0, 0, col = "#00000020")
-  
-  
-  
-  # Plot the date-level random effects
-  plot(
-    x = as.Date(row.names(ranef(model$mer)$date)),
-    y = ranef(model$mer)$date[[1]],
-    pch = 16,
-    cex = .5,
-    main = "Daily residuals",
-    ylab = "Residual for the day"
-  )
-  abline(0, 0, col = "#00000020")
-  
-  # Plot the treatment effects
-  plot(
-    summary(model$gam)$p.table[-1, "Estimate"] ~ factor(names(summary(model$gam)$p.table[-1, "Estimate"])),
-    ylab = "Treatment effect"
-  )
-  
-  # Plot the plot-level effects
-  plot(
-    ranef(model$mer)$plot[[1]],
-    cex = .5,
-    pch = 16,
-    col = "darkgray",
-    ylab = "plot residual"
-  )
-  text(
-    1:24,
-    ranef(model$mer)$plot[[1]],
-    1:24
-  )
-  abline(0, 0, col = "#00000020")
-  dev.off()
+  # # Plot the plot-level effects
+  # plot(
+  #   ranef(model$mer)$plot[[1]],
+  #   cex = .5,
+  #   pch = 16,
+  #   col = "darkgray",
+  #   ylab = "plot residual"
+  # )
+  # text(
+  #   1:24,
+  #   ranef(model$mer)$plot[[1]],
+  #   1:24
+  # )
+  # abline(0, 0, col = "#00000020")
+  # dev.off()
   
   return(model)
 }
@@ -269,40 +288,43 @@ CIs = function(sp, new_date, n_samples = 10000){
   
   predictions = plogis(raw.predictions + newx$date_ranef + newx$period_ranef + 
                          newx$plot_ranef)
-  
-  new = cbind(newx, sample_counts = rbinom(nrow(newx), size = 49, 
-                                           prob = predictions))
+
+  new = cbind(newx, sample_counts = rbinom(nrow(newx), size = 49,
+                                          prob = predictions))
   
   simulated_totals = new %>%
-    group_by(period_ranef) %>%
-    summarize(total = sum(sample_counts)) %>%
-    extract2("total")
+   group_by(period_ranef) %>%
+  summarize(total = sum(sample_counts)) %>%
+   extract2("total")
   
-  plot(
-    table(simulated_totals),
-    main = "model predictions",
-    sub = sp,
-    yaxs = "i",
-    xaxs = "i",
-    bty = "l",
-    axes = FALSE,
-    xlim = c(0, max(simulated_totals))
-  )
-  axis(1, seq(0, max(simulated_totals), 
-              25 * ceiling(max(simulated_totals)/10 / 25)))
-  abline(v = names(sort(table(simulated_totals),decreasing=TRUE))[1], col = 2, lwd=2)
-  abline(v = HPDinterval(as.mcmc(simulated_totals), .95), col = 2, lty = 2)
-  abline(v = HPDinterval(as.mcmc(simulated_totals), .9), col = 2, lty = 3)
-  abline(v = HPDinterval(as.mcmc(simulated_totals), .5), col = 2, lty = 1)
+  # 
+  # plot(
+  #   table(simulated_totals),
+  #   main = "model predictions",
+  #   sub = sp,
+  #   yaxs = "i",
+  #   xaxs = "i",
+  #   bty = "l",
+  #   axes = FALSE,
+  #   xlim = c(0, max(simulated_totals))
+  # )
+  # axis(1, seq(0, max(simulated_totals), 
+  #             25 * ceiling(max(simulated_totals)/10 / 25)))
+  # abline(v = names(sort(table(simulated_totals),decreasing=TRUE))[1], col = 2, lwd=2)
+  # abline(v = HPDinterval(as.mcmc(simulated_totals), .95), col = 2, lty = 2)
+  # abline(v = HPDinterval(as.mcmc(simulated_totals), .9), col = 2, lty = 3)
+  # abline(v = HPDinterval(as.mcmc(simulated_totals), .5), col = 2, lty = 1)
   
   data.frame(
     species = sp, estimate = as.numeric(names(sort(table(simulated_totals),decreasing=TRUE))[1]),
-        t(as.numeric(HPDinterval(as.mcmc(simulated_totals), .9)))
+        t(as.numeric(HPDinterval(as.mcmc(simulated_totals), CI_level)))
   )
   
 }
 
 ci_predictions = lapply(species, CIs, new_date=Sys.Date())
 
-return(bind_rows(ci_predictions) %>%
+return(bind_rows(date,forecastmonth,forecastyear,NewMoonNumber,"abundance","GAM",level,ci_predictions) %>%
   rename(LowerPI = X1, UpperPI = X2))
+
+}

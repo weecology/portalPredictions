@@ -1,5 +1,3 @@
-library(tscount)
-library(forecast)
 library(lubridate)
 library(dplyr)
 library(magrittr)
@@ -117,121 +115,96 @@ colnames(zero_abund_forecast$interval) = c('lower','upper')
 
 #####Forecasting wrapper function for all models########################
 
-forecastall <- function(abundances, level, weather_data, weatherforecast, CI_level = 0.9, num_forecast_months = 12) {
-  all_model_aic = data.frame()
+forecastall <- function(abundances, level, weather_data, weathermeans, CI_level = 0.9, num_forecast_months = 12) {
+  
+  #forecasts is where we will append all forecasts for this level
+  #all_model_aic is where we will append all model aics for this level
+  forecasts = data.frame(date=as.Date(character()), forecastmonth=numeric(), forecastyear=numeric(),
+                         NewMoonNumber=numeric(), currency=character(), model=character(), level=character(),
+                         species=character(), estimate=numeric(), LowerPI=numeric(), UpperPI=numeric())
+  all_model_aic = data.frame(date=as.Date(character()),currency=character(),model=character(),level=character(),
+                             species=character(), aic=numeric())
 
-  ##Community level predictions
+#######Community level predictions#################
+  
 
-  #naive models
-  model01=forecast(abundances$total,h=num_forecast_months,level=CI_level,BoxCox.lambda(0),allow.multiplicative.trend=T)
+  ###naive models####
+  
+  #Model 1 is the default Forecast package with BoxCox.lambda(0),allow.multiplicative.trend=T
+  
+  source('~/portalPredictions/models/naive01.R')
+  model01=naive01(abundances,forecast_date,forecast_months,forecast_years,forecast_newmoons,level,num_forecast_months,CI_level)
 
-  forecasts01=data.frame(date=forecast_date, forecastmonth=forecast_months,forecastyear=forecast_years, NewMoonNumber=forecast_newmoons,
-                         currency="abundance",model="Forecast", level=level, species="total", estimate=model01$mean,
-                         LowerPI=model01$lower[,which(model01$level==CI_level*100)], UpperPI=model01$upper[,which(model01$level==CI_level*100)])
-  forecasts01[sapply(forecasts01, is.ts)] <- lapply(forecasts01[sapply(forecasts01, is.ts)],unclass)
-  all_model_aic = all_model_aic %>%
-    bind_rows(data.frame(date=forecast_date, model='Forecast', currency='abundance', level=level, species='total', aic=model01$model$aic))
-
-  model02=forecast(auto.arima(abundances$total,lambda = 0),h=num_forecast_months,level=CI_level,fan=T)
-
-  forecasts02=data.frame(date=forecast_date, forecastmonth=forecast_months, forecastyear=forecast_years, NewMoonNumber=forecast_newmoons,
-                         currency="abundance", model="AutoArima", level=level, species="total", estimate=model02$mean,
-                         LowerPI=model02$lower[,which(model02$level==CI_level*100)], UpperPI=model02$upper[,which(model02$level==CI_level*100)])
-  forecasts02[sapply(forecasts02, is.ts)] <- lapply(forecasts02[sapply(forecasts02, is.ts)],unclass)
-  all_model_aic = all_model_aic %>%
-    bind_rows(data.frame(date=forecast_date, model='AutoArima', currency='abundance', level=level, species='total', aic=model02$model$aic))
-
-  #Start builing results table
-  forecasts=rbind(forecasts01,forecasts02)
-
-  ##Time Series Model and Species level predictions
-  #Note: PI is missing. It has an error in the Poison Env model which produces NA values.
-  species=c('BA','DM','DO','DS','NA','OL','OT','PB','PE','PF','PH','PL','PM','PP','RF','RM','RO','SF','SH','SO','total')
-
-  #Model AIC sometimes doesn't work if species counts are low. In that case give a very large AIC.
-  for(s in species) {
-    species_abundance = abundances %>%
-      extract2(s)
-
-    if(sum(species_abundance) == 0){
-      pred = zero_abund_forecast
-      model_aic = 1e6
-    } else {
-      model=tsglm(species_abundance,model=list(past_obs=1,past_mean=12),distr="nbinom")
-      pred=predict(model,num_forecast_months,level=CI_level)
-      model_aic = ifelse(has_error(summary(model)),1e6,summary(model)$AIC)
-    }
-    newpred=data.frame(date=rep(forecast_date,num_forecast_months), forecastmonth=forecast_months, forecastyear=forecast_years,
-                       NewMoonNumber=forecast_newmoons, currency="abundance", model=rep("NegBinom Time Series",num_forecast_months),
-                       level=level, species=rep(s,num_forecast_months), estimate=pred$pred,
-                       LowerPI=pred$interval[,1], UpperPI=pred$interval[,2])
-    forecasts=rbind(forecasts,newpred)
-
+  #Append results to forecasts and AIC tables
+    forecasts = forecasts  %>%
+      bind_rows(data.frame(model01[1]))
+  
     all_model_aic = all_model_aic %>%
-      bind_rows(data.frame(date=forecast_date, model='NegBinom Time Series', currency='abundance', level=level, species=s, aic=model_aic))
-  }
-
-  #Species level time time series model with the best environmental covariates chosen by AIC
-
-  #List of candiate environmental covariate models
-  model_covariates = list(c('MaxTemp','MeanTemp','Precipitation','NDVI'),
-                          c('MaxTemp','MinTemp','Precipitation','NDVI'),
-                          c('MinTemp','MaxTemp','MeanTemp','Precipitation'),
-                          c('Precipitation','NDVI'),
-                          c('MinTemp','NDVI'),
-                          c('MinTemp'),
-                          c('MaxTemp'),
-                          c('MeanTemp'),
-                          c('Precipitation'),
-                          c('NDVI'))
-
-  for(s in species) {
-    species_abundance = abundances %>%
-      extract2(s)
-
-    if(sum(species_abundance) == 0){
-      pred = zero_abund_forecast
-      model_aic = 1e6
-    } else {
-      best_model_aic = Inf
-      best_model = NA
-      for(proposed_model_covariates in model_covariates){
-        proposed_model = tsglm(species_abundance, model=list(past_obs=1,past_mean=12), distr="poisson",
-                               xreg=weather_data[,unlist(proposed_model_covariates)], link = "log")
-        #tsglm sometimes outputs an error when the time series have many 0's, in that case set the AIC
-        #to Inf so this proposed model covariate set get skipped
-        proposed_model_aic = ifelse(has_error(summary(proposed_model)), Inf, summary(proposed_model)$AIC)
-        if(proposed_model_aic < best_model_aic){
-          best_model = proposed_model
-          best_model_aic = proposed_model_aic
-        }
-      }
-
-      #If no best model was chosen, ie. they all had infinit AIC's due to errors in model building
-      #then forecast 0's. Also make an extremely high AIC so this isn't weighted heavily in the ensemble.
-      if(is.na(best_model)){
-        pred = zero_abund_forecast
-        model_aic = 1e6
-      } else {
-        pred = predict(best_model,num_forecast_months,level=CI_level,newdata=weathermeans)
-        model_aic = best_model_aic
-      }
-    }
-    newpred = data.frame(date=rep(forecast_date,num_forecast_months), forecastmonth=forecast_months, forecastyear=forecast_years,
-                         NewMoonNumber=forecast_newmoons, currency="abundance", model=rep("Poisson Env",num_forecast_months),
-                         level=level, species=rep(s,num_forecast_months), estimate=pred$pred,
-                         LowerPI=pred$interval[,1],UpperPI=pred$interval[,2])
-    forecasts = rbind(forecasts,newpred)
+      bind_rows(data.frame(date=forecast_date, currency='abundance', model='Forecast', level=level, species='total', aic=as.numeric(unlist(model01[2]))))
+  
+  
+  #Model 2 is the default Forecast package auto.arima (lambda=0)
+  source('~/portalPredictions/models/naive02.R')
+  model02=naive02(abundances,forecast_date,forecast_months,forecast_years,forecast_newmoons,level,num_forecast_months,CI_level)
+  
+  #Append results to forecasts and AIC tables
+    forecasts = forecasts  %>%
+      bind_rows(data.frame(model02[1]))
+  
     all_model_aic = all_model_aic %>%
-      bind_rows(data.frame(date=forecast_date, model='Poisson Env', currency='abundance', level=level, species=s, aic=model_aic))
-  }
+      bind_rows(data.frame(date=forecast_date, model='AutoArima', currency='abundance', level=level, species='total', aic=unlist(model02[2])))
+
+
+    
+####### Species level predictions #################
+  #total is also included in these, for a community-level prediction
+  
+##Negative Binomial Time Series Model
+  source('~/portalPredictions/models/neg_binom_ts.R')
+  nbts=neg_binom_ts(abundances,forecast_date,forecast_months,forecast_years,forecast_newmoons,level,num_forecast_months,CI_level)
+    
+    #Append results to forecasts and AIC tables
+    forecasts = forecasts  %>%
+      bind_rows(data.frame(nbts[1]))
+    
+    all_model_aic = all_model_aic %>%
+      bind_rows(data.frame(nbts[2]))
+    
+##Poisson environmental
+#Species level time series model with the best environmental covariates chosen by AIC  
+  source('~/portalPredictions/models/pois_env_ts.R')
+  pets=pois_env_ts(abundances,weather_data,weathermeans,forecast_date,forecast_months,forecast_years,forecast_newmoons,level,num_forecast_months,CI_level)
+    
+    #Append results to forecasts and AIC tables
+    forecasts = forecasts  %>%
+      bind_rows(data.frame(pets[1]))
+    
+    all_model_aic = all_model_aic %>%
+      bind_rows(data.frame(pets[2]))  
+    
+    
+##Abundance GAM
+  #Species level GAM with environmental covariates daily, monthly and 6-months 
+    #only predicts current month of trapping
+  source('~/portalPredictions/models/abundance-gam.R')
+  agam=abundance-gam(level,forecast_date[1],forecast_months[1],forecast_years[1],forecast_newmoons[1],CI_level=0.9)
+    
+    #Append results to forecasts and AIC tables
+    forecasts = forecasts  %>%
+      bind_rows(data.frame(agam[1]))
+    
+    all_model_aic = all_model_aic %>%
+      bind_rows(data.frame(agam[2])) 
+    
+#########Write forecasts to file and aics to separate files###############
+  
 
   forecast_file_name = paste(as.character(forecast_date), level, filename_suffix, ".csv", sep="")
   model_aic_file_name = paste(as.character(forecast_date), level, filename_suffix, "_model_aic.csv", sep="")
   write.csv(forecasts, file.path('predictions', forecast_file_name), row.names=FALSE)
   write.csv(all_model_aic, file.path('predictions', model_aic_file_name), row.names=FALSE)
 
-  return(forecasts)
+  return(list(forecasts,all_model_aic))
 }
 
 ######Run Models########################################################
