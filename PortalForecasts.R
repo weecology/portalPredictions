@@ -5,67 +5,53 @@ library(testit)
 library(rmarkdown)
 source('forecast_tools.R')
 
-#Period 203/NewMoonNumber 217 will be when the training data timeseries
-#begins. Corresponding to Jan 1995
-historic_start_period=203
-historic_start_newmoon=217
+get_moon_data <- function(){
+  #Get the newmoon number of the  most recent sample
+  moons <- read.csv(FullPath('PortalData/Rodents/moon_dates.csv', '~'), header=T)
 
-#Get the newmoon number of the  most recent sample
-moons <- read.csv(FullPath('PortalData/Rodents/moon_dates.csv', '~'), header=T)
-most_recent_newmoon = moons$NewMoonNumber[which.max(moons$Period)]
-
-#Add in year and month to join with the rest of the data
-moons$Year=year(moons$NewMoonDate)
-moons$Month=month(moons$NewMoonDate)
-
-#By default name files YYYY-MM-DDXXXforecasts.csv. If hindcasting is being done
-#(signified by hindcast CLI argument) then name them  YYYY-MM-DDXXXhindcast.csv
-args=commandArgs(trailingOnly = TRUE)
-if(is.na(args[1])){
-  filename_suffix = 'forecasts'
-} else if(args[1]=='hindcast') {
-  filename_suffix = 'hindcasts'
-} else {
-  stop(paste('Argument uknown: ', args[1]))
+  #Add in year and month to join with the rest of the data
+  moons$Year=year(moons$NewMoonDate)
+  moons$Month=month(moons$NewMoonDate)
+  return(moons)
 }
 
-#The date this forecast model is run. Always todays date.
-forecast_date = Sys.Date()
+get_rodent_data <- function(moons, forecast_date, filename_suffix){
+  #Period 203/NewMoonNumber 217 will be when the training data timeseries
+  #begins. Corresponding to Jan 1995
+  historic_start_period=203
+  historic_start_newmoon=217
 
-#Beginning and end of the forecast timeperiod
-first_forecast_newmoon=most_recent_newmoon+1
-last_forecast_newmoon=first_forecast_newmoon + 11
-forecast_newmoons = first_forecast_newmoon:last_forecast_newmoon
-forecast_months=month(forecast_date %m+% months(0:11))
-forecast_years=year(forecast_date %m+% months(0:11))
+  ####################################################################################
+  #get Portal abundance data for the entire site and for control plots only.
+  controls=PortalDataSummaries::abundance(level="Treatment",type="Rodents",length="Longterm", incomplete = FALSE)
 
-####################################################################################
-#get Portal abundance data for the entire site and for control plots only.
-moons$Year=year(moons$NewMoonDate); moons$Month=month(moons$NewMoonDate)
-controls=PortalDataSummaries::abundance(level="Treatment",type="Rodents",length="Longterm", incomplete = FALSE)
+  #Control plots
+  #The total rodent count in each treatment
+  controls$total = rowSums(controls[,-(1:2)])
+  #Drop non-control treatments and add in NewMoonNumber
+  controls = controls %>%
+    filter(treatment == 'control') %>%
+    select(-treatment) %>%
+    inner_join(moons,by=c("period"="Period")) %>%
+    subset(NewMoonNumber >= historic_start_newmoon) %>%
+    select(-NewMoonDate,-CensusDate,-period,-Year,-Month)
 
-#Control plots
-#The total rodent count in each treatment
-controls$total = rowSums(controls[,-(1:2)])
-#Drop non-control treatments and add in NewMoonNumber
-controls = controls %>%
-  filter(treatment == 'control') %>%
-  select(-treatment) %>%
-  inner_join(moons,by=c("period"="Period")) %>%
-  subset(NewMoonNumber >= historic_start_newmoon) %>%
-  select(-NewMoonDate,-CensusDate,-period,-Year,-Month)
+  #All plots
+  all=PortalDataSummaries::abundance(level="Site",type="Rodents",length="all", incomplete = FALSE)
+  #The total rodent count across the entire site
+  all$total = rowSums(all[,-(1)])
+  all=inner_join(moons,all,by=c("Period"="period"))
 
-#All plots
-all=PortalDataSummaries::abundance(level="Site",type="Rodents",length="all", incomplete = FALSE)
-#The total rodent count across the entire site
-all$total = rowSums(all[,-(1)])
-all=inner_join(moons,all,by=c("Period"="period"))
-
-all=subset(all,Period >= historic_start_period)
+  all=subset(all,Period >= historic_start_period)
+  rodent_data = list()
+  rodent_data$controls = controls
+  rodent_data$all = all
+  return(rodent_data)
+}
 
 ###################################################################################
 #get weather data
-get_weather_data <- function(moons, all){
+get_weather_data <- function(moons, all, first_forecast_newmoon, last_forecast_newmoon){
   weather_data=PortalDataSummaries::weather("Monthly") %>%
     ungroup() %>%
     left_join(moons, by=c('Year','Month'))
@@ -109,8 +95,11 @@ get_weather_data <- function(moons, all){
 
 #####Forecasting wrapper function for all models########################
 
-forecastall <- function(abundances, level, weather_data, weathermeans, CI_level = 0.9, num_forecast_months = 12) {
-  
+forecastall <- function(abundances, level, weather_data, weatherforecast,
+                        forecast_date, forecast_newmoons,
+                        forecast_months, forecast_years,
+                        CI_level = 0.9, num_forecast_months = 12) {
+
   #forecasts is where we will append all forecasts for this level
   #all_model_aic is where we will append all model aics for this level
   forecasts = data.frame(date=as.Date(character()), forecastmonth=numeric(), forecastyear=numeric(),
@@ -120,78 +109,78 @@ forecastall <- function(abundances, level, weather_data, weathermeans, CI_level 
                              species=character(), aic=numeric())
 
 #######Community level predictions#################
-  
+
 
   ###naive models####
-  
+
   #Model 1 is the default Forecast package with BoxCox.lambda(0),allow.multiplicative.trend=T
-  
+
   source('~/portalPredictions/models/naive01.R')
   model01=naive01(abundances,forecast_date,forecast_months,forecast_years,forecast_newmoons,level,num_forecast_months,CI_level)
 
   #Append results to forecasts and AIC tables
     forecasts = forecasts  %>%
       bind_rows(data.frame(model01[1]))
-  
+
     all_model_aic = all_model_aic %>%
       bind_rows(data.frame(date=forecast_date, currency='abundance', model='Forecast', level=level, species='total', aic=as.numeric(unlist(model01[2]))))
-  
-  
+
+
   #Model 2 is the default Forecast package auto.arima (lambda=0)
   source('~/portalPredictions/models/naive02.R')
   model02=naive02(abundances,forecast_date,forecast_months,forecast_years,forecast_newmoons,level,num_forecast_months,CI_level)
-  
+
   #Append results to forecasts and AIC tables
     forecasts = forecasts  %>%
       bind_rows(data.frame(model02[1]))
-  
+
     all_model_aic = all_model_aic %>%
       bind_rows(data.frame(date=forecast_date, model='AutoArima', currency='abundance', level=level, species='total', aic=unlist(model02[2])))
 
 
-    
+
 ####### Species level predictions #################
   #total is also included in these, for a community-level prediction
-  
+
 ##Negative Binomial Time Series Model
   source('~/portalPredictions/models/neg_binom_ts.R')
   nbts=neg_binom_ts(abundances,forecast_date,forecast_months,forecast_years,forecast_newmoons,level,num_forecast_months,CI_level)
-    
+
     #Append results to forecasts and AIC tables
     forecasts = forecasts  %>%
       bind_rows(data.frame(nbts[1]))
-    
+
     all_model_aic = all_model_aic %>%
       bind_rows(data.frame(nbts[2]))
-    
+
 ##Poisson environmental
-#Species level time series model with the best environmental covariates chosen by AIC  
+#Species level time series model with the best environmental covariates chosen by AIC
   source('~/portalPredictions/models/pois_env_ts.R')
   pets=pois_env_ts(abundances,weather_data,weathermeans,forecast_date,forecast_months,forecast_years,forecast_newmoons,level,num_forecast_months,CI_level)
-    
+
     #Append results to forecasts and AIC tables
     forecasts = forecasts  %>%
       bind_rows(data.frame(pets[1]))
-    
+
     all_model_aic = all_model_aic %>%
-      bind_rows(data.frame(pets[2]))  
-    
-    
+      bind_rows(data.frame(pets[2]))
+
+
 ##Abundance GAM
-  #Species level GAM with environmental covariates daily, monthly and 6-months 
+  #Species level GAM with environmental covariates daily, monthly and 6-months
     #only predicts current month of trapping
   source('~/portalPredictions/models/abundance-gam.R')
   agam=abundance-gam(level,forecast_date[1],forecast_months[1],forecast_years[1],forecast_newmoons[1],CI_level=0.9)
-    
+
     #Append results to forecasts and AIC tables
     forecasts = forecasts  %>%
       bind_rows(data.frame(agam[1]))
-    
+
     all_model_aic = all_model_aic %>%
-      bind_rows(data.frame(agam[2])) 
-    
+      bind_rows(data.frame(agam[2]))
+
 #########Write forecasts to file and aics to separate files###############
-  
+
 
   forecast_file_name = paste(as.character(forecast_date), level, filename_suffix, ".csv", sep="")
   model_aic_file_name = paste(as.character(forecast_date), level, filename_suffix, "_model_aic.csv", sep="")
@@ -202,10 +191,35 @@ forecastall <- function(abundances, level, weather_data, weathermeans, CI_level 
 }
 
 ######Run Models########################################################
-weather_data = get_weather_data(moons, all)
+  #By default name files YYYY-MM-DDXXXforecasts.csv. If hindcasting is being done
+  #(signified by hindcast CLI argument) then name them  YYYY-MM-DDXXXhindcast.csv
+args=commandArgs(trailingOnly = TRUE)
+if(is.na(args[1])){
+  filename_suffix = 'forecasts'
+} else if(args[1]=='hindcast') {
+  filename_suffix = 'hindcasts'
+} else {
+  stop(paste('Argument uknown: ', args[1]))
+}
+
+#The date this forecast model is run. Always todays date.
+forecast_date = Sys.Date()
+
+moons = get_moon_data()
+
+#Beginning and end of the forecast timeperiod
+most_recent_newmoon = moons$NewMoonNumber[which.max(moons$Period)]
+first_forecast_newmoon=most_recent_newmoon+1
+last_forecast_newmoon=first_forecast_newmoon + 11
+forecast_newmoons = first_forecast_newmoon:last_forecast_newmoon
+forecast_months=month(forecast_date %m+% months(0:11))
+forecast_years=year(forecast_date %m+% months(0:11))
+
+rodent_data = get_rodent_data(moons, forecast_date, filename_suffix)
+weather_data = get_weather_data(moons, rodent_data$all, first_forecast_newmoon, last_forecast_newmoon)
 
 #Get only relevent columns now that this is isn't needed to subset weather.
-all=all %>%
+rodent_data$all = rodent_data$all %>%
   select(-NewMoonDate,-CensusDate,-Period,-Year,-Month)
 
 #tscount::tsglm() will not model a timeseries of all 0's. So for those species, which are
@@ -213,8 +227,8 @@ all=all %>%
 zero_abund_forecast = list(pred=rep(0,12), interval=matrix(rep(0,24), ncol=2))
 colnames(zero_abund_forecast$interval) = c('lower','upper')
 
-allforecasts=forecastall(all,"All",weather_data,weathermeans)
-controlsforecasts=forecastall(controls,"Controls",weather_data,weathermeans)
+allforecasts=forecastall(rodent_data$all,"All",weather_data,weathermeans, forecast_date, forecast_newmoons, forecast_months, forecast_years)
+controlsforecasts=forecastall(rodent_data$controls,"Controls",weather_data,weathermeans, forecast_date, forecast_newmoons, forecast_months, forecast_years)
 
 ######Update Website####################################################
 rmarkdown::render('portal-forecast.Rmd', output_format = "html_document",
