@@ -42,8 +42,9 @@ make_ensemble=function(all_forecasts, models_to_use=NA, CI_level = 0.9){
   
   CI_quantile = qnorm((1-CI_level)/2, lower.tail = FALSE)
 
-  #Mean is the weighted mean of all model means
-  #Variance is the weighted mean of all model variances + the variances of the weighted mean
+  #Mean is the weighted mean of all model means.
+  #Variance is the weighted mean of all model variances + the variances of the weighted mean 
+  #using the unbiased estimate of sample variance. See https://github.com/weecology/portalPredictions/pull/65
   #We only store the prediction interval for models, so backcalculate individual model variance
   #assuming the same CI_level throughout. 
   weighted_estimates = all_forecasts %>%
@@ -51,7 +52,7 @@ make_ensemble=function(all_forecasts, models_to_use=NA, CI_level = 0.9){
     left_join(weights, by=c('date','model','currency','level','species')) %>%
     group_by(date, NewMoonNumber, forecastmonth, forecastyear,level, currency, species) %>%
     summarise(ensemble_estimate = sum(estimate*weight), 
-              ensemble_var   = sum(model_var * weight) + sum((weight*(estimate - ensemble_estimate))^2)) %>%
+              ensemble_var   = sum(model_var * weight) + (sum((weight*(estimate - ensemble_estimate))^2)) / (n()*sum(weight)-1)) %>%
     ungroup()
               
 
