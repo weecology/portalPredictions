@@ -229,7 +229,7 @@ forecast_is_valid=function(forecast_df, verbose=FALSE){
 }
 
 
-#' Collect all seperate forecasts file into a single dataframe.
+#' Collect all separate forecasts file into a single dataframe.
 #'
 #' The base folder can include subfolders.
 #' Will only include files which pass validation. Will issue

@@ -20,7 +20,7 @@ sppCodes = read.csv(FullPath('PortalData/Rodents/Portal_rodent_species.csv', bas
   dplyr::select(species = Species.Code, Rodent, Unidentified)
 
 rodents = rodents %>% mutate(date = as.Date(paste(yr, mo, dy, sep = "-")))
-plots=read.csv(FullPath('PortalData/SiteandMethods/new_Portal_plots.csv', base_folder))
+plots=read.csv(FullPath('PortalData/SiteandMethods/Portal_plots.csv', base_folder))
 
 
 # Discard unnecessary rows ------------------------------------------------
