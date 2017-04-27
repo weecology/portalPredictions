@@ -54,12 +54,12 @@ make_ensemble=function(all_forecasts, models_to_use=NA, CI_level = 0.9){
     summarise(ensemble_estimate = sum(estimate*weight), 
               weighted_ss = sum(weight * (estimate - ensemble_estimate)^2) ,
               ensemble_var   = sum(model_var * weight) + weighted_ss / (n()*sum(weight)-1),
-              sum_weight = round(sum(weight), 10)) %>% #round because the numbers get very very small
+              sum_weight = sum(weight)) %>% #round because the numbers get very very small
     ungroup() 
               
   #Assert that the summed weight of all the model ensembles is 1, as that's what the above variance estimates assume.
-  #summed weights can also be NA if there are not weights availble for that ensemble. 
-  if(!all(weighted_estimates$sum_weight == 1 | is.na(weighted_estimates$sum_weight))){ stop('Summed weights do not equal 1')}
+  #Rounded to account for precision errors. Summed weights can also be NA if there are not weights availble for that ensemble. 
+  if(!all(round(weighted_estimates$sum_weight, 10) == 1 | is.na(weighted_estimates$sum_weight))){ stop('Summed weights do not equal 1')}
 
   ensemble = weighted_estimates %>%
     mutate(LowerPI = ensemble_estimate - (sqrt(ensemble_var) * CI_quantile),
