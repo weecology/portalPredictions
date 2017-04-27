@@ -166,19 +166,6 @@ forecastall <- function(abundances, level, weather_data, weatherforecast,
       bind_rows(data.frame(pets[2]))
 
 
-##Abundance GAM
-  #Species level GAM with environmental covariates daily, monthly and 6-months
-    #only predicts current month of trapping
-  source('models/abundance-gam.R')
-  agam=abundance-gam(level,forecast_date[1],forecast_months[1],forecast_years[1],forecast_newmoons[1],CI_level=0.9)
-
-    #Append results to forecasts and AIC tables
-    forecasts = forecasts  %>%
-      bind_rows(data.frame(agam[1]))
-
-    all_model_aic = all_model_aic %>%
-      bind_rows(data.frame(agam[2]))
-
 #########Write forecasts to file and aics to separate files###############
 
 
