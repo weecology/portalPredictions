@@ -115,7 +115,7 @@ forecastall <- function(abundances, level, weather_data, weatherforecast,
 
   #Model 1 is the default Forecast package with BoxCox.lambda(0),allow.multiplicative.trend=T
 
-  source('~/portalPredictions/models/naive01.R')
+  source('models/naive01.R')
   model01=naive01(abundances,forecast_date,forecast_months,forecast_years,forecast_newmoons,level,num_forecast_months,CI_level)
 
   #Append results to forecasts and AIC tables
@@ -127,7 +127,7 @@ forecastall <- function(abundances, level, weather_data, weatherforecast,
 
 
   #Model 2 is the default Forecast package auto.arima (lambda=0)
-  source('~/portalPredictions/models/naive02.R')
+  source('models/naive02.R')
   model02=naive02(abundances,forecast_date,forecast_months,forecast_years,forecast_newmoons,level,num_forecast_months,CI_level)
 
   #Append results to forecasts and AIC tables
@@ -143,7 +143,7 @@ forecastall <- function(abundances, level, weather_data, weatherforecast,
   #total is also included in these, for a community-level prediction
 
 ##Negative Binomial Time Series Model
-  source('~/portalPredictions/models/neg_binom_ts.R')
+  source('models/neg_binom_ts.R')
   nbts=neg_binom_ts(abundances,forecast_date,forecast_months,forecast_years,forecast_newmoons,level,num_forecast_months,CI_level)
 
     #Append results to forecasts and AIC tables
@@ -155,7 +155,7 @@ forecastall <- function(abundances, level, weather_data, weatherforecast,
 
 ##Poisson environmental
 #Species level time series model with the best environmental covariates chosen by AIC
-  source('~/portalPredictions/models/pois_env_ts.R')
+  source('models/pois_env_ts.R')
   pets=pois_env_ts(abundances,weather_data,weathermeans,forecast_date,forecast_months,forecast_years,forecast_newmoons,level,num_forecast_months,CI_level)
 
     #Append results to forecasts and AIC tables
@@ -169,7 +169,7 @@ forecastall <- function(abundances, level, weather_data, weatherforecast,
 ##Abundance GAM
   #Species level GAM with environmental covariates daily, monthly and 6-months
     #only predicts current month of trapping
-  source('~/portalPredictions/models/abundance-gam.R')
+  source('models/abundance-gam.R')
   agam=abundance-gam(level,forecast_date[1],forecast_months[1],forecast_years[1],forecast_newmoons[1],CI_level=0.9)
 
     #Append results to forecasts and AIC tables
