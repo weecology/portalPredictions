@@ -42,18 +42,31 @@ make_ensemble=function(all_forecasts, models_to_use=NA, CI_level = 0.9){
   
   CI_quantile = qnorm((1-CI_level)/2, lower.tail = FALSE)
 
+  #Mean is the weighted mean of all model means.
+  #Variance is the weighted mean of all model variances + the variances of the weighted mean 
+  #using the unbiased estimate of sample variance. See https://github.com/weecology/portalPredictions/pull/65
+  #We only store the prediction interval for models, so backcalculate individual model variance
+  #assuming the same CI_level throughout. 
   weighted_estimates = all_forecasts %>%
+    mutate(model_var = ((UpperPI - estimate)/CI_quantile)^2) %>%
     left_join(weights, by=c('date','model','currency','level','species')) %>%
     group_by(date, NewMoonNumber, forecastmonth, forecastyear,level, currency, species) %>%
-    summarise(weighted_estimate = sum(estimate*weight), 
-              weighted_offset = sqrt(sum((weight*(estimate - weighted_estimate))^2)) * CI_quantile) %>%
-    ungroup()
-  
+    summarise(ensemble_estimate = sum(estimate*weight), 
+              weighted_ss = sum(weight * (estimate - ensemble_estimate)^2) ,
+              ensemble_var   = sum(model_var * weight) + weighted_ss / (n()*sum(weight)-1),
+              sum_weight = sum(weight)) %>% #round because the numbers get very very small
+    ungroup() 
+              
+  #Assert that the summed weight of all the model ensembles is 1, as that's what the above variance estimates assume.
+  #Rounded to account for precision errors. Summed weights can also be NA if there are not weights availble for that ensemble. 
+  if(!all(round(weighted_estimates$sum_weight, 10) == 1 | is.na(weighted_estimates$sum_weight))){ stop('Summed weights do not equal 1')}
+
   ensemble = weighted_estimates %>%
-    mutate(LowerPI= weighted_estimate - weighted_offset, 
-           UpperPI= weighted_estimate + weighted_offset) %>%
-    rename(estimate = weighted_estimate) %>%
-    select(-weighted_offset)
+    mutate(LowerPI = ensemble_estimate - (sqrt(ensemble_var) * CI_quantile),
+           UpperPI = ensemble_estimate + (sqrt(ensemble_var) * CI_quantile)) %>%
+    mutate(LowerPI = ifelse(LowerPI<0, 0, LowerPI)) %>%
+    rename(estimate = ensemble_estimate) %>%
+    select(-ensemble_var, -weighted_ss, -sum_weight)
   
   ensemble$model='Ensemble'
   return(ensemble)
