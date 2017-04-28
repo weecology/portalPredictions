@@ -1,8 +1,6 @@
 library(dplyr)
 library(lubridate)
-source('forecast_tools.R')
-
-
+library(PortalDataSummaries)
 
 #' Reset all the observed data (which will be used to training) to look
 #' like the sampling period in period_info just happened. 
@@ -40,7 +38,7 @@ backdate_observed_data=function(period_info){
 initial_time_periods=381:458
 
 #Get the latest to obtain the latest new moon info
-download_observations()
+PortalDataSummaries::download_observations()
 
 
 new_moons=read.csv('~/PortalData/Rodents/moon_dates.csv')
@@ -53,5 +51,5 @@ initial_times_info = new_moons %>%
 for(i in 1:nrow(initial_times_info)){
   backdate_observed_data(initial_times_info[i,])
   system('Rscript PortalForecasts.R hindcast')
-  download_observations()
+  PortalDataSummaries::download_observations()
 }
