@@ -286,7 +286,7 @@ compile_forecasts=function(forecast_folder='./predictions', verbose=FALSE){
       }
     }
   }
-
+all_forecasts$date=as.Date(all_forecasts$date)
   return(all_forecasts)
 }
 

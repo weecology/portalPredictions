@@ -22,8 +22,7 @@ obs_data_newmoon = inner_join(obs_data, new_moons, by = c("period" = "Period"))
 #for_data = read.csv("predictions/2017-02-24Allforecasts.csv")
 
 for_data = compile_forecasts() %>%
-  make_ensemble() %>%
-  dplyr::filter(level == 'All', date == max(date))
+  dplyr::filter(level == 'All', model == 'Ensemble', date == max(date))
 
 most_recent_forecast = max(for_data$date)
 for_data = filter(for_data, date == most_recent_forecast)
@@ -49,7 +48,7 @@ source("forecast_tools.R")
 source("actual_census_counts.R")
 
 data = compile_forecasts()
-ensemble = make_ensemble(data)
+ensemble = dplyr::filter(data, level == 'All', model == 'Ensemble', date == max(date))
 sp_predictions = get_sp_predicts(ensemble, 'All', lead_time = 1)
 plot_data(sp_predictions, 'All')
 ```
