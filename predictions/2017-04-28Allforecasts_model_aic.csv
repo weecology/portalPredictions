@@ -1,0 +1,45 @@
+"date","currency","model","level","species","aic"
+2017-04-28,"abundance","Forecast","All","total",2991.44314006815
+2017-04-28,"abundance","AutoArima","All","total",93.0481864944094
+2017-04-28,"abundance","NegBinom Time Series","All","BA",376.327282453146
+2017-04-28,"abundance","NegBinom Time Series","All","DM",1597.16362916254
+2017-04-28,"abundance","NegBinom Time Series","All","DO",1384.11513035678
+2017-04-28,"abundance","NegBinom Time Series","All","DS",204.19652249652
+2017-04-28,"abundance","NegBinom Time Series","All","NA",791.795132724947
+2017-04-28,"abundance","NegBinom Time Series","All","OL",742.61160685514
+2017-04-28,"abundance","NegBinom Time Series","All","OT",1341.79245633009
+2017-04-28,"abundance","NegBinom Time Series","All","PB",1635.77475491253
+2017-04-28,"abundance","NegBinom Time Series","All","PE",1082.20597722287
+2017-04-28,"abundance","NegBinom Time Series","All","PF",971.633504493599
+2017-04-28,"abundance","NegBinom Time Series","All","PH",1e+06
+2017-04-28,"abundance","NegBinom Time Series","All","PL",319.104242109828
+2017-04-28,"abundance","NegBinom Time Series","All","PM",638.914390281402
+2017-04-28,"abundance","NegBinom Time Series","All","PP",2092.05092813662
+2017-04-28,"abundance","NegBinom Time Series","All","RF",38.0368021216527
+2017-04-28,"abundance","NegBinom Time Series","All","RM",1009.47730652877
+2017-04-28,"abundance","NegBinom Time Series","All","RO",259.059344562112
+2017-04-28,"abundance","NegBinom Time Series","All","SF",445.928088066811
+2017-04-28,"abundance","NegBinom Time Series","All","SH",442.136008673151
+2017-04-28,"abundance","NegBinom Time Series","All","SO",1e+06
+2017-04-28,"abundance","NegBinom Time Series","All","total",2394.14303662583
+2017-04-28,"abundance","Poisson Env","All","BA",861.041800387403
+2017-04-28,"abundance","Poisson Env","All","DM",1626.02094101314
+2017-04-28,"abundance","Poisson Env","All","DO",1432.28152294753
+2017-04-28,"abundance","Poisson Env","All","DS",297.174250441634
+2017-04-28,"abundance","Poisson Env","All","NA",789.277319075545
+2017-04-28,"abundance","Poisson Env","All","OL",796.701713661099
+2017-04-28,"abundance","Poisson Env","All","OT",1457.6503449083
+2017-04-28,"abundance","Poisson Env","All","PB",1985.83905085808
+2017-04-28,"abundance","Poisson Env","All","PE",1135.06347100906
+2017-04-28,"abundance","Poisson Env","All","PF",1119.58247331645
+2017-04-28,"abundance","Poisson Env","All","PH",44.7116180566838
+2017-04-28,"abundance","Poisson Env","All","PL",396.894114031803
+2017-04-28,"abundance","Poisson Env","All","PM",741.281997844139
+2017-04-28,"abundance","Poisson Env","All","PP",4639.04781636184
+2017-04-28,"abundance","Poisson Env","All","RF",35.3421500548281
+2017-04-28,"abundance","Poisson Env","All","RM",1218.62274061301
+2017-04-28,"abundance","Poisson Env","All","RO",295.819527145554
+2017-04-28,"abundance","Poisson Env","All","SF",593.563257912629
+2017-04-28,"abundance","Poisson Env","All","SH",545.948957942883
+2017-04-28,"abundance","Poisson Env","All","SO",16.9934201605395
+2017-04-28,"abundance","Poisson Env","All","total",3874.82224624701

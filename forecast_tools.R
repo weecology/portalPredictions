@@ -39,7 +39,7 @@ compile_aic_weights = function(forecast_folder='./predictions'){
 #https://en.wikipedia.org/wiki/Weighted_arithmetic_mean
 make_ensemble=function(all_forecasts, models_to_use=NA, CI_level = 0.9){
   weights = compile_aic_weights()
-  
+  weights$date=as.Date(weights$date)
   CI_quantile = qnorm((1-CI_level)/2, lower.tail = FALSE)
 
   #Mean is the weighted mean of all model means.

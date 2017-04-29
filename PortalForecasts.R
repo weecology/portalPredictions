@@ -173,6 +173,11 @@ forecastall <- function(abundances, level, weather_data, weatherforecast,
   model_aic_file_name = paste(as.character(forecast_date), level, filename_suffix, "_model_aic.csv", sep="")
   write.csv(forecasts, file.path('predictions', forecast_file_name), row.names=FALSE)
   write.csv(all_model_aic, file.path('predictions', model_aic_file_name), row.names=FALSE)
+  
+########Add ensembles to files############################################
+  ensemble=make_ensemble(forecasts) %>% subset(select=colnames(forecasts))
+  forecasts=bind_rows(forecasts,ensemble)
+  write.csv(forecasts, file.path('predictions', forecast_file_name), row.names=FALSE)
 
   return(list(forecasts,all_model_aic))
 }
