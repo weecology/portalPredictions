@@ -47,12 +47,11 @@ forecast_viz(obs_data = obs_data_newmoon,
 
 ```{r speciesforecasts, echo=FALSE, message=FALSE, warning=FALSE}
 source("forecast_tools.R")
-source("actual_census_counts.R")
 
 data = compile_forecasts()
 ensemble = dplyr::filter(data, level == 'All', model == 'Ensemble', date == max(date))
 sp_predictions = get_sp_predicts(ensemble, 'All', lead_time = 1)
-plot_data(sp_predictions, 'All')
+plot_data(sp_predictions)
 ```
 ```{r highabund_ts_forecasts, echo=FALSE, message=FALSE, warning=FALSE}
 most_abund_sp = sp_predictions %>% 
