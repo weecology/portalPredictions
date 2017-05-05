@@ -81,23 +81,28 @@ get_sp_predicts = function(data, lvl, lead_time) {
   data2 = filter(data1, NewMoonNumber == target_moon)
 }
 
-plot_data = function(data, lvl, observed = NULL) {
-  if (!is.null(observed)){
-    observed = filter(observed, level == lvl)
-  }
+plot_data = function(data) {
+  newmoons_table = read.csv(
+    text = getURL(
+      "https://raw.githubusercontent.com/weecology/PortalData/master/Rodents/moon_dates.csv"))
+  target_moon=unique(data$NewMoonNumber)
+  period_code = dplyr::filter(newmoons_table, newmoons_table$NewMoonNumber == target_moon) %>%
+    dplyr::select(Period)
   sp_predict = ggplot(data,
-                       aes(
-                         x = estimate,
-                         y = reorder(species, estimate),
-                         xmin = LowerPI,
-                         xmax = UpperPI
-                         )) +
+                      aes(
+                        x = estimate,
+                        y = reorder(species, estimate),
+                        xmin = LowerPI,
+                        xmax = UpperPI
+                      )) +
     geom_point() +
     geom_errorbarh() +
-    ggtitle(paste(data$forecast_date[2], lvl, sep = " ")) + # should make title better somehow
+    ggtitle(paste(data$forecast_date[2], "All plots", sep = " ")) + # should make title better somehow
     ylab("Species") +
     xlab("Abundance")
-  if (!is.null(observed)) {
+  if(!is.na(period_code)){
+    rodents = abundance("repo", shape='flat')
+    observed = dplyr::filter(rodents, period == period_code)
     joined_data = left_join(data, observed, by = "species")
     joined_data[is.na(joined_data)] = 0
     sp_predict = sp_predict +
