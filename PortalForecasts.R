@@ -1,7 +1,6 @@
 library(lubridate)
 library(dplyr)
 library(magrittr)
-library(testit)
 library(rmarkdown)
 source('forecast_tools.R')
 

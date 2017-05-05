@@ -5,7 +5,6 @@
 
 library(tscount)
 
-
 neg_binom_ts=function(abundances,forecast_date,forecast_months,forecast_years,forecast_newmoons,level,num_forecast_months,CI_level) {
   
   #Note: PI is missing. It has an error in the Poison Env model which produces NA values.
@@ -23,7 +22,7 @@ neg_binom_ts=function(abundances,forecast_date,forecast_months,forecast_years,fo
     } else {
       model=tsglm(species_abundance,model=list(past_obs=1,past_mean=12),distr="nbinom")
       pred=predict(model,num_forecast_months,level=CI_level)
-      model_aic = ifelse(has_error(summary(model)),1e6,summary(model)$AIC)
+      model_aic = tryCatch(summary(model)$AIC, error = function(x) {1e6})
     }
     newpred=data.frame(date=rep(forecast_date,num_forecast_months), forecastmonth=forecast_months, forecastyear=forecast_years,
                        NewMoonNumber=forecast_newmoons, currency="abundance", model=rep("NegBinom Time Series",num_forecast_months),
