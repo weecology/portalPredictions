@@ -1,0 +1,529 @@
+"date","forecastmonth","forecastyear","NewMoonNumber","currency","model","level","species","estimate","LowerPI","UpperPI"
+2017-01-29,1,2017,491,"abundance","Forecast","All","total",126.43489542187,70.1139989842423,182.755791859497
+2017-01-29,2,2017,492,"abundance","Forecast","All","total",134.126370555772,54.0722917094702,214.180449402074
+2017-01-29,3,2017,493,"abundance","Forecast","All","total",141.817845689675,40.7830477393647,242.852643639984
+2017-01-29,4,2017,494,"abundance","Forecast","All","total",149.509320823577,28.5713325499862,270.447309097168
+2017-01-29,5,2017,495,"abundance","Forecast","All","total",157.200795957479,16.7658025650744,297.635789349885
+2017-01-29,6,2017,496,"abundance","Forecast","All","total",164.892271091382,5.01960674551506,324.764935437249
+2017-01-29,7,2017,497,"abundance","Forecast","All","total",172.583746225284,-6.87430276447989,352.041795215049
+2017-01-29,8,2017,498,"abundance","Forecast","All","total",180.275221359187,-19.0522756716791,379.602718390053
+2017-01-29,9,2017,499,"abundance","Forecast","All","total",187.966696493089,-31.6110128171604,407.544405803339
+2017-01-29,10,2017,500,"abundance","Forecast","All","total",195.658171626992,-44.6233229234682,435.939666177452
+2017-01-29,11,2017,501,"abundance","Forecast","All","total",203.349646760894,-58.1468528396773,464.846146361466
+2017-01-29,12,2017,502,"abundance","Forecast","All","total",211.041121894797,-72.2292589533649,494.311502742959
+2017-01-29,1,2017,491,"abundance","AutoArima","All","total",123.428621192745,76.153335694991,200.051966082744
+2017-01-29,2,2017,492,"abundance","AutoArima","All","total",125.600748144486,66.056997489989,238.81721140664
+2017-01-29,3,2017,493,"abundance","AutoArima","All","total",127.539049167101,60.6941792506181,268.002784835131
+2017-01-29,4,2017,494,"abundance","AutoArima","All","total",129.265239383125,57.432156204499,290.943318465687
+2017-01-29,5,2017,495,"abundance","AutoArima","All","total",130.799833552535,55.3239661607399,309.243852974372
+2017-01-29,6,2017,496,"abundance","AutoArima","All","total",132.16199636099,53.9194670072735,323.942246679962
+2017-01-29,7,2017,497,"abundance","AutoArima","All","total",133.369467672711,52.9711271590275,335.794533008552
+2017-01-29,8,2017,498,"abundance","AutoArima","All","total",134.438544012089,52.3299232964467,345.380252397919
+2017-01-29,9,2017,499,"abundance","AutoArima","All","total",135.384101008039,51.9004991323554,353.153729003896
+2017-01-29,10,2017,500,"abundance","AutoArima","All","total",136.219644603432,51.6191854848814,359.474706963749
+2017-01-29,11,2017,501,"abundance","AutoArima","All","total",136.957381461451,51.4421718896737,364.629323524786
+2017-01-29,12,2017,502,"abundance","AutoArima","All","total",137.608301199462,51.3386692568462,368.84564467897
+2017-01-29,1,2017,491,"abundance","NegBinom Time Series","All","BA",0.155964650546188,0,1
+2017-01-29,2,2017,492,"abundance","NegBinom Time Series","All","BA",0.323968294698672,0,2
+2017-01-29,3,2017,493,"abundance","NegBinom Time Series","All","BA",0.407240596777183,0,1
+2017-01-29,4,2017,494,"abundance","NegBinom Time Series","All","BA",0.470420084889378,0,1
+2017-01-29,5,2017,495,"abundance","NegBinom Time Series","All","BA",0.566463825875127,0,1
+2017-01-29,6,2017,496,"abundance","NegBinom Time Series","All","BA",0.634674139446999,0,1
+2017-01-29,7,2017,497,"abundance","NegBinom Time Series","All","BA",0.669881500338716,0,1
+2017-01-29,8,2017,498,"abundance","NegBinom Time Series","All","BA",0.696013270166878,0,1
+2017-01-29,9,2017,499,"abundance","NegBinom Time Series","All","BA",0.719345233826646,0,1
+2017-01-29,10,2017,500,"abundance","NegBinom Time Series","All","BA",0.741923768297009,0,1
+2017-01-29,11,2017,501,"abundance","NegBinom Time Series","All","BA",0.762341544022743,0,1
+2017-01-29,12,2017,502,"abundance","NegBinom Time Series","All","BA",0.781203836286911,0,1
+2017-01-29,1,2017,491,"abundance","NegBinom Time Series","All","DM",57.1907946754387,39,80
+2017-01-29,2,2017,492,"abundance","NegBinom Time Series","All","DM",54.2190947713184,32,82
+2017-01-29,3,2017,493,"abundance","NegBinom Time Series","All","DM",51.7895981745685,28,85
+2017-01-29,4,2017,494,"abundance","NegBinom Time Series","All","DM",49.7051638522509,24,85
+2017-01-29,5,2017,495,"abundance","NegBinom Time Series","All","DM",47.8080915420848,22,80
+2017-01-29,6,2017,496,"abundance","NegBinom Time Series","All","DM",46.5266188612791,21,79
+2017-01-29,7,2017,497,"abundance","NegBinom Time Series","All","DM",44.9200266891289,19,77
+2017-01-29,8,2017,498,"abundance","NegBinom Time Series","All","DM",43.2346161515463,18,77
+2017-01-29,9,2017,499,"abundance","NegBinom Time Series","All","DM",41.6702231006846,16,72
+2017-01-29,10,2017,500,"abundance","NegBinom Time Series","All","DM",40.4838317039484,17,74
+2017-01-29,11,2017,501,"abundance","NegBinom Time Series","All","DM",39.4861409939375,16,73
+2017-01-29,12,2017,502,"abundance","NegBinom Time Series","All","DM",38.9130475783141,15,69
+2017-01-29,1,2017,491,"abundance","NegBinom Time Series","All","DO",15.5483452922153,6,26
+2017-01-29,2,2017,492,"abundance","NegBinom Time Series","All","DO",15.1634038026071,4,33
+2017-01-29,3,2017,493,"abundance","NegBinom Time Series","All","DO",14.8353214249212,3,36
+2017-01-29,4,2017,494,"abundance","NegBinom Time Series","All","DO",14.5556995877177,3,38
+2017-01-29,5,2017,495,"abundance","NegBinom Time Series","All","DO",14.3173802595033,2,37
+2017-01-29,6,2017,496,"abundance","NegBinom Time Series","All","DO",14.1142627105669,2,39
+2017-01-29,7,2017,497,"abundance","NegBinom Time Series","All","DO",13.9411473405372,1,38
+2017-01-29,8,2017,498,"abundance","NegBinom Time Series","All","DO",13.7936025739899,2,37
+2017-01-29,9,2017,499,"abundance","NegBinom Time Series","All","DO",13.6678514166547,1,36
+2017-01-29,10,2017,500,"abundance","NegBinom Time Series","All","DO",13.5606747682181,2,39
+2017-01-29,11,2017,501,"abundance","NegBinom Time Series","All","DO",13.4693290167017,2,38
+2017-01-29,12,2017,502,"abundance","NegBinom Time Series","All","DO",13.3914758048322,2,42
+2017-01-29,1,2017,491,"abundance","NegBinom Time Series","All","DS",0.891129081053054,0,3
+2017-01-29,2,2017,492,"abundance","NegBinom Time Series","All","DS",0.798214505405386,0,3
+2017-01-29,3,2017,493,"abundance","NegBinom Time Series","All","DS",0.718917678930155,0,4
+2017-01-29,4,2017,494,"abundance","NegBinom Time Series","All","DS",0.651242756199708,0,4
+2017-01-29,5,2017,495,"abundance","NegBinom Time Series","All","DS",0.593486407787036,0,3
+2017-01-29,6,2017,496,"abundance","NegBinom Time Series","All","DS",0.568096432780034,0,3
+2017-01-29,7,2017,497,"abundance","NegBinom Time Series","All","DS",0.54642766415012,0,4
+2017-01-29,8,2017,498,"abundance","NegBinom Time Series","All","DS",0.527934714322516,0,3
+2017-01-29,9,2017,499,"abundance","NegBinom Time Series","All","DS",0.512152128845869,0,3
+2017-01-29,10,2017,500,"abundance","NegBinom Time Series","All","DS",0.474781185270991,0,3
+2017-01-29,11,2017,501,"abundance","NegBinom Time Series","All","DS",0.466788889131032,0,2
+2017-01-29,12,2017,502,"abundance","NegBinom Time Series","All","DS",0.459967960179894,0,3
+2017-01-29,1,2017,491,"abundance","NegBinom Time Series","All","NA",4.14533319011403,1,10
+2017-01-29,2,2017,492,"abundance","NegBinom Time Series","All","NA",3.54835822950092,0,11
+2017-01-29,3,2017,493,"abundance","NegBinom Time Series","All","NA",3.1438650189049,0,10
+2017-01-29,4,2017,494,"abundance","NegBinom Time Series","All","NA",2.84877890259204,0,10
+2017-01-29,5,2017,495,"abundance","NegBinom Time Series","All","NA",2.64264474476561,0,9
+2017-01-29,6,2017,496,"abundance","NegBinom Time Series","All","NA",2.51117553765884,0,8
+2017-01-29,7,2017,497,"abundance","NegBinom Time Series","All","NA",2.41307408308533,0,8
+2017-01-29,8,2017,498,"abundance","NegBinom Time Series","All","NA",2.33201821664416,0,8
+2017-01-29,9,2017,499,"abundance","NegBinom Time Series","All","NA",2.27534114727333,0,7
+2017-01-29,10,2017,500,"abundance","NegBinom Time Series","All","NA",2.2483309724214,0,7
+2017-01-29,11,2017,501,"abundance","NegBinom Time Series","All","NA",2.22946239710119,0,7
+2017-01-29,12,2017,502,"abundance","NegBinom Time Series","All","NA",2.22271372656453,0,7
+2017-01-29,1,2017,491,"abundance","NegBinom Time Series","All","OL",1.65347991164056,0,6
+2017-01-29,2,2017,492,"abundance","NegBinom Time Series","All","OL",2.40510685773529,0,9
+2017-01-29,3,2017,493,"abundance","NegBinom Time Series","All","OL",2.95230433432096,0,12
+2017-01-29,4,2017,494,"abundance","NegBinom Time Series","All","OL",2.88197760136492,0,13
+2017-01-29,5,2017,495,"abundance","NegBinom Time Series","All","OL",2.66076256532725,0,11
+2017-01-29,6,2017,496,"abundance","NegBinom Time Series","All","OL",2.55289816568038,0,11
+2017-01-29,7,2017,497,"abundance","NegBinom Time Series","All","OL",2.3658386365129,0,10
+2017-01-29,8,2017,498,"abundance","NegBinom Time Series","All","OL",2.27991074073511,0,9
+2017-01-29,9,2017,499,"abundance","NegBinom Time Series","All","OL",2.19091272866476,0,9
+2017-01-29,10,2017,500,"abundance","NegBinom Time Series","All","OL",2.14808353229326,0,10
+2017-01-29,11,2017,501,"abundance","NegBinom Time Series","All","OL",2.07509902341529,0,9
+2017-01-29,12,2017,502,"abundance","NegBinom Time Series","All","OL",2.07290877071464,0,8
+2017-01-29,1,2017,491,"abundance","NegBinom Time Series","All","OT",9.33696719328586,2,19
+2017-01-29,2,2017,492,"abundance","NegBinom Time Series","All","OT",9.74302157770029,1,23
+2017-01-29,3,2017,493,"abundance","NegBinom Time Series","All","OT",10.1629113483488,1,29
+2017-01-29,4,2017,494,"abundance","NegBinom Time Series","All","OT",10.056698781439,1,30
+2017-01-29,5,2017,495,"abundance","NegBinom Time Series","All","OT",9.99571624701641,1,33
+2017-01-29,6,2017,496,"abundance","NegBinom Time Series","All","OT",9.97488386715747,1,31
+2017-01-29,7,2017,497,"abundance","NegBinom Time Series","All","OT",9.9116867343534,1,32
+2017-01-29,8,2017,498,"abundance","NegBinom Time Series","All","OT",9.85757503812955,0,30
+2017-01-29,9,2017,499,"abundance","NegBinom Time Series","All","OT",9.84339193688316,1,28
+2017-01-29,10,2017,500,"abundance","NegBinom Time Series","All","OT",9.82951168001349,1,29
+2017-01-29,11,2017,501,"abundance","NegBinom Time Series","All","OT",9.86224412855457,1,28
+2017-01-29,12,2017,502,"abundance","NegBinom Time Series","All","OT",9.93712319781349,1,29
+2017-01-29,1,2017,491,"abundance","NegBinom Time Series","All","PB",1.76914579066681,0,5
+2017-01-29,2,2017,492,"abundance","NegBinom Time Series","All","PB",2.53540641480031,0,8
+2017-01-29,3,2017,493,"abundance","NegBinom Time Series","All","PB",3.23430441683116,0,10
+2017-01-29,4,2017,494,"abundance","NegBinom Time Series","All","PB",3.64189631506593,0,12
+2017-01-29,5,2017,495,"abundance","NegBinom Time Series","All","PB",3.99927135369421,0,14
+2017-01-29,6,2017,496,"abundance","NegBinom Time Series","All","PB",4.37998147481051,0,15
+2017-01-29,7,2017,497,"abundance","NegBinom Time Series","All","PB",4.77903166573444,0,18
+2017-01-29,8,2017,498,"abundance","NegBinom Time Series","All","PB",5.1111329277361,0,17
+2017-01-29,9,2017,499,"abundance","NegBinom Time Series","All","PB",5.4658488401844,0,20
+2017-01-29,10,2017,500,"abundance","NegBinom Time Series","All","PB",5.80316910979269,0,21
+2017-01-29,11,2017,501,"abundance","NegBinom Time Series","All","PB",6.09726430803869,0,22
+2017-01-29,12,2017,502,"abundance","NegBinom Time Series","All","PB",6.37505970973413,0,24
+2017-01-29,1,2017,491,"abundance","NegBinom Time Series","All","PE",4.74095775677038,0,12
+2017-01-29,2,2017,492,"abundance","NegBinom Time Series","All","PE",5.55956649985453,0,16
+2017-01-29,3,2017,493,"abundance","NegBinom Time Series","All","PE",6.31626870471437,0,20
+2017-01-29,4,2017,494,"abundance","NegBinom Time Series","All","PE",6.51005896045334,0,23
+2017-01-29,5,2017,495,"abundance","NegBinom Time Series","All","PE",6.47395561888553,0,21
+2017-01-29,6,2017,496,"abundance","NegBinom Time Series","All","PE",6.25948708860132,0,19
+2017-01-29,7,2017,497,"abundance","NegBinom Time Series","All","PE",6.08450298556845,0,20
+2017-01-29,8,2017,498,"abundance","NegBinom Time Series","All","PE",5.79443559051846,0,20
+2017-01-29,9,2017,499,"abundance","NegBinom Time Series","All","PE",5.6638693465821,0,20
+2017-01-29,10,2017,500,"abundance","NegBinom Time Series","All","PE",5.64615075060431,0,20
+2017-01-29,11,2017,501,"abundance","NegBinom Time Series","All","PE",5.58711668176162,0,20
+2017-01-29,12,2017,502,"abundance","NegBinom Time Series","All","PE",5.5484112186418,0,17
+2017-01-29,1,2017,491,"abundance","NegBinom Time Series","All","PF",0.569145456127236,0,2
+2017-01-29,2,2017,492,"abundance","NegBinom Time Series","All","PF",1.11031558038822,0,4
+2017-01-29,3,2017,493,"abundance","NegBinom Time Series","All","PF",1.5728359075917,0,7
+2017-01-29,4,2017,494,"abundance","NegBinom Time Series","All","PF",1.95125800757487,0,8
+2017-01-29,5,2017,495,"abundance","NegBinom Time Series","All","PF",2.28995900495794,0,10
+2017-01-29,6,2017,496,"abundance","NegBinom Time Series","All","PF",2.58382250902487,0,11
+2017-01-29,7,2017,497,"abundance","NegBinom Time Series","All","PF",2.86743700645075,0,11
+2017-01-29,8,2017,498,"abundance","NegBinom Time Series","All","PF",3.11762683375952,0,10
+2017-01-29,9,2017,499,"abundance","NegBinom Time Series","All","PF",3.32346250696799,0,13
+2017-01-29,10,2017,500,"abundance","NegBinom Time Series","All","PF",3.50026678484337,0,13
+2017-01-29,11,2017,501,"abundance","NegBinom Time Series","All","PF",3.65122369650289,0,13
+2017-01-29,12,2017,502,"abundance","NegBinom Time Series","All","PF",3.78431896103466,0,13
+2017-01-29,1,2017,491,"abundance","NegBinom Time Series","All","PH",0.021929941550376,0,0
+2017-01-29,2,2017,492,"abundance","NegBinom Time Series","All","PH",0.0219299415508339,0,0
+2017-01-29,3,2017,493,"abundance","NegBinom Time Series","All","PH",0.0219299415508339,0,0
+2017-01-29,4,2017,494,"abundance","NegBinom Time Series","All","PH",0.0219299415508339,0,0
+2017-01-29,5,2017,495,"abundance","NegBinom Time Series","All","PH",0.0219299415508339,0,0
+2017-01-29,6,2017,496,"abundance","NegBinom Time Series","All","PH",0.0219299415508339,0,0
+2017-01-29,7,2017,497,"abundance","NegBinom Time Series","All","PH",0.0219299415508339,0,0
+2017-01-29,8,2017,498,"abundance","NegBinom Time Series","All","PH",0.0219299415508339,0,0
+2017-01-29,9,2017,499,"abundance","NegBinom Time Series","All","PH",0.0219299415508339,0,0
+2017-01-29,10,2017,500,"abundance","NegBinom Time Series","All","PH",0.0219299415508339,0,0
+2017-01-29,11,2017,501,"abundance","NegBinom Time Series","All","PH",0.0219299415508339,0,0
+2017-01-29,12,2017,502,"abundance","NegBinom Time Series","All","PH",0.0219299415508339,0,0
+2017-01-29,1,2017,491,"abundance","NegBinom Time Series","All","PL",3.34334673394371,0,23
+2017-01-29,2,2017,492,"abundance","NegBinom Time Series","All","PL",2.75485278057676,0,4
+2017-01-29,3,2017,493,"abundance","NegBinom Time Series","All","PL",2.32123187578346,0,2
+2017-01-29,4,2017,494,"abundance","NegBinom Time Series","All","PL",1.94339131531226,0,1
+2017-01-29,5,2017,495,"abundance","NegBinom Time Series","All","PL",1.64342203848327,0,1
+2017-01-29,6,2017,496,"abundance","NegBinom Time Series","All","PL",1.4052751149876,0,1
+2017-01-29,7,2017,497,"abundance","NegBinom Time Series","All","PL",1.21620922876879,0,1
+2017-01-29,8,2017,498,"abundance","NegBinom Time Series","All","PL",1.06610899310576,0,1
+2017-01-29,9,2017,499,"abundance","NegBinom Time Series","All","PL",0.946943758207587,0,1
+2017-01-29,10,2017,500,"abundance","NegBinom Time Series","All","PL",0.852337956173155,0,1
+2017-01-29,11,2017,501,"abundance","NegBinom Time Series","All","PL",0.777229995142784,0,1
+2017-01-29,12,2017,502,"abundance","NegBinom Time Series","All","PL",0.751188479548362,0,1
+2017-01-29,1,2017,491,"abundance","NegBinom Time Series","All","PM",2.93536801092741,0,10
+2017-01-29,2,2017,492,"abundance","NegBinom Time Series","All","PM",2.98524821598634,0,12
+2017-01-29,3,2017,493,"abundance","NegBinom Time Series","All","PM",3.06718909004082,0,14
+2017-01-29,4,2017,494,"abundance","NegBinom Time Series","All","PM",3.08762865177398,0,13
+2017-01-29,5,2017,495,"abundance","NegBinom Time Series","All","PM",3.0336642358542,0,14
+2017-01-29,6,2017,496,"abundance","NegBinom Time Series","All","PM",3.00248012881476,0,12
+2017-01-29,7,2017,497,"abundance","NegBinom Time Series","All","PM",2.90130824801737,0,12
+2017-01-29,8,2017,498,"abundance","NegBinom Time Series","All","PM",2.79062736458574,0,10
+2017-01-29,9,2017,499,"abundance","NegBinom Time Series","All","PM",2.69013638008732,0,9
+2017-01-29,10,2017,500,"abundance","NegBinom Time Series","All","PM",2.599685168568,0,8
+2017-01-29,11,2017,501,"abundance","NegBinom Time Series","All","PM",2.51661091595662,0,6
+2017-01-29,12,2017,502,"abundance","NegBinom Time Series","All","PM",2.44028255213796,0,6
+2017-01-29,1,2017,491,"abundance","NegBinom Time Series","All","PP",6.7764467342197,0,18
+2017-01-29,2,2017,492,"abundance","NegBinom Time Series","All","PP",12.5203481810144,1,33
+2017-01-29,3,2017,493,"abundance","NegBinom Time Series","All","PP",17.3890360155743,1,49
+2017-01-29,4,2017,494,"abundance","NegBinom Time Series","All","PP",21.5158688915087,1,62
+2017-01-29,5,2017,495,"abundance","NegBinom Time Series","All","PP",25.0138852496944,1,76
+2017-01-29,6,2017,496,"abundance","NegBinom Time Series","All","PP",27.9788995498941,2,92
+2017-01-29,7,2017,497,"abundance","NegBinom Time Series","All","PP",30.492126706487,1,97
+2017-01-29,8,2017,498,"abundance","NegBinom Time Series","All","PP",32.6224067500043,2,105
+2017-01-29,9,2017,499,"abundance","NegBinom Time Series","All","PP",34.4280903466079,2,123
+2017-01-29,10,2017,500,"abundance","NegBinom Time Series","All","PP",35.9586371101118,2,135
+2017-01-29,11,2017,501,"abundance","NegBinom Time Series","All","PP",37.2559703634655,2,133
+2017-01-29,12,2017,502,"abundance","NegBinom Time Series","All","PP",38.3556254754418,1,121
+2017-01-29,1,2017,491,"abundance","NegBinom Time Series","All","RF",0.0131578667189301,0,0
+2017-01-29,2,2017,492,"abundance","NegBinom Time Series","All","RF",0.0131578667195488,0,0
+2017-01-29,3,2017,493,"abundance","NegBinom Time Series","All","RF",0.0131578667195488,0,0
+2017-01-29,4,2017,494,"abundance","NegBinom Time Series","All","RF",0.0131578667195488,0,0
+2017-01-29,5,2017,495,"abundance","NegBinom Time Series","All","RF",0.0131578667195488,0,0
+2017-01-29,6,2017,496,"abundance","NegBinom Time Series","All","RF",0.0131578667195488,0,0
+2017-01-29,7,2017,497,"abundance","NegBinom Time Series","All","RF",0.0131578667195488,0,0
+2017-01-29,8,2017,498,"abundance","NegBinom Time Series","All","RF",0.0131578667195488,0,0
+2017-01-29,9,2017,499,"abundance","NegBinom Time Series","All","RF",0.0131578667195488,0,0
+2017-01-29,10,2017,500,"abundance","NegBinom Time Series","All","RF",0.0131578667195488,0,0
+2017-01-29,11,2017,501,"abundance","NegBinom Time Series","All","RF",0.0131578667195488,0,0
+2017-01-29,12,2017,502,"abundance","NegBinom Time Series","All","RF",0.0131578667195488,0,0
+2017-01-29,1,2017,491,"abundance","NegBinom Time Series","All","RM",10.0973667663539,0,37
+2017-01-29,2,2017,492,"abundance","NegBinom Time Series","All","RM",9.33017080676542,0,44
+2017-01-29,3,2017,493,"abundance","NegBinom Time Series","All","RM",8.67809018477958,0,36
+2017-01-29,4,2017,494,"abundance","NegBinom Time Series","All","RM",8.12385220655877,0,22
+2017-01-29,5,2017,495,"abundance","NegBinom Time Series","All","RM",7.65277589146366,0,20
+2017-01-29,6,2017,496,"abundance","NegBinom Time Series","All","RM",7.25238309381738,0,17
+2017-01-29,7,2017,497,"abundance","NegBinom Time Series","All","RM",6.91206797448482,0,15
+2017-01-29,8,2017,498,"abundance","NegBinom Time Series","All","RM",6.62281606703911,0,16
+2017-01-29,9,2017,499,"abundance","NegBinom Time Series","All","RM",6.37696549735747,0,14
+2017-01-29,10,2017,500,"abundance","NegBinom Time Series","All","RM",6.16800403139331,0,15
+2017-01-29,11,2017,501,"abundance","NegBinom Time Series","All","RM",5.99039657530957,0,11
+2017-01-29,12,2017,502,"abundance","NegBinom Time Series","All","RM",5.83943855866767,0,12
+2017-01-29,1,2017,491,"abundance","NegBinom Time Series","All","RO",1.43730251883519,0,8
+2017-01-29,2,2017,492,"abundance","NegBinom Time Series","All","RO",1.06307470917974,0,3
+2017-01-29,3,2017,493,"abundance","NegBinom Time Series","All","RO",0.814190613893551,0,1
+2017-01-29,4,2017,494,"abundance","NegBinom Time Series","All","RO",0.648667658941384,0,1
+2017-01-29,5,2017,495,"abundance","NegBinom Time Series","All","RO",0.538584896960268,0,1
+2017-01-29,6,2017,496,"abundance","NegBinom Time Series","All","RO",0.465373211683593,0,1
+2017-01-29,7,2017,497,"abundance","NegBinom Time Series","All","RO",0.416683019274956,0,1
+2017-01-29,8,2017,498,"abundance","NegBinom Time Series","All","RO",0.384301100630024,0,1
+2017-01-29,9,2017,499,"abundance","NegBinom Time Series","All","RO",0.362765168992568,0,1
+2017-01-29,10,2017,500,"abundance","NegBinom Time Series","All","RO",0.348442473769388,0,1
+2017-01-29,11,2017,501,"abundance","NegBinom Time Series","All","RO",0.338917016412376,0,1
+2017-01-29,12,2017,502,"abundance","NegBinom Time Series","All","RO",0.332582011970377,0,1
+2017-01-29,1,2017,491,"abundance","NegBinom Time Series","All","SF",0.0792866587678095,0,1
+2017-01-29,2,2017,492,"abundance","NegBinom Time Series","All","SF",0.213606938449118,0,1
+2017-01-29,3,2017,493,"abundance","NegBinom Time Series","All","SF",0.277393736395784,0,1
+2017-01-29,4,2017,494,"abundance","NegBinom Time Series","All","SF",0.315262357665357,0,0
+2017-01-29,5,2017,495,"abundance","NegBinom Time Series","All","SF",0.39100310998574,0,1
+2017-01-29,6,2017,496,"abundance","NegBinom Time Series","All","SF",0.425342944726363,0,1
+2017-01-29,7,2017,497,"abundance","NegBinom Time Series","All","SF",0.475600292201405,0,1
+2017-01-29,8,2017,498,"abundance","NegBinom Time Series","All","SF",0.522787265939869,0,1
+2017-01-29,9,2017,499,"abundance","NegBinom Time Series","All","SF",0.544459893639898,0,1
+2017-01-29,10,2017,500,"abundance","NegBinom Time Series","All","SF",0.569860036831526,0,1
+2017-01-29,11,2017,501,"abundance","NegBinom Time Series","All","SF",0.591905953574575,0,1
+2017-01-29,12,2017,502,"abundance","NegBinom Time Series","All","SF",0.604497860423331,0,1
+2017-01-29,1,2017,491,"abundance","NegBinom Time Series","All","SH",2.83420054105519,0,15
+2017-01-29,2,2017,492,"abundance","NegBinom Time Series","All","SH",2.68250572381876,0,14
+2017-01-29,3,2017,493,"abundance","NegBinom Time Series","All","SH",2.54371565951707,0,6
+2017-01-29,4,2017,494,"abundance","NegBinom Time Series","All","SH",2.41673253435656,0,4
+2017-01-29,5,2017,495,"abundance","NegBinom Time Series","All","SH",2.30055192623711,0,2
+2017-01-29,6,2017,496,"abundance","NegBinom Time Series","All","SH",2.19425485972519,0,2
+2017-01-29,7,2017,497,"abundance","NegBinom Time Series","All","SH",2.09700053706385,0,2
+2017-01-29,8,2017,498,"abundance","NegBinom Time Series","All","SH",2.00801968757583,0,1
+2017-01-29,9,2017,499,"abundance","NegBinom Time Series","All","SH",1.92660848281961,0,1
+2017-01-29,10,2017,500,"abundance","NegBinom Time Series","All","SH",1.85212296938616,0,1
+2017-01-29,11,2017,501,"abundance","NegBinom Time Series","All","SH",1.78397397530042,0,1
+2017-01-29,12,2017,502,"abundance","NegBinom Time Series","All","SH",1.7216224497543,0,1
+2017-01-29,1,2017,491,"abundance","NegBinom Time Series","All","SO",0.013157856947209,0,0
+2017-01-29,2,2017,492,"abundance","NegBinom Time Series","All","SO",0.0131578569476199,0,0
+2017-01-29,3,2017,493,"abundance","NegBinom Time Series","All","SO",0.0131578569476199,0,0
+2017-01-29,4,2017,494,"abundance","NegBinom Time Series","All","SO",0.0131578569476199,0,0
+2017-01-29,5,2017,495,"abundance","NegBinom Time Series","All","SO",0.0131578569476199,0,0
+2017-01-29,6,2017,496,"abundance","NegBinom Time Series","All","SO",0.0131578569476199,0,0
+2017-01-29,7,2017,497,"abundance","NegBinom Time Series","All","SO",0.0131578569476199,0,0
+2017-01-29,8,2017,498,"abundance","NegBinom Time Series","All","SO",0.0131578569476199,0,0
+2017-01-29,9,2017,499,"abundance","NegBinom Time Series","All","SO",0.0131578569476199,0,0
+2017-01-29,10,2017,500,"abundance","NegBinom Time Series","All","SO",0.0131578569476199,0,0
+2017-01-29,11,2017,501,"abundance","NegBinom Time Series","All","SO",0.0131578569476199,0,0
+2017-01-29,12,2017,502,"abundance","NegBinom Time Series","All","SO",0.0131578569476199,0,0
+2017-01-29,1,2017,491,"abundance","NegBinom Time Series","All","total",127.850432524562,73,191
+2017-01-29,2,2017,492,"abundance","NegBinom Time Series","All","total",133.608783710372,67,219
+2017-01-29,3,2017,493,"abundance","NegBinom Time Series","All","total",138.449150729686,63,249
+2017-01-29,4,2017,494,"abundance","NegBinom Time Series","All","total",142.517876625813,64,262
+2017-01-29,5,2017,495,"abundance","NegBinom Time Series","All","total",145.937974926159,63,272
+2017-01-29,6,2017,496,"abundance","NegBinom Time Series","All","total",148.812848507067,60,295
+2017-01-29,7,2017,497,"abundance","NegBinom Time Series","All","total",151.229415795488,61,298
+2017-01-29,8,2017,498,"abundance","NegBinom Time Series","All","total",153.260739080932,58,325
+2017-01-29,9,2017,499,"abundance","NegBinom Time Series","All","total",154.968233151072,61,309
+2017-01-29,10,2017,500,"abundance","NegBinom Time Series","All","total",156.403522135864,61,307
+2017-01-29,11,2017,501,"abundance","NegBinom Time Series","All","total",157.610000341004,61,309
+2017-01-29,12,2017,502,"abundance","NegBinom Time Series","All","total",158.624144341409,61,311
+2017-01-29,1,2017,491,"abundance","Poisson Env","All","BA",3.41443422384831,1,7
+2017-01-29,2,2017,492,"abundance","Poisson Env","All","BA",12.6663762941168,4,24
+2017-01-29,3,2017,493,"abundance","Poisson Env","All","BA",36.8066670017069,14,63
+2017-01-29,4,2017,494,"abundance","Poisson Env","All","BA",93.3086196949602,40,152
+2017-01-29,5,2017,495,"abundance","Poisson Env","All","BA",185.939397278296,86,282
+2017-01-29,6,2017,496,"abundance","Poisson Env","All","BA",338.222304073919,171,494
+2017-01-29,7,2017,497,"abundance","Poisson Env","All","BA",661.836845291284,359,933
+2017-01-29,8,2017,498,"abundance","Poisson Env","All","BA",1362.5621657145,819,1837
+2017-01-29,9,2017,499,"abundance","Poisson Env","All","BA",2561.12797516218,1642,3318
+2017-01-29,10,2017,500,"abundance","Poisson Env","All","BA",4549.51317290952,3069,5745
+2017-01-29,11,2017,501,"abundance","Poisson Env","All","BA",7570.16857064835,5412,9306
+2017-01-29,12,2017,502,"abundance","Poisson Env","All","BA",11717.9515587901,8754,14052
+2017-01-29,1,2017,491,"abundance","Poisson Env","All","DM",54.8126245633328,42,68
+2017-01-29,2,2017,492,"abundance","Poisson Env","All","DM",50.5498902457154,36,66
+2017-01-29,3,2017,493,"abundance","Poisson Env","All","DM",47.5985762558387,31,65
+2017-01-29,4,2017,494,"abundance","Poisson Env","All","DM",45.2087387936573,29,61
+2017-01-29,5,2017,495,"abundance","Poisson Env","All","DM",42.9769270999497,25,60
+2017-01-29,6,2017,496,"abundance","Poisson Env","All","DM",41.4215926787019,24,58
+2017-01-29,7,2017,497,"abundance","Poisson Env","All","DM",39.6961123563419,23,57
+2017-01-29,8,2017,498,"abundance","Poisson Env","All","DM",37.8873911342765,21,54
+2017-01-29,9,2017,499,"abundance","Poisson Env","All","DM",36.3843392669341,19,53
+2017-01-29,10,2017,500,"abundance","Poisson Env","All","DM",35.3843440745225,19,51
+2017-01-29,11,2017,501,"abundance","Poisson Env","All","DM",34.6776336931381,18,51
+2017-01-29,12,2017,502,"abundance","Poisson Env","All","DM",34.49442999806,18,51
+2017-01-29,1,2017,491,"abundance","Poisson Env","All","DO",14.2630905950535,8,21
+2017-01-29,2,2017,492,"abundance","Poisson Env","All","DO",13.0102992229847,6,20
+2017-01-29,3,2017,493,"abundance","Poisson Env","All","DO",12.141634173871,4,20
+2017-01-29,4,2017,494,"abundance","Poisson Env","All","DO",11.537677256964,3,21
+2017-01-29,5,2017,495,"abundance","Poisson Env","All","DO",11.0078058817504,3,20
+2017-01-29,6,2017,496,"abundance","Poisson Env","All","DO",10.5569435851735,3,20
+2017-01-29,7,2017,497,"abundance","Poisson Env","All","DO",10.1448043607934,2,19
+2017-01-29,8,2017,498,"abundance","Poisson Env","All","DO",9.76713188247696,2,19
+2017-01-29,9,2017,499,"abundance","Poisson Env","All","DO",9.49191084252889,2,18
+2017-01-29,10,2017,500,"abundance","Poisson Env","All","DO",9.21869787498867,2,18
+2017-01-29,11,2017,501,"abundance","Poisson Env","All","DO",8.91186690383153,2,17
+2017-01-29,12,2017,502,"abundance","Poisson Env","All","DO",8.72396731268092,2,17
+2017-01-29,1,2017,491,"abundance","Poisson Env","All","DS",3.34515121064103,1,6
+2017-01-29,2,2017,492,"abundance","Poisson Env","All","DS",7.52889235454454,2,15
+2017-01-29,3,2017,493,"abundance","Poisson Env","All","DS",15.3342311994703,4,31
+2017-01-29,4,2017,494,"abundance","Poisson Env","All","DS",28.4516009103163,7,58
+2017-01-29,5,2017,495,"abundance","Poisson Env","All","DS",47.740277686829,12,97
+2017-01-29,6,2017,496,"abundance","Poisson Env","All","DS",66.9003151183964,16,135
+2017-01-29,7,2017,497,"abundance","Poisson Env","All","DS",97.2846197752096,23,198
+2017-01-29,8,2017,498,"abundance","Poisson Env","All","DS",147.931535406449,36,296
+2017-01-29,9,2017,499,"abundance","Poisson Env","All","DS",226.314699123827,55,462
+2017-01-29,10,2017,500,"abundance","Poisson Env","All","DS",387.028577300011,93,791
+2017-01-29,11,2017,501,"abundance","Poisson Env","All","DS",613.689084892041,143,1244
+2017-01-29,12,2017,502,"abundance","Poisson Env","All","DS",984.777926837299,234,1982
+2017-01-29,1,2017,491,"abundance","Poisson Env","All","NA",5.32083162513086,2,9
+2017-01-29,2,2017,492,"abundance","Poisson Env","All","NA",5.5888792551378,1,11
+2017-01-29,3,2017,493,"abundance","Poisson Env","All","NA",5.91906065921136,1,12
+2017-01-29,4,2017,494,"abundance","Poisson Env","All","NA",6.08894086200032,1,13
+2017-01-29,5,2017,495,"abundance","Poisson Env","All","NA",6.25147540722949,1,14
+2017-01-29,6,2017,496,"abundance","Poisson Env","All","NA",6.53396677898556,1,15
+2017-01-29,7,2017,497,"abundance","Poisson Env","All","NA",6.70869299148881,1,15
+2017-01-29,8,2017,498,"abundance","Poisson Env","All","NA",6.66510220660606,1,15
+2017-01-29,9,2017,499,"abundance","Poisson Env","All","NA",6.62079809100086,1,15
+2017-01-29,10,2017,500,"abundance","Poisson Env","All","NA",6.76347498223437,1,15
+2017-01-29,11,2017,501,"abundance","Poisson Env","All","NA",6.87736169037009,1,15
+2017-01-29,12,2017,502,"abundance","Poisson Env","All","NA",7.03869074948048,1,15
+2017-01-29,1,2017,491,"abundance","Poisson Env","All","OL",2.04355193942043,0,4
+2017-01-29,2,2017,492,"abundance","Poisson Env","All","OL",3.1012537356344,0,7
+2017-01-29,3,2017,493,"abundance","Poisson Env","All","OL",4.16395821121672,0,10
+2017-01-29,4,2017,494,"abundance","Poisson Env","All","OL",5.1671382013521,0,12
+2017-01-29,5,2017,495,"abundance","Poisson Env","All","OL",6.07773455303038,1,15
+2017-01-29,6,2017,496,"abundance","Poisson Env","All","OL",6.99156218737853,1,16
+2017-01-29,7,2017,497,"abundance","Poisson Env","All","OL",7.7946380565905,1,18
+2017-01-29,8,2017,498,"abundance","Poisson Env","All","OL",8.61327288433689,1,20
+2017-01-29,9,2017,499,"abundance","Poisson Env","All","OL",9.37401545843656,1,21
+2017-01-29,10,2017,500,"abundance","Poisson Env","All","OL",10.1495550719909,1,23
+2017-01-29,11,2017,501,"abundance","Poisson Env","All","OL",10.8559745421079,1,25
+2017-01-29,12,2017,502,"abundance","Poisson Env","All","OL",11.5855645091926,2,26
+2017-01-29,1,2017,491,"abundance","Poisson Env","All","OT",9.12105187884797,4,14
+2017-01-29,2,2017,492,"abundance","Poisson Env","All","OT",9.30183514271623,3,17
+2017-01-29,3,2017,493,"abundance","Poisson Env","All","OT",9.48139796624538,3,18
+2017-01-29,4,2017,494,"abundance","Poisson Env","All","OT",8.77682266117868,2,17
+2017-01-29,5,2017,495,"abundance","Poisson Env","All","OT",8.46406245021546,2,17
+2017-01-29,6,2017,496,"abundance","Poisson Env","All","OT",8.35097288959927,2,17
+2017-01-29,7,2017,497,"abundance","Poisson Env","All","OT",8.06400317710219,2,16
+2017-01-29,8,2017,498,"abundance","Poisson Env","All","OT",7.8456992219595,1,16
+2017-01-29,9,2017,499,"abundance","Poisson Env","All","OT",7.77023533371178,1,17
+2017-01-29,10,2017,500,"abundance","Poisson Env","All","OT",7.70001116761117,1,17
+2017-01-29,11,2017,501,"abundance","Poisson Env","All","OT",7.73397481052136,1,17
+2017-01-29,12,2017,502,"abundance","Poisson Env","All","OT",7.81993710677594,1,17
+2017-01-29,1,2017,491,"abundance","Poisson Env","All","PB",1.97140195969034,0,5
+2017-01-29,2,2017,492,"abundance","Poisson Env","All","PB",2.8470049956755,0,7
+2017-01-29,3,2017,493,"abundance","Poisson Env","All","PB",3.60641105668083,0,8
+2017-01-29,4,2017,494,"abundance","Poisson Env","All","PB",3.9498142519328,0,9
+2017-01-29,5,2017,495,"abundance","Poisson Env","All","PB",4.16458341046741,0,9
+2017-01-29,6,2017,496,"abundance","Poisson Env","All","PB",4.47059647000864,0,10
+2017-01-29,7,2017,497,"abundance","Poisson Env","All","PB",4.79969749848555,0,11
+2017-01-29,8,2017,498,"abundance","Poisson Env","All","PB",4.98197867354226,0,11
+2017-01-29,9,2017,499,"abundance","Poisson Env","All","PB",5.18923348043963,1,12
+2017-01-29,10,2017,500,"abundance","Poisson Env","All","PB",5.36017025412349,1,12
+2017-01-29,11,2017,501,"abundance","Poisson Env","All","PB",5.41814609132932,1,12
+2017-01-29,12,2017,502,"abundance","Poisson Env","All","PB",5.43823798480965,1,12
+2017-01-29,1,2017,491,"abundance","Poisson Env","All","PE",4.54664804523822,1,8
+2017-01-29,2,2017,492,"abundance","Poisson Env","All","PE",5.07507123755624,1,11
+2017-01-29,3,2017,493,"abundance","Poisson Env","All","PE",5.58277758718638,1,12
+2017-01-29,4,2017,494,"abundance","Poisson Env","All","PE",5.82093945530859,1,12
+2017-01-29,5,2017,495,"abundance","Poisson Env","All","PE",5.84398670474022,1,12
+2017-01-29,6,2017,496,"abundance","Poisson Env","All","PE",5.62865331616334,1,12
+2017-01-29,7,2017,497,"abundance","Poisson Env","All","PE",5.47546954081456,1,12
+2017-01-29,8,2017,498,"abundance","Poisson Env","All","PE",4.86578030371238,1,11
+2017-01-29,9,2017,499,"abundance","Poisson Env","All","PE",4.81747914542921,1,11
+2017-01-29,10,2017,500,"abundance","Poisson Env","All","PE",4.9041634282069,0,12
+2017-01-29,11,2017,501,"abundance","Poisson Env","All","PE",4.94459574867743,0,11
+2017-01-29,12,2017,502,"abundance","Poisson Env","All","PE",4.99700986708634,1,11
+2017-01-29,1,2017,491,"abundance","Poisson Env","All","PF",1.08531131791523,0,3
+2017-01-29,2,2017,492,"abundance","Poisson Env","All","PF",2.40987008901574,0,6
+2017-01-29,3,2017,493,"abundance","Poisson Env","All","PF",3.77095700583198,0,9
+2017-01-29,4,2017,494,"abundance","Poisson Env","All","PF",4.1378544475624,0,10
+2017-01-29,5,2017,495,"abundance","Poisson Env","All","PF",4.70981785065443,1,11
+2017-01-29,6,2017,496,"abundance","Poisson Env","All","PF",4.883834194912,1,11
+2017-01-29,7,2017,497,"abundance","Poisson Env","All","PF",5.9050234452183,1,13
+2017-01-29,8,2017,498,"abundance","Poisson Env","All","PF",6.71811389169452,1,14
+2017-01-29,9,2017,499,"abundance","Poisson Env","All","PF",6.92818546023415,1,14
+2017-01-29,10,2017,500,"abundance","Poisson Env","All","PF",6.84494407737287,1,13
+2017-01-29,11,2017,501,"abundance","Poisson Env","All","PF",6.34008793218411,1,13
+2017-01-29,12,2017,502,"abundance","Poisson Env","All","PF",5.99049456902634,1,12
+2017-01-29,1,2017,491,"abundance","Poisson Env","All","PH",0.0428138764888543,0,1
+2017-01-29,2,2017,492,"abundance","Poisson Env","All","PH",0.0223180524350691,0,0
+2017-01-29,3,2017,493,"abundance","Poisson Env","All","PH",0.00897942205856738,0,0
+2017-01-29,4,2017,494,"abundance","Poisson Env","All","PH",0.0111304078624148,0,0
+2017-01-29,5,2017,495,"abundance","Poisson Env","All","PH",0.0262078731659257,0,0
+2017-01-29,6,2017,496,"abundance","Poisson Env","All","PH",0.0385659257344638,0,0
+2017-01-29,7,2017,497,"abundance","Poisson Env","All","PH",0.0430338000843329,0,0
+2017-01-29,8,2017,498,"abundance","Poisson Env","All","PH",0.0534805897394788,0,1
+2017-01-29,9,2017,499,"abundance","Poisson Env","All","PH",0.0486759746909807,0,1
+2017-01-29,10,2017,500,"abundance","Poisson Env","All","PH",0.0418568740294246,0,0
+2017-01-29,11,2017,501,"abundance","Poisson Env","All","PH",0.0255210667016826,0,0
+2017-01-29,12,2017,502,"abundance","Poisson Env","All","PH",0.020258864949939,0,0
+2017-01-29,1,2017,491,"abundance","Poisson Env","All","PL",2.55877991770532,0,6
+2017-01-29,2,2017,492,"abundance","Poisson Env","All","PL",1.81242247381104,0,5
+2017-01-29,3,2017,493,"abundance","Poisson Env","All","PL",1.44154236538886,0,4
+2017-01-29,4,2017,494,"abundance","Poisson Env","All","PL",1.24846333585197,0,4
+2017-01-29,5,2017,495,"abundance","Poisson Env","All","PL",1.14755354384641,0,4
+2017-01-29,6,2017,496,"abundance","Poisson Env","All","PL",1.09776903316973,0,4
+2017-01-29,7,2017,497,"abundance","Poisson Env","All","PL",1.06986822277428,0,3
+2017-01-29,8,2017,498,"abundance","Poisson Env","All","PL",1.06018272346276,0,3
+2017-01-29,9,2017,499,"abundance","Poisson Env","All","PL",1.05602385246467,0,3
+2017-01-29,10,2017,500,"abundance","Poisson Env","All","PL",1.05452728525976,0,3
+2017-01-29,11,2017,501,"abundance","Poisson Env","All","PL",1.05493216698478,0,3
+2017-01-29,12,2017,502,"abundance","Poisson Env","All","PL",1.05920005049584,0,3
+2017-01-29,1,2017,491,"abundance","Poisson Env","All","PM",3.07805144677807,0,6
+2017-01-29,2,2017,492,"abundance","Poisson Env","All","PM",3.14162091607139,0,7
+2017-01-29,3,2017,493,"abundance","Poisson Env","All","PM",3.19119433251557,0,8
+2017-01-29,4,2017,494,"abundance","Poisson Env","All","PM",3.22816410454651,0,8
+2017-01-29,5,2017,495,"abundance","Poisson Env","All","PM",3.25421850570304,0,8
+2017-01-29,6,2017,496,"abundance","Poisson Env","All","PM",3.27499083043488,0,9
+2017-01-29,7,2017,497,"abundance","Poisson Env","All","PM",3.28640597095461,0,8
+2017-01-29,8,2017,498,"abundance","Poisson Env","All","PM",3.29231394559039,0,9
+2017-01-29,9,2017,499,"abundance","Poisson Env","All","PM",3.29685527463658,0,9
+2017-01-29,10,2017,500,"abundance","Poisson Env","All","PM",3.30033852612488,0,9
+2017-01-29,11,2017,501,"abundance","Poisson Env","All","PM",3.30300980411548,0,8
+2017-01-29,12,2017,502,"abundance","Poisson Env","All","PM",3.30504173323111,0,9
+2017-01-29,1,2017,491,"abundance","Poisson Env","All","PP",4.50114407577998,1,8
+2017-01-29,2,2017,492,"abundance","Poisson Env","All","PP",15.0739048231764,7,25
+2017-01-29,3,2017,493,"abundance","Poisson Env","All","PP",33.8795105559525,18,51
+2017-01-29,4,2017,494,"abundance","Poisson Env","All","PP",63.8271975546577,39,89
+2017-01-29,5,2017,495,"abundance","Poisson Env","All","PP",84.061578196743,55,112
+2017-01-29,6,2017,496,"abundance","Poisson Env","All","PP",95.2260599562557,68,120
+2017-01-29,7,2017,497,"abundance","Poisson Env","All","PP",105.512950903285,77,130
+2017-01-29,8,2017,498,"abundance","Poisson Env","All","PP",113.259817043575,86,140
+2017-01-29,9,2017,499,"abundance","Poisson Env","All","PP",119.359179710342,94,144
+2017-01-29,10,2017,500,"abundance","Poisson Env","All","PP",126.108911825399,101,151
+2017-01-29,11,2017,501,"abundance","Poisson Env","All","PP",137.602386706945,110,164
+2017-01-29,12,2017,502,"abundance","Poisson Env","All","PP",158.36478237186,129,186
+2017-01-29,1,2017,491,"abundance","Poisson Env","All","RF",0.0178178581002938,0,0
+2017-01-29,2,2017,492,"abundance","Poisson Env","All","RF",9.48799528763482e-07,0,0
+2017-01-29,3,2017,493,"abundance","Poisson Env","All","RF",6.98933130261175e-07,0,0
+2017-01-29,4,2017,494,"abundance","Poisson Env","All","RF",2.78685227528969e-07,0,0
+2017-01-29,5,2017,495,"abundance","Poisson Env","All","RF",2.96652462207147e-07,0,0
+2017-01-29,6,2017,496,"abundance","Poisson Env","All","RF",9.78194739963077e-07,0,0
+2017-01-29,7,2017,497,"abundance","Poisson Env","All","RF",1.02300142122899e-06,0,0
+2017-01-29,8,2017,498,"abundance","Poisson Env","All","RF",1.11549745134915e-06,0,0
+2017-01-29,9,2017,499,"abundance","Poisson Env","All","RF",9.56549699846891e-07,0,0
+2017-01-29,10,2017,500,"abundance","Poisson Env","All","RF",6.74651162215894e-07,0,0
+2017-01-29,11,2017,501,"abundance","Poisson Env","All","RF",5.9099517031752e-07,0,0
+2017-01-29,12,2017,502,"abundance","Poisson Env","All","RF",4.90908598004932e-07,0,0
+2017-01-29,1,2017,491,"abundance","Poisson Env","All","RM",3.62257550145425,1,7
+2017-01-29,2,2017,492,"abundance","Poisson Env","All","RM",1.47561252934725,0,4
+2017-01-29,3,2017,493,"abundance","Poisson Env","All","RM",0.822123083447792,0,3
+2017-01-29,4,2017,494,"abundance","Poisson Env","All","RM",0.620403655119052,0,2
+2017-01-29,5,2017,495,"abundance","Poisson Env","All","RM",0.580157495032097,0,2
+2017-01-29,6,2017,496,"abundance","Poisson Env","All","RM",0.597615977390882,0,2
+2017-01-29,7,2017,497,"abundance","Poisson Env","All","RM",0.611500644756381,0,2
+2017-01-29,8,2017,498,"abundance","Poisson Env","All","RM",0.631751925586273,0,2
+2017-01-29,9,2017,499,"abundance","Poisson Env","All","RM",0.634776777601193,0,2
+2017-01-29,10,2017,500,"abundance","Poisson Env","All","RM",0.633798394042205,0,2
+2017-01-29,11,2017,501,"abundance","Poisson Env","All","RM",0.629294487549264,0,2
+2017-01-29,12,2017,502,"abundance","Poisson Env","All","RM",0.624494900400933,0,2
+2017-01-29,1,2017,491,"abundance","Poisson Env","All","RO",0,0,0
+2017-01-29,2,2017,492,"abundance","Poisson Env","All","RO",0,0,0
+2017-01-29,3,2017,493,"abundance","Poisson Env","All","RO",0,0,0
+2017-01-29,4,2017,494,"abundance","Poisson Env","All","RO",0,0,0
+2017-01-29,5,2017,495,"abundance","Poisson Env","All","RO",0,0,0
+2017-01-29,6,2017,496,"abundance","Poisson Env","All","RO",0,0,0
+2017-01-29,7,2017,497,"abundance","Poisson Env","All","RO",0,0,0
+2017-01-29,8,2017,498,"abundance","Poisson Env","All","RO",0,0,0
+2017-01-29,9,2017,499,"abundance","Poisson Env","All","RO",0,0,0
+2017-01-29,10,2017,500,"abundance","Poisson Env","All","RO",0,0,0
+2017-01-29,11,2017,501,"abundance","Poisson Env","All","RO",0,0,0
+2017-01-29,12,2017,502,"abundance","Poisson Env","All","RO",0,0,0
+2017-01-29,1,2017,491,"abundance","Poisson Env","All","SF",0.622673887066714,0,2
+2017-01-29,2,2017,492,"abundance","Poisson Env","All","SF",0.841431107401021,0,3
+2017-01-29,3,2017,493,"abundance","Poisson Env","All","SF",1.22968295657595,0,4
+2017-01-29,4,2017,494,"abundance","Poisson Env","All","SF",1.68692374099083,0,5
+2017-01-29,5,2017,495,"abundance","Poisson Env","All","SF",1.59583143478439,0,5
+2017-01-29,6,2017,496,"abundance","Poisson Env","All","SF",2.04559782677147,0,6
+2017-01-29,7,2017,497,"abundance","Poisson Env","All","SF",2.04848471284877,0,6
+2017-01-29,8,2017,498,"abundance","Poisson Env","All","SF",2.09901840988413,0,6
+2017-01-29,9,2017,499,"abundance","Poisson Env","All","SF",2.44641578739068,0,7
+2017-01-29,10,2017,500,"abundance","Poisson Env","All","SF",2.82303473070667,0,7
+2017-01-29,11,2017,501,"abundance","Poisson Env","All","SF",3.10927825660727,0,8
+2017-01-29,12,2017,502,"abundance","Poisson Env","All","SF",3.07014071124618,0,8
+2017-01-29,1,2017,491,"abundance","Poisson Env","All","SH",4.12512416752879,1,7
+2017-01-29,2,2017,492,"abundance","Poisson Env","All","SH",5.40355504889691,1,11
+2017-01-29,3,2017,493,"abundance","Poisson Env","All","SH",6.0277149747598,1,13
+2017-01-29,4,2017,494,"abundance","Poisson Env","All","SH",7.20011203996636,1,16
+2017-01-29,5,2017,495,"abundance","Poisson Env","All","SH",8.97921674496167,2,21
+2017-01-29,6,2017,496,"abundance","Poisson Env","All","SH",10.7221706780868,2,24
+2017-01-29,7,2017,497,"abundance","Poisson Env","All","SH",12.7331547755473,2,28
+2017-01-29,8,2017,498,"abundance","Poisson Env","All","SH",15.3242130561745,3,35
+2017-01-29,9,2017,499,"abundance","Poisson Env","All","SH",18.2059169794684,3,42
+2017-01-29,10,2017,500,"abundance","Poisson Env","All","SH",21.6924817589398,4,51
+2017-01-29,11,2017,501,"abundance","Poisson Env","All","SH",25.6141375488319,5,60
+2017-01-29,12,2017,502,"abundance","Poisson Env","All","SH",28.1270942105621,5,66
+2017-01-29,1,2017,491,"abundance","Poisson Env","All","SO",7.63175047026482e-16,0,0
+2017-01-29,2,2017,492,"abundance","Poisson Env","All","SO",5.9764090676582e-25,0,0
+2017-01-29,3,2017,493,"abundance","Poisson Env","All","SO",2.6588228120081e-17,0,0
+2017-01-29,4,2017,494,"abundance","Poisson Env","All","SO",1.53146790921313e-21,0,0
+2017-01-29,5,2017,495,"abundance","Poisson Env","All","SO",2.16509874853397e-28,0,0
+2017-01-29,6,2017,496,"abundance","Poisson Env","All","SO",5.13560494445508e-27,0,0
+2017-01-29,7,2017,497,"abundance","Poisson Env","All","SO",1.66761141289711e-23,0,0
+2017-01-29,8,2017,498,"abundance","Poisson Env","All","SO",8.24620925725525e-30,0,0
+2017-01-29,9,2017,499,"abundance","Poisson Env","All","SO",1.06866329080584e-30,0,0
+2017-01-29,10,2017,500,"abundance","Poisson Env","All","SO",8.87523234889531e-25,0,0
+2017-01-29,11,2017,501,"abundance","Poisson Env","All","SO",1.49217131960421e-23,0,0
+2017-01-29,12,2017,502,"abundance","Poisson Env","All","SO",1.94224069282768e-16,0,0
+2017-01-29,1,2017,491,"abundance","Poisson Env","All","total",112.72078021874,95,130
+2017-01-29,2,2017,492,"abundance","Poisson Env","All","total",106.317759653264,85,129
+2017-01-29,3,2017,493,"abundance","Poisson Env","All","total",101.459348752204,78,126
+2017-01-29,4,2017,494,"abundance","Poisson Env","All","total",98.9515421768636,73,126
+2017-01-29,5,2017,495,"abundance","Poisson Env","All","total",96.7534926495533,72,124
+2017-01-29,6,2017,496,"abundance","Poisson Env","All","total",94.3182835140376,68,123
+2017-01-29,7,2017,497,"abundance","Poisson Env","All","total",93.083348127996,66,123
+2017-01-29,8,2017,498,"abundance","Poisson Env","All","total",92.2528316514244,64,121
+2017-01-29,9,2017,499,"abundance","Poisson Env","All","total",91.5565220400629,64,120
+2017-01-29,10,2017,500,"abundance","Poisson Env","All","total",91.3370078549808,63,120
+2017-01-29,11,2017,501,"abundance","Poisson Env","All","total",92.3686935597243,61,123
+2017-01-29,12,2017,502,"abundance","Poisson Env","All","total",93.7860581542277,62,123
