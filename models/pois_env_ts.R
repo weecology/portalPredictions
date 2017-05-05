@@ -36,7 +36,7 @@ for(s in species) {
                              xreg=weather_data[,unlist(proposed_model_covariates)], link = "log")
       #tsglm sometimes outputs an error when the time series have many 0's, in that case set the AIC
       #to Inf so this proposed model covariate set get skipped
-      proposed_model_aic = ifelse(any(class(tryCatch(summary(proposed_model)$AIC, error = function(e) e)) == "error"),1e6,summary(proposed_model)$AIC)
+      proposed_model_aic = tryCatch(summary(proposed_model)$AIC, error = function(x) Inf)
       if(proposed_model_aic < best_model_aic){
         best_model = proposed_model
         best_model_aic = proposed_model_aic
