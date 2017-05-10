@@ -87,7 +87,8 @@ plot_data = function(data) {
       "https://raw.githubusercontent.com/weecology/PortalData/master/Rodents/moon_dates.csv"))
   target_moon=unique(data$NewMoonNumber)
   period_code = dplyr::filter(newmoons_table, newmoons_table$NewMoonNumber == target_moon) %>%
-    dplyr::select(Period)
+    dplyr::select(Period) %>%
+    as.integer()
   sp_predict = ggplot(data,
                       aes(
                         x = estimate,
@@ -105,8 +106,10 @@ plot_data = function(data) {
     observed = dplyr::filter(rodents, period == period_code)
     joined_data = left_join(data, observed, by = "species")
     joined_data[is.na(joined_data)] = 0
+    joined_data[joined_data$species=='total','abundance'] = sum(joined_data$abundance,na.rm=T)
+    joined_data[joined_data$species=='total','period'] = period_code
     sp_predict = sp_predict +
-      geom_point(data = joined_data, mapping = aes(x = actual, y = species),
+      geom_point(data = joined_data, mapping = aes(x = abundance, y = species),
                  color = "blue")
   }
   plot(sp_predict)
