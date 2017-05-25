@@ -172,7 +172,7 @@ forecastall <- function(abundances, level, weather_data, weatherforecast,
   model_aic_file_name = paste(as.character(forecast_date), level, filename_suffix, "_model_aic.csv", sep="")
   write.csv(forecasts, file.path('predictions', forecast_file_name), row.names=FALSE)
   write.csv(all_model_aic, file.path('predictions', model_aic_file_name), row.names=FALSE)
-  
+
 ########Add ensembles to files############################################
   ensemble=make_ensemble(forecasts) %>% subset(select=colnames(forecasts))
   forecasts=bind_rows(forecasts,ensemble)
@@ -193,7 +193,7 @@ if(is.na(args[1])){
   stop(paste('Argument uknown: ', args[1]))
 }
 
-#The date this forecast model is run. Always todays date.
+#The date this forecast model is run. Always today's date.
 forecast_date = Sys.Date()
 
 moons = get_moon_data()
