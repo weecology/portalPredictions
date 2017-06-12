@@ -166,17 +166,21 @@ forecastall <- function(abundances, level, weather_data, weatherforecast,
   
   
   #########Write forecasts to file and aics to separate files###############
+  #Appending a csv without re-writing the header. Needed for hindcasting
+  #when many hindcasts are put into the same dated files. 
+  append_csv=function(df, filename){
+    write.table(df, filename, sep = ',', row.names = FALSE, col.names = !file.exists(filename), append = file.exists(filename))
+  }
   
-  
-  forecast_file_name = paste(as.character(forecast_date), level, filename_suffix, ".csv", sep="")
-  model_aic_file_name = paste(as.character(forecast_date), level, filename_suffix, "_model_aic.csv", sep="")
-  write.csv(forecasts, file.path('predictions', forecast_file_name), row.names=FALSE, append=TRUE)
-  write.csv(all_model_aic, file.path('predictions', model_aic_file_name), row.names=FALSE, append=TRUE)
+  forecast_filename = file.path('predictions', paste(as.character(forecast_date), level, filename_suffix, ".csv", sep=""))
+  model_aic_filename = file.path('predictions', paste(as.character(forecast_date), level, filename_suffix, "_model_aic.csv", sep=""))
+  append_csv(forecasts, forecast_filename)
+  append_csv(all_model_aic, model_aic_filename)
   
   ########Add ensembles to files############################################
-  ensemble=make_ensemble(forecasts) %>% subset(select=colnames(forecasts))
-  forecasts=bind_rows(forecasts,ensemble)
-  write.csv(forecasts, file.path('predictions', forecast_file_name), row.names=FALSE)
+  ensemble=make_ensemble(forecasts) %>% 
+    subset(select=colnames(forecasts))
+  append_csv(ensemble, forecast_filename)
   
   return(list(forecasts,all_model_aic))
 }
