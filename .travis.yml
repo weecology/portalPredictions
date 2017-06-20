@@ -1,0 +1,13 @@
+language: r
+cache: packages
+sudo: false
+warnings_are_errors: false
+
+install:
+  - R -e 'install.packages(c("devtools", "dplyr", "lubridate", "readr", "tidyverse", "zoo", "ggplot2", "forecast", "magrittr", "rmarkdown"))'
+  - R -e 'devtools::install_github("weecology/PortalDataSummaries")'
+  - R -e 'download.file(url = "https://cran.r-project.org/src/contrib/Archive/tscount/tscount_1.3.0.tar.gz", destfile = "~/tscount_1.3.0.tar.gz")'
+  - R -e 'install.packages(pkgs = "pkgFile", type = "source", repos = NULL)'
+  
+script:
+  - Rscript PortalForecasts.R
