@@ -196,6 +196,7 @@ if(is.na(args[1])){
 #The date this forecast model is run. Always today's date.
 forecast_date = Sys.Date()
 
+PortalDataSummaries::download_observations()
 moons = get_moon_data()
 
 #Beginning and end of the forecast timeperiod
