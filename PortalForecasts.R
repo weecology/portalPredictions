@@ -115,6 +115,7 @@ forecastall <- function(abundances, level, weather_data, weatherforecast,
   #Model 1 is the default Forecast package with BoxCox.lambda(0),allow.multiplicative.trend=T
 
   source('models/naive01.R')
+  print("Fitting naive01 model")
   model01=naive01(abundances,forecast_date,forecast_months,forecast_years,forecast_newmoons,level,num_forecast_months,CI_level)
 
   #Append results to forecasts and AIC tables
@@ -127,6 +128,7 @@ forecastall <- function(abundances, level, weather_data, weatherforecast,
 
   #Model 2 is the default Forecast package auto.arima (lambda=0)
   source('models/naive02.R')
+  print("Fitting naive02 model")
   model02=naive02(abundances,forecast_date,forecast_months,forecast_years,forecast_newmoons,level,num_forecast_months,CI_level)
 
   #Append results to forecasts and AIC tables
@@ -143,6 +145,7 @@ forecastall <- function(abundances, level, weather_data, weatherforecast,
 
 ##Negative Binomial Time Series Model
   source('models/neg_binom_ts.R')
+  print("Fitting negative binomial model")
   nbts=neg_binom_ts(abundances,forecast_date,forecast_months,forecast_years,forecast_newmoons,level,num_forecast_months,CI_level)
 
     #Append results to forecasts and AIC tables
@@ -155,6 +158,7 @@ forecastall <- function(abundances, level, weather_data, weatherforecast,
 ##Poisson environmental
 #Species level time series model with the best environmental covariates chosen by AIC
   source('models/pois_env_ts.R')
+  print("Fitting Poisson environmental model")
   pets=pois_env_ts(abundances,weather_data,weathermeans,forecast_date,forecast_months,forecast_years,forecast_newmoons,level,num_forecast_months,CI_level)
 
     #Append results to forecasts and AIC tables
@@ -196,6 +200,7 @@ if(is.na(args[1])){
 #The date this forecast model is run. Always today's date.
 forecast_date = Sys.Date()
 
+PortalDataSummaries::download_observations()
 moons = get_moon_data()
 
 #Beginning and end of the forecast timeperiod
@@ -218,7 +223,10 @@ rodent_data$all = rodent_data$all %>%
 zero_abund_forecast = list(pred=rep(0,12), interval=matrix(rep(0,24), ncol=2))
 colnames(zero_abund_forecast$interval) = c('lower','upper')
 
+print("Making site level forecasts")
 allforecasts=forecastall(rodent_data$all,"All",weather_data,weathermeans, forecast_date, forecast_newmoons, forecast_months, forecast_years)
+
+print("Making control plot forecasts")
 controlsforecasts=forecastall(rodent_data$controls,"Controls",weather_data,weathermeans, forecast_date, forecast_newmoons, forecast_months, forecast_years)
 
 ######Update Website####################################################
