@@ -167,7 +167,14 @@ forecastall <- function(abundances, level, weather_data, weatherforecast,
 
     all_model_aic = all_model_aic %>%
       bind_rows(data.frame(pets[2]))
-
+    
+#########Include columns describing the data used in the forecast###############
+    forecasts$fit_start_newmoon = min(abundances$NewMoonNumber)
+    forecasts$fit_end_newmoon   = max(abundances$NewMoonNumber)
+    forecasts$initial_newmoon   = max(abundances$NewMoonNumber)
+    all_model_aic$fit_start_newmoon = min(abundances$NewMoonNumber)
+    all_model_aic$fit_end_newmoon   = max(abundances$NewMoonNumber)
+    all_model_aic$initial_newmoon   = max(abundances$NewMoonNumber)
 
 #########Write forecasts to file and aics to separate files###############
 
