@@ -157,16 +157,16 @@ forecastall <- function(abundances, level, weather_data, weatherforecast,
 
 ##Poisson environmental
 #Species level time series model with the best environmental covariates chosen by AIC
-  source('models/pois_env_ts.R')
-  print("Fitting Poisson environmental model")
-  pets=pois_env_ts(abundances,weather_data,weathermeans,forecast_date,forecast_months,forecast_years,forecast_newmoons,level,num_forecast_months,CI_level)
+#  source('models/pois_env_ts.R')
+#  print("Fitting Poisson environmental model")
+#  pets=pois_env_ts(abundances,weather_data,weathermeans,forecast_date,forecast_months,forecast_years,forecast_newmoons,level,num_forecast_months,CI_level)
 
     #Append results to forecasts and AIC tables
-    forecasts = forecasts  %>%
-      bind_rows(data.frame(pets[1]))
+#    forecasts = forecasts  %>%
+#      bind_rows(data.frame(pets[1]))
 
-    all_model_aic = all_model_aic %>%
-      bind_rows(data.frame(pets[2]))
+#    all_model_aic = all_model_aic %>%
+#      bind_rows(data.frame(pets[2]))
 
 
 #########Write forecasts to file and aics to separate files###############
