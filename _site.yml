@@ -12,3 +12,7 @@ navbar:
       href: about.html
 
 output_dir: "docs"
+#This ensures only website files are put
+#into docs/, all .Rmd and .md files are
+#still rendered regardless.
+exclude: "*"
