@@ -1,6 +1,7 @@
 git config --global user.email "weecologydeploy@weecology.org"
 git config --global user.name "Weecology Deploy Bot"
 
+git checkout master
 git add predictions/* docs/*
 git commit -m "Update forecasts: Travis Build $TRAVIS_BUILD_NUMBER"
 
