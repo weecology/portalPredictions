@@ -10,4 +10,4 @@ script:
   - Rscript PortalForecasts.R
 
 after_success:
-  - update_repo.sh
+  - ./update_repo.sh

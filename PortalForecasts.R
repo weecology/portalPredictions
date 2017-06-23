@@ -226,8 +226,8 @@ colnames(zero_abund_forecast$interval) = c('lower','upper')
 print("Making site level forecasts")
 allforecasts=forecastall(rodent_data$all,"All",weather_data,weathermeans, forecast_date, forecast_newmoons, forecast_months, forecast_years)
 
-print("Making control plot forecasts")
-controlsforecasts=forecastall(rodent_data$controls,"Controls",weather_data,weathermeans, forecast_date, forecast_newmoons, forecast_months, forecast_years)
+#print("Making control plot forecasts")
+#controlsforecasts=forecastall(rodent_data$controls,"Controls",weather_data,weathermeans, forecast_date, forecast_newmoons, forecast_months, forecast_years)
 
 ######Update Website####################################################
 rmarkdown::render('portal-forecast.Rmd', output_format = "html_document",
