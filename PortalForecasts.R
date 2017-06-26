@@ -230,4 +230,4 @@ print("Making control plot forecasts")
 controlsforecasts=forecastall(rodent_data$controls,"Controls",weather_data,weathermeans, forecast_date, forecast_newmoons, forecast_months, forecast_years)
 
 ######Update Website####################################################
-rmarkdown::render()
+rmarkdown::render_site()
