@@ -5,21 +5,10 @@ library(rmarkdown)
 source('forecast_tools.R')
 source('model_functions.R')
 
-######Run Models########################################################
-  #By default name files YYYY-MM-DDXXXforecasts.csv. If hindcasting is being done
-  #(signified by hindcast CLI argument) then name them  YYYY-MM-DDXXXhindcast.csv
-args=commandArgs(trailingOnly = TRUE)
-if(is.na(args[1])){
-  filename_suffix = 'forecasts'
-} else if(args[1]=='hindcast') {
-  filename_suffix = 'hindcasts'
-} else {
-  stop(paste('Argument uknown: ', args[1]))
-}
-
-#The date this forecast model is run. Always todays date.
+#The date this forecast model is run. Always today's date.
 forecast_date = Sys.Date()
 
+PortalDataSummaries::download_observations()
 moons = get_moon_data()
 
 #Beginning and end of the forecast timeperiod
@@ -42,9 +31,11 @@ rodent_data$all = rodent_data$all %>%
 zero_abund_forecast = list(pred=rep(0,12), interval=matrix(rep(0,24), ncol=2))
 colnames(zero_abund_forecast$interval) = c('lower','upper')
 
+print("Making site level forecasts")
 allforecasts=forecastall(rodent_data$all,"All",weather_data,weathermeans, forecast_date, forecast_newmoons, forecast_months, forecast_years)
+
+print("Making control plot forecasts")
 controlsforecasts=forecastall(rodent_data$controls,"Controls",weather_data,weathermeans, forecast_date, forecast_newmoons, forecast_months, forecast_years)
 
 ######Update Website####################################################
-rmarkdown::render('portal-forecast.Rmd', output_format = "html_document",
-                  output_file = 'index.html', output_dir = 'docs')
+rmarkdown::render_site()

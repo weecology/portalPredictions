@@ -11,7 +11,7 @@
 
 
 
-<title>Portal Forecast</title>
+<title></title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -199,19 +199,17 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Portal Forecast</h1>
 
 </div>
 
 
-<div id="total-abundance-forecast" class="section level2">
-<h2>Total Abundance Forecast</h2>
-<p>This is the forecast for next month’s sampling of rodents at Portal.</p>
-<p><img src="index_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
-</div>
-<div id="species-level-forecasts" class="section level2">
-<h2>Species-Level Forecasts</h2>
-<p><img src="index_files/figure-html/speciesforecasts-1.png" width="672" /> <img src="index_files/figure-html/highabund_ts_forecasts-1.png" width="672" /><img src="index_files/figure-html/highabund_ts_forecasts-2.png" width="672" /><img src="index_files/figure-html/highabund_ts_forecasts-3.png" width="672" /></p>
+<div id="portal-predictions" class="section level1">
+<h1>Portal Predictions</h1>
+<p>This is the main repository for predictions made on the Portal rodent census data <a href="http://portal.weecology.org/">Portal Project</a>.</p>
+<p>Predictions are made approximately monthly, immediately prior to a new trapping session (trapping occurs as close to each new moon as possible.</p>
+<p>Portalforecasts.R is the main function used to produce forecasts. Multiple models are used for each new forecast, and are descibed in their respective files.</p>
+<p>Models currently in use are in the models directory. Models that were used or we’re developing but not currently using are under DevelopingModels.</p>
+<p>Predictions contains all predictions made thusfar and model aics. Each new prediction made on a particular time series (varies by level and currency) is saved in a new file in this directory.</p>
 </div>
 
 

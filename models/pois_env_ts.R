@@ -22,6 +22,7 @@ model_covariates = list(c('MaxTemp','MeanTemp','Precipitation','NDVI'),
                         c('NDVI'))
 
 for(s in species) {
+  print(paste("Fitting Poisson environmental models for", s))
   species_abundance = abundances %>%
     extract2(s)
   

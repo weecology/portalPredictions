@@ -28,7 +28,7 @@ compile_aic_weights = function(forecast_folder='./predictions'){
     bind_rows()
 
   all_weights = all_model_aic %>%
-    group_by(date,currency, level, species) %>%
+    group_by(date,currency, level, species, fit_start_newmoon, fit_end_newmoon, initial_newmoon) %>%
     mutate(delta_aic = aic-min(aic), weight = exp(-0.5*delta_aic) / sum(exp(-0.5*delta_aic))) %>%
     ungroup()
   return(all_weights)
@@ -49,8 +49,8 @@ make_ensemble=function(all_forecasts, models_to_use=NA, CI_level = 0.9){
   #assuming the same CI_level throughout. 
   weighted_estimates = all_forecasts %>%
     mutate(model_var = ((UpperPI - estimate)/CI_quantile)^2) %>%
-    left_join(weights, by=c('date','model','currency','level','species')) %>%
-    group_by(date, NewMoonNumber, forecastmonth, forecastyear,level, currency, species) %>%
+    left_join(weights, by=c('date','model','currency','level','species','fit_start_newmoon','fit_end_newmoon','initial_newmoon')) %>%
+    group_by(date, NewMoonNumber, forecastmonth, forecastyear,level, currency, species, fit_start_newmoon, fit_end_newmoon, initial_newmoon) %>%
     summarise(ensemble_estimate = sum(estimate*weight), 
               weighted_ss = sum(weight * (estimate - ensemble_estimate)^2) ,
               ensemble_var   = sum(model_var * weight) + weighted_ss / (n()*sum(weight)-1),
@@ -87,7 +87,8 @@ plot_data = function(data) {
       "https://raw.githubusercontent.com/weecology/PortalData/master/Rodents/moon_dates.csv"))
   target_moon=unique(data$NewMoonNumber)
   period_code = dplyr::filter(newmoons_table, newmoons_table$NewMoonNumber == target_moon) %>%
-    dplyr::select(Period)
+    dplyr::select(Period) %>%
+    as.integer()
   sp_predict = ggplot(data,
                       aes(
                         x = estimate,
@@ -105,8 +106,10 @@ plot_data = function(data) {
     observed = dplyr::filter(rodents, period == period_code)
     joined_data = left_join(data, observed, by = "species")
     joined_data[is.na(joined_data)] = 0
+    joined_data[joined_data$species=='total','abundance'] = sum(joined_data$abundance,na.rm=T)
+    joined_data[joined_data$species=='total','period'] = period_code
     sp_predict = sp_predict +
-      geom_point(data = joined_data, mapping = aes(x = actual, y = species),
+      geom_point(data = joined_data, mapping = aes(x = abundance, y = species),
                  color = "blue")
   }
   plot(sp_predict)
@@ -212,7 +215,8 @@ forecast_is_valid=function(forecast_df, verbose=FALSE){
   violations=c()
   #Define valid valeus
   valid_columns = c('date','forecastmonth','forecastyear','NewMoonNumber','model','currency',
-                    'level','species','estimate','LowerPI','UpperPI')
+                    'level','species','estimate','LowerPI','UpperPI','fit_start_newmoon',
+                    'fit_end_newmoon','initial_newmoon')
   valid_currencies = c('abundance','richness','biomass','energy')
   valid_levels = paste('Plot',1:24,' ', sep = '')
   valid_levels = c('All','Controls','FullExclosure','KratExclosure', valid_levels)
@@ -242,6 +246,14 @@ forecast_is_valid=function(forecast_df, verbose=FALSE){
   if(any(is.na(forecast_df$LowerPI))) { is_valid=FALSE; violations = c('NA LowerPI', violations) }
   if(any(is.na(forecast_df$UpperPI))) { is_valid=FALSE; violations = c('NA UpperPI', violations) }
 
+  #All the newmoon columns should be whole numbers with nothing missing
+  if(!is.integer(forecast_df$fit_start_newmoon)) { is_valid=FALSE; violations = c('fit_start_newmoon not int')}
+  if(!is.integer(forecast_df$fit_end_newmoon)) { is_valid=FALSE; violations = c('fit_end_newmoon not int')}
+  if(!is.integer(forecast_df$initial_newmoon)) { is_valid=FALSE; violations = c('initial_newmoon not int')}
+  if(any(is.na(forecast_df$fit_start_newmoon))) { is_valid=FALSE; violations = c('fit_start_newmoon contains NA')}
+  if(any(is.na(forecast_df$fit_end_newmoon))) { is_valid=FALSE; violations = c('fit_end_newmoon contains NA')}
+  if(any(is.na(forecast_df$initial_newmoon))) { is_valid=FALSE; violations = c('initial_newmoon contains NA')}
+  
   if(verbose & length(violations)>0) print(paste('Forecast validation failed: ', violations), sep='')
   return(is_valid)
 }
