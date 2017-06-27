@@ -1,4 +1,4 @@
-last_commit_date=`git log -1 --format=%cd | head -c 10`
+last_commit_date=`git log --author='Weecology Deploy Bot' -1 --format=%cd | head -c 10`
 current_date=`date | head -c 10`
 if [ "$last_commit_date" !=  "$current_date" ]; then
     git config --global user.email "weecologydeploy@weecology.org"
