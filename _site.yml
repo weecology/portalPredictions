@@ -1,0 +1,18 @@
+name: "portal-forecasts"
+navbar:
+  title: "Portal Forecasting"
+  left:
+    - text: "Current Forecast"
+      href: index.html
+    - text: "Rodent Report"
+      href: report.html
+    - text: "Rodent Profiles"
+      href: profiles.html
+    - text: "About"
+      href: about.html
+
+output_dir: "docs"
+#This ensures only website files are put
+#into docs/, all .Rmd and .md files are
+#still rendered regardless.
+exclude: "*"
