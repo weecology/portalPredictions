@@ -5,6 +5,8 @@ library(rmarkdown)
 source('forecast_tools.R')
 source('model_functions.R')
 
+filename_suffix = 'forecasts'
+
 #The date this forecast model is run. Always today's date.
 forecast_date = Sys.Date()
 
