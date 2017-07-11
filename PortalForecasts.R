@@ -3,7 +3,7 @@ library(dplyr)
 library(magrittr)
 library(rmarkdown)
 source('forecast_tools.R')
-source('model_functions.R')
+source('models/model_functions.R')
 
 filename_suffix = 'forecasts'
 
