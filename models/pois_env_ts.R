@@ -32,7 +32,9 @@ for(s in species) {
   } else {
     best_model_aic = Inf
     best_model = NA
+    model_count = 1
     for(proposed_model_covariates in model_covariates){
+      cat("    Fitting Model", model_count, "\n")
       proposed_model = tsglm(species_abundance, model=list(past_obs=1,past_mean=12), distr="poisson",
                              xreg=weather_data[,unlist(proposed_model_covariates)], link = "log")
       #tsglm sometimes outputs an error when the time series have many 0's, in that case set the AIC
@@ -42,6 +44,7 @@ for(s in species) {
         best_model = proposed_model
         best_model_aic = proposed_model_aic
       }
+      model_count = model_count + 1
     }
     
     #If no best model was chosen, ie. they all had infinit AIC's due to errors in model building
