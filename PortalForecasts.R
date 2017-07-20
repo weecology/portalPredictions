@@ -115,7 +115,7 @@ forecastall <- function(abundances, level, weather_data, weatherforecast,
   #Model 1 is the default Forecast package with BoxCox.lambda(0),allow.multiplicative.trend=T
 
   source('models/naive01.R')
-  print("Fitting naive01 model")
+  cat("Fitting naive01 model", "\n")
   model01=naive01(abundances,forecast_date,forecast_months,forecast_years,forecast_newmoons,level,num_forecast_months,CI_level)
 
   #Append results to forecasts and AIC tables
@@ -128,7 +128,7 @@ forecastall <- function(abundances, level, weather_data, weatherforecast,
 
   #Model 2 is the default Forecast package auto.arima (lambda=0)
   source('models/naive02.R')
-  print("Fitting naive02 model")
+  cat("Fitting naive02 model", "\n")
   model02=naive02(abundances,forecast_date,forecast_months,forecast_years,forecast_newmoons,level,num_forecast_months,CI_level)
 
   #Append results to forecasts and AIC tables
@@ -145,7 +145,7 @@ forecastall <- function(abundances, level, weather_data, weatherforecast,
 
 ##Negative Binomial Time Series Model
   source('models/neg_binom_ts.R')
-  print("Fitting negative binomial model")
+  cat("Fitting negative binomial model", "\n")
   nbts=neg_binom_ts(abundances,forecast_date,forecast_months,forecast_years,forecast_newmoons,level,num_forecast_months,CI_level)
 
     #Append results to forecasts and AIC tables
@@ -158,7 +158,7 @@ forecastall <- function(abundances, level, weather_data, weatherforecast,
 ##Poisson environmental
 #Species level time series model with the best environmental covariates chosen by AIC
   source('models/pois_env_ts.R')
-  print("Fitting Poisson environmental model")
+  cat("Fitting Poisson environmental model", "\n")
   pets=pois_env_ts(abundances,weather_data,weathermeans,forecast_date,forecast_months,forecast_years,forecast_newmoons,level,num_forecast_months,CI_level)
 
     #Append results to forecasts and AIC tables
@@ -230,10 +230,10 @@ rodent_data$all = rodent_data$all %>%
 zero_abund_forecast = list(pred=rep(0,12), interval=matrix(rep(0,24), ncol=2))
 colnames(zero_abund_forecast$interval) = c('lower','upper')
 
-print("Making site level forecasts")
+cat("Making site level forecasts", "\n")
 allforecasts=forecastall(rodent_data$all,"All",weather_data,weathermeans, forecast_date, forecast_newmoons, forecast_months, forecast_years)
 
-print("Making control plot forecasts")
+cat("Making control plot forecasts", "\n")
 controlsforecasts=forecastall(rodent_data$controls,"Controls",weather_data,weathermeans, forecast_date, forecast_newmoons, forecast_months, forecast_years)
 
 ######Update Website####################################################
