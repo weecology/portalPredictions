@@ -14,5 +14,5 @@ if [ "$last_commit_date" !=  "$current_date" ]; then
     # Create a new release to trigger automated Zenodo archiving
     git tag $current_date
     git push --quiet deploy --tags > /dev/null 2>&1
-    curl -v -i -X POST -H "Content-Type:application/json" -H "Authorization: token $GITHUB_RELEASE_TOKEN" https://api.github.com/repos/weecology/portalPredictions/releases -d '{"tag_name":"$current_date"}'
+    curl -v -i -X POST -H "Content-Type:application/json" -H "Authorization: token $GITHUB_RELEASE_TOKEN" https://api.github.com/repos/weecology/portalPredictions/releases -d "{'tag_name':$current_date}"
 fi
