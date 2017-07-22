@@ -2,6 +2,7 @@ library(tidyverse)
 library(lubridate)
 library(zoo)
 library(ggplot2)
+library(RCurl)
 
 #' Return normalized path for all operating systems
 #'
