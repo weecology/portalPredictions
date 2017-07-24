@@ -44,19 +44,19 @@ _Perognathus flavus_ rivals only _Baiomys taylorii_ for the title of smallest ro
 <br>
 
 ### PH: _Chaetodipus hispidus_, hispid pocket mouse
-the most transient - as the Bailey's decline, will the hispids rise to take their place?
+The hispid pocket mouse looks like a cactus mouse in pocket mouse form; it's the size of _C. baileyi_ with a beautiful orange stripe. _C. hispidus_ has historically been the least frequently recorded species at the site. In the past few months, however, we've caught one or two each trapping period. Nevertheless, it remains a very transient speices; each individual caught this year has been caught once and then never again.  
 <br>
 
 ### PI: _Chaetodipus intermedius_, rock pocket mouse
-very similar to _C. penicillatus_, but rarely found at the site, perferring a rockier habitat
+_C. intermedius_ is another pocket mouse, though very rarely found at the site as it prefers rockier habitats; it is very similar to _C. penicillatus_ except in habitat preference.  
 <br>
 
 ### PL: _Peromyscus leucopus_, white-footed mouse
-again, super common mouse in US, not all that common at Portal except in removal plots
+This _Peromyscus_ species, while very common throughout the majority of the United States, is not all that common at Portal. _Peromyscus_ are good climbers and, therefore, frequently end up in the full rodent exclosure plots. They don't seem to compete well again the kangaroo rats.
 <br>
 
 ### PM: _Peromyscus maniculatus_, deer mouse
-a species nearly ubiquitous throughout the continental United States, though not a particularly common resident at the site
+Like _P. leucopus_, _P. maniculatus_ is nearly ubiquitous throughout the continental United States though not a particularly common resident at the site. Additionally, the desert variants of those two species are challenging to distinguish between.
 <br>
 
 ### PP: _Chaetodipus penicillatus_, desert pocket mouse
@@ -64,27 +64,27 @@ Although _C. penicillatus_ had been found at the site since the beginning of the
 <br>
 
 ### RF: _Reithrodontomys fulvescens_, fulvous harvest mouse
-an infrequent visitor to the site; similar to the other harvest mice but slightly larger and with a distinctly longer tail
+The fulvous harvest mouse is an infrequent visitor to the site. It is the largest---and the rarest---harvest mouse species found at the site. Like many of the _Reithrodontomys_ caught at the site, it is most often found in kangaroo rat exclosures and full rodent removals.  
 <br>
 
 ### RM: _Reithrodontomys megalotis_, western harvest mouse
-the most common harvest mouse found at the site
+_R. megalotis_ is the most common harvest mouse found at the site. Harvest mice abundance tends to remain fairly low throughout the site, though there is sometimes a peak in the winter when the desert pocket mice (_C. penicillatus_).  
 <br>
 
 ### RO: _Reithrodontomys montanus_, plains harvest mouse
-the smallest of the harvest mice, with a shorter tail and very narrow tail stripe
+While very similar to _R. megalotis_, _R. montanus_ is notably smaller than the other harvest mice at the site. It is less commonly found at the site than _R. megalotis_ but plays a similar role ecologically.  
 <br>
 
 ### SF: _Sigmodon fulviventer_, tawny-bellied cotton rat
-squishy like cotton
+A favorite of many Portal research assistants, rodents in the _Sigmodon_ genus best described as "squishy like cotton." Okay, so maybe that's not the most descriptive identifier, but their size and coloration make them an easily identifiable genus. _S. fulviventer_ is one of the two more common cotton rat species at the site, distinguishable by the yellow (rather than white) fur on its belly, as indicated by the highly descriptive common name.  
 <br>
 
 ### SH: _Sigmodon hispidus_, hispid cotton rat
-squishy like cotton
+_S. hispidus_, with a white rather than a tawny belly, is the other cotton rat species that somewhat frequently has been caught at the site. The _Sigmodons_ seem to come through the site in waves; some years are boom years while others are bust years. What is driving these population cycles? How do _Sigmodons_ move through the regional landscape? We don't know but sure would like to find out.  
 <br>
 
 ### SO: _Sigmodon ochorognathus_, yellow-nosed cotton rat
-_S. ochorognathus_ almost seem like an urban (erm...rural) legend nowadays. A few individuals were caught in the 1990s, but none have been seen since. 
+_S. ochorognathus_ almost seems like an urban (erm...rural) legend nowadays. A few individuals were caught in the 1990s, but none have been seen since.  
 <br>
 <br>
 
