@@ -52,11 +52,11 @@ _C. intermedius_ is another pocket mouse, though very rarely found at the site a
 <br>
 
 ### PL: _Peromyscus leucopus_, white-footed mouse
-This _Peromyscus_ species, while very common throughout the majority of the United States, is not all that common at Portal. _Peromyscus_ are good climbers and, therefore, frequently end up in the full rodent exclosure plots. They don't seem to compete well again the kangaroo rats.
+This _Peromyscus_ species, while very common throughout the majority of the United States, is not all that common at Portal. _Peromyscus_ are good climbers and, therefore, frequently end up in the full rodent exclosure plots. They don't seem to compete well again the kangaroo rats.  
 <br>
 
 ### PM: _Peromyscus maniculatus_, deer mouse
-Like _P. leucopus_, _P. maniculatus_ is nearly ubiquitous throughout the continental United States though not a particularly common resident at the site. Additionally, the desert variants of those two species are challenging to distinguish between.
+Like _P. leucopus_, _P. maniculatus_ is nearly ubiquitous throughout the continental United States though not a particularly common resident at the site. Additionally, the desert variants of those two species are challenging to distinguish between.  
 <br>
 
 ### PP: _Chaetodipus penicillatus_, desert pocket mouse
