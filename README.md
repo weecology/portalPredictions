@@ -1,4 +1,8 @@
 # Portal Predictions
+[![Build Status](https://travis-ci.org/weecology/portalPredictions.svg?branch=master)](https://travis-ci.org/weecology/portalPredictions)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.833438.svg)](https://doi.org/10.5281/zenodo.833438)
+[![License](http://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/weecology/portalPredictions/master/LICENSE)
+
 This is the main repository for predictions made on the Portal rodent census data [Portal Project](http://portal.weecology.org/).
 
 Predictions are made approximately monthly, immediately prior to a new trapping session (trapping occurs as close to each new moon as possible.
