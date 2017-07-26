@@ -1,7 +1,7 @@
 library(dplyr)
 library(lubridate)
 library(readr)
-library(PortalDataSummaries)
+library(portalr)
 source('forecast_tools.R')
 source('models/model_functions.R')
 

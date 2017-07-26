@@ -5,7 +5,7 @@ title: "Portal Forecast"
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(dplyr)
-library(PortalDataSummaries)
+library(portalr)
 source("forecast_tools.R")
 ```
 
@@ -14,9 +14,9 @@ source("forecast_tools.R")
 This is the forecast for next month's sampling of rodents at Portal.
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
-obs_data = PortalDataSummaries::abundance()
+obs_data = portalr::abundance()
 obs_data$total = rowSums(select(obs_data, -period))
-new_moon_file = PortalDataSummaries::FullPath('PortalData/Rodents/moon_dates.csv', 
+new_moon_file = portalr::FullPath('PortalData/Rodents/moon_dates.csv', 
                                                   '~')
 new_moons = read.csv(new_moon_file)
 obs_data_newmoon = inner_join(obs_data, new_moons, by = c("period" = "Period"))

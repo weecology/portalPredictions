@@ -22,7 +22,7 @@ get_rodent_data <- function(moons, forecast_date, filename_suffix){
   
   ####################################################################################
   #get Portal abundance data for the entire site and for control plots only.
-  controls=PortalDataSummaries::abundance(level="Treatment",type="Rodents",length="Longterm", incomplete = FALSE)
+  controls=portalr::abundance(level="Treatment",type="Rodents",length="Longterm", incomplete = FALSE)
   
   #Control plots
   #The total rodent count in each treatment
@@ -36,7 +36,7 @@ get_rodent_data <- function(moons, forecast_date, filename_suffix){
     select(-NewMoonDate,-CensusDate,-period,-Year,-Month)
   
   #All plots
-  all=PortalDataSummaries::abundance(level="Site",type="Rodents",length="all", incomplete = FALSE)
+  all=portalr::abundance(level="Site",type="Rodents",length="all", incomplete = FALSE)
   #The total rodent count across the entire site
   all$total = rowSums(all[,-(1)])
   all=inner_join(moons,all,by=c("Period"="period"))
@@ -51,7 +51,7 @@ get_rodent_data <- function(moons, forecast_date, filename_suffix){
 ###################################################################################
 #get weather data
 get_weather_data <- function(moons, all, first_forecast_newmoon, last_forecast_newmoon){
-  weather_data=PortalDataSummaries::weather("Monthly") %>%
+  weather_data=portalr::weather("Monthly") %>%
     ungroup() %>%
     left_join(moons, by=c('Year','Month'))
   
