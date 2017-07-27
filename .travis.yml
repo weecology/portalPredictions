@@ -1,13 +1,11 @@
-language: r
-cache: packages
-sudo: false
-warnings_are_errors: false
+language: bash
+sudo: required
 
-install:
-  - Rscript install-packages.R
-  
+before_install:
+  - docker pull weecology/portal_predictions
+  - docker run --name ppred -t -d weecology/portal_predictions /bin/bash
+
 script:
-  - Rscript PortalForecasts.R
-
-after_success:
-  - bash update_repo.sh
+  - docker exec -i ppred git clone https://github.com/weecology/portalPredictions.git
+  - docker exec -i ppred bash -c "cd portalPredictions && Rscript PortalForecasts.R"
+  - docker exec -i ppred bash -c "cd portalPredictions && bash update_repo.sh"
