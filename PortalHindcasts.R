@@ -17,9 +17,20 @@ forecast_date = Sys.Date()
 #403 to 490 is Jan,2010 - Jan,2017. 
 initial_time_NewMoons=403:490
 
+
 for(this_NewMoon in initial_time_NewMoons){
 
-  moons = get_moon_data() %>%
+  moons = get_moon_data()
+
+  #Don't do hindcasting from newmoons that were skipped
+  this_NewMoon_sampling_date = moons %>%
+    filter(NewMoonNumber == this_NewMoon) %>%
+    pull(CensusDate)
+  if(is.na(this_NewMoon_sampling_date)){
+    next
+  }
+
+  moons = moons %>%
     filter(NewMoonNumber<=this_NewMoon)
   
   #Beginning and end of the forecast timeperiod
@@ -49,7 +60,7 @@ for(this_NewMoon in initial_time_NewMoons){
   zero_abund_forecast = list(pred=rep(0,12), interval=matrix(rep(0,24), ncol=2))
   colnames(zero_abund_forecast$interval) = c('lower','upper')
   
-  allforecasts=forecastall(rodent_data$all,"All",weather_data,weathermeans, forecast_date, forecast_newmoons, forecast_months, forecast_years)
-  controlsforecasts=forecastall(rodent_data$controls,"Controls",weather_data,weathermeans, forecast_date, forecast_newmoons, forecast_months, forecast_years)
+  allforecasts=try(forecastall(rodent_data$all,"All",weather_data,weathermeans, forecast_date, forecast_newmoons, forecast_months, forecast_years))
+  controlsforecasts=try(forecastall(rodent_data$controls,"Controls",weather_data,weathermeans, forecast_date, forecast_newmoons, forecast_months, forecast_years))
 
 }
