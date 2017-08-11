@@ -10,15 +10,15 @@ pois_env_ts=function(abundances,weather_data,weathermeans,forecast_date,forecast
   allaic=data.frame()
 
 #List of candiate environmental covariate models
-model_covariates = list(c('MaxTemp','MeanTemp','Precipitation','NDVI'),
-                        c('MaxTemp','MinTemp','Precipitation','NDVI'),
-                        c('MinTemp','MaxTemp','MeanTemp','Precipitation'),
-                        c('Precipitation','NDVI'),
-                        c('MinTemp','NDVI'),
-                        c('MinTemp'),
-                        c('MaxTemp'),
-                        c('MeanTemp'),
-                        c('Precipitation'),
+model_covariates = list(c('maxtemp','meantemp','precipitation','NDVI'),
+                        c('maxtemp','mintemp','precipitation','NDVI'),
+                        c('mintemp','maxtemp','meantemp','precipitation'),
+                        c('precipitation','NDVI'),
+                        c('mintemp','NDVI'),
+                        c('mintemp'),
+                        c('maxtemp'),
+                        c('meantemp'),
+                        c('precipitation'),
                         c('NDVI'))
 
 for(s in species) {
@@ -58,7 +58,7 @@ for(s in species) {
     }
   }
   newpred = data.frame(date=rep(forecast_date,num_forecast_months), forecastmonth=forecast_months, forecastyear=forecast_years,
-                       NewMoonNumber=forecast_newmoons, currency="abundance", model=rep("Poisson Env",num_forecast_months),
+                       newmoonnumber=forecast_newmoons, currency="abundance", model=rep("Poisson Env",num_forecast_months),
                        level=level, species=rep(s,num_forecast_months), estimate=pred$pred,
                        LowerPI=pred$interval[,1],UpperPI=pred$interval[,2])
   allforecasts = rbind(allforecasts,newpred)

@@ -51,7 +51,7 @@ make_ensemble=function(all_forecasts, models_to_use=NA, CI_level = 0.9){
   weighted_estimates = all_forecasts %>%
     mutate(model_var = ((UpperPI - estimate)/CI_quantile)^2) %>%
     left_join(weights, by=c('date','model','currency','level','species','fit_start_newmoon','fit_end_newmoon','initial_newmoon')) %>%
-    group_by(date, NewMoonNumber, forecastmonth, forecastyear,level, currency, species, fit_start_newmoon, fit_end_newmoon, initial_newmoon) %>%
+    group_by(date, newmoonnumber, forecastmonth, forecastyear,level, currency, species, fit_start_newmoon, fit_end_newmoon, initial_newmoon) %>%
     summarise(ensemble_estimate = sum(estimate*weight), 
               weighted_ss = sum(weight * (estimate - ensemble_estimate)^2) ,
               ensemble_var   = sum(model_var * weight) + weighted_ss / (n()*sum(weight)-1),
@@ -78,17 +78,17 @@ get_sp_predicts = function(data, lvl, lead_time) {
                                                             ""), format = "%m/%Y")) %>% transform(date = as.Date(date, "%Y-%m-%d"))
   data1 = filter(data, level == lvl,
                  date == max(as.Date(date)))
-  target_moon = min(data1$NewMoonNumber) + (lead_time - 1)
-  data2 = filter(data1, NewMoonNumber == target_moon)
+  target_moon = min(data1$newmoonnumber) + (lead_time - 1)
+  data2 = filter(data1, newmoonnumber == target_moon)
 }
 
 plot_data = function(data) {
   newmoons_table = read.csv(
     text = getURL(
       "https://raw.githubusercontent.com/weecology/PortalData/master/Rodents/moon_dates.csv"))
-  target_moon=unique(data$NewMoonNumber)
-  period_code = dplyr::filter(newmoons_table, newmoons_table$NewMoonNumber == target_moon) %>%
-    dplyr::select(Period) %>%
+  target_moon=unique(data$newmoonnumber)
+  period_code = dplyr::filter(newmoons_table, newmoons_table$newmoonnumber == target_moon) %>%
+    dplyr::select(period) %>%
     as.integer()
   sp_predict = ggplot(data,
                       aes(
@@ -138,7 +138,7 @@ calculate_forecast_error = function(observations, forecasts, error_metric='MSE',
 
   if(!forecast_is_valid(forecasts)) stop('Forecast dataframe not valid')
 
-  valid_observation_columns = c('NewMoonNumber','currency','level','species','actual')
+  valid_observation_columns = c('newmoonnumber','currency','level','species','actual')
   if(!all(valid_observation_columns %in% colnames(observations))) stop('observation data.frame does not have valid column names')
 
   #At least 1 matching value must be in each of these columns in the observations and forecasts
@@ -152,8 +152,8 @@ calculate_forecast_error = function(observations, forecasts, error_metric='MSE',
   #Calculate error
   if(error_metric == 'MSE'){
     comparisons = forecasts %>%
-      inner_join(observations, by=c('NewMoonNumber','currency','level','species')) %>%
-      group_by(date, model, NewMoonNumber, currency, level, species) %>%
+      inner_join(observations, by=c('newmoonnumber','currency','level','species')) %>%
+      group_by(date, model, newmoonnumber, currency, level, species) %>%
       summarise(error=(estimate-actual)^2) %>%
       ungroup()
   } else if(error_metric == 'Likelihood') {
@@ -167,13 +167,13 @@ calculate_forecast_error = function(observations, forecasts, error_metric='MSE',
   #TODO: Make the lead time the actual days or weeks once more frequent forecasts are being made( see #37)
   forecast_date_new_moon_number = comparisons %>%
     group_by(date) %>%
-    summarise(new_moon_of_forecast = min(NewMoonNumber)-1) %>%
+    summarise(new_moon_of_forecast = min(newmoonnumber)-1) %>%
     ungroup()
 
   comparisons_with_lead_time = comparisons %>%
     left_join(forecast_date_new_moon_number, by='date') %>%
-    mutate(lead_time=NewMoonNumber - new_moon_of_forecast) %>%
-    select(-new_moon_of_forecast, -NewMoonNumber, -date)
+    mutate(lead_time=newmoonnumber - new_moon_of_forecast) %>%
+    select(-new_moon_of_forecast, -newmoonnumber, -date)
 
   comparisons_model_summary = comparisons_with_lead_time %>%
     group_by(model, currency, level, species, lead_time) %>%
@@ -215,7 +215,7 @@ forecast_is_valid=function(forecast_df, verbose=FALSE){
   is_valid=TRUE
   violations=c()
   #Define valid valeus
-  valid_columns = c('date','forecastmonth','forecastyear','NewMoonNumber','model','currency',
+  valid_columns = c('date','forecastmonth','forecastyear','newmoonnumber','model','currency',
                     'level','species','estimate','LowerPI','UpperPI','fit_start_newmoon',
                     'fit_end_newmoon','initial_newmoon')
   valid_currencies = c('abundance','richness','biomass','energy')
@@ -318,7 +318,7 @@ forecast_viz <- function(obs_data, obs_date_col_name, obs_val_col_name, for_data
                          for_date_col_name, for_val_col_name, for_model_name,
                          for_lowerpi_col_name, for_upperpi_col_name, start_newmoon){
   for_data_sub = filter(for_data, species == obs_val_col_name, model == for_model_name)
-  obs_data_sub = filter(obs_data, NewMoonNumber >= start_newmoon)
+  obs_data_sub = filter(obs_data, newmoonnumber >= start_newmoon)
   ggplot(obs_data_sub, aes_string(x = obs_date_col_name)) +
     geom_ribbon(data = for_data_sub, mapping = aes_string(x = for_date_col_name, ymin = for_lowerpi_col_name, ymax = for_upperpi_col_name), fill = "lightblue") +
     geom_line(aes_string(y = obs_val_col_name)) +

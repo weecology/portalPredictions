@@ -25,7 +25,7 @@ neg_binom_ts=function(abundances,forecast_date,forecast_months,forecast_years,fo
       model_aic = tryCatch(summary(model)$AIC, error = function(x) {1e6})
     }
     newpred=data.frame(date=rep(forecast_date,num_forecast_months), forecastmonth=forecast_months, forecastyear=forecast_years,
-                       NewMoonNumber=forecast_newmoons, currency="abundance", model=rep("NegBinom Time Series",num_forecast_months),
+                       newmoonnumber=forecast_newmoons, currency="abundance", model=rep("NegBinom Time Series",num_forecast_months),
                        level=level, species=rep(s,num_forecast_months), estimate=pred$pred,
                        LowerPI=pred$interval[,1], UpperPI=pred$interval[,2])
     allforecasts=rbind(allforecasts,newpred)

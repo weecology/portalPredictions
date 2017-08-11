@@ -19,7 +19,7 @@ obs_data$total = rowSums(select(obs_data, -period))
 new_moon_file = portalr::FullPath('PortalData/Rodents/moon_dates.csv', 
                                                   '~')
 new_moons = read.csv(new_moon_file)
-obs_data_newmoon = inner_join(obs_data, new_moons, by = c("period" = "Period"))
+obs_data_newmoon = inner_join(obs_data, new_moons, by = c("period" = "period"))
 #for_data = read.csv("predictions/2017-02-24Allforecasts.csv")
 
 for_data = compile_forecasts() %>%
@@ -31,10 +31,10 @@ for_data = filter(for_data, date == most_recent_forecast)
 for_data$model = "ensemble"
 
 forecast_viz(obs_data = obs_data_newmoon,
-             obs_date_col_name = "NewMoonNumber",
+             obs_date_col_name = "newmoonnumber",
              obs_val_col_name = "total",
              for_data = for_data,
-             for_date_col_name = "NewMoonNumber",
+             for_date_col_name = "newmoonnumber",
              for_val_col_name = "estimate",
              for_model_name = "ensemble",
              for_lowerpi_col_name = "LowerPI",
@@ -61,10 +61,10 @@ most_abund_sp = sp_predictions %>%
 
 for (species in as.vector(most_abund_sp$species)) {
   species_forecast = forecast_viz(obs_data = obs_data_newmoon,
-               obs_date_col_name = "NewMoonNumber",
+               obs_date_col_name = "newmoonnumber",
                obs_val_col_name = species,
                for_data = for_data,
-               for_date_col_name = "NewMoonNumber",
+               for_date_col_name = "newmoonnumber",
                for_val_col_name = "estimate",
                for_model_name = "ensemble",
                for_lowerpi_col_name = "LowerPI",

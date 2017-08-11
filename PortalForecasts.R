@@ -14,7 +14,7 @@ portalr::download_observations()
 moons = get_moon_data()
 
 #Beginning and end of the forecast timeperiod
-most_recent_newmoon = moons$NewMoonNumber[which.max(moons$Period)]
+most_recent_newmoon = moons$newmoonnumber[which.max(moons$period)]
 first_forecast_newmoon=most_recent_newmoon+1
 last_forecast_newmoon=first_forecast_newmoon + 11
 forecast_newmoons = first_forecast_newmoon:last_forecast_newmoon
@@ -26,7 +26,7 @@ weather_data = get_weather_data(moons, rodent_data$all, first_forecast_newmoon, 
 
 #Get only relevent columns now that this is isn't needed to subset weather.
 rodent_data$all = rodent_data$all %>%
-  select(-NewMoonDate,-CensusDate,-Period,-Year,-Month)
+  select(-newmoondate,-censusdate,-period,-year,-month)
 
 #tscount::tsglm() will not model a timeseries of all 0's. So for those species, which are
 #ones that just haven't been observed in a while, make a forecast of all 0's.
