@@ -123,7 +123,7 @@ plot_data = function(data) {
 #'
 #' Will only return values where there are matching comparison columns (currency, level, species)
 #'
-#' @param observations dataframe Has the columns NewMoonNumber, currency, level, species, actual
+#' @param observations dataframe Has the columns newmoonnumber, currency, level, species, actual
 #' @param forecasts dataframe passes the forecast validity check. Must have matching values in
 #'                  the comparison columns
 #' @param error_metric chr either 'mse' for mean squared error or 'likelihood' for the likelihood of the observation

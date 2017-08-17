@@ -15,7 +15,7 @@ get_moon_data <- function(){
 }
 
 get_rodent_data <- function(moons, forecast_date, filename_suffix){
-  #Period 203/NewMoonNumber 217 will be when the training data timeseries
+  #Period 203/newmoonnumber 217 will be when the training data timeseries
   #begins. Corresponding to Jan 1995
   historic_start_period=203
   historic_start_newmoon=217
@@ -27,7 +27,7 @@ get_rodent_data <- function(moons, forecast_date, filename_suffix){
   #Control plots
   #The total rodent count in each treatment
   controls$total = rowSums(controls[,-(1:2)])
-  #Drop non-control treatments and add in NewMoonNumber
+  #Drop non-control treatments and add in newmoonnumber
   controls = controls %>%
     filter(treatment == 'control') %>%
     select(-treatment) %>%
@@ -55,7 +55,7 @@ get_weather_data <- function(moons, all, first_forecast_newmoon, last_forecast_n
     ungroup() %>%
     left_join(moons, by=c('year','month'))
   
-  #Offset the NewMoonNumber to create a 6 month lag between
+  #Offset the newmoonnumber to create a 6 month lag between
   #rodent observations and weather
   weather_data$NewMoonNumber_with_lag = weather_data$newmoonnumber + 6
   
@@ -73,8 +73,8 @@ get_weather_data <- function(moons, all, first_forecast_newmoon, last_forecast_n
   weather_forecast_months = moons %>%
     filter(newmoonnumber >= first_forecast_newmoon-5, newmoonnumber <= last_forecast_newmoon-5)
   
-  #  x=subset(weather,NewMoonNumber>=first_forecast_newmoon-5) %>%
-  #  subset(NewMoonNumber<=last_forecast_newmoon-5)
+  #  x=subset(weather,newmoonnumber>=first_forecast_newmoon-5) %>%
+  #  subset(newmoonnumber<=last_forecast_newmoon-5)
   
   weathermeans=weather_data[dim(weather_data)[1]-36:dim(weather_data)[1],] %>%
     group_by(month) %>%
