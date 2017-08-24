@@ -1,4 +1,4 @@
-abundance-gam=function(level,date,forecastmonth,forecastyear,NewMoonNumber,CI_level) {
+abundance-gam=function(level,date,forecastmonth,forecastyear,newmoonnumber,CI_level) {
 
 mc.cores = 8 # How many species to run in parallel
 new_yday = yday(Sys.Date()) # Replace Sys.Date with the next Portal sampling date
@@ -324,7 +324,7 @@ CIs = function(sp, new_date, n_samples = 10000){
 
 ci_predictions = lapply(species, CIs, new_date=Sys.Date())
 
-return(bind_rows(date,forecastmonth,forecastyear,NewMoonNumber,"abundance","GAM",level,ci_predictions) %>%
+return(bind_rows(date,forecastmonth,forecastyear,newmoonnumber,"abundance","GAM",level,ci_predictions) %>%
   rename(LowerPI = X1, UpperPI = X2))
 
 }

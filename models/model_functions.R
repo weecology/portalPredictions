@@ -9,13 +9,13 @@ get_moon_data <- function(){
   moons <- read.csv(FullPath('PortalData/Rodents/moon_dates.csv', '~'), header=T)
   
   #Add in year and month to join with the rest of the data
-  moons$Year=year(moons$NewMoonDate)
-  moons$Month=month(moons$NewMoonDate)
+  moons$year=year(moons$newmoondate)
+  moons$month=month(moons$newmoondate)
   return(moons)
 }
 
 get_rodent_data <- function(moons, forecast_date, filename_suffix){
-  #Period 203/NewMoonNumber 217 will be when the training data timeseries
+  #Period 203/newmoonnumber 217 will be when the training data timeseries
   #begins. Corresponding to Jan 1995
   historic_start_period=203
   historic_start_newmoon=217
@@ -27,21 +27,21 @@ get_rodent_data <- function(moons, forecast_date, filename_suffix){
   #Control plots
   #The total rodent count in each treatment
   controls$total = rowSums(controls[,-(1:2)])
-  #Drop non-control treatments and add in NewMoonNumber
+  #Drop non-control treatments and add in newmoonnumber
   controls = controls %>%
     filter(treatment == 'control') %>%
     select(-treatment) %>%
-    inner_join(moons,by=c("period"="Period")) %>%
-    subset(NewMoonNumber >= historic_start_newmoon) %>%
-    select(-NewMoonDate,-CensusDate,-period,-Year,-Month)
+    inner_join(moons,by=c("period"="period")) %>%
+    subset(newmoonnumber >= historic_start_newmoon) %>%
+    select(-newmoondate,-censusdate,-period,-year,-month)
   
   #All plots
   all=portalr::abundance(level="Site",type="Rodents",length="all", incomplete = FALSE)
   #The total rodent count across the entire site
   all$total = rowSums(all[,-(1)])
-  all=inner_join(moons,all,by=c("Period"="period"))
+  all=inner_join(moons,all,by=c("period"="period"))
   
-  all=subset(all,Period >= historic_start_period)
+  all=subset(all,period >= historic_start_period)
   rodent_data = list()
   rodent_data$controls = controls
   rodent_data$all = all
@@ -53,42 +53,42 @@ get_rodent_data <- function(moons, forecast_date, filename_suffix){
 get_weather_data <- function(moons, all, first_forecast_newmoon, last_forecast_newmoon){
   weather_data=portalr::weather("Monthly") %>%
     ungroup() %>%
-    left_join(moons, by=c('Year','Month'))
+    left_join(moons, by=c('year','month'))
   
-  #Offset the NewMoonNumber to create a 6 month lag between
+  #Offset the newmoonnumber to create a 6 month lag between
   #rodent observations and weather
-  weather_data$NewMoonNumber_with_lag = weather_data$NewMoonNumber + 6
+  weather_data$NewMoonNumber_with_lag = weather_data$newmoonnumber + 6
   
   #Assign weather using lag to rodent observations.
   #This will match weather row numbers to corrosponding rows in all and controls
   weather_data = weather_data %>%
-    select(-NewMoonDate, -CensusDate, -Period, -Year, -Month) %>%
-    right_join(all, by=c('NewMoonNumber_with_lag'='NewMoonNumber')) %>%
-    select(Year,Month,MinTemp,MaxTemp,MeanTemp,Precipitation,NDVI,NewMoonNumber, NewMoonNumber_with_lag)
+    select(-newmoondate, -censusdate, -period, -year, -month) %>%
+    right_join(all, by=c('NewMoonNumber_with_lag'='newmoonnumber')) %>%
+    select(year,month,mintemp,maxtemp,meantemp,precipitation,NDVI,newmoonnumber, NewMoonNumber_with_lag)
   
   ##Get 6 month weather forecast by combining stations data and monthly means of past 3 years
   #Used to make predictions for the months 7-12 of a 12 month forecast using a 6 month lag.
   
   #A data.frame of the months that will be in this weather forecast.
   weather_forecast_months = moons %>%
-    filter(NewMoonNumber >= first_forecast_newmoon-5, NewMoonNumber <= last_forecast_newmoon-5)
+    filter(newmoonnumber >= first_forecast_newmoon-5, newmoonnumber <= last_forecast_newmoon-5)
   
-  #  x=subset(weather,NewMoonNumber>=first_forecast_newmoon-5) %>%
-  #  subset(NewMoonNumber<=last_forecast_newmoon-5)
+  #  x=subset(weather,newmoonnumber>=first_forecast_newmoon-5) %>%
+  #  subset(newmoonnumber<=last_forecast_newmoon-5)
   
   weathermeans=weather_data[dim(weather_data)[1]-36:dim(weather_data)[1],] %>%
-    group_by(Month) %>%
-    summarize(MinTemp=mean(MinTemp,na.rm=T),MaxTemp=mean(MaxTemp,na.rm=T),MeanTemp=mean(MeanTemp,na.rm=T),
-              Precipitation=mean(Precipitation,na.rm=T),NDVI=mean(NDVI,na.rm=T)) %>%
-    slice(match(weather_forecast_months$Month, Month))
+    group_by(month) %>%
+    summarize(mintemp=mean(mintemp,na.rm=T),maxtemp=mean(maxtemp,na.rm=T),meantemp=mean(meantemp,na.rm=T),
+              precipitation=mean(precipitation,na.rm=T),NDVI=mean(NDVI,na.rm=T)) %>%
+    slice(match(weather_forecast_months$month, month))
   
   #Insert longterm means where there is missing data in the historic weather
   weather_data=weather_data %>%
     mutate(NDVI = ifelse(is.na(NDVI), mean(NDVI, na.rm = T), NDVI)) %>%
-    mutate(MinTemp = ifelse(is.na(MinTemp), mean(MinTemp, na.rm = T), MinTemp)) %>%
-    mutate(MaxTemp = ifelse(is.na(MaxTemp), mean(MaxTemp, na.rm = T), MaxTemp)) %>%
-    mutate(MeanTemp = ifelse(is.na(MeanTemp), mean(MeanTemp, na.rm = T), MeanTemp)) %>%
-    mutate(Precipitation = ifelse(is.na(Precipitation), mean(Precipitation, na.rm = T), Precipitation))
+    mutate(mintemp = ifelse(is.na(mintemp), mean(mintemp, na.rm = T), mintemp)) %>%
+    mutate(maxtemp = ifelse(is.na(maxtemp), mean(maxtemp, na.rm = T), maxtemp)) %>%
+    mutate(meantemp = ifelse(is.na(meantemp), mean(meantemp, na.rm = T), meantemp)) %>%
+    mutate(precipitation = ifelse(is.na(precipitation), mean(precipitation, na.rm = T), precipitation))
 }
 
 
@@ -102,7 +102,7 @@ forecastall <- function(abundances, level, weather_data, weatherforecast,
   #forecasts is where we will append all forecasts for this level
   #all_model_aic is where we will append all model aics for this level
   forecasts = data.frame(date=as.Date(character()), forecastmonth=numeric(), forecastyear=numeric(),
-                         NewMoonNumber=numeric(), currency=character(), model=character(), level=character(),
+                         newmoonnumber=numeric(), currency=character(), model=character(), level=character(),
                          species=character(), estimate=numeric(), LowerPI=numeric(), UpperPI=numeric())
   all_model_aic = data.frame(date=as.Date(character()),currency=character(),model=character(),level=character(),
                              species=character(), aic=numeric())
@@ -165,12 +165,12 @@ forecastall <- function(abundances, level, weather_data, weatherforecast,
     bind_rows(data.frame(pets[2]))
   
   #########Include columns describing the data used in the forecast###############
-  forecasts$fit_start_newmoon = min(abundances$NewMoonNumber)
-  forecasts$fit_end_newmoon   = max(abundances$NewMoonNumber)
-  forecasts$initial_newmoon   = max(abundances$NewMoonNumber)
-  all_model_aic$fit_start_newmoon = min(abundances$NewMoonNumber)
-  all_model_aic$fit_end_newmoon   = max(abundances$NewMoonNumber)
-  all_model_aic$initial_newmoon = max(abundances$NewMoonNumber)
+  forecasts$fit_start_newmoon = min(abundances$newmoonnumber)
+  forecasts$fit_end_newmoon   = max(abundances$newmoonnumber)
+  forecasts$initial_newmoon   = max(abundances$newmoonnumber)
+  all_model_aic$fit_start_newmoon = min(abundances$newmoonnumber)
+  all_model_aic$fit_end_newmoon   = max(abundances$newmoonnumber)
+  all_model_aic$initial_newmoon = max(abundances$newmoonnumber)
   
   #########Write forecasts to file and aics to separate files###############
   #Appending a csv without re-writing the header. Needed for hindcasting
