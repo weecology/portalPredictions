@@ -26,7 +26,7 @@ for(this_newmoon in initial_time_newmoons){
   #actually sampled
   this_newmoon_sampling_date = moons %>%
     filter(newmoonnumber == this_newmoon) %>%
-    pull(CensusDate)
+    pull(censusdate)
   if(is.na(this_newmoon_sampling_date)){
     next
   }
