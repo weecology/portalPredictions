@@ -17,6 +17,10 @@ forecast_date = Sys.Date()
 #403 to 490 is Jan,2010 - Jan,2017. 
 initial_time_newmoons=403:490
 
+#If a period wasn't sample completely, or at all due to various reasons
+#do not use it as an initial period for hindcasting. 
+trappings = read.csv(FullPath('PortalData/Rodents/Portal_rodent_trapping.csv', '~'))
+incomplete_samples = portalr::find_incomplete_censuses(trappings)
 
 for(this_newmoon in initial_time_newmoons){
 
@@ -24,10 +28,10 @@ for(this_newmoon in initial_time_newmoons){
 
   #Don't do hindcasting from newmoons that were not
   #actually sampled
-  this_newmoon_sampling_date = moons %>%
+  this_newmoon_period = moons %>%
     filter(newmoonnumber == this_newmoon) %>%
-    pull(censusdate)
-  if(is.na(this_newmoon_sampling_date)){
+    pull(period)
+  if(this_newmoon_period %in% incomplete_samples$period){
     next
   }
 
