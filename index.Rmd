@@ -20,6 +20,7 @@ new_moon_file = portalr::FullPath('PortalData/Rodents/moon_dates.csv',
                                                   '~')
 new_moons = read.csv(new_moon_file)
 obs_data_newmoon = inner_join(obs_data, new_moons, by = c("period" = "period"))
+obs_data_newmoon$censusdate = as.Date(obs_data_newmoon$censusdate)
 #for_data = read.csv("predictions/2017-02-24Allforecasts.csv")
 
 for_data = compile_forecasts() %>%
@@ -29,12 +30,13 @@ most_recent_forecast = max(for_data$date)
 for_data = filter(for_data, date == most_recent_forecast)
 
 for_data$model = "ensemble"
+for_data$forecastdate = as.Date(paste(for_data$forecastyear,for_data$forecastmonth,'15',sep='-'))
 
 forecast_viz(obs_data = obs_data_newmoon,
-             obs_date_col_name = "newmoonnumber",
+             obs_date_col_name = "censusdate",
              obs_val_col_name = "total",
              for_data = for_data,
-             for_date_col_name = "newmoonnumber",
+             for_date_col_name = "forecastdate",
              for_val_col_name = "estimate",
              for_model_name = "ensemble",
              for_lowerpi_col_name = "LowerPI",
