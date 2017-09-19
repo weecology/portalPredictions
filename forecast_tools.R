@@ -90,6 +90,14 @@ plot_data = function(data) {
   period_code = dplyr::filter(newmoons_table, newmoons_table$newmoonnumber == target_moon) %>%
     dplyr::select(period) %>%
     as.integer()
+  species_table = read.csv(
+    text = getURL(
+      "https://raw.githubusercontent.com/weecology/PortalData/master/Rodents/Portal_rodent_species.csv"),stringsAsFactors = F,na.strings = '')
+  species_names = species_table %>% 
+    select('speciescode','scientificname') %>% 
+    rbind(c('total','total')) %>%
+    merge(data[,c('species','estimate')],by.x='speciescode',by.y='species')
+  
   sp_predict = ggplot(data,
                       aes(
                         x = estimate,
@@ -101,7 +109,8 @@ plot_data = function(data) {
     geom_errorbarh() +
     ggtitle(paste(data$forecast_date[2], "All plots", sep = " ")) + # should make title better somehow
     ylab("Species") +
-    xlab("Abundance")
+    xlab("Abundance") +
+    scale_y_discrete(breaks = reorder(data$species,data$estimate),labels = reorder(species_names$scientificname,species_names$estimate))
   if(!is.na(period_code)){
     rodents = abundance("repo", shape='flat')
     observed = dplyr::filter(rodents, period == period_code)
