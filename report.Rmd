@@ -1,4 +1,40 @@
 ---
+title: "Report - September 2017"
+---
+Here's the most recent data (blue) compared to the forecast performed right before data collection (black, with error bars)
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+source("forecast_tools.R")
+
+# get most recent rodent data
+rodents = abundance("repo", shape='flat')
+period_code = max(rodents$period)
+observed = dplyr::filter(rodents, period == period_code)
+
+# get new moon number associated with this period
+newmoons_table = read.csv(text = getURL("https://raw.githubusercontent.com/weecology/PortalData/master/Rodents/moon_dates.csv"))
+moon_code = dplyr::filter(newmoons_table,period==period_code) %>% select(newmoonnumber) %>% as.integer()
+
+# get most recent forecast prior to data collection -- WIP!!!!!!!! there's an issue up
+data = read.csv('predictions/2017-06-23Allforecasts.csv',na.strings = '')
+data = plyr::rename(data,c('NewMoonNumber' = 'newmoonnumber'))
+
+ensemble = dplyr::filter(data, level == 'All', model == 'Ensemble', newmoonnumber==moon_code)
+sp_predictions = get_sp_predicts(ensemble, 'All', lead_time = 1)
+
+
+joined_data = left_join(sp_predictions, observed, by = "species")
+joined_data[is.na(joined_data)] = 0
+joined_data[joined_data$species=='total','abundance'] = sum(joined_data$abundance,na.rm=T)
+joined_data[joined_data$species=='total','period'] = period_code
+
+sp_predict = plot_species_forecast(sp_predictions)  
+sp_predict = sp_predict + geom_point(data = joined_data, mapping = aes(x = abundance, y = species),
+             color = "blue")
+plot(sp_predict)
+```
+
+
+---
 title: "Report - June 2017"
 ---
 
