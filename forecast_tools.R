@@ -270,8 +270,14 @@ forecast_is_valid=function(forecast_df, verbose=FALSE){
 #' @param forecast_folder str Base folder holding all forecast files
 #' @param verbose bool Output info on file violations
 #' @return dataframe combined forecasts
-compile_forecasts=function(forecast_folder='./predictions', verbose=FALSE){
-  forecast_filenames = list.files(forecast_folder, full.names = TRUE, recursive = TRUE)
+compile_forecasts=function(forecast_folder='./predictions', verbose=FALSE, use_hindcasts=FALSE){
+  if(use_hindcasts){
+    search_string = 'hindcast'
+  } else {
+    search_string = 'forecast'
+  }
+  
+  forecast_filenames = list.files(forecast_folder, pattern = search_string, full.names = TRUE, recursive = TRUE)
   #aic_weight files are also stored here and there can be many. 
   forecast_filenames = forecast_filenames[!grepl('model_aic',forecast_filenames)]
   all_forecasts=data.frame()
