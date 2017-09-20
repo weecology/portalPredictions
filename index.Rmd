@@ -63,10 +63,10 @@ most_abund_sp = sp_predictions %>%
 
 for (species in as.vector(most_abund_sp$species)) {
   species_forecast = forecast_viz(obs_data = obs_data_newmoon,
-               obs_date_col_name = "newmoonnumber",
+               obs_date_col_name = "censusdate",
                obs_val_col_name = species,
                for_data = for_data,
-               for_date_col_name = "newmoonnumber",
+               for_date_col_name = "forecastdate",
                for_val_col_name = "estimate",
                for_model_name = "ensemble",
                for_lowerpi_col_name = "LowerPI",
