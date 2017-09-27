@@ -132,12 +132,12 @@ plot_species_forecast = function(data) {
 #' @param observations dataframe Has the columns newmoonnumber, currency, level, species, actual
 #' @param forecasts dataframe passes the forecast validity check. Must have matching values in
 #'                  the comparison columns
-#' @param error_metric chr either 'mse' for mean squared error or 'likelihood' for the likelihood of the observation
-#' assuming the estimate and PI's fit a normal distribution
+#' @param error_metric chr either 'RMSE' for root mean squared error or 'coverage' for the coverage of the prediction
+#' intervals
 #' @param ci_value int The value of the forecast confidence interval to scale PI values for the likelihood metric
 #' @return data.frame Data.frame with the columns model, error, lead_time, level, species, currency
 #'
-calculate_forecast_error = function(observations, forecasts, error_metric='MSE', ci_value=90){
+calculate_forecast_error = function(observations, forecasts, error_metric='RMSE', CI_level=0.9){
   #The tibble datatype output from dplyr causes issues here
   observations = as.data.frame(observations)
   forecasts = as.data.frame(forecasts)
@@ -155,37 +155,38 @@ calculate_forecast_error = function(observations, forecasts, error_metric='MSE',
   }
   if(length(column_check)>0) stop(paste('Comparison columns do not match: ',column_check, collaps=' '))
 
+  #Summarize to mean error by lead time. Lead time is number of new moons ahead of when the forecast was made.
+  #This assumes a forecast was made with only the data available prior to the first NewMoonDate in the series.
+  #TODO: Make the lead time the actual days or weeks once more frequent forecasts are being made( see #37)
+  forecasts = forecasts %>%
+    mutate(lead_time = newmoonnumber - initial_newmoon)
+  
   #Calculate error
-  if(error_metric == 'MSE'){
+  if(error_metric == 'RMSE'){
     comparisons = forecasts %>%
       inner_join(observations, by=c('newmoonnumber','currency','level','species')) %>%
-      group_by(date, model, newmoonnumber, currency, level, species) %>%
-      summarise(error=(estimate-actual)^2) %>%
-      ungroup()
-  } else if(error_metric == 'Likelihood') {
-    stop('Likelihood not implimented yet')
+      mutate(error_value=(estimate-actual)^2) %>%
+      group_by(model, currency, level, species, lead_time) %>%
+      summarize(error_value=sqrt(mean(error_value))) %>%
+      ungroup() %>%
+      mutate(error_metric = 'RMSE')
+
+  } else if(error_metric == 'coverage') {
+    comparisons = forecasts %>%
+      inner_join(observations, by=c('newmoonnumber','currency','level','species')) %>%
+      mutate(within_prediction_interval = actual >= LowerPI & actual <= UpperPI, error_metric='coverage') %>%
+      group_by(model, currency, level, species, lead_time, error_metric) %>%
+      summarize(error_value=mean(within_prediction_interval)) %>%
+      ungroup() %>%
+      mutate(error_metric = 'coverage')
+    
+  } else if(error_metric == 'deviance') {
+    stop('Deviance not implimented  yet')
   } else {
     stop(paste0('Error metric unknown: ',error_metric))
   }
 
-  #Summarize to mean error by lead time. Lead time is number of new moons ahead of when the forecast was made.
-  #This assumes a forecast was made with only the data available prior to the first NewMoonDate in the series.
-  #TODO: Make the lead time the actual days or weeks once more frequent forecasts are being made( see #37)
-  forecast_date_new_moon_number = comparisons %>%
-    group_by(date) %>%
-    summarise(new_moon_of_forecast = min(newmoonnumber)-1) %>%
-    ungroup()
-
-  comparisons_with_lead_time = comparisons %>%
-    left_join(forecast_date_new_moon_number, by='date') %>%
-    mutate(lead_time=newmoonnumber - new_moon_of_forecast) %>%
-    select(-new_moon_of_forecast, -newmoonnumber, -date)
-
-  comparisons_model_summary = comparisons_with_lead_time %>%
-    group_by(model, currency, level, species, lead_time) %>%
-    summarize(error=mean(error))
-
-  return(comparisons_model_summary)
+  return(comparisons)
 }
 
 #' Plot the output of calculate_forecast_error(). Lead time on the x-axis,
@@ -276,8 +277,14 @@ forecast_is_valid=function(forecast_df, verbose=FALSE){
 #' @param forecast_folder str Base folder holding all forecast files
 #' @param verbose bool Output info on file violations
 #' @return dataframe combined forecasts
-compile_forecasts=function(forecast_folder='./predictions', verbose=FALSE){
-  forecast_filenames = list.files(forecast_folder, full.names = TRUE, recursive = TRUE)
+compile_forecasts=function(forecast_folder='./predictions', verbose=FALSE, use_hindcasts=FALSE){
+  if(use_hindcasts){
+    search_string = 'hindcast'
+  } else {
+    search_string = 'forecast'
+  }
+  
+  forecast_filenames = list.files(forecast_folder, pattern = search_string, full.names = TRUE, recursive = TRUE)
   #aic_weight files are also stored here and there can be many. 
   forecast_filenames = forecast_filenames[!grepl('model_aic',forecast_filenames)]
   all_forecasts=data.frame()
