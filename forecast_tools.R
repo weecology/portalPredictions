@@ -82,7 +82,13 @@ get_sp_predicts = function(data, lvl, lead_time) {
   data2 = filter(data1, newmoonnumber == target_moon)
 }
 
-plot_data = function(data) {
+#' this is the 'second plot on the 'Species-level Forecast' on the 'Current Forecast' page on the website
+#' 
+#' 
+#' @param data
+#' @return sp_predict is a plot object -- plot(sp_predict) displays it
+#' 
+plot_species_forecast = function(data) {
   newmoons_table = read.csv(
     text = getURL(
       "https://raw.githubusercontent.com/weecology/PortalData/master/Rodents/moon_dates.csv"))
@@ -90,6 +96,14 @@ plot_data = function(data) {
   period_code = dplyr::filter(newmoons_table, newmoons_table$newmoonnumber == target_moon) %>%
     dplyr::select(period) %>%
     as.integer()
+  species_table = read.csv(
+    text = getURL(
+      "https://raw.githubusercontent.com/weecology/PortalData/master/Rodents/Portal_rodent_species.csv"),stringsAsFactors = F,na.strings = '')
+  species_names = species_table %>% 
+    select('speciescode','scientificname') %>% 
+    rbind(c('total','total')) %>%
+    merge(data[,c('species','estimate')],by.x='speciescode',by.y='species')
+  
   sp_predict = ggplot(data,
                       aes(
                         x = estimate,
@@ -101,20 +115,12 @@ plot_data = function(data) {
     geom_errorbarh() +
     ggtitle(paste(data$forecast_date[2], "All plots", sep = " ")) + # should make title better somehow
     ylab("Species") +
-    xlab("Abundance")
-  if(!is.na(period_code)){
-    rodents = abundance("repo", shape='flat')
-    observed = dplyr::filter(rodents, period == period_code)
-    joined_data = left_join(data, observed, by = "species")
-    joined_data[is.na(joined_data)] = 0
-    joined_data[joined_data$species=='total','abundance'] = sum(joined_data$abundance,na.rm=T)
-    joined_data[joined_data$species=='total','period'] = period_code
-    sp_predict = sp_predict +
-      geom_point(data = joined_data, mapping = aes(x = abundance, y = species),
-                 color = "blue")
-  }
-  plot(sp_predict)
+    xlab("Abundance") +
+    scale_y_discrete(breaks = reorder(data$species,data$estimate),labels = reorder(species_names$scientificname,species_names$estimate))
+  
+  return(sp_predict)
 }
+
 
 
 #' Compares forecasts to observations over different lead times.

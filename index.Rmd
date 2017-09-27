@@ -20,6 +20,7 @@ new_moon_file = portalr::FullPath('PortalData/Rodents/moon_dates.csv',
                                                   '~')
 new_moons = read.csv(new_moon_file)
 obs_data_newmoon = inner_join(obs_data, new_moons, by = c("period" = "period"))
+obs_data_newmoon$censusdate = as.Date(obs_data_newmoon$censusdate)
 #for_data = read.csv("predictions/2017-02-24Allforecasts.csv")
 
 for_data = compile_forecasts() %>%
@@ -29,12 +30,13 @@ most_recent_forecast = max(for_data$date)
 for_data = filter(for_data, date == most_recent_forecast)
 
 for_data$model = "ensemble"
+for_data$forecastdate = as.Date(paste(for_data$forecastyear,for_data$forecastmonth,'15',sep='-'))
 
 forecast_viz(obs_data = obs_data_newmoon,
-             obs_date_col_name = "newmoonnumber",
+             obs_date_col_name = "censusdate",
              obs_val_col_name = "total",
              for_data = for_data,
-             for_date_col_name = "newmoonnumber",
+             for_date_col_name = "forecastdate",
              for_val_col_name = "estimate",
              for_model_name = "ensemble",
              for_lowerpi_col_name = "LowerPI",
@@ -50,7 +52,8 @@ source("forecast_tools.R")
 data = compile_forecasts()
 ensemble = dplyr::filter(data, level == 'All', model == 'Ensemble', date == max(date))
 sp_predictions = get_sp_predicts(ensemble, 'All', lead_time = 1)
-plot_data(sp_predictions)
+sp_predict = plot_species_forecast(sp_predictions)
+plot(sp_predict)
 ```
 ```{r highabund_ts_forecasts, echo=FALSE, message=FALSE, warning=FALSE}
 most_abund_sp = sp_predictions %>% 
@@ -61,10 +64,10 @@ most_abund_sp = sp_predictions %>%
 
 for (species in as.vector(most_abund_sp$species)) {
   species_forecast = forecast_viz(obs_data = obs_data_newmoon,
-               obs_date_col_name = "newmoonnumber",
+               obs_date_col_name = "censusdate",
                obs_val_col_name = species,
                for_data = for_data,
-               for_date_col_name = "newmoonnumber",
+               for_date_col_name = "forecastdate",
                for_val_col_name = "estimate",
                for_model_name = "ensemble",
                for_lowerpi_col_name = "LowerPI",
