@@ -15,12 +15,31 @@ forecast_date = Sys.Date()
 #Hindcast will set the time based on these NewMoonNumbers. For each one
 #a hindcast will be made which pretends that sampleing period had just happened. 
 #403 to 490 is Jan,2010 - Jan,2017. 
-initial_time_NewMoons=403:490
+initial_time_newmoons=403:490
 
-for(this_NewMoon in initial_time_NewMoons){
+trappings = read.csv(FullPath('PortalData/Rodents/Portal_rodent_trapping.csv', '~'))
+incomplete_samples = portalr::find_incomplete_censuses(trappings)
+
+for(this_newmoon in initial_time_newmoons){
+
+  moons = get_moon_data()
+
+  this_newmoon_sampling_date = moons %>%
+    filter(newmoonnumber == this_newmoon) %>%
+    pull(censusdate)
+  
+  this_newmoon_period = moons %>%
+    filter(newmoonnumber == this_newmoon) %>%
+    pull(period)
+  
+  #Don't do hindcasting from newmoons that had incomplete samplings
+  #or were not sampled at all
+  if(this_newmoon_period %in% incomplete_samples$period | is.na(this_newmoon_sampling_date)){
+    next
+  }
 
   moons = get_moon_data() %>%
-    filter(newmoonnumber<=this_NewMoon)
+    filter(newmoonnumber<=this_newmoon)
   
   #Beginning and end of the forecast timeperiod
   most_recent_newmoon = moons$newmoonnumber[which.max(moons$period)]
@@ -33,12 +52,12 @@ for(this_NewMoon in initial_time_NewMoons){
   
   rodent_data = get_rodent_data(moons, forecast_date, filename_suffix)
   rodent_data$all = rodent_data$all %>%
-    filter(newmoonnumber <= this_NewMoon)
+    filter(newmoonnumber <= this_newmoon)
   rodent_data$controls = rodent_data$controls %>%
-    filter(newmoonnumber <= this_NewMoon)
+    filter(newmoonnumber <= this_newmoon)
   
   weather_data = get_weather_data(moons, rodent_data$all, first_forecast_newmoon, last_forecast_newmoon) %>%
-    filter(newmoonnumber <= this_NewMoon)
+    filter(newmoonnumber <= this_newmoon)
   
   #Get only relevent columns now that this is isn't needed to subset weather.
   rodent_data$all = rodent_data$all %>%
@@ -49,7 +68,7 @@ for(this_NewMoon in initial_time_NewMoons){
   zero_abund_forecast = list(pred=rep(0,12), interval=matrix(rep(0,24), ncol=2))
   colnames(zero_abund_forecast$interval) = c('lower','upper')
   
-  allforecasts=forecastall(rodent_data$all,"All",weather_data,weathermeans, forecast_date, forecast_newmoons, forecast_months, forecast_years)
-  controlsforecasts=forecastall(rodent_data$controls,"Controls",weather_data,weathermeans, forecast_date, forecast_newmoons, forecast_months, forecast_years)
+  allforecasts=try(forecastall(rodent_data$all,"All",weather_data,weathermeans, forecast_date, forecast_newmoons, forecast_months, forecast_years))
+  controlsforecasts=try(forecastall(rodent_data$controls,"Controls",weather_data,weathermeans, forecast_date, forecast_newmoons, forecast_months, forecast_years))
 
 }
