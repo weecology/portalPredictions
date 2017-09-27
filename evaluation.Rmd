@@ -1,0 +1,75 @@
+---
+title: "Evaluation"
+---
+  
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+	echo = TRUE,
+	message = FALSE,
+	warning = FALSE
+)
+library(dplyr)
+library(portalr)
+source("forecast_tools.R")
+```
+
+## How have the models done  historically?
+
+These graphs show errors as a function of lead time. The lead time is the number of months into the future that forecast is made. The error values are an average of all forecast errors using observations since 2010. Note that this currently uses hindcasts of the prior observations.  
+
+**RMSE**: Root mean square error, this is a metric used to evaluate the point estimate of a forecast.  
+**Coverage**: This is the percentage of observations which fell within the 95% confidence interval of a forecast. Ideally this would be equal to 0.95. If it's higher than 0.95 the forecasts intervals are too wide, if it's lower then the forecast intervals are too narrow.
+
+
+```{r, echo=FALSE, message=TRUE, warning=FALSE,, fig.width=9, fig.height=15}
+
+new_moon_file = portalr::FullPath('PortalData/Rodents/moon_dates.csv', '~')
+new_moons = read.csv(new_moon_file)
+
+species_of_interest = c('BA','DM','DO','PP','OT','NA')
+species_names = portalr::FullPath('PortalData/Rodents/Portal_rodent_species.csv', '~') %>%
+  read.csv(stringsAsFactors=FALSE) %>%
+  select(species = speciescode, full_species_name = scientificname)
+
+#Fix neotoma, and add a total entry
+species_names$species[species_names$full_species_name=='Neotoma albigula'] <- "NA"
+species_names = species_names %>%
+  mutate(species = ifelse(full_species_name=='Neotoma albigula', 'NA', species)) %>%
+  add_row(species='total', full_species_name='Total Rodents')
+
+species_abundance = portalr::abundance(shape='flat', level='Site') %>%
+  rename(actual = abundance) %>%
+  mutate(level='All',currency='abundance') %>%
+  left_join(new_moons, by='period') %>%
+  filter(species %in% species_of_interest)
+
+total_abundance = portalr::abundance(shape='flat', level='Site') %>%
+  group_by(period) %>%
+  summarise(actual=sum(abundance)) %>%
+  ungroup() %>%
+  mutate(level='All',currency='abundance',species='total') %>%
+  left_join(new_moons, by='period')
+
+observation_data = species_abundance %>%
+  bind_rows(total_abundance)
+
+#Get the all the forecasts made during observation period
+forecast_data = compile_forecasts(use_hindcasts = TRUE)
+forecast_errors = calculate_forecast_error(observation_data, forecast_data, error_metric = 'RMSE') %>%
+  filter(error_value < 200) %>% #Drop RMSE greater than this because it throws off all the graphs
+  bind_rows(calculate_forecast_error(observation_data, forecast_data, error_metric = 'coverage'))
+
+forecast_errors = forecast_errors %>%
+  left_join(species_names, by='species')
+
+ggplot(forecast_errors, aes(x=lead_time, y=error_value, group=model, color=model)) +
+  geom_point()+
+  geom_line() +
+  geom_hline(yintercept = 0.95) +
+  labs(x='Lead Time (New Moons)') +
+  facet_wrap(full_species_name~error_metric, scales = 'free_y', ncol=2) + 
+  theme_bw() +
+  labs(y = "Error Value", colour = "Model")
+
+
+```
