@@ -52,7 +52,8 @@ source("forecast_tools.R")
 data = compile_forecasts()
 ensemble = dplyr::filter(data, level == 'All', model == 'Ensemble', date == max(date))
 sp_predictions = get_sp_predicts(ensemble, 'All', lead_time = 1)
-plot_data(sp_predictions)
+sp_predict = plot_species_forecast(sp_predictions)
+plot(sp_predict)
 ```
 ```{r highabund_ts_forecasts, echo=FALSE, message=FALSE, warning=FALSE}
 most_abund_sp = sp_predictions %>% 
