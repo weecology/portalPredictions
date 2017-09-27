@@ -4,6 +4,7 @@ title: "Report - September 2017"
 Here's the most recent data (blue) compared to the forecast performed right before data collection (black, with error bars)
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 source("forecast_tools.R")
+library(portalr)
 
 # get most recent rodent data
 rodents = abundance("repo", shape='flat')
@@ -33,31 +34,3 @@ sp_predict = sp_predict + geom_point(data = joined_data, mapping = aes(x = abund
 plot(sp_predict)
 ```
 
-
----
-title: "Report - June 2017"
----
-
-Note the forecast for D. spectabalis this month. 
-
-```{r speciesforecasts, echo=FALSE, message=FALSE, warning=FALSE}
-source("forecast_tools.R")
-
-data = compile_forecasts()
-ensemble = dplyr::filter(data, level == 'All', model == 'Ensemble', date == max(date))
-sp_predictions = get_sp_predicts(ensemble, 'All', lead_time = 1)
-ds_forecast = forecast_viz(obs_data = obs_data_newmoon,
-               obs_date_col_name = "newmoonnumber",
-               obs_val_col_name = 'DS',
-               for_data = for_data,
-               for_date_col_name = "newmoonnumber",
-               for_val_col_name = "estimate",
-               for_model_name = "ensemble",
-               for_lowerpi_col_name = "LowerPI",
-               for_upperpi_col_name = "UpperPI",
-               start_newmoon = 300)
-  plot(ds_forecast)
-
-```
-
-There is an increasing change that we will see a spectab in the coming months. Does this mean Stephanie will return?
