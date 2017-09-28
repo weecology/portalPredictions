@@ -14,11 +14,10 @@ source("forecast_tools.R")
 This is the forecast for next month's sampling of rodents at Portal.
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
-obs_data = portalr::abundance()
+obs_data = portalr::abundance("repo")
 obs_data$total = rowSums(select(obs_data, -period))
-new_moon_file = portalr::FullPath('PortalData/Rodents/moon_dates.csv', 
-                                                  '~')
-new_moons = read.csv(new_moon_file)
+new_moons = read.csv(text = RCurl::getURL("https://raw.githubusercontent.com/weecology/PortalData/master/Rodents/moon_dates.csv"))
+
 obs_data_newmoon = inner_join(obs_data, new_moons, by = c("period" = "period"))
 obs_data_newmoon$censusdate = as.Date(obs_data_newmoon$censusdate)
 #for_data = read.csv("predictions/2017-02-24Allforecasts.csv")
