@@ -335,5 +335,6 @@ forecast_viz <- function(obs_data, obs_date_col_name, obs_val_col_name, for_data
   ggplot(obs_data_sub, aes_string(x = obs_date_col_name)) +
     geom_ribbon(data = for_data_sub, mapping = aes_string(x = for_date_col_name, ymin = for_lowerpi_col_name, ymax = for_upperpi_col_name), fill = "lightblue") +
     geom_line(aes_string(y = obs_val_col_name)) +
-    geom_line(data = for_data_sub, mapping = aes_string(x = for_date_col_name, y = for_val_col_name), color = "blue")
+    geom_line(data = for_data_sub, mapping = aes_string(x = for_date_col_name, y = for_val_col_name), color = "blue") +
+    theme(axis.title.x=element_blank())
 }
