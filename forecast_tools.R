@@ -324,17 +324,26 @@ all_forecasts$date=as.Date(all_forecasts$date)
 #' Visualize a time-series forecast
 #' Plots the observed time-series and the 1-step forecasts within it
 #' Plots the forecast time-series along with the prediction interval for future observations
-#' obs_data is a data.frame
-#' date_col_name is a string with the name for the date column
-#' val_col_name is a string with the name for the column of the value being forecast
+#' @param obs_data is a data.frame (observed data)
+#' @param obs_date_col_name is a string: name of the date column from obs_data
+#' @param obs_val_col_name is a string: name of the column of the value being forecast
+#' @param for_data is a data.frame (forecast data)
+#' @param for_date_col_name is a string: name of the date column from for_data
+#' @param for_val_col_name is a string: name of the column of value being forecast, from for_data
+#' @param for_model_name is a string: name of the model to be used from model column in for_data
+#' @param for_lowerpi_col_name is a string: name of the column of the lower confidence interval from for_data
+#' @param for_upperpi_col_name is a string: name of the column of the upper confidence interval from for_data
+#' @param start_newmoon is numeric: first new moon number to be plotted
+#' @param ylabel is a string: title for y-axis
 forecast_viz <- function(obs_data, obs_date_col_name, obs_val_col_name, for_data,
                          for_date_col_name, for_val_col_name, for_model_name,
-                         for_lowerpi_col_name, for_upperpi_col_name, start_newmoon){
+                         for_lowerpi_col_name, for_upperpi_col_name, start_newmoon,
+                         ylabel){
   for_data_sub = filter(for_data, species == obs_val_col_name, model == for_model_name)
   obs_data_sub = filter(obs_data, newmoonnumber >= start_newmoon)
   ggplot(obs_data_sub, aes_string(x = obs_date_col_name)) +
     geom_ribbon(data = for_data_sub, mapping = aes_string(x = for_date_col_name, ymin = for_lowerpi_col_name, ymax = for_upperpi_col_name), fill = "lightblue") +
     geom_line(aes_string(y = obs_val_col_name)) +
     geom_line(data = for_data_sub, mapping = aes_string(x = for_date_col_name, y = for_val_col_name), color = "blue") +
-    theme(axis.title.x=element_blank())
+    labs(x='',y=ylabel)
 }

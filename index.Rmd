@@ -40,7 +40,8 @@ forecast_viz(obs_data = obs_data_newmoon,
              for_model_name = "ensemble",
              for_lowerpi_col_name = "LowerPI",
              for_upperpi_col_name = "UpperPI",
-             start_newmoon = 300)
+             start_newmoon = 300,
+             ylabel = 'Total Abundance')
 ```
 
 ## Species-Level Forecasts
@@ -61,17 +62,24 @@ most_abund_sp = sp_predictions %>%
   head(3) %>% 
   select(species)
 
-for (species in as.vector(most_abund_sp$species)) {
+# load in rodent species table to get scientific names to display on plots
+species_table = read.csv(
+  text = RCurl::getURL(
+      "https://raw.githubusercontent.com/weecology/PortalData/master/Rodents/Portal_rodent_species.csv"),stringsAsFactors = F,na.strings = '')
+most_abund_sp_names = filter(species_table,speciescode %in% most_abund_sp$species) %>% select(speciescode,scientificname)
+
+for (n in seq(dim(most_abund_sp_names)[1])) {
   species_forecast = forecast_viz(obs_data = obs_data_newmoon,
                obs_date_col_name = "censusdate",
-               obs_val_col_name = species,
+               obs_val_col_name = most_abund_sp_names$speciescode[n],
                for_data = for_data,
                for_date_col_name = "forecastdate",
                for_val_col_name = "estimate",
                for_model_name = "ensemble",
                for_lowerpi_col_name = "LowerPI",
                for_upperpi_col_name = "UpperPI",
-               start_newmoon = 300)
+               start_newmoon = 300,
+               ylabel = most_abund_sp_names$scientificname[n])
   plot(species_forecast)
 }
 ```
