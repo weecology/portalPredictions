@@ -40,6 +40,9 @@ for(this_newmoon in initial_time_newmoons){
 
   moons = get_moon_data() %>%
     filter(newmoonnumber<=this_newmoon)
+  #get dates of 12 new moons following newmoon of interest
+  future_moons = get_moon_data() %>%
+    filter(newmoonnumber>this_newmoon,newmoonnumber<=this_newmoon+12)
   
   #Beginning and end of the forecast timeperiod
   most_recent_newmoon = moons$newmoonnumber[which.max(moons$period)]
@@ -47,8 +50,8 @@ for(this_newmoon in initial_time_newmoons){
   first_forecast_newmoon=most_recent_newmoon+1
   last_forecast_newmoon=first_forecast_newmoon + 11
   forecast_newmoons = first_forecast_newmoon:last_forecast_newmoon
-  forecast_months=month(most_recent_newmoon_date %m+% months(1:12))
-  forecast_years=year(most_recent_newmoon_date %m+% months(1:12))
+  forecast_months = future_moons$month[future_moons$newmoonnumber %in% forecast_newmoons]
+  forecast_years = future_moons$year[future_moons$newmoonnumber %in% forecast_newmoons]
   
   rodent_data = get_rodent_data(moons, forecast_date, filename_suffix)
   rodent_data$all = rodent_data$all %>%
