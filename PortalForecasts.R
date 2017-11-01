@@ -12,14 +12,15 @@ forecast_date = Sys.Date()
 
 portalr::download_observations()
 moons = get_moon_data()
+future_moons = get_future_moons(moons)
 
 #Beginning and end of the forecast timeperiod
 most_recent_newmoon = moons$newmoonnumber[which.max(moons$period)]
 first_forecast_newmoon=most_recent_newmoon+1
 last_forecast_newmoon=first_forecast_newmoon + 11
 forecast_newmoons = first_forecast_newmoon:last_forecast_newmoon
-forecast_months=month(forecast_date %m+% months(0:11))
-forecast_years=year(forecast_date %m+% months(0:11))
+forecast_months = future_moons$month[future_moons$newmoonnumber %in% forecast_newmoons]
+forecast_years = future_moons$year[future_moons$newmoonnumber %in% forecast_newmoons]
 
 rodent_data = get_rodent_data(moons, forecast_date, filename_suffix)
 weather_data = get_weather_data(moons, rodent_data$all, first_forecast_newmoon, last_forecast_newmoon)

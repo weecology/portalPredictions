@@ -14,6 +14,23 @@ get_moon_data <- function(){
   return(moons)
 }
 
+get_future_moons <- function(moons){
+  #Get dates of future new moons from navy website
+  year = tail(moons$year,1)
+  month = tail(moons$month,1)+1
+  newmoondates = htmltab(doc=paste("http://aa.usno.navy.mil/cgi-bin/aa_phases.pl?year=",year,"&month=",month,"&day=1&nump=50&format=t", sep=""),which=1)
+  newmoondates = gsub('.{6}$', '', newmoondates$"Date and Time (Universal Time)"[newmoondates$"Moon Phase" == "New Moon"])
+  newmoondates = as.Date(ymd(newmoondates, format='%Y %m %d'))
+  #Set up dataframe for new moon dates to be added
+  newmoons = data.frame(newmoonnumber = max(moons$newmoonnumber)+1:length(newmoondates),
+                        newmoondate = as.Date(newmoondates),
+                        period = NA,
+                        censusdate = as.Date(NA),
+                        year = year(newmoondates),
+                        month = month(newmoondates))
+  return(newmoons)
+}
+
 get_rodent_data <- function(moons, forecast_date, filename_suffix){
   #Period 203/newmoonnumber 217 will be when the training data timeseries
   #begins. Corresponding to Jan 1995
