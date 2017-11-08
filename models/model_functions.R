@@ -2,6 +2,7 @@ library(lubridate)
 library(dplyr)
 library(magrittr)
 library(rmarkdown)
+library(htmltab)
 source('forecast_tools.R')
 
 get_moon_data <- function(){
