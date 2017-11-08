@@ -12,6 +12,7 @@ forecast_date = Sys.Date()
 
 portalr::download_observations()
 moons = get_moon_data()
+#get dates of 12 new moons following newmoon of interest
 future_moons = get_future_moons(moons)
 
 #Beginning and end of the forecast timeperiod
