@@ -1,5 +1,5 @@
 ---
-title: "Report - September 2017"
+title: "Report - Latest Rodent Data"
 ---
 Here's the most recent data (blue) compared to the forecast performed right before data collection (black, with error bars)
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
@@ -8,16 +8,21 @@ library(portalr)
 
 # get most recent rodent data
 rodents = abundance("repo", shape='flat')
-period_code = max(rodents$period)
-observed = dplyr::filter(rodents, period == period_code)
+most_recent_period = max(rodents$period)
+observed = dplyr::filter(rodents, period == most_recent_period)
 
 # get new moon number associated with this period
 newmoons_table = read.csv(text = getURL("https://raw.githubusercontent.com/weecology/PortalData/master/Rodents/moon_dates.csv"))
-moon_code = dplyr::filter(newmoons_table,period==period_code) %>% select(newmoonnumber) %>% as.integer()
+newmoons_table$censusdate = as.Date(newmoons_table$censusdate,format='%Y-%m-%d')
+moon_code = dplyr::filter(newmoons_table,period==most_recent_period) %>% select(newmoonnumber) %>% as.integer()
+most_recent_date = dplyr::filter(newmoons_table,period==most_recent_period) %>% dplyr::select(censusdate)
 
-# get most recent forecast prior to data collection -- WIP!!!!!!!! there's an issue up
-data = read.csv('predictions/2017-06-23Allforecasts.csv',na.strings = '')
-data = plyr::rename(data,c('NewMoonNumber' = 'newmoonnumber'))
+# get most recent forecast prior to data collection
+files = data.frame(names = list.files(path = './predictions', pattern = '*Allforecasts.csv'))
+files$filedates = as.Date(substr(files$names,1,10),format='%Y-%m-%d')
+latest_forecast = dplyr::filter(files,filedates<most_recent_date) %>% tail(1)
+
+data = read.csv(paste('predictions/',latest_forecast$names,sep=''),na.strings = '')
 
 ensemble = dplyr::filter(data, level == 'All', model == 'Ensemble', newmoonnumber==moon_code)
 sp_predictions = get_sp_predicts(ensemble, 'All', lead_time = 1)

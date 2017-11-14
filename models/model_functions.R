@@ -2,6 +2,7 @@ library(lubridate)
 library(dplyr)
 library(magrittr)
 library(rmarkdown)
+library(htmltab)
 source('forecast_tools.R')
 
 get_moon_data <- function(){
@@ -19,7 +20,7 @@ get_future_moons <- function(moons){
   # Returns data.frame of newmoons in the future in the same format as the output of get_moon_data() function
   most_recent_year = tail(moons$year,1)
   most_recent_month = tail(moons$month,1)+1
-  newmoondates = htmltab(doc=paste("http://aa.usno.navy.mil/cgi-bin/aa_phases.pl?year=",most_recent_year,"&month=",most_recent_month,"&day=1&nump=50&format=t", sep=""),which=1)
+  newmoondates = htmltab::htmltab(doc=paste("http://aa.usno.navy.mil/cgi-bin/aa_phases.pl?year=",most_recent_year,"&month=",most_recent_month,"&day=1&nump=50&format=t", sep=""),which=1)
   newmoondates = gsub('.{6}$', '', newmoondates$"Date and Time (Universal Time)"[newmoondates$"Moon Phase" == "New Moon"])
   newmoondates = as.Date(ymd(newmoondates, format='%Y %m %d'))
   #Set up dataframe for new moon dates to be added
