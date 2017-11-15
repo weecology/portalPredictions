@@ -31,7 +31,7 @@ sp_predictions = get_sp_predicts(ensemble, 'All', lead_time = 1)
 joined_data = left_join(sp_predictions, observed, by = "species")
 joined_data[is.na(joined_data)] = 0
 joined_data[joined_data$species=='total','abundance'] = sum(joined_data$abundance,na.rm=T)
-joined_data[joined_data$species=='total','period'] = period_code
+joined_data[joined_data$species=='total','period'] = most_recent_period
 
 sp_predict = plot_species_forecast(sp_predictions)  
 sp_predict = sp_predict + geom_point(data = joined_data, mapping = aes(x = abundance, y = species),
