@@ -214,6 +214,12 @@ $(document).ready(function () {
 <p>Portalforecasts.R is the main function used to produce forecasts. Multiple models are used for each new forecast, and are descibed in their respective files.</p>
 <p>Models currently in use are in the models directory. Models that were used or we’re developing but not currently using are under DevelopingModels.</p>
 <p>Predictions contains all predictions made thusfar and model aics. Each new prediction made on a particular time series (varies by level and currency) is saved in a new file in this directory.</p>
+<div id="docker-builds" class="section level2">
+<h2>Docker builds</h2>
+<p>Forecasts are run using Travis CI based on a docker image. This makes the builds faster and more reproducible. When adding new packages to this repo it may be necessary to update the Docker container using the following commands:</p>
+<pre><code>sudo docker build -t weecology/portal_predictions .
+sudo docker push weecology/portal_predictions</code></pre>
+</div>
 </div>
 
 
