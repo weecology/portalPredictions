@@ -11,7 +11,7 @@
 
 
 
-<title></title>
+<title>README.utf8</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -20,8 +20,8 @@
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-1.1/default.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -30,10 +30,12 @@
   }
 </style>
 <script type="text/javascript">
-if (window.hljs && document.readyState && document.readyState === "complete") {
-   window.setTimeout(function() {
-      hljs.initHighlighting();
-   }, 0);
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
 }
 </script>
 
@@ -206,7 +208,7 @@ $(document).ready(function () {
 </div>
 
 
-<div id="portal-predictions" class="section level1">
+<section id="portal-predictions" class="level1">
 <h1>Portal Predictions</h1>
 <p><a href="https://travis-ci.org/weecology/portalPredictions"><img src="https://travis-ci.org/weecology/portalPredictions.svg?branch=master" alt="Build Status" /></a> <a href="https://doi.org/10.5281/zenodo.833438"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.833438.svg" alt="DOI" /></a> <a href="https://raw.githubusercontent.com/weecology/portalPredictions/master/LICENSE"><img src="http://img.shields.io/badge/license-MIT-blue.svg" alt="License" /></a></p>
 <p>This is the main repository for predictions made on the Portal rodent census data <a href="http://portal.weecology.org/">Portal Project</a>.</p>
@@ -214,13 +216,13 @@ $(document).ready(function () {
 <p>Portalforecasts.R is the main function used to produce forecasts. Multiple models are used for each new forecast, and are descibed in their respective files.</p>
 <p>Models currently in use are in the models directory. Models that were used or we’re developing but not currently using are under DevelopingModels.</p>
 <p>Predictions contains all predictions made thusfar and model aics. Each new prediction made on a particular time series (varies by level and currency) is saved in a new file in this directory.</p>
-<div id="docker-builds" class="section level2">
+<section id="docker-builds" class="level2">
 <h2>Docker builds</h2>
 <p>Forecasts are run using Travis CI based on a docker image. This makes the builds faster and more reproducible. When adding new packages to this repo it may be necessary to update the Docker container using the following commands:</p>
 <pre><code>sudo docker build -t weecology/portal_predictions .
 sudo docker push weecology/portal_predictions</code></pre>
-</div>
-</div>
+</section>
+</section>
 
 
 

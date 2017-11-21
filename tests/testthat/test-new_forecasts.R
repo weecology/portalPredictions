@@ -1,12 +1,13 @@
 library(testthat)
 library(yaml)
+library(zoo)
 context("checks that new forecasts are being added correctly")
-data = yaml.load_file("tools/model.yaml")
+data = yaml.load_file("../../tools/model.yaml")
 
-all=read.csv(file.path('predictions', paste(as.character(as.Date(data$forecast_date)), "All", data$filename_suffix, ".csv", sep="")), na.strings = "")
-allaic=read.csv(file.path('predictions', paste(as.character(as.Date(data$forecast_date)), "All", data$filename_suffix, "_model_aic.csv", sep="")), na.strings = "")
-controls=read.csv(file.path('predictions', paste(as.character(as.Date(data$forecast_date)), "Controls", data$filename_suffix, ".csv", sep="")), na.strings = "")
-controlsaic=read.csv(file.path('predictions', paste(as.character(as.Date(data$forecast_date)), "Controls", data$filename_suffix, "_model_aic.csv", sep="")), na.strings = "")
+all=read.csv(file.path('../../predictions', paste(as.character(as.Date(data$forecast_date)), "All", data$filename_suffix, ".csv", sep="")), na.strings = "")
+allaic=read.csv(file.path('../../predictions', paste(as.character(as.Date(data$forecast_date)), "All", data$filename_suffix, "_model_aic.csv", sep="")), na.strings = "")
+controls=read.csv(file.path('../../predictions', paste(as.character(as.Date(data$forecast_date)), "Controls", data$filename_suffix, ".csv", sep="")), na.strings = "")
+controlsaic=read.csv(file.path('../../predictions', paste(as.character(as.Date(data$forecast_date)), "Controls", data$filename_suffix, "_model_aic.csv", sep="")), na.strings = "")
 
 forecastnames = c("date", "forecastmonth",  "forecastyear",  "newmoonnumber",
                 "currency", "model", "level", "species", "estimate",  "LowerPI", 

@@ -20,8 +20,8 @@
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-1.1/default.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -30,10 +30,12 @@
   }
 </style>
 <script type="text/javascript">
-if (window.hljs && document.readyState && document.readyState === "complete") {
-   window.setTimeout(function() {
-      hljs.initHighlighting();
-   }, 0);
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
 }
 </script>
 
@@ -208,20 +210,20 @@ $(document).ready(function () {
 
 
 <p><br></p>
-<div id="the-portal-project" class="section level1">
+<section id="the-portal-project" class="level1">
 <h1>The Portal Project</h1>
 <p><a href="http://portal.weecology.org/">The Portal project</a>, located in the Chihuahuan desert of southern Arizona, is a long-term experimental monitoring project in desert ecology. There are over 40 years of data on rodents, plants, ants, and weather at the site. Rodent data are collected approximately monthly, an ideal scenario for short-term forecasts of rodent abundance.</p>
 <p><br></p>
-</div>
-<div id="ecological-forecasting" class="section level1">
+</section>
+<section id="ecological-forecasting" class="level1">
 <h1>Ecological Forecasting</h1>
 <p>There is a need for short term iterative forecasts in ecology. We are using our monthly rodent trapping to create a platform for automated and validated forecasting.</p>
 <p><br></p>
-</div>
-<div id="weecology" class="section level1">
+</section>
+<section id="weecology" class="level1">
 <h1><a href="http://weecology.org/">Weecology</a></h1>
 <p>We are a group of ecologists at the University of Florida, interested in collaborative approaches to ecology, open science, and open data.</p>
-</div>
+</section>
 
 
 
