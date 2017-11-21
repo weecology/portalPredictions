@@ -1,10 +1,10 @@
 library(testthat)
 context("checks that new forecasts are being added correctly")
-latestfiles=tail(list.files("../../predictions", full.names = TRUE),4)
-all=read.csv(latestfiles[1])
-allaic=read.csv(latestfiles[2])
-controls=read.csv(latestfiles[3])
-controlsaic=read.csv(latestfiles[4])
+forecast_date = 
+all=read.csv(file.path('predictions', paste(as.character(forecast_date), "All", "forecasts", ".csv", sep="")))
+allaic=read.csv(file.path('predictions', paste(as.character(forecast_date), "All", "forecasts", "_model_aic.csv", sep="")))
+controls=read.csv(file.path('predictions', paste(as.character(forecast_date), "All", "forecasts", ".csv", sep="")))
+controlsaic=read.csv(file.path('predictions', paste(as.character(forecast_date), "All", "forecasts", "_model_aic.csv", sep="")))
 
 forecastnames = c("date", "forecastmonth",  "forecastyear",  "newmoonnumber",
                 "currency", "model", "level", "species", "estimate",  "LowerPI", 
@@ -24,7 +24,7 @@ test_that("column names correct", {
 
 test_that("no forecasts duplicated", {
 
-  expect_true(sum(duplicated(all))==0)
-  expect_true(sum(duplicated(controls))==0)
+  expect_true(sum(duplicated(all[,1:8]))==0)
+  expect_true(sum(duplicated(controls[,1:8]))==0)
   
 })
