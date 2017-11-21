@@ -73,6 +73,36 @@ make_ensemble=function(all_forecasts, models_to_use=NA, CI_level = 0.9){
   return(ensemble)
 }
 
+##########################Forecast processing############################
+#Combine all new forecasts of the same level, add columns, add ensembles
+
+forecastall <- function(level, filename_suffix = 'forecasts') {
+  
+  #Append results to forecasts and AIC tables
+  forecasts = do.call(rbind,
+                      lapply(list.files("tmp",pattern = paste(level,filename_suffix, ".csv",sep=""), full.names = TRUE), 
+                             read.csv, na.strings = "", colClasses = c("Date", "integer", "integer", 
+                                                                       "integer", "character", "character", "character", 
+                                                                       "character", "numeric", "numeric", "numeric",
+                                                                       "integer", "integer", "integer")))
+  
+  all_model_aic = do.call(rbind,
+                          lapply(list.files("tmp",pattern = paste(level,filename_suffix, "_model_aic.csv",sep=""), full.names = TRUE), 
+                                 read.csv, na.strings = ""))
+  
+  forecast_filename = file.path('predictions', paste(as.character(forecast_date), level, filename_suffix, ".csv", sep=""))
+  model_aic_filename = file.path('predictions', paste(as.character(forecast_date), level, filename_suffix, "_model_aic.csv", sep=""))
+  append_csv(forecasts, forecast_filename)
+  append_csv(all_model_aic, model_aic_filename)
+  
+  ########Add ensembles to files############################################
+  ensemble=make_ensemble(forecasts) %>% 
+    subset(select=colnames(forecasts))
+  append_csv(ensemble, forecast_filename)
+  
+  return(list(forecasts,all_model_aic))
+}
+
 get_sp_predicts = function(data, lvl, lead_time) {
   data = transform(data, forecast_date = as.yearmon(paste(forecastmonth, "/", forecastyear, sep =
                                                             ""), format = "%m/%Y")) %>% transform(date = as.Date(date, "%Y-%m-%d"))

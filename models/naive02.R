@@ -12,8 +12,16 @@ forecasts02=data.frame(date=forecast_date, forecastmonth=forecast_months, foreca
                        LowerPI=model$lower[,which(model$level==CI_level*100)], UpperPI=model$upper[,which(model$level==CI_level*100)])
 forecasts02[sapply(forecasts02, is.ts)] <- lapply(forecasts02[sapply(forecasts02, is.ts)],unclass)
 
-return(list(forecasts02,
-            data.frame(date=as.Date(forecast_date), currency='abundance', model='AutoArima', level=level, species='total', aic=as.numeric(model$model$aic))))
+  #########Include columns describing the data used in the forecast###############
+  forecasts02$fit_start_newmoon = min(abundances$newmoonnumber)
+  forecasts02$fit_end_newmoon = max(abundances$newmoonnumber)
+  forecasts02$initial_newmoon = max(abundances$newmoonnumber)
+
+aic = data.frame(date=as.Date(forecast_date), currency='abundance', model='AutoArima', level=level, species='total', 
+                 aic=as.numeric(model$model$aic), fit_start_newmoon = min(abundances$newmoonnumber),
+                 fit_end_newmoon = max(abundances$newmoonnumber), initial_newmoon = max(abundances$newmoonnumber))
+
+return(list(forecasts02,aic))
 }
 
 #Run model on all plots and just controls
