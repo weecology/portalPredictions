@@ -43,6 +43,14 @@ allaic=data.frame()
       bind_rows(data.frame(date=forecast_date,  currency='abundance', model='NegBinom Time Series',level=level, species=s, aic=model_aic))
   }
   
+  #########Include columns describing the data used in the forecast###############
+  allforecasts$fit_start_newmoon = min(abundances$newmoonnumber)
+  allforecasts$fit_end_newmoon   = max(abundances$newmoonnumber)
+  allforecasts$initial_newmoon   = max(abundances$newmoonnumber)
+  allaic$fit_start_newmoon = min(abundances$newmoonnumber)
+  allaic$fit_end_newmoon   = max(abundances$newmoonnumber)
+  allaic$initial_newmoon = max(abundances$newmoonnumber)
+
 #write results to file
 return(list(allforecasts,allaic)) 
 }
@@ -58,9 +66,11 @@ forecast_years = data$forecast_years
 forecast_newmoons = data$forecast_newmoons
 
 #Forecast All plots
+cat("Creating site level forecasts for negative binomial time series", "\n")
 allresults = nbts(all,forecast_date,forecast_months,forecast_years,forecast_newmoons,"All")
 
 #Forecast Control plots
+cat("Creating control plot forecasts for negative binomial time series", "\n")
 controlsresults = nbts(controls,forecast_date,forecast_months,forecast_years,forecast_newmoons,"Controls")
 
 #Write results

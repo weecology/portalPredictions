@@ -69,6 +69,14 @@ for(s in species) {
     bind_rows(data.frame(date=forecast_date, model='Poisson Env', currency='abundance', level=level, species=s, aic=model_aic))
 }
 
+  #########Include columns describing the data used in the forecast###############
+  allforecasts$fit_start_newmoon = min(abundances$newmoonnumber)
+  allforecasts$fit_end_newmoon   = max(abundances$newmoonnumber)
+  allforecasts$initial_newmoon   = max(abundances$newmoonnumber)
+  allaic$fit_start_newmoon = min(abundances$newmoonnumber)
+  allaic$fit_end_newmoon   = max(abundances$newmoonnumber)
+  allaic$initial_newmoon = max(abundances$newmoonnumber)
+
 return(list(allforecasts,allaic))
 
 }
@@ -91,13 +99,17 @@ return(list(allforecasts,allaic))
     select(-c(year,newmoonnumber,NewMoonNumber_with_lag)) %>% slice(match(forecast_months, month))
   
 #Forecast All plots
+cat("Creating site level forecasts for poisson environmental time series", "\n")
 allresults = pois_env_ts(all,weather,weathermeans,forecast_date,forecast_months,forecast_years,forecast_newmoons,"All")
 
+#Write results
+write.csv(allresults[1],file.path('tmp', paste("petsAll", filename_suffix, ".csv", sep="")),row.names = FALSE)
+write.csv(allresults[2],file.path('tmp', paste("petsAll", filename_suffix, "_model_aic.csv", sep="")),row.names = FALSE)
+
 #Forecast Control plots
+cat("Creating control plot forecasts for poisson environmental time series", "\n")
 controlsresults = pois_env_ts(controls,weather,weathermeans,forecast_date,forecast_months,forecast_years,forecast_newmoons,"Controls")
 
-#Write results
-write.csv(allresults$allforecasts,file.path('tmp', paste("petsAll", filename_suffix, ".csv", sep="")),row.names = FALSE)
-write.csv(allresults$allaic,file.path('tmp', paste("petsAll", filename_suffix, "_model_aic.csv", sep="")),row.names = FALSE)
-write.csv(controlsresults$allforecasts,file.path('tmp', paste("petsControls", filename_suffix, ".csv", sep="")),row.names = FALSE)
-write.csv(controlsresults$allaic,file.path('tmp', paste("petsControls", filename_suffix, "_model_aic.csv", sep="")),row.names = FALSE)
+#write results
+write.csv(controlsresults[1],file.path('tmp', paste("petsControls", filename_suffix, ".csv", sep="")),row.names = FALSE)
+write.csv(controlsresults[2],file.path('tmp', paste("petsControls", filename_suffix, "_model_aic.csv", sep="")),row.names = FALSE)

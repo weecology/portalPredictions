@@ -26,7 +26,7 @@ get_future_moons <- function(moons){
   # Returns data.frame of newmoons in the future in the same format as the output of get_moon_data() function
   most_recent_year = tail(moons$year,1)
   most_recent_month = tail(moons$month,1)+1
-  newmoondates = htmltab::htmltab(doc=paste("http://aa.usno.navy.mil/cgi-bin/aa_phases.pl?year=",most_recent_year,"&month=",most_recent_month,"&day=1&nump=50&format=t", sep=""),which=1)
+  newmoondates = htmltab(doc=paste("http://aa.usno.navy.mil/cgi-bin/aa_phases.pl?year=",most_recent_year,"&month=",most_recent_month,"&day=1&nump=50&format=t", sep=""),which=1)
   newmoondates = gsub('.{6}$', '', newmoondates$"Date and Time (Universal Time)"[newmoondates$"Moon Phase" == "New Moon"])
   newmoondates = as.Date(ymd(newmoondates, format='%Y %m %d'))
   #Set up dataframe for new moon dates to be added
@@ -98,52 +98,4 @@ get_weather_data <- function(moons, all, first_forecast_newmoon, last_forecast_n
     mutate(maxtemp = ifelse(is.na(maxtemp), mean(maxtemp, na.rm = T), maxtemp)) %>%
     mutate(meantemp = ifelse(is.na(meantemp), mean(meantemp, na.rm = T), meantemp)) %>%
     mutate(precipitation = ifelse(is.na(precipitation), mean(precipitation, na.rm = T), precipitation))
-}
-
-
-##########################Forecast processing############################
-#Combine all new forecasts of the same level, add columns, add ensembles
-
-forecastall <- function(level, filename_suffix = 'forecasts') {
-  
-
-#######Collect all model results################# 
-  #forecasts is where we will append all forecasts for this level
-  #all_model_aic is where we will append all model aics for this level
-  forecasts = data.frame(date=as.Date(character()), forecastmonth=numeric(), forecastyear=numeric(),
-                         newmoonnumber=numeric(), currency=character(), model=character(), level=character(),
-                         species=character(), estimate=numeric(), LowerPI=numeric(), UpperPI=numeric())
-  all_model_aic = data.frame(date=as.Date(character()),currency=character(),model=character(),level=character(),
-                             species=character(), aic=numeric())
-  
-  
-  #List files 
-  
-  
-  #Append results to forecasts and AIC tables
-  forecasts = 
-  
-  all_model_aic = 
-  
-  #########Include columns describing the data used in the forecast###############
-  forecasts$fit_start_newmoon = min(abundances$newmoonnumber)
-  forecasts$fit_end_newmoon   = max(abundances$newmoonnumber)
-  forecasts$initial_newmoon   = max(abundances$newmoonnumber)
-  all_model_aic$fit_start_newmoon = min(abundances$newmoonnumber)
-  all_model_aic$fit_end_newmoon   = max(abundances$newmoonnumber)
-  all_model_aic$initial_newmoon = max(abundances$newmoonnumber)
-  
-
-  
-  forecast_filename = file.path('predictions', paste(as.character(forecast_date), level, filename_suffix, ".csv", sep=""))
-  model_aic_filename = file.path('predictions', paste(as.character(forecast_date), level, filename_suffix, "_model_aic.csv", sep=""))
-  append_csv(forecasts, forecast_filename)
-  append_csv(all_model_aic, model_aic_filename)
-  
-  ########Add ensembles to files############################################
-  ensemble=make_ensemble(forecasts) %>% 
-    subset(select=colnames(forecasts))
-  append_csv(ensemble, forecast_filename)
-  
-  return(list(forecasts,all_model_aic))
 }
