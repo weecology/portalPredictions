@@ -4,7 +4,7 @@ source('tools/model_functions.R')
 #The date this forecast model is run. Always today's date.
 forecast_date = Sys.Date()
 
-portalr::download_observations()
+#portalr::download_observations()
 moons = get_moon_data()
 #get dates of 12 new moons following newmoon of interest
 future_moons = get_future_moons(moons)
@@ -18,11 +18,7 @@ forecast_months = future_moons$month[future_moons$newmoonnumber %in% forecast_ne
 forecast_years = future_moons$year[future_moons$newmoonnumber %in% forecast_newmoons]
 
 rodent_data = get_rodent_data(moons, forecast_date)
-weather_data = get_weather_data(moons, rodent_data$all, first_forecast_newmoon, last_forecast_newmoon)
-
-#Get only relevent columns now that this is isn't needed to subset weather.
-rodent_data$all = rodent_data$all %>%
-  select(-newmoondate,-censusdate,-period,-year,-month)
+weather_data = get_weather_data(moons, rodent_data$all, lag=6)
 
 #Write data files
 write.csv(rodent_data$all,"tools/rodent_all.csv",row.names = FALSE)

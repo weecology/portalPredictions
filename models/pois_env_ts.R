@@ -71,10 +71,10 @@ for(s in species) {
 
   #########Include columns describing the data used in the forecast###############
   allforecasts$fit_start_newmoon = min(abundances$newmoonnumber)
-  allforecasts$fit_end_newmoon   = max(abundances$newmoonnumber)
-  allforecasts$initial_newmoon   = max(abundances$newmoonnumber)
+  allforecasts$fit_end_newmoon = max(abundances$newmoonnumber)
+  allforecasts$initial_newmoon = max(abundances$newmoonnumber)
   allaic$fit_start_newmoon = min(abundances$newmoonnumber)
-  allaic$fit_end_newmoon   = max(abundances$newmoonnumber)
+  allaic$fit_end_newmoon = max(abundances$newmoonnumber)
   allaic$initial_newmoon = max(abundances$newmoonnumber)
 
 return(list(allforecasts,allaic))

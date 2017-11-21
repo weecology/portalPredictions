@@ -2,22 +2,14 @@ library(tidyverse)
 library(lubridate)
 library(zoo)
 library(ggplot2)
+library(rmarkdown)
 library(RCurl)
 
-#' Return normalized path for all operating systems
-#'
-#' @param ReferencePath a path to join with current working directory
-#' @param BasePath Current working directory else path given
-#'
-#' @return
-#' @export
-#' @examples
-#' FullPath('PortalData/Rodents/Portal_rodent.csv')
-#' FullPath('PortalData/Rodents/Portal_rodent.csv', '~')
-FullPath <- function( ReferencePath, BasePath=getwd()){
-  BasePath = normalizePath(BasePath)
-  Path = normalizePath(file.path(BasePath, ReferencePath), mustWork = FALSE)
-  return (Path)
+#########Write forecasts to file and aics to separate files###############
+#Appending a csv without re-writing the header. Needed for hindcasting
+#when many hindcasts are put into the same dated files. 
+append_csv=function(df, filename){
+  write.table(df, filename, sep = ',', row.names = FALSE, col.names = !file.exists(filename), append = file.exists(filename))
 }
 
 #Get all model aic values and calculate akaike weights
@@ -76,7 +68,7 @@ make_ensemble=function(all_forecasts, models_to_use=NA, CI_level = 0.9){
 ##########################Forecast processing############################
 #Combine all new forecasts of the same level, add columns, add ensembles
 
-forecastall <- function(level, filename_suffix = 'forecasts') {
+forecastall <- function(level, filename_suffix) {
   
   #Append results to forecasts and AIC tables
   forecasts = do.call(rbind,
@@ -150,8 +142,6 @@ plot_species_forecast = function(data) {
   
   return(sp_predict)
 }
-
-
 
 #' Compares forecasts to observations over different lead times.
 #' Error can be any function. The level, species, and currency columns from
