@@ -6,7 +6,7 @@ if ("pacman" %in% rownames(installed.packages()) == FALSE) install.packages("pac
 # Install analysis packages using pacman
 
 pacman::p_load(devtools, dplyr, forecast, ggplot2, lubridate, readr,testthat,
-               tidyverse, zoo, magrittr, rmarkdown, ltsa, parallel, htmltab)
+               tidyverse, zoo, magrittr, rmarkdown, ltsa, parallel, htmltab, yaml)
 pacman::p_load_gh('weecology/portalr')
 
 # Manually install tscount from CRAN archive

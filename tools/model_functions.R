@@ -3,7 +3,13 @@ library(dplyr)
 library(magrittr)
 library(rmarkdown)
 library(htmltab)
-source('forecast_tools.R')
+
+#########Write forecasts to file and aics to separate files###############
+#Appending a csv without re-writing the header. Needed for hindcasting
+#when many hindcasts are put into the same dated files. 
+append_csv=function(df, filename){
+  write.table(df, filename, sep = ',', row.names = FALSE, col.names = !file.exists(filename), append = file.exists(filename))
+}
 
 get_moon_data <- function(){
   #Get the newmoon number of the  most recent sample
@@ -33,13 +39,13 @@ get_future_moons <- function(moons){
   return(newmoons)
 }
 
-get_rodent_data <- function(moons, forecast_date, filename_suffix){
+####################################################################################
+get_rodent_data <- function(moons, forecast_date){
   #Period 203/newmoonnumber 217 will be when the training data timeseries
   #begins. Corresponding to Jan 1995
   historic_start_period=203
   historic_start_newmoon=217
   
-  ####################################################################################
   #get Portal abundance data for the entire site and for control plots only.
   controls=portalr::abundance(level="Treatment",type="Rodents",length="Longterm", incomplete = FALSE)
   
@@ -85,22 +91,6 @@ get_weather_data <- function(moons, all, first_forecast_newmoon, last_forecast_n
     right_join(all, by=c('NewMoonNumber_with_lag'='newmoonnumber')) %>%
     select(year,month,mintemp,maxtemp,meantemp,precipitation,NDVI,newmoonnumber, NewMoonNumber_with_lag)
   
-  ##Get 6 month weather forecast by combining stations data and monthly means of past 3 years
-  #Used to make predictions for the months 7-12 of a 12 month forecast using a 6 month lag.
-  
-  #A data.frame of the months that will be in this weather forecast.
-  weather_forecast_months = moons %>%
-    filter(newmoonnumber >= first_forecast_newmoon-5, newmoonnumber <= last_forecast_newmoon-5)
-  
-  #  x=subset(weather,newmoonnumber>=first_forecast_newmoon-5) %>%
-  #  subset(newmoonnumber<=last_forecast_newmoon-5)
-  
-  weathermeans=weather_data[dim(weather_data)[1]-36:dim(weather_data)[1],] %>%
-    group_by(month) %>%
-    summarize(mintemp=mean(mintemp,na.rm=T),maxtemp=mean(maxtemp,na.rm=T),meantemp=mean(meantemp,na.rm=T),
-              precipitation=mean(precipitation,na.rm=T),NDVI=mean(NDVI,na.rm=T)) %>%
-    slice(match(weather_forecast_months$month, month))
-  
   #Insert longterm means where there is missing data in the historic weather
   weather_data=weather_data %>%
     mutate(NDVI = ifelse(is.na(NDVI), mean(NDVI, na.rm = T), NDVI)) %>%
@@ -111,13 +101,13 @@ get_weather_data <- function(moons, all, first_forecast_newmoon, last_forecast_n
 }
 
 
-#####Forecasting wrapper function for all models########################
+##########################Forecast processing############################
+#Combine all new forecasts of the same level, add columns, add ensembles
 
-forecastall <- function(abundances, level, weather_data, weatherforecast,
-                        forecast_date, forecast_newmoons,
-                        forecast_months, forecast_years,
-                        CI_level = 0.9, num_forecast_months = 12) {
+forecastall <- function(level, filename_suffix = 'forecasts') {
   
+
+#######Collect all model results################# 
   #forecasts is where we will append all forecasts for this level
   #all_model_aic is where we will append all model aics for this level
   forecasts = data.frame(date=as.Date(character()), forecastmonth=numeric(), forecastyear=numeric(),
@@ -126,62 +116,14 @@ forecastall <- function(abundances, level, weather_data, weatherforecast,
   all_model_aic = data.frame(date=as.Date(character()),currency=character(),model=character(),level=character(),
                              species=character(), aic=numeric())
   
-  #######Community level predictions#################
   
+  #List files 
   
-  ###naive models####
-  
-  #Model 1 is the default Forecast package with BoxCox.lambda(0),allow.multiplicative.trend=T
-  
-  source('models/naive01.R')
-  model01=naive01(abundances,forecast_date,forecast_months,forecast_years,forecast_newmoons,level,num_forecast_months,CI_level)
   
   #Append results to forecasts and AIC tables
-  forecasts = forecasts  %>%
-    bind_rows(data.frame(model01[1]))
+  forecasts = 
   
-  all_model_aic = all_model_aic %>%
-    bind_rows(data.frame(date=forecast_date, currency='abundance', model='Forecast', level=level, species='total', aic=as.numeric(unlist(model01[2]))))
-  
-  
-  #Model 2 is the default Forecast package auto.arima (lambda=0)
-  source('models/naive02.R')
-  model02=naive02(abundances,forecast_date,forecast_months,forecast_years,forecast_newmoons,level,num_forecast_months,CI_level)
-  
-  #Append results to forecasts and AIC tables
-  forecasts = forecasts  %>%
-    bind_rows(data.frame(model02[1]))
-  
-  all_model_aic = all_model_aic %>%
-    bind_rows(data.frame(date=forecast_date, model='AutoArima', currency='abundance', level=level, species='total', aic=unlist(model02[2])))
-  
-  
-  
-  ####### Species level predictions #################
-  #total is also included in these, for a community-level prediction
-  
-  ##Negative Binomial Time Series Model
-  source('models/neg_binom_ts.R')
-  nbts=neg_binom_ts(abundances,forecast_date,forecast_months,forecast_years,forecast_newmoons,level,num_forecast_months,CI_level)
-  
-  #Append results to forecasts and AIC tables
-  forecasts = forecasts  %>%
-    bind_rows(data.frame(nbts[1]))
-  
-  all_model_aic = all_model_aic %>%
-    bind_rows(data.frame(nbts[2]))
-  
-  ##Poisson environmental
-  #Species level time series model with the best environmental covariates chosen by AIC
-  source('models/pois_env_ts.R')
-  pets=pois_env_ts(abundances,weather_data,weathermeans,forecast_date,forecast_months,forecast_years,forecast_newmoons,level,num_forecast_months,CI_level)
-  
-  #Append results to forecasts and AIC tables
-  forecasts = forecasts  %>%
-    bind_rows(data.frame(pets[1]))
-  
-  all_model_aic = all_model_aic %>%
-    bind_rows(data.frame(pets[2]))
+  all_model_aic = 
   
   #########Include columns describing the data used in the forecast###############
   forecasts$fit_start_newmoon = min(abundances$newmoonnumber)
@@ -191,12 +133,7 @@ forecastall <- function(abundances, level, weather_data, weatherforecast,
   all_model_aic$fit_end_newmoon   = max(abundances$newmoonnumber)
   all_model_aic$initial_newmoon = max(abundances$newmoonnumber)
   
-  #########Write forecasts to file and aics to separate files###############
-  #Appending a csv without re-writing the header. Needed for hindcasting
-  #when many hindcasts are put into the same dated files. 
-  append_csv=function(df, filename){
-    write.table(df, filename, sep = ',', row.names = FALSE, col.names = !file.exists(filename), append = file.exists(filename))
-  }
+
   
   forecast_filename = file.path('predictions', paste(as.character(forecast_date), level, filename_suffix, ".csv", sep=""))
   model_aic_filename = file.path('predictions', paste(as.character(forecast_date), level, filename_suffix, "_model_aic.csv", sep=""))
