@@ -1,7 +1,9 @@
 library(yaml)
 source('tools/model_functions.R')
 
-#The date this forecast model is run. Always today's date.
+filename_suffix = 'forecasts'
+
+#The date this forecast is run. Always today's date.
 forecast_date = Sys.Date()
 
 #portalr::download_observations()
@@ -26,5 +28,5 @@ write.csv(rodent_data$controls,"tools/rodent_controls.csv",row.names = FALSE)
 write.csv(weather_data,"tools/weather_data.csv",row.names = FALSE)
 
 #Write YAML
-writeLines(as.yaml(list(filename_suffix = 'forecasts',forecast_date = forecast_date, forecast_newmoons = forecast_newmoons, 
+writeLines(as.yaml(list(filename_suffix = filename_suffix,forecast_date = forecast_date, forecast_newmoons = forecast_newmoons, 
                   forecast_months = forecast_months, forecast_years = forecast_years)),con = "tools/model.yaml")

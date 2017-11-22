@@ -1,19 +1,13 @@
-library(dplyr)
-library(lubridate)
-library(readr)
-library(portalr)
 source('forecast_tools.R')
-source('models/model_functions.R')
-
+source('tools/model_functions.R')
 
 filename_suffix = 'hindcasts'
 
-#The date this forecast model is run. Always todays date.
+#The date this hindcast is run. Always today's date.
 forecast_date = Sys.Date()
 
-
 #Hindcast will set the time based on these NewMoonNumbers. For each one
-#a hindcast will be made which pretends that sampleing period had just happened. 
+#a hindcast will be made which pretends that sampling period had just happened. 
 #403 to 490 is Jan,2010 - Jan,2017. 
 initial_time_newmoons=403:490
 
@@ -37,6 +31,8 @@ for(this_newmoon in initial_time_newmoons){
   if(this_newmoon_period %in% incomplete_samples$period | is.na(this_newmoon_sampling_date)){
     next
   }
+  
+  ####Setup data for hindcasting####
 
   moons = get_moon_data() %>%
     filter(newmoonnumber<=this_newmoon)
@@ -53,25 +49,30 @@ for(this_newmoon in initial_time_newmoons){
   forecast_months = future_moons$month[future_moons$newmoonnumber %in% forecast_newmoons]
   forecast_years = future_moons$year[future_moons$newmoonnumber %in% forecast_newmoons]
   
-  rodent_data = get_rodent_data(moons, forecast_date, filename_suffix)
-  rodent_data$all = rodent_data$all %>%
-    filter(newmoonnumber <= this_newmoon)
-  rodent_data$controls = rodent_data$controls %>%
+  all = read.csv("tools/rodent_all.csv") %>%
     filter(newmoonnumber <= this_newmoon)
   
-  weather_data = get_weather_data(moons, rodent_data$all, first_forecast_newmoon, last_forecast_newmoon) %>%
+  controls = read.csv("tools/rodent_controls.csv") %>%
     filter(newmoonnumber <= this_newmoon)
   
-  #Get only relevent columns now that this is isn't needed to subset weather.
-  rodent_data$all = rodent_data$all %>%
-    select(-newmoondate,-censusdate,-period,-year,-month)
+  weather_data = read.csv("tools/weather_data.csv") %>%
+    filter(newmoonnumber <= this_newmoon)
   
-  #tscount::tsglm() will not model a timeseries of all 0's. So for those species, which are
-  #ones that just haven't been observed in a while, make a forecast of all 0's.
-  zero_abund_forecast = list(pred=rep(0,12), interval=matrix(rep(0,24), ncol=2))
-  colnames(zero_abund_forecast$interval) = c('lower','upper')
+  #Update files in tools directory to use in this specific hindcast
+  #Write data files
+  write.csv(rodent_data$all,"tools/rodent_all.csv",row.names = FALSE)
+  write.csv(rodent_data$controls,"tools/rodent_controls.csv",row.names = FALSE)
+  write.csv(weather_data,"tools/weather_data.csv",row.names = FALSE)
   
-  allforecasts=try(forecastall(rodent_data$all,"All",weather_data,weathermeans, forecast_date, forecast_newmoons, forecast_months, forecast_years))
-  controlsforecasts=try(forecastall(rodent_data$controls,"Controls",weather_data,weathermeans, forecast_date, forecast_newmoons, forecast_months, forecast_years))
-
+  #Write YAML
+  writeLines(as.yaml(list(filename_suffix = filename_suffix,forecast_date = forecast_date, forecast_newmoons = forecast_newmoons, 
+                          forecast_months = forecast_months, forecast_years = forecast_years)),con = "tools/model.yaml")
+  
+  #####Run all models########################  
+  cat("Running models", "\n")
+  sapply( list.files("models", full.names=TRUE), source )
+  
+  ####Compile all hindcasts into one file
+  allforecasts=forecastall("All", filename_suffix = 'hindcasts')
+  controlsforecasts=forecastall("Controls", filename_suffix = 'hindcasts')
 }
