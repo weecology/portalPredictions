@@ -11,7 +11,7 @@
 
 
 
-<title>Evaluation</title>
+<title></title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -202,17 +202,24 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Evaluation</h1>
 
 </div>
 
 
-<div id="how-have-the-models-done-historically" class="section level2">
-<h2>How have the models done historically?</h2>
-<p>These graphs show errors as a function of lead time. The lead time is the number of months into the future that forecast is made. The error values are an average of all forecast errors using observations since 2010. Note that this currently uses hindcasts of the prior observations.</p>
-<p><strong>RMSE</strong>: Root mean square error, this is a metric used to evaluate the point estimate of a forecast.<br />
-<strong>Coverage</strong>: This is the percentage of observations which fell within the 95% confidence interval of a forecast. Ideally this would be equal to 0.95. If it’s higher than 0.95 the forecasts intervals are too wide, if it’s lower then the forecast intervals are too narrow.</p>
-<p><img src="evaluation_files/figure-html/unnamed-chunk-1-1.png" width="864" /></p>
+<div id="portal-predictions" class="section level1">
+<h1>Portal Predictions</h1>
+<p><a href="https://travis-ci.org/weecology/portalPredictions"><img src="https://travis-ci.org/weecology/portalPredictions.svg?branch=master" alt="Build Status" /></a> <a href="https://doi.org/10.5281/zenodo.833438"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.833438.svg" alt="DOI" /></a> <a href="https://raw.githubusercontent.com/weecology/portalPredictions/master/LICENSE"><img src="http://img.shields.io/badge/license-MIT-blue.svg" alt="License" /></a></p>
+<p>This is the main repository for predictions made on the Portal rodent census data <a href="http://portal.weecology.org/">Portal Project</a>.</p>
+<p>Predictions are made approximately monthly, immediately prior to a new trapping session (trapping occurs as close to each new moon as possible.</p>
+<p>Portalforecasts.R is the main function used to produce forecasts. Multiple models are used for each new forecast, and are descibed in their respective files.</p>
+<p>Models currently in use are in the models directory. Models that were used or we’re developing but not currently using are under DevelopingModels.</p>
+<p>Predictions contains all predictions made thusfar and model aics. Each new prediction made on a particular time series (varies by level and currency) is saved in a new file in this directory.</p>
+<div id="docker-builds" class="section level2">
+<h2>Docker builds</h2>
+<p>Forecasts are run using Travis CI based on a docker image. This makes the builds faster and more reproducible. When adding new packages to this repo it may be necessary to update the Docker container using the following commands:</p>
+<pre><code>sudo docker build -t weecology/portal_predictions .
+sudo docker push weecology/portal_predictions</code></pre>
+</div>
 </div>
 
 
