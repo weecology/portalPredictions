@@ -8,7 +8,7 @@ sapply( list.files("models", full.names=TRUE), source ) ###Temporary, while only
 
 #####Collect all forecast results and save to predictions directory######
 cat("Compiling forecasts", "\n")
-newforecasts=forecastall()
+newforecasts=forecastall(Sys.Date())
 
 ######Update Website#####################################################
 rmarkdown::render_site()

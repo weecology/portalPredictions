@@ -8,12 +8,12 @@ library(RCurl)
 ##########################Forecast processing############################
 #' Combine all new forecasts (from the tmp directory), add ensembles
 #' 
-#' 
+#' @param forecast_date
 #' @param filename_suffix
 #' @return list(forecasts,all_model_aic)
 #' @example forecastall('forecasts')
 
-forecastall <- function(filename_suffix = 'forecasts') {
+forecastall <- function(forecast_date,filename_suffix = 'forecasts') {
   
   #Append results to forecasts and AIC tables
   forecasts = do.call(rbind,

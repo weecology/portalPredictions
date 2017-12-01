@@ -73,6 +73,6 @@ for(this_newmoon in initial_time_newmoons){
   sapply( list.files("models", full.names=TRUE), source )
   
   ####Compile all hindcasts into one file
-  allhindcasts=forecastall(filename_suffix)
+  allhindcasts=forecastall(forecast_date, filename_suffix)
 
 }
