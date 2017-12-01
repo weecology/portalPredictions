@@ -1,45 +1,14 @@
-library(lubridate)
-library(dplyr)
-library(magrittr)
-library(rmarkdown)
-source('forecast_tools.R')
-source('models/model_functions.R')
+source('tools/model_functions.R')
+source('tools/forecast_tools.R')
 
-filename_suffix = 'forecasts'
+#########Run all models##################################################  
+cat("Running models", "\n")
+dir.create("tmp")
+sapply( list.files("models", full.names=TRUE), source ) ###Temporary, while only modeling in R
 
-#The date this forecast model is run. Always today's date.
-forecast_date = Sys.Date()
+#####Collect all forecast results and save to predictions directory######
+cat("Compiling forecasts", "\n")
+newforecasts=forecastall()
 
-portalr::download_observations()
-moons = get_moon_data()
-#get dates of 12 new moons following newmoon of interest
-future_moons = get_future_moons(moons)
-
-#Beginning and end of the forecast timeperiod
-most_recent_newmoon = moons$newmoonnumber[which.max(moons$period)]
-first_forecast_newmoon=most_recent_newmoon+1
-last_forecast_newmoon=first_forecast_newmoon + 11
-forecast_newmoons = first_forecast_newmoon:last_forecast_newmoon
-forecast_months = future_moons$month[future_moons$newmoonnumber %in% forecast_newmoons]
-forecast_years = future_moons$year[future_moons$newmoonnumber %in% forecast_newmoons]
-
-rodent_data = get_rodent_data(moons, forecast_date, filename_suffix)
-weather_data = get_weather_data(moons, rodent_data$all, first_forecast_newmoon, last_forecast_newmoon)
-
-#Get only relevent columns now that this is isn't needed to subset weather.
-rodent_data$all = rodent_data$all %>%
-  select(-newmoondate,-censusdate,-period,-year,-month)
-
-#tscount::tsglm() will not model a timeseries of all 0's. So for those species, which are
-#ones that just haven't been observed in a while, make a forecast of all 0's.
-zero_abund_forecast = list(pred=rep(0,12), interval=matrix(rep(0,24), ncol=2))
-colnames(zero_abund_forecast$interval) = c('lower','upper')
-
-cat("Making site level forecasts", "\n")
-allforecasts=forecastall(rodent_data$all,"All",weather_data,weathermeans, forecast_date, forecast_newmoons, forecast_months, forecast_years)
-
-cat("Making control plot forecasts", "\n")
-controlsforecasts=forecastall(rodent_data$controls,"Controls",weather_data,weathermeans, forecast_date, forecast_newmoons, forecast_months, forecast_years)
-
-######Update Website####################################################
+######Update Website#####################################################
 rmarkdown::render_site()
