@@ -6,7 +6,7 @@ title: "Portal Forecast"
 knitr::opts_chunk$set(echo = TRUE)
 library(dplyr)
 library(portalr)
-source("forecast_tools.R")
+source("tools/forecast_tools.R")
 ```
 
 ## Total Abundance Forecast
@@ -47,7 +47,7 @@ forecast_viz(obs_data = obs_data_newmoon,
 ## Species-Level Forecasts
 
 ```{r speciesforecasts, echo=FALSE, message=FALSE, warning=FALSE}
-source("forecast_tools.R")
+source("tools/forecast_tools.R")
 
 data = compile_forecasts()
 ensemble = dplyr::filter(data, level == 'All', model == 'Ensemble', date == max(date))

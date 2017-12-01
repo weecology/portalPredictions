@@ -70,9 +70,9 @@ for(this_newmoon in initial_time_newmoons){
   
   #####Run all models########################  
   cat("Running models", "\n")
+  dir.create("tmp")
   sapply( list.files("models", full.names=TRUE), source )
-  
   ####Compile all hindcasts into one file
   allhindcasts=forecastall(forecast_date, filename_suffix)
-
+  unlink("tmp/*")
 }
