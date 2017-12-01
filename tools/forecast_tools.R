@@ -6,30 +6,29 @@ library(rmarkdown)
 library(RCurl)
 
 ##########################Forecast processing############################
-#' Combine all new forecasts of the same level (from the tmp directory), add columns, add ensembles
+#' Combine all new forecasts (from the tmp directory), add ensembles
 #' 
 #' 
-#' @param level
 #' @param filename_suffix
 #' @return list(forecasts,all_model_aic)
-#' @example forecastall("Controls")
+#' @example forecastall('forecasts')
 
-forecastall <- function(level, filename_suffix = 'forecasts') {
+forecastall <- function(filename_suffix = 'forecasts') {
   
   #Append results to forecasts and AIC tables
   forecasts = do.call(rbind,
-                      lapply(list.files("tmp",pattern = paste(level,filename_suffix, ".csv",sep=""), full.names = TRUE), 
+                      lapply(list.files("tmp",pattern = paste(filename_suffix, ".csv",sep=""), full.names = TRUE), 
                              read.csv, na.strings = "", colClasses = c("Date", "integer", "integer", 
                                                                        "integer", "character", "character", "character", 
                                                                        "character", "numeric", "numeric", "numeric",
                                                                        "integer", "integer", "integer")))
   
   all_model_aic = do.call(rbind,
-                          lapply(list.files("tmp",pattern = paste(level,filename_suffix, "_model_aic.csv",sep=""), full.names = TRUE), 
+                          lapply(list.files("tmp",pattern = paste(filename_suffix, "_model_aic.csv",sep=""), full.names = TRUE), 
                                  read.csv, na.strings = ""))
   
-  forecast_filename = file.path('predictions', paste(as.character(forecast_date), level, filename_suffix, ".csv", sep=""))
-  model_aic_filename = file.path('predictions', paste(as.character(forecast_date), level, filename_suffix, "_model_aic.csv", sep=""))
+  forecast_filename = file.path('predictions', paste(as.character(forecast_date), filename_suffix, ".csv", sep=""))
+  model_aic_filename = file.path('predictions', paste(as.character(forecast_date), filename_suffix, "_model_aic.csv", sep=""))
   append_csv(forecasts, forecast_filename)
   append_csv(all_model_aic, model_aic_filename)
   
@@ -41,7 +40,7 @@ forecastall <- function(level, filename_suffix = 'forecasts') {
   return(list(forecasts,all_model_aic))
 }
 
-#########Write forecasts to file and aics to separate files###############
+######Tools for writing forecasts to file and aics to separate file###############
 #Appending a csv without re-writing the header.
 append_csv=function(df, filename){
   write.table(df, filename, sep = ',', row.names = FALSE, col.names = !file.exists(filename), append = file.exists(filename))
@@ -99,6 +98,8 @@ make_ensemble=function(all_forecasts, models_to_use=NA, CI_level = 0.9){
   ensemble$model='Ensemble'
   return(ensemble)
 }
+
+##########Tools for forecast presentation##############
 
 #' 
 #' @param data

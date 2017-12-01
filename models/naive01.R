@@ -45,8 +45,10 @@ allresults = naive1(all,forecast_date,forecast_months,forecast_years,forecast_ne
 #Forecast Control plots
 controlsresults = naive1(controls,forecast_date,forecast_months,forecast_years,forecast_newmoons,"Controls")
 
+#Combine
+forecasts = bind_rows(allresults[1],controlsresults[1])
+forecast_aics = bind_rows(allresults[2],controlsresults[2])
+
 #Write results
-write.csv(allresults[1],file.path('tmp', paste("naive1All", filename_suffix, ".csv", sep="")),row.names = FALSE)
-write.csv(allresults[2],file.path('tmp', paste("naive1All", filename_suffix, "_model_aic.csv", sep="")),row.names = FALSE)
-write.csv(controlsresults[1],file.path('tmp', paste("naive1Controls", filename_suffix, ".csv", sep="")),row.names = FALSE)
-write.csv(controlsresults[2],file.path('tmp', paste("naive1Controls", filename_suffix, "_model_aic.csv", sep="")),row.names = FALSE)
+write.csv(forecasts,file.path('tmp', paste("naive1", filename_suffix, ".csv", sep="")),row.names = FALSE)
+write.csv(forecast_aics,file.path('tmp', paste("naive1", filename_suffix, "_model_aic.csv", sep="")),row.names = FALSE)

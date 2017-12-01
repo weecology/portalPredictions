@@ -1,5 +1,7 @@
 ####### Species level predictions #################
 #Species level time series model with the best environmental covariates chosen by AIC
+library(yaml)
+library(tscount)
 
 pois_env_ts=function(abundances, weather_data, weathermeans, forecast_date, forecast_months, forecast_years,
                      forecast_newmoons, level, num_forecast_months = 12, CI_level = .9) {
@@ -102,14 +104,14 @@ return(list(allforecasts,allaic))
 cat("Creating site level forecasts for poisson environmental time series", "\n")
 allresults = pois_env_ts(all,weather,weathermeans,forecast_date,forecast_months,forecast_years,forecast_newmoons,"All")
 
-#Write results
-write.csv(allresults[1],file.path('tmp', paste("petsAll", filename_suffix, ".csv", sep="")),row.names = FALSE)
-write.csv(allresults[2],file.path('tmp', paste("petsAll", filename_suffix, "_model_aic.csv", sep="")),row.names = FALSE)
-
 #Forecast Control plots
 cat("Creating control plot forecasts for poisson environmental time series", "\n")
 controlsresults = pois_env_ts(controls,weather,weathermeans,forecast_date,forecast_months,forecast_years,forecast_newmoons,"Controls")
 
-#write results
-write.csv(controlsresults[1],file.path('tmp', paste("petsControls", filename_suffix, ".csv", sep="")),row.names = FALSE)
-write.csv(controlsresults[2],file.path('tmp', paste("petsControls", filename_suffix, "_model_aic.csv", sep="")),row.names = FALSE)
+#Combine
+forecasts = bind_rows(allresults[1],controlsresults[1])
+forecast_aics = bind_rows(allresults[2],controlsresults[2])
+
+#Write results
+write.csv(forecasts,file.path('tmp', paste("pets", filename_suffix, ".csv", sep="")),row.names = FALSE)
+write.csv(forecast_aics,file.path('tmp', paste("pets", filename_suffix, "_model_aic.csv", sep="")),row.names = FALSE)
