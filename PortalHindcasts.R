@@ -1,4 +1,4 @@
-source('forecast_tools.R')
+source('tools/forecast_tools.R')
 source('tools/model_functions.R')
 
 filename_suffix = 'hindcasts'
@@ -49,24 +49,24 @@ for(this_newmoon in initial_time_newmoons){
   forecast_months = future_moons$month[future_moons$newmoonnumber %in% forecast_newmoons]
   forecast_years = future_moons$year[future_moons$newmoonnumber %in% forecast_newmoons]
   
-  all = read.csv("tools/rodent_all.csv") %>%
+  all = read.csv("data/rodent_all.csv") %>%
     filter(newmoonnumber <= this_newmoon)
   
-  controls = read.csv("tools/rodent_controls.csv") %>%
+  controls = read.csv("data/rodent_controls.csv") %>%
     filter(newmoonnumber <= this_newmoon)
   
-  weather_data = read.csv("tools/weather_data.csv") %>%
+  weather_data = read.csv("data/weather_data.csv") %>%
     filter(newmoonnumber <= this_newmoon)
   
   #Update files in tools directory to use in this specific hindcast
   #Write data files
-  write.csv(rodent_data$all,"tools/rodent_all.csv",row.names = FALSE)
-  write.csv(rodent_data$controls,"tools/rodent_controls.csv",row.names = FALSE)
-  write.csv(weather_data,"tools/weather_data.csv",row.names = FALSE)
+  write.csv(rodent_data$all,"data/rodent_all.csv",row.names = FALSE)
+  write.csv(rodent_data$controls,"data/rodent_controls.csv",row.names = FALSE)
+  write.csv(weather_data,"data/weather_data.csv",row.names = FALSE)
   
   #Write YAML
   writeLines(as.yaml(list(filename_suffix = filename_suffix,forecast_date = forecast_date, forecast_newmoons = forecast_newmoons, 
-                          forecast_months = forecast_months, forecast_years = forecast_years)),con = "tools/model.yaml")
+                          forecast_months = forecast_months, forecast_years = forecast_years)),con = "data/model_metadata.yaml")
   
   #####Run all models########################  
   cat("Running models", "\n")

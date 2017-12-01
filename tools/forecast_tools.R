@@ -42,8 +42,7 @@ forecastall <- function(level, filename_suffix = 'forecasts') {
 }
 
 #########Write forecasts to file and aics to separate files###############
-#Appending a csv without re-writing the header. Needed for hindcasting
-#when many hindcasts are put into the same dated files. 
+#Appending a csv without re-writing the header.
 append_csv=function(df, filename){
   write.table(df, filename, sep = ',', row.names = FALSE, col.names = !file.exists(filename), append = file.exists(filename))
 }

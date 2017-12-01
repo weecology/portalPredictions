@@ -23,10 +23,10 @@ rodent_data = get_rodent_data(moons, forecast_date)
 weather_data = get_weather_data(moons, rodent_data$all, lag=6)
 
 #Write data files
-write.csv(rodent_data$all,"tools/rodent_all.csv",row.names = FALSE)
-write.csv(rodent_data$controls,"tools/rodent_controls.csv",row.names = FALSE)
-write.csv(weather_data,"tools/weather_data.csv",row.names = FALSE)
+write.csv(rodent_data$all,"data/rodent_all.csv",row.names = FALSE)
+write.csv(rodent_data$controls,"data/rodent_controls.csv",row.names = FALSE)
+write.csv(weather_data,"data/weather_data.csv",row.names = FALSE)
 
 #Write YAML
-writeLines(as.yaml(list(filename_suffix = filename_suffix,forecast_date = forecast_date, forecast_newmoons = forecast_newmoons, 
-                  forecast_months = forecast_months, forecast_years = forecast_years)),con = "tools/model.yaml")
+writeLines(as.yaml(list(filename_suffix = filename_suffix,forecast_date = as.character(forecast_date), forecast_newmoons = forecast_newmoons, 
+                  forecast_months = forecast_months, forecast_years = forecast_years)),con = "data/model_metadata.yaml")

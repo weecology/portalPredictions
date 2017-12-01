@@ -82,15 +82,15 @@ return(list(allforecasts,allaic))
 }
 
 #Get data
-  all = read.csv("tools/rodent_all.csv")
-  controls = read.csv("tools/rodent_controls.csv")
-  weather = read.csv("tools/weather_data.csv")
-  data = yaml.load_file("tools/model.yaml")
-  forecast_date = as.Date(data$forecast_date)
-  filename_suffix = data$filename_suffix
-  forecast_months = data$forecast_months
-  forecast_years = data$forecast_years
-  forecast_newmoons = data$forecast_newmoons
+  all = read.csv("data/rodent_all.csv")
+  controls = read.csv("data/rodent_controls.csv")
+  weather = read.csv("data/weather_data.csv")
+  model_metadata = yaml.load_file("data/model_metadata.yaml")
+  forecast_date = as.Date(model_metadata$forecast_date)
+  filename_suffix = model_metadata$filename_suffix
+  forecast_months = model_metadata$forecast_months
+  forecast_years = model_metadata$forecast_years
+  forecast_newmoons = model_metadata$forecast_newmoons
   
 ##Use monthly weather means for past 3 years for weather forecast
   
