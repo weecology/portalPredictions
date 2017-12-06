@@ -2,22 +2,48 @@ library(tidyverse)
 library(lubridate)
 library(zoo)
 library(ggplot2)
+library(rmarkdown)
 library(RCurl)
 
-#' Return normalized path for all operating systems
-#'
-#' @param ReferencePath a path to join with current working directory
-#' @param BasePath Current working directory else path given
-#'
-#' @return
-#' @export
-#' @examples
-#' FullPath('PortalData/Rodents/Portal_rodent.csv')
-#' FullPath('PortalData/Rodents/Portal_rodent.csv', '~')
-FullPath <- function( ReferencePath, BasePath=getwd()){
-  BasePath = normalizePath(BasePath)
-  Path = normalizePath(file.path(BasePath, ReferencePath), mustWork = FALSE)
-  return (Path)
+##########################Forecast processing############################
+#' Combine all new forecasts (from the tmp directory), add ensembles
+#' 
+#' @param forecast_date
+#' @param filename_suffix
+#' @return list(forecasts,all_model_aic)
+#' @example forecastall('forecasts')
+
+forecastall <- function(forecast_date,filename_suffix = 'forecasts') {
+  
+  #Append results to forecasts and AIC tables
+  forecasts = do.call(rbind,
+                      lapply(list.files("tmp",pattern = paste(filename_suffix, ".csv",sep=""), full.names = TRUE), 
+                             read.csv, na.strings = "", colClasses = c("Date", "integer", "integer", 
+                                                                       "integer", "character", "character", "character", 
+                                                                       "character", "numeric", "numeric", "numeric",
+                                                                       "integer", "integer", "integer")))
+  
+  all_model_aic = do.call(rbind,
+                          lapply(list.files("tmp",pattern = paste(filename_suffix, "_model_aic.csv",sep=""), full.names = TRUE), 
+                                 read.csv, na.strings = ""))
+  
+  forecast_filename = file.path('predictions', paste(as.character(forecast_date), filename_suffix, ".csv", sep=""))
+  model_aic_filename = file.path('predictions', paste(as.character(forecast_date), filename_suffix, "_model_aic.csv", sep=""))
+  append_csv(forecasts, forecast_filename)
+  append_csv(all_model_aic, model_aic_filename)
+  
+  ########Add ensembles to files############################################
+  ensemble=make_ensemble(forecasts) %>% 
+    subset(select=colnames(forecasts))
+  append_csv(ensemble, forecast_filename)
+  
+  return(list(forecasts,all_model_aic))
+}
+
+######Tools for writing forecasts to file and aics to separate file###############
+#Appending a csv without re-writing the header.
+append_csv=function(df, filename){
+  write.table(df, filename, sep = ',', row.names = FALSE, col.names = !file.exists(filename), append = file.exists(filename))
 }
 
 #Get all model aic values and calculate akaike weights
@@ -73,6 +99,12 @@ make_ensemble=function(all_forecasts, models_to_use=NA, CI_level = 0.9){
   return(ensemble)
 }
 
+##########Tools for forecast presentation##############
+
+#' 
+#' @param data
+#' @param lvl
+#' @param lead_time
 get_sp_predicts = function(data, lvl, lead_time) {
   data = transform(data, forecast_date = as.yearmon(paste(forecastmonth, "/", forecastyear, sep =
                                                             ""), format = "%m/%Y")) %>% transform(date = as.Date(date, "%Y-%m-%d"))
@@ -120,8 +152,6 @@ plot_species_forecast = function(data) {
   
   return(sp_predict)
 }
-
-
 
 #' Compares forecasts to observations over different lead times.
 #' Error can be any function. The level, species, and currency columns from

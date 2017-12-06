@@ -3,7 +3,7 @@ title: "Report - Latest Rodent Data"
 ---
 Here's the most recent data (blue) compared to the forecast performed right before data collection (black, with error bars)
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
-source("forecast_tools.R")
+source("tools/forecast_tools.R")
 library(portalr)
 
 # get most recent rodent data
