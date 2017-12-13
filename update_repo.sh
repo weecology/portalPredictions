@@ -5,7 +5,7 @@ if [ "$last_commit_date" !=  "$current_date" ]; then
     git config --global user.name "Weecology Deploy Bot"
 
     git checkout master
-    git add predictions/* docs/*
+    git add predictions/* docs/* data/*
     git commit -m "Update forecasts: Travis Build $TRAVIS_BUILD_NUMBER"
 
     git remote add deploy https://${GITHUB_TOKEN}@github.com/weecology/portalPredictions.git > /dev/null 2>&1
