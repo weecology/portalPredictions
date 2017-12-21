@@ -75,8 +75,8 @@ for(this_newmoon in initial_time_newmoons){
   write.csv(weather_data,"data/weather_data.csv",row.names = FALSE)
   
   #Write YAML
-  writeLines(as.yaml(list(filename_suffix = filename_suffix,forecast_date = as.character(forecast_date), forecast_newmoons = forecast_newmoons, 
-                          forecast_months = forecast_months, forecast_years = forecast_years)),con = "data/model_metadata.yaml")
+  writeLines(yaml::as.yaml(list(filename_suffix = filename_suffix,forecast_date = as.character(forecast_date), forecast_newmoons = forecast_newmoons, 
+                                forecast_months = forecast_months, forecast_years = forecast_years)),con = "data/model_metadata.yaml")
   
   #####Run all models########################  
   cat("Running models", "\n")
