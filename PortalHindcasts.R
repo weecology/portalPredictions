@@ -6,15 +6,14 @@ filename_suffix = 'hindcasts'
 #The date this hindcast is run. Always today's date.
 forecast_date = Sys.Date()
 
+
 #Hindcast will set the time based on these NewMoonNumbers. For each one
 #a hindcast will be made which pretends that sampling period had just happened. 
 #403 to 490 is Jan,2010 - Jan,2017. 
-initial_time_newmoons=490:450
-
-trappings = read.csv(FullPath('PortalData/Rodents/Portal_rodent_trapping.csv', '~'))
-incomplete_samples = portalr::find_incomplete_censuses(trappings)
+initial_time_newmoons=490:403
 
 #Get the most recent data loaded into the data folder
+portalr::download_observations()
 moons = get_moon_data()
 rodent_data = get_rodent_data(moons, forecast_date)
 weather_data = get_weather_data(moons, rodent_data$all, lag=6)
@@ -22,6 +21,9 @@ weather_data = get_weather_data(moons, rodent_data$all, lag=6)
 write.csv(rodent_data$all,"data/rodent_all.csv",row.names = FALSE)
 write.csv(rodent_data$controls,"data/rodent_controls.csv",row.names = FALSE)
 write.csv(weather_data,"data/weather_data.csv",row.names = FALSE)
+
+trappings = read.csv(FullPath('PortalData/Rodents/Portal_rodent_trapping.csv', '~'))
+incomplete_samples = portalr::find_incomplete_censuses(trappings)
 
 for(this_newmoon in initial_time_newmoons){
 
