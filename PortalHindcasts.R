@@ -9,15 +9,24 @@ forecast_date = Sys.Date()
 #Hindcast will set the time based on these NewMoonNumbers. For each one
 #a hindcast will be made which pretends that sampling period had just happened. 
 #403 to 490 is Jan,2010 - Jan,2017. 
-initial_time_newmoons=403:490
+initial_time_newmoons=490:450
 
 trappings = read.csv(FullPath('PortalData/Rodents/Portal_rodent_trapping.csv', '~'))
 incomplete_samples = portalr::find_incomplete_censuses(trappings)
 
+#Get the most recent data loaded into the data folder
+moons = get_moon_data()
+rodent_data = get_rodent_data(moons, forecast_date)
+weather_data = get_weather_data(moons, rodent_data$all, lag=6)
+
+write.csv(rodent_data$all,"data/rodent_all.csv",row.names = FALSE)
+write.csv(rodent_data$controls,"data/rodent_controls.csv",row.names = FALSE)
+write.csv(weather_data,"data/weather_data.csv",row.names = FALSE)
+
 for(this_newmoon in initial_time_newmoons){
 
   moons = get_moon_data()
-
+  
   this_newmoon_sampling_date = moons %>%
     filter(newmoonnumber == this_newmoon) %>%
     pull(censusdate)
@@ -37,8 +46,7 @@ for(this_newmoon in initial_time_newmoons){
   moons = get_moon_data() %>%
     filter(newmoonnumber<=this_newmoon)
   #get dates of 12 new moons following newmoon of interest
-  future_moons = get_moon_data() %>%
-    filter(newmoonnumber>this_newmoon,newmoonnumber<=this_newmoon+12)
+  future_moons = get_future_moons(moons)
   
   #Beginning and end of the forecast timeperiod
   most_recent_newmoon = moons$newmoonnumber[which.max(moons$period)]
@@ -60,12 +68,12 @@ for(this_newmoon in initial_time_newmoons){
   
   #Update files in tools directory to use in this specific hindcast
   #Write data files
-  write.csv(rodent_data$all,"data/rodent_all.csv",row.names = FALSE)
-  write.csv(rodent_data$controls,"data/rodent_controls.csv",row.names = FALSE)
+  write.csv(all,"data/rodent_all.csv",row.names = FALSE)
+  write.csv(controls,"data/rodent_controls.csv",row.names = FALSE)
   write.csv(weather_data,"data/weather_data.csv",row.names = FALSE)
   
   #Write YAML
-  writeLines(as.yaml(list(filename_suffix = filename_suffix,forecast_date = forecast_date, forecast_newmoons = forecast_newmoons, 
+  writeLines(as.yaml(list(filename_suffix = filename_suffix,forecast_date = as.character(forecast_date), forecast_newmoons = forecast_newmoons, 
                           forecast_months = forecast_months, forecast_years = forecast_years)),con = "data/model_metadata.yaml")
   
   #####Run all models########################  
