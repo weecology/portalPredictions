@@ -11,6 +11,8 @@ script:
   - docker exec -i ppred bash -c "cd portalPredictions && Rscript tools/prepare_data.R"
   - docker exec -i ppred bash -c "cd portalPredictions && Rscript PortalForecasts.R"
   - docker exec -i ppred bash -c "cd portalPredictions && Rscript tests/testthat.R"
+
+after_success:
   - docker cp ppred:/portalPredictions portalPredictionsResult
   - cd portalPredictionsResult
   - bash update_repo.sh
