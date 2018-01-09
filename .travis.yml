@@ -4,9 +4,10 @@ sudo: required
 before_install:
   - docker pull weecology/portal_predictions
   - docker run --name ppred -t -d weecology/portal_predictions /bin/bash
+  - docker cp ../portalPredictions ppred:/
+  - docker exec -i ppred ls portalPredictions
 
 script:
-  - docker exec -i ppred git clone https://github.com/weecology/portalPredictions.git
   - docker exec -i ppred bash -c "cd portalPredictions && Rscript install-packages.R"
   - docker exec -i ppred bash -c "cd portalPredictions && Rscript tools/prepare_data.R"
   - docker exec -i ppred bash -c "cd portalPredictions && Rscript PortalForecasts.R"
