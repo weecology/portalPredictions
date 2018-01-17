@@ -15,16 +15,16 @@ pois_env_ts=function(abundances, weather_data, weathermeans, forecast_date, fore
   colnames(zero_abund_forecast$interval) = c('lower','upper')
 
 #List of candiate environmental covariate models
-model_covariates = list(c('maxtemp','meantemp','precipitation','NDVI'),
-                        c('maxtemp','mintemp','precipitation','NDVI'),
+model_covariates = list(c('maxtemp','meantemp','precipitation','ndvi'),
+                        c('maxtemp','mintemp','precipitation','ndvi'),
                         c('mintemp','maxtemp','meantemp','precipitation'),
-                        c('precipitation','NDVI'),
-                        c('mintemp','NDVI'),
+                        c('precipitation','ndvi'),
+                        c('mintemp','ndvi'),
                         c('mintemp'),
                         c('maxtemp'),
                         c('meantemp'),
                         c('precipitation'),
-                        c('NDVI'))
+                        c('ndvi'))
 
 for(s in species) {
   cat("Fitting Poisson environmental models for", s, "\n")
