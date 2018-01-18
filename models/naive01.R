@@ -8,7 +8,20 @@ library(forecast)
 
 naive1=function(abundances,forecast_date,forecast_months,forecast_years,forecast_newmoons,level,num_forecast_months = 12, CI_level = .9) {
 
-model01=forecast(abundances$total,h=num_forecast_months,level=CI_level,BoxCox.lambda(0),allow.multiplicative.trend=T)
+# interpolate missing data
+
+moons <- (min(abundances$newmoonnumber)):(max(abundances$newmoonnumber))
+abunds <- rep(NA, length(moons))
+for(i in 1:length(moons)){
+  if(length(which(abundances$newmoonnumber == moons[i])) > 0){
+    abunds[i] <- abundances$total[abundances$newmoonnumber == moons[i]]
+  }
+}
+
+interpolated_abundances <- na.interp(abunds)
+
+
+model01=forecast(interpolated_abundances,h=num_forecast_months,level=CI_level,BoxCox.lambda(0),allow.multiplicative.trend=T)
 
 forecasts01=data.frame(date=forecast_date, forecastmonth=forecast_months,forecastyear=forecast_years, newmoonnumber=forecast_newmoons,
                          currency="abundance",model="Forecast", level=level, species="total", estimate=model01$mean,
