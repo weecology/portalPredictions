@@ -129,11 +129,11 @@ get_weather_data <- function(moons, all, lag){
   weather_data = weather_data %>%
     select(-newmoondate, -censusdate, -period, -year, -month) %>%
     right_join(all, by=c('NewMoonNumber_with_lag'='newmoonnumber')) %>%
-    select(year,month,mintemp,maxtemp,meantemp,precipitation,NDVI,newmoonnumber,NewMoonNumber_with_lag)
+    select(year,month,mintemp,maxtemp,meantemp,precipitation,ndvi,newmoonnumber,NewMoonNumber_with_lag)
   
   #Insert longterm means where there is missing data in the historic weather
   weather_data=weather_data %>%
-    mutate(NDVI = ifelse(is.na(NDVI), mean(NDVI, na.rm = T), NDVI)) %>%
+    mutate(ndvi = ifelse(is.na(ndvi), mean(ndvi, na.rm = T), ndvi)) %>%
     mutate(mintemp = ifelse(is.na(mintemp), mean(mintemp, na.rm = T), mintemp)) %>%
     mutate(maxtemp = ifelse(is.na(maxtemp), mean(maxtemp, na.rm = T), maxtemp)) %>%
     mutate(meantemp = ifelse(is.na(meantemp), mean(meantemp, na.rm = T), meantemp)) %>%
