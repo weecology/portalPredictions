@@ -16,4 +16,4 @@ script:
 after_success:
   - docker cp ppred:/portalPredictions portalPredictionsResult
   - cd portalPredictionsResult
-  - bash update_repo.sh
+  - bash archive.sh
