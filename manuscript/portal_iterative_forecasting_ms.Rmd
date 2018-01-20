@@ -3,9 +3,9 @@ title: "Automated iterative forecasting for the Portal Project"
 csl: mee.csl
 fontsize: 12pt
 output:
+  html_document: default
   pdf_document:
     keep_tex: yes
-  html_document: default
 header-includes:
 - \usepackage{times}
 - \usepackage{setspace}
@@ -153,3 +153,6 @@ Iteratively making forecasts requires that acquiring the newest data, refitting 
 **10. Publicly archive forecasts**
 
 Forecasts should be openly archived to demonstrate that the forecasts were made without knowledge of the outcomes (i.e., as a form of pre-registration *sensu*) and to allow the community to assess and compare the performance of different forecasting approaches both now and in the future [@mcgill2012; @tredennick2016; @dietze2018; @harris2018]. Ideally, the forecasts and evaluation of their performance should be automatically posted publicly in a manner that is understandable by both interested scientists and other stakeholders.
+
+
+# References
