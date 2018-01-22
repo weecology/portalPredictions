@@ -30,7 +30,6 @@ species_names = species_names %>%
 
 This graph shows the forecast error of some recent forecasts for the most recent sampling dates. This is shown for all model types in the columns and several common rodent species (and total rodents) in the rows. These forecasts are for the entire site. 
 ```{r recent_eval, echo=FALSE, message=TRUE, warning=FALSE,, fig.width=15, fig.height=15}
-library(ggrepel)
 # The length of time to look backward
 prior_new_moons = 12
 
@@ -130,7 +129,8 @@ large_color_palette = sample(getPalette(40))
 ggplot(forecast_errors, aes(x=censusdate, y=rmse, group=as.character(date), color=as.character(date))) +
   geom_point(size=4)+
   geom_line(size=1.5) +
-  # label individual lines if there gets to be a lot of them. remove the legend if this is turned on.
+  # label individual issue dates. This is easier to look at  if there 
+  # gets to be a lot of them. Must install ggrepel and remove the legend if this is turned on.
   #geom_label_repel(data=forecast_date_labels, aes(label=label_text, y=y_position),
   #                 fill='grey90',size=4,nudge_y = 40, force=5,
   #                 segment.alpha = 0.3, segment.size = 0.8) +
