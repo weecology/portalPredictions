@@ -1,5 +1,6 @@
 language: bash
 sudo: required
+if: sender != ^weecologydeploy$
 
 before_install:
   - docker pull weecology/portal_predictions
@@ -16,4 +17,4 @@ script:
 after_success:
   - docker cp ppred:/portalPredictions portalPredictionsResult
   - cd portalPredictionsResult
-  - bash update_repo.sh
+  - bash archive.sh

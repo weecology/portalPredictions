@@ -155,7 +155,8 @@ plot_species_forecast = function(data) {
 
 #' Compares forecasts to observations over different lead times.
 #' Error can be any function. The level, species, and currency columns from
-#' observations and forecasts must have matching values.
+#' observations and forecasts must have matching values. Note this gives an average
+#' error value over many forecast iterations.
 #'
 #' Will only return values where there are matching comparison columns (currency, level, species)
 #'
