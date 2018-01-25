@@ -12,7 +12,7 @@
 
   naive1 <- function(abundances, forecast_date, forecast_months, 
                      forecast_years, forecast_newmoons, level,
-                     num_forecast_months = 12, CI_level = .9){
+                     num_forecast_months = 12, CI_level = 0.9){
 
     # interpolate missing data
 
