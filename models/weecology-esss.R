@@ -1,3 +1,19 @@
+# weecology-esss
+#
+# Model "weecology-esss" is a flexible exponential smoothing state space model
+#  fit using the forecast and ets functions with the possibilit of 
+#  multiplicative trends. Unfortunately because of the seasonality and 
+#  sampling occurring with different frequencies, which the ets function 
+#  cannot accommodate, seasonal models are not included.
+
+
+
+
+
+
+
+
+
 ###naive model####
 
 #Model 1 is the default Forecast package with BoxCox.lambda(0),allow.multiplicative.trend=T
