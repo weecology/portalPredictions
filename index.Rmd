@@ -7,6 +7,7 @@ knitr::opts_chunk$set(echo = TRUE)
 library(dplyr)
 library(portalr)
 source("tools/forecast_tools.R")
+source("tools/model_functions.R")
 ```
 
 ## Total Abundance Forecast
@@ -29,13 +30,15 @@ most_recent_forecast = max(for_data$date)
 for_data = filter(for_data, date == most_recent_forecast)
 
 for_data$model = "ensemble"
-for_data$forecastdate = as.Date(paste(for_data$forecastyear,for_data$forecastmonth,'15',sep='-'))
+# get dates for future new moons for plotting
+future_moons = get_moon_data() %>% get_future_moons() %>% select(c("newmoonnumber","newmoondate"))
+for_data = inner_join(for_data, future_moons, by = c("newmoonnumber" = "newmoonnumber"))
 
 forecast_viz(obs_data = obs_data_newmoon,
              obs_date_col_name = "censusdate",
              obs_val_col_name = "total",
              for_data = for_data,
-             for_date_col_name = "forecastdate",
+             for_date_col_name = "newmoondate",
              for_val_col_name = "estimate",
              for_model_name = "ensemble",
              for_lowerpi_col_name = "LowerPI",
@@ -73,7 +76,7 @@ for (n in seq(dim(most_abund_sp_names)[1])) {
                obs_date_col_name = "censusdate",
                obs_val_col_name = most_abund_sp_names$speciescode[n],
                for_data = for_data,
-               for_date_col_name = "forecastdate",
+               for_date_col_name = "newmoondate",
                for_val_col_name = "estimate",
                for_model_name = "ensemble",
                for_lowerpi_col_name = "LowerPI",
