@@ -18,20 +18,42 @@
                      num_forecast_months = 12, CI_level = 0.9){
 
     # interpolate missing data
+    #  note that we interpolate based on the species-level counts and then
+    #  sum (rather than interpolate the sum) because of Jensen's inequality
+    #  and that we want our models that work with individual species to be
+    #  the same total abundance as our models that just use total.
+    #  [FYI a comparison found that an interpolation of just totals could be
+    #   off by as much as 6%
 
       moons <- (min(abundances$newmoonnumber)):(max(abundances$newmoonnumber))
-      abunds <- rep(NA, length(moons))
-      for(i in 1:length(moons)){
+      nmoons <- length(moons)
+
+      species <- c("BA", "DM", "DO", "DS", "NA.", "OL", "OT", "PB", "PE", 
+                   "PF", "PH", "PL", "PM", "PP", "RF", "RM", "RO", "SF",
+                   "SH", "SO")
+      nspecies <- length(species)
+
+      abunds <- matrix(NA, nrow = nmoons, ncol = nspecies)
+
+      for(i in 1:nmoons){
         if(length(which(abundances$newmoonnumber == moons[i])) > 0){
-          abunds[i] <- abundances$total[abundances$newmoonnumber == moons[i]]
+          abundst <- abundances[which(abundances$newmoonnumber == moons[i]),
+                                which(colnames(abundances) %in% species)]
+          abunds[i, ] <- as.numeric(abundst)
         }
       }
 
-      interpolated_abundances <- na.interp(abunds)
+      interpolated_abunds <- abunds
+
+      for(j in 1:nspecies){
+        interpolated_abunds[ , j] <- round(na.interp(abunds[, j]))
+      }
+
+      interpolated_total <- apply(interpolated_abunds, 1, sum)
 
     # fit the ets model and forecast with it
 
-      model01 <- forecast(interpolated_abundances, h = num_forecast_months,
+      model01 <- forecast(interpolated_total, h = num_forecast_months,
                           level = CI_level, 
                           allow.multiplicative.trend = TRUE)
 
