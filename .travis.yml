@@ -6,13 +6,6 @@ before_install:
   - docker run --name ppred -t -d weecology/portal_predictions /bin/bash
   - docker cp ../portalPredictions ppred:/
   - docker exec -i ppred ls portalPredictions
-  - cd ..
-  - ls portalPredictions/predictions
-  - git clone https://github.com/weecology/forecasts
-  - cp portalPredictions/predictions/*.* forecasts/portal/
-  - ls portalPredictions/predictions
-  - ls forecasts/portal/
-  - cd portalPredictions
 
 script:
   - docker exec -i ppred bash -c "cd portalPredictions && Rscript install-packages.R"
