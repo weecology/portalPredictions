@@ -4,39 +4,28 @@ title: "Evaluation"
   
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(
-	echo = TRUE,
+	echo = FALSE,
 	message = FALSE,
 	warning = FALSE
 )
 library(dplyr)
 library(portalr)
 source("tools/forecast_tools.R")
-```
-
-## How have the models done  historically?
-
-These graphs show errors as a function of lead time. The lead time is the number of months into the future that forecast is made. The error values are an average of all forecast errors using observations since 2010. Note that this currently uses hindcasts of the prior observations.  
-
-**RMSE**: Root mean square error, this is a metric used to evaluate the point estimate of a forecast.  
-**Coverage**: This is the percentage of observations which fell within the 95% confidence interval of a forecast. Ideally this would be equal to 0.95. If it's higher than 0.95 the forecasts intervals are too wide, if it's lower then the forecast intervals are too narrow.
 
 
-```{r, echo=FALSE, message=TRUE, warning=FALSE,, fig.width=9, fig.height=15}
+species_of_interest = c('BA','DM','DO','PP','OT','NA','total')
+species_names = portalr::FullPath('PortalData/Rodents/Portal_rodent_species.csv', '~') %>%
+  read.csv(stringsAsFactors=FALSE, na.strings = '') %>%
+  select(species = speciescode, full_species_name = scientificname)
+
+#add a total entry
+species_names = species_names %>%
+  add_row(species='total', full_species_name='Total Rodents')
 
 new_moon_file = portalr::FullPath('PortalData/Rodents/moon_dates.csv', '~')
 new_moons = read.csv(new_moon_file)
 
-species_of_interest = c('BA','DM','DO','PP','OT','NA')
-species_names = portalr::FullPath('PortalData/Rodents/Portal_rodent_species.csv', '~') %>%
-  read.csv(stringsAsFactors=FALSE) %>%
-  select(species = speciescode, full_species_name = scientificname)
-
-#Fix neotoma, and add a total entry
-species_names$species[species_names$full_species_name=='Neotoma albigula'] <- "NA"
-species_names = species_names %>%
-  mutate(species = ifelse(full_species_name=='Neotoma albigula', 'NA', species)) %>%
-  add_row(species='total', full_species_name='Total Rodents')
-
+# Setup rodent observations
 species_abundance = portalr::abundance(shape='flat', level='Site') %>%
   rename(actual = abundance) %>%
   mutate(level='All',currency='abundance') %>%
@@ -49,6 +38,127 @@ total_abundance = portalr::abundance(shape='flat', level='Site') %>%
   ungroup() %>%
   mutate(level='All',currency='abundance',species='total') %>%
   left_join(new_moons, by='period')
+
+
+
+```
+
+## How have the models recently?
+
+This graph shows the forecast error of some recent forecasts for the most recent sampling dates. This is shown for all model types in the columns and several common rodent species (and total rodents) in the rows. These forecasts are for the entire site. 
+```{r recent_eval, echo=FALSE, message=TRUE, warning=FALSE,, fig.width=15, fig.height=15}
+# The length of time to look backward
+prior_new_moons = 12
+
+most_recent_newmoon = max(new_moons$newmoonnumber)
+earliest_newmoon_to_graph = most_recent_newmoon - prior_new_moons
+
+observation_data = species_abundance %>%
+  bind_rows(total_abundance) %>%
+  filter(newmoonnumber %in% earliest_newmoon_to_graph:most_recent_newmoon)
+
+#Get all the recent forecasts
+forecast_data = compile_forecasts(use_hindcasts = FALSE) %>%
+  filter(newmoonnumber %in% earliest_newmoon_to_graph:most_recent_newmoon)
+
+# Round so that large decimal place differences do not cause
+# similar forecasts to be seen as distinct. 
+forecast_data$estimate = round(forecast_data$estimate, 3)
+forecast_data$LowerPI = round(forecast_data$LowerPI, 3)
+forecast_data$UpperPI = round(forecast_data$UpperPI, 3)
+
+# Keep 1 forecast per unique initial_newmoon. When there are multiple forecasts
+# using the same initial_newmoon, use the first one.
+forecast_dates_to_keep = forecast_data %>%
+  select(date, initial_newmoon) %>%
+  distinct() %>%
+  group_by(initial_newmoon) %>%
+  filter(date == min(date)) %>%
+  ungroup() %>%
+  mutate(keep='yes') 
+
+forecast_data = forecast_data %>%
+  left_join(forecast_dates_to_keep, by=c('date','initial_newmoon')) %>%
+  filter(keep=='yes') %>%
+  select(-keep)
+##################################
+  
+forecast_errors = forecast_data %>%
+  left_join(observation_data, by=c('species','level','currency','newmoonnumber')) %>% 
+  mutate(rmse = sqrt((estimate - actual)^2))
+
+# Sometimes there are model runs on the same day and with all the same info,
+# this gets rid of those
+forecast_errors = forecast_errors %>%
+  distinct()
+
+# Drop any entries that don't have an observation
+# (ie. a rainy sample period)
+forecast_errors = forecast_errors %>%
+  filter(!is.na(actual))
+
+# Filter to common species and apply the full name
+forecast_errors = forecast_errors %>%
+  filter(species %in% species_of_interest) %>%
+  left_join(species_names, by='species') %>%
+  select(-species) %>%
+  rename(species=full_species_name)
+
+# Add a newline to the longer species names
+forecast_errors$species = with(forecast_errors, ifelse(nchar(species)>15, stringr::str_replace(species,' ','\n'), species))
+
+###################################
+forecast_date_labels = forecast_errors %>%
+  group_by(date, model, species, censusdate) %>%
+  summarize(y_position = mean(rmse)) %>%
+  ungroup() %>%
+  distinct() %>%
+  filter(!is.na(censusdate)) %>%
+  group_by(date, model, species) %>%
+  filter(as.Date(censusdate) == min(as.Date(censusdate))) %>%
+  ungroup() %>%
+  distinct() %>%
+  mutate(label_text = paste0('Issued: ',date))
+
+####################################
+# Setup a nice palette for when prior issue dates become greater than 9
+getPalette = colorRampPalette(RColorBrewer::brewer.pal(9, "Set1"))
+set.seed(2)
+large_color_palette = sample(getPalette(40))
+#####################################
+ggplot(forecast_errors, aes(x=censusdate, y=rmse, group=as.character(date), color=as.character(date))) +
+  geom_point(size=4)+
+  geom_line(size=1.5) +
+  # label individual issue dates. This is easier to look at if there 
+  # gets to be a lot of them. Must install ggrepel and remove the legend if this is turned on.
+  #geom_label_repel(data=forecast_date_labels, aes(label=label_text, y=y_position),
+  #                 fill='grey90',size=4,nudge_y = 40, force=5,
+  #                 segment.alpha = 0.3, segment.size = 0.8) +
+  scale_color_brewer(palette='Dark2') +
+  #scale_color_manual(values=large_color_palette) +
+  facet_grid(species~model) + 
+  theme_bw() +
+  theme(axis.text.x = element_text(angle=45, hjust=0.9, debug = FALSE),
+        axis.text = element_text(size=12),
+        axis.title = element_text(size=20),
+        strip.text = element_text(size=12),
+        legend.text = element_text(size=15),
+        legend.title = element_text(size=18)) +
+  labs(x='Sample Date',y='RMSE', color='Forecast Issue\nDate')
+
+```
+
+
+
+## How have the models done  historically?
+
+These graphs show errors as a function of lead time. The lead time is the number of months into the future that forecast is made. The error values are an average of all forecast errors using observations since 2010. Note that this currently uses hindcasts of the prior observations.  
+
+**RMSE**: Root mean square error, this is a metric used to evaluate the point estimate of a forecast.  
+**Coverage**: This is the percentage of observations which fell within the 95% confidence interval of a forecast. Ideally this would be equal to 0.95. If it's higher than 0.95 the forecasts intervals are too wide, if it's lower then the forecast intervals are too narrow.
+
+
+```{r hindcast_eval, echo=FALSE, message=TRUE, warning=FALSE,, fig.width=9, fig.height=15}
 
 observation_data = species_abundance %>%
   bind_rows(total_abundance)

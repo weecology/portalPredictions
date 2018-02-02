@@ -1,6 +1,5 @@
 language: bash
 sudo: required
-if: sender != ^weecologydeploy$
 
 before_install:
   - docker pull weecology/portal_predictions
