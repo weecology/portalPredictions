@@ -15,7 +15,7 @@ observed = dplyr::filter(rodents, period == most_recent_period)
 newmoons_table = read.csv(text = RCurl::getURL("https://raw.githubusercontent.com/weecology/PortalData/master/Rodents/moon_dates.csv"))
 newmoons_table$censusdate = as.Date(newmoons_table$censusdate,format='%Y-%m-%d')
 moon_code = dplyr::filter(newmoons_table,period==most_recent_period) %>% select(newmoonnumber) %>% as.integer()
-most_recent_date = dplyr::filter(newmoons_table,period==most_recent_period) %>% dplyr::select(censusdate) %>% pull(censusdate)
+most_recent_date = dplyr::filter(newmoons_table,period==most_recent_period) %>% dplyr::pull(censusdate)
 
 # get most recent forecast prior to data collection
 files = data.frame(names = list.files(path = './predictions', pattern = '*Allforecasts.csv'))
