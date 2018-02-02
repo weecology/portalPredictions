@@ -26,9 +26,9 @@ if [ "$TRAVIS_EVENT_TYPE" == "cron" ]; then
     curl -v -i -X POST -H "Content-Type:application/json" -H "Authorization: token $GITHUB_RELEASE_TOKEN" https://api.github.com/repos/weecology/portalPredictions/releases -d "{\"tag_name\":\"$current_date\"}"
 
     # Clone forecasts archive repo
-    cd ../
+    cd ../../
     git clone https://github.com/weecology/forecasts
-    cp portalPredictions/predictions/*.* forecasts/portal/
+    cp portalPredictions/portalPredictionsResult/predictions/*.* forecasts/portal/
     cd forecasts
 
     # Commit to forecasts repo
