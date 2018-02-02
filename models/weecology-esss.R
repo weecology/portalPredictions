@@ -1,12 +1,78 @@
-# weecology-esss
+# Weecology-ESSS
 #
-# Model "weecology-esss" is a flexible exponential smoothing state space model
+# Model "Weecology-ESSS" is a flexible exponential smoothing state space model
 #  fit using the forecast and ets functions with the possibilit of 
 #  multiplicative trends. Unfortunately because of the seasonality and 
 #  sampling occurring with different frequencies, which the ets function 
 #  cannot accommodate, seasonal models are not included.
 
 
+# load dependencies
+
+  library(forecast)
+
+# Write model function
+
+  naive1 <- function(abundances, forecast_date, forecast_months, 
+                     forecast_years, forecast_newmoons, level,
+                     num_forecast_months = 12, CI_level = 0.9){
+
+    # interpolate missing data
+
+      moons <- (min(abundances$newmoonnumber)):(max(abundances$newmoonnumber))
+      abunds <- rep(NA, length(moons))
+      for(i in 1:length(moons)){
+        if(length(which(abundances$newmoonnumber == moons[i])) > 0){
+          abunds[i] <- abundances$total[abundances$newmoonnumber == moons[i]]
+        }
+      }
+
+      interpolated_abundances <- na.interp(abunds)
+
+    # fit the ets model and forecast with it
+
+      model01 <- forecast(interpolated_abundances, h = num_forecast_months,
+                          level = CI_level, 
+                          allow.multiplicative.trend = TRUE)
+
+    # prep the forecast data tabe
+
+      forecasts01 <- data.frame(date = forecast_date, 
+                                forecastmonth = forecast_months,
+                                forecastyear = forecast_years, 
+                                newmoonnumber = forecast_newmoons,
+                                currency = "abundance",
+                                model = "Weecology-ESSS", 
+                                level = level, 
+                                species = "total", estimate = model01$mean,
+                                LowerPI = model01$lower[,
+                                          which(model01$level==CI_level*100)], 
+                                UpperPI = model01$upper[,
+                                          which(model01$level==CI_level*100)])
+       forecasts01[sapply(forecasts01, is.ts)] <- 
+          lapply(forecasts01[sapply(forecasts01, is.ts)], unclass)
+  
+       # Include columns describing the data used in the forecast
+
+         forecasts01$fit_start_newmoon <- min(abundances$newmoonnumber)
+         forecasts01$fit_end_newmoon <- max(abundances$newmoonnumber)
+         forecasts01$initial_newmoon <- max(abundances$newmoonnumber)
+  
+    # prep the aic data tabe
+      
+      aic <- data.frame(date = as.Date(forecast_date), 
+                        currency = 'abundance', 
+                        model = 'Weecology-ESSS', 
+                        level = level, species = 'total', 
+                        aic = as.numeric(model01$model$aic), 
+                        fit_start_newmoon = min(abundances$newmoonnumber),
+                        fit_end_newmoon = max(abundances$newmoonnumber), 
+                        initial_newmoon = max(abundances$newmoonnumber))
+
+    # return the output
+
+      return(list(forecasts01,aic))
+  }
 
 
 
