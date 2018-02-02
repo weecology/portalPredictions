@@ -18,3 +18,8 @@ output_dir: "docs"
 #into docs/, all .Rmd and .md files are
 #still rendered regardless.
 exclude: "*"
+
+output: 
+  html_document:
+    includes:
+       in_header: googanaly_script.html
