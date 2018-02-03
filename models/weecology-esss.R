@@ -13,7 +13,7 @@
 
 # Write model function
 
-  naive1 <- function(abundances, forecast_date, forecast_months, 
+  weecology.esss <- function(abundances, forecast_date, forecast_months, 
                      forecast_years, forecast_newmoons, level,
                      num_forecast_months = 12, CI_level = 0.9){
 
@@ -53,32 +53,32 @@
 
     # fit the ets model and forecast with it
 
-      model01 <- forecast(interpolated_total, h = num_forecast_months,
+      etsm <- ets(interpolated_total)
+      etsmf <- forecast(etsm, h = num_forecast_months,
                           level = CI_level, 
                           allow.multiplicative.trend = TRUE)
 
     # prep the forecast data tabe
 
-      forecasts01 <- data.frame(date = forecast_date, 
-                                forecastmonth = forecast_months,
-                                forecastyear = forecast_years, 
-                                newmoonnumber = forecast_newmoons,
-                                currency = "abundance",
-                                model = "Weecology-ESSS", 
-                                level = level, 
-                                species = "total", estimate = model01$mean,
-                                LowerPI = model01$lower[,
-                                          which(model01$level==CI_level*100)], 
-                                UpperPI = model01$upper[,
-                                          which(model01$level==CI_level*100)])
-       forecasts01[sapply(forecasts01, is.ts)] <- 
-          lapply(forecasts01[sapply(forecasts01, is.ts)], unclass)
+      fdt <- data.frame(date = forecast_date, 
+                        forecastmonth = forecast_months,
+                        forecastyear = forecast_years, 
+                        newmoonnumber = forecast_newmoons,
+                        currency = "abundance",
+                        model = "Weecology-ESSS", 
+                        level = level, 
+                        species = "total", estimate = etsmf$mean,
+                        LowerPI = etsmf$lower[,
+                                      which(etsmf$level == CI_level*100)], 
+                        UpperPI = etsmf$upper[,
+                                      which(etsmf$level == CI_level*100)])
+       fdt[sapply(fdt, is.ts)] <- lapply(fdt[sapply(fdt, is.ts)], unclass)
   
        # Include columns describing the data used in the forecast
 
-         forecasts01$fit_start_newmoon <- min(abundances$newmoonnumber)
-         forecasts01$fit_end_newmoon <- max(abundances$newmoonnumber)
-         forecasts01$initial_newmoon <- max(abundances$newmoonnumber)
+         fdt$fit_start_newmoon <- min(abundances$newmoonnumber)
+         fdt$fit_end_newmoon <- max(abundances$newmoonnumber)
+         fdt$initial_newmoon <- max(abundances$newmoonnumber)
   
     # prep the aic data tabe
       
@@ -86,14 +86,14 @@
                         currency = 'abundance', 
                         model = 'Weecology-ESSS', 
                         level = level, species = 'total', 
-                        aic = as.numeric(model01$model$aic), 
+                        aic = as.numeric(etsmf$model$aic), 
                         fit_start_newmoon = min(abundances$newmoonnumber),
                         fit_end_newmoon = max(abundances$newmoonnumber), 
                         initial_newmoon = max(abundances$newmoonnumber))
 
     # return the output
 
-      return(list(forecasts01,aic))
+      return(list(fdt, aic))
   }
 
 
@@ -114,17 +114,24 @@
 
   # Forecast All plots
 
-    allresults <- naive1(abundances = all, forecast_date = forecast_date,
-                         forecast_months = forecast_months, 
-                         forecast_years = forecast_years,
-                         forecast_newmoons = forecast_newmoons,
-                         level = "All",
-                         num_forecast_months = 12, CI_level = 0.9)
+    allresults <- weecology.esss(abundances = all, 
+                                 forecast_date = forecast_date,
+                                 forecast_months = forecast_months, 
+                                 forecast_years = forecast_years,
+                                 forecast_newmoons = forecast_newmoons,
+                                 level = "All",
+                                 num_forecast_months = 12, CI_level = 0.9)
 
   # Forecast Control plots
 
-    controlsresults <- naive1(controls, forecast_date, forecast_months, 
-                              forecast_years, forecast_newmoons, "Controls")
+    controlsresults <- weecology.esss(abundances = controls, 
+                                      forecast_date = forecast_date,
+                                      forecast_months = forecast_months, 
+                                      forecast_years = forecast_years,
+                                      forecast_newmoons = forecast_newmoons,
+                                      level = "Controls",
+                                      num_forecast_months = 12, 
+                                      CI_level = 0.9)
 
   # Combine output
   #  warnings are suppressed here because they're just associated with 
