@@ -43,7 +43,7 @@ total_abundance = portalr::abundance(shape='flat', level='Site') %>%
 
 ```
 
-## How have the models recently?
+## How have the models done recently?
 
 This graph shows the forecast error of some recent forecasts for the most recent sampling dates. This is shown for all model types in the columns and several common rodent species (and total rodents) in the rows. These forecasts are for the entire site. 
 ```{r recent_eval, echo=FALSE, message=TRUE, warning=FALSE,, fig.width=15, fig.height=15}
@@ -150,7 +150,7 @@ ggplot(forecast_errors, aes(x=censusdate, y=rmse, group=as.character(date), colo
 
 
 
-## How have the models done  historically?
+## How have the models done historically?
 
 These graphs show errors as a function of lead time. The lead time is the number of months into the future that forecast is made. The error values are an average of all forecast errors using observations since 2010. Note that this currently uses hindcasts of the prior observations.  
 
