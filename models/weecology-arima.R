@@ -56,8 +56,8 @@
 
     # fit the arima model and forecast with it
 
-      a.a <- auto.arima(interpolated_total, lambda = 0)
-      a.a.f <- forecast(a.a, h = num_forecast_months,
+      aam <- auto.arima(interpolated_total, lambda = 0)
+      aamf <- forecast(aam, h = num_forecast_months,
                         level = CI_level, fan = TRUE)
 
     # prep the forecast data tabe
@@ -69,11 +69,11 @@
                         currency = "abundance",
                         model = "Weecology-ARIMA", 
                         level = level, species = "total", 
-                        estimate = a.a.f$mean,
-                        LowerPI = a.a.f$lower[,
-                                        which(a.a.f$level == CI_level*100)], 
-                        UpperPI = a.a.f$upper[,
-                                        which(a.a.f$level == CI_level*100)])
+                        estimate = aamf$mean,
+                        LowerPI = aamf$lower[,
+                                        which(aamf$level == CI_level*100)], 
+                        UpperPI = aamf$upper[,
+                                        which(aamf$level == CI_level*100)])
        fdt[sapply(fdt, is.ts)] <- lapply(fdt[sapply(fdt, is.ts)], unclass)
   
        # Include columns describing the data used in the forecast
@@ -88,7 +88,7 @@
                         currency = 'abundance', 
                         model = 'Weecology-ARIMA', 
                         level = level, species = 'total', 
-                        aic = as.numeric(a.a.f$model$aic), 
+                        aic = as.numeric(aamf$model$aic), 
                         fit_start_newmoon = min(abundances$newmoonnumber),
                         fit_end_newmoon = max(abundances$newmoonnumber), 
                         initial_newmoon = max(abundances$newmoonnumber))
