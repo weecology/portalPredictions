@@ -60,9 +60,6 @@
       a.a.f <- forecast(a.a, h = num_forecast_months,
                         level = CI_level, fan = TRUE)
 
-
-
-
     # prep the forecast data tabe
 
       fdt <- data.frame(date = forecast_date, 
@@ -74,9 +71,9 @@
                         level = level, species = "total", 
                         estimate = a.a.f$mean,
                         LowerPI = a.a.f$lower[,
-                                        which(model01$level == CI_level*100)], 
+                                        which(a.a.f$level == CI_level*100)], 
                         UpperPI = a.a.f$upper[,
-                                        which(model01$level == CI_level*100)])
+                                        which(a.a.f$level == CI_level*100)])
        fdt[sapply(fdt, is.ts)] <- lapply(fdt[sapply(fdt, is.ts)], unclass)
   
        # Include columns describing the data used in the forecast
