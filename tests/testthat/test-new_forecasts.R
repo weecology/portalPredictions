@@ -74,7 +74,7 @@ test_that('newmoon columns are integers only', {
   expect_false(any(is.na(forecasts$initial_newmoon))) 
 })
   
-# test_that("no forecasts duplicated", {
-#   expect_true(sum(duplicated(forecasts[,1:8]))==0)
-#   
-# })
+test_that("no forecasts duplicated", {
+  expect_true(sum(duplicated(forecasts[,1:8]))==0)
+  
+})
