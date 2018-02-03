@@ -114,8 +114,12 @@
 
   # Forecast All plots
 
-    allresults <- naive1(all, forecast_date, forecast_months, forecast_years,
-                         forecast_newmoons, "All")
+    allresults <- naive1(abundances = all, forecast_date = forecast_date,
+                         forecast_months = forecast_months, 
+                         forecast_years = forecast_years,
+                         forecast_newmoons = forecast_newmoons,
+                         level = "All",
+                         num_forecast_months = 12, CI_level = 0.9)
 
   # Forecast Control plots
 
@@ -123,9 +127,13 @@
                               forecast_years, forecast_newmoons, "Controls")
 
   # Combine output
+  #  warnings are suppressed here because they're just associated with 
+  #  coercing un-matching sets of factors to character vectors to bind
 
-    forecasts <- bind_rows(allresults[1], controlsresults[1])
-    forecast_aics <- bind_rows(allresults[2], controlsresults[2])
+    forecasts <- suppressWarnings(bind_rows(allresults[1], 
+                                            controlsresults[1]))
+    forecast_aics <- suppressWarnings(bind_rows(allresults[2], 
+                                                controlsresults[2]))
 
 # Write results out
 
