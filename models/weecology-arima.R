@@ -14,55 +14,92 @@
 
   library(forecast)
 
+# Write model function
 
-###naive model####
-#Model 2 is the default Forecast package auto.arima (lambda=0)
-library(yaml)
-library(forecast)
+  weecology.arima <- function(abundances, forecast_date, forecast_months, 
+                              forecast_years, forecast_newmoons, level,
+                              num_forecast_months = 12, CI_level = 0.9){
 
-naive2=function(abundances,forecast_date,forecast_months,forecast_years,forecast_newmoons,level,num_forecast_months = 12, CI_level = .9) {
+    # interpolate missing data
+    #  note that we interpolate based on the species-level counts and then
+    #  sum (rather than interpolate the sum) because of Jensen's inequality
+    #  and that we want our models that work with individual species to be
+    #  the same total abundance as our models that just use total.
+    #  [FYI a comparison found that an interpolation of just totals could be
+    #   off by as much as 6%
 
-model=forecast(auto.arima(abundances$total,lambda = 0),h=num_forecast_months,level=CI_level,fan=T)
+      moons <- (min(abundances$newmoonnumber)):(max(abundances$newmoonnumber))
+      nmoons <- length(moons)
 
-forecasts02=data.frame(date=forecast_date, forecastmonth=forecast_months, forecastyear=forecast_years, newmoonnumber=forecast_newmoons,
-                       currency="abundance", model="AutoArima", level=level, species="total", estimate=model$mean,
-                       LowerPI=model$lower[,which(model$level==CI_level*100)], UpperPI=model$upper[,which(model$level==CI_level*100)])
-forecasts02[sapply(forecasts02, is.ts)] <- lapply(forecasts02[sapply(forecasts02, is.ts)],unclass)
+      species <- c("BA", "DM", "DO", "DS", "NA.", "OL", "OT", "PB", "PE", 
+                   "PF", "PH", "PL", "PM", "PP", "RF", "RM", "RO", "SF",
+                   "SH", "SO")
+      nspecies <- length(species)
 
-  #########Include columns describing the data used in the forecast###############
-  forecasts02$fit_start_newmoon = min(abundances$newmoonnumber)
-  forecasts02$fit_end_newmoon = max(abundances$newmoonnumber)
-  forecasts02$initial_newmoon = max(abundances$newmoonnumber)
+      abunds <- matrix(NA, nrow = nmoons, ncol = nspecies)
 
-aic = data.frame(date=as.Date(forecast_date), currency='abundance', model='AutoArima', level=level, species='total', 
-                 aic=as.numeric(model$model$aic), fit_start_newmoon = min(abundances$newmoonnumber),
-                 fit_end_newmoon = max(abundances$newmoonnumber), initial_newmoon = max(abundances$newmoonnumber))
+      for(i in 1:nmoons){
+        if(length(which(abundances$newmoonnumber == moons[i])) > 0){
+          abundst <- abundances[which(abundances$newmoonnumber == moons[i]),
+                                which(colnames(abundances) %in% species)]
+          abunds[i, ] <- as.numeric(abundst)
+        }
+      }
 
-return(list(forecasts02,aic))
-}
+      interpolated_abunds <- abunds
 
-#Run model on all plots and just controls
+      for(j in 1:nspecies){
+        interpolated_abunds[ , j] <- round(na.interp(abunds[, j]))
+      }
 
-#Get data
-all = read.csv("data/rodent_all.csv")
-controls = read.csv("data/rodent_controls.csv")
-model_metadata = yaml.load_file("data/model_metadata.yaml")
-forecast_date = as.Date(model_metadata$forecast_date)
-filename_suffix = model_metadata$filename_suffix
-forecast_months = model_metadata$forecast_months
-forecast_years = model_metadata$forecast_years
-forecast_newmoons = model_metadata$forecast_newmoons
+      interpolated_total <- apply(interpolated_abunds, 1, sum)
 
-#Forecast All plots
-allresults = naive2(all,forecast_date,forecast_months,forecast_years,forecast_newmoons,"All")
+    # fit the arima model and forecast with it
 
-#Forecast Control plots
-controlsresults = naive2(controls,forecast_date,forecast_months,forecast_years,forecast_newmoons,"Controls")
+      a.a <- auto.arima(interpolated_total, lambda = 0)
+      a.a.f <- forecast(a.a, h = num_forecast_months,
+                        level = CI_level, fan = TRUE)
 
-#Combine
-forecasts = bind_rows(allresults[1],controlsresults[1])
-forecast_aics = bind_rows(allresults[2],controlsresults[2])
 
-#Write results
-write.csv(forecasts,file.path('tmp', paste("naive2", filename_suffix, ".csv", sep="")),row.names = FALSE)
-write.csv(forecast_aics,file.path('tmp', paste("naive2", filename_suffix, "_model_aic.csv", sep="")),row.names = FALSE)
+
+
+    # prep the forecast data tabe
+
+      fdt <- data.frame(date = forecast_date, 
+                        forecastmonth = forecast_months,
+                        forecastyear = forecast_years, 
+                        newmoonnumber = forecast_newmoons,
+                        currency = "abundance",
+                        model = "Weecology-ARIMA", 
+                        level = level, species = "total", 
+                        estimate = a.a.f$mean,
+                        LowerPI = a.a.f$lower[,
+                                        which(model01$level == CI_level*100)], 
+                        UpperPI = a.a.f$upper[,
+                                        which(model01$level == CI_level*100)])
+       fdt[sapply(fdt, is.ts)] <- lapply(fdt[sapply(fdt, is.ts)], unclass)
+  
+       # Include columns describing the data used in the forecast
+
+         fdt$fit_start_newmoon <- min(abundances$newmoonnumber)
+         fdt$fit_end_newmoon <- max(abundances$newmoonnumber)
+         fdt$initial_newmoon <- max(abundances$newmoonnumber)
+  
+    # prep the aic data tabe
+      
+      aic <- data.frame(date = as.Date(forecast_date), 
+                        currency = 'abundance', 
+                        model = 'Weecology-ARIMA', 
+                        level = level, species = 'total', 
+                        aic = as.numeric(a.a.f$model$aic), 
+                        fit_start_newmoon = min(abundances$newmoonnumber),
+                        fit_end_newmoon = max(abundances$newmoonnumber), 
+                        initial_newmoon = max(abundances$newmoonnumber))
+
+    # return the output
+
+      return(list(fdt, aic))
+  }
+
+
+
