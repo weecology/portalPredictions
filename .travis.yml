@@ -16,4 +16,7 @@ script:
 after_success:
   - docker cp ppred:/portalPredictions portalPredictionsResult
   - cd portalPredictionsResult
+  - cd ../..
+  - ls portalPredictions/portalPredictionResults/predictions
+  - cd portalPredictions/portalPredictionResults
   - bash archive.sh
