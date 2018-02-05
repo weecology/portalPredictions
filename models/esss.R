@@ -10,59 +10,63 @@
   library(forecast)
 
 #' Function for ESSS
-
+#'
+#' @param abundances table of rodent abundances and time measures
+#' @param forecast_date the dates to be forecast from
+#' @param forecast_months the months of the dates to be forecast
+#' @param forecast_years the years of the dates to be forecast
+#' @param forecast_newmoons the numbers of the new moons to be forecast
+#' @param level name of the type of plots included ("All" or "Controls")
+#' @param num_forecast_months number of months forward to forecast
+#' @param CI_level confidence interval level used for forecast envelope
+#' @return list of forecast and aic tables
 
   esss <- function(abundances, forecast_date, forecast_months, 
-                     forecast_years, forecast_newmoons, level,
-                     num_forecast_months = 12, CI_level = 0.9){
+                   forecast_years, forecast_newmoons, level,
+                   num_forecast_months = 12, CI_level = 0.9){
 
 
  
-      interpolated_abundances <- interpolate_abundance(abundances)
+    interpolated_abundances <- interpolate_abundance(abundances)
 
-    # fit the ets model and forecast with it
+    ets_model <- ets(interpolated_abundances$total)
+    ets_forecast <- forecast(ets_model, h = num_forecast_months,
+                             level = CI_level, 
+                             allow.multiplicative.trend = TRUE)
 
-      etsm <- ets(interpolated_abundances$total)
-      etsmf <- forecast(etsm, h = num_forecast_months,
-                          level = CI_level, 
-                          allow.multiplicative.trend = TRUE)
+    fit_start_newmoon <- min(abundances$newmoonnumber)
+    fit_end_newmoon <- max(abundances$newmoonnumber)
+    initial_newmoon <- max(abundances$newmoonnumber)
+    CI_match <- which(ets_forecast$level == CI_level * 100)
 
-    # prep the forecast data tabe
-
-      fdt <- data.frame(date = forecast_date, 
-                        forecastmonth = forecast_months,
-                        forecastyear = forecast_years, 
-                        newmoonnumber = forecast_newmoons,
-                        currency = "abundance",
-                        model = "ESSS", 
-                        level = level, 
-                        species = "total", estimate = etsmf$mean,
-                        LowerPI = etsmf$lower[,
-                                      which(etsmf$level == CI_level*100)], 
-                        UpperPI = etsmf$upper[,
-                                      which(etsmf$level == CI_level*100)])
-       fdt[sapply(fdt, is.ts)] <- lapply(fdt[sapply(fdt, is.ts)], unclass)
+    output_fcast <- data.frame(date = forecast_date, 
+                               forecastmonth = forecast_months,
+                               forecastyear = forecast_years, 
+                               newmoonnumber = forecast_newmoons,
+                               currency = "abundance",
+                               model = "ESSS", 
+                               level = level, 
+                               species = "total", 
+                               estimate = ets_forecast$mean,
+                               LowerPI = ets_forecast$lower[ , CI_match], 
+                               UpperPI = ets_forecast$upper[ , CI_match],
+                               fit_start_newmoon = fit_start_newmoon,
+                               fit_end_newmoon = fit_end_newmoon,
+                               initial_newmoon = initial_newmoon)
   
-       # Include columns describing the data used in the forecast
+    output_aic <- data.frame(date = as.Date(forecast_date), 
+                             currency = 'abundance', 
+                             model = 'ESSS', 
+                             level = level, species = 'total', 
+                             aic = as.numeric(ets_model$aic), 
+                             fit_start_newmoon = fit_start_newmoon,
+                             fit_end_newmoon = fit_end_newmoon,
+                             initial_newmoon = initial_newmoon)
 
-         fdt$fit_start_newmoon <- min(abundances$newmoonnumber)
-         fdt$fit_end_newmoon <- max(abundances$newmoonnumber)
-         fdt$initial_newmoon <- max(abundances$newmoonnumber)
-  
-    # prep the aic data tabe
-      
-      aic <- data.frame(date = as.Date(forecast_date), 
-                        currency = 'abundance', 
-                        model = 'ESSS', 
-                        level = level, species = 'total', 
-                        aic = as.numeric(etsmf$model$aic), 
-                        fit_start_newmoon = min(abundances$newmoonnumber),
-                        fit_end_newmoon = max(abundances$newmoonnumber), 
-                        initial_newmoon = max(abundances$newmoonnumber))
+    output <- list(output_fcast, output_aic)
+    names(output) <- c("forecast", "aic")
 
-    # return the output
-
-      return(list(fdt, aic))
+    return(output)
   }
 
 
