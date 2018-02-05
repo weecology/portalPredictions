@@ -1,6 +1,6 @@
-# Weecology-ESSS
+# ESSS
 #
-# Model "Weecology-ESSS" is a flexible exponential smoothing state space model
+# Model "ESSS" is a flexible exponential smoothing state space model
 #  fit using the forecast and ets functions with the possibilit of 
 #  multiplicative trends. Unfortunately because of the seasonality and 
 #  sampling occurring with different frequencies, which the ets function 
@@ -13,7 +13,7 @@
 
 # Write model function
 
-  weecology.esss <- function(abundances, forecast_date, forecast_months, 
+  esss <- function(abundances, forecast_date, forecast_months, 
                      forecast_years, forecast_newmoons, level,
                      num_forecast_months = 12, CI_level = 0.9){
 
@@ -65,7 +65,7 @@
                         forecastyear = forecast_years, 
                         newmoonnumber = forecast_newmoons,
                         currency = "abundance",
-                        model = "Weecology-ESSS", 
+                        model = "ESSS", 
                         level = level, 
                         species = "total", estimate = etsmf$mean,
                         LowerPI = etsmf$lower[,
@@ -84,7 +84,7 @@
       
       aic <- data.frame(date = as.Date(forecast_date), 
                         currency = 'abundance', 
-                        model = 'Weecology-ESSS', 
+                        model = 'ESSS', 
                         level = level, species = 'total', 
                         aic = as.numeric(etsmf$model$aic), 
                         fit_start_newmoon = min(abundances$newmoonnumber),
@@ -114,24 +114,24 @@
 
   # Forecast All plots
 
-    allresults <- weecology.esss(abundances = all, 
-                                 forecast_date = forecast_date,
-                                 forecast_months = forecast_months, 
-                                 forecast_years = forecast_years,
-                                 forecast_newmoons = forecast_newmoons,
-                                 level = "All",
-                                 num_forecast_months = 12, CI_level = 0.9)
+    allresults <- esss(abundances = all, 
+                       forecast_date = forecast_date,
+                       forecast_months = forecast_months, 
+                       forecast_years = forecast_years,
+                       forecast_newmoons = forecast_newmoons,
+                       level = "All",
+                       num_forecast_months = 12, CI_level = 0.9)
 
   # Forecast Control plots
 
-    controlsresults <- weecology.esss(abundances = controls, 
-                                      forecast_date = forecast_date,
-                                      forecast_months = forecast_months, 
-                                      forecast_years = forecast_years,
-                                      forecast_newmoons = forecast_newmoons,
-                                      level = "Controls",
-                                      num_forecast_months = 12, 
-                                      CI_level = 0.9)
+    controlsresults <- esss(abundances = controls, 
+                            forecast_date = forecast_date,
+                            forecast_months = forecast_months, 
+                            forecast_years = forecast_years,
+                            forecast_newmoons = forecast_newmoons,
+                            level = "Controls",
+                            num_forecast_months = 12, 
+                            CI_level = 0.9)
 
   # Combine output
   #  warnings are suppressed here because they're just associated with 
@@ -146,10 +146,10 @@
 
   write.csv(forecasts, 
             file.path('tmp', 
-                paste("Weecology-ESSS", filename_suffix, ".csv", sep = "")),
+                paste("ESSS", filename_suffix, ".csv", sep = "")),
             row.names = FALSE)
   write.csv(forecast_aics, 
             file.path('tmp', 
-                paste("Weecology-ESSS", filename_suffix, "_model_aic.csv", 
+                paste("ESSS", filename_suffix, "_model_aic.csv", 
                       sep = "")),
             row.names = FALSE)
