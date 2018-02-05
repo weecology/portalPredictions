@@ -7,53 +7,22 @@
 #  cannot accommodate, seasonal models are not included.
 
 
-# load dependencies
-
   library(forecast)
 
-# Write model function
+#' Function for ESSS
+
 
   esss <- function(abundances, forecast_date, forecast_months, 
                      forecast_years, forecast_newmoons, level,
                      num_forecast_months = 12, CI_level = 0.9){
 
-    # interpolate missing data
-    #  note that we interpolate based on the species-level counts and then
-    #  sum (rather than interpolate the sum) because of Jensen's inequality
-    #  and that we want our models that work with individual species to be
-    #  the same total abundance as our models that just use total.
-    #  [FYI a comparison found that an interpolation of just totals could be
-    #   off by as much as 6%
 
-      moons <- (min(abundances$newmoonnumber)):(max(abundances$newmoonnumber))
-      nmoons <- length(moons)
-
-      species <- c("BA", "DM", "DO", "DS", "NA.", "OL", "OT", "PB", "PE", 
-                   "PF", "PH", "PL", "PM", "PP", "RF", "RM", "RO", "SF",
-                   "SH", "SO")
-      nspecies <- length(species)
-
-      abunds <- matrix(NA, nrow = nmoons, ncol = nspecies)
-
-      for(i in 1:nmoons){
-        if(length(which(abundances$newmoonnumber == moons[i])) > 0){
-          abundst <- abundances[which(abundances$newmoonnumber == moons[i]),
-                                which(colnames(abundances) %in% species)]
-          abunds[i, ] <- as.numeric(abundst)
-        }
-      }
-
-      interpolated_abunds <- abunds
-
-      for(j in 1:nspecies){
-        interpolated_abunds[ , j] <- round(na.interp(abunds[, j]))
-      }
-
-      interpolated_total <- apply(interpolated_abunds, 1, sum)
+ 
+      interpolated_abundances <- interpolate_abundance(abundances)
 
     # fit the ets model and forecast with it
 
-      etsm <- ets(interpolated_total)
+      etsm <- ets(interpolated_abundances$total)
       etsmf <- forecast(etsm, h = num_forecast_months,
                           level = CI_level, 
                           allow.multiplicative.trend = TRUE)
