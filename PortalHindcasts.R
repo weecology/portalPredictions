@@ -1,4 +1,5 @@
 source('tools/forecast_tools.R')
+source('tools/model_tools.R')
 source('tools/model_functions.R')
 
 filename_suffix = 'hindcasts'
