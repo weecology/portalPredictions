@@ -6,7 +6,6 @@
 #  sampling occurring with different frequencies, which the ets function 
 #  cannot accommodate, seasonal models are not included.
 
-
   library(forecast)
 
 #' Function for ESSS
@@ -17,20 +16,20 @@
 #' @param forecast_years the years of the dates to be forecast
 #' @param forecast_newmoons the numbers of the new moons to be forecast
 #' @param level name of the type of plots included ("All" or "Controls")
-#' @param num_forecast_months number of months forward to forecast
+#' @param num_forecast_newmoons number of new moons to forecast
 #' @param CI_level confidence interval level used for forecast envelope
 #' @return list of forecast and aic tables
 
-  esss <- function(abundances, forecast_date, forecast_months, 
-                   forecast_years, forecast_newmoons, level,
-                   num_forecast_months = 12, CI_level = 0.9){
+  forecast_esss <- function(abundances, forecast_date, forecast_months, 
+                            forecast_years, forecast_newmoons, level,
+                            num_forecast_newmoons = 12, CI_level = 0.9){
 
 
  
     interpolated_abundances <- interpolate_abundance(abundances)
 
     ets_model <- ets(interpolated_abundances$total)
-    ets_forecast <- forecast(ets_model, h = num_forecast_months,
+    ets_forecast <- forecast(ets_model, h = num_forecast_newmoons,
                              level = CI_level, 
                              allow.multiplicative.trend = TRUE)
 
@@ -53,7 +52,8 @@
                                fit_start_newmoon = fit_start_newmoon,
                                fit_end_newmoon = fit_end_newmoon,
                                initial_newmoon = initial_newmoon)
-  
+    output_fcast <- as.matrix(output_fcast)
+
     output_aic <- data.frame(date = as.Date(forecast_date), 
                              currency = 'abundance', 
                              model = 'ESSS', 
@@ -62,6 +62,7 @@
                              fit_start_newmoon = fit_start_newmoon,
                              fit_end_newmoon = fit_end_newmoon,
                              initial_newmoon = initial_newmoon)
+    output_aic <- as.matrix(output_aic)
 
     output <- list(output_fcast, output_aic)
     names(output) <- c("forecast", "aic")
@@ -69,60 +70,39 @@
     return(output)
   }
 
+  all <- read.csv("data/rodent_all.csv")
+  controls <- read.csv("data/rodent_controls.csv")
+  model_metadata <- yaml.load_file("data/model_metadata.yaml")
+  forecast_date <- as.Date(model_metadata$forecast_date)
+  filename_suffix <- model_metadata$filename_suffix
+  forecast_months <- model_metadata$forecast_months
+  forecast_years <- model_metadata$forecast_years
+  forecast_newmoons <- model_metadata$forecast_newmoons
 
+  forecast_all <- forecast_esss(abundances = all, 
+                                forecast_date = forecast_date,
+                                forecast_months = forecast_months, 
+                                forecast_years = forecast_years,
+                                forecast_newmoons = forecast_newmoons,
+                                level = "All",
+                                num_forecast_newmoons = 12, 
+                                CI_level = 0.9)
 
+  forecast_controls <- forecast_esss(abundances = controls, 
+                                     forecast_date = forecast_date,
+                                     forecast_months = forecast_months, 
+                                     forecast_years = forecast_years,
+                                     forecast_newmoons = forecast_newmoons,
+                                     level = "Controls",
+                                     num_forecast_newmoons = 12, 
+                                     CI_level = 0.9)
 
-# Run model on all plots and just controls
+  forecasts <- rbind(forecast_all[[1]], forecast_controls[[1]])
+  aics <- rbind(forecast_all[[2]], forecast_controls[[2]])
 
-  # Get data
-
-    all <- read.csv("data/rodent_all.csv")
-    controls <- read.csv("data/rodent_controls.csv")
-    model_metadata <- yaml.load_file("data/model_metadata.yaml")
-    forecast_date <- as.Date(model_metadata$forecast_date)
-    filename_suffix <- model_metadata$filename_suffix
-    forecast_months <- model_metadata$forecast_months
-    forecast_years <- model_metadata$forecast_years
-    forecast_newmoons <- model_metadata$forecast_newmoons
-
-  # Forecast All plots
-
-    allresults <- esss(abundances = all, 
-                       forecast_date = forecast_date,
-                       forecast_months = forecast_months, 
-                       forecast_years = forecast_years,
-                       forecast_newmoons = forecast_newmoons,
-                       level = "All",
-                       num_forecast_months = 12, CI_level = 0.9)
-
-  # Forecast Control plots
-
-    controlsresults <- esss(abundances = controls, 
-                            forecast_date = forecast_date,
-                            forecast_months = forecast_months, 
-                            forecast_years = forecast_years,
-                            forecast_newmoons = forecast_newmoons,
-                            level = "Controls",
-                            num_forecast_months = 12, 
-                            CI_level = 0.9)
-
-  # Combine output
-  #  warnings are suppressed here because they're just associated with 
-  #  coercing un-matching sets of factors to character vectors to bind
-
-    forecasts <- suppressWarnings(bind_rows(allresults[1], 
-                                            controlsresults[1]))
-    forecast_aics <- suppressWarnings(bind_rows(allresults[2], 
-                                                controlsresults[2]))
-
-# Write results out
-
-  write.csv(forecasts, 
-            file.path('tmp', 
-                paste("ESSS", filename_suffix, ".csv", sep = "")),
-            row.names = FALSE)
-  write.csv(forecast_aics, 
-            file.path('tmp', 
-                paste("ESSS", filename_suffix, "_model_aic.csv", 
-                      sep = "")),
-            row.names = FALSE)
+  fcast_path <- paste("ESSS", filename_suffix, ".csv", sep = "")
+  fcast_path <- file.path('tmp', fcast_path)
+  write.csv(forecasts, fcast_path, row.names = FALSE)
+  aic_path <- paste("ESSS", filename_suffix, "_model_aic.csv", sep = "")
+  aic_path <- file.path('tmp', aic_path)
+  write.csv(aics, aic_path, row.names = FALSE)
