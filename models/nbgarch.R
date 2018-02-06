@@ -7,6 +7,7 @@
 
   library(tscount)
   library(forecast)
+  source('tools/model_tools.R')
 
 #' Function for nbGARCH
 #'
