@@ -81,26 +81,26 @@
   forecast_years <- model_metadata$forecast_years
   forecast_newmoons <- model_metadata$forecast_newmoons
 
-  forecast_all <- forecast_esss(abundances = all, 
-                                forecast_date = forecast_date,
-                                forecast_months = forecast_months, 
-                                forecast_years = forecast_years,
-                                forecast_newmoons = forecast_newmoons,
-                                level = "All",
-                                num_forecast_newmoons = 12, 
-                                CI_level = 0.9)
+  forecasts_all <- forecast_esss(abundances = all, 
+                                 forecast_date = forecast_date,
+                                 forecast_months = forecast_months, 
+                                 forecast_years = forecast_years,
+                                 forecast_newmoons = forecast_newmoons,
+                                 level = "All",
+                                 num_forecast_newmoons = 12, 
+                                 CI_level = 0.9)
 
-  forecast_controls <- forecast_esss(abundances = controls, 
-                                     forecast_date = forecast_date,
-                                     forecast_months = forecast_months, 
-                                     forecast_years = forecast_years,
-                                     forecast_newmoons = forecast_newmoons,
-                                     level = "Controls",
-                                     num_forecast_newmoons = 12, 
-                                     CI_level = 0.9)
+  forecasts_controls <- forecast_esss(abundances = controls, 
+                                      forecast_date = forecast_date,
+                                      forecast_months = forecast_months, 
+                                      forecast_years = forecast_years,
+                                      forecast_newmoons = forecast_newmoons,
+                                      level = "Controls",
+                                      num_forecast_newmoons = 12, 
+                                      CI_level = 0.9)
 
-  forecasts <- rbind(forecast_all[[1]], forecast_controls[[1]])
-  aics <- rbind(forecast_all[[2]], forecast_controls[[2]])
+  forecasts <- rbind(forecasts_all[[1]], forecasts_controls[[1]])
+  aics <- rbind(forecasts_all[[2]], forecasts_controls[[2]])
 
   fcast_path <- paste("ESSS", filename_suffix, ".csv", sep = "")
   fcast_path <- file.path('tmp', fcast_path)
