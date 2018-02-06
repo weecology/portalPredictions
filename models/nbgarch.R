@@ -47,7 +47,11 @@
 
     for(s in species){
 
-      cat("Fitting negative binomial GARCH model for", s, "\n")
+      ss <- s
+      if(ss == "NA."){
+        ss <- "NA"
+      }
+      cat("Fitting negative binomial GARCH model for", ss, "\n")
 
       species_abundance <- interpolated_abundances %>% extract2(s)
     
@@ -70,7 +74,7 @@
                                       currency = "abundance", 
                                       model = "nbGARCH",
                                       level = level, 
-                                      species = s, 
+                                      species = ss, 
                                       estimate = spec_forecast$pred,
                                       LowerPI = spec_forecast$interval[,1], 
                                       UpperPI = spec_forecast$interval[,2],
@@ -82,7 +86,7 @@
       spec_output_aic <- data.frame(date = forecast_date, 
                                     currency = 'abundance', 
                                     model = 'nbGARCH', 
-                                    level = level, species = s, 
+                                    level = level, species = ss, 
                                     aic = as.numeric(spec_aic), 
                                     fit_start_newmoon = fit_start_newmoon,
                                     fit_end_newmoon = fit_end_newmoon,
