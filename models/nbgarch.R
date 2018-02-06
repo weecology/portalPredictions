@@ -25,8 +25,10 @@
                                forecast_years, forecast_newmoons, level,
                                num_forecast_newmoons = 12, CI_level = 0.9){
 
-    species <- colnames(abundances)[2:(ncol(abundances) - 3)]
-
+    #species <- colnames(abundances)[2:(ncol(abundances) - 3)]
+species <- c("BA", "DM", "DO", "DS", "NA.", "OL", "OT", "PB", "PE", 
+                 "PF", "PH", "PL", "PM", "PP", "RF", "RM", "RO", "SF",
+                 "SH", "SO", "total")
     interpolated_abundances <- interpolate_abundance(abundances)
 
     fit_start_newmoon <- min(abundances$newmoonnumber)
