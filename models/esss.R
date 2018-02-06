@@ -1,8 +1,8 @@
 # ESSS
 #
 # Model "ESSS" is a flexible exponential smoothing state space model
-#  fit using the forecast and ets functions with the possibilit of 
-#  multiplicative trends. Unfortunately because of the seasonality and 
+#  fit using the forecast and ets functions with the possibility of 
+#  multiplicative trends. Unfortunately since the seasonality and 
 #  sampling occurring with different frequencies, which the ets function 
 #  cannot accommodate, seasonal models are not included.
 
@@ -20,7 +20,7 @@
 #' @param num_forecast_newmoons number of new moons to forecast
 #' @param CI_level confidence interval level used for forecast envelope
 #' @return list of forecast and aic tables
-
+#'
   forecast_esss <- function(abundances, forecast_date, forecast_months, 
                             forecast_years, forecast_newmoons, level,
                             num_forecast_newmoons = 12, CI_level = 0.9){
@@ -37,6 +37,9 @@
     fit_end_newmoon <- max(abundances$newmoonnumber)
     initial_newmoon <- max(abundances$newmoonnumber)
     CI_match <- which(ets_forecast$level == CI_level * 100)
+    estimate <- as.numeric(ets_forecast$mean)
+    LowerPI <- as.numeric(ets_forecast$lower[ , CI_match]) 
+    UpperPI <- as.numeric(ets_forecast$upper[ , CI_match])
 
     output_fcast <- data.frame(date = forecast_date, 
                                forecastmonth = forecast_months,
@@ -46,16 +49,13 @@
                                model = "ESSS", 
                                level = level, 
                                species = "total", 
-                               estimate = ets_forecast$mean,
-                               LowerPI = ets_forecast$lower[ , CI_match], 
-                               UpperPI = ets_forecast$upper[ , CI_match],
+                               estimate = estimate,
+                               LowerPI = LowerPI, 
+                               UpperPI = UpperPI,
                                fit_start_newmoon = fit_start_newmoon,
                                fit_end_newmoon = fit_end_newmoon,
-                               initial_newmoon = initial_newmoon)
-    for(i in 5:8)
-      output_fcast[ , i] <- as.character(output_fcast[ , i])
-    for(i in 9:11)
-      output_fcast[ , i] <- as.numeric(output_fcast[ , i])
+                               initial_newmoon = initial_newmoon,
+                               stringsAsFactors = FALSE)
 
     output_aic <- data.frame(date = as.Date(forecast_date), 
                              currency = 'abundance', 
@@ -64,9 +64,8 @@
                              aic = as.numeric(ets_model$aic), 
                              fit_start_newmoon = fit_start_newmoon,
                              fit_end_newmoon = fit_end_newmoon,
-                             initial_newmoon = initial_newmoon)
-    for(i in 2:5)
-      output_aic[ , i] <- as.character(output_aic[ , i])
+                             initial_newmoon = initial_newmoon,
+                             stringsAsFactors = FALSE)
 
     output <- list(output_fcast, output_aic)
     names(output) <- c("forecast", "aic")
