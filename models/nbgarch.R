@@ -25,9 +25,7 @@
                                forecast_years, forecast_newmoons, level,
                                num_forecast_newmoons = 12, CI_level = 0.9){
 
-    species <- c("BA", "DM", "DO", "DS", "NA.", "OL", "OT", "PB", "PE", 
-                 "PF", "PH", "PL", "PM", "PP", "RF", "RM", "RO", "SF",
-                 "SH", "SO", "total")
+    species <- colnames(abundances)[2:(ncol(abundances) - 3)]
 
     interpolated_abundances <- interpolate_abundance(abundances)
 
@@ -41,7 +39,6 @@
 
     zero_abund_forecast <- list(zero_abund_mean, zero_abund_interval)
     names(zero_abund_forecast) <- c("pred", "interval")
-
 
     output_fcast <- data.frame()
     output_aic <- data.frame()
@@ -68,6 +65,9 @@
         spec_aic <- AIC(nbgarch_mod)
       } 
 
+      estimate <- as.numeric(spec_forecast$pred)
+      LowerPI <- as.numeric(spec_forecast$interval[, 1]) 
+      UpperPI <- as.numeric(spec_forecast$interval[, 2])
       spec_output_fcast <- data.frame(date = forecast_date, 
                                       forecastmonth = forecast_months, 
                                       forecastyear = forecast_years,
@@ -76,12 +76,13 @@
                                       model = "nbGARCH",
                                       level = level, 
                                       species = ss, 
-                                      estimate = spec_forecast$pred,
-                                      LowerPI = spec_forecast$interval[,1], 
-                                      UpperPI = spec_forecast$interval[,2],
+                                      estimate = estimate,
+                                      LowerPI = LowerPI, 
+                                      UpperPI = UpperPI,
                                       fit_start_newmoon = fit_start_newmoon,
                                       fit_end_newmoon = fit_end_newmoon,
-                                      initial_newmoon = initial_newmoon)
+                                      initial_newmoon = initial_newmoon,
+                                      stringsAsFactors = FALSE)
       output_fcast <- rbind(output_fcast, spec_output_fcast)
 
       spec_output_aic <- data.frame(date = forecast_date, 
@@ -91,18 +92,12 @@
                                     aic = as.numeric(spec_aic), 
                                     fit_start_newmoon = fit_start_newmoon,
                                     fit_end_newmoon = fit_end_newmoon,
-                                    initial_newmoon = initial_newmoon)
+                                    initial_newmoon = initial_newmoon,
+                                    stringsAsFactors = FALSE)
 
       output_aic <- rbind(output_aic, spec_output_aic)
 
     }
-
-    for(i in 5:8)
-      output_fcast[ , i] <- as.character(output_fcast[ , i])
-    for(i in 9:11)
-      output_fcast[ , i] <- as.numeric(output_fcast[ , i])
-    for(i in 2:5)
-      output_aic[ , i] <- as.character(output_aic[ , i])
 
     output <- list(output_fcast, output_aic)
     names(output) <- c("forecast", "aic")
