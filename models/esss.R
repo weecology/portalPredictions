@@ -103,9 +103,10 @@
   forecasts <- rbind(forecasts_all[[1]], forecasts_controls[[1]])
   aics <- rbind(forecasts_all[[2]], forecasts_controls[[2]])
 
-  fcast_path <- paste("ESSS", filename_suffix, ".csv", sep = "")
-  fcast_path <- file.path('tmp', fcast_path)
+  fcast_filename <- paste("ESSS", filename_suffix, ".csv", sep = "")
+  fcast_path <- file.path('tmp', fcast_filename)
   write.csv(forecasts, fcast_path, row.names = FALSE)
-  aic_path <- paste("ESSS", filename_suffix, "_model_aic.csv", sep = "")
-  aic_path <- file.path('tmp', aic_path)
+
+  aic_filename <- paste("ESSS", filename_suffix, "_model_aic.csv", sep = "")
+  aic_path <- file.path('tmp', aic_filename)
   write.csv(aics, aic_path, row.names = FALSE)
