@@ -2,7 +2,7 @@
 #
 # Model "AutoARIMA" is a flexible auto-regressive integrated moving
 #  average model fit to the data using the auto.arima and forecast functions.
-#  Unfortunately because of the seasonality and sampling occurring with 
+#  Unfortunately since the seasonality and sampling occurring with 
 #  different frequencies, which the auto.arima function cannot accommodate, 
 #  seasonal models are not included.
 #  Also, while the auto.arima model can handle missing data, the other models
@@ -23,7 +23,7 @@
 #' @param num_forecast_newmoons number of new moons to forecast
 #' @param CI_level confidence interval level used for forecast envelope
 #' @return list of forecast and aic tables
-
+#'
   forecast_autoarima <- function(abundances, forecast_date, forecast_months, 
                                  forecast_years, forecast_newmoons, level,
                                  num_forecast_newmoons = 12, CI_level = 0.9){
@@ -39,36 +39,35 @@
     fit_end_newmoon <- max(abundances$newmoonnumber)
     initial_newmoon <- max(abundances$newmoonnumber)
     CI_match <- which(aa_forecast$level == CI_level * 100)
+    estimate <- as.numeric(aa_forecast$mean)
+    LowerPI <- as.numeric(aa_forecast$lower[ , CI_match]) 
+    UpperPI <- as.numeric(aa_forecast$upper[ , CI_match])
 
     output_fcast <- data.frame(date = forecast_date, 
                                forecastmonth = forecast_months,
                                forecastyear = forecast_years, 
                                newmoonnumber = forecast_newmoons,
                                currency = "abundance",
-                               model = "AutoARIMA", 
+                               model = "AutoArima", 
                                level = level, 
                                species = "total", 
-                               estimate = aa_forecast$mean,
-                               LowerPI = aa_forecast$lower[ , CI_match], 
-                               UpperPI = aa_forecast$upper[ , CI_match],
+                               estimate = estimate,
+                               LowerPI = LowerPI, 
+                               UpperPI = UpperPI,
                                fit_start_newmoon = fit_start_newmoon,
                                fit_end_newmoon = fit_end_newmoon,
-                               initial_newmoon = initial_newmoon)
-    for(i in 5:8)
-      output_fcast[ , i] <- as.character(output_fcast[ , i])
-    for(i in 9:11)
-      output_fcast[ , i] <- as.numeric(output_fcast[ , i])
+                               initial_newmoon = initial_newmoon,
+                               stringsAsFactors = FALSE)
 
     output_aic <- data.frame(date = as.Date(forecast_date), 
                              currency = 'abundance', 
-                             model = 'AutoARIMA', 
+                             model = 'AutoArima', 
                              level = level, species = 'total', 
                              aic = as.numeric(aa_model$aic), 
                              fit_start_newmoon = fit_start_newmoon,
                              fit_end_newmoon = fit_end_newmoon,
-                             initial_newmoon = initial_newmoon)
-    for(i in 2:5)
-      output_aic[ , i] <- as.character(output_aic[ , i])
+                             initial_newmoon = initial_newmoon,
+                             stringsAsFactors = FALSE)
 
     output <- list(output_fcast, output_aic)
     names(output) <- c("forecast", "aic")
@@ -81,7 +80,7 @@
   controls <- read.csv("data/rodent_controls.csv")
   model_metadata <- yaml.load_file("data/model_metadata.yaml")
   forecast_date <- as.Date(model_metadata$forecast_date)
-  filename_suffix <- model_metadata$filename_suffix
+  file_suffix <- model_metadata$filename_suffix
   forecast_months <- model_metadata$forecast_months
   forecast_years <- model_metadata$forecast_years
   forecast_newmoons <- model_metadata$forecast_newmoons
@@ -107,9 +106,10 @@
   forecasts <- rbind(forecasts_all[[1]], forecasts_controls[[1]])
   aics <- rbind(forecasts_all[[2]], forecasts_controls[[2]])
 
-  fcast_path <- paste("AutoARIMA", filename_suffix, ".csv", sep = "")
-  fcast_path <- file.path('tmp', fcast_path)
+  fcast_filename <- paste("AutoArima", file_suffix, ".csv", sep = "")
+  fcast_path <- file.path('tmp', fcast_filename)
   write.csv(forecasts, fcast_path, row.names = FALSE)
-  aic_path <- paste("AutoARIMA", filename_suffix, "_model_aic.csv", sep = "")
-  aic_path <- file.path('tmp', aic_path)
+
+  aic_filename <- paste("AutoArima", file_suffix, "_model_aic.csv", sep = "")
+  aic_path <- file.path('tmp', aic_filename)
   write.csv(aics, aic_path, row.names = FALSE)
