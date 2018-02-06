@@ -105,66 +105,9 @@
   forecasts <- rbind(forecasts_all[[1]], forecasts_controls[[1]])
   aics <- rbind(forecasts_all[[2]], forecasts_controls[[2]])
 
-  fcast_path <- paste("ESSS", filename_suffix, ".csv", sep = "")
+  fcast_path <- paste("AutoARIMA", filename_suffix, ".csv", sep = "")
   fcast_path <- file.path('tmp', fcast_path)
   write.csv(forecasts, fcast_path, row.names = FALSE)
-  aic_path <- paste("ESSS", filename_suffix, "_model_aic.csv", sep = "")
+  aic_path <- paste("AutoARIMA", filename_suffix, "_model_aic.csv", sep = "")
   aic_path <- file.path('tmp', aic_path)
   write.csv(aics, aic_path, row.names = FALSE)
-
-# Run model on all plots and just controls
-
-  # Get data
-
-    all <- read.csv("data/rodent_all.csv")
-    controls <- read.csv("data/rodent_controls.csv")
-    model_metadata <- yaml.load_file("data/model_metadata.yaml")
-    forecast_date <- as.Date(model_metadata$forecast_date)
-    filename_suffix <- model_metadata$filename_suffix
-    forecast_months <- model_metadata$forecast_months
-    forecast_years <- model_metadata$forecast_years
-    forecast_newmoons <- model_metadata$forecast_newmoons
-
-  # Forecast All plots
-
-    allresults <- weecology.arima(abundances = all, 
-                                  forecast_date = forecast_date,
-                                  forecast_months = forecast_months, 
-                                  forecast_years = forecast_years,
-                                  forecast_newmoons = forecast_newmoons,
-                                  level = "All",
-                                  num_forecast_newmoons = 12, CI_level = 0.9)
-
-  # Forecast Control plots
-
-    controlsresults <- weecology.arima(abundances = controls, 
-                                       forecast_date = forecast_date,
-                                       forecast_months = forecast_months, 
-                                       forecast_years = forecast_years,
-                                       forecast_newmoons = forecast_newmoons,
-                                       level = "Controls",
-                                       num_forecast_newmoons = 12, 
-                                       CI_level = 0.9)
-
-
-  # Combine output
-  #  warnings are suppressed here because they're just associated with 
-  #  coercing un-matching sets of factors to character vectors to bind
-
-    forecasts <- suppressWarnings(bind_rows(allresults[1], 
-                                            controlsresults[1]))
-    forecast_aics <- suppressWarnings(bind_rows(allresults[2], 
-                                                controlsresults[2]))
-
-# Write results out
-
-  write.csv(forecasts, 
-            file.path('tmp', 
-                paste("Weecology-ARIMA", filename_suffix, ".csv", sep = "")),
-            row.names = FALSE)
-  write.csv(forecast_aics, 
-            file.path('tmp', 
-                paste("Weecology-ARIMA", filename_suffix, "_model_aic.csv", 
-                      sep = "")),
-            row.names = FALSE)
-
