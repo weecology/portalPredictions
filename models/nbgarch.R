@@ -20,7 +20,7 @@
 #' @param num_forecast_newmoons number of new moons to forecast
 #' @param CI_level confidence interval level used for forecast envelope
 #' @return list of forecast and aic tables
-
+#'
   forecast_nbgarch <- function(abundances, forecast_date, forecast_months, 
                                forecast_years, forecast_newmoons, level,
                                num_forecast_newmoons = 12, CI_level = 0.9){
@@ -114,7 +114,7 @@
   controls <- read.csv("data/rodent_controls.csv")
   model_metadata <- yaml.load_file("data/model_metadata.yaml")
   forecast_date <- as.Date(model_metadata$forecast_date)
-  filename_suffix <- model_metadata$filename_suffix
+  file_suffix <- model_metadata$filename_suffix
   forecast_months <- model_metadata$forecast_months
   forecast_years <- model_metadata$forecast_years
   forecast_newmoons <- model_metadata$forecast_newmoons
@@ -140,9 +140,10 @@
   forecasts <- rbind(forecasts_all[[1]], forecasts_controls[[1]])
   aics <- rbind(forecasts_all[[2]], forecasts_controls[[2]])
 
-  fcast_path <- paste("nbGARCH", filename_suffix, ".csv", sep = "")
-  fcast_path <- file.path('tmp', fcast_path)
+  fcast_filename <- paste("nbGARCH", file_suffix, ".csv", sep = "")
+  fcast_path <- file.path('tmp', fcast_filename)
   write.csv(forecasts, fcast_path, row.names = FALSE)
-  aic_path <- paste("nbGARCH", filename_suffix, "_model_aic.csv", sep = "")
-  aic_path <- file.path('tmp', aic_path)
+
+  aic_filename <- paste("nbGARCH", file_suffix, "_model_aic.csv", sep = "")
+  aic_path <- file.path('tmp', aic_filename)
   write.csv(aics, aic_path, row.names = FALSE)
