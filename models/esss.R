@@ -7,6 +7,7 @@
 #  cannot accommodate, seasonal models are not included.
 
   library(forecast)
+  source('tools/model_tools.R')
 
 #' Function for ESSS
 #'
