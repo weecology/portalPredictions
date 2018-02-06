@@ -47,6 +47,8 @@
 
     for(s in species){
 
+      cat("Fitting negative binomial GARCH model for", s, "\n")
+
       species_abundance <- interpolated_abundances %>% extract2(s)
     
       if(sum(species_abundance) == 0){
@@ -100,7 +102,42 @@
     output <- list(output_fcast, output_aic)
     names(output) <- c("forecast", "aic")
 
-    return(output)
+    return(output) 
   }
 
- 
+  all <- read.csv("data/rodent_all.csv")
+  controls <- read.csv("data/rodent_controls.csv")
+  model_metadata <- yaml.load_file("data/model_metadata.yaml")
+  forecast_date <- as.Date(model_metadata$forecast_date)
+  filename_suffix <- model_metadata$filename_suffix
+  forecast_months <- model_metadata$forecast_months
+  forecast_years <- model_metadata$forecast_years
+  forecast_newmoons <- model_metadata$forecast_newmoons
+
+  forecasts_all <- forecast_nbgarch(abundances = all, 
+                                    forecast_date = forecast_date,
+                                    forecast_months = forecast_months, 
+                                    forecast_years = forecast_years,
+                                    forecast_newmoons = forecast_newmoons,
+                                    level = "All",
+                                    num_forecast_newmoons = 12, 
+                                    CI_level = 0.9)
+
+  forecasts_controls <- forecast_nbgarch(abundances = controls, 
+                                        forecast_date = forecast_date,
+                                        forecast_months = forecast_months, 
+                                        forecast_years = forecast_years,
+                                        forecast_newmoons = forecast_newmoons,
+                                        level = "Controls",
+                                        num_forecast_newmoons = 12, 
+                                        CI_level = 0.9)
+
+  forecasts <- rbind(forecasts_all[[1]], forecasts_controls[[1]])
+  aics <- rbind(forecasts_all[[2]], forecasts_controls[[2]])
+
+  fcast_path <- paste("nbGARCH", filename_suffix, ".csv", sep = "")
+  fcast_path <- file.path('tmp', fcast_path)
+  write.csv(forecasts, fcast_path, row.names = FALSE)
+  aic_path <- paste("nbGARCH", filename_suffix, "_model_aic.csv", sep = "")
+  aic_path <- file.path('tmp', aic_path)
+  write.csv(aics, aic_path, row.names = FALSE)
