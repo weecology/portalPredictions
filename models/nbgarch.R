@@ -65,9 +65,9 @@
         spec_aic <- AIC(nbgarch_mod)
       } 
 
-      #estimate <- as.numeric(spec_forecast$pred)
-      #LowerPI <- as.numeric(spec_forecast$interval[, 1]) 
-      #UpperPI <- as.numeric(spec_forecast$interval[, 2])
+      estimate <- as.numeric(spec_forecast$pred)
+      LowerPI <- as.numeric(spec_forecast$interval[, 1]) 
+      UpperPI <- as.numeric(spec_forecast$interval[, 2])
       spec_output_fcast <- data.frame(date = forecast_date, 
                                       forecastmonth = forecast_months, 
                                       forecastyear = forecast_years,
@@ -76,9 +76,9 @@
                                       model = "nbGARCH",
                                       level = level, 
                                       species = ss, 
-                                      estimate = spec_forecast$pred,
-                                      LowerPI = spec_forecast$interval[,1], 
-                                      UpperPI = spec_forecast$interval[,2],
+                                      estimate = estimate,
+                                      LowerPI = LowerPI, 
+                                      UpperPI = UpperPI,
                                       fit_start_newmoon = fit_start_newmoon,
                                       fit_end_newmoon = fit_end_newmoon,
                                       initial_newmoon = initial_newmoon,
@@ -98,8 +98,7 @@
       output_aic <- rbind(output_aic, spec_output_aic)
 
     }
-    for(i in 9:11)
-      output_fcast[ , i] <- as.numeric(output_fcast[ , i])
+
     output <- list(output_fcast, output_aic)
     names(output) <- c("forecast", "aic")
 
