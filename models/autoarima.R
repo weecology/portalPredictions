@@ -33,45 +33,84 @@
     aa_forecast <- forecast(aa_model, h = num_forecast_newmoons,
                             level = CI_level, fan = TRUE)
 
-    # prep the forecast data tabe
+    fit_start_newmoon <- min(abundances$newmoonnumber)
+    fit_end_newmoon <- max(abundances$newmoonnumber)
+    initial_newmoon <- max(abundances$newmoonnumber)
+    CI_match <- which(aa_forecast$level == CI_level * 100)
 
-      fdt <- data.frame(date = forecast_date, 
-                        forecastmonth = forecast_months,
-                        forecastyear = forecast_years, 
-                        newmoonnumber = forecast_newmoons,
-                        currency = "abundance",
-                        model = "Weecology-ARIMA", 
-                        level = level, species = "total", 
-                        estimate = aamf$mean,
-                        LowerPI = aamf$lower[,
-                                        which(aamf$level == CI_level*100)], 
-                        UpperPI = aamf$upper[,
-                                        which(aamf$level == CI_level*100)])
-       fdt[sapply(fdt, is.ts)] <- lapply(fdt[sapply(fdt, is.ts)], unclass)
-  
-       # Include columns describing the data used in the forecast
+    output_fcast <- data.frame(date = forecast_date, 
+                               forecastmonth = forecast_months,
+                               forecastyear = forecast_years, 
+                               newmoonnumber = forecast_newmoons,
+                               currency = "abundance",
+                               model = "AutoARIMA", 
+                               level = level, 
+                               species = "total", 
+                               estimate = aa_forecast$mean,
+                               LowerPI = aa_forecast$lower[ , CI_match], 
+                               UpperPI = aa_forecast$upper[ , CI_match],
+                               fit_start_newmoon = fit_start_newmoon,
+                               fit_end_newmoon = fit_end_newmoon,
+                               initial_newmoon = initial_newmoon)
+    for(i in 5:8)
+      output_fcast[ , i] <- as.character(output_fcast[ , i])
+    for(i in 9:11)
+      output_fcast[ , i] <- as.numeric(output_fcast[ , i])
 
-         fdt$fit_start_newmoon <- min(abundances$newmoonnumber)
-         fdt$fit_end_newmoon <- max(abundances$newmoonnumber)
-         fdt$initial_newmoon <- max(abundances$newmoonnumber)
-  
-    # prep the aic data tabe
-      
-      aic <- data.frame(date = as.Date(forecast_date), 
-                        currency = 'abundance', 
-                        model = 'Weecology-ARIMA', 
-                        level = level, species = 'total', 
-                        aic = as.numeric(aamf$model$aic), 
-                        fit_start_newmoon = min(abundances$newmoonnumber),
-                        fit_end_newmoon = max(abundances$newmoonnumber), 
-                        initial_newmoon = max(abundances$newmoonnumber))
+    output_aic <- data.frame(date = as.Date(forecast_date), 
+                             currency = 'abundance', 
+                             model = 'AutoARIMA', 
+                             level = level, species = 'total', 
+                             aic = as.numeric(aa_model$aic), 
+                             fit_start_newmoon = fit_start_newmoon,
+                             fit_end_newmoon = fit_end_newmoon,
+                             initial_newmoon = initial_newmoon)
+    for(i in 2:5)
+      output_aic[ , i] <- as.character(output_aic[ , i])
 
-    # return the output
+    output <- list(output_fcast, output_aic)
+    names(output) <- c("forecast", "aic")
 
-      return(list(fdt, aic))
+    return(output)
   }
 
 
+  all <- read.csv("data/rodent_all.csv")
+  controls <- read.csv("data/rodent_controls.csv")
+  model_metadata <- yaml.load_file("data/model_metadata.yaml")
+  forecast_date <- as.Date(model_metadata$forecast_date)
+  filename_suffix <- model_metadata$filename_suffix
+  forecast_months <- model_metadata$forecast_months
+  forecast_years <- model_metadata$forecast_years
+  forecast_newmoons <- model_metadata$forecast_newmoons
+
+  forecasts_all <- forecast_autoarima(abundances = all, 
+                                forecast_date = forecast_date,
+                                forecast_months = forecast_months, 
+                                forecast_years = forecast_years,
+                                forecast_newmoons = forecast_newmoons,
+                                level = "All",
+                                num_forecast_newmoons = 12, 
+                                CI_level = 0.9)
+
+  forecasts_controls <- forecast_autoarima(abundances = controls, 
+                                     forecast_date = forecast_date,
+                                     forecast_months = forecast_months, 
+                                     forecast_years = forecast_years,
+                                     forecast_newmoons = forecast_newmoons,
+                                     level = "Controls",
+                                     num_forecast_newmoons = 12, 
+                                     CI_level = 0.9)
+
+  forecasts <- rbind(forecasts_all[[1]], forecasts_controls[[1]])
+  aics <- rbind(forecasts_all[[2]], forecasts_controls[[2]])
+
+  fcast_path <- paste("ESSS", filename_suffix, ".csv", sep = "")
+  fcast_path <- file.path('tmp', fcast_path)
+  write.csv(forecasts, fcast_path, row.names = FALSE)
+  aic_path <- paste("ESSS", filename_suffix, "_model_aic.csv", sep = "")
+  aic_path <- file.path('tmp', aic_path)
+  write.csv(aics, aic_path, row.names = FALSE)
 
 # Run model on all plots and just controls
 
