@@ -27,7 +27,7 @@
 
     #species <- colnames(abundances)[2:(ncol(abundances) - 3)]
 species <- c("BA", "DM", "DO", "DS", "NA.", "OL", "OT", "PB", "PE", 
-                 "PF", "PH", "PL", "PM", "PP", "RF", "RM", "RO", "SF",
+                 "PF", "PH", "PI", "PL", "PM", "PP", "RF", "RM", "RO", "SF",
                  "SH", "SO", "total")
     interpolated_abundances <- interpolate_abundance(abundances)
 
