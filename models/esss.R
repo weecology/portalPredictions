@@ -24,6 +24,7 @@
                             forecast_years, forecast_newmoons, level,
                             num_forecast_newmoons = 12, CI_level = 0.9){
 
+    cat("Fitting ESSS model for total \n")
     interpolated_abundances <- interpolate_abundance(abundances)
 
     ets_model <- ets(interpolated_abundances$total)
