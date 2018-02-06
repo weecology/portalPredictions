@@ -10,6 +10,7 @@
 #  interpolate missing data here as well.
 
   library(forecast)
+  source('tools/model_tools.R')
 
 #' Function for AutoARIMA
 #'
