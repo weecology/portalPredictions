@@ -24,8 +24,6 @@
                             forecast_years, forecast_newmoons, level,
                             num_forecast_newmoons = 12, CI_level = 0.9){
 
-
- 
     interpolated_abundances <- interpolate_abundance(abundances)
 
     ets_model <- ets(interpolated_abundances$total)
@@ -52,7 +50,10 @@
                                fit_start_newmoon = fit_start_newmoon,
                                fit_end_newmoon = fit_end_newmoon,
                                initial_newmoon = initial_newmoon)
-    output_fcast <- as.matrix(output_fcast)
+    for(i in 5:8)
+      output_fcast[ , i] <- as.character(output_fcast[ , i])
+    for(i in 9:11)
+      output_fcast[ , i] <- as.numeric(output_fcast[ , i])
 
     output_aic <- data.frame(date = as.Date(forecast_date), 
                              currency = 'abundance', 
@@ -62,7 +63,8 @@
                              fit_start_newmoon = fit_start_newmoon,
                              fit_end_newmoon = fit_end_newmoon,
                              initial_newmoon = initial_newmoon)
-    output_aic <- as.matrix(output_aic)
+    for(i in 2:5)
+      output_aic[ , i] <- as.character(output_aic[ , i])
 
     output <- list(output_fcast, output_aic)
     names(output) <- c("forecast", "aic")
