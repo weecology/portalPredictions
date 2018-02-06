@@ -27,6 +27,7 @@
                                  forecast_years, forecast_newmoons, level,
                                  num_forecast_newmoons = 12, CI_level = 0.9){
 
+    cat("Fitting AutoARIMA model for total \n")
     interpolated_abundances <- interpolate_abundance(abundances)
 
     aa_model <- auto.arima(interpolated_abundances$total, lambda = 0)
