@@ -78,11 +78,13 @@
         for(proposed_covariates in covariates){
           cat("Fitting Model", model_count, "\n")
           predictors <- weather_data[ , unlist(proposed_covariates)]
-          prop_model <- tsglm(species_abundance, 
-                              model = list(past_obs = 1, past_mean = 12), 
-                              distr = "poisson",
-                              xreg = predictors, 
-                              link = "log")
+          model_setup <- list(past_obs = 1, past_mean = 12)
+          prop_model <- tryCatch(tsglm(species_abundance, 
+                                       model = model_setup, 
+                                       distr = "poisson",
+                                       xreg = predictors, 
+                                       link = "log"),
+                                 error = function(x) {NA})
           prop_model_aic <- tryCatch(AIC(prop_model), 
                                      error = function(x) {Inf})
           if(prop_model_aic < best_model_aic){
