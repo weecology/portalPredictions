@@ -1,7 +1,6 @@
 filename_suffix: forecasts
-forecast_date: '2018-02-02'
+forecast_date: '2018-02-06'
 forecast_newmoons:
-- 502
 - 503
 - 504
 - 505
@@ -13,8 +12,8 @@ forecast_newmoons:
 - 511
 - 512
 - 513
+- 514
 forecast_months:
-- 1.0
 - 2.0
 - 3.0
 - 4.0
@@ -26,6 +25,7 @@ forecast_months:
 - 10.0
 - 11.0
 - 12.0
+- 1.0
 forecast_years:
 - 2018.0
 - 2018.0
@@ -38,5 +38,5 @@ forecast_years:
 - 2018.0
 - 2018.0
 - 2018.0
-- 2018.0
+- 2019.0
 
