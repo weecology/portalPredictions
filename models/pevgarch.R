@@ -6,6 +6,7 @@
 
   library(tscount)
   library(forecast)
+  source('tools/model_tools.R')
 
 #' Function for pevGARCH
 #'
@@ -18,15 +19,13 @@
 #' @param num_forecast_newmoons number of new moons to forecast
 #' @param CI_level confidence interval level used for forecast envelope
 #' @return list of forecast and aic tables
+#'
+  forecast_pevgarch <- function(abundances, forecast_date, forecast_months, 
+                                forecast_years, forecast_newmoons, level,
+                                num_forecast_newmoons = 12, CI_level = 0.9,
+                                weather_data, weathermeans){
 
-  forecast_pevGARCH <- function(abundances, forecast_date, forecast_months, 
-                               forecast_years, forecast_newmoons, level,
-                               num_forecast_newmoons = 12, CI_level = 0.9,
-                               weather_data){
-
-    species <- c("BA", "DM", "DO", "DS", "NA.", "OL", "OT", "PB", "PE", 
-                 "PF", "PH", "PL", "PM", "PP", "RF", "RM", "RO", "SF",
-                 "SH", "SO", "total")
+    species <- colnames(abundances)[2:(ncol(abundances) - 3)]
 
     interpolated_abundances <- interpolate_abundance(abundances)
 
@@ -50,7 +49,8 @@
                        c('maxtemp'),
                        c('meantemp'),
                        c('precipitation'),
-                       c('ndvi'))
+                       c('ndvi'),
+                       c(NULL))
 
     output_fcast <- data.frame()
     output_aic <- data.frame()
@@ -78,21 +78,68 @@
         for(proposed_covariates in covariates){
           cat("Fitting Model", model_count, "\n")
           predictors <- weather_data[ , unlist(proposed_covariates)]
-          prop_model = tsglm(species_abundance, 
-                             model = list(past_obs = 1, past_mean = 12), 
-                             distr = "poisson",
-                             xreg = predictors, 
-                             link = "log")
-      #tsglm sometimes outputs an error when the time series have many 0's, in that case set the AIC
-      #to Inf so this proposed model covariate set get skipped
-      proposed_model_aic = tryCatch(summary(proposed_model)$AIC, error = function(x) {Inf})
-      if(proposed_model_aic < best_model_aic){
-        best_model = proposed_model
-        best_model_aic = proposed_model_aic
+          prop_model <- tsglm(species_abundance, 
+                              model = list(past_obs = 1, past_mean = 12), 
+                              distr = "poisson",
+                              xreg = predictors, 
+                              link = "log")
+          prop_model_aic <- tryCatch(AIC(prop_model), 
+                                     error = function(x) {Inf})
+          if(prop_model_aic < best_model_aic){
+            best_model <- prop_model
+            best_model_aic <- prop_model_aic
+          }
+          model_count <- model_count + 1
+        }
+
+        if(is.na(best_model)){
+          spec_forecast <- zero_abund_forecast
+          spec_aic <- 1e6
+        } else{
+          spec_forecast <- predict(best_model, num_forecast_newmoons, 
+                                   level = CI_level, newdata = weathermeans)
+          spec_aic <- best_model_aic
+        }
+
       }
-      model_count = model_count + 1
+
+      estimate <- as.numeric(spec_forecast$pred)
+      LowerPI <- as.numeric(spec_forecast$interval[, 1]) 
+      UpperPI <- as.numeric(spec_forecast$interval[, 2])
+      spec_output_fcast <- data.frame(date = forecast_date, 
+                                      forecastmonth = forecast_months, 
+                                      forecastyear = forecast_years,
+                                      newmoonnumber = forecast_newmoons, 
+                                      currency = "abundance", 
+                                      model = "pevGARCH",
+                                      level = level, 
+                                      species = ss, 
+                                      estimate = estimate,
+                                      LowerPI = LowerPI, 
+                                      UpperPI = UpperPI,
+                                      fit_start_newmoon = fit_start_newmoon,
+                                      fit_end_newmoon = fit_end_newmoon,
+                                      initial_newmoon = initial_newmoon,
+                                      stringsAsFactors = FALSE)
+      output_fcast <- rbind(output_fcast, spec_output_fcast)
+
+      spec_output_aic <- data.frame(date = forecast_date, 
+                                    currency = 'abundance', 
+                                    model = 'pevGARCH', 
+                                    level = level, species = ss, 
+                                    aic = as.numeric(spec_aic), 
+                                    fit_start_newmoon = fit_start_newmoon,
+                                    fit_end_newmoon = fit_end_newmoon,
+                                    initial_newmoon = initial_newmoon,
+                                    stringsAsFactors = FALSE)
+
+      output_aic <- rbind(output_aic, spec_output_aic)
+
     }
-    }
+    output <- list(output_fcast, output_aic)
+    names(output) <- c("forecast", "aic")
+
+    return(output) 
   }
 
   all <- read.csv("data/rodent_all.csv")
@@ -105,6 +152,13 @@
   forecast_years <- model_metadata$forecast_years
   forecast_newmoons <- model_metadata$forecast_newmoons
 
+  weathermeans <- weather[dim(weather)[1] - 36:dim(weather)[1], ] %>%
+                   group_by(month) %>% 
+                   summarise_all(funs(mean(., na.rm=TRUE))) %>%
+                   select(-c(year, newmoonnumber, NewMoonNumber_with_lag)) %>%
+                   slice(match(forecast_months, month))
+  
+
   forecasts_all <- forecast_pevgarch(abundances = all, 
                                     forecast_date = forecast_date,
                                     forecast_months = forecast_months, 
@@ -113,7 +167,8 @@
                                     level = "All",
                                     num_forecast_newmoons = 12, 
                                     CI_level = 0.9,
-                                    weather_data = weather)
+                                    weather_data = weather,
+                                    weathermeans = weathermeans)
 
   forecasts_controls <- forecast_pevgarch(abundances = controls, 
                                         forecast_date = forecast_date,
@@ -123,14 +178,16 @@
                                         level = "Controls",
                                         num_forecast_newmoons = 12, 
                                         CI_level = 0.9,
-                                        weather_data = weather)
+                                        weather_data = weather,
+                                        weathermeans = weathermeans)
 
   forecasts <- rbind(forecasts_all[[1]], forecasts_controls[[1]])
   aics <- rbind(forecasts_all[[2]], forecasts_controls[[2]])
 
-  fcast_path <- paste("pevGARCH", filename_suffix, ".csv", sep = "")
-  fcast_path <- file.path('tmp', fcast_path)
+  fcast_filename <- paste("pevGARCH", file_suffix, ".csv", sep = "")
+  fcast_path <- file.path('tmp', fcast_filename)
   write.csv(forecasts, fcast_path, row.names = FALSE)
-  aic_path <- paste("pevGARCH", filename_suffix, "_model_aic.csv", sep = "")
-  aic_path <- file.path('tmp', aic_path)
+
+  aic_filename <- paste("pevGARCH", file_suffix, "_model_aic.csv", sep = "")
+  aic_path <- file.path('tmp', aic_filename)
   write.csv(aics, aic_path, row.names = FALSE)
