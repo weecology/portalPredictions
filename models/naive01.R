@@ -11,7 +11,7 @@ naive1=function(abundances,forecast_date,forecast_months,forecast_years,forecast
 model01=forecast(abundances$total,h=num_forecast_months,level=CI_level,BoxCox.lambda(0),allow.multiplicative.trend=T)
 
 forecasts01=data.frame(date=forecast_date, forecastmonth=forecast_months,forecastyear=forecast_years, newmoonnumber=forecast_newmoons,
-                         currency="abundance",model="Forecast", level=level, species="total", estimate=model01$mean,
+                         currency="abundance",model="ESSS", level=level, species="total", estimate=model01$mean,
                          LowerPI=model01$lower[,which(model01$level==CI_level*100)], UpperPI=model01$upper[,which(model01$level==CI_level*100)])
   forecasts01[sapply(forecasts01, is.ts)] <- lapply(forecasts01[sapply(forecasts01, is.ts)],unclass)
   
@@ -20,7 +20,7 @@ forecasts01=data.frame(date=forecast_date, forecastmonth=forecast_months,forecas
   forecasts01$fit_end_newmoon   = max(abundances$newmoonnumber)
   forecasts01$initial_newmoon   = max(abundances$newmoonnumber)
   
-  aic = data.frame(date=as.Date(forecast_date), currency='abundance', model='Forecast', level=level, species='total', 
+  aic = data.frame(date=as.Date(forecast_date), currency='abundance', model='ESSS', level=level, species='total', 
                    aic = as.numeric(model01$model$aic), fit_start_newmoon = min(abundances$newmoonnumber),
                     fit_end_newmoon = max(abundances$newmoonnumber), initial_newmoon = max(abundances$newmoonnumber))
 
@@ -50,5 +50,5 @@ forecasts = bind_rows(allresults[1],controlsresults[1])
 forecast_aics = bind_rows(allresults[2],controlsresults[2])
 
 #Write results
-write.csv(forecasts,file.path('tmp', paste("naive1", filename_suffix, ".csv", sep="")),row.names = FALSE)
-write.csv(forecast_aics,file.path('tmp', paste("naive1", filename_suffix, "_model_aic.csv", sep="")),row.names = FALSE)
+write.csv(forecasts,file.path('tmp', paste("ESSS", filename_suffix, ".csv", sep="")),row.names = FALSE)
+write.csv(forecast_aics,file.path('tmp', paste("ESSS", filename_suffix, "_model_aic.csv", sep="")),row.names = FALSE)

@@ -34,13 +34,13 @@ allaic=data.frame()
       model_aic = tryCatch(summary(model)$AIC, error = function(x) {1e6})
     }
     newpred=data.frame(date=rep(forecast_date,num_forecast_months), forecastmonth=forecast_months, forecastyear=forecast_years,
-                       newmoonnumber=forecast_newmoons, currency="abundance", model=rep("NegBinom Time Series",num_forecast_months),
+                       newmoonnumber=forecast_newmoons, currency="abundance", model=rep("nbGARCH",num_forecast_months),
                        level=level, species=rep(s,num_forecast_months), estimate=pred$pred,
                        LowerPI=pred$interval[,1], UpperPI=pred$interval[,2])
     allforecasts=rbind(allforecasts,newpred)
     
     allaic = allaic %>%
-      bind_rows(data.frame(date=forecast_date,  currency='abundance', model='NegBinom Time Series',level=level, species=s, aic=model_aic))
+      bind_rows(data.frame(date=forecast_date,  currency='abundance', model='nbGARCH',level=level, species=s, aic=model_aic))
   }
   
   #########Include columns describing the data used in the forecast###############
@@ -78,7 +78,7 @@ forecasts = bind_rows(allresults[1],controlsresults[1])
 forecast_aics = bind_rows(allresults[2],controlsresults[2])
 
 #Write results
-write.csv(forecasts,file.path('tmp', paste("nbts", filename_suffix, ".csv", sep="")),row.names = FALSE)
-write.csv(forecast_aics,file.path('tmp', paste("nbts", filename_suffix, "_model_aic.csv", sep="")),row.names = FALSE)
+write.csv(forecasts,file.path('tmp', paste("nbGARCH", filename_suffix, ".csv", sep="")),row.names = FALSE)
+write.csv(forecast_aics,file.path('tmp', paste("nbGARCH", filename_suffix, "_model_aic.csv", sep="")),row.names = FALSE)
 
   
