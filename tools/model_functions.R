@@ -114,6 +114,10 @@ get_rodent_data <- function(moons, forecast_date){
 
 ###################################################################################
 #' Get weather data, tailored for forecasting (with associated newmoonnumbers)
+#'
+#' Including a lag offsets the weather data (all variables together) to match with
+#'  the rodent data
+#'
 #' @param moons current newmoonnumber table
 #' @param all dataframe of rodent data used in forecasting
 #' @param lag lag between rodent and weather data, in months
@@ -128,7 +132,9 @@ get_weather_data <- function(moons, all, lag){
     left_join(moons, by=c('year','month'))
   
   #Offset the newmoonnumber to create a 6 month lag between
-  #rodent observations and weather
+  #rodent observations and weather for use in the pevGARCH model
+  #which_is_lagged is a matching variable used to impose the lag on the 
+  # weather data
   weather_data$NewMoonNumber_with_lag = weather_data$newmoonnumber + lag
   
   which_is_lagged = rep(NA, nrow(weather_data))
