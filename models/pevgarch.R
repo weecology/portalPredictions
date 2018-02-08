@@ -2,7 +2,10 @@
 #
 # Model "pevGARCH" is a generalized autoregresive conditional 
 #  heteroscedasticity model with a Poisson response variable
-#  
+#  For this model, environmental data are included as predictors of abundance,
+#  but with a 6 month lag between the covariate values and the abundances.
+#  The specific lag is imposed in the get_weather_data function, which is 
+#  used in the prepare_data script to produce the weather data here.
 
   library(tscount)
   library(forecast)
