@@ -63,12 +63,12 @@ for(s in species) {
     }
   }
   newpred = data.frame(date=rep(forecast_date,num_forecast_months), forecastmonth=forecast_months, forecastyear=forecast_years,
-                       newmoonnumber=forecast_newmoons, currency="abundance", model=rep("Poisson Env",num_forecast_months),
+                       newmoonnumber=forecast_newmoons, currency="abundance", model=rep("pevGARCH",num_forecast_months),
                        level=level, species=rep(s,num_forecast_months), estimate=pred$pred,
                        LowerPI=pred$interval[,1],UpperPI=pred$interval[,2])
   allforecasts = rbind(allforecasts,newpred)
   allaic = allaic %>%
-    bind_rows(data.frame(date=forecast_date, model='Poisson Env', currency='abundance', level=level, species=s, aic=model_aic))
+    bind_rows(data.frame(date=forecast_date, model='pevGARCH', currency='abundance', level=level, species=s, aic=model_aic))
 }
 
   #########Include columns describing the data used in the forecast###############
@@ -113,5 +113,5 @@ forecasts = bind_rows(allresults[1],controlsresults[1])
 forecast_aics = bind_rows(allresults[2],controlsresults[2])
 
 #Write results
-write.csv(forecasts,file.path('tmp', paste("pets", filename_suffix, ".csv", sep="")),row.names = FALSE)
-write.csv(forecast_aics,file.path('tmp', paste("pets", filename_suffix, "_model_aic.csv", sep="")),row.names = FALSE)
+write.csv(forecasts,file.path('tmp', paste("pevGARCH", filename_suffix, ".csv", sep="")),row.names = FALSE)
+write.csv(forecast_aics,file.path('tmp', paste("pevGARCH", filename_suffix, "_model_aic.csv", sep="")),row.names = FALSE)
