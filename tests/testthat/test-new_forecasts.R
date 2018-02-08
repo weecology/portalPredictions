@@ -19,7 +19,7 @@ aicnames = c("date", "currency", "model", "level", "species", "aic", "fit_start_
 valid_currencies = c("abundance","biomass","energy")
 valid_levels = paste('Plot',1:24,' ', sep = '')
 valid_levels = c('All','Controls','FullExclosure','KratExclosure', valid_levels)
-valid_species = c('total','BA','DM','DO','DS','OL','OT','PB','PE','PF','PH','PI',
+valid_species = c('total','BA','DM','DO','DS','OL','OT','PB','PE','PF','PH',
                   'PL','PM','PP','RF','RM','RO','SF','SH','SO','NA')
 
 test_that("column names correct", {
