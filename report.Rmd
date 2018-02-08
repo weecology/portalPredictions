@@ -18,7 +18,7 @@ moon_code = dplyr::filter(newmoons_table,period==most_recent_period) %>% select(
 most_recent_date = dplyr::filter(newmoons_table,period==most_recent_period) %>% dplyr::pull(censusdate)
 
 # get most recent forecast prior to data collection
-files = data.frame(names = list.files(path = './predictions', pattern = '*Allforecasts.csv'))
+files = data.frame(names = list.files(path = './predictions', pattern = '*forecasts.csv'))
 files$filedates = as.Date(substr(files$names,1,10),format='%Y-%m-%d')
 latest_forecast = dplyr::filter(files,filedates<most_recent_date) %>% tail(1)
 
