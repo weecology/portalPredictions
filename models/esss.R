@@ -23,7 +23,7 @@
 #'
   forecast_esss <- function(abundances, forecast_date, forecast_months, 
                             forecast_years, forecast_newmoons, level,
-                            num_forecast_newmoons = 12, CI_level = 0.9){
+                            num_forecast_newmoons, CI_level = 0.9){
 
     cat("Fitting ESSS model for total \n")
     interpolated_abundances <- interpolate_abundance(abundances)
@@ -81,6 +81,7 @@
   forecast_months <- model_metadata$forecast_months
   forecast_years <- model_metadata$forecast_years
   forecast_newmoons <- model_metadata$forecast_newmoons
+  num_fcast_nmoons <- length(forecast_months)
 
   forecasts_all <- forecast_esss(abundances = all, 
                                  forecast_date = forecast_date,
@@ -88,17 +89,17 @@
                                  forecast_years = forecast_years,
                                  forecast_newmoons = forecast_newmoons,
                                  level = "All",
-                                 num_forecast_newmoons = 12, 
+                                 num_forecast_newmoons = num_fcast_nmoons, 
                                  CI_level = 0.9)
 
   forecasts_controls <- forecast_esss(abundances = controls, 
-                                      forecast_date = forecast_date,
-                                      forecast_months = forecast_months, 
-                                      forecast_years = forecast_years,
-                                      forecast_newmoons = forecast_newmoons,
-                                      level = "Controls",
-                                      num_forecast_newmoons = 12, 
-                                      CI_level = 0.9)
+                                    forecast_date = forecast_date,
+                                    forecast_months = forecast_months, 
+                                    forecast_years = forecast_years,
+                                    forecast_newmoons = forecast_newmoons,
+                                    level = "Controls",
+                                    num_forecast_newmoons = num_fcast_nmoons, 
+                                    CI_level = 0.9)
 
   forecasts <- rbind(forecasts_all[[1]], forecasts_controls[[1]])
   aics <- rbind(forecasts_all[[2]], forecasts_controls[[2]])
