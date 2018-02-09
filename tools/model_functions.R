@@ -114,6 +114,10 @@ get_rodent_data <- function(moons, forecast_date){
 
 ###################################################################################
 #' Get weather data, tailored for forecasting (with associated newmoonnumbers)
+#'
+#' Including a lag offsets the weather data (all variables together) to match with
+#'  the rodent data
+#'
 #' @param moons current newmoonnumber table
 #' @param all dataframe of rodent data used in forecasting
 #' @param lag lag between rodent and weather data, in months
@@ -128,16 +132,34 @@ get_weather_data <- function(moons, all, lag){
     left_join(moons, by=c('year','month'))
   
   #Offset the newmoonnumber to create a 6 month lag between
-  #rodent observations and weather
+  #rodent observations and weather for use in the pevGARCH model
+  #which_is_lagged is a matching variable used to impose the lag on the 
+  # weather data
   weather_data$NewMoonNumber_with_lag = weather_data$newmoonnumber + lag
   
+  which_is_lagged = rep(NA, nrow(weather_data))
+  for(i in 1:nrow(weather_data)){
+    specific <- which(weather_data$newmoonnumber == weather_data$NewMoonNumber_with_lag[i])
+    if(length(specific) > 0){
+      which_is_lagged[i] = specific
+    }
+  }
+  weather_data$year_with_lag = weather_data$year[which_is_lagged]
+  weather_data$month_with_lag = weather_data$month[which_is_lagged]
+
+
   #Assign weather using lag to rodent observations.
-  #This will match weather row numbers to corrosponding rows in all and controls
+  #This will match weather row numbers to the corrosponding rows associated
+  # with each new moon (regardless of census occurring or not)
+  all_new_moons = min(all$newmoonnumber):max(all$newmoonnumber)
+  all_moons_table = data.frame(newmoonnumber = all_new_moons)
   weather_data = weather_data %>%
     select(-newmoondate, -censusdate, -period, -year, -month) %>%
-    right_join(all, by=c('NewMoonNumber_with_lag'='newmoonnumber')) %>%
-    select(year,month,mintemp,maxtemp,meantemp,precipitation,ndvi,newmoonnumber,NewMoonNumber_with_lag)
-  
+    right_join(all_moons_table, by=c('NewMoonNumber_with_lag'='newmoonnumber')) %>%
+    select(year_with_lag,month_with_lag,mintemp,maxtemp,meantemp,precipitation,ndvi,newmoonnumber,NewMoonNumber_with_lag)
+ 
+  colnames(weather_data)[1:2] <- c("year", "month")
+
   #Insert longterm means where there is missing data in the historic weather
   weather_data=weather_data %>%
     mutate(ndvi = ifelse(is.na(ndvi), mean(ndvi, na.rm = T), ndvi)) %>%
