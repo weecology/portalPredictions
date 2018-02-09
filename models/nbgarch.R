@@ -23,7 +23,7 @@
 #'
   forecast_nbgarch <- function(abundances, forecast_date, forecast_months, 
                                forecast_years, forecast_newmoons, level,
-                               num_forecast_newmoons = 12, CI_level = 0.9){
+                               num_forecast_newmoons, CI_level = 0.9){
 
     species <- colnames(abundances)[2:(ncol(abundances) - 3)]
 
@@ -33,8 +33,8 @@
     fit_end_newmoon <- max(abundances$newmoonnumber)
     initial_newmoon <- max(abundances$newmoonnumber)
 
-    zero_abund_mean <- rep(0, 12)
-    zero_abund_interval <- matrix(0, ncol = 2, nrow = 12)
+    zero_abund_mean <- rep(0, num_forecast_newmoons)
+    zero_abund_interval <- matrix(0, ncol = 2, nrow = num_forecast_newmoons)
     colnames(zero_abund_interval) <- c("lower", "upper")
 
     zero_abund_forecast <- list(zero_abund_mean, zero_abund_interval)
@@ -113,6 +113,7 @@
   forecast_months <- model_metadata$forecast_months
   forecast_years <- model_metadata$forecast_years
   forecast_newmoons <- model_metadata$forecast_newmoons
+  num_fcast_nmoons <- length(forecast_months)
 
   forecasts_all <- forecast_nbgarch(abundances = all, 
                                     forecast_date = forecast_date,
@@ -120,17 +121,17 @@
                                     forecast_years = forecast_years,
                                     forecast_newmoons = forecast_newmoons,
                                     level = "All",
-                                    num_forecast_newmoons = 12, 
+                                    num_forecast_newmoons = num_fcast_nmoons, 
                                     CI_level = 0.9)
 
   forecasts_controls <- forecast_nbgarch(abundances = controls, 
-                                        forecast_date = forecast_date,
-                                        forecast_months = forecast_months, 
-                                        forecast_years = forecast_years,
-                                        forecast_newmoons = forecast_newmoons,
-                                        level = "Controls",
-                                        num_forecast_newmoons = 12, 
-                                        CI_level = 0.9)
+                                     forecast_date = forecast_date,
+                                     forecast_months = forecast_months, 
+                                     forecast_years = forecast_years,
+                                     forecast_newmoons = forecast_newmoons,
+                                     level = "Controls",
+                                     num_forecast_newmoons = num_fcast_nmoons, 
+                                     CI_level = 0.9)
 
   forecasts <- rbind(forecasts_all[[1]], forecasts_controls[[1]])
   aics <- rbind(forecasts_all[[2]], forecasts_controls[[2]])
