@@ -12,6 +12,7 @@ library(dplyr)
 library(portalr)
 source("tools/forecast_tools.R")
 
+models_of_interest = c('AutoArima','Ensemble','ESSS','nbGARCH','pevGARCH')
 
 species_of_interest = c('BA','DM','DO','PP','OT','NA','total')
 species_names = portalr::FullPath('PortalData/Rodents/Portal_rodent_species.csv', '~') %>%
@@ -24,6 +25,7 @@ species_names = species_names %>%
 
 new_moon_file = portalr::FullPath('PortalData/Rodents/moon_dates.csv', '~')
 new_moons = read.csv(new_moon_file)
+new_moons$censusdate = as.Date(new_moons$censusdate)
 
 # Setup rodent observations
 species_abundance = portalr::abundance(shape='flat', level='Site') %>%
@@ -39,7 +41,8 @@ total_abundance = portalr::abundance(shape='flat', level='Site') %>%
   mutate(level='All',currency='abundance',species='total') %>%
   left_join(new_moons, by='period')
 
-
+observation_data = species_abundance %>%
+  bind_rows(total_abundance)
 
 ```
 
@@ -47,19 +50,10 @@ total_abundance = portalr::abundance(shape='flat', level='Site') %>%
 
 This graph shows the forecast error of some recent forecasts for the most recent sampling dates. This is shown for all model types in the columns and several common rodent species (and total rodents) in the rows. These forecasts are for the entire site. 
 ```{r recent_eval, echo=FALSE, message=TRUE, warning=FALSE,, fig.width=15, fig.height=15}
-# The length of time to look backward
-prior_new_moons = 12
-
-most_recent_newmoon = max(new_moons$newmoonnumber)
-earliest_newmoon_to_graph = most_recent_newmoon - prior_new_moons
-
-observation_data = species_abundance %>%
-  bind_rows(total_abundance) %>%
-  filter(newmoonnumber %in% earliest_newmoon_to_graph:most_recent_newmoon)
-
+###############################################
 #Get all the recent forecasts
 forecast_data = compile_forecasts(use_hindcasts = FALSE) %>%
-  filter(newmoonnumber %in% earliest_newmoon_to_graph:most_recent_newmoon)
+  filter(model %in% models_of_interest)
 
 # Round so that large decimal place differences do not cause
 # similar forecasts to be seen as distinct. 
@@ -81,8 +75,9 @@ forecast_data = forecast_data %>%
   left_join(forecast_dates_to_keep, by=c('date','initial_newmoon')) %>%
   filter(keep=='yes') %>%
   select(-keep)
+
 ##################################
-  
+#Combine forecasts and oservations
 forecast_errors = forecast_data %>%
   left_join(observation_data, by=c('species','level','currency','newmoonnumber')) %>% 
   mutate(rmse = sqrt((estimate - actual)^2))
@@ -107,38 +102,52 @@ forecast_errors = forecast_errors %>%
 # Add a newline to the longer species names
 forecast_errors$species = with(forecast_errors, ifelse(nchar(species)>15, stringr::str_replace(species,' ','\n'), species))
 
-###################################
-forecast_date_labels = forecast_errors %>%
-  group_by(date, model, species, censusdate) %>%
-  summarize(y_position = mean(rmse)) %>%
-  ungroup() %>%
-  distinct() %>%
-  filter(!is.na(censusdate)) %>%
-  group_by(date, model, species) %>%
-  filter(as.Date(censusdate) == min(as.Date(censusdate))) %>%
-  ungroup() %>%
-  distinct() %>%
-  mutate(label_text = paste0('Issued: ',date))
+#############################################################
+# Displaying the data from many forecasts in the past can create a mess of a plot. see #218.
+# So here three forecasts are chosen from 1, 6, and 12 newmoons into the past. 
+# Sometimes forecasts data is missing for a particular initial_newmoon, the recursive function here
+# attempts to find another one from the same time pluts/minus 2 month period. This ensures 3 forecasts
+# are always shown.
 
-####################################
-# Setup a nice palette for when prior issue dates become greater than 9
-getPalette = colorRampPalette(RColorBrewer::brewer.pal(9, "Set1"))
-set.seed(2)
-large_color_palette = sample(getPalette(40))
+# If there is no data for initial_newmoon 500, this will check nearby dates in this order: 499,501,498,402
+update_initial_newmoon = function(potential_initial_newmoon, attempt=1){
+  if(attempt==6){
+    return(NA)
+  }
+  lead_time_data = forecast_errors %>%
+    filter(initial_newmoon == potential_initial_newmoon)
+  
+  # Alternate steps of -1, +2, -3, +4
+  next_try_step = ifelse(attempt%%2 == 0, attempt, attempt * -1)
+  
+  # no data to show? then try one month back
+  if(nrow(lead_time_data)==0){
+    #print(paste('Try ',attempt, ', Nothing with ',potential_initial_newmoon,' trying ',potential_initial_newmoon+next_try_step))
+    return(update_initial_newmoon(potential_initial_newmoon+next_try_step, attempt+1))
+  } else {
+    return(potential_initial_newmoon)
+  }
+  
+}
+# Adjust this to add more than 3 forecast dates, or change the lead times
+lead_times_to_show = c(1,6,12)
+most_recent_observed_newmoon = max(new_moons$newmoonnumber)
+initial_newmoons_to_keep = most_recent_observed_newmoon - lead_times_to_show
+
+initial_newmoons_to_keep = sapply(initial_newmoons_to_keep, update_initial_newmoon)
+
+forecast_errors = forecast_errors %>%
+  filter(initial_newmoon %in% initial_newmoons_to_keep)
+
 #####################################
 ggplot(forecast_errors, aes(x=censusdate, y=rmse, group=as.character(date), color=as.character(date))) +
   geom_point(size=4)+
   geom_line(size=1.5) +
-  # label individual issue dates. This is easier to look at if there 
-  # gets to be a lot of them. Must install ggrepel and remove the legend if this is turned on.
-  #geom_label_repel(data=forecast_date_labels, aes(label=label_text, y=y_position),
-  #                 fill='grey90',size=4,nudge_y = 40, force=5,
-  #                 segment.alpha = 0.3, segment.size = 0.8) +
   scale_color_brewer(palette='Dark2') +
-  #scale_color_manual(values=large_color_palette) +
-  facet_grid(species~model) + 
+  scale_x_date(breaks = unique(forecast_errors$censusdate)) +
+  facet_grid(species~model, scales = 'free_y') + 
   theme_bw() +
-  theme(axis.text.x = element_text(angle=45, hjust=0.9, debug = FALSE),
+  theme(axis.text.x = element_text(angle=45, hjust=0.99, debug = FALSE),
         axis.text = element_text(size=12),
         axis.title = element_text(size=20),
         strip.text = element_text(size=12),
@@ -159,9 +168,6 @@ These graphs show errors as a function of lead time. The lead time is the number
 
 
 ```{r hindcast_eval, echo=FALSE, message=TRUE, warning=FALSE,, fig.width=9, fig.height=15}
-
-observation_data = species_abundance %>%
-  bind_rows(total_abundance)
 
 #Get the all the forecasts made during observation period
 forecast_data = compile_forecasts(use_hindcasts = TRUE)
