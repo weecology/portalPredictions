@@ -28,7 +28,7 @@ incomplete_samples = portalr::find_incomplete_censuses(trappings)
 
 failed_newmoons=c()
 
-for(this_newmoon in initial_time_newmoons[1:10]){
+for(this_newmoon in initial_time_newmoons){
 
   moons = get_moon_data()
   
