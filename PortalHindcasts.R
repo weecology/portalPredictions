@@ -1,5 +1,6 @@
 source('tools/forecast_tools.R')
 source('tools/model_functions.R')
+library(yaml)
 
 filename_suffix = 'hindcasts'
 
@@ -13,7 +14,7 @@ forecast_date = Sys.Date()
 initial_time_newmoons=490:403
 
 #Get the most recent data loaded into the data folder
-portalr::download_observations()
+portalr::download_observations(release_only=FALSE)
 moons = get_moon_data()
 rodent_data = get_rodent_data(moons, forecast_date)
 weather_data = get_weather_data(moons, rodent_data$all, lag=6)
@@ -25,7 +26,9 @@ write.csv(weather_data,"data/weather_data.csv",row.names = FALSE)
 trappings = read.csv(FullPath('PortalData/Rodents/Portal_rodent_trapping.csv', '~'))
 incomplete_samples = portalr::find_incomplete_censuses(trappings)
 
-for(this_newmoon in initial_time_newmoons){
+failed_newmoons=c()
+
+for(this_newmoon in initial_time_newmoons[1:10]){
 
   moons = get_moon_data()
   
@@ -81,8 +84,25 @@ for(this_newmoon in initial_time_newmoons){
   #####Run all models########################  
   cat("Running models", "\n")
   dir.create("tmp")
-  sapply( list.files("models", full.names=TRUE), source )
+
+  print('######################################')
+  print('######################################')
+  print(paste0('Running models for initial newmoon: ',this_newmoon))
+  print('######################################')
+  print('######################################')
+
+  model_outcome = try(sapply( list.files("models", full.names=TRUE), source ))
+  if(class(model_outcome)=='try-error'){
+      print('######################################')
+      print(paste0('Failed doing hindcasts for newmoon: ',this_newmoon)) 
+      print('######################################')
+      failed_newmoons=c(failed_newmoons, this_newmoon)
+  }
+ 
   ####Compile all hindcasts into one file
   allhindcasts=forecastall(forecast_date, filename_suffix)
   unlink("tmp/*")
 }
+
+print('Hindcasting complete. Failed on initial newmoons: ')
+print(failed_newmoons)
