@@ -22,6 +22,15 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-113453617-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-113453617-1');
+</script>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -209,12 +218,25 @@ $(document).ready(function () {
 </div>
 
 
+<div id="how-have-the-models-done-recently" class="section level2">
+<h2>How have the models done recently?</h2>
+<p>This graph shows the forecast error of some recent forecasts for the most recent sampling dates. This is shown for all model types in the columns and several common rodent species (and total rodents) in the rows. These forecasts are for the entire site.</p>
+<pre><code>## geom_path: Each group consists of only one observation. Do you need to
+## adjust the group aesthetic?
+## geom_path: Each group consists of only one observation. Do you need to
+## adjust the group aesthetic?
+## geom_path: Each group consists of only one observation. Do you need to
+## adjust the group aesthetic?
+## geom_path: Each group consists of only one observation. Do you need to
+## adjust the group aesthetic?</code></pre>
+<p><img src="evaluation_files/figure-html/recent_eval-1.png" width="1440" /></p>
+</div>
 <div id="how-have-the-models-done-historically" class="section level2">
 <h2>How have the models done historically?</h2>
 <p>These graphs show errors as a function of lead time. The lead time is the number of months into the future that forecast is made. The error values are an average of all forecast errors using observations since 2010. Note that this currently uses hindcasts of the prior observations.</p>
 <p><strong>RMSE</strong>: Root mean square error, this is a metric used to evaluate the point estimate of a forecast.<br />
 <strong>Coverage</strong>: This is the percentage of observations which fell within the 95% confidence interval of a forecast. Ideally this would be equal to 0.95. If it’s higher than 0.95 the forecasts intervals are too wide, if it’s lower then the forecast intervals are too narrow.</p>
-<p><img src="evaluation_files/figure-html/unnamed-chunk-1-1.png" width="864" /></p>
+<p><img src="evaluation_files/figure-html/hindcast_eval-1.png" width="864" /></p>
 </div>
 
 
