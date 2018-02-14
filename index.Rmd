@@ -58,6 +58,9 @@ sp_predictions = get_sp_predicts(ensemble, 'All', lead_time = 1)
 sp_predict = plot_species_forecast(sp_predictions)
 plot(sp_predict)
 ```
+
+## Most Abundant Species
+
 ```{r highabund_ts_forecasts, echo=FALSE, message=FALSE, warning=FALSE}
 most_abund_sp = sp_predictions %>% 
   filter(species != 'total') %>% 
