@@ -11,7 +11,7 @@ Most forecasts for the future state of ecological systems are conducted once and
 
 # [Weecology](http://weecology.org/) 
 
-We are a group of ecologists at the University of Florida, comprised of [Ethan White's](http://whitelab.weecology.org/) and [Morgan Ernest's](http://ernestlab.weecology.org/) labs at the [University of Florida](http://www.wec.ufl.edu/). We are broadly interested in collaborative approaches to ecology, open science, and open data.
+We are a group of ecologists at the University of Florida, comprised of [Ethan White's](http://whitelab.weecology.org/) and [Morgan Ernest's](http://ernestlab.weecology.org/) lab groups at the [University of Florida](http://www.wec.ufl.edu/). We are broadly interested in collaborative approaches to empirical and computation ecology, open science, and open data.
 
 <br>
 
