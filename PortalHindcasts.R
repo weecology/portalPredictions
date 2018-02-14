@@ -104,5 +104,5 @@ for(this_newmoon in initial_time_newmoons){
   unlink("tmp/*")
 }
 
-print('Hindcasting complete. Failed on initial newmoons: ')
+print(paste0('Hindcasting complete. Failed on ',length(failed_newmoons),' initial newmoons: '))
 print(failed_newmoons)
