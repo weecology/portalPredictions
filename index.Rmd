@@ -24,7 +24,6 @@ new_moons = read.csv(text = RCurl::getURL("https://raw.githubusercontent.com/wee
 
 obs_data_newmoon = inner_join(obs_data, new_moons, by = c("period" = "period"))
 obs_data_newmoon$censusdate = as.Date(obs_data_newmoon$censusdate)
-#for_data = read.csv("predictions/2017-02-24Allforecasts.csv")
 
 for_data = compile_forecasts() %>%
   dplyr::filter(level == 'Controls', model == 'Ensemble', date == max(date))
