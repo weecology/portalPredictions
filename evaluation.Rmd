@@ -28,17 +28,17 @@ new_moons = read.csv(new_moon_file)
 new_moons$censusdate = as.Date(new_moons$censusdate)
 
 # Setup rodent observations
-species_abundance = portalr::abundance(shape='flat', level='Site') %>%
+species_abundance = portalr::abundance(shape='flat', level='Controls') %>%
   rename(actual = abundance) %>%
-  mutate(level='All',currency='abundance') %>%
+  mutate(level='Controls',currency='abundance') %>%
   left_join(new_moons, by='period') %>%
   filter(species %in% species_of_interest)
 
-total_abundance = portalr::abundance(shape='flat', level='Site') %>%
+total_abundance = portalr::abundance(shape='flat', level='Controls') %>%
   group_by(period) %>%
   summarise(actual=sum(abundance)) %>%
   ungroup() %>%
-  mutate(level='All',currency='abundance',species='total') %>%
+  mutate(level='Controls',currency='abundance',species='total') %>%
   left_join(new_moons, by='period')
 
 observation_data = species_abundance %>%
@@ -48,7 +48,7 @@ observation_data = species_abundance %>%
 
 ## How have the models done recently?
 
-This graph shows the forecast error of some recent forecasts for the most recent sampling dates. This is shown for all model types in the columns and several common rodent species (and total rodents) in the rows. These forecasts are for the entire site. 
+This graph shows the forecast error of some recent forecasts for the most recent sampling dates. This is shown for all model types in the columns and several common rodent species (and total rodents) in the rows. These evaluations are for the Control plots where no manipulation is done. 
 ```{r recent_eval, echo=FALSE, message=TRUE, warning=FALSE,, fig.width=15, fig.height=15}
 ###############################################
 #Get all the recent forecasts
@@ -161,7 +161,7 @@ ggplot(forecast_errors, aes(x=censusdate, y=rmse, group=as.character(date), colo
 
 ## How have the models done historically?
 
-These graphs show errors as a function of lead time. The lead time is the number of months into the future that forecast is made. The error values are an average of all forecast errors using observations since 2010. Note that this currently uses hindcasts of the prior observations.  
+These graphs show errors as a function of lead time. The lead time is the number of months into the future that forecast is made. The error values are an average of all forecast errors using observations since 2010. Note that this currently uses hindcasts of the prior observations, and is also only for the Control plots.
 
 **RMSE**: Root mean square error, this is a metric used to evaluate the point estimate of a forecast.  
 **Coverage**: This is the percentage of observations which fell within the 95% confidence interval of a forecast. Ideally this would be equal to 0.95. If it's higher than 0.95 the forecasts intervals are too wide, if it's lower then the forecast intervals are too narrow.
