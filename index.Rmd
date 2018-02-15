@@ -57,7 +57,9 @@ source("tools/forecast_tools.R")
 data = compile_forecasts()
 ensemble = dplyr::filter(data, level == 'Controls', model == 'Ensemble', date == max(date))
 sp_predictions = get_sp_predicts(ensemble, 'Contols', lead_time = 1)
-sp_predict = plot_species_forecast(sp_predictions)
+sp_predict = plot_species_forecast(sp_predictions,
+            title=paste0(sp_predictions$forecast_date[2], ": Control plots"))
+
 plot(sp_predict)
 ```
 
