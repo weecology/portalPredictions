@@ -2,8 +2,6 @@
 title: "Portal Forecast"
 ---
 
-Welcome to Portal Forecasting! This is a website run by the [Weecology](http://weecology.org/) group, a group of interdisciplinary ecologists at the [University of Florida](http://www.wec.ufl.edu/). On this website, you'll find information about our ongoing efforts to forecast ecological systems from time series. Specifically, we are using a times series of rodent abundances from [The Portal project](http://portal.weecology.org/), a long-term experimental monitoring project in desert ecology. Enjoy! 
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(dplyr)
@@ -57,12 +55,9 @@ source("tools/forecast_tools.R")
 data = compile_forecasts()
 ensemble = dplyr::filter(data, level == 'All', model == 'Ensemble', date == max(date))
 sp_predictions = get_sp_predicts(ensemble, 'All', lead_time = 1)
-sp_predict = plot_species_forecast(sp_predictions)
+sp_predict = plot_species_forecast(sp_predictions,title=paste0(sp_predictions$forecast_date[2], ": All plots"))
 plot(sp_predict)
 ```
-
-## Most Abundant Species
-
 ```{r highabund_ts_forecasts, echo=FALSE, message=FALSE, warning=FALSE}
 most_abund_sp = sp_predictions %>% 
   filter(species != 'total') %>% 
