@@ -17,7 +17,7 @@ source("tools/model_functions.R")
 This is the forecast for next month's sampling of rodents at Portal.
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
-obs_data = portalr::abundance(level='treatment', length="longterm") %>%
+obs_data = portalr::abundance("repo", level='treatment', length="longterm") %>%
   filter(treatment=="control")
 obs_data$total = rowSums(select(obs_data, -c(period, treatment)))
 new_moons = read.csv(text = RCurl::getURL("https://raw.githubusercontent.com/weecology/PortalData/master/Rodents/moon_dates.csv"))
