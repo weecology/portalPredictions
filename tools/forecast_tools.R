@@ -118,9 +118,10 @@ get_sp_predicts = function(data, lvl, lead_time) {
 #' 
 #' 
 #' @param data
+#' @param title main title for plot
 #' @return sp_predict is a plot object -- plot(sp_predict) displays it
 #' 
-plot_species_forecast = function(data) {
+plot_species_forecast = function(data,title) {
   newmoons_table = read.csv(
     text = getURL(
       "https://raw.githubusercontent.com/weecology/PortalData/master/Rodents/moon_dates.csv"))
@@ -145,7 +146,7 @@ plot_species_forecast = function(data) {
                       )) +
     geom_point() +
     geom_errorbarh() +
-    ggtitle(paste(data$forecast_date[2], "All plots", sep = " ")) + # should make title better somehow
+    ggtitle(title) + 
     ylab("Species") +
     xlab("Abundance") +
     scale_y_discrete(breaks = reorder(data$species,data$estimate),labels = reorder(species_names$scientificname,species_names$estimate))
