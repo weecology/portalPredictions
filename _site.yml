@@ -4,6 +4,8 @@ navbar:
   left:
     - text: "Current Forecast"
       href: index.html
+    - text: "Current Models"
+      href: models.html
     - text: "Rodent Report"
       href: report.html
     - text: "Evaluation"
