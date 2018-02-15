@@ -17,8 +17,9 @@ source("tools/model_functions.R")
 This is the forecast for next month's sampling of rodents at Portal.
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
-obs_data = portalr::abundance("repo")
-obs_data$total = rowSums(select(obs_data, -period))
+obs_data = portalr::abundance(level='treatment', length="longterm") %>%
+  filter(treatment=="control")
+obs_data$total = rowSums(select(obs_data, -c(period, treatment)))
 new_moons = read.csv(text = RCurl::getURL("https://raw.githubusercontent.com/weecology/PortalData/master/Rodents/moon_dates.csv"))
 
 obs_data_newmoon = inner_join(obs_data, new_moons, by = c("period" = "period"))
@@ -26,7 +27,7 @@ obs_data_newmoon$censusdate = as.Date(obs_data_newmoon$censusdate)
 #for_data = read.csv("predictions/2017-02-24Allforecasts.csv")
 
 for_data = compile_forecasts() %>%
-  dplyr::filter(level == 'All', model == 'Ensemble', date == max(date))
+  dplyr::filter(level == 'Controls', model == 'Ensemble', date == max(date))
 
 most_recent_forecast = max(for_data$date)
 for_data = filter(for_data, date == most_recent_forecast)
@@ -55,8 +56,8 @@ forecast_viz(obs_data = obs_data_newmoon,
 source("tools/forecast_tools.R")
 
 data = compile_forecasts()
-ensemble = dplyr::filter(data, level == 'All', model == 'Ensemble', date == max(date))
-sp_predictions = get_sp_predicts(ensemble, 'All', lead_time = 1)
+ensemble = dplyr::filter(data, level == 'Controls', model == 'Ensemble', date == max(date))
+sp_predictions = get_sp_predicts(ensemble, 'Contols', lead_time = 1)
 sp_predict = plot_species_forecast(sp_predictions)
 plot(sp_predict)
 ```

@@ -28,17 +28,19 @@ new_moons = read.csv(new_moon_file)
 new_moons$censusdate = as.Date(new_moons$censusdate)
 
 # Setup rodent observations
-species_abundance = portalr::abundance(shape='flat', level='Controls') %>%
-  rename(actual = abundance) %>%
-  mutate(level='Controls',currency='abundance') %>%
+species_abundance = portalr::abundance(shape='flat', level='treatment', length="longterm") %>%
+  filter(treatment=="control") %>%
+  rename(actual = abundance, level = treatment) %>%
+  mutate(currency='abundance') %>%
   left_join(new_moons, by='period') %>%
   filter(species %in% species_of_interest)
 
-total_abundance = portalr::abundance(shape='flat', level='Controls') %>%
+total_abundance = portalr::abundance(shape='flat', level='treatment', length="longterm") %>%
+  filter(treatment=="control") %>%
   group_by(period) %>%
   summarise(actual=sum(abundance)) %>%
   ungroup() %>%
-  mutate(level='Controls',currency='abundance',species='total') %>%
+  mutate(level='treatment',currency='abundance',species='total') %>%
   left_join(new_moons, by='period')
 
 observation_data = species_abundance %>%
