@@ -7,7 +7,7 @@ source("tools/forecast_tools.R")
 library(portalr)
 
 # get most recent rodent data
-rodents = abundance("repo", shape='flat', level='treatment')
+rodents = abundance("repo", shape='flat', level='treatment', length='longterm')
 most_recent_period = max(rodents$period)
 observed = dplyr::filter(rodents, period == most_recent_period, treatment=='control')
 
