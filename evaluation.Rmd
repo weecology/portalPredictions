@@ -52,7 +52,7 @@ observation_data = species_abundance %>%
 ## How have the models done recently?
 
 This graph shows the forecast error of some recent forecasts for the most recent sampling dates. This is shown for all model types in the columns and several common rodent species (and total rodents) in the rows. These evaluations are for the Control plots where no manipulation is done. 
-```{r recent_eval, echo=FALSE, message=TRUE, warning=FALSE,, fig.width=15, fig.height=15}
+```{r recent_eval, echo=FALSE, message=FALSE, warning=FALSE,, fig.width=15, fig.height=15}
 ###############################################
 #Get all the recent forecasts
 forecast_data = compile_forecasts(use_hindcasts = FALSE) %>%
@@ -170,7 +170,7 @@ These graphs show errors as a function of lead time. The lead time is the number
 **Coverage**: This is the percentage of observations which fell within the 95% confidence interval of a forecast. Ideally this would be equal to 0.95. If it's higher than 0.95 the forecasts intervals are too wide, if it's lower then the forecast intervals are too narrow.
 
 
-```{r hindcast_eval, echo=FALSE, message=TRUE, warning=FALSE,, fig.width=9, fig.height=15}
+```{r hindcast_eval, echo=FALSE, message=FALSE, warning=FALSE,, fig.width=9, fig.height=15}
 
 #Get the all the forecasts made during observation period
 forecast_data = compile_forecasts(use_hindcasts = TRUE)
