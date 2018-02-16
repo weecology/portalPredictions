@@ -28,23 +28,24 @@ new_moons = read.csv(new_moon_file)
 new_moons$censusdate = as.Date(new_moons$censusdate)
 
 # Setup rodent observations
-species_abundance = portalr::abundance("repo", shape='flat', level='treatment', length="longterm") %>%
+species_abundance = portalr::abundance("repo", shape='flat', level='treatment', 
+                                       length="longterm", time='newmoon') %>%
   filter(treatment=="control") %>%
   rename(actual = abundance, level = treatment) %>%
-  mutate(currency='abundance') %>%
-  left_join(new_moons, by='period') %>%
+  mutate(level='Controls',currency='abundance') %>%
   filter(species %in% species_of_interest)
 
-total_abundance = portalr::abundance("repo", shape='flat', level='treatment', length="longterm") %>%
+total_abundance = portalr::abundance("repo", shape='flat', level='treatment', 
+                                     length="longterm", time='newmoon') %>%
   filter(treatment=="control") %>%
-  group_by(period) %>%
+  group_by(newmoonnumber) %>%
   summarise(actual=sum(abundance)) %>%
   ungroup() %>%
-  mutate(level='treatment',currency='abundance',species='total') %>%
-  left_join(new_moons, by='period')
+  mutate(level='Controls',currency='abundance',species='total')
 
 observation_data = species_abundance %>%
-  bind_rows(total_abundance)
+  bind_rows(total_abundance) %>% 
+  left_join(new_moons, by='newmoonnumber')
 
 ```
 
@@ -81,7 +82,7 @@ forecast_data = forecast_data %>%
 ##################################
 #Combine forecasts and oservations
 forecast_errors = forecast_data %>%
-  left_join(observation_data, by=c('species','level','currency','newmoonnumber')) %>% 
+  left_join(observation_data, by=c('newmoonnumber','level','species','currency')) %>% 
   mutate(rmse = sqrt((estimate - actual)^2))
 
 # Sometimes there are model runs on the same day and with all the same info,
