@@ -101,9 +101,32 @@
           spec_forecast <- zero_abund_forecast
           spec_aic <- 1e6
         } else{
-          spec_forecast <- predict(best_model, num_forecast_newmoons, 
-                                   level = CI_level, newdata = weathermeans)
+          spec_forecast <- tryCatch(predict(best_model, 
+                                            num_forecast_newmoons, 
+                                            level = CI_level, 
+                                            newdata = weathermeans),
+                                    error = function(x) {NA})
           spec_aic <- best_model_aic
+ 
+          if(is.na(spec_forecast)){
+            predictors <- weather_data[ , unlist(NULL)]
+            prop_model <- tryCatch(tsglm(species_abundance, 
+                                       model = model_setup, 
+                                       distr = "poisson",
+                                       xreg = predictors, 
+                                       link = "log"),
+                                    error = function(x) {NA})
+            spec_forecast <- predict(prop_model, 
+                                     num_forecast_newmoons, 
+                                     level = CI_level, 
+                                     newdata = weathermeans)
+            spec_aic <- prop_model_aic 
+
+            if(is.na(spec_forecast)){
+              spec_forecast <- zero_abund_forecast
+              spec_aic <- 1e6
+            }
+          }
         }
 
       }
