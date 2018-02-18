@@ -60,9 +60,16 @@
         nbgarch_mod <- tsglm(species_abundance, 
                              model = list(past_obs = 1, past_mean = 12),
                              distr = "nbinom", link = "log")
+        if(nbgarch_mod$sigmasq == Inf){
+          nbgarch_mod <- tsglm(species_abundance, 
+                               model = list(past_obs = 1, past_mean = 12),
+                               distr = "poisson", link = "log")
+        }
+
         spec_forecast <- predict(nbgarch_mod, num_forecast_newmoons, 
-                                 level = CI_level)
+                                   level = CI_level)
         spec_aic <- AIC(nbgarch_mod)
+        
       } 
 
       estimate <- as.numeric(spec_forecast$pred)
