@@ -78,6 +78,7 @@
         best_model_aic <- Inf
         best_model <- NA
         model_count <- 1
+
         for(proposed_covariates in covariates){
           cat("Fitting Model", model_count, "\n")
           predictors <- weather_data[ , unlist(proposed_covariates)]
@@ -90,21 +91,29 @@
                                  error = function(x) {NA})
           prop_model_aic <- tryCatch(AIC(prop_model), 
                                      error = function(x) {Inf})
+          prop_forecast <- tryCatch(predict(prop_model, 
+                                            num_forecast_newmoons, 
+                                            level = CI_level, 
+                                            newdata = weathermeans),
+                                    error = function(x) {NA})
+
           if(prop_model_aic < best_model_aic){
             best_model <- prop_model
             best_model_aic <- prop_model_aic
+
+            spec_forecast <- prop_forecast
+            spec_aic <- prop_model_aic
           }
+
           model_count <- model_count + 1
         }
 
-        if(is.na(best_model)){
+        fit_fails <- length(which(is.na(best_model) == T))
+        
+        if(fit_fails > 0){
           spec_forecast <- zero_abund_forecast
           spec_aic <- 1e6
-        } else{
-          spec_forecast <- predict(best_model, num_forecast_newmoons, 
-                                   level = CI_level, newdata = weathermeans)
-          spec_aic <- best_model_aic
-        }
+        } 
 
       }
 

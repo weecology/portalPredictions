@@ -69,7 +69,7 @@ for(this_newmoon in initial_time_newmoons){
     filter(newmoonnumber <= this_newmoon)
   
   weather_data = read.csv("data/weather_data.csv") %>%
-    filter(newmoonnumber <= this_newmoon)
+    filter(NewMoonNumber_with_lag <= this_newmoon)
   
   #Update files in tools directory to use in this specific hindcast
   #Write data files
