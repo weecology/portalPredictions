@@ -82,6 +82,12 @@
         for(proposed_covariates in covariates){
           cat("Fitting Model", model_count, "\n")
           predictors <- weather_data[ , unlist(proposed_covariates)]
+
+          if(length(proposed_covariates) > 0){
+            fcast_predictors <- weathermeans[ , unlist(proposed_covariates)]
+          } else{
+            fcast_predictors <- NULL
+          }
           model_setup <- list(past_obs = 1, past_mean = 12)
           prop_model <- tryCatch(tsglm(species_abundance, 
                                        model = model_setup, 
@@ -94,7 +100,7 @@
           prop_forecast <- tryCatch(predict(prop_model, 
                                             num_forecast_newmoons, 
                                             level = CI_level, 
-                                            newdata = weathermeans),
+                                            newxreg = fcast_predictors),
                                     error = function(x) {NA})
 
           if(prop_model_aic < best_model_aic){
