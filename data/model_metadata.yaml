@@ -1,5 +1,6 @@
 filename_suffix: forecasts
 forecast_date: '2018-02-16'
+pred_interval: 0.9
 forecast_newmoons:
 - 503
 - 504
