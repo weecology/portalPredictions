@@ -9,13 +9,7 @@
 <meta name="generator" content="pandoc" />
 
 
-<meta name="author" content="Ethan P. White^{1,2,3}" />
-<meta name="author" content="Glenda M. Yenni^1" />
-<meta name="author" content="Shawn D. Taylor^4" />
-<meta name="author" content="Erica M. Christensen^1" />
-<meta name="author" content="Ellen K. Bledsoe^4" />
-<meta name="author" content="Juniper L. Simonis^1" />
-<meta name="author" content="S. K. Morgan Ernest^{1,3}" />
+<meta name="author" content="Ethan P. White^{1,2,3}, Glenda M. Yenni^1, Shawn D. Taylor^4, Erica M. Christensen^1, Ellen K. Bledsoe^4, Juniper L. Simonis^1, S. K. Morgan Ernest^{1,3}" />
 
 
 <title>Automated iterative near-term forecasting for the Portal Project</title>
@@ -125,13 +119,7 @@ $(document).ready(function () {
 
 
 <h1 class="title toc-ignore">Automated iterative near-term forecasting for the Portal Project</h1>
-<h4 class="author"><em>Ethan P. White<span class="math inline">\(^{1,2,3}\)</span></em></h4>
-<h4 class="author"><em>Glenda M. Yenni<span class="math inline">\(^1\)</span></em></h4>
-<h4 class="author"><em>Shawn D. Taylor<span class="math inline">\(^4\)</span></em></h4>
-<h4 class="author"><em>Erica M. Christensen<span class="math inline">\(^1\)</span></em></h4>
-<h4 class="author"><em>Ellen K. Bledsoe<span class="math inline">\(^4\)</span></em></h4>
-<h4 class="author"><em>Juniper L. Simonis<span class="math inline">\(^1\)</span></em></h4>
-<h4 class="author"><em>S. K. Morgan Ernest<span class="math inline">\(^{1,3}\)</span></em></h4>
+<h4 class="author"><em>Ethan P. White<span class="math inline">\(^{1,2,3}\)</span>, Glenda M. Yenni<span class="math inline">\(^1\)</span>, Shawn D. Taylor<span class="math inline">\(^4\)</span>, Erica M. Christensen<span class="math inline">\(^1\)</span>, Ellen K. Bledsoe<span class="math inline">\(^4\)</span>, Juniper L. Simonis<span class="math inline">\(^1\)</span>, S. K. Morgan Ernest<span class="math inline">\(^{1,3}\)</span></em></h4>
 
 </div>
 
@@ -143,12 +131,12 @@ $(document).ready(function () {
 <p><span class="math inline">\(^4\)</span> School of Natural Resources and Environment, University of Florida Gainesville, FL, United States</p>
 <div id="abstract" class="section level1">
 <h1>Abstract</h1>
-<ul>
+<ol style="list-style-type: decimal">
 <li>Most forecasts for the future state of ecological systems are conducted once and never updated or assessed. As a result, many available ecological forecasts are not based on the most up-to-date data, and the scientific progress of ecological forecasting models is slowed by a lack of feedback on how well the forecasts perform.</li>
 <li>Iterative near-term ecological forecasting involves repeated daily to annual scale forecasts of an ecological system as new data becomes available and regular assessment of the resulting forecasts. We demonstrate how automated iterative near-term forecasting systems for ecology can be constructed by building one to conduct monthly forecasts of rodent abundances at the Portal Project, a long-term study with over 40 years of monthly data. This system automates most aspects of the six stages of converting raw data into new forecasts: data collection, data sharing, data manipulation, modeling and forecasting, archiving, and presentation of the forecasts.</li>
 <li>The forecasting system uses R code for working with data, fitting models, making forecasts, and archiving and presenting these forecasts. The resulting pipeline is automated using continuous integration (a software development tool) to run the entire pipeline once a week. The cyberinfrastructure is designed for long-term maintainability and to allow the easy addition of new models. Constructing this forecasting system required a team with expertise ranging from field site experience to software development.</li>
 <li>Automated near-term iterative forecasting systems will allow the science of ecological forecasting to advance more rapidly and provide the most up-to-date forecasts possible for conservation and management. These forecasting systems will also accelerate basic science by allowing new models of natural systems to be quickly implemented and compared to existing models. Using existing technology, and teams with diverse skill sets, it is possible for ecologists to build these systems and use them to advance our understanding of natural systems.</li>
-</ul>
+</ol>
 <p>Key-words: forecasting, prediction, mammals, iterative forecasting, Portal Project</p>
 </div>
 <div id="introduction" class="section level1">
@@ -222,6 +210,10 @@ $(document).ready(function () {
 <div id="acknowledgements" class="section level1">
 <h1>Acknowledgements</h1>
 <p>We thank Henry Senyondo for help with continuous integration and Hao Ye and Juniper Simonis for discussions and feedback on the manuscript. We thank all of the graduate students, postdocs, and volunteers who have collected the Portal Project over the last 40 years and the developers of the software and tools that made this project possible. This research was supported by the National Science Foundation through grant 1622425 to S.K.M. Ernest and by the Gordon and Betty Moore Foundation’s Data-Driven Discovery Initiative through grant GBMF4563 to E.P. White.</p>
+</div>
+<div id="data-accessibility" class="section level1">
+<h1>Data Accessibility</h1>
+<p>The data used in this study is from the Portal Project and is openly available (CC0) on GitHub (<a href="https://github.com/weecology/PortalData" class="uri">https://github.com/weecology/PortalData</a>). Code for reproducing all analyses is available on GitHub (<a href="https://github.com/weecology/portalPredictions" class="uri">https://github.com/weecology/portalPredictions</a>) and archived on Zenodo <span class="citation">(White et al., 2018b)</span>. Forecasts made by this system are all archived to Zenodo <span class="citation">(White et al., 2018a)</span>.</p>
 </div>
 <div id="box-1.-key-practices-for-automated-iterative-near-term-ecological-forecasting" class="section level1">
 <h1>Box 1. Key practices for automated iterative near-term ecological forecasting</h1>
@@ -370,6 +362,12 @@ $(document).ready(function () {
 </div>
 <div id="ref-white2013">
 <p>White, E. P., Baldridge, E., Brym, Z. T., Locey, K. J., McGlinn, D. J., &amp; Supp, S. R. (2013). Nine simple ways to make it easier to (re) use your data. <em>Ideas in Ecology and Evolution</em>, <em>6</em>(2).</p>
+</div>
+<div id="ref-zenodoforecasts">
+<p>White, E. P., Bledsoe, E. K., Christensen, E. M., Harris, D. J., Simonis, J. L., Taylor, S. D., … Ernest, S. K. M. (2018a, February). Weecology/forecasts: 2018-02-17. doi:<a href="https://doi.org/10.5281/zenodo.839580">10.5281/zenodo.839580</a></p>
+</div>
+<div id="ref-zenodocode">
+<p>White, E. P., Yenni, G. M., Taylor, C., Shawn D and, Bledsoe, E. K., Simonis, J. L., &amp; Ernest, S. K. M. (2018b, February). Weecology/portalPredictions 2018-02-16. doi:<a href="https://doi.org/10.5281/zenodo.833438">10.5281/zenodo.833438</a></p>
 </div>
 <div id="ref-wickham2011">
 <p>Wickham, H. (2011). Testthat: Get started with testing. <em>The R Journal</em>, <em>3</em>, 5–10. Retrieved from <a href="http://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf" class="uri">http://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf</a></p>
