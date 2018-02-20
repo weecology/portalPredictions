@@ -1,11 +1,19 @@
 ---
 title: "Automated iterative near-term forecasting for the Portal Project"
+author:
+- Ethan P. White$^{1,2,3}$
+- Glenda M. Yenni$^1$
+- Shawn D. Taylor$^4$
+- Erica M. Christensen$^1$
+- Ellen K. Bledsoe$^4$
+- Juniper L. Simonis$^1$
+- S. K. Morgan Ernest$^{1,3}$
 csl: mee.csl
-fontsize: 12pt
 output:
   pdf_document:
     keep_tex: yes
   html_document: default
+geometry: left=3.5cm, right=3.5cm, top=2.25cm, bottom=2.25cm, headheight=12pt, letterpaper
 header-includes:
 - \usepackage{times}
 - \usepackage{setspace}
@@ -13,10 +21,19 @@ header-includes:
 - \doublespacing
 - \usepackage{lineno}
 - \linenumbers
-geometry: left=3.5cm, right=3.5cm, top=2.25cm, bottom=2.25cm, headheight=12pt, letterpaper
+fontsize: 12pt
 bibliography: refs.bib
 ---
 \raggedright
+
+$^1$ Department of Wildlife Ecology and Conservation, University of Florida, Gainesville, FL, United States
+
+$^2$ Informatics Institute, University of Florida, Gainesville, FL, United States
+
+$^3$ Biodiversity Institute, University of Florida, Gainesville, FL, United States
+
+$^4$ School of Natural Resources and Environment, University of Florida Gainesville, FL, United States
+
 
 # Abstract
 
