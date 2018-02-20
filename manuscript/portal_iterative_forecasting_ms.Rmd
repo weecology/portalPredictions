@@ -1,18 +1,12 @@
 ---
 title: "Automated iterative near-term forecasting for the Portal Project"
-author:
-- Ethan P. White$^{1,2,3}$
-- Glenda M. Yenni$^1$
-- Shawn D. Taylor$^4$
-- Erica M. Christensen$^1$
-- Ellen K. Bledsoe$^4$
-- Juniper L. Simonis$^1$
-- S. K. Morgan Ernest$^{1,3}$
+author: Ethan P. White$^{1,2,3}$, Glenda M. Yenni$^1$, Shawn D. Taylor$^4$, Erica
+  M. Christensen$^1$, Ellen K. Bledsoe$^4$, Juniper L. Simonis$^1$, S. K. Morgan Ernest$^{1,3}$
 csl: mee.csl
 output:
-  html_document: default
   pdf_document:
     keep_tex: yes
+  html_document: default
 geometry: left=3.5cm, right=3.5cm, top=2.25cm, bottom=2.25cm, headheight=12pt, letterpaper
 header-includes:
 - \usepackage{times}
@@ -37,10 +31,10 @@ $^4$ School of Natural Resources and Environment, University of Florida Gainesvi
 
 # Abstract
 
-* Most forecasts for the future state of ecological systems are conducted once and never updated or assessed. As a result, many available ecological forecasts are not based on the most up-to-date data, and the scientific progress of ecological forecasting models is slowed by a lack of feedback on how well the forecasts perform.
-* Iterative near-term ecological forecasting involves repeated daily to annual scale forecasts of an ecological system as new data becomes available and regular assessment of the resulting forecasts. We demonstrate how automated iterative near-term forecasting systems for ecology can be constructed by building one to conduct monthly forecasts of rodent abundances at the Portal Project, a long-term study with over 40 years of monthly data. This system automates most aspects of the six stages of converting raw data into new forecasts: data collection, data sharing, data manipulation, modeling and forecasting, archiving, and presentation of the forecasts.
-* The forecasting system uses R code for working with data, fitting models, making forecasts, and archiving and presenting these forecasts. The resulting pipeline is automated using continuous integration (a software development tool) to run the entire pipeline once a week. The cyberinfrastructure is designed for long-term maintainability and to allow the easy addition of new models. Constructing this forecasting system required a team with expertise ranging from field site experience to software development.
-* Automated near-term iterative forecasting systems will allow the science of ecological forecasting to advance more rapidly and provide the most up-to-date forecasts possible for conservation and management. These forecasting systems will also accelerate basic science by allowing new models of natural systems to be quickly implemented and compared to existing models. Using existing technology, and teams with diverse skill sets, it is possible for ecologists to build these systems and use them to advance our understanding of natural systems.
+1. Most forecasts for the future state of ecological systems are conducted once and never updated or assessed. As a result, many available ecological forecasts are not based on the most up-to-date data, and the scientific progress of ecological forecasting models is slowed by a lack of feedback on how well the forecasts perform.
+2. Iterative near-term ecological forecasting involves repeated daily to annual scale forecasts of an ecological system as new data becomes available and regular assessment of the resulting forecasts. We demonstrate how automated iterative near-term forecasting systems for ecology can be constructed by building one to conduct monthly forecasts of rodent abundances at the Portal Project, a long-term study with over 40 years of monthly data. This system automates most aspects of the six stages of converting raw data into new forecasts: data collection, data sharing, data manipulation, modeling and forecasting, archiving, and presentation of the forecasts.
+3. The forecasting system uses R code for working with data, fitting models, making forecasts, and archiving and presenting these forecasts. The resulting pipeline is automated using continuous integration (a software development tool) to run the entire pipeline once a week. The cyberinfrastructure is designed for long-term maintainability and to allow the easy addition of new models. Constructing this forecasting system required a team with expertise ranging from field site experience to software development.
+4. Automated near-term iterative forecasting systems will allow the science of ecological forecasting to advance more rapidly and provide the most up-to-date forecasts possible for conservation and management. These forecasting systems will also accelerate basic science by allowing new models of natural systems to be quickly implemented and compared to existing models. Using existing technology, and teams with diverse skill sets, it is possible for ecologists to build these systems and use them to advance our understanding of natural systems.
 
 Key-words: forecasting, prediction, mammals, iterative forecasting, Portal Project
 
@@ -121,7 +115,12 @@ We developed infrastructure for automatically making iterative forecasts with th
 
 # Acknowledgements
 
-We thank Henry Senyondo for help with continuous integration and Hao Ye and Juniper Simonis for discussions and feedback on the manuscript. We thank all of the graduate students, postdocs, and volunteers who have collected the Portal Project over the last 40 years and the developers of the software and tools that made this project possible. This research was supported by the National Science Foundation through grant 1622425 to S.K.M. Ernest and by the Gordon and Betty Moore Foundation’s Data-Driven Discovery Initiative through grant GBMF4563 to E.P. White.
+We thank Henry Senyondo for help with continuous integration and Hao Ye for discussions and feedback on the manuscript. We thank all of the graduate students, postdocs, and volunteers who have collected the Portal Project over the last 40 years and the developers of the software and tools that made this project possible. This research was supported by the National Science Foundation through grant 1622425 to S.K.M. Ernest and by the Gordon and Betty Moore Foundation’s Data-Driven Discovery Initiative through grant GBMF4563 to E.P. White.
+
+# Data Accessibility
+
+The data used in this study is from the Portal Project and is openly available (CC0) on GitHub (https://github.com/weecology/PortalData). Code for reproducing all analyses is available on GitHub (https://github.com/weecology/portalPredictions) and archived on Zenodo [@zenodocode]. Forecasts made by this system are all archived to Zenodo [@zenodoforecasts].
+
 
 # Box 1. Key practices for automated iterative near-term ecological forecasting
 
