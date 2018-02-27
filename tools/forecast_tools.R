@@ -379,3 +379,66 @@ forecast_viz <- function(obs_data, obs_date_col_name, obs_val_col_name, for_data
     geom_line(data = for_data_sub, mapping = aes_string(x = for_date_col_name, y = for_val_col_name), color = "blue") +
     labs(x='',y=ylabel)
 }
+
+
+####################################################################################
+#' Download downscaled climate forecast data for a single location
+#' 
+#' Obtained from https://climate.northwestknowledge.net/RangelandForecast/download.php
+#' 
+#' @param climate_model Individual climate models available are 
+#'                      c('CFSv2','CMC1','CMC2','GFDL-FLOR','GFDL','NASA','NCAR'),
+#'                      'ENSMEAN' is the mean of all models.
+#' @param lead_time the months into the future to obtain forecasts. Max of 7
+#' @param lat latitude Default is for Portal, AZ
+#' @param lon longitude Default is for Portal, AZ
+#' 
+#' @return a data.frame with precipitation(mm), temperature(C), year, and month. Temperature is the mean temperature
+#'         for the month, while precipitation is the total forecasted precip.
+
+get_climate_forecasts = function(climate_model = 'ENSMEAN', 
+                                 lat = 31.9555, lon = -109.0744,
+                                 lead_time = 6){
+  
+  valid_models = c('CFSv2', 'CMC1', 'CMC2', 'GFDL-FLOR', 'GFDL', 'NASA', 'NCAR', 'ENSMEAN')
+  
+  if(!climate_model %in% valid_models){
+    stop(paste0('Unknown climate model: ',climate_model))
+  }
+  if(!lead_time %in% 1:7){
+    stop(paste0('Lead time must an integer be between 1 and 7, got: ',lead_time))
+  }
+  
+  today = Sys.Date()
+  start_time = strftime(today, format='%Y-%m-%d')
+  end_time = strftime(today %m+% months(lead_time), format='%Y-%m-%d')
+  
+  # add in timestamps for URL
+  start_time = paste0(start_time,'T00%3A00%3A00Z')
+  end_time = paste0(end_time,'T00%3A00%3A00Z')
+  
+  base_url = 'https://tds-proxy.nkn.uidaho.edu/thredds/ncss/NWCSC_INTEGRATED_SCENARIOS_ALL_CLIMATE/bcsd-nmme/monthlyForecasts/bcsd_nmme_metdata_'
+  
+  full_url = paste0(base_url, climate_model,
+                    '_forecast_1monthAverage.nc?var=prate&var=tmp2m',
+                    '&latitude=', lat, '&longitude=', lon,
+                    '&time_start=', start_time, '&time_end=', end_time,
+                    '&accept=csv')
+  
+  raw_download = RCurl::getURL(full_url)
+  
+  df=read.table(sep=',',skip=1,text=raw_download)
+  colnames(df) = c('date','lat','lon','precipitation','temperature')
+  
+  df = df %>%
+    mutate(date = as_date(date)) %>%
+    mutate(year = year(date), month=month(date)) %>%
+    select(-date, -lat, -lon)
+  
+  # F to C and inches to mm
+  df$temperature = (df$temperature - 32) * 5 / 9
+  df$precipitation = df$precipitation * 25.4
+  
+  return(df)
+  
+}
