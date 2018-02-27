@@ -26,6 +26,7 @@ weather_data = get_weather_data(moons, rodent_data$all, lag=6)
 write.csv(rodent_data$all,"data/rodent_all.csv",row.names = FALSE)
 write.csv(rodent_data$controls,"data/rodent_controls.csv",row.names = FALSE)
 write.csv(weather_data,"data/weather_data.csv",row.names = FALSE)
+write.csv(moons, "data/moon_data.csv", row.names = FALSE)
 
 #Write YAML
 writeLines(as.yaml(list(filename_suffix = filename_suffix,forecast_date = as.character(forecast_date), forecast_newmoons = forecast_newmoons, 
