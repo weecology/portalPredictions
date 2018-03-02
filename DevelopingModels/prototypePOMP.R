@@ -6,7 +6,7 @@ source('tools/model_tools.R')
 
 process.sim <- "
   double Z_last = Z;
-  double Z_mean_lt = b0 + b1 * flt + b2 * flt * flt + b3 * flt * flt * flt;
+  double Z_mean_lt = b0 + b1 * long_t + b2 * long_t * long_t + b3 * long_t * long_t * long_t;
   double Z_mean_de = b4 * cos(M_2PI * fod) + b5 * sin(M_2PI * fod);
   double Z_mean_yr = b6 * cos(M_2PI * foy) + b7 * sin(M_2PI * foy); 
   double Z_mean = Z_last + Z_mean_lt + Z_mean_de + Z_mean_yr;
@@ -67,7 +67,8 @@ from.scale <- "
   obs_data <- data.frame(time = poss_newmoons, Y = poss_total)
 
   newmoon_date <- as.Date(as.character(moons$newmoondate))
-  cov_newmoons <- t0:max(census_newmoons)
+  cov_newmoons <- t0:max(obs_newmoons)
+  incl_newmoons <- which(moons$newmoonnumber %in% cov_newmoons)
   cov_dates <- newmoon_date[incl_newmoons]
 
   yr <- format(cov_dates, "%Y")
@@ -83,9 +84,8 @@ from.scale <- "
   fod <- days_into_decade / days_in_decade
 
   long_t <- cov_newmoons - t0
-  flt <- long_t / max(long_t)
 
-  cov_data <- data.frame(time = cov_newmoons, flt, fod, foy)
+  cov_data <- data.frame(time = cov_newmoons, long_t, fod, foy)
 
 
   params <- c("b0" = -0.0001, "b1" = -0.001, "b2" = 0.012, "b3" = -0.01,
@@ -95,8 +95,20 @@ from.scale <- "
               "rho" = 0.8,
               "Z.0" = 3.6) 
 
+  params <- c(
+"Z.0" = 4.956,
+"Z_tau" = 21.4,
+"b0" = 0.022,
+"b1" = 0,
+"b2" = 0,
+"b3" = -0.033,
+"b4" = -0.027,
+"b5" = 0.020,
+"b6" = 0.016,
+"b7" =  0.103, "rho" = 0.8)
+
   mod <- pomp(data = obs_data, times = "time", t0 = t0,
-              covar = covariates, tcovar = "time",
+              covar = cov_data, tcovar = "time",
               rprocess = rprocess, rmeasure = rmeasure, dmeasure = dmeasure,
               paramnames = names(params), params = params,
               statenames = statenames,
@@ -108,17 +120,17 @@ from.scale <- "
 
 
   npfs <- 1000
-  Z0s <- runif(npfs, 3.6, 5)
-  b0s <- runif(npfs, -0.1, 0.1)
-  b1s <- runif(npfs, -0.001, -0.001)
-  b2s <- runif(npfs, -0.012, -0.012)
-  b3s <- runif(npfs, -0.01, -0.01)
-  b4s <- runif(npfs, -0.015, -0.015)
-  b5s <- runif(npfs, 0.01, 0.01)
-  b6s <- runif(npfs, 0.07, 0.07)
-  b7s <- runif(npfs, 0.07, 0.07)
-  Z_taus <- runif(npfs, 10, 200)
-  rhos <- runif(npfs, 0.5, 0.95)
+  Z0s <- runif(npfs, 4.96, 4.96)
+  b0s <- runif(npfs, 0.022, 0.022)
+  b1s <- runif(npfs, -0.1, 0.1)
+  b2s <- runif(npfs, -0.1, 0.1)
+  b3s <- runif(npfs, -0.1, 0.1)
+  b4s <- runif(npfs, -0.027, -0.027)
+  b5s <- runif(npfs, 0.020, 0.020)
+  b6s <- runif(npfs, 0.016, 0.016)
+  b7s <- runif(npfs, 0.103, 0.103)
+  Z_taus <- runif(npfs, 21.4, 21.4)
+  rhos <- runif(npfs, 0.8, 0.8)
 
   ep <- data.frame(Z0s, b0s, b1s, b2s, b3s, b4s, b5s, b6s, b7s, Z_taus, rhos)
   colnames(ep) <- c("Z0", "b0", "b1", "b2", "b3", "b4", "b5", "b6", "b7", "Z_tau", "rho")
@@ -171,7 +183,7 @@ plot(ep$rho, lls, col = rgb(0.5, 0.5, 0.5, 0.3))
   b6s <- runif(nifs, -0.2, 0.2)
   b7s <- runif(nifs, -0.2, 0.2)
   Z_taus <- runif(nifs, 10, 200)
-  rhos <- runif(nifs, 0.8, 0.8)
+  rhos <- runif(nifs, 0.1, 0.9)
 
   guesses2 <- data.frame(Z0s, Z_taus, b0s, b1s, b2s, b3s, b4s, b5s, b6s, b7s, rhos)
   colnames(guesses2) <- c("Z0", "Z_tau", "b0", "b1", "b2", "b3", "b4", "b5", "b6", "b7", "rho")
@@ -216,27 +228,17 @@ plot(ep$rho, lls, col = rgb(0.5, 0.5, 0.5, 0.3))
 
 stopImplicitCluster()
 
-xx <- matrix(NA, 10, 11)
-xx[1,] <- runs2[[1]]@paramMatrix[,5000]
-xx[2,] <- runs2[[3]]@paramMatrix[,5000]
-xx[3,]<- runs2[[4]]@paramMatrix[,5000]
-xx[4,] <- runs2[[6]]@paramMatrix[,5000]
-xx[5,] <- runs2[[7]]@paramMatrix[,5000]
-xx[6,] <- runs2[[8]]@paramMatrix[,5000]
-xx[7,] <- runs2[[9]]@paramMatrix[,5000]
-xx[8,] <- runs2[[10]]@paramMatrix[,5000]
-xx[9,] <- runs2[[11]]@paramMatrix[,5000]
-xx[10,] <- runs2[[12]]@paramMatrix[,5000]
-colnames(xx) <- names(runs2[[12]]@paramMatrix[,5000])
 
-hist(xx[,1], breaks = seq(3.5, 4.5, .05))
-hist(xx[,2])
-hist(xx[,6], breaks = seq(-2,3, .1))
+xx <- matrix(NA, 12, 11)
 
-
-sum(xx[,6] * (xxll/sum(xxll)))
+for(i in 1:12)
+xx[i,] <- runs2[[i]]@paramMatrix[,5000]
 
 xx <- data.frame(xx)
+colnames(xx) <- names(runs2[[i]]@paramMatrix[,5000])
+
+xx
+
 
   ncores <- 6
   doParallel::registerDoParallel(ncores)
@@ -253,31 +255,45 @@ xxll <- foreach::foreach(i = 1:nrow(xx), .combine = rbind, .errorhandling = "pas
 
 
 
+plot(xx[,12], xxll)
+
+
+
+hist(xx[,1], breaks = seq(3.5, 4.5, .05))
+hist(xx[,2])
+hist(xx[,6], breaks = seq(-2,3, .1))
+
+
+sum(xx[,6] * (xxll/sum(xxll)))
+
+xx <- data.frame(xx)
+
+
 
 plot(xx[,4], xxll)
 colnames(xx)[6]
-sum(xx[,10] * (xxll/sum(xxll)))
+sum(xx[,11] * (xxll/sum(xxll)))
 
-z.0 4.09
-tau_z 19.4
-b0 -0.01
-b1 0.236
-b2 -0.66
-b3 0.465
-b4 -0.025
-b5 0.017
-b6 0.0012
-b7 0.111
+z.0 4.76
+tau_z 20.32
+b0 0.037
+b1 -0.142
+b2 0.097
+b3 0.012
+b4 -0.014
+b5 0.031
+b6 0.019
+b7 0.112
+rho 0.404
 
 
-  params <- c("b0" = -0.0001, "b1" = 0.236, "b2" = -0.66, "b3" = 0.465,
-              "b4" = -0.025, "b5" = 0.017,
-              "b6" = 0.0012, "b7" = 0.111,
-              "Z_tau" = 19.4, 
-              "rho" = 0.8,
-              "Z.0" = 4.09) 
 params <- as.numeric(as.vector( xx[1,]))
 names(params) <- names(runs2[[12]]@paramMatrix[,5000])
+
+params <- c("Z.0" = 4.76, "Z_tau" = 20.32, "b0" = 0.037, "b1" = -0.142, "b2" = 0.097, "b3" = 0.012, "b4" = -0.014, "b5" = 0.031,
+"b6" = 0.019, "b7" = 0.112, "rho" = 0.404)
+
+
   mod <- pomp(data = obs_data, times = "time", t0 = t0,
               covar = covariates, tcovar = "time",
               rprocess = rprocess, rmeasure = rmeasure, dmeasure = dmeasure,
