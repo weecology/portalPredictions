@@ -9,6 +9,7 @@
 
   library(tscount)
   library(forecast)
+  library(yaml)
   source('tools/model_tools.R')
 
 #' Function for pevGARCH
@@ -164,7 +165,7 @@
 
   all <- read.csv("data/rodent_all.csv")
   controls <- read.csv("data/rodent_controls.csv")
-  weather <- read.csv("data/weather_data.csv")
+  weather <- read.csv("data/weather_data.csv") %>% lag_weather_data(all, lag=6)
   model_metadata <- yaml.load_file("data/model_metadata.yaml")
   forecast_date <- as.Date(model_metadata$forecast_date)
   file_suffix <- model_metadata$filename_suffix
@@ -173,13 +174,8 @@
   forecast_newmoons <- model_metadata$forecast_newmoons
   num_fcast_nmoons <- length(forecast_months)
 
-  weathermeans <- weather[dim(weather)[1] - 36:dim(weather)[1], ] %>%
-                   group_by(month) %>% 
-                   summarise_all(funs(mean(., na.rm=TRUE))) %>%
-                   select(-c(year, newmoonnumber, NewMoonNumber_with_lag)) %>%
-                   slice(match(forecast_months, month))
+  weatherforecast <- build_weather_forecast()
   
-
   forecasts_all <- forecast_pevgarch(abundances = all, 
                                     forecast_date = forecast_date,
                                     forecast_months = forecast_months, 
@@ -189,7 +185,7 @@
                                     num_forecast_newmoons = num_fcast_nmoons, 
                                     CI_level = 0.9,
                                     weather_data = weather,
-                                    weathermeans = weathermeans)
+                                    weathermeans = weatherforecast)
 
   forecasts_controls <- forecast_pevgarch(abundances = controls, 
                                     forecast_date = forecast_date,
@@ -200,7 +196,7 @@
                                     num_forecast_newmoons =  num_fcast_nmoons, 
                                     CI_level = 0.9,
                                     weather_data = weather,
-                                    weathermeans = weathermeans)
+                                    weathermeans = weatherforecast)
 
   forecasts <- rbind(forecasts_all[[1]], forecasts_controls[[1]])
   aics <- rbind(forecasts_all[[2]], forecasts_controls[[2]])

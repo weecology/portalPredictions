@@ -1,5 +1,6 @@
+'%>%' <- magrittr::"%>%"
 library(yaml)
-source('tools/model_functions.R')
+source('tools/data_tools.R')
 
 filename_suffix = 'forecasts'
 
@@ -20,7 +21,9 @@ forecast_months = future_moons$month[future_moons$newmoonnumber %in% forecast_ne
 forecast_years = future_moons$year[future_moons$newmoonnumber %in% forecast_newmoons]
 
 rodent_data = get_rodent_data(moons, forecast_date)
-weather_data = get_weather_data(moons, rodent_data$all, lag=6)
+weather_data = portalr::weather("Monthly",fill=TRUE) %>% dplyr::ungroup() %>%
+                dplyr::left_join(moons, by=c('year','month')) %>%
+                dplyr::select("year","month","mintemp","maxtemp","meantemp","precipitation","ndvi","newmoonnumber")
 
 #Write data files
 write.csv(rodent_data$all,"data/rodent_all.csv",row.names = FALSE)
