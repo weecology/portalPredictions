@@ -4,12 +4,11 @@
 #  heteroscedasticity model with a Poisson response variable
 #  For this model, environmental data are included as predictors of abundance,
 #  but with a 6 month lag between the covariate values and the abundances.
-#  The specific lag is imposed in the get_weather_data function, which is 
-#  used in the prepare_data script to produce the weather data here.
 
   library(tscount)
   library(forecast)
   library(yaml)
+  library(magrittr)
   source('tools/model_tools.R')
 
 #' Function for pevGARCH
@@ -22,12 +21,17 @@
 #' @param level name of the type of plots included ("All" or "Controls")
 #' @param num_forecast_newmoons number of new moons to forecast
 #' @param CI_level confidence interval level used for forecast envelope
+#' @param weather_data table of already lagged weather data
+#' @param weather_forecast table of forecasted weather
+#' @param ndvi_data table of already lagged NDVI data
+#' @param ndvi_forecast table of forecasted NDVI
 #' @return list of forecast and aic tables
 #'
   forecast_pevgarch <- function(abundances, forecast_date, forecast_months, 
                                 forecast_years, forecast_newmoons, level,
                                 num_forecast_newmoons, CI_level = 0.9,
-                                weather_data, weathermeans){
+                                weather_data, weather_fcast,
+                                ndvi_data, ndvi_fcast){
 
     species <- colnames(abundances)[2:(ncol(abundances) - 3)]
 
@@ -43,6 +47,13 @@
 
     zero_abund_forecast <- list(zero_abund_mean, zero_abund_interval)
     names(zero_abund_forecast) <- c("pred", "interval")
+
+    cov_data <- right_join(weather_data, ndvi_data, by = "newmoonnumber")
+    cov_nm <- cov_data$newmoonnumber
+    abund_nm <- interpolated_abundances$moons
+    included_nm <- which(cov_nm %in% abund_nm)
+    cov_data <- cov_data[included_nm, ]
+    fcast_data <- right_join(weather_fcast, ndvi_fcast, by = "newmoonnumber")
 
     covariates <- list(c('maxtemp', 'meantemp', 'precipitation', 'ndvi'),
                        c('maxtemp', 'mintemp', 'precipitation', 'ndvi'),
@@ -82,10 +93,10 @@
 
         for(proposed_covariates in covariates){
           cat("Fitting Model", model_count, "\n")
-          predictors <- weather_data[ , unlist(proposed_covariates)]
+          predictors <- cov_data[ , unlist(proposed_covariates)]
 
           if(length(proposed_covariates) > 0){
-            fcast_predictors <- weathermeans[ , unlist(proposed_covariates)]
+            fcast_predictors <- fcast_data[ , unlist(proposed_covariates)]
           } else{
             fcast_predictors <- NULL
           }
@@ -165,8 +176,11 @@
 
   all <- read.csv("data/rodent_all.csv")
   controls <- read.csv("data/rodent_controls.csv")
-  weather <- read.csv("data/weather_data.csv") %>% lag_weather_data(all, lag=6)
+  moons <- read.csv("data/moon_data.csv")
+  weather <- read.csv("data/weather_data.csv") 
+  ndvi <- read.csv("data/ndvi_data.csv")
   model_metadata <- yaml.load_file("data/model_metadata.yaml")
+
   forecast_date <- as.Date(model_metadata$forecast_date)
   file_suffix <- model_metadata$filename_suffix
   forecast_months <- model_metadata$forecast_months
@@ -174,18 +188,29 @@
   forecast_newmoons <- model_metadata$forecast_newmoons
   num_fcast_nmoons <- length(forecast_months)
 
-  weatherforecast <- build_weather_forecast()
-  
+  weather_lag <- lag_data(weather, lag = 6, tail = FALSE)
+  weather_fcast <- fcast_weather(moons = moons, lag = 6, lead_time = 6)
+  weather_fcast_lag <- lag_data(weather_fcast, lag = 6, tail = TRUE)
+
+  ndvi_filled <- fill_ndvi(ndvi, moons, forecast_newmoons, lag = 6) 
+  ndvi_lag <- lag_data(ndvi_filled, lag = 6, tail = FALSE) 
+  lead_newmoons <- forecast_newmoons[1:6]
+  ndvi_fcast <- fcast_ndvi(ndvi_filled, moons, lead_newmoons, lag = 6)
+  ndvi_fcast_lag <- lag_data(ndvi_fcast, lag = 6, tail = TRUE)
+ 
+
   forecasts_all <- forecast_pevgarch(abundances = all, 
                                     forecast_date = forecast_date,
                                     forecast_months = forecast_months, 
                                     forecast_years = forecast_years,
                                     forecast_newmoons = forecast_newmoons,
                                     level = "All",
-                                    num_forecast_newmoons = num_fcast_nmoons, 
+                                    num_forecast_newmoons = num_fcast_nmoons,
                                     CI_level = 0.9,
-                                    weather_data = weather,
-                                    weathermeans = weatherforecast)
+                                    weather_data = weather_lag,
+                                    weather_fcast = weather_fcast_lag,
+                                    ndvi_data = ndvi_lag,
+                                    ndvi_fcast = ndvi_fcast_lag)
 
   forecasts_controls <- forecast_pevgarch(abundances = controls, 
                                     forecast_date = forecast_date,
@@ -193,10 +218,12 @@
                                     forecast_years = forecast_years,
                                     forecast_newmoons = forecast_newmoons,
                                     level = "Controls",
-                                    num_forecast_newmoons =  num_fcast_nmoons, 
+                                    num_forecast_newmoons = num_fcast_nmoons,
                                     CI_level = 0.9,
-                                    weather_data = weather,
-                                    weathermeans = weatherforecast)
+                                    weather_data = weather_lag,
+                                    weather_fcast = weather_fcast_lag,
+                                    ndvi_data = ndvi_lag,
+                                    ndvi_fcast = ndvi_fcast_lag)
 
   forecasts <- rbind(forecasts_all[[1]], forecasts_controls[[1]])
   aics <- rbind(forecasts_all[[2]], forecasts_controls[[2]])

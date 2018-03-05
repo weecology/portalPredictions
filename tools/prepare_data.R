@@ -21,14 +21,20 @@ forecast_months = future_moons$month[future_moons$newmoonnumber %in% forecast_ne
 forecast_years = future_moons$year[future_moons$newmoonnumber %in% forecast_newmoons]
 
 rodent_data = get_rodent_data(moons, forecast_date)
-weather_data = portalr::weather("Monthly",fill=TRUE) %>% dplyr::ungroup() %>%
-                dplyr::left_join(moons, by=c('year','month')) %>%
-                dplyr::select("year","month","mintemp","maxtemp","meantemp","precipitation","ndvi","newmoonnumber")
+weather_data = weather("newmoon",fill=TRUE) %>% dplyr::ungroup() %>%
+                dplyr::select("mintemp","maxtemp","meantemp","precipitation","newmoonnumber")
+incompletes <- which(is.na(weather_data$newmoonnumber))
+if(length(incompletes) > 0){
+  weather_data <- weather_data[-incompletes, ]
+}
+ndvi_data <- summarize_ndvi("newmoon")
 
 #Write data files
 write.csv(rodent_data$all,"data/rodent_all.csv",row.names = FALSE)
 write.csv(rodent_data$controls,"data/rodent_controls.csv",row.names = FALSE)
 write.csv(weather_data,"data/weather_data.csv",row.names = FALSE)
+write.csv(moons, "data/moon_data.csv", row.names = FALSE)
+write.csv(ndvi_data, "data/ndvi_data.csv", row.names = FALSE)
 
 #Write YAML
 writeLines(as.yaml(list(filename_suffix = filename_suffix,forecast_date = as.character(forecast_date), forecast_newmoons = forecast_newmoons, 
