@@ -9,6 +9,7 @@
   library(forecast)
   library(yaml)
   library(magrittr)
+  library(portalr)
   source('tools/model_tools.R')
 
 #' Function for pevGARCH
