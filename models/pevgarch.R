@@ -182,26 +182,28 @@
   model_metadata <- yaml.load_file("data/model_metadata.yaml")
 
   forecast_date <- as.Date(model_metadata$forecast_date)
-  last_moon <- model_metadata$forecast_newmoons[1] - 1
   file_suffix <- model_metadata$filename_suffix
-  forecast_months <- model_metadata$forecast_months
-  forecast_years <- model_metadata$forecast_years
-  forecast_newmoons <- model_metadata$forecast_newmoons
+
+  forecast_months <- model_metadata$rodent_forecast_months
+  forecast_years <- model_metadata$rodent_forecast_years
+  forecast_newmoons <- model_metadata$rodent_forecast_newmoons
   num_fcast_nmoons <- length(forecast_months)
   fc_nms <- moons[, c("newmoonnumber", "newmoondate", "period", "censusdate")]
 
-  weather_lag <- lag_data(weather, lag = 6, tail = FALSE)
-  weather_fcast <- fcast_weather(moons = fc_nms, lag = 6, lead_time = 6)
-  weather_fcast_lag <- lag_data(weather_fcast, lag = 6, tail = TRUE)
+  covariate_fcast_nms <- model_metadata$covariate_forecast_newmoons
+  weather_fcast <- fcast_weather(moons = fc_nms, lag = 0, lead_time = 6)
+  weather_all <- bind_rows(weather, weather_fcast)
+  weather_all_lag <- lag_data(weather_all, lag = 6, tail = TRUE)
+  ndvi_fcast <- fcast_ndvi(ndvi, "newmoon", lead = 6, fc_nms)
+  ndvi_all <- bind_rows(ndvi, ndvi_fcast)
+  ndvi_all_lag <- lag_data(ndvi_all, lag = 6, tail = TRUE) 
 
-  ndvi_filled <- fill_missing_ndvi(ndvi, "newmoon", last_moon, moons) 
-  ndvi_lag <- lag_data(ndvi_filled, lag = 6, tail = FALSE) 
-  ndvi_lag_tail <- lag_data(ndvi_filled, lag = 6, tail = TRUE) 
-
-  lead_newmoons <- num_fcast_nmoons 
-  ndvi_fcast <- fcast_ndvi(ndvi_filled, "newmoon", lead_newmoons, fc_nms)
-  ndvi_fcast_lag <- lag_data(ndvi_fcast, lag = 6, tail = FALSE)
-  ndvi_fcast_lag <- rbind(tail(ndvi_lag_tail, 6), ndvi_fcast_lag)
+  which_w_fcast <- which(weather_all_lag$newmoonnumber %in% forecast_newmoons)
+  which_n_fcast <- which(ndvi_all_lag$newmoonnumber %in% forecast_newmoons)
+  weather_fit_lag <- weather_all_lag[-which_w_fcast, ]
+  weather_fcast_lag <- weather_all_lag[which_w_fcast, ]
+  ndvi_fit_lag <- ndvi_all_lag[-which_n_fcast, ] 
+  ndvi_fcast_lag <- ndvi_all_lag[which_n_fcast, ]
 
   forecasts_all <- forecast_pevgarch(abundances = all, 
                                     forecast_date = forecast_date,
@@ -211,9 +213,9 @@
                                     level = "All",
                                     num_forecast_newmoons = num_fcast_nmoons,
                                     CI_level = 0.9,
-                                    weather_data = weather_lag,
+                                    weather_data = weather_fit_lag,
                                     weather_fcast = weather_fcast_lag,
-                                    ndvi_data = ndvi_lag,
+                                    ndvi_data = ndvi_fit_lag,
                                     ndvi_fcast = ndvi_fcast_lag)
 
   forecasts_controls <- forecast_pevgarch(abundances = controls, 
@@ -224,9 +226,9 @@
                                     level = "Controls",
                                     num_forecast_newmoons = num_fcast_nmoons,
                                     CI_level = 0.9,
-                                    weather_data = weather_lag,
+                                    weather_data = weather_fit_lag,
                                     weather_fcast = weather_fcast_lag,
-                                    ndvi_data = ndvi_lag,
+                                    ndvi_data = ndvi_fit_lag,
                                     ndvi_fcast = ndvi_fcast_lag)
 
   forecasts <- rbind(forecasts_all[[1]], forecasts_controls[[1]])
