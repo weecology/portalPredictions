@@ -182,22 +182,26 @@
   model_metadata <- yaml.load_file("data/model_metadata.yaml")
 
   forecast_date <- as.Date(model_metadata$forecast_date)
+  last_moon <- model_metadata$forecast_newmoons[1] - 1
   file_suffix <- model_metadata$filename_suffix
   forecast_months <- model_metadata$forecast_months
   forecast_years <- model_metadata$forecast_years
   forecast_newmoons <- model_metadata$forecast_newmoons
   num_fcast_nmoons <- length(forecast_months)
+  fc_nms <- moons[, c("newmoonnumber", "newmoondate", "period", "censusdate")]
 
   weather_lag <- lag_data(weather, lag = 6, tail = FALSE)
-  weather_fcast <- fcast_weather(moons = moons, lag = 6, lead_time = 6)
+  weather_fcast <- fcast_weather(moons = fc_nms, lag = 6, lead_time = 6)
   weather_fcast_lag <- lag_data(weather_fcast, lag = 6, tail = TRUE)
 
-  ndvi_filled <- fill_ndvi(ndvi, moons, forecast_newmoons, lag = 6) 
+  ndvi_filled <- fill_missing_ndvi(ndvi, "newmoon", last_moon, moons) 
   ndvi_lag <- lag_data(ndvi_filled, lag = 6, tail = FALSE) 
-  lead_newmoons <- forecast_newmoons[1:6]
-  ndvi_fcast <- fcast_ndvi(ndvi_filled, moons, lead_newmoons, lag = 6)
-  ndvi_fcast_lag <- lag_data(ndvi_fcast, lag = 6, tail = TRUE)
- 
+  ndvi_lag_tail <- lag_data(ndvi_filled, lag = 6, tail = TRUE) 
+
+  lead_newmoons <- num_fcast_nmoons 
+  ndvi_fcast <- fcast_ndvi(ndvi_filled, "newmoon", lead_newmoons, fc_nms)
+  ndvi_fcast_lag <- lag_data(ndvi_fcast, lag = 6, tail = FALSE)
+  ndvi_fcast_lag <- rbind(tail(ndvi_lag_tail, 6), ndvi_fcast_lag)
 
   forecasts_all <- forecast_pevgarch(abundances = all, 
                                     forecast_date = forecast_date,
