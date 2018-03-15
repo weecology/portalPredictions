@@ -33,37 +33,6 @@ get_moon_data <- function(){
   return(moons)
 }
 
-#' Get next 12 new moon dates and assign newmoon numbers for forecasting
-#' @param moons current newmoonnumber table
-#' 
-#' @return expected moons table for 12 future new moons
-#' @examples
-#' get_future_moons(moons)
-#' 
-get_future_moons <- function(moons, num_future_moons=12){
-  # Get dates of 12 future new moons from navy website
-  # Returns data.frame of newmoons in the future in the same format as the output of get_moon_data() function
-  most_recent_year = tail(moons$year,1)
-  most_recent_month = tail(moons$month,1)+1
-  if (most_recent_month == 13) {
-    most_recent_month = 1
-    most_recent_year = most_recent_year +1
-  }
-  newmoondates = htmltab(doc=paste("http://aa.usno.navy.mil/cgi-bin/aa_phases.pl?year=",most_recent_year,"&month=",most_recent_month,"&day=1&nump=50&format=t", sep=""),which=1)
-  newmoondates = gsub('.{6}$', '', newmoondates$"Date and Time (Universal Time)"[newmoondates$"Moon Phase" == "New Moon"])
-  newmoondates = as.Date(ymd(newmoondates, format='%Y %m %d'))
-  newmoondates = newmoondates[1:num_future_moons]
-  if(length(newmoondates)!=num_future_moons){stop('Not enough moons obtained. Expected ',num_future_moons,' got ',length(newmoondates))}
-  #Set up dataframe for new moon dates to be added
-  newmoons = data.frame(newmoonnumber = max(moons$newmoonnumber)+1:length(newmoondates),
-                        newmoondate = as.Date(newmoondates),
-                        period = NA,
-                        censusdate = as.Date(NA),
-                        year = year(newmoondates),
-                        month = month(newmoondates))
-  return(newmoons)
-}
-
 ####################################################################################
 #' Get rodent data, tailored for forecasting (all plots and controls only)
 #' @param moons current newmoonnumber table
