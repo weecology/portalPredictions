@@ -35,12 +35,12 @@ test_that("dates are valid", {
 })
 
 test_that("years and months are valid", {
-  expect_true(all(forecasts$month %in% model_metadata$forecast_months))
-  expect_true(all(forecasts$year %in% model_metadata$forecast_years))
+  expect_true(all(forecasts$month %in% model_metadata$rodent_forecast_months))
+  expect_true(all(forecasts$year %in% model_metadata$rodent_forecast_years))
 })
 
 test_that("newmoons are valid", {
-  expect_true(all(forecasts$newmoonnumber %in% model_metadata$forecast_newmoons))
+  expect_true(all(forecasts$newmoonnumber %in% model_metadata$rodent_forecast_newmoons))
 })
 
 test_that("currencies are valid", {
