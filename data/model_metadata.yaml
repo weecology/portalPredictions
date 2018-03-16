@@ -1,6 +1,6 @@
 filename_suffix: forecasts
-forecast_date: '2018-03-09'
-forecast_newmoons:
+forecast_date: '2018-03-14'
+covariate_forecast_newmoons:
 - 504
 - 505
 - 506
@@ -13,7 +13,7 @@ forecast_newmoons:
 - 513
 - 514
 - 515
-forecast_months:
+covariate_forecast_months:
 - 3.0
 - 4.0
 - 5.0
@@ -26,7 +26,55 @@ forecast_months:
 - 12.0
 - 1.0
 - 2.0
-forecast_years:
+covariate_forecast_years:
+- 2018.0
+- 2018.0
+- 2018.0
+- 2018.0
+- 2018.0
+- 2018.0
+- 2018.0
+- 2018.0
+- 2018.0
+- 2018.0
+- 2019.0
+- 2019.0
+rodent_forecast_newmoons:
+- 501
+- 502
+- 503
+- 504
+- 505
+- 506
+- 507
+- 508
+- 509
+- 510
+- 511
+- 512
+- 513
+- 514
+- 515
+rodent_forecast_months:
+- 12.0
+- 1.0
+- 2.0
+- 3.0
+- 4.0
+- 5.0
+- 6.0
+- 7.0
+- 8.0
+- 9.0
+- 10.0
+- 11.0
+- 12.0
+- 1.0
+- 2.0
+rodent_forecast_years:
+- 2017.0
+- 2018.0
+- 2018.0
 - 2018.0
 - 2018.0
 - 2018.0

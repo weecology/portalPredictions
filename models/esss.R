@@ -78,9 +78,9 @@
   model_metadata <- yaml.load_file("data/model_metadata.yaml")
   forecast_date <- as.Date(model_metadata$forecast_date)
   filename_suffix <- model_metadata$filename_suffix
-  forecast_months <- model_metadata$forecast_months
-  forecast_years <- model_metadata$forecast_years
-  forecast_newmoons <- model_metadata$forecast_newmoons
+  forecast_months <- model_metadata$rodent_forecast_months
+  forecast_years <- model_metadata$rodent_forecast_years
+  forecast_newmoons <- model_metadata$rodent_forecast_newmoons
   num_fcast_nmoons <- length(forecast_months)
 
   forecasts_all <- forecast_esss(abundances = all, 
