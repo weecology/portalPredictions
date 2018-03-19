@@ -34,10 +34,9 @@ AutoArima (Automatic Auto-Regressive Integrated Moving Average) is a
 flexible Auto-Regressive Integrated Moving Average (ARIMA) model fit to the 
 data at the composite (full site and just control plots) spatial level
 and the composite (community) ecological level. The model is selected and 
-fitted using the `auto.arima` (with the `lambda` argument set to 0) and 
-`forecast` functions in the **forecast** package [@Hyndman2013; @Hyndman2017]
-and the `forecast_autoarima` function in our **portalPredictions** package 
-[@PortalPredictions].
+fitted using the `auto.arima` and `forecast` functions in the **forecast**
+package [@Hyndman2013; @Hyndman2017] and the `forecast_autoarima` function 
+in our **portalPredictions** package [@PortalPredictions].
 
 Generally, ARIMA models are defined according to three model structure 
 parameters: the number of autoregressive terms (p), the degree of differencing 
