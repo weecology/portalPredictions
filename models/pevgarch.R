@@ -192,10 +192,16 @@
   fc_nms <- moons[, c("newmoonnumber", "newmoondate", "period", "censusdate")]
 
   covariate_fcast_nms <- model_metadata$covariate_forecast_newmoons
-  weather_fcast <- fcast_weather(moons = fc_nms, lag = 0, lead_time = 6)
+  ncfnm <- length(covariate_fcast_nms)
+  w_fc_nms <- fc_nms
+  addl_need_to_fcast <- which(fc_nms$newmoonnumber %in% covariate_fcast_nms)
+  if(length(addl_need_to_fcast) > 0){
+    w_fc_nms <- w_fc_nms[-addl_need_to_fcast, ]
+  }
+  weather_fcast <- fcast_weather(moons = w_fc_nms, lag = 0, lead_time = ncfnm - 6)
   weather_all <- bind_rows(weather, weather_fcast)
   weather_all_lag <- lag_data(weather_all, lag = 6, tail = TRUE)
-  ndvi_fcast <- fcast_ndvi(ndvi, "newmoon", lead = 6, fc_nms)
+  ndvi_fcast <- fcast_ndvi(ndvi, "newmoon", lead = ncfnm - 6, fc_nms)
   ndvi_all <- bind_rows(ndvi, ndvi_fcast)
   ndvi_all_lag <- lag_data(ndvi_all, lag = 6, tail = TRUE) 
 
