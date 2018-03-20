@@ -10,10 +10,22 @@ forecast_date = Sys.Date()
 
 portalr::download_observations(release_only = FALSE)
 moons = get_moon_data()
+moons$newmoondate <- as.Date(as.character(moons$newmoondate))
 current_moons <- select(moons, newmoonnumber, newmoondate, period, censusdate)
-current_moons$newmoondate <- as.Date(as.character(current_moons$newmoondate))
 #get dates of 12 new moons following newmoon of interest
 future_moons <- get_future_moons(moons)
+
+not_future_moons <- future_moons[which(future_moons$newmoondate < forecast_date), ]
+if (nrow(not_future_moons) > 0){
+
+  add_nfm <- not_future_moons
+  add_nfm$year <- as.numeric(format(add_nfm$newmoondate, "%Y"))
+  add_nfm$month <- as.numeric(format(add_nfm$newmoondate, "%m"))
+  moons <- rbind(moons, add_nfm)
+  current_moons <- select(moons, newmoonnumber, newmoondate, period, censusdate)
+  future_moons <- get_future_moons(moons)
+}
+
 total_moons <- rbind(current_moons, future_moons)
 
 
