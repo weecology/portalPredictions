@@ -6,5 +6,5 @@ if ("pacman" %in% rownames(installed.packages()) == FALSE) install.packages("pac
 # Install analysis packages using pacman
 
 pacman::p_load(devtools, dplyr, forecast, ggplot2, htmltab, lubridate, ltsa, magrittr, 
-               parallel, readr, rmarkdown, testthat, tidyverse, tscount, yaml, zoo)
+               parallel, RCurl, readr, rmarkdown, testthat, tidyverse, tscount, yaml, zoo)
 pacman::p_load_gh('weecology/portalr')
