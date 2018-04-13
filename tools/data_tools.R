@@ -52,7 +52,7 @@ get_rodent_data <- function(moons, forecast_date){
   #get Portal abundance data for the entire site and for control plots only.
   
   #Control plots
-  controls = portalr::abundance(level="Treatment",type="Rodents",length="Longterm", incomplete = FALSE)
+  controls = portalr::abundance(clean=FALSE,level="Treatment",type="Rodents",length="Longterm", incomplete = FALSE)
   #Drop PI
   controls = controls[ , -which(colnames(controls) == "PI")]
   #The total rodent count in each treatment
@@ -66,7 +66,7 @@ get_rodent_data <- function(moons, forecast_date){
     select(-newmoondate,-censusdate)
   
   #All plots
-  all = portalr::abundance(level="Site",type="Rodents",length="all", incomplete = FALSE)
+  all = portalr::abundance(clean=FALSE,level="Site",type="Rodents",length="all", incomplete = FALSE)
   #Drop PI
   all = all[ , -which(colnames(all) == "PI")]
   #The total rodent count across the entire site

@@ -14,7 +14,7 @@ forecast_date = Sys.Date()
 initial_time_newmoons=490:403
 
 #Get the most recent data loaded into the data folder
-portalr::download_observations(release_only=FALSE)
+portalr::download_observations()
 moons = get_moon_data()
 rodent_data = get_rodent_data(moons, forecast_date)
 weather_data = get_weather_data(moons, rodent_data$all, lag=6)

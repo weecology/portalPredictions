@@ -8,7 +8,7 @@ filename_suffix = 'forecasts'
 #The date this forecast is run. Always today's date.
 forecast_date = Sys.Date()
 
-portalr::download_observations(release_only = FALSE)
+portalr::download_observations()
 moons = get_moon_data()
 moons$newmoondate <- as.Date(as.character(moons$newmoondate))
 current_moons <- select(moons, newmoonnumber, newmoondate, period, censusdate)
