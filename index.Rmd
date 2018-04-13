@@ -56,7 +56,8 @@ source("tools/forecast_tools.R")
 
 data = compile_forecasts()
 ensemble = dplyr::filter(data, level == 'Controls', model == 'Ensemble', date == max(date))
-sp_predictions = get_sp_predicts(ensemble, 'Controls', lead_time = 1)
+sp_predictions = get_sp_predicts(ensemble, 'Controls', 
+            lead_time = length(unique(ensemble$newmoonnumber)) - 11)
 sp_predict = plot_species_forecast(sp_predictions,
             title=paste0(sp_predictions$forecast_date[2], ": Control plots"))
 
