@@ -1,5 +1,5 @@
 filename_suffix: forecasts
-forecast_date: '2018-05-18'
+forecast_date: '2018-05-25'
 covariate_forecast_newmoons:
 - 506
 - 507
@@ -43,7 +43,6 @@ covariate_forecast_years:
 - 2019.0
 - 2019.0
 rodent_forecast_newmoons:
-- 505
 - 506
 - 507
 - 508
@@ -58,7 +57,6 @@ rodent_forecast_newmoons:
 - 517
 - 518
 rodent_forecast_months:
-- 4.0
 - 5.0
 - 6.0
 - 7.0
@@ -73,7 +71,6 @@ rodent_forecast_months:
 - 4.0
 - 5.0
 rodent_forecast_years:
-- 2018.0
 - 2018.0
 - 2018.0
 - 2018.0
