@@ -170,7 +170,7 @@ ggplot(forecast_errors, aes(x=censusdate, y=rmse, group=as.character(date), colo
 These graphs show errors as a function of lead time. The lead time is the number of months into the future that forecast is made. The error values are an average of all forecast errors using observations since 2010. Note that this currently uses hindcasts of the prior observations, and is also only for the Control plots.
 
 **RMSE**: Root mean square error, this is a metric used to evaluate the point estimate of a forecast.  
-**Coverage**: This is the percentage of observations which fell within the `r 100 * pred_interval`% confidence interval of a forecast. Ideally this would be equal to `r pred_interval`. If it's higher than `r pred_interval` the forecasts intervals are too wide, if it's lower then the forecast intervals are too narrow.
+**Coverage**: This is the percentage of observations which fell within the 90% confidence interval of a forecast. Ideally this would be equal to 0.90. If it is higher than 0.90 the forecasts intervals are too wide, if it's lower then the forecast intervals are too narrow.
 
 
 ```{r hindcast_eval, echo=FALSE, message=FALSE, warning=FALSE,, fig.width=9, fig.height=15}
