@@ -229,7 +229,7 @@ $(document).ready(function () {
 <h2>How have the models done historically?</h2>
 <p>These graphs show errors as a function of lead time. The lead time is the number of months into the future that forecast is made. The error values are an average of all forecast errors using observations since 2010. Note that this currently uses hindcasts of the prior observations, and is also only for the Control plots.</p>
 <p><strong>RMSE</strong>: Root mean square error, this is a metric used to evaluate the point estimate of a forecast.<br />
-<strong>Coverage</strong>: This is the percentage of observations which fell within the % confidence interval of a forecast. Ideally this would be equal to . If it’s higher than the forecasts intervals are too wide, if it’s lower then the forecast intervals are too narrow.</p>
+<strong>Coverage</strong>: This is the percentage of observations which fell within the 90% confidence interval of a forecast. Ideally this would be equal to 0.90. If it is higher than 0.90 the forecasts intervals are too wide, if it’s lower then the forecast intervals are too narrow.</p>
 <p><img src="evaluation_files/figure-html/hindcast_eval-1.png" width="864" /></p>
 </div>
 

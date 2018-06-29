@@ -1,9 +1,6 @@
 filename_suffix: forecasts
-forecast_date: '2018-04-25'
+forecast_date: '2018-06-29'
 covariate_forecast_newmoons:
-- 505
-- 506
-- 507
 - 508
 - 509
 - 510
@@ -14,10 +11,9 @@ covariate_forecast_newmoons:
 - 515
 - 516
 - 517
+- 518
+- 519
 covariate_forecast_months:
-- 4.0
-- 5.0
-- 6.0
 - 7.0
 - 8.0
 - 9.0
@@ -28,6 +24,8 @@ covariate_forecast_months:
 - 2.0
 - 3.0
 - 4.0
+- 5.0
+- 6.0
 covariate_forecast_years:
 - 2018.0
 - 2018.0
@@ -35,17 +33,13 @@ covariate_forecast_years:
 - 2018.0
 - 2018.0
 - 2018.0
-- 2018.0
-- 2018.0
-- 2018.0
+- 2019.0
+- 2019.0
 - 2019.0
 - 2019.0
 - 2019.0
 - 2019.0
 rodent_forecast_newmoons:
-- 505
-- 506
-- 507
 - 508
 - 509
 - 510
@@ -56,10 +50,9 @@ rodent_forecast_newmoons:
 - 515
 - 516
 - 517
+- 518
+- 519
 rodent_forecast_months:
-- 4.0
-- 5.0
-- 6.0
 - 7.0
 - 8.0
 - 9.0
@@ -70,6 +63,8 @@ rodent_forecast_months:
 - 2.0
 - 3.0
 - 4.0
+- 5.0
+- 6.0
 rodent_forecast_years:
 - 2018.0
 - 2018.0
@@ -77,9 +72,8 @@ rodent_forecast_years:
 - 2018.0
 - 2018.0
 - 2018.0
-- 2018.0
-- 2018.0
-- 2018.0
+- 2019.0
+- 2019.0
 - 2019.0
 - 2019.0
 - 2019.0
