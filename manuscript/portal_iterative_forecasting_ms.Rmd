@@ -175,5 +175,23 @@ Each forecast iteration involves acquiring new data, refitting the models, and m
 
 Forecasts should be openly archived to demonstrate that the forecasts were made without knowledge of the outcomes and to allow the community to assess and compare the performance of different forecasting approaches both now and in the future [@mcgill2012; @tredennick2016; @dietze2018; @harris2018]. Ideally, the forecasts and evaluation of their performance should be automatically posted publicly in a manner that is understandable by both scientists and the broader stakeholder community.
 
+# Box 2. Glossary of terms
+
+**CI.** 'Continuous Integration.' The practice of continuouslly building and testing a code base as it is developed. 
+**Data latency.** The time it takes for data to be available for use.
+**Docker.** An open-source Linux program for containerization (see software container).
+**git.** An open-source version control system.
+**GitHub.** A web-based host for git projects. Other options for a similar service include GitLab or Bitbucket.
+**PortalData.** The git repository for the Portal data, found on GitHub.
+**portalPredictions.** The git repository for the forecasts made using Portal data, found on GitHub.
+**portalr.** An R package for using the Portal data.
+**QA/QC.** 'Quality Assurance.' Testing the quality of a product. 'Quality Control.' The process of ensuring the quality of a product.
+**Rocker.** A project making it easy to use Docker containers in the R environment.
+**Software container.** Allows a developer to package up an application with all of the parts it needs to run reliably.
+**testthat.** R package used to set up automated testing for QA/QC.
+**Travis.** A continuous integration service that integrates easily with GitHub and R. Examples of similar programs are Jenkins or CodeShip.
+**Unit test.** A component of quality control in which each smallest testable part of software is formally tested.
+**Zenodo.** An open data archive that integrates easily with GitHub.
+
 
 # References
