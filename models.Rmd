@@ -41,7 +41,7 @@ in our **portalPredictions** package [@PortalPredictions].
 Generally, ARIMA models are defined according to three model structure 
 parameters: the number of autoregressive terms (p), the degree of differencing 
 (d), and the order of the moving average (q), and are represented as 
-ARIMA(p, q, q) [@Box1970]. While the `auto.arima` function allows for seasonal
+ARIMA(p, d, q) [@Box1970]. While the `auto.arima` function allows for seasonal
 models, the seasonality is hard-coded to be on the same period as the sampling,
 which is not the case for the Portal rodent surveys. As a result, no seasonal 
 models were evaluated. AutoArima is fit flexibly, such that the model 
@@ -88,8 +88,8 @@ our **portalPredictions** package [@PortalPredictions].
 GARCH models are generalized ARMA models and are defined according to their 
 link function, response distribution, and two model structure parameters: 
 the number of autoregressive terms (p) and the order of the moving average 
-(q), and are represented as GARCH(p, q) [@Liboschik2017a]. The PETS model is 
-fit using the log link and a Poisson response, as well as with p = 1 
+(q), and are represented as GARCH(p, q) [@Liboschik2017a]. The pevGARCH model 
+is fit using the log link and a Poisson response, as well as with p = 1 
 (first-order autoregression) and q = 12 (yearly moving average). The 
 environmental variables potentially included in the model are min, mean, and
 max temperatures, precipitation, and NDVI. 
@@ -117,5 +117,12 @@ environmental covariates:
 The final model is an intercept-only model. The single best model of the 11 is 
 selected based on AIC. 
 
+## Ensemble
+
+In addition to the base models, we include an ensemble, constructed using the
+base model AIC weights. The ensemble mean is calculated as the AIC-weighted
+mean of all model means. The ensemble variance is estimated as the sum of 
+the AIC-weighted mean of all model variances and the variance of the estimated
+AIC-weighted mean, calculated using the unbiased estimate of sample variances.
 
 # References
