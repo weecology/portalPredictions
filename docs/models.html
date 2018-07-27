@@ -230,7 +230,7 @@ $(document).ready(function () {
 <div id="autoarima" class="section level2">
 <h2>AutoARIMA</h2>
 <p>AutoArima (Automatic Auto-Regressive Integrated Moving Average) is a flexible Auto-Regressive Integrated Moving Average (ARIMA) model fit to the data at the composite (full site and just control plots) spatial level and the composite (community) ecological level. The model is selected and fitted using the <code>auto.arima</code> and <code>forecast</code> functions in the <strong>forecast</strong> package <span class="citation">(Hyndman and Athanasopoulos 2013; Hyndman 2017)</span> and the <code>forecast_autoarima</code> function in our <strong>portalPredictions</strong> package <span class="citation">(WeecologyLab 2018)</span>.</p>
-<p>Generally, ARIMA models are defined according to three model structure parameters: the number of autoregressive terms (p), the degree of differencing (d), and the order of the moving average (q), and are represented as ARIMA(p, q, q) <span class="citation">(Box and Jenkins 1970)</span>. While the <code>auto.arima</code> function allows for seasonal models, the seasonality is hard-coded to be on the same period as the sampling, which is not the case for the Portal rodent surveys. As a result, no seasonal models were evaluated. AutoArima is fit flexibly, such that the model parameters can vary from fit to fit.</p>
+<p>Generally, ARIMA models are defined according to three model structure parameters: the number of autoregressive terms (p), the degree of differencing (d), and the order of the moving average (q), and are represented as ARIMA(p, d, q) <span class="citation">(Box and Jenkins 1970)</span>. While the <code>auto.arima</code> function allows for seasonal models, the seasonality is hard-coded to be on the same period as the sampling, which is not the case for the Portal rodent surveys. As a result, no seasonal models were evaluated. AutoArima is fit flexibly, such that the model parameters can vary from fit to fit.</p>
 </div>
 <div id="nbgarch" class="section level2">
 <h2>nbGARCH</h2>
@@ -241,7 +241,7 @@ $(document).ready(function () {
 <div id="pevgarch" class="section level2">
 <h2>pevGARCH</h2>
 <p>pevGARCH (Poisson Environmental Variable Auto-Regressive Conditional Heteroskedasticity) is a generalized autoregressive conditional heteroskedasticity (GARCH) model fit to the data at the composite (full site and just control plots) spatial level and both the composite (community) and the articulated (species) ecological levels. The response variable is Poisson, and a variety of environmental variables are considered as covariates. The model for each species is selected and fitted using the <code>tsglm</code> function in the <strong>tscount</strong> package <span class="citation">(Liboschik et al. 2017)</span> and the <code>forecast_pevgarch</code> function in our <strong>portalPredictions</strong> package <span class="citation">(WeecologyLab 2018)</span>.</p>
-<p>GARCH models are generalized ARMA models and are defined according to their link function, response distribution, and two model structure parameters: the number of autoregressive terms (p) and the order of the moving average (q), and are represented as GARCH(p, q) <span class="citation">(Liboschik et al. 2017)</span>. The PETS model is fit using the log link and a Poisson response, as well as with p = 1 (first-order autoregression) and q = 12 (yearly moving average). The environmental variables potentially included in the model are min, mean, and max temperatures, precipitation, and NDVI.</p>
+<p>GARCH models are generalized ARMA models and are defined according to their link function, response distribution, and two model structure parameters: the number of autoregressive terms (p) and the order of the moving average (q), and are represented as GARCH(p, q) <span class="citation">(Liboschik et al. 2017)</span>. The pevGARCH model is fit using the log link and a Poisson response, as well as with p = 1 (first-order autoregression) and q = 12 (yearly moving average). The environmental variables potentially included in the model are min, mean, and max temperatures, precipitation, and NDVI.</p>
 <p>The <code>tsglm</code> function in the <strong>tscount</strong> package <span class="citation">(Liboschik et al. 2017)</span> uses a (conditional) quasi-likelihood based approach to inference. This approach has only been minimally evaluated for models with covariates, although preliminary simulation-based studies are promising <span class="citation">(Liboschik, Fokianos, and Fried 2017)</span>.</p>
 <p>Each species is fit using the following (nonexhaustive) sets of the environmental covariates:</p>
 <ul>
@@ -259,6 +259,10 @@ $(document).ready(function () {
 </ul>
 <p>The final model is an intercept-only model. The single best model of the 11 is selected based on AIC.</p>
 </div>
+<div id="ensemble" class="section level2">
+<h2>Ensemble</h2>
+<p>In addition to the base models, we include an ensemble, constructed using the base model AIC weights. The ensemble mean is calculated as the AIC-weighted mean of all model means. The ensemble variance is estimated as the sum of the AIC-weighted mean of all model variances and the variance of the estimated AIC-weighted mean, calculated using the unbiased estimate of sample variances.</p>
+</div>
 <div id="references" class="section level1 unnumbered">
 <h1>References</h1>
 <div id="refs" class="references">
@@ -266,7 +270,7 @@ $(document).ready(function () {
 <p>Box, G., and G. Jenkins. 1970. <em>Time Series Analysis: Forecasting and Control</em>. Holden-Day.</p>
 </div>
 <div id="ref-Hyndman2017">
-<p>Hyndman, R. J. 2017. “<strong>Forecast</strong>: Forecasting Functions for Time Series and Linear Models.” <a href="http://pkg.robjhyndman.com/forecast" class="uri">http://pkg.robjhyndman.com/forecast</a>.</p>
+<p>Hyndman, R. J. 2017. “<strong>forecast</strong>: Forecasting Functions for Time Series and Linear Models.” <a href="http://pkg.robjhyndman.com/forecast" class="uri">http://pkg.robjhyndman.com/forecast</a>.</p>
 </div>
 <div id="ref-Hyndman2013">
 <p>Hyndman, R. J., and G. Athanasopoulos. 2013. <em>Forecasting: Principles and Practice</em>. OTexts.</p>
@@ -275,10 +279,10 @@ $(document).ready(function () {
 <p>Hyndman, R. J., A. b. Koehler, J. K. Ord, and R. D. Snyder. 2008. <em>Forecasting with Exponential Smoothing: The State Space Approach</em>. Springer-Verlag.</p>
 </div>
 <div id="ref-Liboschik2017b">
-<p>Liboschik, T., K. Fokianos, and R. Fried. 2017. “<strong>Tscount</strong>: An R Package for Analysis of Count Time Series Following Generalized Linear Models.” <em>Journal of Statistical Software</em> 82: 1–51. <a href="https://www.jstatsoft.org/article/view/v082i05" class="uri">https://www.jstatsoft.org/article/view/v082i05</a>.</p>
+<p>Liboschik, T., K. Fokianos, and R. Fried. 2017. “<strong>tscount</strong>: An R Package for Analysis of Count Time Series Following Generalized Linear Models.” <em>Journal of Statistical Software</em> 82: 1–51. <a href="https://www.jstatsoft.org/article/view/v082i05" class="uri">https://www.jstatsoft.org/article/view/v082i05</a>.</p>
 </div>
 <div id="ref-Liboschik2017a">
-<p>Liboschik, T., R. Fried, K. Fokianos, and P. Probst. 2017. “Tscount: Analysis of Count Time Series.” <a href="https://CRAN.R-project.org/package=tscount" class="uri">https://CRAN.R-project.org/package=tscount</a>.</p>
+<p>Liboschik, T., R. Fried, K. Fokianos, and P. Probst. 2017. “<strong>tscount</strong>: Analysis of Count Time Series.” <a href="https://CRAN.R-project.org/package=tscount" class="uri">https://CRAN.R-project.org/package=tscount</a>.</p>
 </div>
 <div id="ref-PortalPredictions">
 <p>WeecologyLab. 2018. “Portal Forecasting.” <a href="https://github.com/weecology/portalPredictions/" class="uri">https://github.com/weecology/portalPredictions/</a>.</p>
