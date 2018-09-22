@@ -130,13 +130,17 @@ get_climate_forecasts = function(climate_model = 'ENSMEAN',
   daily_forecasts <- data.frame(date = days_for_forecast)
 
   df1 = read.table(sep=',',skip=1,text=raw_download[1])
-  df2 = read.table(sep=',',skip=1,text=raw_download[2])
-  df3 = read.table(sep=',',skip=1,text=raw_download[3])
-  df4 = read.table(sep=',',skip=1,text=raw_download[4])
   colnames(df1) = c('date','lat','lon','mintemp')
+  df1[(df1[,"mintemp"] == -9999), "mintemp"] <- NA
+  df2 = read.table(sep=',',skip=1,text=raw_download[2])
   colnames(df2) = c('date','lat','lon','meantemp')
+  df2[(df2[,"meantemp"] == -9999), "meantemp"] <- NA
+  df3 = read.table(sep=',',skip=1,text=raw_download[3])
   colnames(df3) = c('date','lat','lon','maxtemp')
+  df3[(df3[,"maxtemp"] == -9999), "maxtemp"] <- NA
+  df4 = read.table(sep=',',skip=1,text=raw_download[4])
   colnames(df4) = c('date','lat','lon','precipitation')
+  df4[(df4[,"precipitation"] == -9999), "precipitation"] <- NA
   df4$precipitation[which(df4$precipitation < 0)] <- 0
   df <- right_join(df1, df2) %>% right_join(df3) %>% right_join(df4)
   
