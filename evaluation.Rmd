@@ -18,7 +18,7 @@ pred_interval = model_metadata$pred_interval
 models_of_interest = c('AutoArima','Ensemble','ESSS','nbGARCH','pevGARCH')
 
 species_of_interest = c('BA','DM','DO','PP','OT','NA','total')
-species_names = portalr::FullPath('PortalData/Rodents/Portal_rodent_species.csv', '~') %>%
+species_names = portalr:::full_path('PortalData/Rodents/Portal_rodent_species.csv', '~') %>%
   read.csv(stringsAsFactors=FALSE, na.strings = '') %>%
   select(species = speciescode, full_species_name = scientificname)
 
@@ -26,7 +26,7 @@ species_names = portalr::FullPath('PortalData/Rodents/Portal_rodent_species.csv'
 species_names = species_names %>%
   add_row(species='total', full_species_name='Total Rodents')
 
-new_moon_file = portalr::FullPath('PortalData/Rodents/moon_dates.csv', '~')
+new_moon_file = portalr:::full_path('PortalData/Rodents/moon_dates.csv', '~')
 new_moons = read.csv(new_moon_file)
 new_moons$censusdate = as.Date(new_moons$censusdate)
 
