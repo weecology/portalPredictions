@@ -17,9 +17,11 @@ For details on adding a model to the current set, see the [Adding a new model wi
 
 Forecasts are run using Travis CI based on a docker image. This makes the builds
 faster and more reproducible. When adding new packages to this repo it may be
-necessary to update the Docker container using the following commands:
+necessary to update the Docker container. When building, please tag the image with 
+the `latest` tag, as well as a named tag for the date (yyyy-mm-dd).
+Use the following commands:
 
 ```
-sudo docker build -t weecology/portal_predictions .
+sudo docker build -t weecology/portal_predictions:latest -t weecology/portal_predictions:yyyy-mm-dd . 
 sudo docker push weecology/portal_predictions
 ```
