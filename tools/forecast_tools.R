@@ -5,100 +5,6 @@ library(ggplot2)
 library(rmarkdown)
 library(RCurl)
 
-##########################Forecast processing############################
-#' Combine all new forecasts (from the tmp directory), add ensembles
-#' 
-#' @param forecast_date
-#' @param filename_suffix
-#' @return list(forecasts,all_model_aic)
-#' @example forecastall('forecasts')
-
-forecastall <- function(forecast_date,filename_suffix = 'forecasts') {
-  
-  #Append results to forecasts and AIC tables
-  forecasts = do.call(rbind,
-                      lapply(list.files("tmp",pattern = paste(filename_suffix, ".csv",sep=""), full.names = TRUE), 
-                             read.csv, na.strings = "", colClasses = c("Date", "integer", "integer", 
-                                                                       "integer", "character", "character", "character", 
-                                                                       "character", "numeric", "numeric", "numeric",
-                                                                       "integer", "integer", "integer")))
-  
-  all_model_aic = do.call(rbind,
-                          lapply(list.files("tmp",pattern = paste(filename_suffix, "_model_aic.csv",sep=""), full.names = TRUE), 
-                                 read.csv, na.strings = ""))
-  
-  forecast_filename = file.path('predictions', paste(as.character(forecast_date), filename_suffix, ".csv", sep=""))
-  model_aic_filename = file.path('predictions', paste(as.character(forecast_date), filename_suffix, "_model_aic.csv", sep=""))
-  append_csv(forecasts, forecast_filename)
-  append_csv(all_model_aic, model_aic_filename)
-  
-  ########Add ensembles to files############################################
-  ensemble=make_ensemble(forecasts) %>% 
-    subset(select=colnames(forecasts))
-  append_csv(ensemble, forecast_filename)
-  
-  return(list(forecasts,all_model_aic))
-}
-
-######Tools for writing forecasts to file and aics to separate file###############
-#Appending a csv without re-writing the header.
-append_csv=function(df, filename){
-  write.table(df, filename, sep = ',', row.names = FALSE, col.names = !file.exists(filename), append = file.exists(filename))
-}
-
-#Get all model aic values and calculate akaike weights
-compile_aic_weights = function(forecast_folder='./predictions'){
-  model_aic_filenames = list.files(forecast_folder, full.names = TRUE, recursive = TRUE)
-  model_aic_filenames = model_aic_filenames[grepl('model_aic',model_aic_filenames)]
-
-  all_model_aic = purrr::map(model_aic_filenames, ~read.csv(.x, na.strings = '', stringsAsFactors = FALSE)) %>% 
-    bind_rows()
-
-  all_weights = all_model_aic %>%
-    group_by(date,currency, level, species, fit_start_newmoon, fit_end_newmoon, initial_newmoon) %>%
-    mutate(delta_aic = aic-min(aic), weight = exp(-0.5*delta_aic) / sum(exp(-0.5*delta_aic))) %>%
-    ungroup()
-  return(all_weights)
-}
-
-#Create the ensemble model from all other forecasts
-#Uses the weighted mean and weighted sample variance
-#https://en.wikipedia.org/wiki/Weighted_arithmetic_mean
-make_ensemble=function(all_forecasts, models_to_use=NA, CI_level = 0.9){
-  weights = compile_aic_weights()
-  weights$date=as.Date(weights$date)
-  CI_quantile = qnorm((1-CI_level)/2, lower.tail = FALSE)
-
-  #Mean is the weighted mean of all model means.
-  #Variance is the weighted mean of all model variances + the variances of the weighted mean 
-  #using the unbiased estimate of sample variance. See https://github.com/weecology/portalPredictions/pull/65
-  #We only store the prediction interval for models, so backcalculate individual model variance
-  #assuming the same CI_level throughout. 
-  weighted_estimates = all_forecasts %>%
-    mutate(model_var = ((UpperPI - estimate)/CI_quantile)^2) %>%
-    left_join(weights, by=c('date','model','currency','level','species','fit_start_newmoon','fit_end_newmoon','initial_newmoon')) %>%
-    group_by(date, newmoonnumber, forecastmonth, forecastyear,level, currency, species, fit_start_newmoon, fit_end_newmoon, initial_newmoon) %>%
-    summarise(ensemble_estimate = sum(estimate*weight), 
-              weighted_ss = sum(weight * (estimate - ensemble_estimate)^2) ,
-              ensemble_var   = sum(model_var * weight) + weighted_ss / (n()*sum(weight)-1),
-              sum_weight = sum(weight)) %>% #round because the numbers get very very small
-    ungroup() 
-              
-  #Assert that the summed weight of all the model ensembles is 1, as that's what the above variance estimates assume.
-  #Rounded to account for precision errors. Summed weights can also be NA if there are not weights availble for that ensemble. 
-  if(!all(round(weighted_estimates$sum_weight, 10) == 1 | is.na(weighted_estimates$sum_weight))){ stop('Summed weights do not equal 1')}
-
-  ensemble = weighted_estimates %>%
-    mutate(LowerPI = ensemble_estimate - (sqrt(ensemble_var) * CI_quantile),
-           UpperPI = ensemble_estimate + (sqrt(ensemble_var) * CI_quantile)) %>%
-    mutate(LowerPI = ifelse(LowerPI<0, 0, LowerPI)) %>%
-    rename(estimate = ensemble_estimate) %>%
-    select(-ensemble_var, -weighted_ss, -sum_weight)
-  
-  ensemble$model='Ensemble'
-  return(ensemble)
-}
-
 ##########Tools for forecast presentation##############
 
 #' 
@@ -309,7 +215,7 @@ forecast_is_valid=function(forecast_df, verbose=FALSE){
 #' @param forecast_folder str Base folder holding all forecast files
 #' @param verbose bool Output info on file violations
 #' @return dataframe combined forecasts
-compile_forecasts=function(forecast_folder='./predictions', verbose=FALSE, use_hindcasts=FALSE){
+compile_forecasts=function(forecast_folder='./forecasting/predictions', verbose=FALSE, use_hindcasts=FALSE){
   if(use_hindcasts){
     search_string = 'hindcast'
   } else {
