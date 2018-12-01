@@ -25,7 +25,7 @@ FullPath <- function( ReferencePath, BasePath=getwd()){
 #' 
 get_moon_data <- function(){
   #Get the newmoon number of the  most recent sample
-  moons <- read.csv(FullPath('PortalData/Rodents/moon_dates.csv', '~'), header=T)
+  moons <- read.csv(FullPath('forecasting/PortalData/Rodents/moon_dates.csv', '~'), header=T)
   
   #Add in year and month to join with the rest of the data
   moons$year=year(moons$newmoondate)

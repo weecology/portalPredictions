@@ -13,7 +13,7 @@ if [ "$TRAVIS_EVENT_TYPE" == "cron" ]; then
 
     # Commit changes to portalPredictions repo
     git checkout master
-    git add predictions/* docs/* data/*
+    git add forecasting/* docs/* 
     git commit -m "Update forecasts: Travis Build $TRAVIS_BUILD_NUMBER [ci skip]"
 
     git remote add deploy https://${GITHUB_TOKEN}@github.com/weecology/portalPredictions.git > /dev/null 2>&1
@@ -28,7 +28,7 @@ if [ "$TRAVIS_EVENT_TYPE" == "cron" ]; then
     # Clone forecasts archive repo
     cd ../../
     git clone https://github.com/weecology/forecasts
-    cp portalPredictions/portalPredictionsResult/predictions/*.* forecasts/portal/
+    cp portalPredictions/portalPredictionsResult/forecasting/predictions/*.* forecasts/portal/
     cd forecasts
 
     # Commit to forecasts repo

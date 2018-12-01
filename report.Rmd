@@ -18,11 +18,11 @@ moon_code = dplyr::filter(newmoons_table,period==most_recent_period) %>% select(
 most_recent_date = dplyr::filter(newmoons_table,period==most_recent_period) %>% dplyr::pull(censusdate)
 
 # get most recent forecast prior to data collection
-files = data.frame(names = list.files(path = './predictions', pattern = '*forecasts.csv'))
+files = data.frame(names = list.files(path = './forecasting/predictions', pattern = '*forecasts.csv'))
 files$filedates = as.Date(substr(files$names,1,10),format='%Y-%m-%d')
 latest_forecast = dplyr::filter(files,filedates<most_recent_date) %>% tail(1)
 
-data = read.csv(paste('predictions/',latest_forecast$names,sep=''),na.strings = '')
+data = read.csv(paste('forecasting/predictions/',latest_forecast$names,sep=''),na.strings = '')
 
 ensemble = dplyr::filter(data, level == 'Controls', model == 'Ensemble', newmoonnumber==moon_code)
 sp_predictions = get_sp_predicts(ensemble, 'Controls', lead_time = 1)
@@ -55,11 +55,11 @@ moon_code = dplyr::filter(newmoons_table,period==most_recent_period) %>% select(
 most_recent_date = dplyr::filter(newmoons_table,period==most_recent_period) %>% dplyr::pull(censusdate)
 
 # get most recent forecast prior to data collection
-files = data.frame(names = list.files(path = './predictions', pattern = '*forecasts.csv'))
+files = data.frame(names = list.files(path = './forecasting/predictions', pattern = '*forecasts.csv'))
 files$filedates = as.Date(substr(files$names,1,10),format='%Y-%m-%d')
 latest_forecast = dplyr::filter(files,filedates<most_recent_date) %>% tail(1)
 
-data = read.csv(paste('predictions/',latest_forecast$names,sep=''),na.strings = '')
+data = read.csv(paste('forecasting/predictions/',latest_forecast$names,sep=''),na.strings = '')
 
 ensemble = dplyr::filter(data, level == 'All', model == 'Ensemble', newmoonnumber==moon_code)
 sp_predictions = get_sp_predicts(ensemble, 'All', lead_time = 1)
