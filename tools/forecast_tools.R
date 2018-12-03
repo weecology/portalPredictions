@@ -241,6 +241,7 @@ forecast_is_valid <- function(forecast_df, verbose=FALSE){
 #' @param forecast_folder str Base folder holding all forecast files
 #' @param verbose bool Output info on file violations
 #' @return dataframe combined forecasts
+
 compile_forecasts <- function(forecast_folder='./predictions', verbose=FALSE, use_hindcasts=FALSE){
   if(use_hindcasts){
     search_string = 'hindcast'
