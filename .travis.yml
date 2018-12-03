@@ -9,7 +9,6 @@ before_install:
 
 script:
   - docker exec -i ppred bash -c "cd portalPredictions && Rscript install-packages.R"
-  - docker exec -i ppred bash -c "cd portalPredictions && Rscript tools/prepare_data.R"
   - docker exec -i ppred bash -c "cd portalPredictions && Rscript PortalForecasts.R"
   - docker exec -i ppred bash -c "cd portalPredictions && Rscript tests/testthat.R"
 
