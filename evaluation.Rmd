@@ -8,47 +8,41 @@ knitr::opts_chunk$set(
 	message = FALSE,
 	warning = FALSE
 )
-library(dplyr)
-library(portalr)
-library(yaml)
+'%>%' <- magrittr::'%>%'
 source("tools/forecast_tools.R")
 
-model_metadata = yaml.load_file("forecasting/data/metadata.yaml")
+model_metadata = yaml::yaml.load_file("data/metadata.yaml")
 pred_interval = model_metadata$pred_interval
 models_of_interest = c('AutoArima','Ensemble','ESSS','nbGARCH','pevGARCH')
 
 species_of_interest = c('BA','DM','DO','PP','OT','NA','total')
-species_names = portalr:::full_path('forecasting/PortalData/Rodents/Portal_rodent_species.csv', '~') %>%
-  read.csv(stringsAsFactors=FALSE, na.strings = '') %>%
-  select(species = speciescode, full_species_name = scientificname)
+species_names = read.csv('PortalData/Rodents/Portal_rodent_species.csv',
+                         stringsAsFactors=FALSE, na.strings = '') %>%
+  dplyr::select(species = speciescode, full_species_name = scientificname) %>%
+  dplyr::add_row(species='total', full_species_name='Total Rodents')
 
-#add a total entry
-species_names = species_names %>%
-  add_row(species='total', full_species_name='Total Rodents')
-
-new_moon_file = portalr:::full_path('forecasting/PortalData/Rodents/moon_dates.csv', '~')
-new_moons = read.csv(new_moon_file)
-new_moons$censusdate = as.Date(new_moons$censusdate)
+new_moons = read.csv('PortalData/Rodents/moon_dates.csv') %>%
+            dplyr::mutate(censusdate = as.Date(censusdate))
 
 # Setup rodent observations
-species_abundance = portalr::abundance("repo", clean=FALSE, shape='flat', level='treatment', 
-                                       length="longterm", time='newmoon') %>%
-  filter(treatment=="control") %>%
-  rename(actual = abundance, level = treatment) %>%
-  mutate(level='Controls',currency='abundance') %>%
-  filter(species %in% species_of_interest)
+species_abundance = portalr::abundance(clean=FALSE, shape='flat', level='treatment', 
+                                       plots="longterm", time='newmoon') %>%
+  dplyr::filter(treatment=="control") %>%
+  dplyr::rename(actual = abundance, level = treatment) %>%
+  dplyr::mutate(level='Controls',currency='abundance') %>%
+  dplyr::filter(species %in% species_of_interest)
 
-total_abundance = portalr::abundance("repo", clean=FALSE, shape='flat', level='treatment', 
-                                     length="longterm", time='newmoon') %>%
-  filter(treatment=="control") %>%
-  group_by(newmoonnumber) %>%
-  summarise(actual=sum(abundance)) %>%
-  ungroup() %>%
-  mutate(level='Controls',currency='abundance',species='total')
+total_abundance = portalr::abundance(clean=FALSE, shape='flat', level='treatment', 
+                                     plots="longterm", time='newmoon') %>%
+  dplyr::filter(treatment=="control") %>%
+  dplyr::group_by(newmoonnumber) %>%
+  dplyr::summarise(actual=sum(abundance)) %>%
+  dplyr::ungroup() %>%
+  dplyr::mutate(level='Controls',currency='abundance',species='total')
 
 observation_data = species_abundance %>%
-  bind_rows(total_abundance) %>% 
-  left_join(new_moons, by='newmoonnumber')
+  dplyr::bind_rows(total_abundance) %>% 
+  dplyr::left_join(new_moons, by='newmoonnumber')
 
 ```
 
@@ -59,7 +53,7 @@ This graph shows the forecast error of some recent forecasts for the most recent
 ###############################################
 #Get all the recent forecasts
 forecast_data = compile_forecasts(use_hindcasts = FALSE) %>%
-  filter(model %in% models_of_interest)
+  dplyr::filter(model %in% models_of_interest)
 
 # Round so that large decimal place differences do not cause
 # similar forecasts to be seen as distinct. 
@@ -70,40 +64,40 @@ forecast_data$UpperPI = round(forecast_data$UpperPI, 3)
 # Keep 1 forecast per unique initial_newmoon. When there are multiple forecasts
 # using the same initial_newmoon, use the first one.
 forecast_dates_to_keep = forecast_data %>%
-  select(date, initial_newmoon) %>%
-  distinct() %>%
-  group_by(initial_newmoon) %>%
-  filter(date == min(date)) %>%
-  ungroup() %>%
-  mutate(keep='yes') 
+  dplyr::select(date, initial_newmoon) %>%
+  dplyr::distinct() %>%
+  dplyr::group_by(initial_newmoon) %>%
+  dplyr::filter(date == min(date)) %>%
+  dplyr::ungroup() %>%
+  dplyr::mutate(keep='yes') 
 
 forecast_data = forecast_data %>%
-  left_join(forecast_dates_to_keep, by=c('date','initial_newmoon')) %>%
-  filter(keep=='yes') %>%
-  select(-keep)
+  dplyr::left_join(forecast_dates_to_keep, by=c('date','initial_newmoon')) %>%
+  dplyr::filter(keep=='yes') %>%
+  dplyr::select(-keep)
 
 ##################################
 #Combine forecasts and oservations
 forecast_errors = forecast_data %>%
-  left_join(observation_data, by=c('newmoonnumber','level','species','currency')) %>% 
-  mutate(rmse = sqrt((estimate - actual)^2))
+  dplyr::left_join(observation_data, by=c('newmoonnumber','level','species','currency')) %>% 
+  dplyr::mutate(rmse = sqrt((estimate - actual)^2))
 
 # Sometimes there are model runs on the same day and with all the same info,
 # this gets rid of those
 forecast_errors = forecast_errors %>%
-  distinct()
+  dplyr::distinct()
 
 # Drop any entries that don't have an observation
 # (ie. a rainy sample period)
 forecast_errors = forecast_errors %>%
-  filter(!is.na(actual))
+  dplyr::filter(!is.na(actual))
 
 # Filter to common species and apply the full name
 forecast_errors = forecast_errors %>%
-  filter(species %in% species_of_interest) %>%
-  left_join(species_names, by='species') %>%
-  select(-species) %>%
-  rename(species=full_species_name)
+  dplyr::filter(species %in% species_of_interest) %>%
+  dplyr::left_join(species_names, by='species') %>%
+  dplyr::select(-species) %>%
+  dplyr::rename(species=full_species_name)
 
 # Add a newline to the longer species names
 forecast_errors$species = with(forecast_errors, ifelse(nchar(species)>15, stringr::str_replace(species,' ','\n'), species))
@@ -111,31 +105,9 @@ forecast_errors$species = with(forecast_errors, ifelse(nchar(species)>15, string
 #############################################################
 # Displaying the data from many forecasts in the past can create a mess of a plot. see #218.
 # So here three forecasts are chosen from 1, 6, and 12 newmoons into the past. 
-# Sometimes forecasts data is missing for a particular initial_newmoon, the recursive function here
-# attempts to find another one from the same time pluts/minus 2 month period. This ensures 3 forecasts
-# are always shown.
-
-# If there is no data for initial_newmoon 500, this will check nearby dates in this order: 499,501,498,402
-update_initial_newmoon = function(potential_initial_newmoon, attempt=1){
-  if(attempt==6){
-    return(NA)
-  }
-  lead_time_data = forecast_errors %>%
-    filter(initial_newmoon == potential_initial_newmoon)
-  
-  # Alternate steps of -1, +2, -3, +4
-  next_try_step = ifelse(attempt%%2 == 0, attempt, attempt * -1)
-  
-  # no data to show? then try one month back
-  if(nrow(lead_time_data)==0){
-    #print(paste('Try ',attempt, ', Nothing with ',potential_initial_newmoon,' trying ',potential_initial_newmoon+next_try_step))
-    return(update_initial_newmoon(potential_initial_newmoon+next_try_step, attempt+1))
-  } else {
-    return(potential_initial_newmoon)
-  }
-  
-}
-# Adjust this to add more than 3 forecast dates, or change the lead times
+# Sometimes forecasts data is missing for a particular initial_newmoon, the recursive function 
+# update_initial_newmoon attempts to find another one from the same time pluts/minus 2 month period.
+#  This ensures 3 forecasts are always shown.
 lead_times_to_show = c(1,6,12)
 most_recent_observed_newmoon = max(new_moons$newmoonnumber)
 initial_newmoons_to_keep = most_recent_observed_newmoon - lead_times_to_show
@@ -143,23 +115,23 @@ initial_newmoons_to_keep = most_recent_observed_newmoon - lead_times_to_show
 initial_newmoons_to_keep = sapply(initial_newmoons_to_keep, update_initial_newmoon)
 
 forecast_errors = forecast_errors %>%
-  filter(initial_newmoon %in% initial_newmoons_to_keep)
+  dplyr::filter(initial_newmoon %in% initial_newmoons_to_keep)
 
 #####################################
-ggplot(forecast_errors, aes(x=censusdate, y=rmse, group=as.character(date), color=as.character(date))) +
-  geom_point(size=4)+
-  geom_line(size=1.5) +
-  scale_color_brewer(palette='Dark2') +
-  scale_x_date(breaks = unique(forecast_errors$censusdate)) +
-  facet_grid(species~model, scales = 'free_y') + 
-  theme_bw() +
-  theme(axis.text.x = element_text(angle=45, hjust=0.99, debug = FALSE),
-        axis.text = element_text(size=12),
-        axis.title = element_text(size=20),
-        strip.text = element_text(size=12),
-        legend.text = element_text(size=15),
-        legend.title = element_text(size=18)) +
-  labs(x='Sample Date',y='RMSE', color='Forecast Issue\nDate')
+ggplot2::ggplot(forecast_errors, ggplot2::aes(x=censusdate, y=rmse, group=as.character(date), color=as.character(date))) +
+  ggplot2::geom_point(size=4)+
+  ggplot2::geom_line(size=1.5) +
+  ggplot2::scale_color_brewer(palette='Dark2') +
+  ggplot2::scale_x_date(breaks = unique(forecast_errors$censusdate)) +
+  ggplot2::facet_grid(species~model, scales = 'free_y') + 
+  ggplot2::theme_bw() +
+  ggplot2::theme(axis.text.x = ggplot2::element_text(angle=45, hjust=0.99, debug = FALSE),
+        axis.text = ggplot2::element_text(size=12),
+        axis.title = ggplot2::element_text(size=20),
+        strip.text = ggplot2::element_text(size=12),
+        legend.text = ggplot2::element_text(size=15),
+        legend.title = ggplot2::element_text(size=18)) +
+  ggplot2::labs(x='Sample Date',y='RMSE', color='Forecast Issue\nDate')
 
 ```
 
@@ -178,20 +150,20 @@ These graphs show errors as a function of lead time. The lead time is the number
 #Get the all the forecasts made during observation period
 forecast_data = compile_forecasts(use_hindcasts = TRUE)
 forecast_errors = calculate_forecast_error(observation_data, forecast_data, error_metric = 'RMSE') %>%
-  filter(error_value < 200) %>% #Drop RMSE greater than this because it throws off all the graphs
-  bind_rows(calculate_forecast_error(observation_data, forecast_data, error_metric = 'coverage'))
+  dplyr::filter(error_value < 200) %>% #Drop RMSE greater than this because it throws off all the graphs
+  dplyr::bind_rows(calculate_forecast_error(observation_data, forecast_data, error_metric = 'coverage'))
 
 forecast_errors = forecast_errors %>%
-  left_join(species_names, by='species')
+  dplyr::left_join(species_names, by='species')
 
-ggplot(forecast_errors, aes(x=lead_time, y=error_value, group=model, color=model)) +
-  geom_point()+
-  geom_line() +
-  geom_hline(yintercept = 0.9) +
-  labs(x='Lead Time (New Moons)') +
-  facet_wrap(full_species_name~error_metric, scales = 'free_y', ncol=2) + 
-  theme_bw() +
-  labs(y = "Error Value", colour = "Model")
+ggplot2::ggplot(forecast_errors, ggplot2::aes(x=lead_time, y=error_value, group=model, color=model)) +
+  ggplot2::geom_point()+
+  ggplot2::geom_line() +
+  ggplot2::geom_hline(yintercept = 0.9) +
+  ggplot2::labs(x='Lead Time (New Moons)') +
+  ggplot2::facet_wrap(full_species_name~error_metric, scales = 'free_y', ncol=2) + 
+  ggplot2::theme_bw() +
+  ggplot2::labs(y = "Error Value", colour = "Model")
 
 
 ```
