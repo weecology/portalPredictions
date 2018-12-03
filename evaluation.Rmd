@@ -13,7 +13,7 @@ library(portalr)
 library(yaml)
 source("tools/forecast_tools.R")
 
-model_metadata = yaml.load_file("forecasting/data/model_metadata.yaml")
+model_metadata = yaml.load_file("forecasting/data/metadata.yaml")
 pred_interval = model_metadata$pred_interval
 models_of_interest = c('AutoArima','Ensemble','ESSS','nbGARCH','pevGARCH')
 

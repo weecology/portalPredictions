@@ -2,7 +2,7 @@ library(testthat)
 library(yaml)
 library(zoo)
 context("checks that new forecasts are being added correctly")
-model_metadata = yaml.load_file("../../forecasting/data/model_metadata.yaml")
+model_metadata = yaml.load_file("../../forecasting/data/metadata.yaml")
 
 forecasts=read.csv(file.path('../../forecasting/predictions', paste(as.character(as.Date(model_metadata$forecast_date)), 
                                         model_metadata$filename_suffix, ".csv", sep="")), na.strings = "")
