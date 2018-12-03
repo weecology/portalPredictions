@@ -1,12 +1,11 @@
 library(testthat)
-library(yaml)
-library(zoo)
-context("checks that new forecasts are being added correctly")
-model_metadata = yaml.load_file("../../forecasting/data/metadata.yaml")
 
-forecasts=read.csv(file.path('../../forecasting/predictions', paste(as.character(as.Date(model_metadata$forecast_date)), 
+context("checks that new forecasts are being added correctly")
+model_metadata = yaml::yaml.load_file("../data/metadata.yaml")
+
+forecasts=read.csv(file.path('../predictions', paste(as.character(as.Date(model_metadata$forecast_date)), 
                                         model_metadata$filename_suffix, ".csv", sep="")), na.strings = "")
-forecastaics=read.csv(file.path('../../forecasting/predictions', paste(as.character(as.Date(model_metadata$forecast_date)), 
+forecastaics=read.csv(file.path('../predictions', paste(as.character(as.Date(model_metadata$forecast_date)), 
                                         model_metadata$filename_suffix, "_model_aic.csv", sep="")), na.strings = "")
 
 forecastnames = c("date", "forecastmonth",  "forecastyear",  "newmoonnumber",

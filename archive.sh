@@ -28,7 +28,7 @@ if [ "$TRAVIS_EVENT_TYPE" == "cron" ]; then
     # Clone forecasts archive repo
     cd ../../
     git clone https://github.com/weecology/forecasts
-    cp portalPredictions/portalPredictionsResult/forecasting/predictions/*.* forecasts/portal/
+    cp portalPredictions/portalPredictionsResult/predictions/*.* forecasts/portal/
     cd forecasts
 
     # Commit to forecasts repo

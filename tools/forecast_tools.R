@@ -1,64 +1,90 @@
-library(tidyverse)
-library(lubridate)
-library(zoo)
-library(ggplot2)
-library(rmarkdown)
-library(RCurl)
-
 ##########Tools for forecast presentation##############
 
-#' 
-#' @param data
-#' @param lvl
-#' @param lead_time
-get_sp_predicts = function(data, lvl, lead_time) {
-  data = transform(data, forecast_date = as.yearmon(paste(forecastmonth, "/", forecastyear, sep =
-                                                            ""), format = "%m/%Y")) %>% transform(date = as.Date(date, "%Y-%m-%d"))
-  data1 = filter(data, level == lvl,
-                 date == max(as.Date(date)))
-  target_moon = min(data1$newmoonnumber) + (lead_time - 1)
-  data2 = filter(data1, newmoonnumber == target_moon)
+#' Visualize a time-series forecast
+#' Plots the observed time-series and the 1-step forecasts within it
+#' Plots the forecast time-series along with the prediction interval for future observations
+#' @param obs_data is a data.frame (observed data)
+#' @param obs_date_col_name is a string: name of the date column from obs_data
+#' @param obs_val_col_name is a string: name of the column of the value being forecast
+#' @param for_data is a data.frame (forecast data)
+#' @param for_date_col_name is a string: name of the date column from for_data
+#' @param for_val_col_name is a string: name of the column of value being forecast, from for_data
+#' @param for_model_name is a string: name of the model to be used from model column in for_data
+#' @param for_lowerpi_col_name is a string: name of the column of the lower confidence interval from for_data
+#' @param for_upperpi_col_name is a string: name of the column of the upper confidence interval from for_data
+#' @param start_newmoon is numeric: first new moon number to be plotted
+#' @param ylabel is a string: title for y-axis
+forecast_viz <- function(obs_data, obs_date_col_name, obs_val_col_name, for_data,
+                         for_date_col_name, for_val_col_name, for_model_name,
+                         for_lowerpi_col_name, for_upperpi_col_name, start_newmoon,
+                         ylabel){
+  for_data_sub = dplyr::filter(for_data, species == obs_val_col_name, model == for_model_name)
+  obs_data_sub = dplyr::filter(obs_data, newmoonnumber >= start_newmoon)
+  ggplot2::ggplot(obs_data_sub, ggplot2::aes_string(x = obs_date_col_name)) +
+    ggplot2::geom_ribbon(data = for_data_sub, 
+                         mapping = ggplot2::aes_string(x = for_date_col_name, ymin = for_lowerpi_col_name, 
+                                              ymax = for_upperpi_col_name), fill = "lightblue") +
+    ggplot2::geom_line(ggplot2::aes_string(y = obs_val_col_name)) +
+    ggplot2::geom_line(data = for_data_sub, 
+                       mapping = ggplot2::aes_string(x = for_date_col_name, y = for_val_col_name), 
+                       color = "blue") +
+    ggplot2::labs(x='',y=ylabel)
 }
 
-#' this is the 'second plot on the 'Species-level Forecast' on the 'Current Forecast' page on the website
+#' Plot species-level forecasts
+#' This is the 'second plot on the 'Species-level Forecast' on the 'Current Forecast' page on the website
 #' 
 #' 
 #' @param data
 #' @param title main title for plot
 #' @return sp_predict is a plot object -- plot(sp_predict) displays it
 #' 
-plot_species_forecast = function(data,title) {
-  newmoons_table = read.csv(
-    text = getURL(
-      "https://raw.githubusercontent.com/weecology/PortalData/master/Rodents/moon_dates.csv"))
+plot_species_forecast <- function(data,title) {
+  newmoons_table = read.csv('PortalData/Rodents/moon_dates.csv')
   target_moon=unique(data$newmoonnumber)
   period_code = dplyr::filter(newmoons_table, newmoons_table$newmoonnumber == target_moon) %>%
     dplyr::select(period) %>%
     as.integer()
-  species_table = read.csv(
-    text = getURL(
-      "https://raw.githubusercontent.com/weecology/PortalData/master/Rodents/Portal_rodent_species.csv"),stringsAsFactors = F,na.strings = '')
+  species_table = read.csv('PortalData/Rodents/Portal_rodent_species.csv',stringsAsFactors = F,na.strings = '')
   species_names = species_table %>% 
-    select('speciescode','scientificname') %>% 
+    dplyr::select('speciescode','scientificname') %>% 
     rbind(c('total','total')) %>%
     merge(data[,c('species','estimate')],by.x='speciescode',by.y='species')
   
-  sp_predict = ggplot(data,
-                      aes(
-                        x = estimate,
-                        y = reorder(species, estimate),
-                        xmin = LowerPI,
-                        xmax = UpperPI
-                      )) +
-    geom_point() +
-    geom_errorbarh() +
-    ggtitle(title) + 
-    ylab("Species") +
-    xlab("Abundance") +
-    scale_y_discrete(breaks = reorder(data$species,data$estimate),labels = reorder(species_names$scientificname,species_names$estimate))
+  sp_predict = ggplot2::ggplot(data,
+                               ggplot2::aes(
+                                 x = estimate,
+                                 y = reorder(species, estimate),
+                                 xmin = LowerPI,
+                                 xmax = UpperPI
+                               )) +
+    ggplot2::geom_point() +
+    ggplot2::geom_errorbarh() +
+    ggplot2::ggtitle(title) + 
+    ggplot2::ylab("Species") +
+    ggplot2::xlab("Abundance") +
+    ggplot2::scale_y_discrete(breaks = reorder(data$species,data$estimate),
+                              labels = reorder(species_names$scientificname,species_names$estimate))
   
   return(sp_predict)
 }
+
+#' Get the most recent species-level predictions
+#' 
+#' @param data
+#' @param lvl
+#' @param lead_time
+get_sp_predicts <- function(data, lvl, lead_time) {
+  data = transform(data, forecast_date = zoo::as.yearmon(paste(forecastmonth, "/", forecastyear, 
+                                                          sep = ""), format = "%m/%Y")) %>% 
+    transform(date = as.Date(date, "%Y-%m-%d"))
+  data1 = dplyr::filter(data, level == lvl,
+                 date == max(as.Date(date)))
+  target_moon = min(data1$newmoonnumber) + (lead_time - 1)
+  data2 = dplyr::filter(data1, newmoonnumber == target_moon)
+}
+
+
 
 #' Compares forecasts to observations over different lead times.
 #' Error can be any function. The level, species, and currency columns from
@@ -75,7 +101,7 @@ plot_species_forecast = function(data,title) {
 #' @param ci_value int The value of the forecast confidence interval to scale PI values for the likelihood metric
 #' @return data.frame Data.frame with the columns model, error, lead_time, level, species, currency
 #'
-calculate_forecast_error = function(observations, forecasts, error_metric='RMSE', CI_level=0.9){
+calculate_forecast_error <- function(observations, forecasts, error_metric='RMSE', CI_level=0.9){
   #The tibble datatype output from dplyr causes issues here
   observations = as.data.frame(observations)
   forecasts = as.data.frame(forecasts)
@@ -97,26 +123,26 @@ calculate_forecast_error = function(observations, forecasts, error_metric='RMSE'
   #This assumes a forecast was made with only the data available prior to the first NewMoonDate in the series.
   #TODO: Make the lead time the actual days or weeks once more frequent forecasts are being made( see #37)
   forecasts = forecasts %>%
-    mutate(lead_time = newmoonnumber - initial_newmoon)
+    dplyr::mutate(lead_time = newmoonnumber - initial_newmoon)
   
   #Calculate error
   if(error_metric == 'RMSE'){
     comparisons = forecasts %>%
-      inner_join(observations, by=c('newmoonnumber','currency','level','species')) %>%
-      mutate(error_value=(estimate-actual)^2) %>%
-      group_by(model, currency, level, species, lead_time) %>%
-      summarize(error_value=sqrt(mean(error_value))) %>%
-      ungroup() %>%
-      mutate(error_metric = 'RMSE')
+      dplyr::inner_join(observations, by=c('newmoonnumber','currency','level','species')) %>%
+      dplyr::mutate(error_value=(estimate-actual)^2) %>%
+      dplyr::group_by(model, currency, level, species, lead_time) %>%
+      dplyr::summarize(error_value=sqrt(mean(error_value))) %>%
+      dplyr::ungroup() %>%
+      dplyr::mutate(error_metric = 'RMSE')
 
   } else if(error_metric == 'coverage') {
     comparisons = forecasts %>%
-      inner_join(observations, by=c('newmoonnumber','currency','level','species')) %>%
-      mutate(within_prediction_interval = actual >= LowerPI & actual <= UpperPI, error_metric='coverage') %>%
-      group_by(model, currency, level, species, lead_time, error_metric) %>%
-      summarize(error_value=mean(within_prediction_interval)) %>%
-      ungroup() %>%
-      mutate(error_metric = 'coverage')
+      dplyr::inner_join(observations, by=c('newmoonnumber','currency','level','species')) %>%
+      dplyr::mutate(within_prediction_interval = actual >= LowerPI & actual <= UpperPI, error_metric='coverage') %>%
+      dplyr::group_by(model, currency, level, species, lead_time, error_metric) %>%
+      dplyr::summarize(error_value=mean(within_prediction_interval)) %>%
+      dplyr::ungroup() %>%
+      dplyr::mutate(error_metric = 'coverage')
     
   } else if(error_metric == 'deviance') {
     stop('Deviance not implimented  yet')
@@ -135,14 +161,14 @@ calculate_forecast_error = function(observations, forecasts, error_metric='RMSE'
 #' @param species str Valid species
 #' @param currency str Valid currency
 #' @param error_metric str error metric used
-plot_lead_time_errors=function(error_df, level, species, currency, error_metric){
+plot_lead_time_errors <- function(error_df, level, species, currency, error_metric){
   plot_title = paste0('Level: ',level,', Species: ',species,', Currency: ',currency)
 
-  graph = ggplot(error_df, aes(x=lead_time, y=error, group=model, color=model)) +
-            geom_point()+
-            geom_line() +
-            labs(y=error_metric,x='Lead Time (New Moons)', title=plot_title)
-  plot(graph)
+  graph = ggplot2::ggplot(error_df, ggplot2::aes(x=lead_time, y=error, group=model, color=model)) +
+    ggplot2::geom_point()+
+    ggplot2::geom_line() +
+    ggplot2::labs(y=error_metric,x='Lead Time (New Moons)', title=plot_title)
+  ggplot2::plot(graph)
 }
 
 #' Ensure that a forecast file is in the correct format
@@ -156,7 +182,7 @@ plot_lead_time_errors=function(error_df, level, species, currency, error_metric)
 #' @param verbose boolean Output warnings of specific violations
 #' @return boolean
 
-forecast_is_valid=function(forecast_df, verbose=FALSE){
+forecast_is_valid <- function(forecast_df, verbose=FALSE){
   is_valid=TRUE
   violations=c()
   #Define valid valeus
@@ -215,7 +241,7 @@ forecast_is_valid=function(forecast_df, verbose=FALSE){
 #' @param forecast_folder str Base folder holding all forecast files
 #' @param verbose bool Output info on file violations
 #' @return dataframe combined forecasts
-compile_forecasts=function(forecast_folder='./forecasting/predictions', verbose=FALSE, use_hindcasts=FALSE){
+compile_forecasts <- function(forecast_folder='./predictions', verbose=FALSE, use_hindcasts=FALSE){
   if(use_hindcasts){
     search_string = 'hindcast'
   } else {
@@ -259,29 +285,34 @@ all_forecasts$date=as.Date(all_forecasts$date)
   return(all_forecasts)
 }
 
-#' Visualize a time-series forecast
-#' Plots the observed time-series and the 1-step forecasts within it
-#' Plots the forecast time-series along with the prediction interval for future observations
-#' @param obs_data is a data.frame (observed data)
-#' @param obs_date_col_name is a string: name of the date column from obs_data
-#' @param obs_val_col_name is a string: name of the column of the value being forecast
-#' @param for_data is a data.frame (forecast data)
-#' @param for_date_col_name is a string: name of the date column from for_data
-#' @param for_val_col_name is a string: name of the column of value being forecast, from for_data
-#' @param for_model_name is a string: name of the model to be used from model column in for_data
-#' @param for_lowerpi_col_name is a string: name of the column of the lower confidence interval from for_data
-#' @param for_upperpi_col_name is a string: name of the column of the upper confidence interval from for_data
-#' @param start_newmoon is numeric: first new moon number to be plotted
-#' @param ylabel is a string: title for y-axis
-forecast_viz <- function(obs_data, obs_date_col_name, obs_val_col_name, for_data,
-                         for_date_col_name, for_val_col_name, for_model_name,
-                         for_lowerpi_col_name, for_upperpi_col_name, start_newmoon,
-                         ylabel){
-  for_data_sub = filter(for_data, species == obs_val_col_name, model == for_model_name)
-  obs_data_sub = filter(obs_data, newmoonnumber >= start_newmoon)
-  ggplot(obs_data_sub, aes_string(x = obs_date_col_name)) +
-    geom_ribbon(data = for_data_sub, mapping = aes_string(x = for_date_col_name, ymin = for_lowerpi_col_name, ymax = for_upperpi_col_name), fill = "lightblue") +
-    geom_line(aes_string(y = obs_val_col_name)) +
-    geom_line(data = for_data_sub, mapping = aes_string(x = for_date_col_name, y = for_val_col_name), color = "blue") +
-    labs(x='',y=ylabel)
+
+# Displaying the data from many forecasts in the past can create a mess of a plot. see #218.
+# So here three forecasts are chosen from 1, 6, and 12 newmoons into the past. 
+# Sometimes forecasts data is missing for a particular initial_newmoon, the recursive function here
+# attempts to find another one from the same time pluts/minus 2 month period. This ensures 3 forecasts
+# are always shown.
+# If there is no data for initial_newmoon 500, this will check nearby dates in this order: 499,501,498,402
+#'
+#' @param potential_initial_newmoon
+#' @param attempt
+
+update_initial_newmoon <- function(potential_initial_newmoon, attempt=1){
+  if(attempt==6){
+    return(NA)
+  }
+  lead_time_data = forecast_errors %>%
+    dplyr::filter(initial_newmoon == potential_initial_newmoon)
+  
+  # Alternate steps of -1, +2, -3, +4
+  next_try_step = ifelse(attempt%%2 == 0, attempt, attempt * -1)
+  
+  # no data to show? then try one month back
+  if(nrow(lead_time_data)==0){
+    #print(paste('Try ',attempt, ', Nothing with ',potential_initial_newmoon,' trying ',potential_initial_newmoon+next_try_step))
+    return(update_initial_newmoon(potential_initial_newmoon+next_try_step, attempt+1))
+  } else {
+    return(potential_initial_newmoon)
+  }
+  
 }
+
