@@ -15,10 +15,11 @@ source("tools/forecast_tools.R")
 This is the forecast for next month's sampling of rodents at Portal. The black line indicates the historic total rodent abundance. The blue line indicates the forecasted amount over the next 12 months, along with confidence intervals. This forecast is from the Ensemble model. 
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
-obs_data = portalr::abundance(clean=FALSE, level='treatment', plots="longterm") %>%
+obs_data = portalr::abundance(path = "repo", clean=FALSE, level='treatment', plots="longterm") %>%
   dplyr::filter(treatment=="control")
 obs_data$total = rowSums(dplyr::select(obs_data, -c(period, treatment)))
-new_moons = read.csv('PortalData/Rodents/moon_dates.csv') %>%
+new_moons = read.csv(
+  "https://raw.githubusercontent.com/weecology/PortalData/master/Rodents/moon_dates.csv") %>%
                    dplyr::mutate(censusdate = as.Date(censusdate),
                           year = lubridate::year(newmoondate),
                           month = lubridate::month(newmoondate))
@@ -71,7 +72,8 @@ most_abund_sp = sp_predictions %>%
   dplyr::select(species)
 
 # load in rodent species table to get scientific names to display on plots
-species_table = read.csv('PortalData/Rodents/Portal_rodent_species.csv',
+species_table = read.csv(
+  "https://raw.githubusercontent.com/weecology/PortalData/master/Rodents/Portal_rodent_species.csv",
                           stringsAsFactors = F,na.strings = '')
 most_abund_sp_names = dplyr::filter(species_table,speciescode %in% most_abund_sp$species) %>%      
                       dplyr::select(speciescode,scientificname)

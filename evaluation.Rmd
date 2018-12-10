@@ -11,28 +11,30 @@ knitr::opts_chunk$set(
 '%>%' <- magrittr::'%>%'
 source("tools/forecast_tools.R")
 
-model_metadata = yaml::yaml.load_file("data/metadata.yaml")
+model_metadata = yaml::yaml.load_file('data/metadata.yaml')
 pred_interval = model_metadata$pred_interval
 models_of_interest = c('AutoArima','Ensemble','ESSS','nbGARCH','pevGARCH')
 
 species_of_interest = c('BA','DM','DO','PP','OT','NA','total')
-species_names = read.csv('PortalData/Rodents/Portal_rodent_species.csv',
-                         stringsAsFactors=FALSE, na.strings = '') %>%
+read.csv(
+  "https://raw.githubusercontent.com/weecology/PortalData/master/Rodents/Portal_rodent_species.csv",
+                          stringsAsFactors = F,na.strings = '') %>%
   dplyr::select(species = speciescode, full_species_name = scientificname) %>%
   dplyr::add_row(species='total', full_species_name='Total Rodents')
 
-new_moons = read.csv('PortalData/Rodents/moon_dates.csv') %>%
+new_moons = read.csv(
+  "https://raw.githubusercontent.com/weecology/PortalData/master/Rodents/moon_dates.csv") %>%
             dplyr::mutate(censusdate = as.Date(censusdate))
 
 # Setup rodent observations
-species_abundance = portalr::abundance(clean=FALSE, shape='flat', level='treatment', 
+species_abundance = portalr::abundance(path = "repo", clean=FALSE, shape='flat', level='treatment', 
                                        plots="longterm", time='newmoon') %>%
   dplyr::filter(treatment=="control") %>%
   dplyr::rename(actual = abundance, level = treatment) %>%
   dplyr::mutate(level='Controls',currency='abundance') %>%
   dplyr::filter(species %in% species_of_interest)
 
-total_abundance = portalr::abundance(clean=FALSE, shape='flat', level='treatment', 
+total_abundance = portalr::abundance(path = "repo", clean=FALSE, shape='flat', level='treatment', 
                                      plots="longterm", time='newmoon') %>%
   dplyr::filter(treatment=="control") %>%
   dplyr::group_by(newmoonnumber) %>%

@@ -12,11 +12,12 @@ Here's the most recent actual data (blue) compared to the forecast performed rig
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 
 # get most recent rodent data
-observed = portalr::abundance(clean=FALSE, shape='flat', level='treatment', plots='longterm', time = 'newmoon') %>%
+observed = portalr::abundance(path = "repo", clean=FALSE, shape='flat', level='treatment', plots='longterm', time = 'newmoon') %>%
             dplyr::filter(newmoonnumber == max(newmoonnumber), treatment=='control')
 
 # get new moon number associated with this period
-most_recent_date = read.csv('PortalData/Rodents/moon_dates.csv') %>%
+most_recent_date = read.csv(
+  "https://raw.githubusercontent.com/weecology/PortalData/master/Rodents/moon_dates.csv") %>%
                    dplyr::mutate(censusdate = as.Date(censusdate,format='%Y-%m-%d')) %>%
                    dplyr::filter(newmoonnumber==unique(observed$newmoonnumber)) %>% 
                    dplyr::pull(censusdate)
@@ -45,11 +46,12 @@ plot(sp_predict)
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 
 # get most recent rodent data
-observed = portalr::abundance(clean=FALSE, shape='flat', time = 'newmoon') %>%
+observed = portalr::abundance(path = "repo", clean=FALSE, shape='flat', time = 'newmoon') %>%
             dplyr::filter(newmoonnumber == max(newmoonnumber))
 
 # get new moon number associated with this period
-most_recent_date = read.csv('PortalData/Rodents/moon_dates.csv') %>%
+most_recent_date = read.csv(
+  "https://raw.githubusercontent.com/weecology/PortalData/master/Rodents/moon_dates.csv") %>%
                    dplyr::mutate(censusdate = as.Date(censusdate,format='%Y-%m-%d')) %>%
                    dplyr::filter(newmoonnumber==unique(observed$newmoonnumber)) %>% 
                    dplyr::pull(censusdate)
