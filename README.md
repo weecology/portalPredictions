@@ -11,7 +11,7 @@ Predictions are made and archived weekly. Approximately once a month, one of the
 
 ## How to add a new model
 
-For details on adding a model to the current set, see the [Adding a new model wiki page](https://github.com/weecology/portalPredictions/wiki/Adding-a-new-model).
+Modeling is driven by the [portalcasting package](https://github.com/weecology/portalcasting). New models can be added there.
 
 ## Docker builds
 
