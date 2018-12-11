@@ -16,7 +16,7 @@ pred_interval = model_metadata$pred_interval
 models_of_interest = c('AutoArima','Ensemble','ESSS','nbGARCH','pevGARCH')
 
 species_of_interest = c('BA','DM','DO','PP','OT','NA','total')
-read.csv(
+species_names = read.csv(
   "https://raw.githubusercontent.com/weecology/PortalData/master/Rodents/Portal_rodent_species.csv",
                           stringsAsFactors = F,na.strings = '') %>%
   dplyr::select(species = speciescode, full_species_name = scientificname) %>%
