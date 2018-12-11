@@ -40,12 +40,15 @@ forecast_viz <- function(obs_data, obs_date_col_name, obs_val_col_name, for_data
 #' @return sp_predict is a plot object -- plot(sp_predict) displays it
 #' 
 plot_species_forecast <- function(data,title) {
-  newmoons_table = read.csv('PortalData/Rodents/moon_dates.csv')
+  newmoons_table = new_moons = read.csv(
+    "https://raw.githubusercontent.com/weecology/PortalData/master/Rodents/moon_dates.csv")
   target_moon=unique(data$newmoonnumber)
   period_code = dplyr::filter(newmoons_table, newmoons_table$newmoonnumber == target_moon) %>%
     dplyr::select(period) %>%
     as.integer()
-  species_table = read.csv('PortalData/Rodents/Portal_rodent_species.csv',stringsAsFactors = F,na.strings = '')
+  species_table = read.csv(
+    "https://raw.githubusercontent.com/weecology/PortalData/master/Rodents/Portal_rodent_species.csv",
+    stringsAsFactors = F,na.strings = '')
   species_names = species_table %>% 
     dplyr::select('speciescode','scientificname') %>% 
     rbind(c('total','total')) %>%
