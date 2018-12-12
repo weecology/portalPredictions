@@ -6,6 +6,7 @@ title: "About Portal Forecasts"
 # Ecological Forecasting
 
 Most forecasts for the future state of ecological systems are conducted once and never updated or assessed. As a result, many available ecological forecasts are not based on the most up-to-date data, and the scientific progress of ecological forecasting models is slowed by a lack of feedback on how well the forecasts perform. Iterative near-term ecological forecasting involves repeated daily to annual scale forecasts of an ecological system as new data becomes available and regular assessment of the resulting forecasts. More regular updating and assessment will advance ecological forecasting as a field by accelerating the identification of the best models for individual forecasts and improving our understanding of how to best design forecasting approaches for ecology in general. 
+This research was supported in part by the National Science Foundation through grant 1622425 to S.K.M. Ernest and by the Gordon and Betty Moore Foundation’s Data-Driven Discovery Initiative through grant GBMF4563 to E.P. White. 
 
 <br>
 
