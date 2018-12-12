@@ -3,10 +3,10 @@ library(testthat)
 context("checks that new forecasts are being added correctly")
 model_metadata = yaml::yaml.load_file("../../data/metadata.yaml")
 
-forecasts=read.csv(file.path('../../predictions', paste(as.character(as.Date(metadata$forecast_date)), 
-                                        metadata$filename_suffix, ".csv", sep="")), na.strings = "")
-forecastaics=read.csv(file.path('../../predictions', paste(as.character(as.Date(metadata$forecast_date)), 
-                                        metadata$filename_suffix, "_model_aic.csv", sep="")), na.strings = "")
+forecasts=read.csv(file.path('../../predictions', paste(as.character(as.Date(model_metadata$forecast_date)), 
+                                          model_metadata$filename_suffix, ".csv", sep="")), na.strings = "")
+forecastaics=read.csv(file.path('../../predictions', paste(as.character(as.Date(model_metadata$forecast_date)), 
+                                  model_metadata$filename_suffix, "_model_aic.csv", sep="")), na.strings = "")
 
 forecastnames = c("date", "forecastmonth",  "forecastyear",  "newmoonnumber",
                 "currency", "model", "level", "species", "estimate",  "LowerPI", 
@@ -34,12 +34,12 @@ test_that("dates are valid", {
 })
 
 test_that("years and months are valid", {
-  expect_true(all(forecasts$month %in% metadata$rodent_forecast_months))
-  expect_true(all(forecasts$year %in% metadata$rodent_forecast_years))
+  expect_true(all(forecasts$month %in% model_metadata$rodent_forecast_months))
+  expect_true(all(forecasts$year %in% model_metadata$rodent_forecast_years))
 })
 
 test_that("newmoons are valid", {
-  expect_true(all(forecasts$newmoonnumber %in% metadata$rodent_forecast_newmoons))
+  expect_true(all(forecasts$newmoonnumber %in% model_metadata$rodent_forecast_newmoons))
 })
 
 test_that("currencies are valid", {
