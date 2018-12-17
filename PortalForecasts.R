@@ -1,12 +1,13 @@
 library(portalcasting)
 
 #Update data and models
-setup_dir(options_all = all_options(main = "portalPredictions", download_existing_predictions = FALSE))
+setup_dir()
 
 #Run all models using portalcasting defaults
-
-portalcast(options_all = all_options(main = "portalPredictions"))
-message("models done")
+portalcast()
 
 #Update Website
 rmarkdown::render_site()
+
+#Clean up temporary files
+cleanup_dir()
