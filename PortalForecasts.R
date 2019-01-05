@@ -3,12 +3,6 @@ library(portalcasting)
 #Update data and models
 setup_dir()
 
-###########
-tree <- dirtree();
-covariates <- read.csv(file_path(tree, "data/covariates.csv")); 
-print(covariates[covariates$source == "fcast", ])
-###
-
 #Run all models using portalcasting defaults
 portalcast()
 
