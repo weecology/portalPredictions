@@ -4,14 +4,9 @@ library(portalcasting)
 setup_dir()
 
 ###########
-tree <- dirtree(".", "", c("predictions", "models", "PortalData", "data", "tmp"));
-all <- read.csv(file_path(tree, "data/all.csv"));
-controls <- read.csv(file_path(tree, "data/controls.csv"));
+tree <- dirtree();
 covariates <- read.csv(file_path(tree, "data/covariates.csv")); 
-metadata <- yaml::yaml.load_file(file_path(tree, "data/metadata.yaml"));
-print(covariates)
-cat(metadata$forecast_date)
-cat("\n")
+print(covariates[covariates$source == "fcast", ])
 ###
 
 #Run all models using portalcasting defaults
