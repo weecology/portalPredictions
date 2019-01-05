@@ -1,4 +1,4 @@
-tree <- dirtree(".", "", c("predictions", "models", "PortalData", "data", "tmp"));
+tree <- dirtree("~", "portalPredictions", c("predictions", "models", "PortalData", "data", "tmp"));
 all <- read.csv(file_path(tree, "data/all.csv"));
 controls <- read.csv(file_path(tree, "data/controls.csv"));
 covariates <- read.csv(file_path(tree, "data/covariates.csv")); 
