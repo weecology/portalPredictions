@@ -2,7 +2,7 @@ language: bash
 sudo: required
 env:
   global:
-- GITHUB_PAT=$GITHUB_PAT
+    - GITHUB_PAT=$GITHUB_PAT
 
 before_install:
   - docker pull weecology/portal_predictions
