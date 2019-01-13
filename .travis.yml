@@ -5,12 +5,12 @@ before_install:
   - docker pull weecology/portal_predictions
   - docker run -e "$GITHUB_PAT" --name ppred -t -d weecology/portal_predictions /bin/bash
   - docker cp ../portalPredictions ppred:/
-  - docker exec -e "$GITHUB_PAT" -i ppred ls portalPredictions
+  - docker exec -i ppred ls portalPredictions
 
 script:
   - docker exec -i ppred bash -c "cd portalPredictions && Rscript install-packages.R"
-  - docker exec -e "$GITHUB_PAT" -i ppred bash -c "cd portalPredictions && Rscript PortalForecasts.R"
-  - docker exec -e "$GITHUB_PAT" -i ppred bash -c "cd portalPredictions && Rscript tests/testthat.R"
+  - docker exec -i ppred bash -c "cd portalPredictions && Rscript PortalForecasts.R"
+  - docker exec -i ppred bash -c "cd portalPredictions && Rscript tests/testthat.R"
 
 after_success:
   - docker cp ppred:/portalPredictions portalPredictionsResult
