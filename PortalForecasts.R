@@ -9,5 +9,5 @@ portalcast()
 # Update Website
 rmarkdown::render_site()
 
-# Clean up temporary files
+# Clean up temporary folders and files
 cleanup_dir()
