@@ -18,10 +18,12 @@ Modeling is driven by the [portalcasting package](https://github.com/weecology/p
 Forecasts are run using Travis CI based on a docker image. This makes the builds
 faster and more reproducible. When adding new packages to this repo it may be
 necessary to update the Docker container. When building, please tag the image with 
-the `latest` tag, as well as a named tag for the date (yyyy-mm-dd).
-Use the following commands:
+the `latest` tag, as well as a named tag for the date (yyyy-mm-dd, which you should
+replace with the actual current date). Use the following commands:
 
 ```
 sudo docker build -t weecology/portal_predictions:latest -t weecology/portal_predictions:yyyy-mm-dd . 
 sudo docker push weecology/portal_predictions
 ```
+
+(Note that Windows users will not need to include the `sudo` command.)
