@@ -1,7 +1,7 @@
 library(portalcasting)
 
 #Update data and models
-setup_dir()
+setup_dir(all_options(from_zenodo=F))
 
 #Run all models using portalcasting defaults
 portalcast()
