@@ -3,7 +3,7 @@ sudo: required
 
 before_install:
   - docker pull weecology/portal_predictions
-  - docker run -e "$GITHUB_PAT" --name ppred -t -d weecology/portal_predictions /bin/bash
+  - docker run -env GITHUB_PAT=111 --name ppred -t -d weecology/portal_predictions /bin/bash
   - docker cp ../portalPredictions ppred:/
   - docker exec -i ppred ls portalPredictions
 
