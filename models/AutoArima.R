@@ -1,7 +1,7 @@
-tree <- dirtree(".", "", c("predictions", "models", "PortalData", "data", "tmp"));
-all <- read.csv(file_path(tree, "data/all.csv"));
-controls <- read.csv(file_path(tree, "data/controls.csv"));
-metadata <- yaml::yaml.load_file(file_path(tree, "data/metadata.yaml"));
-f_a <- AutoArima(all, metadata);
-f_c <- AutoArima(controls, metadata, level = "Controls");
+tree <- dirtree(".", "", subdirs());
+all <- read_data(tree, "all");
+controls <-read_data(tree, "controls");
+metadata <- read_data(tree, "metadata");
+f_a <- AutoArima(all, metadata, quiet = FALSE);
+f_c <- AutoArima(controls, metadata, level = "Controls", quiet = FALSE);
 save_forecast_output(f_a, f_c, "AutoArima", metadata, sub_path(tree, "tmp"))
