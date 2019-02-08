@@ -1,26 +1,26 @@
 filename_suffix: forecasts
-forecast_date: '2019-02-01'
+forecast_date: '2019-02-08'
 covariate_forecast_newmoons:
-- 521
 - 522
 - 523
 - 524
 - 525
 - 526
+- 527
 covariate_forecast_months:
-- 7.0
 - 8.0
 - 9.0
 - 10.0
 - 11.0
 - 12.0
+- 1.0
 covariate_forecast_years:
 - 2019.0
 - 2019.0
 - 2019.0
 - 2019.0
 - 2019.0
-- 2019.0
+- 2020.0
 rodent_forecast_newmoons:
 - 513
 - 514
@@ -36,6 +36,7 @@ rodent_forecast_newmoons:
 - 524
 - 525
 - 526
+- 527
 rodent_forecast_months:
 - 12.0
 - 1.0
@@ -51,6 +52,7 @@ rodent_forecast_months:
 - 10.0
 - 11.0
 - 12.0
+- 1.0
 rodent_forecast_years:
 - 2018.0
 - 2019.0
@@ -66,5 +68,6 @@ rodent_forecast_years:
 - 2019.0
 - 2019.0
 - 2019.0
+- 2020.0
 confidence_level: 0.9
 
