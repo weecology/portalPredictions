@@ -6,7 +6,7 @@ setup_dir()
 #Run all models using portalcasting defaults
 portalcast()
 
-# check
+# check 2
 x1 <- read.csv("predictions/2019-02-12forecasts.csv")
 print(x1[x1$model=="Ensemble" & x1$species == "total",])
 
