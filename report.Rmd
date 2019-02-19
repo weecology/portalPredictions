@@ -10,69 +10,9 @@ source("tools/forecast_tools.R")
 
 Here's the most recent actual data (blue) compared to the forecast performed right before data collection (black, with error bars)
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
-
-# get most recent rodent data
-observed = portalr::abundance(path = "repo", clean=FALSE, shape='flat', level='treatment', plots='longterm', time = 'newmoon') %>%
-            dplyr::filter(newmoonnumber == max(newmoonnumber), treatment=='control')
-
-# get new moon number associated with this period
-most_recent_date = read.csv(
-  "https://raw.githubusercontent.com/weecology/PortalData/master/Rodents/moon_dates.csv") %>%
-                   dplyr::mutate(censusdate = as.Date(censusdate,format='%Y-%m-%d')) %>%
-                   dplyr::filter(newmoonnumber==unique(observed$newmoonnumber)) %>% 
-                   dplyr::pull(censusdate)
-
-# get most recent forecast prior to data collection
-files = data.frame(names = list.files(path = './predictions', pattern = '*forecasts.csv'))
-files$filedates = as.Date(substr(files$names,1,10),format='%Y-%m-%d')
-latest_forecast = dplyr::filter(files,filedates<most_recent_date) %>% tail(1)
-
-data = read.csv(paste('predictions/',latest_forecast$names,sep=''),na.strings = '')
-
-ensemble = dplyr::filter(data, level == 'Controls', model == 'Ensemble', newmoonnumber==unique(observed$newmoonnumber))
-sp_predictions = get_sp_predicts(ensemble, 'Controls', lead_time = 1)
-
-
-joined_data = dplyr::left_join(sp_predictions, observed, by = c('species','newmoonnumber'))
-joined_data[is.na(joined_data)] = 0
-joined_data[joined_data$species=='total','abundance'] = sum(joined_data$abundance,na.rm=T)
-
-sp_predict = plot_species_forecast(sp_predictions,title=paste0(sp_predictions$forecast_date[2], ": Control plots"))  
-sp_predict = sp_predict + ggplot2::geom_point(data = joined_data, mapping = ggplot2::aes(x = abundance, y = species),
-             color = "blue")
-plot(sp_predict)
+plot_species_casts(with_census = TRUE)
 ```
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
-
-# get most recent rodent data
-observed = portalr::abundance(path = "repo", clean=FALSE, shape='flat', time = 'newmoon') %>%
-            dplyr::filter(newmoonnumber == max(newmoonnumber))
-
-# get new moon number associated with this period
-most_recent_date = read.csv(
-  "https://raw.githubusercontent.com/weecology/PortalData/master/Rodents/moon_dates.csv") %>%
-                   dplyr::mutate(censusdate = as.Date(censusdate,format='%Y-%m-%d')) %>%
-                   dplyr::filter(newmoonnumber==unique(observed$newmoonnumber)) %>% 
-                   dplyr::pull(censusdate)
-
-# get most recent forecast prior to data collection
-files = data.frame(names = list.files(path = './predictions', pattern = '*forecasts.csv'))
-files$filedates = as.Date(substr(files$names,1,10),format='%Y-%m-%d')
-latest_forecast = dplyr::filter(files,filedates<most_recent_date) %>% tail(1)
-
-data = read.csv(paste('predictions/',latest_forecast$names,sep=''),na.strings = '')
-
-ensemble = dplyr::filter(data, level == 'All', model == 'Ensemble', newmoonnumber==unique(observed$newmoonnumber))
-sp_predictions = get_sp_predicts(ensemble, 'All', lead_time = 1)
-
-
-joined_data = dplyr::left_join(sp_predictions, observed, by = c('species','newmoonnumber'))
-joined_data[is.na(joined_data)] = 0
-joined_data[joined_data$species=='total','abundance'] = sum(joined_data$abundance,na.rm=T)
-
-sp_predict = plot_species_forecast(sp_predictions,title=paste0(sp_predictions$forecast_date[2], ": All plots"))  
-sp_predict = sp_predict + ggplot2::geom_point(data = joined_data, mapping = ggplot2::aes(x = abundance, y = species),
-             color = "blue")
-plot(sp_predict)
+plot_species_casts(with_census = TRUE, level = "All")
 ```
