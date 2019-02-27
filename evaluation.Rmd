@@ -8,15 +8,6 @@ knitr::opts_chunk$set(
 	message = FALSE,
 	warning = FALSE
 )
-  species <- rodent_spp(set = "evalplot")
-  fcasts <- read_casts() %>%
-            select_casts(species = species, level = "Controls") %>%
-            append_observed_to_cast()
-  fcast_errors <- measure_cast_error(fcasts)
-  hcasts <- read_casts(cast_type = "hindcasts") %>%
-            select_casts(species = species, level = "Controls") %>%
-            append_observed_to_cast()
-  hcast_errors <- measure_cast_error(hcasts)
 ```
 
 ## Metrics
@@ -28,7 +19,9 @@ knitr::opts_chunk$set(
 
 ## How have the models done recently?
 
-First, we evaluate the models' abilities to forecast the data since the beginning of the forecasting project. 
+```{r recent_eval, echo=FALSE, fig.width=7, fig.height=7}
+plot_err_lead_spp_mods()
+```
 
 ## How would have the models done historically?
 

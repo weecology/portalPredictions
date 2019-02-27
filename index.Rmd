@@ -14,7 +14,7 @@ source("tools/forecast_tools.R")
 
 This is the forecast for next year's sampling of rodents in the control plots at Portal. The black line indicates the historic total rodent abundance. The blue line indicates the Ensemble model's forecast for total rodent abundances over the next 12 months, along with 90% confidence intervals.
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8, fig.height=6}
+```{r, echo=FALSE, fig.width=8, fig.height=6}
 plot_cast_ts()
 ```
 
@@ -22,7 +22,7 @@ plot_cast_ts()
 
 Point forecasts and 90% confidence intervals for specific species at the site for the next sampling period. 
 
-```{r speciesforecasts, echo=FALSE, message=FALSE, warning=FALSE}
+```{r speciesforecasts, echo=FALSE}
 plot_cast_point()
 ```
 

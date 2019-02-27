@@ -9,10 +9,10 @@ source("tools/forecast_tools.R")
 ```
 
 Here's the most recent actual data (blue) compared to the forecast performed right before data collection (black, with error bars)
-```{r, echo=FALSE, message=FALSE, warning=FALSE}
+```{r, echo=FALSE}
 plot_cast_point(with_census = TRUE)
 ```
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE}
+```{r, echo=FALSE}
 plot_cast_point(with_census = TRUE, level = "All")
 ```
