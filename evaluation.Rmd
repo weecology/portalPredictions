@@ -19,7 +19,7 @@ knitr::opts_chunk$set(
 
 ## How have the models done recently?
 
-```{r recent_eval, echo=FALSE, fig.width=7, fig.height=7}
+```{r recent_eval, echo=FALSE, fig.width=10, fig.height=10}
 plot_err_lead_spp_mods()
 ```
 
