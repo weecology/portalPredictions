@@ -20,8 +20,10 @@ knitr::opts_chunk$set(
 ```
 
 ## Metrics
-**Error**: Error is the raw difference between a predicted value ($\hat{y}_{i}$) and observed value ($y_{i}$): 
-**RMSE**: Root Mean Square Error (RMSE) is a metric used to evaluate the point estimate of a forecast.  
+**Error**: Error is the raw difference between a predicted point value ($\hat{y}_{i}$) and observed value ($y_{i}$): $e_{i} = \hat{y}_{i} - y_{i}$. Although we generally summarize errors in a fashion that results in non-negative values only (*e.g.*, via squaring), the raw error provides information about prediction bias (if the models tend to over- or under-predict in a systematic fashion).
+
+**RMSE**: Root Mean Square Error (RMSE) is used to evaluate the absolute accuracy of the point estimates of a forecast. Across $N$ predicted values in a time series, $RMSE = \sqrt{\frac{\sum_{i=1}^{N}{e_{i}^2}}{N}}$.  
+
 **Coverage**: Coverage is used to evaluate the uncertainty in a forecast and is the percentage of observations which fell within the confidence interval of the prediction. Because we use a 90% CI, coverage would ideally be equal to 0.90. If coverage is higher than 0.90, the forecast's intervals are too wide; if it's lower than 0.90, the forecast intervals are too narrow.
 
 ## How have the models done recently?
