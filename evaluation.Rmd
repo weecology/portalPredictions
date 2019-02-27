@@ -28,10 +28,11 @@ knitr::opts_chunk$set(
 
 ## How have the models done recently?
 
+First, we evaluate the models' abilities to forecast the data since the beginning of the forecasting project. 
 
-## How have the models done historically?
+## How would have the models done historically?
 
-
+Here, we evaluate the models' abilities to hindcast the historic data.
 
 
 
