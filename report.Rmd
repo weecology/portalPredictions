@@ -2,12 +2,6 @@
 title: "Report - Latest Rodent Data"
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-'%>%' <- magrittr::'%>%'
-source("tools/forecast_tools.R")
-```
-
 Here's the most recent actual data (blue) compared to the forecast performed right before data collection (black, with error bars)
 ```{r, echo=FALSE}
 plot_cast_point(with_census = TRUE)

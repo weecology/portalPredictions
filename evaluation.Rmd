@@ -2,14 +2,6 @@
 title: "Evaluation"
 ---
   
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(
-	echo = FALSE,
-	message = FALSE,
-	warning = FALSE
-)
-```
-
 ## Metrics
 **Error**: Error is the raw difference between a predicted point value ($\hat{y}_{i}$) and observed value ($y_{i}$): $e_{i} = \hat{y}_{i} - y_{i}$. Although we generally summarize errors in a fashion that results in non-negative values only (*e.g.*, via squaring), the raw error provides information about prediction bias (if the models tend to over- or under-predict in a systematic fashion).
 

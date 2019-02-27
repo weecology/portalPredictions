@@ -4,12 +4,6 @@ title: "Portal Forecast"
 
 Welcome to Portal Forecasting! This is a website run by the [Weecology](http://weecology.org/) group, interdisciplinary ecologists at the [University of Florida](http://www.wec.ufl.edu/). On this website, you'll find information about our ongoing efforts to forecast a time series of rodent abundances from [The Portal project](http://portal.weecology.org/), a long-term experimental monitoring project in desert ecology. Enjoy! 
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-'%>%' <- magrittr::'%>%'
-source("tools/forecast_tools.R")
-```
-
 ## Total Abundance Forecast
 
 This is the forecast for next year's sampling of rodents in the control plots at Portal. The black line indicates the historic total rodent abundance. The blue line indicates the Ensemble model's forecast for total rodent abundances over the next 12 months, along with 90% confidence intervals.
