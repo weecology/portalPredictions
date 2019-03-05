@@ -11,5 +11,4 @@ pacman::p_load(devtools, dplyr, forecast, ggplot2, htmltab, lubridate, ltsa,
                magrittr, parallel, RCurl, readr, rmarkdown, testthat, tidyverse,
                tscount, yaml, zoo)
 pacman::p_load_gh('weecology/portalr')
-#pacman::p_load_gh('weecology/portalcasting')
-devtools::install_github("weecology/portalcasting")
+pacman::p_load_gh('weecology/portalcasting')
