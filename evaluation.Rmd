@@ -2,6 +2,10 @@
 title: "Evaluation"
 ---
   
+Here we evaluate how each of the models has done compared to observed values.
+
+<br>
+
 ## Metrics
 **Error**: Error is the raw difference between a predicted point value ($\hat{y}_{i}$) and observed value ($y_{i}$): $e_{i} = \hat{y}_{i} - y_{i}$. Although we generally summarize errors in a fashion that results in non-negative values only (*e.g.*, via squaring), the raw error provides information about prediction bias (if the models tend to over- or under-predict in a systematic fashion).
 
@@ -9,13 +13,17 @@ title: "Evaluation"
 
 **Coverage**: Coverage is used to evaluate the uncertainty in a forecast and is the percentage of observations which fell within the confidence interval of the prediction. Because we use a 90% CI, coverage would ideally be equal to 0.90. If coverage is higher than 0.90, the forecast's intervals are too wide; if it's lower than 0.90, the forecast intervals are too narrow.
 
+<br> 
+
 ## How have the models done recently?
 
 This figure shows the raw error as a function of lead time (how far in advance the prediction was made) for three forecast dates (colors of lines) across each combination of model (column) and species (row) for a selection of historically common species and the total rodents, for the control (unmanipulated) plots only. 
 
-```{r recent_eval, echo=FALSE, fig.width=10, fig.height=10}
+```{r, recent_eval, echo=FALSE, fig.width=10, fig.height=10}
 plot_err_lead_spp_mods()
 ```
+
+<br>
 
 ## How would have the models done historically?
 

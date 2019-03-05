@@ -3,10 +3,15 @@ title: "Report - Latest Rodent Data"
 ---
 
 Here's the most recent forecast for which observations have been made. The actual data (blue) are plotted in comparison to the forecast performed right before data collection (white, with error bars) for the control (unmanipulated) plots (top) and all plots together (bottom):
-```{r, echo=FALSE}
+
+<br> 
+
+```{r, with_census_controls, echo=FALSE}
 plot_cast_point(with_census = TRUE)
 ```
 
-```{r, echo=FALSE}
+<br>
+
+```{r, with_census_all, echo=FALSE}
 plot_cast_point(with_census = TRUE, level = "All")
 ```
