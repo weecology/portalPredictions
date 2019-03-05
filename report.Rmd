@@ -7,6 +7,8 @@ Here's the most recent forecast for which observations have been made. The actua
 plot_cast_point(with_census = TRUE)
 ```
 
+<br>
+
 ```{r, with_census_all, echo=FALSE}
 plot_cast_point(with_census = TRUE, level = "All")
 ```

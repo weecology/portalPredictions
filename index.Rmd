@@ -2,7 +2,11 @@
 title: "Portal Forecast"
 ---
 
-Welcome to Portal Forecasting! This is a website run by the [Weecology](http://weecology.org/) group, interdisciplinary ecologists at the [University of Florida](http://www.wec.ufl.edu/). On this website, you'll find information about our ongoing efforts to forecast a time series of rodent abundances from [The Portal project](http://portal.weecology.org/), a long-term experimental monitoring project in desert ecology. Enjoy! 
+Welcome to Portal Forecasting! This is a website run by the [Weecology](http://weecology.org/) team, comprised of [Ethan White's](http://whitelab.weecology.org/) and [Morgan Ernest's](http://ernestlab.weecology.org/) lab groups at the [University of Florida](http://www.wec.ufl.edu/). We are a group of interdisciplinary ecologists broadly interested in collaborative approaches to empirical and computation ecology, open science, and open data.
+
+On this website, you'll find information about our ongoing efforts to forecast a time series of rodent abundances from [The Portal project](http://portal.weecology.org/), a long-term experimental monitoring project in desert ecology. Enjoy! 
+
+<br>
 
 ## Total Abundance Forecast
 
@@ -12,6 +16,8 @@ This is the forecast for next year's sampling of rodents in the control plots at
 plot_cast_ts()
 ```
 
+<br>
+
 ## Species-Level Forecasts
 
 Point forecasts and 90% confidence intervals for specific species at the site for the next sampling period. 
@@ -19,6 +25,8 @@ Point forecasts and 90% confidence intervals for specific species at the site fo
 ```{r, species_forecasts, echo=FALSE}
 plot_cast_point()
 ```
+
+<br>
 
 ## Most Abundant Species
 

@@ -27,6 +27,7 @@ hard-coded single period of the `ets` function, we could not include the
 seasonal components to the ESSS model. ESSS is fit flexibly, such that the 
 model parameters can vary from fit to fit.
 
+<br>
 
 ## AutoARIMA
 
@@ -46,6 +47,8 @@ models, the seasonality is hard-coded to be on the same period as the sampling,
 which is not the case for the Portal rodent surveys. As a result, no seasonal 
 models were evaluated. AutoArima is fit flexibly, such that the model 
 parameters can vary from fit to fit.
+
+<br>
 
 ## nbGARCH
 
@@ -72,6 +75,8 @@ The `tsglm` function in the **tscount** package [@Liboschik2017a] uses a
 overdispersion as an additional parameter in a two-step approach. This 
 two-stage approach has only been minimally evaluated, although preliminary 
 simulation-based studies are promising [@Liboschik2017b].    
+
+<br>
 
 ## pevGARCH
 
@@ -117,6 +122,8 @@ environmental covariates:
 The final model is an intercept-only model. The single best model of the 11 is 
 selected based on AIC. 
 
+<br>
+
 ## Ensemble
 
 In addition to the base models, we include an ensemble, constructed using the
@@ -124,5 +131,7 @@ base model AIC weights. The ensemble mean is calculated as the AIC-weighted
 mean of all model means. The ensemble variance is estimated as the sum of 
 the AIC-weighted mean of all model variances and the variance of the estimated
 AIC-weighted mean, calculated using the unbiased estimate of sample variances.
+
+<br>
 
 # References
