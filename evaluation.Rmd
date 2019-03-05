@@ -2,170 +2,25 @@
 title: "Evaluation"
 ---
   
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(
-	echo = FALSE,
-	message = FALSE,
-	warning = FALSE
-)
-'%>%' <- magrittr::'%>%'
-source("tools/forecast_tools.R")
+## Metrics
+**Error**: Error is the raw difference between a predicted point value ($\hat{y}_{i}$) and observed value ($y_{i}$): $e_{i} = \hat{y}_{i} - y_{i}$. Although we generally summarize errors in a fashion that results in non-negative values only (*e.g.*, via squaring), the raw error provides information about prediction bias (if the models tend to over- or under-predict in a systematic fashion).
 
-model_metadata = yaml::yaml.load_file('data/metadata.yaml')
-pred_interval = model_metadata$pred_interval
-models_of_interest = c('AutoArima','Ensemble','ESSS','nbGARCH','pevGARCH')
+**RMSE**: Root Mean Square Error (RMSE) is used to evaluate the absolute accuracy of the point estimates of a forecast. Across $N$ predicted values in a time series, $RMSE = \sqrt{\frac{\sum_{i=1}^{N}{e_{i}^2}}{N}}$.  
 
-species_of_interest = c('BA','DM','DO','PP','OT','NA','total')
-species_names = read.csv(
-  "https://raw.githubusercontent.com/weecology/PortalData/master/Rodents/Portal_rodent_species.csv",
-                          stringsAsFactors = F,na.strings = '') %>%
-  dplyr::select(species = speciescode, full_species_name = scientificname) %>%
-  dplyr::add_row(species='total', full_species_name='Total Rodents')
-
-new_moons = read.csv(
-  "https://raw.githubusercontent.com/weecology/PortalData/master/Rodents/moon_dates.csv") %>%
-            dplyr::mutate(censusdate = as.Date(censusdate))
-
-# Setup rodent observations
-species_abundance = portalr::abundance(path = "repo", clean=FALSE, shape='flat', level='treatment', 
-                                       plots="longterm", time='newmoon') %>%
-  dplyr::filter(treatment=="control") %>%
-  dplyr::rename(actual = abundance, level = treatment) %>%
-  dplyr::mutate(level='Controls',currency='abundance') %>%
-  dplyr::filter(species %in% species_of_interest)
-
-total_abundance = portalr::abundance(path = "repo", clean=FALSE, shape='flat', level='treatment', 
-                                     plots="longterm", time='newmoon') %>%
-  dplyr::filter(treatment=="control") %>%
-  dplyr::group_by(newmoonnumber) %>%
-  dplyr::summarise(actual=sum(abundance)) %>%
-  dplyr::ungroup() %>%
-  dplyr::mutate(level='Controls',currency='abundance',species='total')
-
-observation_data = species_abundance %>%
-  dplyr::bind_rows(total_abundance) %>% 
-  dplyr::left_join(new_moons, by='newmoonnumber')
-
-```
+**Coverage**: Coverage is used to evaluate the uncertainty in a forecast and is the percentage of observations which fell within the confidence interval of the prediction. Because we use a 90% CI, coverage would ideally be equal to 0.90. If coverage is higher than 0.90, the forecast's intervals are too wide; if it's lower than 0.90, the forecast intervals are too narrow.
 
 ## How have the models done recently?
 
-This graph shows the forecast error of some recent forecasts for the most recent sampling dates. This is shown for all model types in the columns and several common rodent species (and total rodents) in the rows. These evaluations are for the Control plots where no manipulation is done. 
-```{r recent_eval, echo=FALSE, message=FALSE, warning=FALSE,, fig.width=15, fig.height=15}
-###############################################
-#Get all the recent forecasts
-forecast_data = compile_forecasts(use_hindcasts = FALSE) %>%
-  dplyr::filter(model %in% models_of_interest)
+This figure shows the raw error as a function of lead time (how far in advance the prediction was made) for three forecast dates (colors of lines) across each combination of model (column) and species (row) for a selection of historically common species and the total rodents, for the control (unmanipulated) plots only. 
 
-# Round so that large decimal place differences do not cause
-# similar forecasts to be seen as distinct. 
-forecast_data$estimate = round(forecast_data$estimate, 3)
-forecast_data$LowerPI = round(forecast_data$LowerPI, 3)
-forecast_data$UpperPI = round(forecast_data$UpperPI, 3)
-
-# Keep 1 forecast per unique initial_newmoon. When there are multiple forecasts
-# using the same initial_newmoon, use the first one.
-forecast_dates_to_keep = forecast_data %>%
-  dplyr::select(date, initial_newmoon) %>%
-  dplyr::distinct() %>%
-  dplyr::group_by(initial_newmoon) %>%
-  dplyr::filter(date == min(date)) %>%
-  dplyr::ungroup() %>%
-  dplyr::mutate(keep='yes') 
-
-forecast_data = forecast_data %>%
-  dplyr::left_join(forecast_dates_to_keep, by=c('date','initial_newmoon')) %>%
-  dplyr::filter(keep=='yes') %>%
-  dplyr::select(-keep)
-
-##################################
-#Combine forecasts and oservations
-forecast_errors = forecast_data %>%
-  dplyr::left_join(observation_data, by=c('newmoonnumber','level','species','currency')) %>% 
-  dplyr::mutate(rmse = sqrt((estimate - actual)^2))
-
-# Sometimes there are model runs on the same day and with all the same info,
-# this gets rid of those
-forecast_errors = forecast_errors %>%
-  dplyr::distinct()
-
-# Drop any entries that don't have an observation
-# (ie. a rainy sample period)
-forecast_errors = forecast_errors %>%
-  dplyr::filter(!is.na(actual))
-
-# Filter to common species and apply the full name
-forecast_errors = forecast_errors %>%
-  dplyr::filter(species %in% species_of_interest) %>%
-  dplyr::left_join(species_names, by='species') %>%
-  dplyr::select(-species) %>%
-  dplyr::rename(species=full_species_name)
-
-# Add a newline to the longer species names
-forecast_errors$species = with(forecast_errors, ifelse(nchar(species)>15, stringr::str_replace(species,' ','\n'), species))
-
-#############################################################
-# Displaying the data from many forecasts in the past can create a mess of a plot. see #218.
-# So here three forecasts are chosen from 1, 6, and 12 newmoons into the past. 
-# Sometimes forecasts data is missing for a particular initial_newmoon, the recursive function 
-# update_initial_newmoon attempts to find another one from the same time pluts/minus 2 month period.
-#  This ensures 3 forecasts are always shown.
-lead_times_to_show = c(1,6,12)
-most_recent_observed_newmoon = max(new_moons$newmoonnumber)
-initial_newmoons_to_keep = most_recent_observed_newmoon - lead_times_to_show
-
-initial_newmoons_to_keep = sapply(initial_newmoons_to_keep, update_initial_newmoon)
-
-forecast_errors = forecast_errors %>%
-  dplyr::filter(initial_newmoon %in% initial_newmoons_to_keep)
-
-#####################################
-ggplot2::ggplot(forecast_errors, ggplot2::aes(x=censusdate, y=rmse, group=as.character(date), color=as.character(date))) +
-  ggplot2::geom_point(size=4)+
-  ggplot2::geom_line(size=1.5) +
-  ggplot2::scale_color_brewer(palette='Dark2') +
-  ggplot2::scale_x_date(breaks = unique(forecast_errors$censusdate)) +
-  ggplot2::facet_grid(species~model, scales = 'free_y') + 
-  ggplot2::theme_bw() +
-  ggplot2::theme(axis.text.x = ggplot2::element_text(angle=45, hjust=0.99, debug = FALSE),
-        axis.text = ggplot2::element_text(size=12),
-        axis.title = ggplot2::element_text(size=20),
-        strip.text = ggplot2::element_text(size=12),
-        legend.text = ggplot2::element_text(size=15),
-        legend.title = ggplot2::element_text(size=18)) +
-  ggplot2::labs(x='Sample Date',y='RMSE', color='Forecast Issue\nDate')
-
+```{r recent_eval, echo=FALSE, fig.width=10, fig.height=10}
+plot_err_lead_spp_mods()
 ```
 
+## How would have the models done historically?
 
+Here, we evaluate the models' abilities to hindcast the historic data. This figure shows coverage (left column) and RMSE (right column) for each of a selection of historically common species and total rodents on the control (unmanipulated) plots only. The x-axis in each plot corresponds to the different models, including the ensemble. Each model's raw metric values are displayed for all included hindcasts (with jittering to show overlapping points) in addition to a summarizing quartile box-whisker (ends of the whiskers show the exteme values, box shows the 25%-75% range, horizontal line shows the median). The 90% coverage target is indicated by the horizontal dotted line.
 
-## How have the models done historically?
-
-These graphs show errors as a function of lead time. The lead time is the number of months into the future that forecast is made. The error values are an average of all forecast errors using observations since 2010. Note that this currently uses hindcasts of the prior observations, and is also only for the Control plots.
-
-**RMSE**: Root mean square error, this is a metric used to evaluate the point estimate of a forecast.  
-**Coverage**: This is the percentage of observations which fell within the 90% confidence interval of a forecast. Ideally this would be equal to 0.90. If it is higher than 0.90 the forecasts intervals are too wide, if it's lower then the forecast intervals are too narrow.
-
-
-```{r hindcast_eval, echo=FALSE, message=FALSE, warning=FALSE,, fig.width=9, fig.height=15}
-
-#Get the all the forecasts made during observation period
-forecast_data = compile_forecasts(use_hindcasts = TRUE)
-forecast_errors = calculate_forecast_error(observation_data, forecast_data, error_metric = 'RMSE') %>%
-  dplyr::filter(error_value < 200) %>% #Drop RMSE greater than this because it throws off all the graphs
-  dplyr::bind_rows(calculate_forecast_error(observation_data, forecast_data, error_metric = 'coverage'))
-
-forecast_errors = forecast_errors %>%
-  dplyr::left_join(species_names, by='species')
-
-ggplot2::ggplot(forecast_errors, ggplot2::aes(x=lead_time, y=error_value, group=model, color=model)) +
-  ggplot2::geom_point()+
-  ggplot2::geom_line() +
-  ggplot2::geom_hline(yintercept = 0.9) +
-  ggplot2::labs(x='Lead Time (New Moons)') +
-  ggplot2::facet_wrap(full_species_name~error_metric, scales = 'free_y', ncol=2) + 
-  ggplot2::theme_bw() +
-  ggplot2::labs(y = "Error Value", colour = "Model")
-
-
+```{r, hindcast_eval, echo=FALSE, fig.width=9, fig.height=15}
+plot_cov_RMSE_mod_spp()
 ```
