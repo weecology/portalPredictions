@@ -2,7 +2,9 @@
 title: "About Portal Forecasts"
 ---
 
-# Contributors
+<br>
+
+## Contributors
 
 [Ethan P. White](https://orcid.org/0000-0001-6728-7745), [Glenda M. Yenni](https://orcid.org/0000-0001-6969-1848), [Shawn D. Taylor](https://orcid.org/0000-0002-6178-6903), [Erica M. Christensen](https://orcid.org/0000-0002-5635-2502), [Ellen K. Bledsoe](https://orcid.org/0000-0002-3629-7235), [Juniper L. Simonis](https://orcid.org/0000-0001-9798-0460), and [S. K. Morgan Ernest](https://orcid.org/0000-0002-6026-8530)
 
@@ -26,10 +28,10 @@ Code and data underlying the predictions are housed in a [GitHub repository](htt
 
 For further detail, see our manuscript in [*Methods in Ecology and Evolution*]( https://doi.org/10.1111/2041-210X.13104).
 
-
+<br>
 
 # Acknowledgements 
 
-This research was supported in part by the [National Science Foundation](http://nsf.gov/) through grant [DEB-1622425](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1622425) to S.K.M. Ernest and by the [Gordon and Betty Moore Foundation’s Data-Driven Discovery Initiative](http://www.moore.org/programs/science/data-driven-discovery) through [Grant GBMF4563](http://www.moore.org/grants/list/GBMF4563) to E. P. White. 
+This research was supported in part by the [National Science Foundation](http://nsf.gov/) through grant [DEB-1622425](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1622425) to S.K.M. Ernest and by the [Gordon and Betty Moore Foundation's Data-Driven Discovery Initiative](http://www.moore.org/programs/science/data-driven-discovery) through [Grant GBMF4563](http://www.moore.org/grants/list/GBMF4563) to E. P. White. 
 
 We thank Henry Senyondo for help with continuous integration, Hao Ye for feedback on documents and code, Heather Bradley for logistical support, John Abatzoglou for assistance with climate forecasts, and James Brown for establishing the Portal Project.
