@@ -24,7 +24,7 @@ Most forecasts for the future state of ecological systems are conducted once and
 
 # Automated Predictions
 
-Code and data underlying the predictions are housed in a [GitHub repository](https://github.com/weecology/portalPredictions), continuous integration and automated running of the code occurs via [Travis](https://travis-ci.org/weecology/portalPredictions), and completed forecasts are automatically archived on [Zenodo](https://zenodo.org/record/2543733). The translation of the raw [Portal Data](https://github.com/weecology/PortalData) into model-ready formats is done via the [portalr package](https://github.com/weecology/Portalr) and the [portalcasting package](https://github.com/weecology/Portalcasting) is used to connect the data to the models, execute the models, synthesize the predictions, and produce the output figures.
+Code and data underlying the predictions are housed in a [GitHub repository](https://github.com/weecology/portalPredictions), continuous integration and automated running of the code occurs via [Travis](https://travis-ci.org/weecology/portalPredictions), and completed forecasts are automatically archived on [Zenodo](https://doi.org/10.5281/zenodo.2581421). The translation of the raw [Portal Data](https://github.com/weecology/PortalData) into model-ready formats is done via the [portalr package](https://github.com/weecology/Portalr) and the [portalcasting package](https://github.com/weecology/Portalcasting) is used to connect the data to the models, execute the models, synthesize the predictions, and produce the output figures.
 
 For further detail, see our manuscript in [*Methods in Ecology and Evolution*]( https://doi.org/10.1111/2041-210X.13104).
 
