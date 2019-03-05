@@ -13,7 +13,7 @@ title: "Evaluation"
 
 This figure shows the raw error as a function of lead time (how far in advance the prediction was made) for three forecast dates (colors of lines) across each combination of model (column) and species (row) for a selection of historically common species and the total rodents, for the control (unmanipulated) plots only. 
 
-```{r recent_eval, echo=FALSE, fig.width=10, fig.height=10}
+```{r, recent_eval, echo=FALSE, fig.width=10, fig.height=10}
 plot_err_lead_spp_mods()
 ```
 
