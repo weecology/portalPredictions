@@ -322,15 +322,24 @@ $(document).ready(function () {
 </div>
 
 
+<p>Here we evaluate how each of the models has done compared to observed values.</p>
+<p><br></p>
+<div id="metrics" class="section level2">
+<h2>Metrics</h2>
+<p><strong>Error</strong>: Error is the raw difference between a predicted point value (<span class="math inline">\(\hat{y}_{i}\)</span>) and observed value (<span class="math inline">\(y_{i}\)</span>): <span class="math inline">\(e_{i} = \hat{y}_{i} - y_{i}\)</span>. Although we generally summarize errors in a fashion that results in non-negative values only (<em>e.g.</em>, via squaring), the raw error provides information about prediction bias (if the models tend to over- or under-predict in a systematic fashion).</p>
+<p><strong>RMSE</strong>: Root Mean Square Error (RMSE) is used to evaluate the absolute accuracy of the point estimates of a forecast. Across <span class="math inline">\(N\)</span> predicted values in a time series, <span class="math inline">\(RMSE = \sqrt{\frac{\sum_{i=1}^{N}{e_{i}^2}}{N}}\)</span>.</p>
+<p><strong>Coverage</strong>: Coverage is used to evaluate the uncertainty in a forecast and is the percentage of observations which fell within the confidence interval of the prediction. Because we use a 90% CI, coverage would ideally be equal to 0.90. If coverage is higher than 0.90, the forecast’s intervals are too wide; if it’s lower than 0.90, the forecast intervals are too narrow.</p>
+<p><br></p>
+</div>
 <div id="how-have-the-models-done-recently" class="section level2">
 <h2>How have the models done recently?</h2>
-<p>This graph shows the forecast error of some recent forecasts for the most recent sampling dates. This is shown for all model types in the columns and several common rodent species (and total rodents) in the rows. These evaluations are for the Control plots where no manipulation is done. <img src="evaluation_files/figure-html/recent_eval-1.png" width="1440" /></p>
+<p>This figure shows the raw error as a function of lead time (how far in advance the prediction was made) for three forecast dates (colors of lines) across each combination of model (column) and species (row) for a selection of historically common species and the total rodents, for the control (unmanipulated) plots only.</p>
+<p><img src="evaluation_files/figure-html/recent_eval-1.png" width="960" /></p>
+<p><br></p>
 </div>
-<div id="how-have-the-models-done-historically" class="section level2">
-<h2>How have the models done historically?</h2>
-<p>These graphs show errors as a function of lead time. The lead time is the number of months into the future that forecast is made. The error values are an average of all forecast errors using observations since 2010. Note that this currently uses hindcasts of the prior observations, and is also only for the Control plots.</p>
-<p><strong>RMSE</strong>: Root mean square error, this is a metric used to evaluate the point estimate of a forecast.<br />
-<strong>Coverage</strong>: This is the percentage of observations which fell within the 90% confidence interval of a forecast. Ideally this would be equal to 0.90. If it is higher than 0.90 the forecasts intervals are too wide, if it’s lower then the forecast intervals are too narrow.</p>
+<div id="how-would-have-the-models-done-historically" class="section level2">
+<h2>How would have the models done historically?</h2>
+<p>Here, we evaluate the models’ abilities to hindcast the historic data. This figure shows coverage (left column) and RMSE (right column) for each of a selection of historically common species and total rodents on the control (unmanipulated) plots only. The x-axis in each plot corresponds to the different models, including the ensemble. Each model’s raw metric values are displayed for all included hindcasts (with jittering to show overlapping points) in addition to a summarizing quartile box-whisker (ends of the whiskers show the exteme values, box shows the 25%-75% range, horizontal line shows the median). The 90% coverage target is indicated by the horizontal dotted line.</p>
 <p><img src="evaluation_files/figure-html/hindcast_eval-1.png" width="864" /></p>
 </div>
 

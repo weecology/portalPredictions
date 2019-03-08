@@ -324,12 +324,12 @@ $(document).ready(function () {
 <div id="model-changes" class="section level1">
 <h1>Model Changes</h1>
 <div id="removal-of-box-cox-transformation-in-autoarima" class="section level3">
-<h3>Removal of Box-Cox transformation in AutoARIMA</h3>
-<p>In Mar 2018, the Box-Cox transformation was removed from the AutoARIMA model to have all of the models be predicting the same data.</p>
+<h3>Removal of Box-Cox transformation in AutoArima</h3>
+<p>In Mar 2018, the Box-Cox transformation was removed from the AutoArima model to have all of the models be predicting the same data.</p>
 </div>
 <div id="switch-predictions-of-covariates" class="section level3">
 <h3>Switch predictions of covariates</h3>
-<p>In Mar 2016, the covariate (weather and NDVI) were changed from recent averages to predicted values. We are currently using downscaled ENSMEAN climate predictions and a local NDVI forecast (using a seasonal auto ARIMA). (PR 251)</p>
+<p>In Mar 2018, the covariate (weather and NDVI) were changed from recent averages to predicted values. We are currently using downscaled ENSMEAN climate predictions and a local NDVI forecast (using a seasonal auto ARIMA). (PR 251)</p>
 </div>
 <div id="add-intercept-only-option-in-pevgarch" class="section level3">
 <h3>Add intercept-only option in pevGARCH</h3>
@@ -338,7 +338,7 @@ $(document).ready(function () {
 <div id="shift-to-newmoon-based-modeling-interpolate-missing-values" class="section level3">
 <h3>Shift to newmoon-based modeling &amp; interpolate missing values</h3>
 <p>In Feb 2018, the models were edited to work on the newmoon numbers, thereby requiring acknowledgment of missing surveys (i.e. newmoons where a complete survey was not conducted). Because the models do not handle missing values, we decided to interpolate missing data for the time being.</p>
-<p>Four PRs are associated with these updates: PRs 196, 197, 207, and 212 deal with the ESSS, AutoARIMA, nbGARCH, and pevGARCH</p>
+<p>Four PRs are associated with these updates: PRs 196, 197, 207, and 212 deal with the ESSS, AutoArima, nbGARCH, and pevGARCH</p>
 </div>
 </div>
 
