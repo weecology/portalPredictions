@@ -1,5 +1,18 @@
 # Model Changes
 
+### Setting up pevGARCH to properly hindcast
+*2019-03-20*
+
+`pevGARCH()` was not set up for hindcasting within the pipeline based off
+of the historical covariate forecasts. There's now smooth integration
+via a few additional elements in the metadata list (`covariate_source`
+and `covariate_date_made`) which are only presently used for hindcasts
+but may prove to be useful with future models in forecast mode as well.
+
+In [portalcasting 0.6.0](https://github.com/weecology/portalcasting/releases/tag/v0.6.0)
+
+[Relevant PR](https://github.com/weecology/portalPredictions/pull/324)
+
 ### Addition of nbsGARCH
 *2019-03-19*
 
