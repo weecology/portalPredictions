@@ -11,7 +11,7 @@ git config --global user.name "Weecology Deploy Bot"
 
 # Commit changes to portalPredictions repo
 git checkout master
-git add predictions/* docs/* data/* 
+git add predictions/* docs/* data/* models/*
 git commit -m "Update forecasts: Travis Build $TRAVIS_BUILD_NUMBER [ci skip]"
 
 # Add deploy remote
