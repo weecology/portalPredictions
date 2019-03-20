@@ -11,13 +11,17 @@ Predictions are made and archived weekly. Approximately once a month, one of the
 
 ## How to add a new model
 
-Modeling is driven by the [portalcasting package](https://github.com/weecology/portalcasting). New models can be added there.
+Modeling is driven by the [portalcasting package](https://github.com/weecology/portalcasting). New models should be added there (see the see the ["adding a model"
+vignette](https://weecology.github.io/portalcasting/articles/adding_a_model.html)).
 
 ## Docker builds
 
 Forecasts are run using Travis CI based on a docker image. This makes the builds
-faster and more reproducible. When adding new packages to this repo it may be
-necessary to update the Docker container. When building, please tag the image with 
+faster and more reproducible. The image is built using `portalcasting` 
+[v0.6.0](https://github.com/weecology/portalcasting/releases/tag/v0.6.0).
+
+Adding new packages to this repo or updating existing packages will require 
+rebuilding of the Docker container. When building, tag the image with 
 the `latest` tag, as well as a named tag for the date (yyyy-mm-dd, which you should
 replace with the actual current date). Use the following commands:
 
