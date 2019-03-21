@@ -1,5 +1,20 @@
 # Model Changes
 
+## Bottom-end catching in nbGARCH and nbsGARCH
+*2019-03-21*
+
+In `nbGARCH` and then extended into `nbsGARCH`, the models fall back
+to a Poisson distribution if the negative binomial fit fails. Previously
+(with only `nbGARCH`) the Poisson fit always succeeded in those back-ups,
+but now (with `nbsGARCH`) that sometimes isn't the case (because the predictor
+model is more complex) and even the Poisson fit can fail. So now for both 
+models, if that fit fails, we follow what occurs in `pevGARCH` which is to
+use the `fcast0` forecast of 0s and an arbitrarily high AIC (`1e6`).
+
+In [portalcasting 0.7.0](https://github.com/weecology/portalcasting/releases/tag/v0.7.0)
+
+[Relevant PR](https://github.com/weecology/portalPredictions/pull/326)
+
 ### Setting up pevGARCH to properly hindcast
 *2019-03-20*
 
