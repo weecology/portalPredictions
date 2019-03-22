@@ -1,5 +1,5 @@
-filename_suffix: forecasts
-forecast_date: '2019-03-15'
+cast_type: forecasts
+forecast_date: '2019-03-22'
 covariate_forecast_newmoons:
 - 523
 - 524
@@ -61,4 +61,6 @@ rodent_forecast_years:
 - 2020.0
 - 2020.0
 confidence_level: 0.9
+covariate_source: ~
+covariate_date_made: ~
 

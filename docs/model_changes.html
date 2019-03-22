@@ -78,9 +78,7 @@ h6 {
 </style>
 
 
-</head>
 
-<body>
 
 <style type = "text/css">
 .main-container {
@@ -199,8 +197,6 @@ $(document).ready(function () {
 });
 </script>
 
-<div class="container-fluid main-container">
-
 <!-- tabsets -->
 
 <style type="text/css">
@@ -274,6 +270,15 @@ $(document).ready(function () {
 
 
 
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
 
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
@@ -323,22 +328,55 @@ $(document).ready(function () {
 
 <div id="model-changes" class="section level1">
 <h1>Model Changes</h1>
+<div id="bottom-end-catching-in-nbgarch-and-nbsgarch" class="section level2">
+<h2>Bottom-end catching in nbGARCH and nbsGARCH</h2>
+<p><em>2019-03-21</em></p>
+<p>In <code>nbGARCH</code> and then extended into <code>nbsGARCH</code>, the models fall back to a Poisson distribution if the negative binomial fit fails. Previously (with only <code>nbGARCH</code>) the Poisson fit always succeeded in those back-ups, but now (with <code>nbsGARCH</code>) that sometimes isn’t the case (because the predictor model is more complex) and even the Poisson fit can fail. So now for both models, if that fit fails, we follow what occurs in <code>pevGARCH</code> which is to use the <code>fcast0</code> forecast of 0s and an arbitrarily high AIC (<code>1e6</code>).</p>
+<p>In <a href="https://github.com/weecology/portalcasting/releases/tag/v0.7.0">portalcasting 0.7.0</a></p>
+<p><a href="https://github.com/weecology/portalPredictions/pull/326">Relevant PR</a></p>
+<div id="setting-up-pevgarch-to-properly-hindcast" class="section level3">
+<h3>Setting up pevGARCH to properly hindcast</h3>
+<p><em>2019-03-20</em></p>
+<p><code>pevGARCH()</code> was not set up for hindcasting within the pipeline based off of the historical covariate forecasts. There’s now smooth integration via a few additional elements in the metadata list (<code>covariate_source</code> and <code>covariate_date_made</code>) which are only presently used for hindcasts but may prove to be useful with future models in forecast mode as well.</p>
+<p>In <a href="https://github.com/weecology/portalcasting/releases/tag/v0.6.0">portalcasting 0.6.0</a></p>
+<p><a href="https://github.com/weecology/portalPredictions/pull/324">Relevant PR</a></p>
+</div>
+<div id="addition-of-nbsgarch" class="section level3">
+<h3>Addition of nbsGARCH</h3>
+<p><em>2019-03-19</em></p>
+<p>In <a href="https://github.com/weecology/portalcasting/releases/tag/v0.5.0">portalcasting 0.5.0</a></p>
+<p><a href="https://github.com/weecology/portalPredictions/pull/323">Relevant PR</a></p>
+</div>
+<div id="addition-of-species-level-fits-for-autoarima-and-esss" class="section level3">
+<h3>Addition of species-level fits for AutoArima and ESSS</h3>
+<p><em>2018-12-12</em></p>
+<p>With the migration of code to [portalcasting](<a href="https://github.com/weecology/portalcasting" class="uri">https://github.com/weecology/portalcasting</a></p>
+<p><a href="https://github.com/weecology/portalPredictions/pull/295">Relevant PR</a></p>
+</div>
 <div id="removal-of-box-cox-transformation-in-autoarima" class="section level3">
 <h3>Removal of Box-Cox transformation in AutoArima</h3>
-<p>In Mar 2018, the Box-Cox transformation was removed from the AutoArima model to have all of the models be predicting the same data.</p>
+<p><em>2018-03-20</em></p>
+<p>The Box-Cox transformation was removed from the AutoArima model to have all of the models be predicting the same data.</p>
+<p><a href="https://github.com/weecology/portalPredictions/pull/260">Relevant PR</a></p>
 </div>
 <div id="switch-predictions-of-covariates" class="section level3">
 <h3>Switch predictions of covariates</h3>
-<p>In Mar 2018, the covariate (weather and NDVI) were changed from recent averages to predicted values. We are currently using downscaled ENSMEAN climate predictions and a local NDVI forecast (using a seasonal auto ARIMA). (PR 251)</p>
+<p><em>2018-03-15</em></p>
+<p>Covariate (weather and NDVI) were changed from recent averages to predicted values. We are currently using downscaled ENSMEAN climate predictions and a local NDVI forecast (using a seasonal auto ARIMA).</p>
+<p><a href="https://github.com/weecology/portalPredictions/pull/251">Relevant PR</a></p>
 </div>
 <div id="add-intercept-only-option-in-pevgarch" class="section level3">
 <h3>Add intercept-only option in pevGARCH</h3>
-<p>In Feb 2018, associated with the shift to newmoons, the pevGARCH model set was expanded to include an intercept-only model. (PR 212)</p>
+<p><em>2018-02-08</em></p>
+<p>Associated with the shift to newmoons, the pevGARCH model set was expanded to include an intercept-only model.</p>
+<p><a href="https://github.com/weecology/portalPredictions/pull/221">Relevant PR</a></p>
 </div>
 <div id="shift-to-newmoon-based-modeling-interpolate-missing-values" class="section level3">
 <h3>Shift to newmoon-based modeling &amp; interpolate missing values</h3>
+<p><em>2018-02-08</em></p>
 <p>In Feb 2018, the models were edited to work on the newmoon numbers, thereby requiring acknowledgment of missing surveys (i.e. newmoons where a complete survey was not conducted). Because the models do not handle missing values, we decided to interpolate missing data for the time being.</p>
-<p>Four PRs are associated with these updates: PRs 196, 197, 207, and 212 deal with the ESSS, AutoArima, nbGARCH, and pevGARCH</p>
+<p>Relevant PRs: <a href="https://github.com/weecology/portalPredictions/pull/196">ESSS</a>, <a href="https://github.com/weecology/portalPredictions/pull/197">AutoArima</a>, <a href="https://github.com/weecology/portalPredictions/pull/207">nbGARCH</a>, and <a href="https://github.com/weecology/portalPredictions/pull/212">pevGARCH</a>.</p>
+</div>
 </div>
 </div>
 

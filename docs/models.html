@@ -78,9 +78,7 @@ h6 {
 </style>
 
 
-</head>
 
-<body>
 
 <style type = "text/css">
 .main-container {
@@ -199,8 +197,6 @@ $(document).ready(function () {
 });
 </script>
 
-<div class="container-fluid main-container">
-
 <!-- tabsets -->
 
 <style type="text/css">
@@ -274,6 +270,15 @@ $(document).ready(function () {
 
 
 
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
 
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
@@ -322,30 +327,37 @@ $(document).ready(function () {
 </div>
 
 
-<p>We currently analyze and forecast rodent data at Portal using four models:</p>
+<p>We currently analyze and forecast rodent data at Portal using five models:</p>
 <p><br></p>
 <div id="esss" class="section level2">
 <h2>ESSS</h2>
-<p>ESSS (Exponential Smoothing State Space) is a flexible exponential smoothing state space model <span class="citation">(Hyndman et al. 2008)</span> fit to the data at the composite (full site and just control plots) spatial level and the composite (community) ecological level. The model is selected and fitted using the <code>ets</code> and <code>forecast</code> functions in the <strong>forecast</strong> package <span class="citation">(Hyndman 2017)</span> with the <code>allow.multiplicative.trend</code> argument set to <code>TRUE</code> and the <code>forecast_ess</code> function in our <strong>portalPredictions</strong> package <span class="citation">(WeecologyLab 2018)</span>. Models fit using <code>ets</code> implement what is known as the “innovations” approach to state space modeling, which assumes a single source of noise that is equivalent for the process and observation errors <span class="citation">(Hyndman et al. 2008)</span>.</p>
+<p>ESSS (Exponential Smoothing State Space) is a flexible exponential smoothing state space model <span class="citation">(Hyndman et al. 2008)</span> fit to the data at the composite (full site and just control plots) spatial level and both the composite (community) and the articulated (species) ecological levels. The model is selected and fitted using the <code>ets</code> and <code>forecast</code> functions in the <strong>forecast</strong> package <span class="citation">(Hyndman 2017)</span> with the <code>allow.multiplicative.trend</code> argument set to <code>TRUE</code> and the <code>ESSS</code> function in our <a href="https://github.com/weecology/portalcasting"><strong>portalcasting</strong> package</a>. Models fit using <code>ets</code> implement what is known as the “innovations” approach to state space modeling, which assumes a single source of noise that is equivalent for the process and observation errors <span class="citation">(Hyndman et al. 2008)</span>.</p>
 <p>In general, ESSS models are defined according to three model structure parameters: error type, trend type, and seasonality type <span class="citation">(Hyndman et al. 2008)</span>. Each of the parameters can be an N (none), A (additive), or M (multiplicative) state <span class="citation">(Hyndman et al. 2008)</span>. However, because of the difference in period between seasonality and sampling of the Portal rodents combined with the hard-coded single period of the <code>ets</code> function, we could not include the seasonal components to the ESSS model. ESSS is fit flexibly, such that the model parameters can vary from fit to fit.</p>
 <p><br></p>
 </div>
 <div id="autoarima" class="section level2">
 <h2>AutoARIMA</h2>
-<p>AutoArima (Automatic Auto-Regressive Integrated Moving Average) is a flexible Auto-Regressive Integrated Moving Average (ARIMA) model fit to the data at the composite (full site and just control plots) spatial level and the composite (community) ecological level. The model is selected and fitted using the <code>auto.arima</code> and <code>forecast</code> functions in the <strong>forecast</strong> package <span class="citation">(Hyndman and Athanasopoulos 2013; Hyndman 2017)</span> and the <code>forecast_autoarima</code> function in our <strong>portalPredictions</strong> package <span class="citation">(WeecologyLab 2018)</span>.</p>
+<p>AutoArima (Automatic Auto-Regressive Integrated Moving Average) is a flexible Auto-Regressive Integrated Moving Average (ARIMA) model fit to the data at the composite (full site and just control plots) spatial level and both the composite (community) and the articulated (species) ecological levels. The model is selected and fitted using the <code>auto.arima</code> and <code>forecast</code> functions in the <strong>forecast</strong> package <span class="citation">(Hyndman and Athanasopoulos 2013; Hyndman 2017)</span> and the <code>AutoArima</code> function in our <a href="https://github.com/weecology/portalcasting"><strong>portalcasting</strong> package</a>.</p>
 <p>Generally, ARIMA models are defined according to three model structure parameters: the number of autoregressive terms (p), the degree of differencing (d), and the order of the moving average (q), and are represented as ARIMA(p, d, q) <span class="citation">(Box and Jenkins 1970)</span>. While the <code>auto.arima</code> function allows for seasonal models, the seasonality is hard-coded to be on the same period as the sampling, which is not the case for the Portal rodent surveys. As a result, no seasonal models were evaluated. AutoArima is fit flexibly, such that the model parameters can vary from fit to fit.</p>
 <p><br></p>
 </div>
 <div id="nbgarch" class="section level2">
 <h2>nbGARCH</h2>
-<p>nbGARCH (Negative Binomial Auto-Regressive Conditional Heteroskedasticity) is a generalized autoregressive conditional heteroskedasticity (GARCH) model with overdispersion (<em>i.e.</em>, a negative binomial response) fit to the data at the composite (full site and just control plots) spatial level and both the composite (community) and the articulated (species) ecological levels. The model for each species and the community total is selected and fitted using the <code>tsglm</code> function in the <strong>tscount</strong> package <span class="citation">(Liboschik et al. 2017)</span> and the <code>forecast_nbgarch</code> function in our <strong>portalPredictions</strong> package <span class="citation">(WeecologyLab 2018)</span></p>
+<p>nbGARCH (Negative Binomial Auto-Regressive Conditional Heteroskedasticity) is a generalized autoregressive conditional heteroskedasticity (GARCH) model with overdispersion (<em>i.e.</em>, a negative binomial response) fit to the data at the composite (full site and just control plots) spatial level and both the composite (community) and the articulated (species) ecological levels. The model for each species and the community total is selected and fitted using the <code>tsglm</code> function in the <strong>tscount</strong> package <span class="citation">(Liboschik et al. 2017)</span> and the <code>nbGARCH</code> function in our <a href="https://github.com/weecology/portalcasting"><strong>portalcasting</strong> package</a>.</p>
 <p>GARCH models are generalized ARMA models and are defined according to their link function, response distribution, and two model structure parameters: the number of autoregressive terms (p) and the order of the moving average (q), and are represented as GARCH(p, q) <span class="citation">(Liboschik et al. 2017)</span>. The nbGARCH model is fit using the log link and a negative binomial response (modeled as an over-dispersed Poisson), as well as with p = 1 (first-order autoregression) and q = 12 (approximately yearly moving average).</p>
+<p>The <code>tsglm</code> function in the <strong>tscount</strong> package <span class="citation">(Liboschik et al. 2017)</span> uses a (conditional) quasi-likelihood based approach to inference and models the overdispersion as an additional parameter in a two-step approach. This two-stage approach has only been minimally evaluated, although preliminary simulation-based studies are promising <span class="citation">(Liboschik, Fokianos, and Fried 2017)</span>.</p>
+<p><br></p>
+</div>
+<div id="nbsgarch" class="section level2">
+<h2>nbsGARCH</h2>
+<p>nbsGARCH (Negative Binomial Seasonal Auto-Regressive Conditional Heteroskedasticity) is a generalized autoregressive conditional heteroskedasticity (GARCH) model with overdispersion (<em>i.e.</em>, a negative binomial response) with seasonal predictors modeled using two Fourier series terms (sin and cos of the fraction of the year) fit to the data at the composite (full site and just control plots) spatial level and both the composite (community) and the articulated (species) ecological levels. The model for each species and the community total is selected and fitted using the <code>tsglm</code> function in the <strong>tscount</strong> package <span class="citation">(Liboschik et al. 2017)</span> and the <code>nbsGARCH</code> function in our <a href="https://github.com/weecology/portalcasting"><strong>portalcasting</strong> package</a>.</p>
+<p>GARCH models are generalized ARMA models and are defined according to their link function, response distribution, and two model structure parameters: the number of autoregressive terms (p) and the order of the moving average (q), and are represented as GARCH(p, q) <span class="citation">(Liboschik et al. 2017)</span>. The nbsGARCH model is fit using the log link and a negative binomial response (modeled as an over-dispersed Poisson), as well as with p = 1 (first-order autoregression) and q = 12 (approximately yearly moving average).</p>
 <p>The <code>tsglm</code> function in the <strong>tscount</strong> package <span class="citation">(Liboschik et al. 2017)</span> uses a (conditional) quasi-likelihood based approach to inference and models the overdispersion as an additional parameter in a two-step approach. This two-stage approach has only been minimally evaluated, although preliminary simulation-based studies are promising <span class="citation">(Liboschik, Fokianos, and Fried 2017)</span>.</p>
 <p><br></p>
 </div>
 <div id="pevgarch" class="section level2">
 <h2>pevGARCH</h2>
-<p>pevGARCH (Poisson Environmental Variable Auto-Regressive Conditional Heteroskedasticity) is a generalized autoregressive conditional heteroskedasticity (GARCH) model fit to the data at the composite (full site and just control plots) spatial level and both the composite (community) and the articulated (species) ecological levels. The response variable is Poisson, and a variety of environmental variables are considered as covariates. The model for each species is selected and fitted using the <code>tsglm</code> function in the <strong>tscount</strong> package <span class="citation">(Liboschik et al. 2017)</span> and the <code>forecast_pevgarch</code> function in our <strong>portalPredictions</strong> package <span class="citation">(WeecologyLab 2018)</span>.</p>
+<p>pevGARCH (Poisson Environmental Variable Auto-Regressive Conditional Heteroskedasticity) is a generalized autoregressive conditional heteroskedasticity (GARCH) model fit to the data at the composite (full site and just control plots) spatial level and both the composite (community) and the articulated (species) ecological levels. The response variable is Poisson, and a variety of environmental variables are considered as covariates. The model for each species is selected and fitted using the <code>tsglm</code> function in the <strong>tscount</strong> package <span class="citation">(Liboschik et al. 2017)</span> and the <code>pevGARCH</code> function in our <a href="https://github.com/weecology/portalcasting"><strong>portalcasting</strong> package</a>.</p>
 <p>GARCH models are generalized ARMA models and are defined according to their link function, response distribution, and two model structure parameters: the number of autoregressive terms (p) and the order of the moving average (q), and are represented as GARCH(p, q) <span class="citation">(Liboschik et al. 2017)</span>. The pevGARCH model is fit using the log link and a Poisson response, as well as with p = 1 (first-order autoregression) and q = 12 (yearly moving average). The environmental variables potentially included in the model are min, mean, and max temperatures, precipitation, and NDVI.</p>
 <p>The <code>tsglm</code> function in the <strong>tscount</strong> package <span class="citation">(Liboschik et al. 2017)</span> uses a (conditional) quasi-likelihood based approach to inference. This approach has only been minimally evaluated for models with covariates, although preliminary simulation-based studies are promising <span class="citation">(Liboschik, Fokianos, and Fried 2017)</span>.</p>
 <p>Each species is fit using the following (nonexhaustive) sets of the environmental covariates:</p>
@@ -390,9 +402,6 @@ $(document).ready(function () {
 </div>
 <div id="ref-Liboschik2017a">
 <p>Liboschik, T., R. Fried, K. Fokianos, and P. Probst. 2017. “<strong>tscount</strong>: Analysis of Count Time Series.” <a href="https://CRAN.R-project.org/package=tscount" class="uri">https://CRAN.R-project.org/package=tscount</a>.</p>
-</div>
-<div id="ref-PortalPredictions">
-<p>WeecologyLab. 2018. “Portal Forecasting.” <a href="https://github.com/weecology/portalPredictions/" class="uri">https://github.com/weecology/portalPredictions/</a>.</p>
 </div>
 </div>
 </div>

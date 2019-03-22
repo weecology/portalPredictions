@@ -78,9 +78,7 @@ h6 {
 </style>
 
 
-</head>
 
-<body>
 
 <style type = "text/css">
 .main-container {
@@ -199,8 +197,6 @@ $(document).ready(function () {
 });
 </script>
 
-<div class="container-fluid main-container">
-
 <!-- tabsets -->
 
 <style type="text/css">
@@ -274,6 +270,15 @@ $(document).ready(function () {
 
 
 
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
 
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
@@ -331,11 +336,12 @@ $(document).ready(function () {
 </div>
 <div id="how-to-add-a-new-model" class="section level2">
 <h2>How to add a new model</h2>
-<p>Modeling is driven by the <a href="https://github.com/weecology/portalcasting">portalcasting package</a>. New models can be added there.</p>
+<p>Modeling is driven by the <a href="https://github.com/weecology/portalcasting">portalcasting package</a>. New models should be added there (see the see the <a href="https://weecology.github.io/portalcasting/articles/adding_a_model.html">“adding a model” vignette</a>).</p>
 </div>
 <div id="docker-builds" class="section level2">
 <h2>Docker builds</h2>
-<p>Forecasts are run using Travis CI based on a docker image. This makes the builds faster and more reproducible. When adding new packages to this repo it may be necessary to update the Docker container. When building, please tag the image with the <code>latest</code> tag, as well as a named tag for the date (yyyy-mm-dd, which you should replace with the actual current date). Use the following commands:</p>
+<p>Forecasts are run using Travis CI based on a docker image. This makes the builds faster and more reproducible. The image is built using <code>portalcasting</code> <a href="https://github.com/weecology/portalcasting/releases/tag/v0.8.0">v0.8.0</a>.</p>
+<p>Adding new packages to this repo or updating existing packages will require rebuilding of the Docker container. When building, tag the image with the <code>latest</code> tag, as well as a named tag for the date (yyyy-mm-dd, which you should replace with the actual current date). Use the following commands:</p>
 <pre><code>sudo docker build -t weecology/portal_predictions:latest -t weecology/portal_predictions:yyyy-mm-dd . 
 sudo docker push weecology/portal_predictions</code></pre>
 <p>(Note that Windows users will not need to include the <code>sudo</code> command.)</p>
