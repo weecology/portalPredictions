@@ -1,24 +1,24 @@
 cast_type: forecasts
-forecast_date: '2019-03-29'
+forecast_date: '2019-04-05'
 covariate_forecast_newmoons:
-- 523
 - 524
 - 525
 - 526
 - 527
 - 528
+- 529
 covariate_forecast_months:
-- 9.0
 - 10.0
 - 11.0
 - 12.0
 - 1.0
 - 2.0
+- 3.0
 covariate_forecast_years:
 - 2019.0
 - 2019.0
 - 2019.0
-- 2019.0
+- 2020.0
 - 2020.0
 - 2020.0
 rodent_forecast_newmoons:
@@ -34,6 +34,7 @@ rodent_forecast_newmoons:
 - 526
 - 527
 - 528
+- 529
 rodent_forecast_months:
 - 4.0
 - 5.0
@@ -47,6 +48,7 @@ rodent_forecast_months:
 - 12.0
 - 1.0
 - 2.0
+- 3.0
 rodent_forecast_years:
 - 2019.0
 - 2019.0
@@ -58,6 +60,7 @@ rodent_forecast_years:
 - 2019.0
 - 2019.0
 - 2019.0
+- 2020.0
 - 2020.0
 - 2020.0
 confidence_level: 0.9
