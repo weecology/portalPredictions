@@ -1,19 +1,19 @@
 cast_type: forecasts
-forecast_date: '2019-10-25'
+forecast_date: '2019-10-29'
 covariate_forecast_newmoons:
-- 530
 - 531
 - 532
 - 533
 - 534
 - 535
+- 536
 covariate_forecast_months:
-- 4.0
 - 5.0
 - 6.0
 - 7.0
 - 8.0
 - 9.0
+- 10.0
 covariate_forecast_years:
 - 2020.0
 - 2020.0
@@ -34,6 +34,7 @@ rodent_forecast_newmoons:
 - 533
 - 534
 - 535
+- 536
 rodent_forecast_months:
 - 10.0
 - 11.0
@@ -47,10 +48,12 @@ rodent_forecast_months:
 - 7.0
 - 8.0
 - 9.0
+- 10.0
 rodent_forecast_years:
 - 2019.0
 - 2019.0
 - 2019.0
+- 2020.0
 - 2020.0
 - 2020.0
 - 2020.0
