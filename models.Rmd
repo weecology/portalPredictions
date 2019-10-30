@@ -32,7 +32,7 @@ model parameters can vary from fit to fit.
 
 <br>
 
-## AutoARIMA
+## AutoArima
 
 AutoArima (Automatic Auto-Regressive Integrated Moving Average) is a 
 flexible Auto-Regressive Integrated Moving Average (ARIMA) model fit to the 
@@ -51,6 +51,20 @@ models, the seasonality is hard-coded to be on the same period as the sampling,
 which is not the case for the Portal rodent surveys. As a result, no seasonal 
 models were evaluated. AutoArima is fit flexibly, such that the model 
 parameters can vary from fit to fit.
+
+<br>
+
+## NaiveArima
+
+NaiveArima (Naive Auto-Regressive Integrated Moving Average) is a fixed
+Auto-Regressive Integrated Moving Average (ARIMA) model of order (0,1,0) 
+fit to the data at the composite (full site and just control plots) spatial
+level and both the composite (community) and the articulated (species) 
+ecological levels. The model is selected and fitted using the `Arima` 
+and `forecast` functions in the **forecast** package 
+[@Hyndman2013; @Hyndman2017] and the 
+`NaiveArima` function in our 
+[**portalcasting** package](https://github.com/weecology/portalcasting).
 
 <br>
 
