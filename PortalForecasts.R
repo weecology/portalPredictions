@@ -1,5 +1,7 @@
 library(portalcasting)
 
+print(sessionInfo())
+
 #Update data and models
 setup_dir()
 
