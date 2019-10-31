@@ -1,17 +1,13 @@
 # base image for the stack is the rocker "tidyverse", which includes rstudio and devtools
 # https://hub.docker.com/r/rocker/tidyverse
+
 FROM rocker/tidyverse:latest
 
-# Install `curl` and `jags` c libraries, which are not in the rocker image
+# Install `curl` and `jags` c libraries
 
- RUN apt-get update && apt-get install -y curl 
- RUN apt-get update && apt-get install -y jags
+RUN apt-get update && apt-get install -y curl 
+RUN apt-get update && apt-get install -y jags
 
-# RUN R -e "install.packages('portalr', repos = 'http://cran.us.r-project.org')"
- RUN R -e "devtools::install_github('weecology/portalcasting')"
+# install portalcasting from github
 
-# Copy the install script
-# ADD install-packages.R .
-
-# Install any needed packages specified in requirements.txt
-# RUN Rscript install-packages.R
+RUN R -e "devtools::install_github('weecology/portalcasting')"
