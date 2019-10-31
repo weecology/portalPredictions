@@ -1,4 +1,4 @@
-#library(portalcasting)
+library(portalcasting)
 library(portalr)
 print(sessionInfo())
 
