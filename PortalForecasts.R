@@ -3,7 +3,7 @@ library(portalr)
 print(sessionInfo())
 
 #Update data and models
-#setup_dir()
+setup_production()
 
 #Run all models using portalcasting defaults
 #portalcast()
