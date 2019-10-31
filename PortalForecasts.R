@@ -4,8 +4,8 @@ library(portalcasting)
 setup_production()
 
 #Run all models using portalcasting defaults
-portalcast(models = c("jags_RW"))
+portalcast(models = c("ESSS"))
 
 #Update Website
-#rmarkdown::render_site()
+rmarkdown::render_site()
 
