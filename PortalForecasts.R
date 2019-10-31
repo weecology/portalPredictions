@@ -6,7 +6,7 @@ print(sessionInfo())
 setup_production()
 
 #Run all models using portalcasting defaults
-portalcast(models = "ESSS")
+portalcast(models = c("simplexEDM"))#, "jags_RW"))
 
 #Update Website
 #rmarkdown::render_site()
