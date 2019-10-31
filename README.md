@@ -18,7 +18,7 @@ vignette](https://weecology.github.io/portalcasting/articles/adding_a_model.html
 
 Forecasts are run using Travis CI based on a docker image. This makes the builds
 faster and more reproducible. The image is built using `portalcasting` 
-[v0.8.0](https://github.com/weecology/portalcasting/releases/tag/v0.8.0).
+[v0.15.0](https://github.com/weecology/portalcasting/releases/tag/v0.15.0).
 
 Adding new packages to this repo or updating existing packages will require 
 rebuilding of the Docker container. When building, tag the image with 

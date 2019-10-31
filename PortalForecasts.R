@@ -4,7 +4,7 @@ library(portalcasting)
 setup_production()
 
 #Run all models using portalcasting defaults
-portalcast(models = c("ESSS", "AutoArima"))
+portalcast()
 
 #Update Website
 rmarkdown::render_site()
