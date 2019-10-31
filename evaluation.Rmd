@@ -20,7 +20,7 @@ Here we evaluate how each of the models has done compared to observed values.
 This figure shows the raw error as a function of lead time (how far in advance the prediction was made) for three forecast dates (colors of lines) across each combination of model (column) and species (row) for a selection of historically common species and the total rodents, for the control (unmanipulated) plots only. 
 
 ```{r, recent_eval, echo=FALSE, fig.width=10, fig.height=10}
-plot_err_lead_spp_mods()
+#plot_err_lead_spp_mods()
 ```
 
 <br>
@@ -30,5 +30,5 @@ plot_err_lead_spp_mods()
 Here, we evaluate the models' abilities to hindcast the historic data. This figure shows coverage (left column) and RMSE (right column) for each of a selection of historically common species and total rodents on the control (unmanipulated) plots only. The x-axis in each plot corresponds to the different models, including the ensemble. Each model's raw metric values are displayed for all included hindcasts (with jittering to show overlapping points) in addition to a summarizing quartile box-whisker (ends of the whiskers show the exteme values, box shows the 25%-75% range, horizontal line shows the median). The 90% coverage target is indicated by the horizontal dotted line.
 
 ```{r, hindcast_eval, echo=FALSE, fig.width=9, fig.height=15}
-plot_cov_RMSE_mod_spp()
+#plot_cov_RMSE_mod_spp()
 ```
