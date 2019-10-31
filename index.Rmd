@@ -10,7 +10,7 @@ On this website, you'll find information about our ongoing efforts to forecast a
 
 ## Total Abundance Forecast
 
-This is the forecast for next year's sampling of rodents in the control plots at Portal. The black line indicates the historic total rodent abundance. The blue line indicates the Ensemble model's forecast for total rodent abundances over the next 12 months, along with 90% confidence intervals.
+This is the forecast for next year's sampling of rodents in the control plots at Portal. The black line indicates the historic total rodent abundance. The blue line indicates the Ensemble model's forecast for total rodent abundances over the next 12 months, along with 95% confidence intervals.
 
 ```{r, total_forecast, echo=FALSE, fig.width=8, fig.height=6}
 plot_cast_ts()
@@ -32,7 +32,7 @@ plot_cast_point()
 
 These figures are similar to the primary Total Abundance Forecast above, but for the abundance of three common rodent species. 
 ```{r, highabund_ts_forecasts, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8, fig.height=6}
-most_ab <- select_most_ab_spp()
+most_ab <- most_abundant_species()
 for(i in 1:3){
   plot_cast_ts(species = most_ab[i])
 }
