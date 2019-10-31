@@ -3,7 +3,7 @@ library(testthat)
 context("checks that new forecasts are being added correctly")
 
 test_that("cast_metadata file", {
-  expect_is(read_cast_metadata("../../"), "data.frame")
+  expect_is(read_cast_metadata("../../"), "list")
 })
 
 #model_metadata = yaml::yaml.load_file("../../data/metadata.yaml")

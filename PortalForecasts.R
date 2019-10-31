@@ -1,5 +1,5 @@
 library(portalcasting)
-library(portalr)
+#library(portalr)
 print(sessionInfo())
 
 #Update data and models

@@ -7,7 +7,7 @@ FROM rocker/tidyverse:latest
  RUN apt-get update && apt-get install -y curl 
  RUN apt-get update && apt-get install -y jags
 
- RUN R -e "install.packages('portalr', repos = 'http://cran.us.r-project.org')"
+# RUN R -e "install.packages('portalr', repos = 'http://cran.us.r-project.org')"
  RUN R -e "devtools::install_github('weecology/portalcasting')"
 
 # Copy the install script
