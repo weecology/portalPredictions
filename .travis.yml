@@ -2,8 +2,8 @@ language: bash
 sudo: required
 
 before_install:
-  - docker pull weecology/portal_predictions
-  - docker run --name ppred -t -d weecology/portal_predictions /bin/bash
+  - docker pull weecology/portal_predictions:2019-03-21
+  - docker run --name ppred -t -d weecology/portal_predictions:2019-03-21 /bin/bash
   - docker cp ../portalPredictions ppred:/
   - docker exec -i ppred ls portalPredictions
 
