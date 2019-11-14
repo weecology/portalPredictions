@@ -11,23 +11,17 @@ Predictions are made and archived weekly. Approximately once a month, one of the
 
 ## How to add a new model
 
-Modeling is driven by the [portalcasting package](https://github.com/weecology/portalcasting). New models should be added there (see the see the ["adding a model"
-vignette](https://weecology.github.io/portalcasting/articles/adding_a_model.html)).
+Modeling is driven by the [portalcasting package](https://github.com/weecology/portalcasting). New models should be added there following instructions in the ["adding a model" vignette](https://weecology.github.io/portalcasting/articles/adding_model_and_data.html).
 
 ## Docker builds
 
-Forecasts are run using Travis CI based on a docker image. This makes the builds
-faster and more reproducible. The image is built using `portalcasting` 
-[v0.15.0](https://github.com/weecology/portalcasting/releases/tag/v0.15.0).
+Forecasts are run using [continuous integration](https://en.wikipedia.org/wiki/Continuous_integration) based on a [docker](https://hub.docker.com/) image. This makes the builds faster and more reproducible. The image is built using the [Dockerfile](https://github.com/weecology/portalPredictions/blob/master/Dockerfile), with [v0.15.0](https://github.com/weecology/portalcasting/releases/tag/v0.15.0) of `portalcasting`.
 
-Adding new packages to this repo or updating existing packages will require 
-rebuilding of the Docker container. When building, tag the image with 
-the `latest` tag, as well as a named tag for the date (yyyy-mm-dd, which you should
-replace with the actual current date). Use the following commands:
+Rebuilding of the Docker container is required to pass updates to `portalcasting` along to the executed code in the Portal Predictions pipeline. When building the image, give it two tags: `latest` and the date (as yyyy-mm-dd) using the following commands (with the actual date input):
 
 ```
 sudo docker build -t weecology/portal_predictions:latest -t weecology/portal_predictions:yyyy-mm-dd . 
 sudo docker push weecology/portal_predictions
 ```
 
-(Note that Windows users will not need to include the `sudo` command.)
+(Windows users will not need to include the `sudo` command.)

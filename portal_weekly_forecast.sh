@@ -20,4 +20,5 @@ singularity pull docker://weecology/portal_predictions
 git clone https://github.com/weecology/portalPredictions.git
 cd portalPredictions
 singularity run ../portal_predictions_latest.sif Rscript PortalForecasts.R
+singularity run ../portal_predictions_latest.sif Rscript tests/testthat.R > ../testthat.log 2>&1
 singularity run ../portal_predictions_latest.sif bash archive_hipergator.sh

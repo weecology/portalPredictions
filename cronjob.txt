@@ -15,4 +15,4 @@ MAILTO=ethanwhite@ufl.edu
 GITHUB_TOKEN="WEECOLOGYDEPLOYGITHUBPAT"
 GITHUB_RELEASE_TOKEN="WEECOLOGYDEPLOYGITHUBPAT"
 TRAVIS_EVENT_TYPE="cron"
-16 14 * * * sbatch ${HOME}/portal_weekly_forecast.sh >> ${HOME}/cron.log 2>&1
+16 14 * * 2 sbatch ${HOME}/portal_weekly_forecast.sh >> ${HOME}/cron.log 2>&1
