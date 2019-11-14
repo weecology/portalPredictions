@@ -1,12 +1,13 @@
-# Use an official Python runtime as a parent image
+# base image for the stack is the rocker "tidyverse", which includes rstudio and devtools
+# https://hub.docker.com/r/rocker/tidyverse
+
 FROM rocker/tidyverse:latest
 
-# Install `curl` since apparently it isn't in the Rocker images
+# Install `curl` and `jags` c libraries
 
-RUN apt-get update && apt-get install -y curl
+RUN apt-get update && apt-get install -y curl 
+RUN apt-get update && apt-get install -y jags
 
-# Copy the install script
-ADD install-packages.R .
+# install portalcasting from github
 
-# Install any needed packages specified in requirements.txt
-RUN Rscript install-packages.R
+RUN R -e "devtools::install_github('weecology/portalcasting')"

@@ -7,11 +7,11 @@ Here's the most recent forecast for which observations have been made. The actua
 <br> 
 
 ```{r, with_census_controls, echo=FALSE}
-plot_cast_point(with_census = TRUE)
+#plot_cast_point(with_census = TRUE)
 ```
 
 <br>
 
 ```{r, with_census_all, echo=FALSE}
-plot_cast_point(with_census = TRUE, level = "All")
+#plot_cast_point(with_census = TRUE, level = "All")
 ```

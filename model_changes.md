@@ -1,6 +1,27 @@
 # Model Changes
 
-## Bottom-end catching in nbGARCH and nbsGARCH
+## Major changes with updating to portalcasting 0.15.0
+
+*2019-11-13*
+
+### Adding NaiveArima, jags_RW, and simplexEDM models
+[See](https://github.com/weecology/portalcasting/releases/tag/v0.12.0) for jags_RW and simplexEDM.
+NaiveArima added in [0.9.0]([See](https://github.com/weecology/portalcasting/releases/tag/v0.9.0))
+
+### Adding exclosure treatment level as a data set
+[See](https://github.com/weecology/portalcasting/releases/tag/v0.14.0)
+
+### Now the only models that get interpolated data are the ones that need them
+[See](https://github.com/weecology/portalcasting/releases/tag/v0.9.0)
+
+### Ensemble is now an unweighted average 
+[See](https://github.com/weecology/portalcasting/releases/tag/v0.11.0)
+
+With switch to [portalcasting 0.15.0](https://github.com/weecology/portalcasting/releases/tag/v0.15.0)
+
+[Relevant PR](https://github.com/weecology/portalPredictions/pull/337)
+
+### Bottom-end catching in nbGARCH and nbsGARCH
 *2019-03-21*
 
 In `nbGARCH` and then extended into `nbsGARCH`, the models fall back

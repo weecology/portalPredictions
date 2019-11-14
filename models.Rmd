@@ -32,7 +32,7 @@ model parameters can vary from fit to fit.
 
 <br>
 
-## AutoARIMA
+## AutoArima
 
 AutoArima (Automatic Auto-Regressive Integrated Moving Average) is a 
 flexible Auto-Regressive Integrated Moving Average (ARIMA) model fit to the 
@@ -51,6 +51,20 @@ models, the seasonality is hard-coded to be on the same period as the sampling,
 which is not the case for the Portal rodent surveys. As a result, no seasonal 
 models were evaluated. AutoArima is fit flexibly, such that the model 
 parameters can vary from fit to fit.
+
+<br>
+
+## NaiveArima
+
+NaiveArima (Naive Auto-Regressive Integrated Moving Average) is a fixed
+Auto-Regressive Integrated Moving Average (ARIMA) model of order (0,1,0) 
+fit to the data at the composite (full site and just control plots) spatial
+level and both the composite (community) and the articulated (species) 
+ecological levels. The model is selected and fitted using the `Arima` 
+and `forecast` functions in the **forecast** package 
+[@Hyndman2013; @Hyndman2017] and the 
+`NaiveArima` function in our 
+[**portalcasting** package](https://github.com/weecology/portalcasting).
 
 <br>
 
@@ -159,13 +173,25 @@ selected based on AIC.
 
 <br>
 
+## simplexEDM
+
+simplexEDM (simplex projection using Empirical Dynamic Modeling) is a state-space reconstruction model adapted for forecasting and fit to the interpolated data at the composite (full site and just control plots) spatial level and both the composite (community) and the articulated (species) ecological levels. The method uses time-delay embedding to reconstruct a state-space for the dynamics underlying a time series [@Packard1980, @Takens1981]. A forecast from a point in the state space is then computed as a weighted average of the trajectories of nearest neighbors of that point, a minimal algorithm known as "simplex projection" [@Sugihara1990].
+
+In applications to ecological time series, many of the parameters are set automatically, with the exception of the dimension of the time-delay embedding. Here, the embedding dimension ($E$) is selected as the value (between `1` and the `max_E` argument to `simplexEDM()`) that minimizes the mean absolute error over the in-sample portion of the data.
+
+<br>
+
+## jags_RW
+
+jags_RW fits a hierarchical log-scale density random walk model with a Poisson observation process using the JAGS (Just Another Gibbs Sampler) infrastructure [@Plummer2003] fit to the  data at the composite (full site and just control plots) spatial level and both the composite (community) and the articulated (species) ecological levels. Similar to the NaiveArima model, jags_RW has an ARIMA order of (0,1,0), but in jags_RW, it is the underlying density that takes a random walk on the log scale, whereas in NaiveArima, it is the raw counts that take a random walk on the observation scale. The jags_RW model is rather simple, but provides a starting template and underlying machinery for more articulated models using the JAGS infrastructure. 
+
+There are two process parameters: mu (the density of the species at the beginning of the time series) and tau (the precision (inverse variance) of the random walk, which is Gaussian on the log scale). The observation model has no additional parameters. The prior distributions for mu and tau are informed by the available data collected prior to the start of the data used in the time series. mu is normally distributed with a mean equal to the average log-scale density and a variance that is twice as large as the observed variance. Due to the presence of 0s in the data and the modeling on the log scale, an offset of `count + 0.1` is used prior to taking the log and then is removed after the reconversion (exponentiation) as `density - 0.1` (where `density` is on the same scale as `count`, but can take non-integer values). 
+
+<br>
+
 ## Ensemble
 
-In addition to the base models, we include an ensemble, constructed using the
-base model AIC weights. The ensemble mean is calculated as the AIC-weighted
-mean of all model means. The ensemble variance is estimated as the sum of 
-the AIC-weighted mean of all model variances and the variance of the estimated
-AIC-weighted mean, calculated using the unbiased estimate of sample variances.
+In addition to the base models, we include a starting-point ensemble. In versions before November 2019, the ensemble was based on AIC weights, but in the shift to separating the interpolated from non-interpolated data in model fitting, we had to transfer to an unweighted average ensemble model. The ensemble mean is calculated as the mean of all model means and the ensemble variance is estimated as the sum of the mean of all model variances and the variance of the estimated mean, calculated using the unbiased estimate of sample variances.
 
 <br>
 

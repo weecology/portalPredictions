@@ -11,7 +11,7 @@ git config --global user.name "Weecology Deploy Bot"
 
 # Commit changes to portalPredictions repo
 git checkout master
-git add predictions/* docs/* data/* models/*
+git add predictions/* docs/* data/* models/* casts/*
 git commit -m "Update forecasts: Travis Build $TRAVIS_BUILD_NUMBER [ci skip]"
 
 # Add deploy remote
@@ -47,7 +47,7 @@ fi
 # Clone forecasts archive repo
 cd ../../
 git clone https://github.com/weecology/forecasts
-cp portalPredictions/portalPredictionsResult/predictions/*.* forecasts/portal/
+cp portalPredictions/portalPredictionsResult/casts/*.* forecasts/portal/
 cd forecasts
 
 # Commit to forecasts repo
