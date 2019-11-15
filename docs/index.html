@@ -7,6 +7,7 @@
 <meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
@@ -92,7 +93,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -253,18 +253,6 @@ $(document).ready(function () {
 }
 </style>
 
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
 <!-- code folding -->
 
 
@@ -299,12 +287,6 @@ $(document).ready(function () {
   <a href="models.html">Current Models</a>
 </li>
 <li>
-  <a href="report.html">Rodent Report</a>
-</li>
-<li>
-  <a href="evaluation.html">Evaluation</a>
-</li>
-<li>
   <a href="profiles.html">Rodent Profiles</a>
 </li>
 <li>
@@ -332,19 +314,23 @@ $(document).ready(function () {
 <p><br></p>
 <div id="total-abundance-forecast" class="section level2">
 <h2>Total Abundance Forecast</h2>
-<p>This is the forecast for next year’s sampling of rodents in the control plots at Portal. The black line indicates the historic total rodent abundance. The blue line indicates the Ensemble model’s forecast for total rodent abundances over the next 12 months, along with 90% confidence intervals.</p>
+<p>This is the forecast for next year’s sampling of rodents in the control plots at Portal. The black line indicates the historic total rodent abundance. The blue line indicates the Ensemble model’s forecast (unweighted average of the individual models’ forecasts) for total rodent abundances over the next 12 months, along with 95% confidence intervals.</p>
+<p><br></p>
 <p><img src="index_files/figure-html/total_forecast-1.png" width="768" /></p>
 <p><br></p>
 </div>
 <div id="species-level-forecasts" class="section level2">
 <h2>Species-Level Forecasts</h2>
-<p>Point forecasts and 90% confidence intervals for specific species at the site for the next sampling period.</p>
+<p>Point forecasts and 95% confidence intervals for specific species at the site for the next sampling period.</p>
+<p><br></p>
 <p><img src="index_files/figure-html/species_forecasts-1.png" width="672" /></p>
 <p><br></p>
 </div>
 <div id="most-abundant-species" class="section level2">
 <h2>Most Abundant Species</h2>
-<p>These figures are similar to the primary Total Abundance Forecast above, but for the abundance of three common rodent species. <img src="index_files/figure-html/highabund_ts_forecasts-1.png" width="768" /><img src="index_files/figure-html/highabund_ts_forecasts-2.png" width="768" /><img src="index_files/figure-html/highabund_ts_forecasts-3.png" width="768" /></p>
+<p>These figures are similar to the primary Total Abundance Forecast above, but for the abundance of three common rodent species.</p>
+<p><br></p>
+<p><img src="index_files/figure-html/highabund_ts_forecasts-1.png" width="768" /><img src="index_files/figure-html/highabund_ts_forecasts-2.png" width="768" /><img src="index_files/figure-html/highabund_ts_forecasts-3.png" width="768" /></p>
 </div>
 
 
@@ -364,6 +350,23 @@ $(document).ready(function () {
 
 
 </script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

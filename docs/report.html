@@ -7,6 +7,7 @@
 <meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
@@ -92,7 +93,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -253,18 +253,6 @@ $(document).ready(function () {
 }
 </style>
 
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
 <!-- code folding -->
 
 
@@ -299,12 +287,6 @@ $(document).ready(function () {
   <a href="models.html">Current Models</a>
 </li>
 <li>
-  <a href="report.html">Rodent Report</a>
-</li>
-<li>
-  <a href="evaluation.html">Evaluation</a>
-</li>
-<li>
   <a href="profiles.html">Rodent Profiles</a>
 </li>
 <li>
@@ -329,9 +311,7 @@ $(document).ready(function () {
 
 <p>Here’s the most recent forecast for which observations have been made. The actual data (blue) are plotted in comparison to the forecast performed right before data collection (white, with error bars) for the control (unmanipulated) plots (top) and all plots together (bottom):</p>
 <p><br></p>
-<p><img src="report_files/figure-html/with_census_controls-1.png" width="672" /></p>
 <p><br></p>
-<p><img src="report_files/figure-html/with_census_all-1.png" width="672" /></p>
 
 
 
@@ -350,6 +330,23 @@ $(document).ready(function () {
 
 
 </script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

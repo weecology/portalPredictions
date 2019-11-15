@@ -7,6 +7,7 @@
 <meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
@@ -92,7 +93,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -253,18 +253,6 @@ $(document).ready(function () {
 }
 </style>
 
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
 <!-- code folding -->
 
 
@@ -299,12 +287,6 @@ $(document).ready(function () {
   <a href="models.html">Current Models</a>
 </li>
 <li>
-  <a href="report.html">Rodent Report</a>
-</li>
-<li>
-  <a href="evaluation.html">Evaluation</a>
-</li>
-<li>
   <a href="profiles.html">Rodent Profiles</a>
 </li>
 <li>
@@ -336,9 +318,14 @@ $(document).ready(function () {
 <p><br></p>
 </div>
 <div id="autoarima" class="section level2">
-<h2>AutoARIMA</h2>
+<h2>AutoArima</h2>
 <p>AutoArima (Automatic Auto-Regressive Integrated Moving Average) is a flexible Auto-Regressive Integrated Moving Average (ARIMA) model fit to the data at the composite (full site and just control plots) spatial level and both the composite (community) and the articulated (species) ecological levels. The model is selected and fitted using the <code>auto.arima</code> and <code>forecast</code> functions in the <strong>forecast</strong> package <span class="citation">(Hyndman and Athanasopoulos 2013; Hyndman 2017)</span> and the <code>AutoArima</code> function in our <a href="https://github.com/weecology/portalcasting"><strong>portalcasting</strong> package</a>.</p>
 <p>Generally, ARIMA models are defined according to three model structure parameters: the number of autoregressive terms (p), the degree of differencing (d), and the order of the moving average (q), and are represented as ARIMA(p, d, q) <span class="citation">(Box and Jenkins 1970)</span>. While the <code>auto.arima</code> function allows for seasonal models, the seasonality is hard-coded to be on the same period as the sampling, which is not the case for the Portal rodent surveys. As a result, no seasonal models were evaluated. AutoArima is fit flexibly, such that the model parameters can vary from fit to fit.</p>
+<p><br></p>
+</div>
+<div id="naivearima" class="section level2">
+<h2>NaiveArima</h2>
+<p>NaiveArima (Naive Auto-Regressive Integrated Moving Average) is a fixed Auto-Regressive Integrated Moving Average (ARIMA) model of order (0,1,0) fit to the data at the composite (full site and just control plots) spatial level and both the composite (community) and the articulated (species) ecological levels. The model is selected and fitted using the <code>Arima</code> and <code>forecast</code> functions in the <strong>forecast</strong> package <span class="citation">(Hyndman and Athanasopoulos 2013; Hyndman 2017)</span> and the <code>NaiveArima</code> function in our <a href="https://github.com/weecology/portalcasting"><strong>portalcasting</strong> package</a>.</p>
 <p><br></p>
 </div>
 <div id="nbgarch" class="section level2">
@@ -377,9 +364,21 @@ $(document).ready(function () {
 <p>The final model is an intercept-only model. The single best model of the 11 is selected based on AIC.</p>
 <p><br></p>
 </div>
+<div id="simplexedm" class="section level2">
+<h2>simplexEDM</h2>
+<p>simplexEDM (simplex projection using Empirical Dynamic Modeling) is a state-space reconstruction model adapted for forecasting and fit to the interpolated data at the composite (full site and just control plots) spatial level and both the composite (community) and the articulated (species) ecological levels. The method uses time-delay embedding to reconstruct a state-space for the dynamics underlying a time series <span class="citation">(Packard et al. 1980, <span class="citation">@Takens1981</span>)</span>. A forecast from a point in the state space is then computed as a weighted average of the trajectories of nearest neighbors of that point, a minimal algorithm known as “simplex projection” <span class="citation">(Sugihara and May 1990)</span>.</p>
+<p>In applications to ecological time series, many of the parameters are set automatically, with the exception of the dimension of the time-delay embedding. Here, the embedding dimension (<span class="math inline">\(E\)</span>) is selected as the value (between <code>1</code> and the <code>max_E</code> argument to <code>simplexEDM()</code>) that minimizes the mean absolute error over the in-sample portion of the data.</p>
+<p><br></p>
+</div>
+<div id="jags_rw" class="section level2">
+<h2>jags_RW</h2>
+<p>jags_RW fits a hierarchical log-scale density random walk model with a Poisson observation process using the JAGS (Just Another Gibbs Sampler) infrastructure <span class="citation">(Plummer 2003)</span> fit to the data at the composite (full site and just control plots) spatial level and both the composite (community) and the articulated (species) ecological levels. Similar to the NaiveArima model, jags_RW has an ARIMA order of (0,1,0), but in jags_RW, it is the underlying density that takes a random walk on the log scale, whereas in NaiveArima, it is the raw counts that take a random walk on the observation scale. The jags_RW model is rather simple, but provides a starting template and underlying machinery for more articulated models using the JAGS infrastructure.</p>
+<p>There are two process parameters: mu (the density of the species at the beginning of the time series) and tau (the precision (inverse variance) of the random walk, which is Gaussian on the log scale). The observation model has no additional parameters. The prior distributions for mu and tau are informed by the available data collected prior to the start of the data used in the time series. mu is normally distributed with a mean equal to the average log-scale density and a variance that is twice as large as the observed variance. Due to the presence of 0s in the data and the modeling on the log scale, an offset of <code>count + 0.1</code> is used prior to taking the log and then is removed after the reconversion (exponentiation) as <code>density - 0.1</code> (where <code>density</code> is on the same scale as <code>count</code>, but can take non-integer values).</p>
+<p><br></p>
+</div>
 <div id="ensemble" class="section level2">
 <h2>Ensemble</h2>
-<p>In addition to the base models, we include an ensemble, constructed using the base model AIC weights. The ensemble mean is calculated as the AIC-weighted mean of all model means. The ensemble variance is estimated as the sum of the AIC-weighted mean of all model variances and the variance of the estimated AIC-weighted mean, calculated using the unbiased estimate of sample variances.</p>
+<p>In addition to the base models, we include a starting-point ensemble. In versions before November 2019, the ensemble was based on AIC weights, but in the shift to separating the interpolated from non-interpolated data in model fitting, we had to transfer to an unweighted average ensemble model. The ensemble mean is calculated as the mean of all model means and the ensemble variance is estimated as the sum of the mean of all model variances and the variance of the estimated mean, calculated using the unbiased estimate of sample variances.</p>
 <p><br></p>
 </div>
 <div id="references" class="section level1 unnumbered">
@@ -389,7 +388,7 @@ $(document).ready(function () {
 <p>Box, G., and G. Jenkins. 1970. <em>Time Series Analysis: Forecasting and Control</em>. Holden-Day.</p>
 </div>
 <div id="ref-Hyndman2017">
-<p>Hyndman, R. J. 2017. “<strong>forecast</strong>: Forecasting Functions for Time Series and Linear Models.” <a href="http://pkg.robjhyndman.com/forecast" class="uri">http://pkg.robjhyndman.com/forecast</a>.</p>
+<p>Hyndman, R. J. 2017. “<strong>forecast</strong>: Forecasting Functions for Time Series and Linear Models.” 2017. <a href="http://pkg.robjhyndman.com/forecast">http://pkg.robjhyndman.com/forecast</a>.</p>
 </div>
 <div id="ref-Hyndman2013">
 <p>Hyndman, R. J., and G. Athanasopoulos. 2013. <em>Forecasting: Principles and Practice</em>. OTexts.</p>
@@ -398,10 +397,22 @@ $(document).ready(function () {
 <p>Hyndman, R. J., A. b. Koehler, J. K. Ord, and R. D. Snyder. 2008. <em>Forecasting with Exponential Smoothing: The State Space Approach</em>. Springer-Verlag.</p>
 </div>
 <div id="ref-Liboschik2017b">
-<p>Liboschik, T., K. Fokianos, and R. Fried. 2017. “<strong>tscount</strong>: An R Package for Analysis of Count Time Series Following Generalized Linear Models.” <em>Journal of Statistical Software</em> 82: 1–51. <a href="https://www.jstatsoft.org/article/view/v082i05" class="uri">https://www.jstatsoft.org/article/view/v082i05</a>.</p>
+<p>Liboschik, T., K. Fokianos, and R. Fried. 2017. “<strong>tscount</strong>: An R Package for Analysis of Count Time Series Following Generalized Linear Models.” <em>Journal of Statistical Software</em> 82: 1–51. <a href="https://www.jstatsoft.org/article/view/v082i05">https://www.jstatsoft.org/article/view/v082i05</a>.</p>
 </div>
 <div id="ref-Liboschik2017a">
-<p>Liboschik, T., R. Fried, K. Fokianos, and P. Probst. 2017. “<strong>tscount</strong>: Analysis of Count Time Series.” <a href="https://CRAN.R-project.org/package=tscount" class="uri">https://CRAN.R-project.org/package=tscount</a>.</p>
+<p>Liboschik, T., R. Fried, K. Fokianos, and P. Probst. 2017. “<strong>tscount</strong>: Analysis of Count Time Series.” 2017. <a href="https://CRAN.R-project.org/package=tscount">https://CRAN.R-project.org/package=tscount</a>.</p>
+</div>
+<div id="ref-Packard1980">
+<p>Packard, N. H., J. P. Crutchfield, J. D. Farmer, and R. S. Shaw. 1980. “Geometry from a Time Series.” <em>Physical Review Letters</em> 45 (9): 712–16.</p>
+</div>
+<div id="ref-Plummer2003">
+<p>Plummer, M. 2003. “A Program for Analysis of Bayesian Graphical Models Using Gibbs Sampling.” <em>Proceedings of the 3rd International Workshop on Distributed Statistical Computing</em>. <a href="https://bit.ly/33aQ37Y">https://bit.ly/33aQ37Y</a>.</p>
+</div>
+<div id="ref-Sugihara1990">
+<p>Sugihara, G., and R. M. May. 1990. “Nonlinear Forecasting as a Way of Distinguishing Chaos from Measurement Error in Time Series.” <em>Nature</em> 344: 734–41.</p>
+</div>
+<div id="ref-Takens1981">
+<p>Takens, F. 1981. “Detecting Strange Attractors in Turbulence.” <em>Dynamical Systems and Turbulence, Lecture Notes in Mathematics</em> 898: 366–81.</p>
 </div>
 </div>
 </div>
@@ -423,6 +434,23 @@ $(document).ready(function () {
 
 
 </script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

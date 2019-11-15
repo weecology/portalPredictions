@@ -7,11 +7,12 @@
 <meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
 
-<title></title>
+<title>model_changes.utf8.md</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -92,7 +93,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -253,18 +253,6 @@ $(document).ready(function () {
 }
 </style>
 
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
 <!-- code folding -->
 
 
@@ -299,12 +287,6 @@ $(document).ready(function () {
   <a href="models.html">Current Models</a>
 </li>
 <li>
-  <a href="report.html">Rodent Report</a>
-</li>
-<li>
-  <a href="evaluation.html">Evaluation</a>
-</li>
-<li>
   <a href="profiles.html">Rodent Profiles</a>
 </li>
 <li>
@@ -328,12 +310,34 @@ $(document).ready(function () {
 
 <div id="model-changes" class="section level1">
 <h1>Model Changes</h1>
-<div id="bottom-end-catching-in-nbgarch-and-nbsgarch" class="section level2">
-<h2>Bottom-end catching in nbGARCH and nbsGARCH</h2>
+<div id="major-changes-with-updating-to-portalcasting-0.15.0" class="section level2">
+<h2>Major changes with updating to portalcasting 0.15.0</h2>
+<p><em>2019-11-13</em></p>
+<div id="adding-naivearima-jags_rw-and-simplexedm-models" class="section level3">
+<h3>Adding NaiveArima, jags_RW, and simplexEDM models</h3>
+<p><a href="https://github.com/weecology/portalcasting/releases/tag/v0.12.0">See</a> for jags_RW and simplexEDM. NaiveArima added in <a href="%5BSee%5D(https://github.com/weecology/portalcasting/releases/tag/v0.9.0)">0.9.0</a></p>
+</div>
+<div id="adding-exclosure-treatment-level-as-a-data-set" class="section level3">
+<h3>Adding exclosure treatment level as a data set</h3>
+<p><a href="https://github.com/weecology/portalcasting/releases/tag/v0.14.0">See</a></p>
+</div>
+<div id="now-the-only-models-that-get-interpolated-data-are-the-ones-that-need-them" class="section level3">
+<h3>Now the only models that get interpolated data are the ones that need them</h3>
+<p><a href="https://github.com/weecology/portalcasting/releases/tag/v0.9.0">See</a></p>
+</div>
+<div id="ensemble-is-now-an-unweighted-average" class="section level3">
+<h3>Ensemble is now an unweighted average</h3>
+<p><a href="https://github.com/weecology/portalcasting/releases/tag/v0.11.0">See</a></p>
+<p>With switch to <a href="https://github.com/weecology/portalcasting/releases/tag/v0.15.0">portalcasting 0.15.0</a></p>
+<p><a href="https://github.com/weecology/portalPredictions/pull/337">Relevant PR</a></p>
+</div>
+<div id="bottom-end-catching-in-nbgarch-and-nbsgarch" class="section level3">
+<h3>Bottom-end catching in nbGARCH and nbsGARCH</h3>
 <p><em>2019-03-21</em></p>
 <p>In <code>nbGARCH</code> and then extended into <code>nbsGARCH</code>, the models fall back to a Poisson distribution if the negative binomial fit fails. Previously (with only <code>nbGARCH</code>) the Poisson fit always succeeded in those back-ups, but now (with <code>nbsGARCH</code>) that sometimes isn’t the case (because the predictor model is more complex) and even the Poisson fit can fail. So now for both models, if that fit fails, we follow what occurs in <code>pevGARCH</code> which is to use the <code>fcast0</code> forecast of 0s and an arbitrarily high AIC (<code>1e6</code>).</p>
 <p>In <a href="https://github.com/weecology/portalcasting/releases/tag/v0.7.0">portalcasting 0.7.0</a></p>
 <p><a href="https://github.com/weecology/portalPredictions/pull/326">Relevant PR</a></p>
+</div>
 <div id="setting-up-pevgarch-to-properly-hindcast" class="section level3">
 <h3>Setting up pevGARCH to properly hindcast</h3>
 <p><em>2019-03-20</em></p>
@@ -397,6 +401,23 @@ $(document).ready(function () {
 
 
 </script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

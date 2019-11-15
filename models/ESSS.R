@@ -1,4 +1,6 @@
-tree <- dirtree(".", "", subdirs());
-f_a <- ESSS(tree, level = "All", quiet = FALSE);
-f_c <- ESSS(tree, level = "Controls", quiet = FALSE);
-save_forecast_output(f_a, f_c, "ESSS", tree)
+cast_all_interp <- ESSS(data_set = "all_interp", main = ".", control_files = files_control(), quiet = FALSE, verbose = TRUE, arg_checks = TRUE);
+save_cast_output(cast_all_interp, main = ".", quiet = FALSE, arg_checks = TRUE);
+cast_controls_interp <- ESSS(data_set = "controls_interp", main = ".", control_files = files_control(), quiet = FALSE, verbose = TRUE, arg_checks = TRUE);
+save_cast_output(cast_controls_interp, main = ".", quiet = FALSE, arg_checks = TRUE);
+cast_exclosures_interp <- ESSS(data_set = "exclosures_interp", main = ".", control_files = files_control(), quiet = FALSE, verbose = TRUE, arg_checks = TRUE);
+save_cast_output(cast_exclosures_interp, main = ".", quiet = FALSE, arg_checks = TRUE);
