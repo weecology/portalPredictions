@@ -1,12 +1,13 @@
-cast_group: 3.0
+cast_group: 4.0
 models:
-- ESSS
 - AutoArima
+- ESSS
 - NaiveArima
 - nbGARCH
 - nbsGARCH
 - pevGARCH
 - simplexEDM
+- jags_RW
 data_sets:
 - all
 - controls
@@ -15,7 +16,7 @@ data_sets:
 - controls_interp
 - exclosures_interp
 directory_configuration:
-  setup_date: '2019-11-22'
+  setup_date: '2019-11-28'
   setup_R_version:
     platform: x86_64-pc-linux-gnu
     arch: x86_64
@@ -42,7 +43,7 @@ directory_configuration:
     - tmp
   downloads_versions:
   - PortalData-1.141.0
-  - portalPredictions-2019-11-21
+  - portalPredictions-2019-11-22
 controls_rodents:
   all:
     name: all
@@ -286,11 +287,11 @@ controls_rodents:
     filename: rodents_exclosures_interp.csv
 cast_type: forecast
 start_moon: 217.0
-end_moon: 524
-last_moon: 524
+end_moon: 525
+last_moon: 525
 lead_time: 12.0
 min_lag: 6.0
-cast_date: '2019-11-22'
+cast_date: '2019-11-28'
 covariate_cast_moons:
 - 530
 - 531
@@ -299,6 +300,7 @@ covariate_cast_moons:
 - 534
 - 535
 - 536
+- 537
 covariate_cast_months:
 - 4.0
 - 5.0
@@ -307,7 +309,9 @@ covariate_cast_months:
 - 8.0
 - 9.0
 - 10.0
+- 11.0
 covariate_cast_years:
+- 2020.0
 - 2020.0
 - 2020.0
 - 2020.0
@@ -329,6 +333,7 @@ rodent_cast_moons:
 - 534
 - 535
 - 536
+- 537
 rodent_cast_months:
 - 10.0
 - 11.0
@@ -343,10 +348,12 @@ rodent_cast_months:
 - 8.0
 - 9.0
 - 10.0
+- 11.0
 rodent_cast_years:
 - 2019.0
 - 2019.0
 - 2019.0
+- 2020.0
 - 2020.0
 - 2020.0
 - 2020.0
