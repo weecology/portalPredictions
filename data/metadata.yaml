@@ -1,12 +1,13 @@
-cast_group: 7.0
+cast_group: 8.0
 models:
-- ESSS
 - AutoArima
+- ESSS
 - NaiveArima
 - nbGARCH
 - nbsGARCH
 - pevGARCH
 - simplexEDM
+- jags_RW
 data_sets:
 - all
 - controls
@@ -15,7 +16,7 @@ data_sets:
 - controls_interp
 - exclosures_interp
 directory_configuration:
-  setup_date: '2019-12-06'
+  setup_date: '2019-12-19'
   setup_R_version:
     platform: x86_64-pc-linux-gnu
     arch: x86_64
@@ -31,7 +32,7 @@ directory_configuration:
     language: R
     version.string: R version 3.6.1 (2019-07-05)
     nickname: Action of the Toes
-  setup_portalcasting_version: 0.15.0
+  setup_portalcasting_version: 0.15.1
   directory_tree:
     main: '.'
     subs:
@@ -41,8 +42,8 @@ directory_configuration:
     - data
     - tmp
   downloads_versions:
-  - PortalData-1.142.0
-  - portalPredictions-2019-12-05
+  - PortalData-2.1.0
+  - portalPredictions-2019-12-06
 controls_rodents:
   all:
     name: all
@@ -290,7 +291,7 @@ end_moon: 525
 last_moon: 525
 lead_time: 12.0
 min_lag: 6.0
-cast_date: '2019-12-06'
+cast_date: '2019-12-19'
 covariate_cast_moons:
 - 530
 - 531
