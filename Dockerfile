@@ -8,6 +8,7 @@ FROM rocker/tidyverse:latest
 RUN apt-get update && apt-get install -y curl 
 RUN apt-get update && apt-get install -y jags
 
-# install portalcasting from github
+# Install portalr and portalcasting from github
 
+RUN R -e "devtools::install_github('weecology/portalr')"
 RUN R -e "devtools::install_github('weecology/portalcasting')"
