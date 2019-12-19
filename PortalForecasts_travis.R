@@ -1,3 +1,5 @@
+library(portalr)
+sessionInfo()
 library(portalcasting)
 
 #Update data and models
