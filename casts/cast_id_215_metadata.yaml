@@ -1,8 +1,8 @@
 cast_group: 10.0
-models: nbGARCH
+models: nbsGARCH
 data_sets: controls_interp
 directory_configuration:
-  setup_date: '2019-12-26'
+  setup_date: '2019-12-27'
   setup_R_version:
     platform: x86_64-pc-linux-gnu
     arch: x86_64
@@ -273,11 +273,11 @@ controls_rodents:
     filename: rodents_exclosures_interp.csv
 cast_type: forecast
 start_moon: 217.0
-end_moon: 525
-last_moon: 525
+end_moon: 526
+last_moon: 526
 lead_time: 12.0
 min_lag: 6.0
-cast_date: '2019-12-26'
+cast_date: '2019-12-27'
 covariate_cast_moons:
 - 530
 - 531
@@ -287,6 +287,7 @@ covariate_cast_moons:
 - 535
 - 536
 - 537
+- 538
 covariate_cast_months:
 - 4.0
 - 5.0
@@ -296,7 +297,9 @@ covariate_cast_months:
 - 9.0
 - 10.0
 - 11.0
+- 12.0
 covariate_cast_years:
+- 2020.0
 - 2020.0
 - 2020.0
 - 2020.0
@@ -320,6 +323,7 @@ rodent_cast_moons:
 - 535
 - 536
 - 537
+- 538
 rodent_cast_months:
 - 10.0
 - 11.0
@@ -335,10 +339,12 @@ rodent_cast_months:
 - 9.0
 - 10.0
 - 11.0
+- 12.0
 rodent_cast_years:
 - 2019.0
 - 2019.0
 - 2019.0
+- 2020.0
 - 2020.0
 - 2020.0
 - 2020.0
