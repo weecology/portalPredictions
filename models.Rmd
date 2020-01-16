@@ -3,7 +3,7 @@ title: "Current Models"
 bibliography: refs.bibtex
 ---
 
-We currently analyze and forecast rodent data at Portal using five models:
+We currently analyze and forecast rodent data at Portal using ten models:
 
 <br>
 
@@ -178,6 +178,14 @@ selected based on AIC.
 simplexEDM (simplex projection using Empirical Dynamic Modeling) is a state-space reconstruction model adapted for forecasting and fit to the interpolated data at the composite (full site and just control plots) spatial level and both the composite (community) and the articulated (species) ecological levels. The method uses time-delay embedding to reconstruct a state-space for the dynamics underlying a time series [@Packard1980, @Takens1981]. A forecast from a point in the state space is then computed as a weighted average of the trajectories of nearest neighbors of that point, a minimal algorithm known as "simplex projection" [@Sugihara1990].
 
 In applications to ecological time series, many of the parameters are set automatically, with the exception of the dimension of the time-delay embedding. Here, the embedding dimension ($E$) is selected as the value (between `1` and the `max_E` argument to `simplexEDM()`) that minimizes the mean absolute error over the in-sample portion of the data.
+
+<br>
+
+## GPEDM
+
+GPEDM (Gaussian processes using Empirical Dynamic Modeling) is a state-space reconstruction model adapted for forecasting and fit to the interpolated data at the composite (full site and just control plots) spatial level and both the composite (community) and the articulated (species) ecological levels. . The method uses time-delay embedding to reconstruct a state-space for the dynamics underlying a time series [@Packard1980, @Takens1981]. The forecast function is approximate using Gaussian processes.
+
+As with `simplexEDM()`, many of the parameters are fit automatically, such as the length-scale, and variance parameters (see `rEDM::block_gp()` for details). One exception is the dimension of the time-delay embedding. Here, the embedding dimension ($E$) is selected as the value (between `1` and the `max_E` argument to `GPEDM()`) that minimizes the mean absolute error over the in-sample portion of the data.
 
 <br>
 
