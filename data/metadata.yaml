@@ -1,12 +1,13 @@
-cast_group: 14.0
+cast_group: 15.0
 models:
-- ESSS
 - AutoArima
+- ESSS
 - NaiveArima
 - nbGARCH
 - nbsGARCH
 - pevGARCH
 - simplexEDM
+- jags_RW
 data_sets:
 - all
 - controls
@@ -15,7 +16,7 @@ data_sets:
 - controls_interp
 - exclosures_interp
 directory_configuration:
-  setup_date: '2020-01-10'
+  setup_date: '2020-01-16'
   setup_R_version:
     platform: x86_64-pc-linux-gnu
     arch: x86_64
@@ -23,15 +24,15 @@ directory_configuration:
     system: x86_64, linux-gnu
     status: ''
     major: '3'
-    minor: '6.1'
+    minor: '6.2'
     year: '2019'
-    month: '07'
-    day: '05'
-    svn rev: '76782'
+    month: '12'
+    day: '12'
+    svn rev: '77560'
     language: R
-    version.string: R version 3.6.1 (2019-07-05)
-    nickname: Action of the Toes
-  setup_portalcasting_version: 0.15.1
+    version.string: R version 3.6.2 (2019-12-12)
+    nickname: Dark and Stormy Night
+  setup_portalcasting_version: 0.16.0
   directory_tree:
     main: '.'
     subs:
@@ -41,8 +42,8 @@ directory_configuration:
     - data
     - tmp
   downloads_versions:
-  - PortalData-2.5.0
-  - portalPredictions-2020-01-09
+  - PortalData-2.7.0
+  - portalPredictions-2020-01-10
 controls_rodents:
   all:
     name: all
@@ -290,7 +291,7 @@ end_moon: 526
 last_moon: 526
 lead_time: 12.0
 min_lag: 6.0
-cast_date: '2020-01-10'
+cast_date: '2020-01-16'
 covariate_cast_moons:
 - 533
 - 534
@@ -313,8 +314,6 @@ covariate_cast_years:
 - 2020.0
 - 2020.0
 rodent_cast_moons:
-- 525
-- 526
 - 527
 - 528
 - 529
@@ -328,8 +327,6 @@ rodent_cast_moons:
 - 537
 - 538
 rodent_cast_months:
-- 11.0
-- 12.0
 - 1.0
 - 2.0
 - 3.0
@@ -343,8 +340,6 @@ rodent_cast_months:
 - 11.0
 - 12.0
 rodent_cast_years:
-- 2019.0
-- 2019.0
 - 2020.0
 - 2020.0
 - 2020.0
