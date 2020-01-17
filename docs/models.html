@@ -309,7 +309,7 @@ $(document).ready(function () {
 </div>
 
 
-<p>We currently analyze and forecast rodent data at Portal using five models:</p>
+<p>We currently analyze and forecast rodent data at Portal using ten models:</p>
 <p><br></p>
 <div id="esss" class="section level2">
 <h2>ESSS</h2>
@@ -368,6 +368,12 @@ $(document).ready(function () {
 <h2>simplexEDM</h2>
 <p>simplexEDM (simplex projection using Empirical Dynamic Modeling) is a state-space reconstruction model adapted for forecasting and fit to the interpolated data at the composite (full site and just control plots) spatial level and both the composite (community) and the articulated (species) ecological levels. The method uses time-delay embedding to reconstruct a state-space for the dynamics underlying a time series <span class="citation">(Packard et al. 1980, <span class="citation">@Takens1981</span>)</span>. A forecast from a point in the state space is then computed as a weighted average of the trajectories of nearest neighbors of that point, a minimal algorithm known as “simplex projection” <span class="citation">(Sugihara and May 1990)</span>.</p>
 <p>In applications to ecological time series, many of the parameters are set automatically, with the exception of the dimension of the time-delay embedding. Here, the embedding dimension (<span class="math inline">\(E\)</span>) is selected as the value (between <code>1</code> and the <code>max_E</code> argument to <code>simplexEDM()</code>) that minimizes the mean absolute error over the in-sample portion of the data.</p>
+<p><br></p>
+</div>
+<div id="gpedm" class="section level2">
+<h2>GPEDM</h2>
+<p>GPEDM (Gaussian processes using Empirical Dynamic Modeling) is a state-space reconstruction model adapted for forecasting and fit to the interpolated data at the composite (full site and just control plots) spatial level and both the composite (community) and the articulated (species) ecological levels. . The method uses time-delay embedding to reconstruct a state-space for the dynamics underlying a time series <span class="citation">(Packard et al. 1980, <span class="citation">@Takens1981</span>)</span>. The forecast function is approximate using Gaussian processes.</p>
+<p>As with <code>simplexEDM()</code>, many of the parameters are fit automatically, such as the length-scale, and variance parameters (see <code>rEDM::block_gp()</code> for details). One exception is the dimension of the time-delay embedding. Here, the embedding dimension (<span class="math inline">\(E\)</span>) is selected as the value (between <code>1</code> and the <code>max_E</code> argument to <code>GPEDM()</code>) that minimizes the mean absolute error over the in-sample portion of the data.</p>
 <p><br></p>
 </div>
 <div id="jags_rw" class="section level2">
