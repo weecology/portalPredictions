@@ -27,7 +27,7 @@ Point forecasts and 95% confidence intervals for specific species at the site fo
 <br>
 
 ```{r, species_forecasts, echo=FALSE}
-plot_cast_point(data_set = "controls")
+suppressWarnings(plot_cast_point(data_set = "controls"))
 ```
 
 <br>
