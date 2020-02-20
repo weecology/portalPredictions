@@ -1,13 +1,14 @@
-cast_group: 24.0
+cast_group: 25.0
 models:
-- ESSS
 - AutoArima
+- ESSS
 - NaiveArima
 - nbGARCH
 - nbsGARCH
 - pevGARCH
-- GPEDM
 - simplexEDM
+- GPEDM
+- jags_RW
 data_sets:
 - all
 - controls
@@ -16,7 +17,7 @@ data_sets:
 - controls_interp
 - exclosures_interp
 directory_configuration:
-  setup_date: '2020-02-14'
+  setup_date: '2020-02-20'
   setup_R_version:
     platform: x86_64-pc-linux-gnu
     arch: x86_64
@@ -42,8 +43,8 @@ directory_configuration:
     - data
     - tmp
   downloads_versions:
-  - PortalData-2.11.0
-  - portalPredictions-2020-02-13
+  - PortalData-2.12.0
+  - portalPredictions-2020-02-14
 controls_rodents:
   all:
     name: all
@@ -291,7 +292,7 @@ end_moon: 527
 last_moon: 527
 lead_time: 12.0
 min_lag: 6.0
-cast_date: '2020-02-14'
+cast_date: '2020-02-20'
 covariate_cast_moons:
 - 534
 - 535
