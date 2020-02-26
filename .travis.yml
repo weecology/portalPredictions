@@ -9,7 +9,7 @@ before_install:
 
 script:
   - docker exec --env GITHUB_PAT=$GITHUB_PAT -i ppred bash -c "cd portalPredictions && Rscript PortalForecasts_travis.R"
-  - docker exec --env GITHUB_PAT=$GITHUB_PAT -i ppred bash -c "cd portalPredictions && Rscript tests/testthat.R"
+  - docker exec --env GITHUB_PAT=$GITHUB_PAT -i ppred bash -c "cd portalPredictions && Rscript tests/testthat/test-travis.R"
 
 after_success:
   - docker cp ppred:/portalPredictions portalPredictionsResult
