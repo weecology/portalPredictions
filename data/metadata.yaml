@@ -1,4 +1,4 @@
-cast_group: 25.0
+cast_group: 26.0
 models:
 - AutoArima
 - ESSS
@@ -17,7 +17,7 @@ data_sets:
 - controls_interp
 - exclosures_interp
 directory_configuration:
-  setup_date: '2020-02-20'
+  setup_date: '2020-02-27'
   setup_R_version:
     platform: x86_64-pc-linux-gnu
     arch: x86_64
@@ -43,8 +43,8 @@ directory_configuration:
     - data
     - tmp
   downloads_versions:
-  - PortalData-2.12.0
-  - portalPredictions-2020-02-14
+  - PortalData-2.13.0
+  - portalPredictions-2020-02-20
 controls_rodents:
   all:
     name: all
@@ -288,11 +288,11 @@ controls_rodents:
     filename: rodents_exclosures_interp.csv
 cast_type: forecast
 start_moon: 217.0
-end_moon: 527
-last_moon: 527
+end_moon: 528
+last_moon: 528
 lead_time: 12.0
 min_lag: 6.0
-cast_date: '2020-02-20'
+cast_date: '2020-02-27'
 covariate_cast_moons:
 - 534
 - 535
@@ -300,6 +300,7 @@ covariate_cast_moons:
 - 537
 - 538
 - 539
+- 540
 covariate_cast_months:
 - 8.0
 - 9.0
@@ -307,12 +308,14 @@ covariate_cast_months:
 - 11.0
 - 12.0
 - 1.0
+- 2.0
 covariate_cast_years:
 - 2020.0
 - 2020.0
 - 2020.0
 - 2020.0
 - 2020.0
+- 2021.0
 - 2021.0
 rodent_cast_moons:
 - 528
@@ -327,6 +330,7 @@ rodent_cast_moons:
 - 537
 - 538
 - 539
+- 540
 rodent_cast_months:
 - 2.0
 - 3.0
@@ -340,6 +344,7 @@ rodent_cast_months:
 - 11.0
 - 12.0
 - 1.0
+- 2.0
 rodent_cast_years:
 - 2020.0
 - 2020.0
@@ -352,6 +357,7 @@ rodent_cast_years:
 - 2020.0
 - 2020.0
 - 2020.0
+- 2021.0
 - 2021.0
 confidence_level: 0.95
 
