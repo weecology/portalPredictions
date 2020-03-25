@@ -1,9 +1,8 @@
-context("checks for travis")
+library(testthat)
 
-# tests for travis
+context("checks that forecasts exist for use")
 
-test_that("placeholder", {
-
-  expect_true(1==1)
- 
+test_that("cast metadata", {
+  metadata <- read.csv("casts/casts_metadata.csv")
+  expect_true(is.integer(metadata$cast_id))
 })
