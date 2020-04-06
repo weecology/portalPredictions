@@ -21,5 +21,6 @@ git clone https://github.com/weecology/portalPredictions.git
 cd portalPredictions
 singularity run ../portal_predictions_latest.sif Rscript PortalForecasts.R
 # Redirect stderr(2) to stdout(1) if command fails, and exit script with 1
-singularity run ../portal_predictions_latest.sif Rscript tests/testthat.R > ../testthat.log 2>&1 || exit 1
+singularity run ../portal_predictions_latest.sif Rscript tests/testthat/test-successful_forecasts.R > ../testthat.log 2>&1 || exit 1
 singularity run ../portal_predictions_latest.sif bash archive_hipergator.sh
+singularity run ../portal_predictions_latest.sif Rscript tests/testthat/test-forecasts_committed.R > ../testthat.log 2>&1 || exit 1
