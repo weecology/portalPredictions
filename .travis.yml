@@ -9,5 +9,3 @@ before_install:
 
 script:
   - docker exec --env GITHUB_PAT=$GITHUB_PAT -i ppred bash -c "cd portalPredictions && Rscript tests/testthat/test-travis.R"
-
-after_success:
