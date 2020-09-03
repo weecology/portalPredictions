@@ -1,4 +1,4 @@
-cast_group: 47.0
+cast_group: 48.0
 models:
 - AutoArima
 - ESSS
@@ -17,7 +17,7 @@ data_sets:
 - controls_interp
 - exclosures_interp
 directory_configuration:
-  setup_date: '2020-08-27'
+  setup_date: '2020-09-03'
   setup_R_version:
     platform: x86_64-pc-linux-gnu
     arch: x86_64
@@ -43,8 +43,8 @@ directory_configuration:
     - data
     - tmp
   downloads_versions:
-  - PortalData-2.40.0
-  - portalPredictions-2020-08-20
+  - PortalData-2.42.0
+  - portalPredictions-2020-08-27
 controls_rodents:
   all:
     name: all
@@ -292,7 +292,7 @@ end_moon: 534
 last_moon: 534
 lead_time: 12.0
 min_lag: 6.0
-cast_date: '2020-08-27'
+cast_date: '2020-09-03'
 covariate_cast_moons:
 - 538
 - 539
