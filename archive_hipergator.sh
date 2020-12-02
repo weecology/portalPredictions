@@ -13,7 +13,7 @@ git config --global user.name "Weecology Deploy Bot"
 
 # Commit changes to portalPredictions repo
 git checkout master
-git add predictions/* data/* models/* casts/*
+git add data/* models/* casts/*
 git commit -m "Update forecasts: HiperGator Build $current_date [ci skip]"
 
 # Add deploy remote
