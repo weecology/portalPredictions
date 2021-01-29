@@ -14,11 +14,11 @@ source /etc/profile.d/modules.sh
 module load git R singularity
 
 rm -f portal_predictions_latest.sif
-rm -rf portalPredictions
 rm -rf forecasts
 singularity pull docker://weecology/portal_predictions
-git clone https://github.com/weecology/portalPredictions.git
 cd portalPredictions
+git fetch origin
+git reset --hard origin/master
 singularity run ../portal_predictions_latest.sif Rscript PortalForecasts.R
 # Redirect stderr(2) to stdout(1) if command fails, and exit script with 1
 singularity run ../portal_predictions_latest.sif Rscript tests/testthat/test-successful_forecasts.R > ../testthat.log 2>&1 || exit 1
