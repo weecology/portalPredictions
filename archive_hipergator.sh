@@ -37,6 +37,7 @@ curl -v -i -X POST -H "Content-Type:application/json" -H "Authorization: token $
 cd ../
 git clone https://github.com/weecology/forecasts
 cp portalPredictions/casts/*.* forecasts/portal/
+cp portalPredictions/fits/*.* forecasts/portal/
 cd forecasts
 
 # Commit to forecasts repo
