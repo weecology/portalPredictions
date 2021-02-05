@@ -1,4 +1,5 @@
 library(testthat)
+library(portalcasting)
 
 context("checks that a production pipeline has been setup and run correctly")
 
