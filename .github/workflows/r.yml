@@ -19,6 +19,8 @@ jobs:
     runs-on: macOS-latest
 
     steps:
-      - uses: docker://weecology/portal_predictions
+      - uses: actions/checkout@v2
       - name: Check
-        run: Rscript tests/testthat/test-travis.R
+        uses: docker://weecology/portal_predictions:latest
+        entrypoint: Rscript
+        args: tests/testthat/test-travis.R
