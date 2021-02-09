@@ -16,11 +16,10 @@ on:
 
 jobs:
   build:
-    runs-on: macOS-latest
-
+    runs-on: ubuntu-latest
+    container:
+      image: docker://weecology/portal_predictions:latest
     steps:
       - uses: actions/checkout@v2
       - name: Check
-        uses: docker://weecology/portal_predictions:latest
-        entrypoint: Rscript
-        args: tests/testthat/test-travis.R
+        run: Rscript tests/testthat/test-travis.R
