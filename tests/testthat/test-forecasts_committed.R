@@ -2,7 +2,7 @@ library(testthat)
 
 context("checks that github repository is updated correctly")
 
-# test that the remote github master branch has the newest forecasts
+# test that the remote github main branch has the newest forecasts
 new_commit <- git2r::last_commit()
 
 test_that("placeholder", {

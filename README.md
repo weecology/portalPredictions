@@ -1,7 +1,7 @@
 # Portal Predictions
-[![Build Status](https://travis-ci.com/weecology/portalPredictions.svg?branch=master)](https://travis-ci.com/github/weecology/portalPredictions)
+[![Build Status](https://travis-ci.com/weecology/portalPredictions.svg?branch=main)](https://travis-ci.com/github/weecology/portalPredictions)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.833438.svg)](https://doi.org/10.5281/zenodo.833438)
-[![License](http://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/weecology/portalPredictions/master/LICENSE)
+[![License](http://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/weecology/portalPredictions/main/LICENSE)
 [![NSF-1929730](https://img.shields.io/badge/NSF-1929730-blue.svg)](https://nsf.gov/awardsearch/showAward?AWD_ID=1929730)
 
 #### [Portal Forecasting Website](http://portal.naturecast.org/)
@@ -16,7 +16,7 @@ Modeling is driven by the [portalcasting package](https://github.com/weecology/p
 
 ## Docker builds
 
-Forecasts are run using [continuous integration](https://en.wikipedia.org/wiki/Continuous_integration) based on a [docker](https://hub.docker.com/) image. This makes the builds faster and more reproducible. The image is built using the [Dockerfile](https://github.com/weecology/portalPredictions/blob/master/Dockerfile), with [v0.17.1](https://github.com/weecology/portalcasting/releases/tag/v0.17.1) of `portalcasting`.
+Forecasts are run using [continuous integration](https://en.wikipedia.org/wiki/Continuous_integration) based on a [docker](https://hub.docker.com/) image. This makes the builds faster and more reproducible. The image is built using the [Dockerfile](https://github.com/weecology/portalPredictions/blob/main/Dockerfile), with [v0.17.1](https://github.com/weecology/portalcasting/releases/tag/v0.17.1) of `portalcasting`.
 
 Rebuilding of the Docker container is required to pass updates to `portalcasting` along to the executed code in the Portal Predictions pipeline. When building the image, give it two tags: `latest` and the date (as yyyy-mm-dd) using the following commands (with the actual date input):
 
