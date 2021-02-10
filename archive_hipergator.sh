@@ -12,7 +12,7 @@ git config --global user.email "weecologydeploy@weecology.org"
 git config --global user.name "Weecology Deploy Bot"
 
 # Commit changes to portalPredictions repo
-git checkout master
+git checkout main
 git add data/* models/* casts/*
 git commit -m "Update forecasts: HiperGator Build $current_date [ci skip]"
 
@@ -26,7 +26,7 @@ git tag $current_date
 # If this is a cron event deploy, otherwise just check if we can
 
 # Push updates to upstream
-git push --quiet deploy master > /dev/null 2>&1
+git push --quiet deploy main > /dev/null 2>&1
 
 # Create a new portalPredictions release to trigger Zenodo archiving
 git push --quiet deploy --tags > /dev/null 2>&1
@@ -49,7 +49,7 @@ git remote add deploy https://${GITHUB_TOKEN}@github.com/weecology/forecasts.git
 git tag $current_date
 
 # Push updates to forecasts archive repo
-git push --quiet deploy master > /dev/null 2>&1
+git push --quiet deploy main > /dev/null 2>&1
 
 # Create a new forecasts release to trigger Zenodo archiving
 git push --quiet deploy --tags > /dev/null 2>&1
