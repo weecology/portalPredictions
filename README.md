@@ -1,5 +1,5 @@
 # Portal Predictions
-[![Build Status](https://travis-ci.com/weecology/portalPredictions.svg?branch=main)](https://travis-ci.com/github/weecology/portalPredictions)
+[![Metadata Check](https://github.com/weecology/portalPredictions/actions/workflows/r.yml/badge.svg)](https://github.com/weecology/portalPredictions/actions/workflows/r.yml)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.833438.svg)](https://doi.org/10.5281/zenodo.833438)
 [![License](http://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/weecology/portalPredictions/main/LICENSE)
 [![NSF-1929730](https://img.shields.io/badge/NSF-1929730-blue.svg)](https://nsf.gov/awardsearch/showAward?AWD_ID=1929730)
