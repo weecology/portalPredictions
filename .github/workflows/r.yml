@@ -6,7 +6,7 @@
 # See https://github.com/r-lib/actions/tree/master/examples#readme for
 # additional example workflows available for the R community.
 
-name: R
+name: Metadata Check
 
 on:
   push:
@@ -22,4 +22,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Check
-        run: Rscript tests/testthat/test-travis.R
+        run: Rscript tests/testthat/test-metadata.R
