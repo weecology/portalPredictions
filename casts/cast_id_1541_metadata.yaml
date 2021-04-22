@@ -2,7 +2,7 @@ cast_group: 62.0
 models: ESSS
 data_sets: controls_interp
 directory_configuration:
-  setup_date: '2021-04-15'
+  setup_date: '2021-04-22'
   setup_R_version:
     platform: x86_64-pc-linux-gnu
     arch: x86_64
@@ -28,8 +28,8 @@ directory_configuration:
     - data
     - tmp
   downloads_versions:
-  - PortalData-2.94.0
-  - portalPredictions-2021-04-08
+  - PortalData-2.96.0
+  - portalPredictions-2021-04-15
 controls_rodents:
   all:
     name: all
@@ -277,7 +277,7 @@ end_moon: 542
 last_moon: 542
 lead_time: 12.0
 min_lag: 6.0
-cast_date: '2021-04-15'
+cast_date: '2021-04-22'
 covariate_cast_moons:
 - 546
 - 547
