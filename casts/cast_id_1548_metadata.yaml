@@ -2,7 +2,7 @@ cast_group: 62.0
 models: jags_RW
 data_sets: exclosures
 directory_configuration:
-  setup_date: '2021-05-06'
+  setup_date: '2021-05-13'
   setup_R_version:
     platform: x86_64-pc-linux-gnu
     arch: x86_64
@@ -29,7 +29,7 @@ directory_configuration:
     - tmp
   downloads_versions:
   - PortalData-2.96.0
-  - portalPredictions-2021-04-29
+  - portalPredictions-2021-05-06
 controls_rodents:
   all:
     name: all
@@ -273,11 +273,11 @@ controls_rodents:
     filename: rodents_exclosures_interp.csv
 cast_type: forecast
 start_moon: 217.0
-end_moon: 542
-last_moon: 542
+end_moon: 543
+last_moon: 543
 lead_time: 12.0
 min_lag: 6.0
-cast_date: '2021-05-06'
+cast_date: '2021-05-13'
 covariate_cast_moons:
 - 546
 - 547
@@ -288,6 +288,7 @@ covariate_cast_moons:
 - 552
 - 553
 - 554
+- 555
 covariate_cast_months:
 - 8.0
 - 9.0
@@ -298,12 +299,14 @@ covariate_cast_months:
 - 2.0
 - 3.0
 - 4.0
+- 5.0
 covariate_cast_years:
 - 2021.0
 - 2021.0
 - 2021.0
 - 2021.0
 - 2021.0
+- 2022.0
 - 2022.0
 - 2022.0
 - 2022.0
@@ -336,6 +339,7 @@ rodent_cast_moons:
 - 552
 - 553
 - 554
+- 555
 rodent_cast_months:
 - 2.0
 - 3.0
@@ -364,6 +368,7 @@ rodent_cast_months:
 - 2.0
 - 3.0
 - 4.0
+- 5.0
 rodent_cast_years:
 - 2020.0
 - 2020.0
@@ -388,6 +393,7 @@ rodent_cast_years:
 - 2021.0
 - 2021.0
 - 2021.0
+- 2022.0
 - 2022.0
 - 2022.0
 - 2022.0
