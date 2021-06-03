@@ -2,7 +2,7 @@ cast_group: 62.0
 models: simplexEDM
 data_sets: controls_interp
 directory_configuration:
-  setup_date: '2021-05-27'
+  setup_date: '2021-06-03'
   setup_R_version:
     platform: x86_64-pc-linux-gnu
     arch: x86_64
@@ -28,8 +28,8 @@ directory_configuration:
     - data
     - tmp
   downloads_versions:
-  - PortalData-2.98.0
-  - portalPredictions-2021-05-20
+  - PortalData-2.100.1
+  - portalPredictions-2021-05-27
 controls_rodents:
   name: controls_interp
   species:
@@ -76,7 +76,7 @@ end_moon: 543
 last_moon: 543
 lead_time: 12.0
 min_lag: 6.0
-cast_date: '2021-05-27'
+cast_date: '2021-06-03'
 covariate_cast_moons:
 - 546
 - 547
