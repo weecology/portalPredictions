@@ -2,7 +2,7 @@ cast_group: 62.0
 models: ESSS
 data_sets: all_interp
 directory_configuration:
-  setup_date: '2021-06-03'
+  setup_date: '2021-06-10'
   setup_R_version:
     platform: x86_64-pc-linux-gnu
     arch: x86_64
@@ -28,8 +28,8 @@ directory_configuration:
     - data
     - tmp
   downloads_versions:
-  - PortalData-2.100.1
-  - portalPredictions-2021-05-27
+  - PortalData-2.102.0
+  - portalPredictions-2021-06-03
 controls_rodents:
   all:
     name: all
@@ -273,11 +273,11 @@ controls_rodents:
     filename: rodents_exclosures_interp.csv
 cast_type: forecast
 start_moon: 217.0
-end_moon: 543
-last_moon: 543
+end_moon: 544
+last_moon: 544
 lead_time: 12.0
 min_lag: 6.0
-cast_date: '2021-06-03'
+cast_date: '2021-06-10'
 covariate_cast_moons:
 - 546
 - 547
@@ -289,6 +289,7 @@ covariate_cast_moons:
 - 553
 - 554
 - 555
+- 556
 covariate_cast_months:
 - 8.0
 - 9.0
@@ -300,12 +301,14 @@ covariate_cast_months:
 - 3.0
 - 4.0
 - 5.0
+- 5.0
 covariate_cast_years:
 - 2021.0
 - 2021.0
 - 2021.0
 - 2021.0
 - 2021.0
+- 2022.0
 - 2022.0
 - 2022.0
 - 2022.0
@@ -340,6 +343,7 @@ rodent_cast_moons:
 - 553
 - 554
 - 555
+- 556
 rodent_cast_months:
 - 2.0
 - 3.0
@@ -369,6 +373,7 @@ rodent_cast_months:
 - 3.0
 - 4.0
 - 5.0
+- 5.0
 rodent_cast_years:
 - 2020.0
 - 2020.0
@@ -393,6 +398,7 @@ rodent_cast_years:
 - 2021.0
 - 2021.0
 - 2021.0
+- 2022.0
 - 2022.0
 - 2022.0
 - 2022.0
