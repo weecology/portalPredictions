@@ -18,7 +18,8 @@ git commit -m "Update forecasts: HiperGator Build $current_date [ci skip]"
 
 # Add deploy remote
 # Needed to grant permissions through the deploy token
-git remote add deploy https://${GITHUB_TOKEN}@github.com/weecology/portalPredictions.git > /dev/null 2>&1
+git remote remove deploy # Removing the remote ensures that updates to the GitHub Token are added to the remote
+git remote add deploy https://${GITHUB_TOKEN}@github.com/weecology/portalPredictions.git
 
 # Create a new portalPredictions tag for release
 git tag $current_date
@@ -26,10 +27,10 @@ git tag $current_date
 # If this is a cron event deploy, otherwise just check if we can
 
 # Push updates to upstream
-git push --quiet deploy main > /dev/null 2>&1
+git push --quiet deploy main
 
 # Create a new portalPredictions release to trigger Zenodo archiving
-git push --quiet deploy --tags > /dev/null 2>&1
+git push --quiet deploy --tags
 curl -v -i -X POST -H "Content-Type:application/json" -H "Authorization: token $GITHUB_RELEASE_TOKEN" https://api.github.com/repos/weecology/portalPredictions/releases -d "{\"tag_name\":\"$current_date\"}"
 
 
@@ -43,15 +44,15 @@ cd forecasts
 # Commit to forecasts repo
 git add .
 git commit -m "Update Portal forecasts: Build $current_date"
-git remote add deploy https://${GITHUB_TOKEN}@github.com/weecology/forecasts.git > /dev/null 2>&1
+git remote remove deploy # Removing the remote ensures that updates to the GitHub Token are added to the remote
+git remote add deploy https://${GITHUB_TOKEN}@github.com/weecology/forecasts.git
 
 # Create a new forecasts tag
 git tag $current_date
 
 # Push updates to forecasts archive repo
-git push --quiet deploy main > /dev/null 2>&1
+git push --quiet deploy main
 
 # Create a new forecasts release to trigger Zenodo archiving
-git push --quiet deploy --tags > /dev/null 2>&1
+git push --quiet deploy --tags
 curl -v -i -X POST -H "Content-Type:application/json" -H "Authorization: token $GITHUB_TOKEN" https://api.github.com/repos/weecology/forecasts/releases -d "{\"tag_name\":\"$current_date\"}"
-
