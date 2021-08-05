@@ -2,7 +2,7 @@ cast_group: 62.0
 models: simplexEDM
 data_sets: exclosures_interp
 directory_configuration:
-  setup_date: '2021-07-29'
+  setup_date: '2021-08-05'
   setup_R_version:
     platform: x86_64-pc-linux-gnu
     arch: x86_64
@@ -28,8 +28,8 @@ directory_configuration:
     - data
     - tmp
   downloads_versions:
-  - PortalData-2.116.0
-  - portalPredictions-2021-07-22
+  - PortalData-3.0.0
+  - portalPredictions-2021-07-29
 controls_rodents:
   name: exclosures_interp
   species:
@@ -76,7 +76,7 @@ end_moon: 545
 last_moon: 545
 lead_time: 12.0
 min_lag: 6.0
-cast_date: '2021-07-29'
+cast_date: '2021-08-05'
 covariate_cast_moons:
 - 546
 - 547
