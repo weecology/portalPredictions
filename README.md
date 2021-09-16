@@ -16,13 +16,4 @@ Modeling is driven by the [portalcasting package](https://github.com/weecology/p
 
 ## Docker builds
 
-Forecasts are run using [continuous integration](https://en.wikipedia.org/wiki/Continuous_integration) based on a [docker](https://hub.docker.com/) image. This makes the builds faster and more reproducible. The image is built using the [Dockerfile](https://github.com/weecology/portalPredictions/blob/main/Dockerfile), with [v0.17.1](https://github.com/weecology/portalcasting/releases/tag/v0.17.1) of `portalcasting`.
-
-Rebuilding of the Docker container is required to pass updates to `portalcasting` along to the executed code in the Portal Predictions pipeline. When building the image, give it two tags: `latest` and the date (as yyyy-mm-dd) using the following commands (with the actual date input):
-
-```
-sudo docker build -t weecology/portal_predictions:latest -t weecology/portal_predictions:yyyy-mm-dd . 
-sudo docker push weecology/portal_predictions
-```
-
-(Windows users will not need to include the `sudo` command.) 
+Forecasts are run using [continuous integration](https://en.wikipedia.org/wiki/Continuous_integration) based on a [docker](https://hub.docker.com/) image. This makes the builds faster and more reproducible. The code in this repo uses the [latest portalcasting image](https://hub.docker.com/repository/docker/weecology/portalcasting)
