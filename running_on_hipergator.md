@@ -10,7 +10,7 @@ This should only be setup by one user at a time. Currently this is Ethan White.
 
 To set this up follow these steps:
 
-1. Copy `portal_predictions_weekly.sh` into the home directory of the user under
+1. Copy `portalcasting_weekly.sh` into the home directory of the user under
    which the job will run.
 2. `ssh` from `hpg2` into the `daemon2` server.
 3. Create a cronjob by running `crontab -e` and pasting the contents of
@@ -26,9 +26,9 @@ get archived as official forecasts.
 
 To set this up follow these steps:
 
-1. Copy `portal_predictions_weekly.sh` into the home directory of the user under
+1. Copy `portalcasting_weekly.sh` into the home directory of the user under
    which the job will run.
-2. Change this copy of `portal_predictions_weekly.sh` to use the users email
+2. Change this copy of `portalcasting_weekly.sh` to use the users email
    address and clone the `portalPredictions` repository from the users fork.
 3. Change `archive_hipergator.sh` to push to the users fork. Optionally this
    change could push to a branch in the users fork instead of `main` and remove everything below line 47 (the code for archiving to `weecology/forecasts`).

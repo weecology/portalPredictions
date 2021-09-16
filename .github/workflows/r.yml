@@ -18,7 +18,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: docker://weecology/portal_predictions:latest
+      image: docker://weecology/portalcasting:latest
     steps:
       - uses: actions/checkout@v2
       - name: Check
