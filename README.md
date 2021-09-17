@@ -17,3 +17,34 @@ Modeling is driven by the [portalcasting package](https://github.com/weecology/p
 ## Docker builds
 
 Forecasts are run using [continuous integration](https://en.wikipedia.org/wiki/Continuous_integration) based on a [docker](https://hub.docker.com/) image. This makes the builds faster and more reproducible. The code in this repo uses the [latest portalcasting image](https://hub.docker.com/repository/docker/weecology/portalcasting)
+
+## Developer notes
+
+This code runs weekly on the UF HiPerGator using a cron job on `daemon2` using Ethan White's account.
+The cron job runs a version of `portal_weekly_forecast.sh` that is separate from the one in the repository, but generally just a copy of it.
+The version of `portal_weekly_forecast.sh` in the repo is automatically updated to the one that is run on HiPerGator after the weekly forecasts are complete. 
+
+`portal_weekly_forecast.sh` does the following:
+* Updates the `portalPredictions` repository to it's current version
+* Updates the `forecasts` repository to it's current version (this repository is used for archiving full forecasts)
+* Runs the forecasts
+* Pushes the results of the forecasts in the `casts` and `models` and `data` directories to the `portalPredictions` repository
+* Pushes the results of the forecasts in the `casts` and `models` and `data` directories and also the `fits` directory to the `forecasts` repository
+* Tests to see if forecasts ran correctly
+
+`portal_dryrun_forecast.sh` is automatically run twice each week to check to see if the forecasts are working prior to a production run.
+It does the same thing as `portal_weekly_forecast.sh` but does not actually push a release. 
+
+The root directory for all work is `/orange/ewhite/PortalForecasts/`.
+
+There are 4 log files:
+* `portal_weekly_forecast_log.out` - the main log file for the weekly forecast
+* `portal_dryrun_forecast_log.out` - the main log file for the dryrun forecast
+* `testthat.log` - the log file for the tests of whether the forecasts ran correctly
+* `cron.log` - the cron log file, which is just a list of SLURM submissions
+
+If necessary to create a fresh setup this system:
+1. Create a root directory (`PortalForecasts`)
+2. Clone `portalPredictions` into that directory
+3. Clone `forecasts` into that directory
+4. Copy `portal_weekly_forecast.sh` and `portal_dryrun_forecast.sh` from `portalPredictions` into the root directory.  
