@@ -19,12 +19,12 @@ singularity pull --force docker://weecology/portalcasting
 
 echo "INFO [$(date "+%Y-%m-%d %H:%M:%S")] Updating forecasts repository"
 cd forecasts
-git fetch origin
+git fetch origin --prune --tags
 git reset --hard origin/main
 
 echo "INFO [$(date "+%Y-%m-%d %H:%M:%S")] Updating portalPredictions repository"
 cd ../portalPredictions
-git fetch origin
+git fetch origin --prune --tags
 git reset --hard origin/main
 
 echo "INFO [$(date "+%Y-%m-%d %H:%M:%S")] Running Portal Forecasts"
