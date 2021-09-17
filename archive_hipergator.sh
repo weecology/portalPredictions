@@ -11,9 +11,13 @@ current_date=`date -I | head -c 10`
 git config --global user.email "weecologydeploy@weecology.org"
 git config --global user.name "Weecology Deploy Bot"
 
+# Copy version of portal_weekly_forecast.py used to run the forecast into the repo so we know what was run
+cp ../portal_weekly_forecast.sh .
+cp ../portal_dryrun_forecast.sh .
+
 # Commit changes to portalPredictions repo
 git checkout main
-git add data/* models/* casts/*
+git add data/* models/* casts/* portal_weekly_forecast.sh portal_dryrun_forecast.sh
 git commit -m "Update forecasts: HiperGator Build $current_date [ci skip]"
 
 # Add deploy remote
