@@ -2,7 +2,7 @@ cast_group: 65.0
 models: AutoArima
 data_sets: all
 directory_configuration:
-  setup_date: '2021-09-17'
+  setup_date: '2021-09-18'
   setup_R_version:
     platform: x86_64-pc-linux-gnu
     arch: x86_64
@@ -317,7 +317,7 @@ end_moon: 547
 last_moon: 547
 lead_time: 12.0
 min_lag: 6.0
-cast_date: '2021-09-17'
+cast_date: '2021-09-18'
 covariate_cast_moons:
 - 554
 - 555
