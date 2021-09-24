@@ -18,14 +18,13 @@ echo "INFO [$(date "+%Y-%m-%d %H:%M:%S")] Updating singularlity container"
 singularity pull --force docker://weecology/portalcasting
 
 echo "INFO [$(date "+%Y-%m-%d %H:%M:%S")] Updating forecasts repository"
-cd forecasts
-git fetch origin --prune --tags
-git reset --hard origin/main
+rm -rf forecasts
+git clone https://github.com/weecology/forecasts.git
 
 echo "INFO [$(date "+%Y-%m-%d %H:%M:%S")] Updating portalPredictions repository"
-cd ../portalPredictions
-git fetch origin --prune --tags
-git reset --hard origin/main
+rm -rf portalPredictions
+git clone https://github.com/weecology/portalPredictions.git
+cd portalPredictions
 
 echo "INFO [$(date "+%Y-%m-%d %H:%M:%S")] Running Portal Forecasts"
 singularity run ../portalcasting_latest.sif Rscript PortalForecasts.R
