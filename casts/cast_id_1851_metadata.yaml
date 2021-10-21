@@ -1,0 +1,154 @@
+cast_group: 72.0
+models: GPEDM
+data_sets: exclosures_interp
+directory_configuration:
+  setup_date: '2021-10-21'
+  setup_R_version:
+    platform: x86_64-pc-linux-gnu
+    arch: x86_64
+    os: linux-gnu
+    system: x86_64, linux-gnu
+    status: ''
+    major: '4'
+    minor: '1.1'
+    year: '2021'
+    month: 08
+    day: '10'
+    svn rev: '80725'
+    language: R
+    version.string: R version 4.1.1 (2021-08-10)
+    nickname: Kick Things
+  setup_portalcasting_version: 0.21.2
+  directory_tree:
+    main: '.'
+    subs:
+    - casts
+    - models
+    - raw
+    - data
+    - tmp
+  downloads_versions:
+  - PortalData-3.23.0
+  - portalPredictions-2021-10-14
+controls_rodents:
+  name: exclosures_interp
+  species:
+  - BA
+  - DM
+  - DO
+  - DS
+  - NA
+  - OL
+  - OT
+  - PB
+  - PE
+  - PF
+  - PH
+  - PL
+  - PM
+  - PP
+  - RF
+  - RM
+  - RO
+  - SF
+  - SH
+  - SO
+  total: yes
+  interpolate: yes
+  clean: no
+  type: Rodents
+  level: Treatment
+  plots: Longterm
+  treatment: exclosure
+  min_plots: 24.0
+  min_traps: 1.0
+  output: abundance
+  fillweight: no
+  unknowns: no
+  time: newmoon
+  na_drop: no
+  zero_drop: yes
+  effort: yes
+  filename: rodents_exclosures_interp.csv
+cast_type: forecast
+start_moon: 217.0
+end_moon: 548
+last_moon: 548
+lead_time: 12.0
+min_lag: 6.0
+cast_date: '2021-10-21'
+covariate_cast_moons:
+- 555
+- 556
+- 557
+- 558
+- 559
+- 560
+covariate_cast_months:
+- 4.0
+- 5.0
+- 6.0
+- 7.0
+- 8.0
+- 9.0
+covariate_cast_years:
+- 2022.0
+- 2022.0
+- 2022.0
+- 2022.0
+- 2022.0
+- 2022.0
+rodent_cast_moons:
+- 545
+- 546
+- 547
+- 548
+- 549
+- 550
+- 551
+- 552
+- 553
+- 554
+- 555
+- 556
+- 557
+- 558
+- 559
+- 560
+rodent_cast_months:
+- 7.0
+- 8.0
+- 9.0
+- 10.0
+- 11.0
+- 12.0
+- 1.0
+- 2.0
+- 3.0
+- 4.0
+- 4.0
+- 5.0
+- 6.0
+- 7.0
+- 8.0
+- 9.0
+rodent_cast_years:
+- 2021.0
+- 2021.0
+- 2021.0
+- 2021.0
+- 2021.0
+- 2021.0
+- 2022.0
+- 2022.0
+- 2022.0
+- 2022.0
+- 2022.0
+- 2022.0
+- 2022.0
+- 2022.0
+- 2022.0
+- 2022.0
+confidence_level: 0.95
+arg_checks: yes
+
