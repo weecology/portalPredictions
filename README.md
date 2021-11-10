@@ -4,11 +4,13 @@
 [![License](http://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/weecology/portalPredictions/main/LICENSE)
 [![NSF-1929730](https://img.shields.io/badge/NSF-1929730-blue.svg)](https://nsf.gov/awardsearch/showAward?AWD_ID=1929730)
 
-#### [Portal Forecasting Website](http://portal.naturecast.org/)
+#### [Portal Forecasting Website](https://portalcasting.netlify.app/)
 
 This is the main repository for predictions made on the Portal rodent census data [Portal Project](http://portal.weecology.org/).
 
 Predictions are made and archived weekly. Approximately once a month, one of these forecasts is made immediately prior to a new trapping session (trapping occurs as close to each new moon as possible).
+
+The website code is now located in [its own repository](https://github.com/weecology/portal-forecast-web).
 
 ## How to add a new model
 
