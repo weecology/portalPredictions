@@ -7,13 +7,13 @@
 
 current_date=`date -I | head -c 10`
 
-# Setup on weecologydeploy user
-git config --global user.email "weecologydeploy@weecology.org"
-git config --global user.name "Weecology Deploy Bot"
-
 # Copy version of portal_weekly_forecast.py used to run the forecast into the repo so we know what was run
 cp ../portal_weekly_forecast.sh .
 cp ../portal_dryrun_forecast.sh .
+
+# Setup on weecologydeploy user
+git config user.email "weecologydeploy@weecology.org"
+git config user.name "Weecology Deploy Bot"
 
 # Commit changes to portalPredictions repo
 git checkout main
@@ -44,6 +44,10 @@ git clone https://github.com/weecology/forecasts
 cp portalPredictions/casts/*.* forecasts/portal/
 cp portalPredictions/fits/*.* forecasts/portal/
 cd forecasts
+
+# Setup on weecologydeploy user
+git config user.email "weecologydeploy@weecology.org"
+git config user.name "Weecology Deploy Bot"
 
 # Commit to forecasts repo
 git add .
