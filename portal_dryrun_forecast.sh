@@ -4,7 +4,7 @@
 #SBATCH --mail-type=FAIL,END
 #SBATCH --ntasks=1
 #SBATCH --mem=2gb
-#SBATCH --time=3:00:00
+#SBATCH --time=12:00:00
 #SBATCH --partition=hpg2-compute
 #SBATCH --output=portal_dryrun_forecast_log.out
 
