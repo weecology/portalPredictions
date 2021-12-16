@@ -1,4 +1,4 @@
-cast_group: 74.0
+cast_group: 75.0
 models:
 - AutoArima
 - ESSS
@@ -9,15 +9,15 @@ models:
 - jags_RW
 data_sets:
 - all
-- controls
-- exclosures
-- dm_controls
 - all_interp
+- controls
 - controls_interp
+- exclosures
 - exclosures_interp
+- dm_controls
 - dm_controls_interp
 directory_configuration:
-  setup_date: '2021-11-11'
+  setup_date: '2021-12-16'
   setup_R_version:
     platform: x86_64-pc-linux-gnu
     arch: x86_64
@@ -33,7 +33,7 @@ directory_configuration:
     language: R
     version.string: R version 4.1.2 (2021-11-01)
     nickname: Bird Hippie
-  setup_portalcasting_version: 0.23.0
+  setup_portalcasting_version: 0.25.1
   directory_tree:
     main: '.'
     subs:
@@ -42,9 +42,7 @@ directory_configuration:
     - raw
     - data
     - tmp
-  downloads_versions:
-  - PortalData-3.27.0
-  - portalPredictions-2021-10-28
+  downloads_versions: ~
 controls_rodents:
   all:
     name: all
@@ -328,25 +326,25 @@ controls_rodents:
     filename: rodents_dm_controls_interp.csv
 cast_type: forecast
 start_moon: 217.0
-end_moon: 549
-last_moon: 549
+end_moon: 550
+last_moon: 550
 lead_time: 12.0
 min_lag: 6.0
-cast_date: '2021-11-11'
+cast_date: '2021-12-16'
 covariate_cast_moons:
-- 556
 - 557
 - 558
 - 559
 - 560
 - 561
+- 562
 covariate_cast_months:
-- 5.0
 - 6.0
 - 7.0
 - 8.0
 - 9.0
 - 10.0
+- 11.0
 covariate_cast_years:
 - 2022.0
 - 2022.0
@@ -355,7 +353,6 @@ covariate_cast_years:
 - 2022.0
 - 2022.0
 rodent_cast_moons:
-- 549
 - 550
 - 551
 - 552
@@ -368,8 +365,8 @@ rodent_cast_moons:
 - 559
 - 560
 - 561
+- 562
 rodent_cast_months:
-- 11.0
 - 12.0
 - 1.0
 - 2.0
@@ -382,9 +379,10 @@ rodent_cast_months:
 - 8.0
 - 9.0
 - 10.0
+- 11.0
 rodent_cast_years:
 - 2021.0
-- 2021.0
+- 2022.0
 - 2022.0
 - 2022.0
 - 2022.0
