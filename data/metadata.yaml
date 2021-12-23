@@ -1,4 +1,4 @@
-cast_group: 75.0
+cast_group: 76.0
 models:
 - AutoArima
 - ESSS
@@ -17,7 +17,7 @@ data_sets:
 - dm_controls
 - dm_controls_interp
 directory_configuration:
-  setup_date: '2021-12-16'
+  setup_date: '2021-12-23'
   setup_R_version:
     platform: x86_64-pc-linux-gnu
     arch: x86_64
@@ -330,7 +330,7 @@ end_moon: 550
 last_moon: 550
 lead_time: 12.0
 min_lag: 6.0
-cast_date: '2021-12-16'
+cast_date: '2021-12-23'
 covariate_cast_moons:
 - 557
 - 558
@@ -353,7 +353,6 @@ covariate_cast_years:
 - 2022.0
 - 2022.0
 rodent_cast_moons:
-- 550
 - 551
 - 552
 - 553
@@ -367,7 +366,6 @@ rodent_cast_moons:
 - 561
 - 562
 rodent_cast_months:
-- 12.0
 - 1.0
 - 2.0
 - 3.0
@@ -381,7 +379,6 @@ rodent_cast_months:
 - 10.0
 - 11.0
 rodent_cast_years:
-- 2021.0
 - 2022.0
 - 2022.0
 - 2022.0
