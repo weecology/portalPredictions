@@ -18,7 +18,5 @@ test_that("cast_metadata file", {
 })
 
 test_that("new casts have been made", {
-  expect_true(Sys.Date() == as.Date(read_metadata()$cast_date))
+  expect_true(Sys.Date() == as.Date(read_metadata()$time$cast_date))
 })
-
-
