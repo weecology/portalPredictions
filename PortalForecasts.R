@@ -8,3 +8,6 @@ setup_production()
 
 #Run all models using portalcasting defaults 
 portalcast()
+
+#Evaluate all un-evaluated forecasts
+evaluate_casts()
