@@ -1,8 +1,8 @@
-cast_all_interp <- pevGARCH(data_set = "all_interp", lag = 6, main = ".", control_files = files_control(), quiet = FALSE, verbose = TRUE, arg_checks = TRUE);
-save_cast_output(cast_all_interp, main = ".", quiet = FALSE, arg_checks = TRUE);
-cast_controls_interp <- pevGARCH(data_set = "controls_interp", lag = 6, main = ".", control_files = files_control(), quiet = FALSE, verbose = TRUE, arg_checks = TRUE);
-save_cast_output(cast_controls_interp, main = ".", quiet = FALSE, arg_checks = TRUE);
-cast_exclosures_interp <- pevGARCH(data_set = "exclosures_interp", lag = 6, main = ".", control_files = files_control(), quiet = FALSE, verbose = TRUE, arg_checks = TRUE);
-save_cast_output(cast_exclosures_interp, main = ".", quiet = FALSE, arg_checks = TRUE);
-cast_dm_controls_interp <- pevGARCH(data_set = "dm_controls_interp", lag = 6, main = ".", control_files = files_control(), quiet = FALSE, verbose = TRUE, arg_checks = TRUE);
-save_cast_output(cast_dm_controls_interp, main = ".", quiet = FALSE, arg_checks = TRUE);
+cast_all_interp <- pevGARCH(dataset = "all_interp", main = ".", settings = directory_settings(), quiet = FALSE, verbose = FALSE, lag = 6);
+save_cast_output(cast_all_interp, main = ".", settings = directory_settings(), quiet = FALSE);
+cast_controls_interp <- pevGARCH(dataset = "controls_interp", main = ".", settings = directory_settings(), quiet = FALSE, verbose = FALSE, lag = 6);
+save_cast_output(cast_controls_interp, main = ".", settings = directory_settings(), quiet = FALSE);
+cast_exclosures_interp <- pevGARCH(dataset = "exclosures_interp", main = ".", settings = directory_settings(), quiet = FALSE, verbose = FALSE, lag = 6);
+save_cast_output(cast_exclosures_interp, main = ".", settings = directory_settings(), quiet = FALSE);
+cast_dm_controls_interp <- pevGARCH(dataset = "dm_controls_interp", main = ".", settings = directory_settings(), quiet = FALSE, verbose = FALSE, lag = 6);
+save_cast_output(cast_dm_controls_interp, main = ".", settings = directory_settings(), quiet = FALSE);

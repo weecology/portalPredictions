@@ -1,8 +1,8 @@
-cast_all <- AutoArima(data_set = "all", main = ".", control_files = files_control(), quiet = FALSE, verbose = TRUE, arg_checks = TRUE);
-save_cast_output(cast_all, main = ".", quiet = FALSE, arg_checks = TRUE);
-cast_controls <- AutoArima(data_set = "controls", main = ".", control_files = files_control(), quiet = FALSE, verbose = TRUE, arg_checks = TRUE);
-save_cast_output(cast_controls, main = ".", quiet = FALSE, arg_checks = TRUE);
-cast_exclosures <- AutoArima(data_set = "exclosures", main = ".", control_files = files_control(), quiet = FALSE, verbose = TRUE, arg_checks = TRUE);
-save_cast_output(cast_exclosures, main = ".", quiet = FALSE, arg_checks = TRUE);
-cast_dm_controls <- AutoArima(data_set = "dm_controls", main = ".", control_files = files_control(), quiet = FALSE, verbose = TRUE, arg_checks = TRUE);
-save_cast_output(cast_dm_controls, main = ".", quiet = FALSE, arg_checks = TRUE);
+cast_all <- AutoArima(dataset = "all", main = ".", settings = directory_settings(), quiet = FALSE, verbose = FALSE);
+save_cast_output(cast_all, main = ".", settings = directory_settings(), quiet = FALSE);
+cast_controls <- AutoArima(dataset = "controls", main = ".", settings = directory_settings(), quiet = FALSE, verbose = FALSE);
+save_cast_output(cast_controls, main = ".", settings = directory_settings(), quiet = FALSE);
+cast_exclosures <- AutoArima(dataset = "exclosures", main = ".", settings = directory_settings(), quiet = FALSE, verbose = FALSE);
+save_cast_output(cast_exclosures, main = ".", settings = directory_settings(), quiet = FALSE);
+cast_dm_controls <- AutoArima(dataset = "dm_controls", main = ".", settings = directory_settings(), quiet = FALSE, verbose = FALSE);
+save_cast_output(cast_dm_controls, main = ".", settings = directory_settings(), quiet = FALSE);

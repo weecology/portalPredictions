@@ -1,2 +1,2 @@
-cast_dm_controls <- jags_logistic(data_set = "dm_controls", main = ".", control_files = files_control(), control_runjags = runjags_control(), quiet = FALSE, verbose = TRUE, arg_checks = TRUE);
-save_cast_output(cast_dm_controls, main = ".", quiet = FALSE, arg_checks = TRUE);
+cast_dm_controls <- jags_logistic(dataset = "dm_controls", main = ".", settings = directory_settings(), quiet = FALSE, verbose = FALSE, control_runjags = list(nchains = 2, adapt = 10000, burnin = 10000, sample = 10000, thin = 1, modules = "", method = "interruptible", factories = "", mutate = NA, cast_obs = TRUE, silent_jags = TRUE));
+save_cast_output(cast_dm_controls, main = ".", settings = directory_settings(), quiet = FALSE);

@@ -1,0 +1,105 @@
+AutoArima:
+  metadata:
+    name: AutoArima
+    descriptor: classic model, all species, focal species
+  fun: AutoArima
+  args: ~
+  datasets:
+  - all
+  - controls
+  - exclosures
+  - dm_controls
+ESSS:
+  metadata:
+    name: ESSS
+    descriptor: classic model, all species, focal species
+  fun: ESSS
+  args: ~
+  datasets:
+  - all_interp
+  - controls_interp
+  - exclosures_interp
+  - dm_controls_interp
+NaiveArima:
+  metadata:
+    name: NaiveArima
+    descriptor: classic model, all species, focal species
+  fun: NaiveArima
+  args: ~
+  datasets:
+  - all
+  - controls
+  - exclosures
+  - dm_controls
+nbGARCH:
+  metadata:
+    name: nbGARCH
+    descriptor: classic model, all species, focal species
+  fun: nbGARCH
+  args: ~
+  datasets:
+  - all_interp
+  - controls_interp
+  - exclosures_interp
+  - dm_controls_interp
+nbsGARCH:
+  metadata:
+    name: nbsGARCH
+    descriptor: classic model, all species, focal species
+  fun: nbsGARCH
+  args: ~
+  datasets:
+  - all_interp
+  - controls_interp
+  - exclosures_interp
+  - dm_controls_interp
+pevGARCH:
+  metadata:
+    name: pevGARCH
+    descriptor: classic model, all species, focal species
+  fun: pevGARCH
+  datasets:
+  - all_interp
+  - controls_interp
+  - exclosures_interp
+  - dm_controls_interp
+  args:
+    lag: 6.0
+jags_RW:
+  metadata:
+    name: jags_RW
+    descriptor: population model, focal species
+  fun: jags_RW
+  datasets: dm_controls
+  args:
+    control_runjags:
+      nchains: 2.0
+      adapt: 10000.0
+      burnin: 10000.0
+      sample: 10000.0
+      thin: 1.0
+      modules: ''
+      method: interruptible
+      factories: ''
+      mutate: .na
+      cast_obs: yes
+      silent_jags: yes
+jags_logistic:
+  metadata:
+    name: jags_logistic
+    descriptor: population model, focal species
+  fun: jags_logistic
+  datasets: dm_controls
+  args:
+    control_runjags:
+      nchains: 2.0
+      adapt: 10000.0
+      burnin: 10000.0
+      sample: 10000.0
+      thin: 1.0
+      modules: ''
+      method: interruptible
+      factories: ''
+      mutate: .na
+      cast_obs: yes
+      silent_jags: yes

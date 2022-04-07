@@ -1,8 +1,2 @@
-cast_all <- jags_RW(data_set = "all", main = ".", control_files = files_control(), control_runjags = runjags_control(), quiet = FALSE, verbose = TRUE, arg_checks = TRUE);
-save_cast_output(cast_all, main = ".", quiet = FALSE, arg_checks = TRUE);
-cast_controls <- jags_RW(data_set = "controls", main = ".", control_files = files_control(), control_runjags = runjags_control(), quiet = FALSE, verbose = TRUE, arg_checks = TRUE);
-save_cast_output(cast_controls, main = ".", quiet = FALSE, arg_checks = TRUE);
-cast_exclosures <- jags_RW(data_set = "exclosures", main = ".", control_files = files_control(), control_runjags = runjags_control(), quiet = FALSE, verbose = TRUE, arg_checks = TRUE);
-save_cast_output(cast_exclosures, main = ".", quiet = FALSE, arg_checks = TRUE);
-cast_dm_controls <- jags_RW(data_set = "dm_controls", main = ".", control_files = files_control(), control_runjags = runjags_control(), quiet = FALSE, verbose = TRUE, arg_checks = TRUE);
-save_cast_output(cast_dm_controls, main = ".", quiet = FALSE, arg_checks = TRUE);
+cast_dm_controls <- jags_RW(dataset = "dm_controls", main = ".", settings = directory_settings(), quiet = FALSE, verbose = FALSE, control_runjags = list(nchains = 2, adapt = 10000, burnin = 10000, sample = 10000, thin = 1, modules = "", method = "interruptible", factories = "", mutate = NA, cast_obs = TRUE, silent_jags = TRUE));
+save_cast_output(cast_dm_controls, main = ".", settings = directory_settings(), quiet = FALSE);

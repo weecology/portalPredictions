@@ -1,0 +1,324 @@
+all:
+  metadata:
+    name: all
+    descriptor: classic dataset, all plots combined
+  fun: prep_dataset
+  args:
+    name: all
+    species:
+    - BA
+    - DM
+    - DO
+    - DS
+    - NA
+    - OL
+    - OT
+    - PB
+    - PE
+    - PF
+    - PH
+    - PL
+    - PM
+    - PP
+    - RF
+    - RM
+    - RO
+    - SF
+    - SH
+    - SO
+    total: yes
+    interpolate: no
+    clean: no
+    type: Rodents
+    level: Site
+    plots: all
+    treatment: ~
+    min_plots: 24.0
+    min_traps: 1.0
+    output: abundance
+    fillweight: no
+    unknowns: no
+    time: newmoon
+    na_drop: no
+    zero_drop: yes
+    effort: yes
+    filename: rodents_all.csv
+all_interp:
+  metadata:
+    name: all_interp
+    descriptor: classic dataset, all plots combined, interpolated for models that
+      cannot have missing data
+  fun: prep_dataset
+  args:
+    name: all_interp
+    species:
+    - BA
+    - DM
+    - DO
+    - DS
+    - NA
+    - OL
+    - OT
+    - PB
+    - PE
+    - PF
+    - PH
+    - PL
+    - PM
+    - PP
+    - RF
+    - RM
+    - RO
+    - SF
+    - SH
+    - SO
+    total: yes
+    interpolate: yes
+    clean: no
+    type: Rodents
+    level: Site
+    plots: all
+    treatment: ~
+    min_plots: 24.0
+    min_traps: 1.0
+    output: abundance
+    fillweight: no
+    unknowns: no
+    time: newmoon
+    na_drop: no
+    zero_drop: yes
+    effort: yes
+    filename: rodents_all_interp.csv
+controls:
+  metadata:
+    name: controls
+    descriptor: classic dataset, control plots combined
+  fun: prep_dataset
+  args:
+    name: controls
+    species:
+    - BA
+    - DM
+    - DO
+    - DS
+    - NA
+    - OL
+    - OT
+    - PB
+    - PE
+    - PF
+    - PH
+    - PL
+    - PM
+    - PP
+    - RF
+    - RM
+    - RO
+    - SF
+    - SH
+    - SO
+    total: yes
+    interpolate: no
+    clean: no
+    type: Rodents
+    level: Treatment
+    plots: Longterm
+    treatment: control
+    min_plots: 24.0
+    min_traps: 1.0
+    output: abundance
+    fillweight: no
+    unknowns: no
+    time: newmoon
+    na_drop: no
+    zero_drop: yes
+    effort: yes
+    filename: rodents_controls.csv
+controls_interp:
+  metadata:
+    name: controls_interp
+    descriptor: classic dataset, control plots combined, interpolated for models that
+      cannot have missing data
+  fun: prep_dataset
+  args:
+    name: controls_interp
+    species:
+    - BA
+    - DM
+    - DO
+    - DS
+    - NA
+    - OL
+    - OT
+    - PB
+    - PE
+    - PF
+    - PH
+    - PL
+    - PM
+    - PP
+    - RF
+    - RM
+    - RO
+    - SF
+    - SH
+    - SO
+    total: yes
+    interpolate: yes
+    clean: no
+    type: Rodents
+    level: Treatment
+    plots: Longterm
+    treatment: control
+    min_plots: 24.0
+    min_traps: 1.0
+    output: abundance
+    fillweight: no
+    unknowns: no
+    time: newmoon
+    na_drop: no
+    zero_drop: yes
+    effort: yes
+    filename: rodents_controls_interp.csv
+exclosures:
+  metadata:
+    name: exclosures
+    descriptor: classic dataset, exclosure plots combined
+  fun: prep_dataset
+  args:
+    name: exclosures
+    species:
+    - BA
+    - DM
+    - DO
+    - DS
+    - NA
+    - OL
+    - OT
+    - PB
+    - PE
+    - PF
+    - PH
+    - PL
+    - PM
+    - PP
+    - RF
+    - RM
+    - RO
+    - SF
+    - SH
+    - SO
+    total: yes
+    interpolate: no
+    clean: no
+    type: Rodents
+    level: Treatment
+    plots: Longterm
+    treatment: exclosure
+    min_plots: 24.0
+    min_traps: 1.0
+    output: abundance
+    fillweight: no
+    unknowns: no
+    time: newmoon
+    na_drop: no
+    zero_drop: yes
+    effort: yes
+    filename: rodents_exclosures.csv
+exclosures_interp:
+  metadata:
+    name: exclosures_interp
+    descriptor: classic dataset, exclosure plots combined, interpolated for models
+      that cannot have missing data
+  fun: prep_dataset
+  args:
+    name: exclosures_interp
+    species:
+    - BA
+    - DM
+    - DO
+    - DS
+    - NA
+    - OL
+    - OT
+    - PB
+    - PE
+    - PF
+    - PH
+    - PL
+    - PM
+    - PP
+    - RF
+    - RM
+    - RO
+    - SF
+    - SH
+    - SO
+    total: yes
+    interpolate: yes
+    clean: no
+    type: Rodents
+    level: Treatment
+    plots: Longterm
+    treatment: exclosure
+    min_plots: 24.0
+    min_traps: 1.0
+    output: abundance
+    fillweight: no
+    unknowns: no
+    time: newmoon
+    na_drop: no
+    zero_drop: yes
+    effort: yes
+    filename: rodents_exclosures_interp.csv
+dm_controls:
+  metadata:
+    name: dm_controls
+    descriptor: DM only, control plots combined
+  fun: prep_dataset
+  args:
+    name: dm_controls
+    species: DM
+    total: no
+    interpolate: no
+    clean: no
+    type: Rodents
+    level: Treatment
+    plots: Longterm
+    treatment: control
+    min_plots: 24.0
+    min_traps: 1.0
+    output: abundance
+    fillweight: no
+    unknowns: no
+    time: newmoon
+    na_drop: no
+    zero_drop: yes
+    effort: yes
+    filename: rodents_dm_controls.csv
+dm_controls_interp:
+  metadata:
+    name: dm_controls_interp
+    descriptor: DM only, control plots combined, interpolated for models that cannot
+      have missing data
+  fun: prep_dataset
+  args:
+    name: dm_controls_interp
+    species: DM
+    total: no
+    interpolate: yes
+    clean: no
+    type: Rodents
+    level: Treatment
+    plots: Longterm
+    treatment: control
+    min_plots: 24.0
+    min_traps: 1.0
+    output: abundance
+    fillweight: no
+    unknowns: no
+    time: newmoon
+    na_drop: no
+    zero_drop: yes
+    effort: yes
+    filename: rodents_dm_controls_interp.csv
