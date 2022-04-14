@@ -9,6 +9,10 @@ AutoArima:
   - controls
   - exclosures
   - dm_controls
+  response:
+    link: normal
+    type: distribution
+  time: newmoon
 ESSS:
   metadata:
     name: ESSS
@@ -20,6 +24,10 @@ ESSS:
   - controls_interp
   - exclosures_interp
   - dm_controls_interp
+  response:
+    link: normal
+    type: distribution
+  time: newmoon
 NaiveArima:
   metadata:
     name: NaiveArima
@@ -31,6 +39,10 @@ NaiveArima:
   - controls
   - exclosures
   - dm_controls
+  response:
+    link: normal
+    type: distribution
+  time: newmoon
 nbGARCH:
   metadata:
     name: nbGARCH
@@ -42,6 +54,10 @@ nbGARCH:
   - controls_interp
   - exclosures_interp
   - dm_controls_interp
+  response:
+    link: negative_binomial
+    type: distribution
+  time: newmoon
 nbsGARCH:
   metadata:
     name: nbsGARCH
@@ -53,6 +69,10 @@ nbsGARCH:
   - controls_interp
   - exclosures_interp
   - dm_controls_interp
+  response:
+    link: negative_binomial
+    type: distribution
+  time: newmoon
 pevGARCH:
   metadata:
     name: pevGARCH
@@ -65,6 +85,10 @@ pevGARCH:
   - dm_controls_interp
   args:
     lag: 6.0
+  response:
+    link: poisson
+    type: distribution
+  time: newmoon
 jags_RW:
   metadata:
     name: jags_RW
@@ -83,7 +107,11 @@ jags_RW:
       factories: ''
       mutate: .na
       cast_obs: yes
-      silent_jags: yes
+      silent_jags: no
+  response:
+    link: poisson
+    type: empirical
+  time: newmoon
 jags_logistic:
   metadata:
     name: jags_logistic
@@ -102,4 +130,8 @@ jags_logistic:
       factories: ''
       mutate: .na
       cast_obs: yes
-      silent_jags: yes
+      silent_jags: no
+  response:
+    link: poisson
+    type: empirical
+  time: newmoon
