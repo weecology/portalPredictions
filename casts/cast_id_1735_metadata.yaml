@@ -1,6 +1,6 @@
 cast_group: 68.0
 models: nbGARCH
-data_sets: exclosures_interp
+datasets: exclosures
 directory_configuration:
   setup_date: '2021-09-21'
   setup_R_version:
@@ -429,4 +429,4 @@ controls_r:
   effort: yes
   filename: rodents_exclosures_interp.csv
 arg_checks: yes
-
+interpolated_data: yes

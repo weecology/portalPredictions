@@ -1,6 +1,6 @@
 cast_group: 87.0
 models: NaiveArima
-data_sets: all
+datasets: all
 directory_configuration:
   setup_date: '2022-03-24'
   setup_R_version:
@@ -424,4 +424,4 @@ controls_r:
   effort: yes
   filename: rodents_all.csv
 arg_checks: yes
-
+interpolated_data: no

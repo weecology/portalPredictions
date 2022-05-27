@@ -1,6 +1,6 @@
 cast_group: 61.0
 models: ESSS
-data_sets: exclosures_interp
+datasets: exclosures
 directory_configuration:
   setup_date: '2021-02-05'
   setup_R_version:
@@ -416,4 +416,4 @@ controls_r:
   effort: yes
   filename: rodents_exclosures_interp.csv
 arg_checks: yes
-
+interpolated_data: yes

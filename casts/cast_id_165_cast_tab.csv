@@ -1,4 +1,4 @@
-"cast_date","cast_month","cast_year","moon","currency","model","data_set","species","estimate","lower_pi","upper_pi","start_moon","end_moon","cast_id","cast_group","confidence_level"
+"cast_date","cast_month","cast_year","moon","currency","model","dataset","species","estimate","lower_pi","upper_pi","start_moon","end_moon","cast_id","cast_group","confidence_level"
 "2019-12-19",10,2019,524,"abundance","jags_RW","exclosures","BA",0.01,0,0.027,217,525,165,8,0.95
 "2019-12-19",11,2019,525,"abundance","jags_RW","exclosures","BA",0.018,0,0.055,217,525,165,8,0.95
 "2019-12-19",12,2019,526,"abundance","jags_RW","exclosures","BA",0.029,0,0.095,217,525,165,8,0.95

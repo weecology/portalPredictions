@@ -1,6 +1,6 @@
 cast_group: 74.0
 models: nbsGARCH
-data_sets: dm_controls_interp
+datasets: dm_controls
 directory_configuration:
   setup_date: '2021-11-11'
   setup_R_version:
@@ -403,4 +403,4 @@ controls_r:
   effort: yes
   filename: rodents_dm_controls_interp.csv
 arg_checks: yes
-
+interpolated_data: yes

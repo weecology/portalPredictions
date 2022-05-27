@@ -1,6 +1,6 @@
 cast_group: 81.0
 models: pevGARCH
-data_sets: controls_interp
+datasets: controls
 directory_configuration:
   setup_date: '2022-02-10'
   setup_R_version:
@@ -421,4 +421,4 @@ controls_r:
   effort: yes
   filename: rodents_controls_interp.csv
 arg_checks: yes
-
+interpolated_data: yes

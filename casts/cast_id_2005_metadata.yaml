@@ -1,6 +1,6 @@
 cast_group: 77.0
 models: nbGARCH
-data_sets: all_interp
+datasets: all
 directory_configuration:
   setup_date: '2021-12-30'
   setup_R_version:
@@ -418,4 +418,4 @@ controls_r:
   effort: yes
   filename: rodents_all_interp.csv
 arg_checks: yes
-
+interpolated_data: yes

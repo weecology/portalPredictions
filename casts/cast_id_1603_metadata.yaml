@@ -1,6 +1,6 @@
 cast_group: 64.0
 models: NaiveArima
-data_sets: exclosures
+datasets: exclosures
 directory_configuration:
   setup_date: '2021-09-17'
   setup_R_version:
@@ -429,4 +429,4 @@ controls_r:
   effort: yes
   filename: rodents_exclosures.csv
 arg_checks: yes
-
+interpolated_data: no

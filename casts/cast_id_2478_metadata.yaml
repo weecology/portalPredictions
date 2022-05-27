@@ -1,7 +1,7 @@
 cast_group: 94.0
 cast_type: forecast
 models: nbsGARCH
-datasets: all_interp
+datasets: all
 dataset_controls:
   metadata:
     name: all_interp
@@ -170,3 +170,4 @@ directory_configuration:
     PortalData_version: 3.82.0
     archive_version: latest
     climate_forecast_version: '2022-05-12'
+interpolated_data: yes

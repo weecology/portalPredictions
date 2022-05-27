@@ -1,6 +1,6 @@
 cast_group: 67.0
 models: ESSS
-data_sets: dm_controls_interp
+datasets: dm_controls
 directory_configuration:
   setup_date: '2021-09-20'
   setup_R_version:
@@ -409,4 +409,4 @@ controls_r:
   effort: yes
   filename: rodents_dm_controls_interp.csv
 arg_checks: yes
-
+interpolated_data: yes
