@@ -1,4 +1,4 @@
-"cast_date","cast_month","cast_year","moon","currency","model","data_set","species","estimate","lower_pi","upper_pi","start_moon","end_moon","cast_id","cast_group","confidence_level"
+"cast_date","cast_month","cast_year","moon","currency","model","dataset","species","estimate","lower_pi","upper_pi","start_moon","end_moon","cast_id","cast_group","confidence_level"
 "2020-07-30",2,2020,528,"abundance","NaiveArima","controls","BA",0,-1.49152876570864,1.49152876570864,217,533,1061,43,0.95
 "2020-07-30",3,2020,529,"abundance","NaiveArima","controls","BA",0,-2.10934020913477,2.10934020913477,217,533,1061,43,0.95
 "2020-07-30",4,2020,530,"abundance","NaiveArima","controls","BA",0,-2.58340360315787,2.58340360315787,217,533,1061,43,0.95

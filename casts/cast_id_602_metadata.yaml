@@ -1,6 +1,6 @@
 cast_group: 26.0
 models: jags_RW
-data_sets: controls
+datasets: controls
 directory_configuration:
   setup_date: '2020-02-27'
   setup_R_version:
@@ -386,4 +386,4 @@ controls_r:
   effort: yes
   filename: rodents_controls.csv
 arg_checks: yes
-
+interpolated_data: no

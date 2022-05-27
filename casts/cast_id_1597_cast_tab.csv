@@ -1,4 +1,4 @@
-"cast_date","cast_month","cast_year","moon","currency","model","data_set","species","estimate","lower_pi","upper_pi","start_moon","end_moon","cast_id","cast_group","confidence_level"
+"cast_date","cast_month","cast_year","moon","currency","model","dataset","species","estimate","lower_pi","upper_pi","start_moon","end_moon","cast_id","cast_group","confidence_level"
 "2021-09-17",7,2021,545,"abundance","jags_RW","all","BA",0.031,0,0.181,217,547,1597,64,0.95
 "2021-09-17",8,2021,546,"abundance","jags_RW","all","BA",0.062,0,0.227,217,547,1597,64,0.95
 "2021-09-17",9,2021,547,"abundance","jags_RW","all","BA",0.115,0,0.319,217,547,1597,64,0.95

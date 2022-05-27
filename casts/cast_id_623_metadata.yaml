@@ -1,6 +1,6 @@
 cast_group: 27.0
 models: ESSS
-data_sets: controls_interp
+datasets: controls
 directory_configuration:
   setup_date: '2020-03-06'
   setup_R_version:
@@ -386,4 +386,4 @@ controls_r:
   effort: yes
   filename: rodents_controls_interp.csv
 arg_checks: yes
-
+interpolated_data: yes

@@ -1,6 +1,6 @@
 cast_group: 28.0
 models: simplexEDM
-data_sets: exclosures_interp
+datasets: exclosures
 directory_configuration:
   setup_date: '2020-03-12'
   setup_R_version:
@@ -145,4 +145,4 @@ rodent_cast_years:
 - 2021.0
 confidence_level: 0.95
 arg_checks: yes
-
+interpolated_data: yes

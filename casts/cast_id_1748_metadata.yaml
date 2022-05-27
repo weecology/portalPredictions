@@ -1,6 +1,6 @@
 cast_group: 69.0
 models: AutoArima
-data_sets: dm_controls
+datasets: dm_controls
 directory_configuration:
   setup_date: '2021-09-23'
   setup_R_version:
@@ -409,4 +409,4 @@ controls_r:
   effort: yes
   filename: rodents_dm_controls.csv
 arg_checks: yes
-
+interpolated_data: no

@@ -1,6 +1,6 @@
 cast_group: 83.0
 models: jags_RW
-data_sets: exclosures
+datasets: exclosures
 directory_configuration:
   setup_date: '2022-02-24'
   setup_R_version:
@@ -421,4 +421,4 @@ controls_r:
   effort: yes
   filename: rodents_exclosures.csv
 arg_checks: yes
-
+interpolated_data: no

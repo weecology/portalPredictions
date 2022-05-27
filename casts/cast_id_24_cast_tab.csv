@@ -1,4 +1,4 @@
-"cast_date","cast_month","cast_year","moon","currency","model","data_set","species","estimate","lower_pi","upper_pi","start_moon","end_moon","cast_id","cast_group","confidence_level"
+"cast_date","cast_month","cast_year","moon","currency","model","dataset","species","estimate","lower_pi","upper_pi","start_moon","end_moon","cast_id","cast_group","confidence_level"
 "2019-11-21",10,2019,524,"abundance","AutoArima","exclosures","BA",-6.68945402809338e-06,-1.33902627861526,1.3390128997072,217,524,24,2,0.95
 "2019-11-21",11,2019,525,"abundance","AutoArima","exclosures","BA",-9.77102127852885e-06,-1.47426823120877,1.47424868916622,217,524,24,2,0.95
 "2019-11-21",12,2019,526,"abundance","AutoArima","exclosures","BA",-1.28525885289643e-05,-1.59810626497446,1.5980805597974,217,524,24,2,0.95

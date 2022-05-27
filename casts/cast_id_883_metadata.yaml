@@ -1,6 +1,6 @@
 cast_group: 36.0
 models: simplexEDM
-data_sets: all_interp
+datasets: all
 directory_configuration:
   setup_date: '2020-06-04'
   setup_R_version:
@@ -163,4 +163,4 @@ rodent_cast_years:
 - 2021.0
 confidence_level: 0.95
 arg_checks: yes
-
+interpolated_data: yes

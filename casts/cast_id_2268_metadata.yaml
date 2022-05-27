@@ -1,6 +1,6 @@
 cast_group: 86.0
 models: pevGARCH
-data_sets: all_interp
+datasets: all
 directory_configuration:
   setup_date: '2022-03-17'
   setup_R_version:
@@ -424,4 +424,4 @@ controls_r:
   effort: yes
   filename: rodents_all_interp.csv
 arg_checks: yes
-
+interpolated_data: yes

@@ -1,6 +1,6 @@
 cast_group: 17.0
 models: GPEDM
-data_sets: controls_interp
+datasets: controls
 directory_configuration:
   setup_date: '2020-01-23'
   setup_R_version:
@@ -139,4 +139,4 @@ rodent_cast_years:
 - 2020.0
 confidence_level: 0.95
 arg_checks: yes
-
+interpolated_data: yes

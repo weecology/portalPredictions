@@ -1,6 +1,6 @@
 cast_group: 34.0
 models: AutoArima
-data_sets: exclosures
+datasets: exclosures
 directory_configuration:
   setup_date: '2020-05-21'
   setup_R_version:
@@ -398,4 +398,4 @@ controls_r:
   effort: yes
   filename: rodents_exclosures.csv
 arg_checks: yes
-
+interpolated_data: no
