@@ -1,4 +1,4 @@
-cast_group: 106.0
+cast_group: 107.0
 cast_type: forecast
 models:
 - AutoArima
@@ -182,7 +182,7 @@ time:
   start_moon: 217.0
   end_moon: 558
   last_moon: 558
-  cast_date: '2022-08-04'
+  cast_date: '2022-08-11'
   lead_time: 12.0
   covariate_cast_moons:
   - 559
@@ -268,7 +268,7 @@ time:
 confidence_level: 0.95
 directory_configuration:
   setup:
-    date: '2022-08-04'
+    date: '2022-08-11'
     R_version:
       platform: x86_64-pc-linux-gnu
       arch: x86_64
@@ -294,6 +294,6 @@ directory_configuration:
       resources: raw
       data: data
   raw:
-    PortalData_version: 3.110.0
+    PortalData_version: 3.112.0
     archive_version: latest
-    climate_forecast_version: '2022-08-04'
+    climate_forecast_version: '2022-08-11'
