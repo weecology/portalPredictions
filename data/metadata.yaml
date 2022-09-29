@@ -1,4 +1,4 @@
-cast_group: 113.0
+cast_group: 114.0
 cast_type: forecast
 models:
 - AutoArima
@@ -180,12 +180,11 @@ dataset_controls:
       filename: rodents_dm_controls.csv
 time:
   start_moon: 217.0
-  end_moon: 559
-  last_moon: 559
-  cast_date: '2022-09-22'
+  end_moon: 560
+  last_moon: 560
+  cast_date: '2022-09-29'
   lead_time: 12.0
   covariate_cast_moons:
-  - 560
   - 561
   - 562
   - 563
@@ -197,8 +196,8 @@ time:
   - 569
   - 570
   - 571
+  - 572
   covariate_cast_months:
-  - 9.0
   - 10.0
   - 11.0
   - 12.0
@@ -210,11 +209,12 @@ time:
   - 6.0
   - 7.0
   - 8.0
+  - 9.0
   covariate_cast_years:
   - 2022.0
   - 2022.0
   - 2022.0
-  - 2022.0
+  - 2023.0
   - 2023.0
   - 2023.0
   - 2023.0
@@ -237,6 +237,7 @@ time:
   - 569
   - 570
   - 571
+  - 572
   rodent_cast_months:
   - 8.0
   - 9.0
@@ -251,6 +252,7 @@ time:
   - 6.0
   - 7.0
   - 8.0
+  - 9.0
   rodent_cast_years:
   - 2022.0
   - 2022.0
@@ -265,10 +267,11 @@ time:
   - 2023.0
   - 2023.0
   - 2023.0
+  - 2023.0
 confidence_level: 0.95
 directory_configuration:
   setup:
-    date: '2022-09-22'
+    date: '2022-09-29'
     R_version:
       platform: x86_64-pc-linux-gnu
       arch: x86_64
@@ -294,6 +297,6 @@ directory_configuration:
       resources: raw
       data: data
   raw:
-    PortalData_version: 3.122.0
+    PortalData_version: 3.124.0
     archive_version: latest
-    climate_forecast_version: '2022-09-22'
+    climate_forecast_version: '2022-09-29'
