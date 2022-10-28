@@ -17,7 +17,7 @@ git config user.name "Weecology Deploy Bot"
 
 # Commit changes to portalPredictions repo
 git checkout main
-git add data/* models/* casts/* portal_weekly_forecast.sh portal_dryrun_forecast.sh
+git add data/* models/* forecasts/* portal_weekly_forecast.sh portal_dryrun_forecast.sh
 git commit -m "Update forecasts: HiperGator Build $current_date [ci skip]"
 
 # Add deploy remote
@@ -41,7 +41,7 @@ curl -v -i -X POST -H "Content-Type:application/json" -H "Authorization: token $
 # Clone forecasts archive repo
 cd ../
 git clone https://github.com/weecology/forecasts
-cp portalPredictions/casts/*.* forecasts/portal/
+cp portalPredictions/forecasts/*.* forecasts/portal/
 cp portalPredictions/fits/*.* forecasts/portal/
 cd forecasts
 
