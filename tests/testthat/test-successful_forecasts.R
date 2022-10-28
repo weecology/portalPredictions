@@ -5,12 +5,12 @@ context("checks that a production pipeline has been setup and run correctly")
 
 test_that("folders exist as needed",{
   fnames <- list.files()
-  expect_equal(all(c("casts", "data", "models", "raw", "fits") %in% fnames), TRUE)
+  expect_equal(all(c("forecasts", "data", "models", "resources", "fits") %in% fnames), TRUE)
 })
 
 test_that("dir_config is present",{
   fnames <- list.files()
-  expect_equal("dir_config.yaml" %in% fnames, TRUE)
+  expect_equal("directory_configuration.yaml" %in% fnames, TRUE)
 })
 
 test_that("cast_metadata file", {
