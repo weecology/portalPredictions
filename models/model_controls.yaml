@@ -17,8 +17,10 @@ AutoArima:
       AutoArima is fit flexibly, such that the model parameters can vary from fit
       to fit.
   fun: auto.arima
-  args: ~
-  interpolate: no
+  args:
+    'y': quote(abundance)
+  interpolate:
+    needed: no
   datasets:
   - all
   - controls
@@ -49,8 +51,11 @@ ESSS:
       function, we could not include the seasonal components to the ESSS model. ESSS
       is fit flexibly, such that the model parameters can vary from fit to fit.
   fun: ets
-  args: ~
-  interpolate: yes
+  args:
+    'y': abundance
+  interpolate:
+    needed: yes
+    fun: round_na.interp
   datasets:
   - all
   - controls
@@ -73,8 +78,10 @@ NaiveArima:
       function.
   fun: Arima
   args:
+    'y': abundance
     order: c(0, 1, 0)
-  interpolate: no
+  interpolate:
+    needed: no
   datasets:
   - all
   - controls
@@ -106,9 +113,17 @@ nbGARCH:
       based approach to inference and models the overdispersion as an additional parameter
       in a two-step approach. This two-stage approach has only been minimally evaluated,
       although preliminary simulation-based studies are promising [@Liboschik2017b].
-  fun: nbGARCH
-  args: ~
-  interpolate: yes
+  fun: tsglm
+  args:
+    ts: abundance
+    model:
+      past_obs: 1
+      past_mean: 12
+    distr: nbinom
+    link: log
+  interpolate:
+    needed: yes
+    fun: round_na.interp
   datasets:
   - all
   - controls
@@ -143,7 +158,9 @@ nbsGARCH:
       although preliminary simulation-based studies are promising [@Liboschik2017b].
   fun: nbsGARCH
   args: ~
-  interpolate: yes
+  interpolate:
+    needed: yes
+    fun: round_na.interp
   datasets:
   - all
   - controls
@@ -187,7 +204,9 @@ pevGARCH:
   - controls
   - exclosures
   - dm_controls
-  interpolate: yes
+  interpolate:
+    needed: yes
+    fun: round_na.interp
   args:
     lag: 6.0
   response:
@@ -209,21 +228,16 @@ jags_RW:
       simple, but the `jags_RW()` function provides a starting template and underlying
       machinery for more articulated models using the JAGS infrastructure. There are
       two process parameters -- mu (the density of the species at the beginning of
-      the time series) and tau (the precision (inverse variance) of the random walk,
-      which is Gaussian on the log scale). The observation model has no additional
-      parameters. The prior distributions for mu and tau are informed by the available
-      data collected prior to the start of the data used in the time series. mu is
-      normally distributed with a mean equal to the average log-scale density and
-      a variance that is twice as large as the observed variance. Due to the presence
-      of 0s in the data and the modeling on the log scale, an offset of `count + 0.1`
-      is used prior to taking the log and then is removed after the reconversion (exponentiation)
-      as `density - 0.1` (where `density` is on the same scale as `count`, but can
-      take non-integer values).
+      the time series) and sigma (the standard deviation of the random walk, which
+      is Gaussian on the log scale). The observation model has no additional parameters.
+      The prior distributions for mu is informed by the available data collected prior
+      to the start of the data used in the time series. mu is normally distributed
+      with a mean equal to the average log-scale density and a standard deviation
+      of 0.1. Sigma was given a uniform distribution between 0 and 1.
   fun: jags_RW
-  datasets: dm_controls
   args:
     control_runjags:
-      nchains: 2.0
+      nchains: 4.0
       adapt: 10000.0
       burnin: 10000.0
       sample: 10000.0
@@ -234,6 +248,9 @@ jags_RW:
       mutate: .na
       cast_obs: yes
       silent_jags: no
+  datasets: dm_controls
+  interpolate:
+    needed: no
   response:
     link: poisson
     type: empirical
@@ -249,25 +266,19 @@ jags_logistic:
       articulated (species) ecological levels. Building upon the jags_RW model, jags_logistic
       expands upon the "process model" underlying the Poisson observations. There
       are four process parameters -- mu (the density of the species at the beginning
-      of the time series) and tau (the precision (inverse variance) of the random
-      walk, which is Gaussian on the log scale) for the starting value and r (growth
-      rate) and K (carrying capacity) of the dynamic population. The observation model
-      has no additional parameters. The prior distributions for mu, tau, and K are
-      informed by the available data collected prior to the start of the data used
-      in the time series and r is set with a vague prior. mu is normally distributed
-      with a mean equal to the average log-scale density and a variance that is twice
-      as large as the observed variance. K is modeled on the log-scale with a prior
-      mean and variance equal to the maximum of `past counts * 1.2`. r is given a
-      normal prior with mean 0 and variance 0.1. Due to the presence of 0s in the
-      data and the modeling on the log scale, an offset of `count + 0.1` is used prior
-      to taking the log and then is removed after the reconversion (exponentiation)
-      as `density - 0.1` (where `density` is on the same scale as `count`, but can
-      take non-integer values).
+      of the time series), sigma (the standard deviation of the random walk, which
+      is Gaussian on the log scale), r (growth rate), and K (carrying capacity). The
+      observation model has no additional parameters. The prior distributions for
+      mu and K are informed by the available data collected prior to the start of
+      the data used in the time series and sigma and r are set with vague priors.
+      mu is normally distributed with a mean equal to the average log-scale density.
+      K is modeled on the log-scale with a prior mean equal to the maximum of `past
+      counts`. r is given a normal prior with mean 0 and standard deviation 0.04.
+      Sigma was given a uniform distribution between 0 and 1.
   fun: jags_logistic
-  datasets: dm_controls
   args:
     control_runjags:
-      nchains: 2.0
+      nchains: 4.0
       adapt: 10000.0
       burnin: 10000.0
       sample: 10000.0
@@ -278,6 +289,54 @@ jags_logistic:
       mutate: .na
       cast_obs: yes
       silent_jags: no
+  datasets: dm_controls
+  interpolate:
+    needed: no
+  response:
+    link: poisson
+    type: empirical
+  time: newmoon
+jags_logistic_covariates:
+  metadata:
+    name: jags_logistic_covariates
+    descriptor: population model, focal species
+    text: jags_logistic_covariates fits a hierarchical log-scale density logistic
+      growth model with a Poisson observation process using the JAGS (Just Another
+      Gibbs Sampler) infrastructure [@Plummer2003] fit to the  data at the composite
+      (full site and just control plots) spatial level and both the composite (community)
+      and the articulated (species) ecological levels. Building upon the jags_RW model,
+      jags_logistic expands upon the "process model" underlying the Poisson observations.
+      There are six process parameters -- mu (the density of the species at the beginning
+      of the time series), sigma (the standard deviation of the random walk, which
+      is Gaussian on the log scale), and then intercept and slope parameters for r
+      (growth rate) and K (carrying capacity) as a function of covariates (r being
+      a function of the integrated warm rain over the past 3 months and K being a
+      function of average NDVI over the past year). The observation model has no additional
+      parameters. The prior distributions for mu and the K intercept are informed
+      by the available data collected prior to the start of the data used in the time
+      series and sigma and r are set with vague priors. mu is normally distributed
+      with a mean equal to the average log-scale density. The K intercept is modeled
+      on the log-scale with a prior mean equal to the maximum of `past counts`. The
+      r intercept is given a normal prior with mean 0 and standard deviation 0.04.
+      Sigma was given a uniform distribution between 0 and 1. The slopes for r and
+      log-scale K were given priors with mean 0 and standard deviation 1.
+  fun: jags_logistic_covariates
+  args:
+    control_runjags:
+      nchains: 4.0
+      adapt: 10000.0
+      burnin: 10000.0
+      sample: 10000.0
+      thin: 1.0
+      modules: ''
+      method: interruptible
+      factories: ''
+      mutate: .na
+      cast_obs: yes
+      silent_jags: no
+  datasets: dm_controls
+  interpolate:
+    needed: no
   response:
     link: poisson
     type: empirical

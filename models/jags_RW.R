@@ -1,2 +1,2 @@
-cast_dm_controls <- jags_RW(dataset = "dm_controls", main = ".", settings = directory_settings(), quiet = FALSE, verbose = FALSE, control_runjags = list(nchains = 2, adapt = 10000, burnin = 10000, sample = 10000, thin = 1, modules = "", method = "interruptible", factories = "", mutate = NA, cast_obs = TRUE, silent_jags = FALSE));
-save_cast_output(cast_dm_controls, main = ".", settings = directory_settings(), quiet = FALSE);
+cast_dm_controls <- jags_RW(dataset = "dm_controls", main = "~/te", settings = directory_settings(), quiet = FALSE, verbose = FALSE);
+save_cast_output(cast_dm_controls, main = "~/te", settings = directory_settings(), quiet = FALSE);
