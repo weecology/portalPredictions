@@ -183,7 +183,7 @@ time:
   start_moon: 217.0
   end_moon: 561
   last_moon: 561
-  cast_date: '2022-10-28'
+  cast_date: '2022-11-03'
   lead_time: 12.0
   covariate_cast_moons:
   - 562
@@ -272,13 +272,12 @@ time:
 confidence_level: 0.95
 directory_configuration:
   setup:
-    date: '2022-10-28'
+    date: '2022-11-03'
     R_version:
-      platform: x86_64-w64-mingw32
+      platform: x86_64-pc-linux-gnu
       arch: x86_64
-      os: mingw32
-      crt: ucrt
-      system: x86_64, mingw32
+      os: linux-gnu
+      system: x86_64, linux-gnu
       status: ''
       major: '4'
       minor: '2.1'
@@ -287,12 +286,12 @@ directory_configuration:
       day: '23'
       svn rev: '82513'
       language: R
-      version.string: R version 4.2.1 (2022-06-23 ucrt)
+      version.string: R version 4.2.1 (2022-06-23)
       nickname: Funny-Looking Kid
     core_package_name: portalcasting
     core_package_version: 0.44.0
   tree:
-    main: ~/te
+    main: '.'
     subdirectories:
       forecasts: forecasts
       fits: fits
@@ -300,6 +299,6 @@ directory_configuration:
       resources: resources
       data: data
   raw:
-    PortalData_version: 3.134.0
+    PortalData_version: 3.136.0
     archive_version: latest
-    climate_forecast_version: '2022-10-28'
+    climate_forecast_version: '2022-11-03'
