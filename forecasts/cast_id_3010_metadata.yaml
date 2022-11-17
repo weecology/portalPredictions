@@ -31,7 +31,7 @@ time:
   start_moon: 217.0
   end_moon: 561
   last_moon: 561
-  cast_date: '2022-11-10'
+  cast_date: '2022-11-17'
   lead_time: 12.0
   covariate_cast_moons:
   - 562
@@ -117,7 +117,7 @@ time:
 confidence_level: 0.95
 directory_configuration:
   setup:
-    date: '2022-11-10'
+    date: '2022-11-17'
     R_version:
       platform: x86_64-pc-linux-gnu
       arch: x86_64
@@ -144,6 +144,6 @@ directory_configuration:
       resources: resources
       data: data
   raw:
-    PortalData_version: 3.139.0
+    PortalData_version: 3.140.0
     archive_version: latest
-    climate_forecast_version: '2022-11-10'
+    climate_forecast_version: '2022-11-17'
