@@ -50,9 +50,9 @@ dataset_controls:
     filename: rodents_exclosures.csv
 time:
   start_moon: 217.0
-  end_moon: 562
-  last_moon: 562
-  cast_date: '2022-12-22'
+  end_moon: 563
+  last_moon: 563
+  cast_date: '2022-12-29'
   lead_time: 12.0
   covariate_cast_moons:
   - 563
@@ -67,6 +67,7 @@ time:
   - 572
   - 573
   - 574
+  - 575
   covariate_cast_months:
   - 12.0
   - 1.0
@@ -80,8 +81,10 @@ time:
   - 9.0
   - 10.0
   - 11.0
+  - 12.0
   covariate_cast_years:
   - 2022.0
+  - 2023.0
   - 2023.0
   - 2023.0
   - 2023.0
@@ -107,6 +110,7 @@ time:
   - 572
   - 573
   - 574
+  - 575
   rodent_cast_months:
   - 11.0
   - 12.0
@@ -121,6 +125,7 @@ time:
   - 9.0
   - 10.0
   - 11.0
+  - 12.0
   rodent_cast_years:
   - 2022.0
   - 2022.0
@@ -135,10 +140,11 @@ time:
   - 2023.0
   - 2023.0
   - 2023.0
+  - 2023.0
 confidence_level: 0.95
 directory_configuration:
   setup:
-    date: '2022-12-22'
+    date: '2022-12-29'
     R_version:
       platform: x86_64-pc-linux-gnu
       arch: x86_64
@@ -167,4 +173,4 @@ directory_configuration:
   raw:
     PortalData_version: 3.154.0
     archive_version: latest
-    climate_forecast_version: '2022-12-22'
+    climate_forecast_version: '2022-12-29'
