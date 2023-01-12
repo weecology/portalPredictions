@@ -4,5 +4,3 @@ cast_controls <- nbsGARCH(dataset = "controls", main = ".", settings = directory
 save_cast_output(cast_controls, main = ".", settings = directory_settings(), quiet = FALSE);
 cast_exclosures <- nbsGARCH(dataset = "exclosures", main = ".", settings = directory_settings(), quiet = FALSE, verbose = FALSE);
 save_cast_output(cast_exclosures, main = ".", settings = directory_settings(), quiet = FALSE);
-cast_dm_controls <- nbsGARCH(dataset = "dm_controls", main = ".", settings = directory_settings(), quiet = FALSE, verbose = FALSE);
-save_cast_output(cast_dm_controls, main = ".", settings = directory_settings(), quiet = FALSE);

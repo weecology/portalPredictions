@@ -136,28 +136,3 @@ exclosures:
     zero_drop: yes
     effort: yes
     filename: rodents_exclosures.csv
-dm_controls:
-  metadata:
-    name: dm_controls
-    descriptor: DM only, control plots combined
-    text: Dipodomys merriami only summed across control plots at the newmoon.
-  fun: prepare_dataset
-  args:
-    name: dm_controls
-    species: DM
-    total: no
-    clean: no
-    type: Rodents
-    level: Treatment
-    plots: Longterm
-    treatment: control
-    min_plots: 24.0
-    min_traps: 1.0
-    output: abundance
-    fillweight: no
-    unknowns: no
-    time: newmoon
-    na_drop: no
-    zero_drop: yes
-    effort: yes
-    filename: rodents_dm_controls.csv
