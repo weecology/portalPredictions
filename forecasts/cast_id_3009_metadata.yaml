@@ -1,6 +1,6 @@
 cast_group: 118.0
 cast_type: forecast
-models: NaiveArima
+models: jags_logistic
 datasets: controls
 dataset_controls:
   metadata:
@@ -52,10 +52,9 @@ time:
   start_moon: 217.0
   end_moon: 563
   last_moon: 563
-  cast_date: '2023-01-12'
+  cast_date: '2023-01-19'
   lead_time: 12.0
   covariate_cast_moons:
-  - 563
   - 564
   - 565
   - 566
@@ -69,7 +68,6 @@ time:
   - 574
   - 575
   covariate_cast_months:
-  - 12.0
   - 1.0
   - 2.0
   - 3.0
@@ -83,7 +81,6 @@ time:
   - 11.0
   - 12.0
   covariate_cast_years:
-  - 2022.0
   - 2023.0
   - 2023.0
   - 2023.0
@@ -97,8 +94,6 @@ time:
   - 2023.0
   - 2023.0
   rodent_cast_moons:
-  - 562
-  - 563
   - 564
   - 565
   - 566
@@ -112,8 +107,6 @@ time:
   - 574
   - 575
   rodent_cast_months:
-  - 11.0
-  - 12.0
   - 1.0
   - 2.0
   - 3.0
@@ -127,8 +120,6 @@ time:
   - 11.0
   - 12.0
   rodent_cast_years:
-  - 2022.0
-  - 2022.0
   - 2023.0
   - 2023.0
   - 2023.0
@@ -144,7 +135,7 @@ time:
 confidence_level: 0.95
 directory_configuration:
   setup:
-    date: '2023-01-12'
+    date: '2023-01-19'
     R_version:
       platform: x86_64-pc-linux-gnu
       arch: x86_64
@@ -171,6 +162,6 @@ directory_configuration:
       resources: resources
       data: data
   raw:
-    PortalData_version: 3.154.0
+    PortalData_version: 3.157.0
     archive_version: latest
-    climate_forecast_version: '2023-01-12'
+    climate_forecast_version: '2023-01-19'
