@@ -50,9 +50,9 @@ dataset_controls:
     filename: rodents_exclosures.csv
 time:
   start_moon: 217.0
-  end_moon: 563
-  last_moon: 563
-  cast_date: '2023-01-19'
+  end_moon: 564
+  last_moon: 564
+  cast_date: '2023-01-26'
   lead_time: 12.0
   covariate_cast_moons:
   - 564
@@ -67,6 +67,7 @@ time:
   - 573
   - 574
   - 575
+  - 576
   covariate_cast_months:
   - 1.0
   - 2.0
@@ -80,6 +81,7 @@ time:
   - 10.0
   - 11.0
   - 12.0
+  - 1.0
   covariate_cast_years:
   - 2023.0
   - 2023.0
@@ -93,6 +95,7 @@ time:
   - 2023.0
   - 2023.0
   - 2023.0
+  - 2024.0
   rodent_cast_moons:
   - 564
   - 565
@@ -106,6 +109,7 @@ time:
   - 573
   - 574
   - 575
+  - 576
   rodent_cast_months:
   - 1.0
   - 2.0
@@ -119,6 +123,7 @@ time:
   - 10.0
   - 11.0
   - 12.0
+  - 1.0
   rodent_cast_years:
   - 2023.0
   - 2023.0
@@ -132,10 +137,11 @@ time:
   - 2023.0
   - 2023.0
   - 2023.0
+  - 2024.0
 confidence_level: 0.95
 directory_configuration:
   setup:
-    date: '2023-01-19'
+    date: '2023-01-26'
     R_version:
       platform: x86_64-pc-linux-gnu
       arch: x86_64
@@ -152,7 +158,7 @@ directory_configuration:
       version.string: R version 4.2.2 (2022-10-31)
       nickname: Innocent and Trusting
     core_package_name: portalcasting
-    core_package_version: 0.45.0
+    core_package_version: 0.46.0
   tree:
     main: '.'
     subdirectories:
@@ -162,6 +168,6 @@ directory_configuration:
       resources: resources
       data: data
   raw:
-    PortalData_version: 3.157.0
+    PortalData_version: 3.158.0
     archive_version: latest
-    climate_forecast_version: '2023-01-19'
+    climate_forecast_version: '2023-01-26'
