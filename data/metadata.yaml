@@ -159,10 +159,9 @@ time:
   start_moon: 217.0
   end_moon: 564
   last_moon: 564
-  cast_date: '2023-01-26'
+  cast_date: '2023-02-02'
   lead_time: 12.0
   covariate_cast_moons:
-  - 564
   - 565
   - 566
   - 567
@@ -176,7 +175,6 @@ time:
   - 575
   - 576
   covariate_cast_months:
-  - 1.0
   - 2.0
   - 3.0
   - 4.0
@@ -190,7 +188,6 @@ time:
   - 12.0
   - 1.0
   covariate_cast_years:
-  - 2023.0
   - 2023.0
   - 2023.0
   - 2023.0
@@ -248,7 +245,7 @@ time:
 confidence_level: 0.95
 directory_configuration:
   setup:
-    date: '2023-01-26'
+    date: '2023-02-02'
     R_version:
       platform: x86_64-pc-linux-gnu
       arch: x86_64
@@ -275,6 +272,6 @@ directory_configuration:
       resources: resources
       data: data
   raw:
-    PortalData_version: 3.158.0
+    PortalData_version: 3.159.0
     archive_version: latest
-    climate_forecast_version: '2023-01-26'
+    climate_forecast_version: '2023-02-02'
