@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","cast_group","confidence_level","estimate","lower_pi","upper_pi","cast_id","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2022-04-28",4,2022,"abundance","pevGARCH","exclosures","PB",92,0.95,3.39998947210651,0,7,"2432.7",2432,NA,554,217,554,554,566,0,NA,NA
+"2022-04-28",4,2022,"abundance","pevGARCH","exclosures","PB",92,0.95,4.14588282632189,0,10,"2432.7",2432,NA,555,217,554,554,566,1,NA,NA
+"2022-04-28",5,2022,"abundance","pevGARCH","exclosures","PB",92,0.95,4.91660733872664,0,12,"2432.7",2432,NA,556,217,554,554,566,2,NA,NA
+"2022-04-28",6,2022,"abundance","pevGARCH","exclosures","PB",92,0.95,5.58678024615337,0,13,"2432.7",2432,NA,557,217,554,554,566,3,NA,NA
+"2022-04-28",7,2022,"abundance","pevGARCH","exclosures","PB",92,0.95,6.38905176818706,0,16,"2432.7",2432,NA,558,217,554,554,566,4,NA,NA
+"2022-04-28",8,2022,"abundance","pevGARCH","exclosures","PB",92,0.95,6.95928155218119,0,17,"2432.7",2432,NA,559,217,554,554,566,5,NA,NA
+"2022-04-28",9,2022,"abundance","pevGARCH","exclosures","PB",92,0.95,7.1795742441656,0,16,"2432.7",2432,NA,560,217,554,554,566,6,NA,NA
+"2022-04-28",10,2022,"abundance","pevGARCH","exclosures","PB",92,0.95,7.36108829153361,1,18,"2432.7",2432,NA,561,217,554,554,566,7,NA,NA
+"2022-04-28",11,2022,"abundance","pevGARCH","exclosures","PB",92,0.95,6.94535945761586,0,17,"2432.7",2432,NA,562,217,554,554,566,8,NA,NA
+"2022-04-28",12,2022,"abundance","pevGARCH","exclosures","PB",92,0.95,6.67417741926495,0,18,"2432.7",2432,NA,563,217,554,554,566,9,NA,NA
+"2022-04-28",1,2023,"abundance","pevGARCH","exclosures","PB",92,0.95,5.86311229886692,0,15,"2432.7",2432,NA,564,217,554,554,566,10,NA,NA
+"2022-04-28",2,2023,"abundance","pevGARCH","exclosures","PB",92,0.95,5.34586241517431,0,14,"2432.7",2432,NA,565,217,554,554,566,11,NA,NA
+"2022-04-28",3,2023,"abundance","pevGARCH","exclosures","PB",92,0.95,5.35489976139797,0,14,"2432.7",2432,NA,566,217,554,554,566,12,NA,NA

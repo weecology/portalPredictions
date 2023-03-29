@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","cast_group","confidence_level","estimate","lower_pi","upper_pi","cast_id","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2023-02-23",2,2023,"abundance","pevGARCH","controls","SF",120,0.95,0.232110090520708,0,2,"3067.15",3067,NA,565,217,565,565,577,0,NA,NA
+"2023-02-23",3,2023,"abundance","pevGARCH","controls","SF",120,0.95,0.319515380774285,0,2,"3067.15",3067,NA,566,217,565,565,577,1,NA,NA
+"2023-02-23",4,2023,"abundance","pevGARCH","controls","SF",120,0.95,0.277148220032692,0,2,"3067.15",3067,NA,567,217,565,565,577,2,NA,NA
+"2023-02-23",5,2023,"abundance","pevGARCH","controls","SF",120,0.95,0.24426853408613,0,2,"3067.15",3067,NA,568,217,565,565,577,3,NA,NA
+"2023-02-23",6,2023,"abundance","pevGARCH","controls","SF",120,0.95,0.21088427162803,0,1,"3067.15",3067,NA,569,217,565,565,577,4,NA,NA
+"2023-02-23",7,2023,"abundance","pevGARCH","controls","SF",120,0.95,0.198069199807095,0,1,"3067.15",3067,NA,570,217,565,565,577,5,NA,NA
+"2023-02-23",8,2023,"abundance","pevGARCH","controls","SF",120,0.95,0.190569017093672,0,1,"3067.15",3067,NA,571,217,565,565,577,6,NA,NA
+"2023-02-23",9,2023,"abundance","pevGARCH","controls","SF",120,0.95,0.191631790931807,0,1,"3067.15",3067,NA,572,217,565,565,577,7,NA,NA
+"2023-02-23",10,2023,"abundance","pevGARCH","controls","SF",120,0.95,0.196149217185296,0,1,"3067.15",3067,NA,573,217,565,565,577,8,NA,NA
+"2023-02-23",11,2023,"abundance","pevGARCH","controls","SF",120,0.95,0.202247456685538,0,1,"3067.15",3067,NA,574,217,565,565,577,9,NA,NA
+"2023-02-23",12,2023,"abundance","pevGARCH","controls","SF",120,0.95,0.20832038497673,0,1,"3067.15",3067,NA,575,217,565,565,577,10,NA,NA
+"2023-02-23",1,2024,"abundance","pevGARCH","controls","SF",120,0.95,0.212970230559446,0,1,"3067.15",3067,NA,576,217,565,565,577,11,NA,NA
+"2023-02-23",2,2024,"abundance","pevGARCH","controls","SF",120,0.95,0.214870574087263,0,1,"3067.15",3067,NA,577,217,565,565,577,12,NA,NA

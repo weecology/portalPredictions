@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2020-03-19",2,2020,"abundance","nbGARCH","exclosures","total",7.79191201582015,2,16,"687.19",29,0.95,687,NA,528,217,528,528,540,0,NA,NA
+"2020-03-19",3,2020,"abundance","nbGARCH","exclosures","total",9.55562149476685,1,23,"687.19",29,0.95,687,NA,529,217,528,528,540,1,NA,NA
+"2020-03-19",4,2020,"abundance","nbGARCH","exclosures","total",11.3083378810757,2,27,"687.19",29,0.95,687,NA,530,217,528,528,540,2,NA,NA
+"2020-03-19",5,2020,"abundance","nbGARCH","exclosures","total",12.9156398870645,1,30,"687.19",29,0.95,687,NA,531,217,528,528,540,3,NA,NA
+"2020-03-19",6,2020,"abundance","nbGARCH","exclosures","total",14.4839927553733,2,37,"687.19",29,0.95,687,NA,532,217,528,528,540,4,NA,NA
+"2020-03-19",7,2020,"abundance","nbGARCH","exclosures","total",15.9515236919554,2,41,"687.19",29,0.95,687,NA,533,217,528,528,540,5,NA,NA
+"2020-03-19",8,2020,"abundance","nbGARCH","exclosures","total",17.3594909443125,2,46,"687.19",29,0.95,687,NA,534,217,528,528,540,6,NA,NA
+"2020-03-19",9,2020,"abundance","nbGARCH","exclosures","total",18.6219003275108,2,53,"687.19",29,0.95,687,NA,535,217,528,528,540,7,NA,NA
+"2020-03-19",10,2020,"abundance","nbGARCH","exclosures","total",19.8006168442831,2,52,"687.19",29,0.95,687,NA,536,217,528,528,540,8,NA,NA
+"2020-03-19",11,2020,"abundance","nbGARCH","exclosures","total",20.7097370355413,3,58,"687.19",29,0.95,687,NA,537,217,528,528,540,9,NA,NA
+"2020-03-19",12,2020,"abundance","nbGARCH","exclosures","total",21.3872322913872,3,59,"687.19",29,0.95,687,NA,538,217,528,528,540,10,NA,NA
+"2020-03-19",1,2021,"abundance","nbGARCH","exclosures","total",21.8679948567496,3,62,"687.19",29,0.95,687,NA,539,217,528,528,540,11,NA,NA
+"2020-03-19",2,2021,"abundance","nbGARCH","exclosures","total",22.4859861703666,2,62,"687.19",29,0.95,687,NA,540,217,528,528,540,12,NA,NA

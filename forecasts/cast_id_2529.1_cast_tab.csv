@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","cast_group","confidence_level","dataset","species","estimate","lower_pi","upper_pi","cast_id","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2022-05-26",4,2022,"abundance","nbGARCH",96,0.95,"dm_controls","DM",19.966711595152,12,29,"2529.1",2529,NA,555,217,555,555,567,0,NA,NA
+"2022-05-26",5,2022,"abundance","nbGARCH",96,0.95,"dm_controls","DM",19.1262858957797,9,31,"2529.1",2529,NA,556,217,555,555,567,1,NA,NA
+"2022-05-26",6,2022,"abundance","nbGARCH",96,0.95,"dm_controls","DM",18.4343455362271,8,32,"2529.1",2529,NA,557,217,555,555,567,2,NA,NA
+"2022-05-26",7,2022,"abundance","nbGARCH",96,0.95,"dm_controls","DM",17.9010255977612,7,32,"2529.1",2529,NA,558,217,555,555,567,3,NA,NA
+"2022-05-26",8,2022,"abundance","nbGARCH",96,0.95,"dm_controls","DM",17.4717222868883,6,32,"2529.1",2529,NA,559,217,555,555,567,4,NA,NA
+"2022-05-26",9,2022,"abundance","nbGARCH",96,0.95,"dm_controls","DM",17.1250027169215,5,33,"2529.1",2529,NA,560,217,555,555,567,5,NA,NA
+"2022-05-26",10,2022,"abundance","nbGARCH",96,0.95,"dm_controls","DM",16.8617270343101,5,32,"2529.1",2529,NA,561,217,555,555,567,6,NA,NA
+"2022-05-26",11,2022,"abundance","nbGARCH",96,0.95,"dm_controls","DM",16.7352100086238,5,31,"2529.1",2529,NA,562,217,555,555,567,7,NA,NA
+"2022-05-26",12,2022,"abundance","nbGARCH",96,0.95,"dm_controls","DM",16.6583540483929,4,32,"2529.1",2529,NA,563,217,555,555,567,8,NA,NA
+"2022-05-26",1,2023,"abundance","nbGARCH",96,0.95,"dm_controls","DM",16.6032431250342,4,32,"2529.1",2529,NA,564,217,555,555,567,9,NA,NA
+"2022-05-26",2,2023,"abundance","nbGARCH",96,0.95,"dm_controls","DM",16.5797279373349,4,31,"2529.1",2529,NA,565,217,555,555,567,10,NA,NA
+"2022-05-26",3,2023,"abundance","nbGARCH",96,0.95,"dm_controls","DM",16.5854627189584,4,32,"2529.1",2529,NA,566,217,555,555,567,11,NA,NA
+"2022-05-26",4,2023,"abundance","nbGARCH",96,0.95,"dm_controls","DM",16.5505619558261,5,31,"2529.1",2529,NA,567,217,555,555,567,12,NA,NA

@@ -1,0 +1,16 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2019-12-27",10,2019,"abundance","nbGARCH","exclosures","PM",0.286659521377344,0,2,"213.12",10,0.95,213,NA,524,217,526,524,538,-2,NA,NA
+"2019-12-27",11,2019,"abundance","nbGARCH","exclosures","PM",0.367568802367635,0,2,"213.12",10,0.95,213,NA,525,217,526,524,538,-1,NA,NA
+"2019-12-27",12,2019,"abundance","nbGARCH","exclosures","PM",0.390358231980243,0,2,"213.12",10,0.95,213,NA,526,217,526,524,538,0,NA,NA
+"2019-12-27",1,2020,"abundance","nbGARCH","exclosures","PM",0.396773886153294,0,2,"213.12",10,0.95,213,NA,527,217,526,524,538,1,NA,NA
+"2019-12-27",2,2020,"abundance","nbGARCH","exclosures","PM",0.398579879966019,0,3,"213.12",10,0.95,213,NA,528,217,526,524,538,2,NA,NA
+"2019-12-27",3,2020,"abundance","nbGARCH","exclosures","PM",0.39908820702145,0,3,"213.12",10,0.95,213,NA,529,217,526,524,538,3,NA,NA
+"2019-12-27",4,2020,"abundance","nbGARCH","exclosures","PM",0.399231282803962,0,3,"213.12",10,0.95,213,NA,530,217,526,524,538,4,NA,NA
+"2019-12-27",5,2020,"abundance","nbGARCH","exclosures","PM",0.399271426937065,0,2,"213.12",10,0.95,213,NA,531,217,526,524,538,5,NA,NA
+"2019-12-27",6,2020,"abundance","nbGARCH","exclosures","PM",0.39928272602912,0,2,"213.12",10,0.95,213,NA,532,217,526,524,538,6,NA,NA
+"2019-12-27",7,2020,"abundance","nbGARCH","exclosures","PM",0.399285906290403,0,2,"213.12",10,0.95,213,NA,533,217,526,524,538,7,NA,NA
+"2019-12-27",8,2020,"abundance","nbGARCH","exclosures","PM",0.399286801427353,0,2,"213.12",10,0.95,213,NA,534,217,526,524,538,8,NA,NA
+"2019-12-27",9,2020,"abundance","nbGARCH","exclosures","PM",0.399287053375018,0,2,"213.12",10,0.95,213,NA,535,217,526,524,538,9,NA,NA
+"2019-12-27",10,2020,"abundance","nbGARCH","exclosures","PM",0.39928712429203,0,2,"213.12",10,0.95,213,NA,536,217,526,524,538,10,NA,NA
+"2019-12-27",11,2020,"abundance","nbGARCH","exclosures","PM",0.400055916144608,0,2,"213.12",10,0.95,213,NA,537,217,526,524,538,11,NA,NA
+"2019-12-27",12,2020,"abundance","nbGARCH","exclosures","PM",0.400459051509536,0,2,"213.12",10,0.95,213,NA,538,217,526,524,538,12,NA,NA

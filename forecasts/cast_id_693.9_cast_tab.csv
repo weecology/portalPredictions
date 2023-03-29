@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2020-03-19",2,2020,"abundance","pevGARCH","exclosures","PF",0.507239897416202,0,2,"693.9",29,0.95,693,NA,528,217,528,528,540,0,NA,NA
+"2020-03-19",3,2020,"abundance","pevGARCH","exclosures","PF",0.812357031272837,0,3,"693.9",29,0.95,693,NA,529,217,528,528,540,1,NA,NA
+"2020-03-19",4,2020,"abundance","pevGARCH","exclosures","PF",0.914618595279158,0,4,"693.9",29,0.95,693,NA,530,217,528,528,540,2,NA,NA
+"2020-03-19",5,2020,"abundance","pevGARCH","exclosures","PF",1.07011587540716,0,4,"693.9",29,0.95,693,NA,531,217,528,528,540,3,NA,NA
+"2020-03-19",6,2020,"abundance","pevGARCH","exclosures","PF",1.54534501106335,0,5,"693.9",29,0.95,693,NA,532,217,528,528,540,4,NA,NA
+"2020-03-19",7,2020,"abundance","pevGARCH","exclosures","PF",1.59038100415981,0,5,"693.9",29,0.95,693,NA,533,217,528,528,540,5,NA,NA
+"2020-03-19",8,2020,"abundance","pevGARCH","exclosures","PF",1.68002321175108,0,6,"693.9",29,0.95,693,NA,534,217,528,528,540,6,NA,NA
+"2020-03-19",9,2020,"abundance","pevGARCH","exclosures","PF",1.97958111302798,0,7,"693.9",29,0.95,693,NA,535,217,528,528,540,7,NA,NA
+"2020-03-19",10,2020,"abundance","pevGARCH","exclosures","PF",1.50298295723945,0,6,"693.9",29,0.95,693,NA,536,217,528,528,540,8,NA,NA
+"2020-03-19",11,2020,"abundance","pevGARCH","exclosures","PF",1.24334828928118,0,5,"693.9",29,0.95,693,NA,537,217,528,528,540,9,NA,NA
+"2020-03-19",12,2020,"abundance","pevGARCH","exclosures","PF",0.759248680954681,0,3,"693.9",29,0.95,693,NA,538,217,528,528,540,10,NA,NA
+"2020-03-19",1,2021,"abundance","pevGARCH","exclosures","PF",0.807186009341231,0,3,"693.9",29,0.95,693,NA,539,217,528,528,540,11,NA,NA
+"2020-03-19",2,2021,"abundance","pevGARCH","exclosures","PF",0.827929361389826,0,4,"693.9",29,0.95,693,NA,540,217,528,528,540,12,NA,NA

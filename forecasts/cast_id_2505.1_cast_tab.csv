@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","cast_group","confidence_level","dataset","species","estimate","lower_pi","upper_pi","cast_id","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2022-05-19",4,2022,"abundance","nbsGARCH",95,0.95,"controls","BA",0.172438512225081,0,2,"2505.1",2505,NA,555,217,555,555,567,0,NA,NA
+"2022-05-19",5,2022,"abundance","nbsGARCH",95,0.95,"controls","BA",0.198196912608481,0,2,"2505.1",2505,NA,556,217,555,555,567,1,NA,NA
+"2022-05-19",6,2022,"abundance","nbsGARCH",95,0.95,"controls","BA",0.17941288191136,0,2,"2505.1",2505,NA,557,217,555,555,567,2,NA,NA
+"2022-05-19",7,2022,"abundance","nbsGARCH",95,0.95,"controls","BA",0.143364520956238,0,1,"2505.1",2505,NA,558,217,555,555,567,3,NA,NA
+"2022-05-19",8,2022,"abundance","nbsGARCH",95,0.95,"controls","BA",0.110754746299617,0,1,"2505.1",2505,NA,559,217,555,555,567,4,NA,NA
+"2022-05-19",9,2022,"abundance","nbsGARCH",95,0.95,"controls","BA",0.0875561411637604,0,1,"2505.1",2505,NA,560,217,555,555,567,5,NA,NA
+"2022-05-19",10,2022,"abundance","nbsGARCH",95,0.95,"controls","BA",0.0759406199334549,0,1,"2505.1",2505,NA,561,217,555,555,567,6,NA,NA
+"2022-05-19",11,2022,"abundance","nbsGARCH",95,0.95,"controls","BA",0.0743385544688358,0,1,"2505.1",2505,NA,562,217,555,555,567,7,NA,NA
+"2022-05-19",12,2022,"abundance","nbsGARCH",95,0.95,"controls","BA",0.0821460943250516,0,1,"2505.1",2505,NA,563,217,555,555,567,8,NA,NA
+"2022-05-19",1,2023,"abundance","nbsGARCH",95,0.95,"controls","BA",0.100739892780954,0,1,"2505.1",2505,NA,564,217,555,555,567,9,NA,NA
+"2022-05-19",2,2023,"abundance","nbsGARCH",95,0.95,"controls","BA",0.129670658874084,0,2,"2505.1",2505,NA,565,217,555,555,567,10,NA,NA
+"2022-05-19",3,2023,"abundance","nbsGARCH",95,0.95,"controls","BA",0.163802459644291,0,1,"2505.1",2505,NA,566,217,555,555,567,11,NA,NA
+"2022-05-19",4,2023,"abundance","nbsGARCH",95,0.95,"controls","BA",0.194247290608523,0,2,"2505.1",2505,NA,567,217,555,555,567,12,NA,NA

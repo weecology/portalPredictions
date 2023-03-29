@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","cast_group","confidence_level","dataset","species","estimate","lower_pi","upper_pi","cast_id","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2022-08-11",7,2022,"abundance","nbsGARCH",107,0.95,"controls","RM",0.0694516315732968,0,1,"2773.14",2773,NA,558,217,558,558,570,0,NA,NA
+"2022-08-11",8,2022,"abundance","nbsGARCH",107,0.95,"controls","RM",0.0689366770306902,0,1,"2773.14",2773,NA,559,217,558,558,570,1,NA,NA
+"2022-08-11",9,2022,"abundance","nbsGARCH",107,0.95,"controls","RM",0.0831163946076592,0,1,"2773.14",2773,NA,560,217,558,558,570,2,NA,NA
+"2022-08-11",10,2022,"abundance","nbsGARCH",107,0.95,"controls","RM",0.125221689760476,0,1,"2773.14",2773,NA,561,217,558,558,570,3,NA,NA
+"2022-08-11",11,2022,"abundance","nbsGARCH",107,0.95,"controls","RM",0.219288045376777,0,2,"2773.14",2773,NA,562,217,558,558,570,4,NA,NA
+"2022-08-11",12,2022,"abundance","nbsGARCH",107,0.95,"controls","RM",0.387069613806831,0,3,"2773.14",2773,NA,563,217,558,558,570,5,NA,NA
+"2022-08-11",1,2023,"abundance","nbsGARCH",107,0.95,"controls","RM",0.635112589647536,0,4,"2773.14",2773,NA,564,217,558,558,570,6,NA,NA
+"2022-08-11",2,2023,"abundance","nbsGARCH",107,0.95,"controls","RM",0.845136012427422,0,5,"2773.14",2773,NA,565,217,558,558,570,7,NA,NA
+"2022-08-11",3,2023,"abundance","nbsGARCH",107,0.95,"controls","RM",0.829304274263591,0,5,"2773.14",2773,NA,566,217,558,558,570,8,NA,NA
+"2022-08-11",4,2023,"abundance","nbsGARCH",107,0.95,"controls","RM",0.565289229434963,0,5,"2773.14",2773,NA,567,217,558,558,570,9,NA,NA
+"2022-08-11",5,2023,"abundance","nbsGARCH",107,0.95,"controls","RM",0.293753254028387,0,2,"2773.14",2773,NA,568,217,558,558,570,10,NA,NA
+"2022-08-11",6,2023,"abundance","nbsGARCH",107,0.95,"controls","RM",0.144651923886262,0,1,"2773.14",2773,NA,569,217,558,558,570,11,NA,NA
+"2022-08-11",7,2023,"abundance","nbsGARCH",107,0.95,"controls","RM",0.0874640233515342,0,1,"2773.14",2773,NA,570,217,558,558,570,12,NA,NA

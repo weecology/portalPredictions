@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","cast_group","confidence_level","estimate","lower_pi","upper_pi","cast_id","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2023-02-23",2,2023,"abundance","pevGARCH","controls","DM",120,0.95,19.0590131243292,11,28,"3067.2",3067,NA,565,217,565,565,577,0,NA,NA
+"2023-02-23",3,2023,"abundance","pevGARCH","controls","DM",120,0.95,18.9672571207232,10,31,"3067.2",3067,NA,566,217,565,565,577,1,NA,NA
+"2023-02-23",4,2023,"abundance","pevGARCH","controls","DM",120,0.95,18.2885413908213,8,31,"3067.2",3067,NA,567,217,565,565,577,2,NA,NA
+"2023-02-23",5,2023,"abundance","pevGARCH","controls","DM",120,0.95,16.923356607478,6,31,"3067.2",3067,NA,568,217,565,565,577,3,NA,NA
+"2023-02-23",6,2023,"abundance","pevGARCH","controls","DM",120,0.95,15.5966755005502,5,27,"3067.2",3067,NA,569,217,565,565,577,4,NA,NA
+"2023-02-23",7,2023,"abundance","pevGARCH","controls","DM",120,0.95,14.6192847482416,5,26,"3067.2",3067,NA,570,217,565,565,577,5,NA,NA
+"2023-02-23",8,2023,"abundance","pevGARCH","controls","DM",120,0.95,14.4263672037421,4,26,"3067.2",3067,NA,571,217,565,565,577,6,NA,NA
+"2023-02-23",9,2023,"abundance","pevGARCH","controls","DM",120,0.95,14.4339915074985,4,27,"3067.2",3067,NA,572,217,565,565,577,7,NA,NA
+"2023-02-23",10,2023,"abundance","pevGARCH","controls","DM",120,0.95,15.0125125989667,4,28,"3067.2",3067,NA,573,217,565,565,577,8,NA,NA
+"2023-02-23",11,2023,"abundance","pevGARCH","controls","DM",120,0.95,15.8366438267422,5,29,"3067.2",3067,NA,574,217,565,565,577,9,NA,NA
+"2023-02-23",12,2023,"abundance","pevGARCH","controls","DM",120,0.95,16.9524350818861,5,31,"3067.2",3067,NA,575,217,565,565,577,10,NA,NA
+"2023-02-23",1,2024,"abundance","pevGARCH","controls","DM",120,0.95,17.5513206835732,5,34,"3067.2",3067,NA,576,217,565,565,577,11,NA,NA
+"2023-02-23",2,2024,"abundance","pevGARCH","controls","DM",120,0.95,18.0733672345182,5,34,"3067.2",3067,NA,577,217,565,565,577,12,NA,NA

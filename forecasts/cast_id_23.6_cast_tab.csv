@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2019-11-21",10,2019,"abundance","AutoArima","controls","OL",1,-0.401292801635623,2.40129280163562,"23.6",2,0.95,23,NA,524,217,524,524,536,0,NA,NA
+"2019-11-21",11,2019,"abundance","AutoArima","controls","OL",1,-0.98172728492889,2.98172728492889,"23.6",2,0.95,23,NA,525,217,524,524,536,1,NA,NA
+"2019-11-21",12,2019,"abundance","AutoArima","controls","OL",1,-1.42711032871344,3.42711032871344,"23.6",2,0.95,23,NA,526,217,524,524,536,2,NA,NA
+"2019-11-21",1,2020,"abundance","AutoArima","controls","OL",1,-1.80258560327125,3.80258560327125,"23.6",2,0.95,23,NA,527,217,524,524,536,3,NA,NA
+"2019-11-21",2,2020,"abundance","AutoArima","controls","OL",1,-2.13338596083838,4.13338596083838,"23.6",2,0.95,23,NA,528,217,524,524,536,4,NA,NA
+"2019-11-21",3,2020,"abundance","AutoArima","controls","OL",1,-2.43245234424236,4.43245234424236,"23.6",2,0.95,23,NA,529,217,524,524,536,5,NA,NA
+"2019-11-21",4,2020,"abundance","AutoArima","controls","OL",1,-2.70747226711282,4.70747226711282,"23.6",2,0.95,23,NA,530,217,524,524,536,6,NA,NA
+"2019-11-21",5,2020,"abundance","AutoArima","controls","OL",1,-2.96345456985778,4.96345456985778,"23.6",2,0.95,23,NA,531,217,524,524,536,7,NA,NA
+"2019-11-21",6,2020,"abundance","AutoArima","controls","OL",1,-3.20387840490687,5.20387840490687,"23.6",2,0.95,23,NA,532,217,524,524,536,8,NA,NA
+"2019-11-21",7,2020,"abundance","AutoArima","controls","OL",1,-3.43127692196709,5.43127692196709,"23.6",2,0.95,23,NA,533,217,524,524,536,9,NA,NA
+"2019-11-21",8,2020,"abundance","AutoArima","controls","OL",1,-3.64756244445128,5.64756244445128,"23.6",2,0.95,23,NA,534,217,524,524,536,10,NA,NA
+"2019-11-21",9,2020,"abundance","AutoArima","controls","OL",1,-3.85422065742687,5.85422065742687,"23.6",2,0.95,23,NA,535,217,524,524,536,11,NA,NA
+"2019-11-21",10,2020,"abundance","AutoArima","controls","OL",1,-4.05243304823583,6.05243304823583,"23.6",2,0.95,23,NA,536,217,524,524,536,12,NA,NA

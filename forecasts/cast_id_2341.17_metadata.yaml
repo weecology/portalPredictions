@@ -1,0 +1,184 @@
+cast_group: 89.0
+cast_type: forecast
+models: NaiveArima
+datasets: controls
+dataset_controls:
+  metadata:
+    name: controls
+    descriptor: classic dataset, control plots combined
+  fun: prep_dataset
+  args:
+    name: controls
+    species:
+    - BA
+    - DM
+    - DO
+    - DS
+    - NA
+    - OL
+    - OT
+    - PB
+    - PE
+    - PF
+    - PH
+    - PL
+    - PM
+    - PP
+    - RF
+    - RM
+    - RO
+    - SF
+    - SH
+    - SO
+    total: yes
+    interpolate: no
+    clean: no
+    type: Rodents
+    level: Treatment
+    plots: Longterm
+    treatment: control
+    min_plots: 24.0
+    min_traps: 1.0
+    output: abundance
+    fillweight: no
+    unknowns: no
+    time: newmoon
+    na_drop: no
+    zero_drop: yes
+    effort: yes
+    filename: rodents_controls.csv
+time:
+  start_moon: 217.0
+  end_moon: 554
+  last_moon: 554
+  cast_date: '2022-04-07'
+  lead_time: 12.0
+  covariate_cast_moons:
+  - 554
+  - 555
+  - 556
+  - 557
+  - 558
+  - 559
+  - 560
+  - 561
+  - 562
+  - 563
+  - 564
+  - 565
+  - 566
+  covariate_cast_months:
+  - 4.0
+  - 4.0
+  - 5.0
+  - 6.0
+  - 7.0
+  - 8.0
+  - 9.0
+  - 10.0
+  - 11.0
+  - 12.0
+  - 1.0
+  - 2.0
+  - 3.0
+  covariate_cast_years:
+  - 2022.0
+  - 2022.0
+  - 2022.0
+  - 2022.0
+  - 2022.0
+  - 2022.0
+  - 2022.0
+  - 2022.0
+  - 2022.0
+  - 2022.0
+  - 2023.0
+  - 2023.0
+  - 2023.0
+  rodent_cast_moons:
+  - 552
+  - 553
+  - 554
+  - 555
+  - 556
+  - 557
+  - 558
+  - 559
+  - 560
+  - 561
+  - 562
+  - 563
+  - 564
+  - 565
+  - 566
+  rodent_cast_months:
+  - 1.0
+  - 3.0
+  - 4.0
+  - 4.0
+  - 5.0
+  - 6.0
+  - 7.0
+  - 8.0
+  - 9.0
+  - 10.0
+  - 11.0
+  - 12.0
+  - 1.0
+  - 2.0
+  - 3.0
+  rodent_cast_years:
+  - 2022.0
+  - 2022.0
+  - 2022.0
+  - 2022.0
+  - 2022.0
+  - 2022.0
+  - 2022.0
+  - 2022.0
+  - 2022.0
+  - 2022.0
+  - 2022.0
+  - 2022.0
+  - 2023.0
+  - 2023.0
+  - 2023.0
+confidence_level: 0.95
+directory_configuration:
+  setup:
+    date: '2022-04-07'
+    R_version:
+      platform: x86_64-pc-linux-gnu
+      arch: x86_64
+      os: linux-gnu
+      system: x86_64, linux-gnu
+      status: ''
+      major: '4'
+      minor: '1.3'
+      year: '2022'
+      month: '03'
+      day: '10'
+      svn rev: '81868'
+      language: R
+      version.string: R version 4.1.3 (2022-03-10)
+      nickname: One Push-Up
+    portalcasting_version: 0.32.0
+  tree:
+    main: '.'
+    subs:
+      forecasts: casts
+      model fits: fits
+      model scripts: models
+      resources: raw
+      data: data
+      tmp: tmp
+  raw:
+    PortalData_version: 3.69.0
+    archive_version: latest
+    climate_forecast_version: '2022-04-07'
+interpolated_data: no
+model: NaiveArima
+dataset: controls
+species: SH
+old_cast_id: 2341
+cast_id: '2341.17'

@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2021-11-11",11,2021,"abundance","nbsGARCH","controls","PP",14.9233986245638,2,38,"1926.13",74,0.95,1926,NA,549,217,549,549,561,0,NA,NA
+"2021-11-11",12,2021,"abundance","nbsGARCH","controls","PP",10.6455558629998,1,36,"1926.13",74,0.95,1926,NA,550,217,549,549,561,1,NA,NA
+"2021-11-11",1,2022,"abundance","nbsGARCH","controls","PP",8.94024373377094,0,34,"1926.13",74,0.95,1926,NA,551,217,549,549,561,2,NA,NA
+"2021-11-11",2,2022,"abundance","nbsGARCH","controls","PP",9.21102355556418,0,39,"1926.13",74,0.95,1926,NA,552,217,549,549,561,3,NA,NA
+"2021-11-11",3,2022,"abundance","nbsGARCH","controls","PP",11.3082378333833,0,47,"1926.13",74,0.95,1926,NA,553,217,549,549,561,4,NA,NA
+"2021-11-11",4,2022,"abundance","nbsGARCH","controls","PP",15.5702646146254,0,74,"1926.13",74,0.95,1926,NA,554,217,549,549,561,5,NA,NA
+"2021-11-11",4,2022,"abundance","nbsGARCH","controls","PP",22.1446280953724,0,77,"1926.13",74,0.95,1926,NA,555,217,549,549,561,6,NA,NA
+"2021-11-11",5,2022,"abundance","nbsGARCH","controls","PP",29.6502697144552,1,114,"1926.13",74,0.95,1926,NA,556,217,549,549,561,7,NA,NA
+"2021-11-11",6,2022,"abundance","nbsGARCH","controls","PP",34.8880570565974,1,124,"1926.13",74,0.95,1926,NA,557,217,549,549,561,8,NA,NA
+"2021-11-11",7,2022,"abundance","nbsGARCH","controls","PP",34.4147401298987,1,118,"1926.13",74,0.95,1926,NA,558,217,549,549,561,9,NA,NA
+"2021-11-11",8,2022,"abundance","nbsGARCH","controls","PP",28.7580413428039,0,89,"1926.13",74,0.95,1926,NA,559,217,549,549,561,10,NA,NA
+"2021-11-11",9,2022,"abundance","nbsGARCH","controls","PP",21.1100937733957,0,64,"1926.13",74,0.95,1926,NA,560,217,549,549,561,11,NA,NA
+"2021-11-11",10,2022,"abundance","nbsGARCH","controls","PP",14.8550825027027,0,45,"1926.13",74,0.95,1926,NA,561,217,549,549,561,12,NA,NA

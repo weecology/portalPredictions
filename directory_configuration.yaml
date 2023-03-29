@@ -1,0 +1,81 @@
+setup:
+  date: '2023-03-28'
+  R_version:
+    platform: x86_64-w64-mingw32
+    arch: x86_64
+    os: mingw32
+    crt: ucrt
+    system: x86_64, mingw32
+    status: ''
+    major: '4'
+    minor: '2.2'
+    year: '2022'
+    month: '10'
+    day: '31'
+    svn rev: '83211'
+    language: R
+    version.string: R version 4.2.2 (2022-10-31 ucrt)
+    nickname: Innocent and Trusting
+  core_package_name: portalcasting
+  core_package_version: 0.51.0
+tree:
+  main: '.'
+  subdirectories:
+    forecasts: forecasts
+    fits: fits
+    models: models
+    resources: resources
+    data: data
+settings:
+  files:
+    newmoons: newmoon_dates.csv
+    covariates: covariates.csv
+    dataset_controls: dataset_controls.yaml
+    model_controls: model_controls.yaml
+    cast_evaluations: cast_evaluations.csv
+    cast_results: cast_results.csv
+    forecast_metadata: casts_metadata.csv
+    metadata: metadata.yaml
+  subdirectories:
+    forecasts: forecasts
+    fits: fits
+    models: models
+    resources: resources
+    data: data
+  resources:
+    PortalData:
+      source: github
+      version: latest
+    portalPredictions:
+      source: github
+      version: ~
+    climate_forecast:
+      source: NMME
+      version: '2023-03-28'
+      data:
+      - tasmin
+      - tasmean
+      - tasmax
+      - pr
+  repository: portalPredictions
+  confidence_level: 0.95
+  nsamples: 10000.0
+  time:
+    timeseries_start: '1995-01-01'
+    timeseries_start_lagged: '1993-11-02'
+    forecast_start: '2023-03-29'
+    forecast_end: '2024-03-27'
+    forecast_end_buffered: '2024-04-26'
+    origin: '2023-03-28'
+    cast_date: '2023-03-28'
+    lead_time: 365.0
+    lead_time_buffer: 30.0
+    max_lag: 365.0
+    lag_buffer: 60.0
+  save: yes
+  force: no
+  overwrite: yes
+  unzip_pause: 30.0
+  download_timeout: 60
+  quiet: no
+  verbose: no

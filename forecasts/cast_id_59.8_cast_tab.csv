@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2019-11-22",10,2019,"abundance","nbsGARCH","controls","PB",0.713300899135486,0,3,"59.8",3,0.95,59,NA,524,217,524,524,536,0,NA,NA
+"2019-11-22",11,2019,"abundance","nbsGARCH","controls","PB",1.15560592242027,0,4,"59.8",3,0.95,59,NA,525,217,524,524,536,1,NA,NA
+"2019-11-22",12,2019,"abundance","nbsGARCH","controls","PB",1.40997006060645,0,5,"59.8",3,0.95,59,NA,526,217,524,524,536,2,NA,NA
+"2019-11-22",1,2020,"abundance","nbsGARCH","controls","PB",1.57904940292233,0,6,"59.8",3,0.95,59,NA,527,217,524,524,536,3,NA,NA
+"2019-11-22",2,2020,"abundance","nbsGARCH","controls","PB",1.74615421501273,0,6,"59.8",3,0.95,59,NA,528,217,524,524,536,4,NA,NA
+"2019-11-22",3,2020,"abundance","nbsGARCH","controls","PB",1.96018553153595,0,7,"59.8",3,0.95,59,NA,529,217,524,524,536,5,NA,NA
+"2019-11-22",4,2020,"abundance","nbsGARCH","controls","PB",2.24989618570721,0,8,"59.8",3,0.95,59,NA,530,217,524,524,536,6,NA,NA
+"2019-11-22",5,2020,"abundance","nbsGARCH","controls","PB",2.60400650864227,0,9,"59.8",3,0.95,59,NA,531,217,524,524,536,7,NA,NA
+"2019-11-22",6,2020,"abundance","nbsGARCH","controls","PB",2.98437532990825,0,10,"59.8",3,0.95,59,NA,532,217,524,524,536,8,NA,NA
+"2019-11-22",7,2020,"abundance","nbsGARCH","controls","PB",3.3062072698271,0,10,"59.8",3,0.95,59,NA,533,217,524,524,536,9,NA,NA
+"2019-11-22",8,2020,"abundance","nbsGARCH","controls","PB",3.47512748662478,0,11,"59.8",3,0.95,59,NA,534,217,524,524,536,10,NA,NA
+"2019-11-22",9,2020,"abundance","nbsGARCH","controls","PB",3.4266032971447,0,11,"59.8",3,0.95,59,NA,535,217,524,524,536,11,NA,NA
+"2019-11-22",10,2020,"abundance","nbsGARCH","controls","PB",3.18926913614163,0,10,"59.8",3,0.95,59,NA,536,217,524,524,536,12,NA,NA

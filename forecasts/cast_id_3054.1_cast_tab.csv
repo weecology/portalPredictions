@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_group","confidence_level","cast_id","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2023-02-23",2,2023,"abundance","jags_logistic_covariates","controls","DM",22.067,16.475,26.566,120,0.95,"3054.1",3054,NA,565,217,565,565,577,0,NA,NA
+"2023-02-23",3,2023,"abundance","jags_logistic_covariates","controls","DM",22.108,15.181,26.584,120,0.95,"3054.1",3054,NA,566,217,565,565,577,1,NA,NA
+"2023-02-23",4,2023,"abundance","jags_logistic_covariates","controls","DM",22.141,14.268,26.615,120,0.95,"3054.1",3054,NA,567,217,565,565,577,2,NA,NA
+"2023-02-23",5,2023,"abundance","jags_logistic_covariates","controls","DM",22.204,13.654,26.663,120,0.95,"3054.1",3054,NA,568,217,565,565,577,3,NA,NA
+"2023-02-23",6,2023,"abundance","jags_logistic_covariates","controls","DM",22.259,12.978,26.705,120,0.95,"3054.1",3054,NA,569,217,565,565,577,4,NA,NA
+"2023-02-23",7,2023,"abundance","jags_logistic_covariates","controls","DM",22.306,12.479,26.726,120,0.95,"3054.1",3054,NA,570,217,565,565,577,5,NA,NA
+"2023-02-23",8,2023,"abundance","jags_logistic_covariates","controls","DM",22.247,12.049,26.691,120,0.95,"3054.1",3054,NA,571,217,565,565,577,6,NA,NA
+"2023-02-23",9,2023,"abundance","jags_logistic_covariates","controls","DM",22.129,11.523,26.603,120,0.95,"3054.1",3054,NA,572,217,565,565,577,7,NA,NA
+"2023-02-23",10,2023,"abundance","jags_logistic_covariates","controls","DM",21.962,11.09,26.507,120,0.95,"3054.1",3054,NA,573,217,565,565,577,8,NA,NA
+"2023-02-23",11,2023,"abundance","jags_logistic_covariates","controls","DM",21.878,10.88,26.437,120,0.95,"3054.1",3054,NA,574,217,565,565,577,9,NA,NA
+"2023-02-23",12,2023,"abundance","jags_logistic_covariates","controls","DM",21.847,10.797,26.451,120,0.95,"3054.1",3054,NA,575,217,565,565,577,10,NA,NA
+"2023-02-23",1,2024,"abundance","jags_logistic_covariates","controls","DM",21.837,10.758,26.497,120,0.95,"3054.1",3054,NA,576,217,565,565,577,11,NA,NA
+"2023-02-23",2,2024,"abundance","jags_logistic_covariates","controls","DM",21.872,10.781,26.579,120,0.95,"3054.1",3054,NA,577,217,565,565,577,12,NA,NA

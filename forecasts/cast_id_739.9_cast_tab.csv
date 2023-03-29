@@ -1,0 +1,15 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2020-04-09",2,2020,"abundance","nbGARCH","all","PE",5.23091951559553,0,15,"739.9",31,0.95,739,NA,528,217,529,528,541,-1,NA,NA
+"2020-04-09",3,2020,"abundance","nbGARCH","all","PE",5.10947345171762,0,20,"739.9",31,0.95,739,NA,529,217,529,528,541,0,NA,NA
+"2020-04-09",4,2020,"abundance","nbGARCH","all","PE",5.45558863375752,0,25,"739.9",31,0.95,739,NA,530,217,529,528,541,1,NA,NA
+"2020-04-09",5,2020,"abundance","nbGARCH","all","PE",5.5553626483359,0,28,"739.9",31,0.95,739,NA,531,217,529,528,541,2,NA,NA
+"2020-04-09",6,2020,"abundance","nbGARCH","all","PE",5.37585268445043,0,30,"739.9",31,0.95,739,NA,532,217,529,528,541,3,NA,NA
+"2020-04-09",7,2020,"abundance","nbGARCH","all","PE",5.22098936899575,0,24,"739.9",31,0.95,739,NA,533,217,529,528,541,4,NA,NA
+"2020-04-09",8,2020,"abundance","nbGARCH","all","PE",5.1232883948188,0,24,"739.9",31,0.95,739,NA,534,217,529,528,541,5,NA,NA
+"2020-04-09",9,2020,"abundance","nbGARCH","all","PE",4.82998161870556,0,22,"739.9",31,0.95,739,NA,535,217,529,528,541,6,NA,NA
+"2020-04-09",10,2020,"abundance","nbGARCH","all","PE",4.9529544962515,0,22,"739.9",31,0.95,739,NA,536,217,529,528,541,7,NA,NA
+"2020-04-09",11,2020,"abundance","nbGARCH","all","PE",5.29375082266459,0,25,"739.9",31,0.95,739,NA,537,217,529,528,541,8,NA,NA
+"2020-04-09",12,2020,"abundance","nbGARCH","all","PE",5.53458179522247,0,25,"739.9",31,0.95,739,NA,538,217,529,528,541,9,NA,NA
+"2020-04-09",1,2021,"abundance","nbGARCH","all","PE",5.47330456749219,0,24,"739.9",31,0.95,739,NA,539,217,529,528,541,10,NA,NA
+"2020-04-09",2,2021,"abundance","nbGARCH","all","PE",5.6825245236234,0,25,"739.9",31,0.95,739,NA,540,217,529,528,541,11,NA,NA
+"2020-04-09",3,2021,"abundance","nbGARCH","all","PE",5.84182932574074,0,24,"739.9",31,0.95,739,NA,541,217,529,528,541,12,NA,NA

@@ -1,0 +1,13 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","cast_group","confidence_level","estimate","lower_pi","upper_pi","cast_id","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2023-03-16",3,2023,"abundance","AutoArima","exclosures","total",123,0.95,30.8266376303738,10.8287387450455,50.8245365157022,"3117.18",3117,NA,566,217,565,566,577,1,NA,NA
+"2023-03-16",4,2023,"abundance","AutoArima","exclosures","total",123,0.95,33.5586287554299,7.28848152781189,59.8287759830479,"3117.18",3117,NA,567,217,565,566,577,2,NA,NA
+"2023-03-16",5,2023,"abundance","AutoArima","exclosures","total",123,0.95,32.6183013358348,1.47605527397732,63.7605473976922,"3117.18",3117,NA,568,217,565,566,577,3,NA,NA
+"2023-03-16",6,2023,"abundance","AutoArima","exclosures","total",123,0.95,31.8588403049862,-2.08673925180985,65.8044198617823,"3117.18",3117,NA,569,217,565,566,577,4,NA,NA
+"2023-03-16",7,2023,"abundance","AutoArima","exclosures","total",123,0.95,31.2454570882915,-4.41017909749024,66.9010932740733,"3117.18",3117,NA,570,217,565,566,577,5,NA,NA
+"2023-03-16",8,2023,"abundance","AutoArima","exclosures","total",123,0.95,30.7500544866566,-5.97818291788328,67.4782918911964,"3117.18",3117,NA,571,217,565,566,577,6,NA,NA
+"2023-03-16",9,2023,"abundance","AutoArima","exclosures","total",123,0.95,30.3499396301902,-7.06139546578888,67.7612747261693,"3117.18",3117,NA,572,217,565,566,577,7,NA,NA
+"2023-03-16",10,2023,"abundance","AutoArima","exclosures","total",123,0.95,30.0267844876117,-7.82349766108194,67.8770666363053,"3117.18",3117,NA,573,217,565,566,577,8,NA,NA
+"2023-03-16",11,2023,"abundance","AutoArima","exclosures","total",123,0.95,29.7657863154938,-8.36810178897795,67.8996744199655,"3117.18",3117,NA,574,217,565,566,577,9,NA,NA
+"2023-03-16",12,2023,"abundance","AutoArima","exclosures","total",123,0.95,29.5549895901025,-8.76276578733846,67.8727449675435,"3117.18",3117,NA,575,217,565,566,577,10,NA,NA
+"2023-03-16",1,2024,"abundance","AutoArima","exclosures","total",123,0.95,29.3847383616166,-9.05248114326902,67.8219578665021,"3117.18",3117,NA,576,217,565,566,577,11,NA,NA
+"2023-03-16",2,2024,"abundance","AutoArima","exclosures","total",123,0.95,29.2472339447563,-9.26771329022929,67.7621811797418,"3117.18",3117,NA,577,217,565,566,577,12,NA,NA

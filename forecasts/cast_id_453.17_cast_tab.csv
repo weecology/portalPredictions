@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2020-01-31",1,2020,"abundance","nbGARCH","exclosures","SF",0.286721690316182,0,2,"453.17",20,0.95,453,NA,527,217,527,527,539,0,NA,NA
+"2020-01-31",2,2020,"abundance","nbGARCH","exclosures","SF",0.367224966693747,0,2,"453.17",20,0.95,453,NA,528,217,527,527,539,1,NA,NA
+"2020-01-31",3,2020,"abundance","nbGARCH","exclosures","SF",0.389765138606941,0,2,"453.17",20,0.95,453,NA,529,217,527,527,539,2,NA,NA
+"2020-01-31",4,2020,"abundance","nbGARCH","exclosures","SF",0.396071743095996,0,2,"453.17",20,0.95,453,NA,530,217,527,527,539,3,NA,NA
+"2020-01-31",5,2020,"abundance","nbGARCH","exclosures","SF",0.397835955423811,0,2,"453.17",20,0.95,453,NA,531,217,527,527,539,4,NA,NA
+"2020-01-31",6,2020,"abundance","nbGARCH","exclosures","SF",0.398329450359306,0,2,"453.17",20,0.95,453,NA,532,217,527,527,539,5,NA,NA
+"2020-01-31",7,2020,"abundance","nbGARCH","exclosures","SF",0.39846749042458,0,2,"453.17",20,0.95,453,NA,533,217,527,527,539,6,NA,NA
+"2020-01-31",8,2020,"abundance","nbGARCH","exclosures","SF",0.398506103016298,0,2,"453.17",20,0.95,453,NA,534,217,527,527,539,7,NA,NA
+"2020-01-31",9,2020,"abundance","nbGARCH","exclosures","SF",0.398516904289318,0,2,"453.17",20,0.95,453,NA,535,217,527,527,539,8,NA,NA
+"2020-01-31",10,2020,"abundance","nbGARCH","exclosures","SF",0.398519925060299,0,2,"453.17",20,0.95,453,NA,536,217,527,527,539,9,NA,NA
+"2020-01-31",11,2020,"abundance","nbGARCH","exclosures","SF",0.398520770023603,0,2,"453.17",20,0.95,453,NA,537,217,527,527,539,10,NA,NA
+"2020-01-31",12,2020,"abundance","nbGARCH","exclosures","SF",0.398521006376511,0,2,"453.17",20,0.95,453,NA,538,217,527,527,539,11,NA,NA
+"2020-01-31",1,2021,"abundance","nbGARCH","exclosures","SF",0.398521072498531,0,2,"453.17",20,0.95,453,NA,539,217,527,527,539,12,NA,NA

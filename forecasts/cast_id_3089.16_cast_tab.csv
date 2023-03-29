@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","cast_group","confidence_level","estimate","lower_pi","upper_pi","cast_id","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2023-03-02",2,2023,"abundance","pevGARCH","all","RO",121,0.95,0.422133976606942,0,2,"3089.16",3089,NA,565,217,565,565,577,0,NA,NA
+"2023-03-02",3,2023,"abundance","pevGARCH","all","RO",121,0.95,0.381599018418612,0,2,"3089.16",3089,NA,566,217,565,565,577,1,NA,NA
+"2023-03-02",4,2023,"abundance","pevGARCH","all","RO",121,0.95,0.210100340459883,0,1,"3089.16",3089,NA,567,217,565,565,577,2,NA,NA
+"2023-03-02",5,2023,"abundance","pevGARCH","all","RO",121,0.95,0.0504757843908557,0,1,"3089.16",3089,NA,568,217,565,565,577,3,NA,NA
+"2023-03-02",6,2023,"abundance","pevGARCH","all","RO",121,0.95,0.0377202943972224,0,1,"3089.16",3089,NA,569,217,565,565,577,4,NA,NA
+"2023-03-02",7,2023,"abundance","pevGARCH","all","RO",121,0.95,0.0373682380390984,0,1,"3089.16",3089,NA,570,217,565,565,577,5,NA,NA
+"2023-03-02",8,2023,"abundance","pevGARCH","all","RO",121,0.95,0.0251382798821356,0,1,"3089.16",3089,NA,571,217,565,565,577,6,NA,NA
+"2023-03-02",9,2023,"abundance","pevGARCH","all","RO",121,0.95,0.0291452022077416,0,0,"3089.16",3089,NA,572,217,565,565,577,7,NA,NA
+"2023-03-02",10,2023,"abundance","pevGARCH","all","RO",121,0.95,0.0336576897652199,0,1,"3089.16",3089,NA,573,217,565,565,577,8,NA,NA
+"2023-03-02",11,2023,"abundance","pevGARCH","all","RO",121,0.95,0.11510519738888,0,1,"3089.16",3089,NA,574,217,565,565,577,9,NA,NA
+"2023-03-02",12,2023,"abundance","pevGARCH","all","RO",121,0.95,0.322206126058831,0,2,"3089.16",3089,NA,575,217,565,565,577,10,NA,NA
+"2023-03-02",1,2024,"abundance","pevGARCH","all","RO",121,0.95,0.444962093724726,0,2,"3089.16",3089,NA,576,217,565,565,577,11,NA,NA
+"2023-03-02",2,2024,"abundance","pevGARCH","all","RO",121,0.95,0.383067713880371,0,2,"3089.16",3089,NA,577,217,565,565,577,12,NA,NA

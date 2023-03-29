@@ -1,0 +1,13 @@
+"cast_date","cast_month","cast_year","currency","model","cast_group","confidence_level","dataset","species","estimate","lower_pi","upper_pi","cast_id","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2023-03-09",3,2023,"abundance","nbGARCH",122,0.95,"controls","total",50.5034480855374,28,77,"3107.17",3107,NA,566,217,565,566,577,1,NA,NA
+"2023-03-09",4,2023,"abundance","nbGARCH",122,0.95,"controls","total",49.8772530776998,23,86,"3107.17",3107,NA,567,217,565,566,577,2,NA,NA
+"2023-03-09",5,2023,"abundance","nbGARCH",122,0.95,"controls","total",49.5496283560747,20,90,"3107.17",3107,NA,568,217,565,566,577,3,NA,NA
+"2023-03-09",6,2023,"abundance","nbGARCH",122,0.95,"controls","total",49.4453612222379,18,94,"3107.17",3107,NA,569,217,565,566,577,4,NA,NA
+"2023-03-09",7,2023,"abundance","nbGARCH",122,0.95,"controls","total",49.5111392274104,17,99,"3107.17",3107,NA,570,217,565,566,577,5,NA,NA
+"2023-03-09",8,2023,"abundance","nbGARCH",122,0.95,"controls","total",49.3840115978446,17,104,"3107.17",3107,NA,571,217,565,566,577,6,NA,NA
+"2023-03-09",9,2023,"abundance","nbGARCH",122,0.95,"controls","total",49.0477524392062,16,104,"3107.17",3107,NA,572,217,565,566,577,7,NA,NA
+"2023-03-09",10,2023,"abundance","nbGARCH",122,0.95,"controls","total",48.6138835447889,16,102,"3107.17",3107,NA,573,217,565,566,577,8,NA,NA
+"2023-03-09",11,2023,"abundance","nbGARCH",122,0.95,"controls","total",48.0645190485572,14,98,"3107.17",3107,NA,574,217,565,566,577,9,NA,NA
+"2023-03-09",12,2023,"abundance","nbGARCH",122,0.95,"controls","total",47.382868963516,13,98,"3107.17",3107,NA,575,217,565,566,577,10,NA,NA
+"2023-03-09",1,2024,"abundance","nbGARCH",122,0.95,"controls","total",46.5731455777983,14,96,"3107.17",3107,NA,576,217,565,566,577,11,NA,NA
+"2023-03-09",2,2024,"abundance","nbGARCH",122,0.95,"controls","total",45.6490828095375,13,100,"3107.17",3107,NA,577,217,565,566,577,12,NA,NA

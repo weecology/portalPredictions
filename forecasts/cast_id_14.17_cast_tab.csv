@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2019-11-15",10,2019,"abundance","nbsGARCH","controls","SH",0.0619079113549918,0,1,"14.17",1,0.95,14,NA,524,217,524,524,536,0,NA,NA
+"2019-11-15",11,2019,"abundance","nbsGARCH","controls","SH",0.0810286235367546,0,1,"14.17",1,0.95,14,NA,525,217,524,524,536,1,NA,NA
+"2019-11-15",12,2019,"abundance","nbsGARCH","controls","SH",0.104933130432972,0,1,"14.17",1,0.95,14,NA,526,217,524,524,536,2,NA,NA
+"2019-11-15",1,2020,"abundance","nbsGARCH","controls","SH",0.130412312357552,0,1,"14.17",1,0.95,14,NA,527,217,524,524,536,3,NA,NA
+"2019-11-15",2,2020,"abundance","nbsGARCH","controls","SH",0.148624667524914,0,1,"14.17",1,0.95,14,NA,528,217,524,524,536,4,NA,NA
+"2019-11-15",3,2020,"abundance","nbsGARCH","controls","SH",0.149562249897758,0,1,"14.17",1,0.95,14,NA,529,217,524,524,536,5,NA,NA
+"2019-11-15",4,2020,"abundance","nbsGARCH","controls","SH",0.13211394237469,0,1,"14.17",1,0.95,14,NA,530,217,524,524,536,6,NA,NA
+"2019-11-15",5,2020,"abundance","nbsGARCH","controls","SH",0.106308620394323,0,1,"14.17",1,0.95,14,NA,531,217,524,524,536,7,NA,NA
+"2019-11-15",6,2020,"abundance","nbsGARCH","controls","SH",0.0816404485616954,0,1,"14.17",1,0.95,14,NA,532,217,524,524,536,8,NA,NA
+"2019-11-15",7,2020,"abundance","nbsGARCH","controls","SH",0.0646114596885868,0,1,"14.17",1,0.95,14,NA,533,217,524,524,536,9,NA,NA
+"2019-11-15",8,2020,"abundance","nbsGARCH","controls","SH",0.0561243190234157,0,1,"14.17",1,0.95,14,NA,534,217,524,524,536,10,NA,NA
+"2019-11-15",9,2020,"abundance","nbsGARCH","controls","SH",0.0548759934577415,0,1,"14.17",1,0.95,14,NA,535,217,524,524,536,11,NA,NA
+"2019-11-15",10,2020,"abundance","nbsGARCH","controls","SH",0.0606513676148195,0,1,"14.17",1,0.95,14,NA,536,217,524,524,536,12,NA,NA

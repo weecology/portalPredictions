@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2020-03-19",2,2020,"abundance","nbGARCH","exclosures","RO",0.0174745245286116,0,0,"687.16",29,0.95,687,NA,528,217,528,528,540,0,NA,NA
+"2020-03-19",3,2020,"abundance","nbGARCH","exclosures","RO",0.0176068051960121,0,0,"687.16",29,0.95,687,NA,529,217,528,528,540,1,NA,NA
+"2020-03-19",4,2020,"abundance","nbGARCH","exclosures","RO",0.121570850431555,0,1,"687.16",29,0.95,687,NA,530,217,528,528,540,2,NA,NA
+"2020-03-19",5,2020,"abundance","nbGARCH","exclosures","RO",0.126829572919572,0,2,"687.16",29,0.95,687,NA,531,217,528,528,540,3,NA,NA
+"2020-03-19",6,2020,"abundance","nbGARCH","exclosures","RO",0.171850567720819,0,2,"687.16",29,0.95,687,NA,532,217,528,528,540,4,NA,NA
+"2020-03-19",7,2020,"abundance","nbGARCH","exclosures","RO",0.129274103075688,0,1,"687.16",29,0.95,687,NA,533,217,528,528,540,5,NA,NA
+"2020-03-19",8,2020,"abundance","nbGARCH","exclosures","RO",0.172012762386402,0,2,"687.16",29,0.95,687,NA,534,217,528,528,540,6,NA,NA
+"2020-03-19",9,2020,"abundance","nbGARCH","exclosures","RO",0.0956074272519822,0,1,"687.16",29,0.95,687,NA,535,217,528,528,540,7,NA,NA
+"2020-03-19",10,2020,"abundance","nbGARCH","exclosures","RO",0.27386824474038,0,3,"687.16",29,0.95,687,NA,536,217,528,528,540,8,NA,NA
+"2020-03-19",11,2020,"abundance","nbGARCH","exclosures","RO",0.292443684962356,0,3,"687.16",29,0.95,687,NA,537,217,528,528,540,9,NA,NA
+"2020-03-19",12,2020,"abundance","nbGARCH","exclosures","RO",0.246673306672943,0,2,"687.16",29,0.95,687,NA,538,217,528,528,540,10,NA,NA
+"2020-03-19",1,2021,"abundance","nbGARCH","exclosures","RO",0.214247801248544,0,2,"687.16",29,0.95,687,NA,539,217,528,528,540,11,NA,NA
+"2020-03-19",2,2021,"abundance","nbGARCH","exclosures","RO",0.177532100266219,0,1,"687.16",29,0.95,687,NA,540,217,528,528,540,12,NA,NA

@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2019-11-21",10,2019,"abundance","pevGARCH","all","total",126.436871923949,106,149,"40.21",2,0.95,40,NA,524,217,524,524,536,0,NA,NA
+"2019-11-21",11,2019,"abundance","pevGARCH","all","total",133.737760131056,105,165,"40.21",2,0.95,40,NA,525,217,524,524,536,1,NA,NA
+"2019-11-21",12,2019,"abundance","pevGARCH","all","total",134.661499715533,103,169,"40.21",2,0.95,40,NA,526,217,524,524,536,2,NA,NA
+"2019-11-21",1,2020,"abundance","pevGARCH","all","total",143.601618617143,106,184,"40.21",2,0.95,40,NA,527,217,524,524,536,3,NA,NA
+"2019-11-21",2,2020,"abundance","pevGARCH","all","total",156.280970690183,115,200,"40.21",2,0.95,40,NA,528,217,524,524,536,4,NA,NA
+"2019-11-21",3,2020,"abundance","pevGARCH","all","total",176.131499393245,126,227,"40.21",2,0.95,40,NA,529,217,524,524,536,5,NA,NA
+"2019-11-21",4,2020,"abundance","pevGARCH","all","total",181.334472128392,131,233,"40.21",2,0.95,40,NA,530,217,524,524,536,6,NA,NA
+"2019-11-21",5,2020,"abundance","pevGARCH","all","total",194.635079709805,142,251,"40.21",2,0.95,40,NA,531,217,524,524,536,7,NA,NA
+"2019-11-21",6,2020,"abundance","pevGARCH","all","total",229.410989667778,164,290,"40.21",2,0.95,40,NA,532,217,524,524,536,8,NA,NA
+"2019-11-21",7,2020,"abundance","pevGARCH","all","total",263.428639182665,196,338,"40.21",2,0.95,40,NA,533,217,524,524,536,9,NA,NA
+"2019-11-21",8,2020,"abundance","pevGARCH","all","total",276.352363625598,210,349,"40.21",2,0.95,40,NA,534,217,524,524,536,10,NA,NA
+"2019-11-21",9,2020,"abundance","pevGARCH","all","total",274.992219530399,212,342,"40.21",2,0.95,40,NA,535,217,524,524,536,11,NA,NA
+"2019-11-21",10,2020,"abundance","pevGARCH","all","total",269.270250766572,209,327,"40.21",2,0.95,40,NA,536,217,524,524,536,12,NA,NA

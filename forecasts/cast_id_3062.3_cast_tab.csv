@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","cast_group","confidence_level","dataset","species","estimate","lower_pi","upper_pi","cast_id","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2023-02-23",2,2023,"abundance","nbGARCH",120,0.95,"exclosures","DO",0.280559691919498,0,2,"3062.3",3062,NA,565,217,565,565,577,0,NA,NA
+"2023-02-23",3,2023,"abundance","nbGARCH",120,0.95,"exclosures","DO",0.358941514155049,0,2,"3062.3",3062,NA,566,217,565,565,577,1,NA,NA
+"2023-02-23",4,2023,"abundance","nbGARCH",120,0.95,"exclosures","DO",0.380775080273808,0,2,"3062.3",3062,NA,567,217,565,565,577,2,NA,NA
+"2023-02-23",5,2023,"abundance","nbGARCH",120,0.95,"exclosures","DO",0.386922957784009,0,2,"3062.3",3062,NA,568,217,565,565,577,3,NA,NA
+"2023-02-23",6,2023,"abundance","nbGARCH",120,0.95,"exclosures","DO",0.388639272456494,0,2,"3062.3",3062,NA,569,217,565,565,577,4,NA,NA
+"2023-02-23",7,2023,"abundance","nbGARCH",120,0.95,"exclosures","DO",0.389209833291446,0,2,"3062.3",3062,NA,570,217,565,565,577,5,NA,NA
+"2023-02-23",8,2023,"abundance","nbGARCH",120,0.95,"exclosures","DO",0.389369153087965,0,2,"3062.3",3062,NA,571,217,565,565,577,6,NA,NA
+"2023-02-23",9,2023,"abundance","nbGARCH",120,0.95,"exclosures","DO",0.389413640495939,0,2,"3062.3",3062,NA,572,217,565,565,577,7,NA,NA
+"2023-02-23",10,2023,"abundance","nbGARCH",120,0.95,"exclosures","DO",0.38942606286258,0,2,"3062.3",3062,NA,573,217,565,565,577,8,NA,NA
+"2023-02-23",11,2023,"abundance","nbGARCH",120,0.95,"exclosures","DO",0.389429531600999,0,2,"3062.3",3062,NA,574,217,565,565,577,9,NA,NA
+"2023-02-23",12,2023,"abundance","nbGARCH",120,0.95,"exclosures","DO",0.38943050018825,0,2,"3062.3",3062,NA,575,217,565,565,577,10,NA,NA
+"2023-02-23",1,2024,"abundance","nbGARCH",120,0.95,"exclosures","DO",0.389430819974044,0,2,"3062.3",3062,NA,576,217,565,565,577,11,NA,NA
+"2023-02-23",2,2024,"abundance","nbGARCH",120,0.95,"exclosures","DO",0.389430891064874,0,2,"3062.3",3062,NA,577,217,565,565,577,12,NA,NA

@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","cast_group","confidence_level","estimate","lower_pi","upper_pi","cast_id","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2023-02-23",2,2023,"abundance","pevGARCH","controls","PP",120,0.95,2.1286667555792,0,5,"3067.12",3067,NA,565,217,565,565,577,0,NA,NA
+"2023-02-23",3,2023,"abundance","pevGARCH","controls","PP",120,0.95,5.77874487119003,1,12,"3067.12",3067,NA,566,217,565,565,577,1,NA,NA
+"2023-02-23",4,2023,"abundance","pevGARCH","controls","PP",120,0.95,10.5249703029729,2,21,"3067.12",3067,NA,567,217,565,565,577,2,NA,NA
+"2023-02-23",5,2023,"abundance","pevGARCH","controls","PP",120,0.95,17.6084791885449,4,33,"3067.12",3067,NA,568,217,565,565,577,3,NA,NA
+"2023-02-23",6,2023,"abundance","pevGARCH","controls","PP",120,0.95,25.1541843195192,7,43,"3067.12",3067,NA,569,217,565,565,577,4,NA,NA
+"2023-02-23",7,2023,"abundance","pevGARCH","controls","PP",120,0.95,32.9090068783017,12,56,"3067.12",3067,NA,570,217,565,565,577,5,NA,NA
+"2023-02-23",8,2023,"abundance","pevGARCH","controls","PP",120,0.95,44.815315474635,18,72,"3067.12",3067,NA,571,217,565,565,577,6,NA,NA
+"2023-02-23",9,2023,"abundance","pevGARCH","controls","PP",120,0.95,57.0434585132423,25,86,"3067.12",3067,NA,572,217,565,565,577,7,NA,NA
+"2023-02-23",10,2023,"abundance","pevGARCH","controls","PP",120,0.95,57.2495582228775,28,83,"3067.12",3067,NA,573,217,565,565,577,8,NA,NA
+"2023-02-23",11,2023,"abundance","pevGARCH","controls","PP",120,0.95,60.5615821794147,30,89,"3067.12",3067,NA,574,217,565,565,577,9,NA,NA
+"2023-02-23",12,2023,"abundance","pevGARCH","controls","PP",120,0.95,47.9097621415818,24,70,"3067.12",3067,NA,575,217,565,565,577,10,NA,NA
+"2023-02-23",1,2024,"abundance","pevGARCH","controls","PP",120,0.95,37.8265509736933,18,58,"3067.12",3067,NA,576,217,565,565,577,11,NA,NA
+"2023-02-23",2,2024,"abundance","pevGARCH","controls","PP",120,0.95,26.2827044807132,12,41,"3067.12",3067,NA,577,217,565,565,577,12,NA,NA

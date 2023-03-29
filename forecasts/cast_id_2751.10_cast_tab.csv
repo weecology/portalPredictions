@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","cast_group","confidence_level","dataset","species","estimate","lower_pi","upper_pi","cast_id","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2022-08-04",7,2022,"abundance","nbsGARCH",106,0.95,"controls","PF",0.438756578588941,0,2,"2751.10",2751,NA,558,217,558,558,570,0,NA,NA
+"2022-08-04",8,2022,"abundance","nbsGARCH",106,0.95,"controls","PF",0.59796689149351,0,3,"2751.10",2751,NA,559,217,558,558,570,1,NA,NA
+"2022-08-04",9,2022,"abundance","nbsGARCH",106,0.95,"controls","PF",0.611103691517526,0,4,"2751.10",2751,NA,560,217,558,558,570,2,NA,NA
+"2022-08-04",10,2022,"abundance","nbsGARCH",106,0.95,"controls","PF",0.564638635474338,0,3,"2751.10",2751,NA,561,217,558,558,570,3,NA,NA
+"2022-08-04",11,2022,"abundance","nbsGARCH",106,0.95,"controls","PF",0.509783745471503,0,3,"2751.10",2751,NA,562,217,558,558,570,4,NA,NA
+"2022-08-04",12,2022,"abundance","nbsGARCH",106,0.95,"controls","PF",0.474105514717316,0,3,"2751.10",2751,NA,563,217,558,558,570,5,NA,NA
+"2022-08-04",1,2023,"abundance","nbsGARCH",106,0.95,"controls","PF",0.465870176702426,0,3,"2751.10",2751,NA,564,217,558,558,570,6,NA,NA
+"2022-08-04",2,2023,"abundance","nbsGARCH",106,0.95,"controls","PF",0.487008359589096,0,3,"2751.10",2751,NA,565,217,558,558,570,7,NA,NA
+"2022-08-04",3,2023,"abundance","nbsGARCH",106,0.95,"controls","PF",0.533640609451865,0,3,"2751.10",2751,NA,566,217,558,558,570,8,NA,NA
+"2022-08-04",4,2023,"abundance","nbsGARCH",106,0.95,"controls","PF",0.602194712575312,0,3,"2751.10",2751,NA,567,217,558,558,570,9,NA,NA
+"2022-08-04",5,2023,"abundance","nbsGARCH",106,0.95,"controls","PF",0.678409701201146,0,3,"2751.10",2751,NA,568,217,558,558,570,10,NA,NA
+"2022-08-04",6,2023,"abundance","nbsGARCH",106,0.95,"controls","PF",0.743393044102804,0,4,"2751.10",2751,NA,569,217,558,558,570,11,NA,NA
+"2022-08-04",7,2023,"abundance","nbsGARCH",106,0.95,"controls","PF",0.773364359756124,0,5,"2751.10",2751,NA,570,217,558,558,570,12,NA,NA

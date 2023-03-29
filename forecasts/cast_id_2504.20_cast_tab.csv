@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","cast_group","confidence_level","dataset","species","estimate","lower_pi","upper_pi","cast_id","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2022-05-19",4,2022,"abundance","nbsGARCH",95,0.95,"all","SO",5.2158628755155e-05,0,0,"2504.20",2504,NA,555,217,555,555,567,0,NA,NA
+"2022-05-19",5,2022,"abundance","nbsGARCH",95,0.95,"all","SO",0.0343880340125582,0,1,"2504.20",2504,NA,556,217,555,555,567,1,NA,NA
+"2022-05-19",6,2022,"abundance","nbsGARCH",95,0.95,"all","SO",0.058030633280027,0,1,"2504.20",2504,NA,557,217,555,555,567,2,NA,NA
+"2022-05-19",7,2022,"abundance","nbsGARCH",95,0.95,"all","SO",4.2579823187789e-05,0,0,"2504.20",2504,NA,558,217,555,555,567,3,NA,NA
+"2022-05-19",8,2022,"abundance","nbsGARCH",95,0.95,"all","SO",1.09560722237509e-09,0,0,"2504.20",2504,NA,559,217,555,555,567,4,NA,NA
+"2022-05-19",9,2022,"abundance","nbsGARCH",95,0.95,"all","SO",1.10575101422758e-16,0,0,"2504.20",2504,NA,560,217,555,555,567,5,NA,NA
+"2022-05-19",10,2022,"abundance","nbsGARCH",95,0.95,"all","SO",3.44815980452329e-21,0,0,"2504.20",2504,NA,561,217,555,555,567,6,NA,NA
+"2022-05-19",11,2022,"abundance","nbsGARCH",95,0.95,"all","SO",4.10091012263634e-26,0,0,"2504.20",2504,NA,562,217,555,555,567,7,NA,NA
+"2022-05-19",12,2022,"abundance","nbsGARCH",95,0.95,"all","SO",2.61482788627391e-25,0,0,"2504.20",2504,NA,563,217,555,555,567,8,NA,NA
+"2022-05-19",1,2023,"abundance","nbsGARCH",95,0.95,"all","SO",1.44819549357946e-23,0,0,"2504.20",2504,NA,564,217,555,555,567,9,NA,NA
+"2022-05-19",2,2023,"abundance","nbsGARCH",95,0.95,"all","SO",4.66123361735094e-09,0,0,"2504.20",2504,NA,565,217,555,555,567,10,NA,NA
+"2022-05-19",3,2023,"abundance","nbsGARCH",95,0.95,"all","SO",5.57764508044473e-22,0,0,"2504.20",2504,NA,566,217,555,555,567,11,NA,NA
+"2022-05-19",4,2023,"abundance","nbsGARCH",95,0.95,"all","SO",1.44460307063463e-22,0,0,"2504.20",2504,NA,567,217,555,555,567,12,NA,NA

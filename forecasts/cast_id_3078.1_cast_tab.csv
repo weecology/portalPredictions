@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_group","confidence_level","cast_id","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2023-03-02",2,2023,"abundance","jags_logistic","controls","DM",18.531,13.365,24.42,121,0.95,"3078.1",3078,NA,565,217,565,565,577,0,NA,NA
+"2023-03-02",3,2023,"abundance","jags_logistic","controls","DM",18.461,11.69,25.753,121,0.95,"3078.1",3078,NA,566,217,565,565,577,1,NA,NA
+"2023-03-02",4,2023,"abundance","jags_logistic","controls","DM",18.394,10.724,27.008,121,0.95,"3078.1",3078,NA,567,217,565,565,577,2,NA,NA
+"2023-03-02",5,2023,"abundance","jags_logistic","controls","DM",18.298,9.946,27.472,121,0.95,"3078.1",3078,NA,568,217,565,565,577,3,NA,NA
+"2023-03-02",6,2023,"abundance","jags_logistic","controls","DM",18.197,9.449,28.236,121,0.95,"3078.1",3078,NA,569,217,565,565,577,4,NA,NA
+"2023-03-02",7,2023,"abundance","jags_logistic","controls","DM",18.081,9.093,28.552,121,0.95,"3078.1",3078,NA,570,217,565,565,577,5,NA,NA
+"2023-03-02",8,2023,"abundance","jags_logistic","controls","DM",17.991,8.482,28.915,121,0.95,"3078.1",3078,NA,571,217,565,565,577,6,NA,NA
+"2023-03-02",9,2023,"abundance","jags_logistic","controls","DM",17.919,7.993,29.016,121,0.95,"3078.1",3078,NA,572,217,565,565,577,7,NA,NA
+"2023-03-02",10,2023,"abundance","jags_logistic","controls","DM",17.827,8.132,29.521,121,0.95,"3078.1",3078,NA,573,217,565,565,577,8,NA,NA
+"2023-03-02",11,2023,"abundance","jags_logistic","controls","DM",17.76,7.496,29.346,121,0.95,"3078.1",3078,NA,574,217,565,565,577,9,NA,NA
+"2023-03-02",12,2023,"abundance","jags_logistic","controls","DM",17.705,7.383,29.691,121,0.95,"3078.1",3078,NA,575,217,565,565,577,10,NA,NA
+"2023-03-02",1,2024,"abundance","jags_logistic","controls","DM",17.628,7.138,29.602,121,0.95,"3078.1",3078,NA,576,217,565,565,577,11,NA,NA
+"2023-03-02",2,2024,"abundance","jags_logistic","controls","DM",17.566,7.158,30.019,121,0.95,"3078.1",3078,NA,577,217,565,565,577,12,NA,NA

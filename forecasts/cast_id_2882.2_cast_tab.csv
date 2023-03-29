@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","cast_group","confidence_level","dataset","species","estimate","lower_pi","upper_pi","cast_id","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2022-09-15",8,2022,"abundance","nbsGARCH",112,0.95,"all","DM",31.4654375078172,20,44,"2882.2",2882,NA,559,217,559,559,571,0,NA,NA
+"2022-09-15",9,2022,"abundance","nbsGARCH",112,0.95,"all","DM",31.6686763017449,17,49,"2882.2",2882,NA,560,217,559,559,571,1,NA,NA
+"2022-09-15",10,2022,"abundance","nbsGARCH",112,0.95,"all","DM",33.3950908772278,16,55,"2882.2",2882,NA,561,217,559,559,571,2,NA,NA
+"2022-09-15",11,2022,"abundance","nbsGARCH",112,0.95,"all","DM",36.3759853554515,16,61,"2882.2",2882,NA,562,217,559,559,571,3,NA,NA
+"2022-09-15",12,2022,"abundance","nbsGARCH",112,0.95,"all","DM",39.7815274218373,15,67,"2882.2",2882,NA,563,217,559,559,571,4,NA,NA
+"2022-09-15",1,2023,"abundance","nbsGARCH",112,0.95,"all","DM",42.5963506357981,16,74,"2882.2",2882,NA,564,217,559,559,571,5,NA,NA
+"2022-09-15",2,2023,"abundance","nbsGARCH",112,0.95,"all","DM",43.9524354083069,17,74,"2882.2",2882,NA,565,217,559,559,571,6,NA,NA
+"2022-09-15",3,2023,"abundance","nbsGARCH",112,0.95,"all","DM",43.3472034158169,16,76,"2882.2",2882,NA,566,217,559,559,571,7,NA,NA
+"2022-09-15",4,2023,"abundance","nbsGARCH",112,0.95,"all","DM",40.8068027434249,16,72,"2882.2",2882,NA,567,217,559,559,571,8,NA,NA
+"2022-09-15",5,2023,"abundance","nbsGARCH",112,0.95,"all","DM",37.2608522943731,14,65,"2882.2",2882,NA,568,217,559,559,571,9,NA,NA
+"2022-09-15",6,2023,"abundance","nbsGARCH",112,0.95,"all","DM",33.7460699583419,11,62,"2882.2",2882,NA,569,217,559,559,571,10,NA,NA
+"2022-09-15",7,2023,"abundance","nbsGARCH",112,0.95,"all","DM",31.0786063602526,10,56,"2882.2",2882,NA,570,217,559,559,571,11,NA,NA
+"2022-09-15",8,2023,"abundance","nbsGARCH",112,0.95,"all","DM",29.6843775597711,10,55,"2882.2",2882,NA,571,217,559,559,571,12,NA,NA

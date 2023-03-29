@@ -1,0 +1,15 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2020-04-09",2,2020,"abundance","jags_RW","exclosures","OT",0.201,0,0.716,"735.6",31,0.95,735,NA,528,217,529,528,541,-1,NA,NA
+"2020-04-09",3,2020,"abundance","jags_RW","exclosures","OT",0.253,0,0.979,"735.6",31,0.95,735,NA,529,217,529,528,541,0,NA,NA
+"2020-04-09",4,2020,"abundance","jags_RW","exclosures","OT",0.309,0,1.255,"735.6",31,0.95,735,NA,530,217,529,528,541,1,NA,NA
+"2020-04-09",5,2020,"abundance","jags_RW","exclosures","OT",0.38,0,1.566,"735.6",31,0.95,735,NA,531,217,529,528,541,2,NA,NA
+"2020-04-09",6,2020,"abundance","jags_RW","exclosures","OT",0.461,0,1.924,"735.6",31,0.95,735,NA,532,217,529,528,541,3,NA,NA
+"2020-04-09",7,2020,"abundance","jags_RW","exclosures","OT",0.549,0,2.298,"735.6",31,0.95,735,NA,533,217,529,528,541,4,NA,NA
+"2020-04-09",8,2020,"abundance","jags_RW","exclosures","OT",0.656,0,2.767,"735.6",31,0.95,735,NA,534,217,529,528,541,5,NA,NA
+"2020-04-09",9,2020,"abundance","jags_RW","exclosures","OT",0.762,0,3.226,"735.6",31,0.95,735,NA,535,217,529,528,541,6,NA,NA
+"2020-04-09",10,2020,"abundance","jags_RW","exclosures","OT",0.912,0,3.708,"735.6",31,0.95,735,NA,536,217,529,528,541,7,NA,NA
+"2020-04-09",11,2020,"abundance","jags_RW","exclosures","OT",1.071,0,4.323,"735.6",31,0.95,735,NA,537,217,529,528,541,8,NA,NA
+"2020-04-09",12,2020,"abundance","jags_RW","exclosures","OT",1.227,0,4.877,"735.6",31,0.95,735,NA,538,217,529,528,541,9,NA,NA
+"2020-04-09",1,2021,"abundance","jags_RW","exclosures","OT",1.447,0,5.408,"735.6",31,0.95,735,NA,539,217,529,528,541,10,NA,NA
+"2020-04-09",2,2021,"abundance","jags_RW","exclosures","OT",1.644,0,6.101,"735.6",31,0.95,735,NA,540,217,529,528,541,11,NA,NA
+"2020-04-09",3,2021,"abundance","jags_RW","exclosures","OT",1.903,0,7.09,"735.6",31,0.95,735,NA,541,217,529,528,541,12,NA,NA

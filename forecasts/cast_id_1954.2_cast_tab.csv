@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2021-12-16",12,2021,"abundance","nbsGARCH","controls","DM",16.8881504613486,9,25,"1954.2",75,0.95,1954,NA,550,217,550,550,562,0,NA,NA
+"2021-12-16",1,2022,"abundance","nbsGARCH","controls","DM",17.9310846153079,8,30,"1954.2",75,0.95,1954,NA,551,217,550,550,562,1,NA,NA
+"2021-12-16",2,2022,"abundance","nbsGARCH","controls","DM",18.7832830236468,7,32,"1954.2",75,0.95,1954,NA,552,217,550,550,562,2,NA,NA
+"2021-12-16",3,2022,"abundance","nbsGARCH","controls","DM",19.1247825162062,7,34,"1954.2",75,0.95,1954,NA,553,217,550,550,562,3,NA,NA
+"2021-12-16",4,2022,"abundance","nbsGARCH","controls","DM",18.7663516706752,7,34,"1954.2",75,0.95,1954,NA,554,217,550,550,562,4,NA,NA
+"2021-12-16",4,2022,"abundance","nbsGARCH","controls","DM",17.8030111249591,6,32,"1954.2",75,0.95,1954,NA,555,217,550,550,562,5,NA,NA
+"2021-12-16",5,2022,"abundance","nbsGARCH","controls","DM",16.5017990420983,5,32,"1954.2",75,0.95,1954,NA,556,217,550,550,562,6,NA,NA
+"2021-12-16",6,2022,"abundance","nbsGARCH","controls","DM",15.227942257242,4,29,"1954.2",75,0.95,1954,NA,557,217,550,550,562,7,NA,NA
+"2021-12-16",7,2022,"abundance","nbsGARCH","controls","DM",14.2448630562328,3,28,"1954.2",75,0.95,1954,NA,558,217,550,550,562,8,NA,NA
+"2021-12-16",8,2022,"abundance","nbsGARCH","controls","DM",13.7310661867032,3,26,"1954.2",75,0.95,1954,NA,559,217,550,550,562,9,NA,NA
+"2021-12-16",9,2022,"abundance","nbsGARCH","controls","DM",13.765861386775,3,27,"1954.2",75,0.95,1954,NA,560,217,550,550,562,10,NA,NA
+"2021-12-16",10,2022,"abundance","nbsGARCH","controls","DM",14.3135428783257,3,28,"1954.2",75,0.95,1954,NA,561,217,550,550,562,11,NA,NA
+"2021-12-16",11,2022,"abundance","nbsGARCH","controls","DM",15.2759110208367,3,29,"1954.2",75,0.95,1954,NA,562,217,550,550,562,12,NA,NA

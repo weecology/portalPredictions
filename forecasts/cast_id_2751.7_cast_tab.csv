@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","cast_group","confidence_level","dataset","species","estimate","lower_pi","upper_pi","cast_id","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2022-08-04",7,2022,"abundance","nbsGARCH",106,0.95,"controls","OT",0.765645816876295,0,3,"2751.7",2751,NA,558,217,558,558,570,0,NA,NA
+"2022-08-04",8,2022,"abundance","nbsGARCH",106,0.95,"controls","OT",1.37596035005228,0,5,"2751.7",2751,NA,559,217,558,558,570,1,NA,NA
+"2022-08-04",9,2022,"abundance","nbsGARCH",106,0.95,"controls","OT",1.86572767698659,0,7,"2751.7",2751,NA,560,217,558,558,570,2,NA,NA
+"2022-08-04",10,2022,"abundance","nbsGARCH",106,0.95,"controls","OT",2.21291235669141,0,7,"2751.7",2751,NA,561,217,558,558,570,3,NA,NA
+"2022-08-04",11,2022,"abundance","nbsGARCH",106,0.95,"controls","OT",2.38002156760274,0,8,"2751.7",2751,NA,562,217,558,558,570,4,NA,NA
+"2022-08-04",12,2022,"abundance","nbsGARCH",106,0.95,"controls","OT",2.41775007482847,0,8,"2751.7",2751,NA,563,217,558,558,570,5,NA,NA
+"2022-08-04",1,2023,"abundance","nbsGARCH",106,0.95,"controls","OT",2.32806007034741,0,8,"2751.7",2751,NA,564,217,558,558,570,6,NA,NA
+"2022-08-04",2,2023,"abundance","nbsGARCH",106,0.95,"controls","OT",2.13538491428797,0,7,"2751.7",2751,NA,565,217,558,558,570,7,NA,NA
+"2022-08-04",3,2023,"abundance","nbsGARCH",106,0.95,"controls","OT",1.92786609210629,0,7,"2751.7",2751,NA,566,217,558,558,570,8,NA,NA
+"2022-08-04",4,2023,"abundance","nbsGARCH",106,0.95,"controls","OT",1.84790148109569,0,6,"2751.7",2751,NA,567,217,558,558,570,9,NA,NA
+"2022-08-04",5,2023,"abundance","nbsGARCH",106,0.95,"controls","OT",1.85498891037857,0,7,"2751.7",2751,NA,568,217,558,558,570,10,NA,NA
+"2022-08-04",6,2023,"abundance","nbsGARCH",106,0.95,"controls","OT",1.92038155352614,0,6,"2751.7",2751,NA,569,217,558,558,570,11,NA,NA
+"2022-08-04",7,2023,"abundance","nbsGARCH",106,0.95,"controls","OT",2.07870440921003,0,8,"2751.7",2751,NA,570,217,558,558,570,12,NA,NA

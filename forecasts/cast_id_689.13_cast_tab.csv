@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2020-03-19",2,2020,"abundance","nbsGARCH","controls","PP",1.13933780965303,0,4,"689.13",29,0.95,689,NA,528,217,528,528,540,0,NA,NA
+"2020-03-19",3,2020,"abundance","nbsGARCH","controls","PP",2.64525504171749,0,10,"689.13",29,0.95,689,NA,529,217,528,528,540,1,NA,NA
+"2020-03-19",4,2020,"abundance","nbsGARCH","controls","PP",5.19811201298833,0,23,"689.13",29,0.95,689,NA,530,217,528,528,540,2,NA,NA
+"2020-03-19",5,2020,"abundance","nbsGARCH","controls","PP",8.53150707008052,0,34,"689.13",29,0.95,689,NA,531,217,528,528,540,3,NA,NA
+"2020-03-19",6,2020,"abundance","nbsGARCH","controls","PP",11.8554281676009,0,48,"689.13",29,0.95,689,NA,532,217,528,528,540,4,NA,NA
+"2020-03-19",7,2020,"abundance","nbsGARCH","controls","PP",13.897958291512,0,61,"689.13",29,0.95,689,NA,533,217,528,528,540,5,NA,NA
+"2020-03-19",8,2020,"abundance","nbsGARCH","controls","PP",13.3511351924943,0,52,"689.13",29,0.95,689,NA,534,217,528,528,540,6,NA,NA
+"2020-03-19",9,2020,"abundance","nbsGARCH","controls","PP",10.9286359705551,0,46,"689.13",29,0.95,689,NA,535,217,528,528,540,7,NA,NA
+"2020-03-19",10,2020,"abundance","nbsGARCH","controls","PP",8.19045863539392,0,34,"689.13",29,0.95,689,NA,536,217,528,528,540,8,NA,NA
+"2020-03-19",11,2020,"abundance","nbsGARCH","controls","PP",5.78026213953705,0,26,"689.13",29,0.95,689,NA,537,217,528,528,540,9,NA,NA
+"2020-03-19",12,2020,"abundance","nbsGARCH","controls","PP",4.36212820209927,0,18,"689.13",29,0.95,689,NA,538,217,528,528,540,10,NA,NA
+"2020-03-19",1,2021,"abundance","nbsGARCH","controls","PP",3.717838163165,0,17,"689.13",29,0.95,689,NA,539,217,528,528,540,11,NA,NA
+"2020-03-19",2,2021,"abundance","nbsGARCH","controls","PP",3.96385413682865,0,16,"689.13",29,0.95,689,NA,540,217,528,528,540,12,NA,NA

@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2020-01-31",1,2020,"abundance","nbsGARCH","exclosures","PP",0.919094739041394,0,3,"456.13",20,0.95,456,NA,527,217,527,527,539,0,NA,NA
+"2020-01-31",2,2020,"abundance","nbsGARCH","exclosures","PP",2.00269783096715,0,7,"456.13",20,0.95,456,NA,528,217,527,527,539,1,NA,NA
+"2020-01-31",3,2020,"abundance","nbsGARCH","exclosures","PP",3.59162227303341,0,14,"456.13",20,0.95,456,NA,529,217,527,527,539,2,NA,NA
+"2020-01-31",4,2020,"abundance","nbsGARCH","exclosures","PP",6.29536408454072,0,23,"456.13",20,0.95,456,NA,530,217,527,527,539,3,NA,NA
+"2020-01-31",5,2020,"abundance","nbsGARCH","exclosures","PP",9.99693428479859,0,38,"456.13",20,0.95,456,NA,531,217,527,527,539,4,NA,NA
+"2020-01-31",6,2020,"abundance","nbsGARCH","exclosures","PP",14.1306619638377,0,57,"456.13",20,0.95,456,NA,532,217,527,527,539,5,NA,NA
+"2020-01-31",7,2020,"abundance","nbsGARCH","exclosures","PP",16.7923737493373,1,60,"456.13",20,0.95,456,NA,533,217,527,527,539,6,NA,NA
+"2020-01-31",8,2020,"abundance","nbsGARCH","exclosures","PP",16.3666428208075,1,54,"456.13",20,0.95,456,NA,534,217,527,527,539,7,NA,NA
+"2020-01-31",9,2020,"abundance","nbsGARCH","exclosures","PP",13.1524279334352,0,46,"456.13",20,0.95,456,NA,535,217,527,527,539,8,NA,NA
+"2020-01-31",10,2020,"abundance","nbsGARCH","exclosures","PP",9.36173487434877,0,34,"456.13",20,0.95,456,NA,536,217,527,527,539,9,NA,NA
+"2020-01-31",11,2020,"abundance","nbsGARCH","exclosures","PP",6.28220882930889,0,24,"456.13",20,0.95,456,NA,537,217,527,527,539,10,NA,NA
+"2020-01-31",12,2020,"abundance","nbsGARCH","exclosures","PP",4.39847328215122,0,15,"456.13",20,0.95,456,NA,538,217,527,527,539,11,NA,NA
+"2020-01-31",1,2021,"abundance","nbsGARCH","exclosures","PP",3.75322586705361,0,15,"456.13",20,0.95,456,NA,539,217,527,527,539,12,NA,NA

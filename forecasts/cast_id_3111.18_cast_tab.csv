@@ -1,0 +1,13 @@
+"cast_date","cast_month","cast_year","currency","model","cast_group","confidence_level","dataset","species","estimate","lower_pi","upper_pi","cast_id","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2023-03-09",3,2023,"abundance","nbsGARCH",122,0.95,"exclosures","total",35.8377915489675,17,61,"3111.18",3111,NA,566,217,565,566,577,1,NA,NA
+"2023-03-09",4,2023,"abundance","nbsGARCH",122,0.95,"exclosures","total",40.7103901071248,13,79,"3111.18",3111,NA,567,217,565,566,577,2,NA,NA
+"2023-03-09",5,2023,"abundance","nbsGARCH",122,0.95,"exclosures","total",46.3798849717135,14,100,"3111.18",3111,NA,568,217,565,566,577,3,NA,NA
+"2023-03-09",6,2023,"abundance","nbsGARCH",122,0.95,"exclosures","total",50.8874333304006,15,118,"3111.18",3111,NA,569,217,565,566,577,4,NA,NA
+"2023-03-09",7,2023,"abundance","nbsGARCH",122,0.95,"exclosures","total",52.2616684383421,14,122,"3111.18",3111,NA,570,217,565,566,577,5,NA,NA
+"2023-03-09",8,2023,"abundance","nbsGARCH",122,0.95,"exclosures","total",49.4294763507152,12,114,"3111.18",3111,NA,571,217,565,566,577,6,NA,NA
+"2023-03-09",9,2023,"abundance","nbsGARCH",122,0.95,"exclosures","total",43.5810309449011,9,100,"3111.18",3111,NA,572,217,565,566,577,7,NA,NA
+"2023-03-09",10,2023,"abundance","nbsGARCH",122,0.95,"exclosures","total",36.7056855471089,7,97,"3111.18",3111,NA,573,217,565,566,577,8,NA,NA
+"2023-03-09",11,2023,"abundance","nbsGARCH",122,0.95,"exclosures","total",30.7555808891471,6,79,"3111.18",3111,NA,574,217,565,566,577,9,NA,NA
+"2023-03-09",12,2023,"abundance","nbsGARCH",122,0.95,"exclosures","total",26.7267734474769,5,70,"3111.18",3111,NA,575,217,565,566,577,10,NA,NA
+"2023-03-09",1,2024,"abundance","nbsGARCH",122,0.95,"exclosures","total",24.8501105320246,4,66,"3111.18",3111,NA,576,217,565,566,577,11,NA,NA
+"2023-03-09",2,2024,"abundance","nbsGARCH",122,0.95,"exclosures","total",25.1514767175893,4,64,"3111.18",3111,NA,577,217,565,566,577,12,NA,NA

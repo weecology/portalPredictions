@@ -1,0 +1,15 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2019-12-05",10,2019,"abundance","jags_RW","controls","NA",0.015,0,0.095,"119.5",6,0.95,119,NA,524,217,525,524,537,-1,NA,NA
+"2019-12-05",11,2019,"abundance","jags_RW","controls","NA",0.021,0,0.13,"119.5",6,0.95,119,NA,525,217,525,524,537,0,NA,NA
+"2019-12-05",12,2019,"abundance","jags_RW","controls","NA",0.027,0,0.154,"119.5",6,0.95,119,NA,526,217,525,524,537,1,NA,NA
+"2019-12-05",1,2020,"abundance","jags_RW","controls","NA",0.034,0,0.189,"119.5",6,0.95,119,NA,527,217,525,524,537,2,NA,NA
+"2019-12-05",2,2020,"abundance","jags_RW","controls","NA",0.043,0,0.223,"119.5",6,0.95,119,NA,528,217,525,524,537,3,NA,NA
+"2019-12-05",3,2020,"abundance","jags_RW","controls","NA",0.054,0,0.255,"119.5",6,0.95,119,NA,529,217,525,524,537,4,NA,NA
+"2019-12-05",4,2020,"abundance","jags_RW","controls","NA",0.067,0,0.288,"119.5",6,0.95,119,NA,530,217,525,524,537,5,NA,NA
+"2019-12-05",5,2020,"abundance","jags_RW","controls","NA",0.082,0,0.32,"119.5",6,0.95,119,NA,531,217,525,524,537,6,NA,NA
+"2019-12-05",6,2020,"abundance","jags_RW","controls","NA",0.092,0,0.351,"119.5",6,0.95,119,NA,532,217,525,524,537,7,NA,NA
+"2019-12-05",7,2020,"abundance","jags_RW","controls","NA",0.108,0,0.388,"119.5",6,0.95,119,NA,533,217,525,524,537,8,NA,NA
+"2019-12-05",8,2020,"abundance","jags_RW","controls","NA",0.129,0,0.425,"119.5",6,0.95,119,NA,534,217,525,524,537,9,NA,NA
+"2019-12-05",9,2020,"abundance","jags_RW","controls","NA",0.164,0,0.47,"119.5",6,0.95,119,NA,535,217,525,524,537,10,NA,NA
+"2019-12-05",10,2020,"abundance","jags_RW","controls","NA",0.186,0,0.515,"119.5",6,0.95,119,NA,536,217,525,524,537,11,NA,NA
+"2019-12-05",11,2020,"abundance","jags_RW","controls","NA",0.235,0,0.585,"119.5",6,0.95,119,NA,537,217,525,524,537,12,NA,NA

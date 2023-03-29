@@ -1,0 +1,153 @@
+cast_group: 110.0
+cast_type: forecast
+models: pevGARCH
+datasets: dm_controls
+dataset_controls:
+  metadata:
+    name: dm_controls
+    descriptor: DM only, control plots combined
+    text: Dipodomys merriami only summed across control plots at the newmoon.
+  fun: prep_dataset
+  args:
+    name: dm_controls
+    species: DM
+    total: no
+    clean: no
+    type: Rodents
+    level: Treatment
+    plots: Longterm
+    treatment: control
+    min_plots: 24.0
+    min_traps: 1.0
+    output: abundance
+    fillweight: no
+    unknowns: no
+    time: newmoon
+    na_drop: no
+    zero_drop: yes
+    effort: yes
+    filename: rodents_dm_controls.csv
+time:
+  start_moon: 217.0
+  end_moon: 559
+  last_moon: 559
+  cast_date: '2022-09-01'
+  lead_time: 12.0
+  covariate_cast_moons:
+  - 560
+  - 561
+  - 562
+  - 563
+  - 564
+  - 565
+  - 566
+  - 567
+  - 568
+  - 569
+  - 570
+  - 571
+  covariate_cast_months:
+  - 9.0
+  - 10.0
+  - 11.0
+  - 12.0
+  - 1.0
+  - 2.0
+  - 3.0
+  - 4.0
+  - 5.0
+  - 6.0
+  - 7.0
+  - 8.0
+  covariate_cast_years:
+  - 2022.0
+  - 2022.0
+  - 2022.0
+  - 2022.0
+  - 2023.0
+  - 2023.0
+  - 2023.0
+  - 2023.0
+  - 2023.0
+  - 2023.0
+  - 2023.0
+  - 2023.0
+  rodent_cast_moons:
+  - 559
+  - 560
+  - 561
+  - 562
+  - 563
+  - 564
+  - 565
+  - 566
+  - 567
+  - 568
+  - 569
+  - 570
+  - 571
+  rodent_cast_months:
+  - 8.0
+  - 9.0
+  - 10.0
+  - 11.0
+  - 12.0
+  - 1.0
+  - 2.0
+  - 3.0
+  - 4.0
+  - 5.0
+  - 6.0
+  - 7.0
+  - 8.0
+  rodent_cast_years:
+  - 2022.0
+  - 2022.0
+  - 2022.0
+  - 2022.0
+  - 2022.0
+  - 2023.0
+  - 2023.0
+  - 2023.0
+  - 2023.0
+  - 2023.0
+  - 2023.0
+  - 2023.0
+  - 2023.0
+confidence_level: 0.95
+directory_configuration:
+  setup:
+    date: '2022-09-01'
+    R_version:
+      platform: x86_64-pc-linux-gnu
+      arch: x86_64
+      os: linux-gnu
+      system: x86_64, linux-gnu
+      status: ''
+      major: '4'
+      minor: '2.0'
+      year: '2022'
+      month: '04'
+      day: '22'
+      svn rev: '82229'
+      language: R
+      version.string: R version 4.2.0 (2022-04-22)
+      nickname: Vigorous Calisthenics
+    portalcasting_version: 0.43.0
+  tree:
+    main: '.'
+    subs:
+      forecasts: casts
+      fits: fits
+      models: models
+      resources: raw
+      data: data
+  raw:
+    PortalData_version: 3.118.0
+    archive_version: latest
+    climate_forecast_version: '2022-09-01'
+model: pevGARCH
+dataset: dm_controls
+species: DM
+old_cast_id: 2845
+cast_id: '2845.1'

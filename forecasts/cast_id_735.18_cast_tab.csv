@@ -1,0 +1,15 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2020-04-09",2,2020,"abundance","jags_RW","exclosures","SH",0.011,0,0.043,"735.18",31,0.95,735,NA,528,217,529,528,541,-1,NA,NA
+"2020-04-09",3,2020,"abundance","jags_RW","exclosures","SH",0.02,0,0.066,"735.18",31,0.95,735,NA,529,217,529,528,541,0,NA,NA
+"2020-04-09",4,2020,"abundance","jags_RW","exclosures","SH",0.031,0,0.112,"735.18",31,0.95,735,NA,530,217,529,528,541,1,NA,NA
+"2020-04-09",5,2020,"abundance","jags_RW","exclosures","SH",0.049,0,0.157,"735.18",31,0.95,735,NA,531,217,529,528,541,2,NA,NA
+"2020-04-09",6,2020,"abundance","jags_RW","exclosures","SH",0.097,0,0.218,"735.18",31,0.95,735,NA,532,217,529,528,541,3,NA,NA
+"2020-04-09",7,2020,"abundance","jags_RW","exclosures","SH",0.136,0,0.272,"735.18",31,0.95,735,NA,533,217,529,528,541,4,NA,NA
+"2020-04-09",8,2020,"abundance","jags_RW","exclosures","SH",0.224,0,0.34,"735.18",31,0.95,735,NA,534,217,529,528,541,5,NA,NA
+"2020-04-09",9,2020,"abundance","jags_RW","exclosures","SH",0.312,0,0.422,"735.18",31,0.95,735,NA,535,217,529,528,541,6,NA,NA
+"2020-04-09",10,2020,"abundance","jags_RW","exclosures","SH",0.352,0,0.519,"735.18",31,0.95,735,NA,536,217,529,528,541,7,NA,NA
+"2020-04-09",11,2020,"abundance","jags_RW","exclosures","SH",0.451,0,0.648,"735.18",31,0.95,735,NA,537,217,529,528,541,8,NA,NA
+"2020-04-09",12,2020,"abundance","jags_RW","exclosures","SH",0.565,0,0.802,"735.18",31,0.95,735,NA,538,217,529,528,541,9,NA,NA
+"2020-04-09",1,2021,"abundance","jags_RW","exclosures","SH",0.65,0,0.872,"735.18",31,0.95,735,NA,539,217,529,528,541,10,NA,NA
+"2020-04-09",2,2021,"abundance","jags_RW","exclosures","SH",0.741,0,1.05,"735.18",31,0.95,735,NA,540,217,529,528,541,11,NA,NA
+"2020-04-09",3,2021,"abundance","jags_RW","exclosures","SH",0.91,0,1.227,"735.18",31,0.95,735,NA,541,217,529,528,541,12,NA,NA

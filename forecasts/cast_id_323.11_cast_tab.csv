@@ -1,0 +1,13 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2020-01-16",1,2020,"abundance","NaiveArima","controls","PL",0,-0.335473901946967,0.335473901946967,"323.11",15,0.95,323,NA,527,217,526,527,538,1,NA,NA
+"2020-01-16",2,2020,"abundance","NaiveArima","controls","PL",0,-0.474431741955622,0.474431741955622,"323.11",15,0.95,323,NA,528,217,526,527,538,2,NA,NA
+"2020-01-16",3,2020,"abundance","NaiveArima","controls","PL",0,-0.581057842785526,0.581057842785526,"323.11",15,0.95,323,NA,529,217,526,527,538,3,NA,NA
+"2020-01-16",4,2020,"abundance","NaiveArima","controls","PL",0,-0.670947803893934,0.670947803893934,"323.11",15,0.95,323,NA,530,217,526,527,538,4,NA,NA
+"2020-01-16",5,2020,"abundance","NaiveArima","controls","PL",0,-0.750142449430517,0.750142449430517,"323.11",15,0.95,323,NA,531,217,526,527,538,5,NA,NA
+"2020-01-16",6,2020,"abundance","NaiveArima","controls","PL",0,-0.821739881790545,0.821739881790545,"323.11",15,0.95,323,NA,532,217,526,527,538,6,NA,NA
+"2020-01-16",7,2020,"abundance","NaiveArima","controls","PL",0,-0.887580515904142,0.887580515904142,"323.11",15,0.95,323,NA,533,217,526,527,538,7,NA,NA
+"2020-01-16",8,2020,"abundance","NaiveArima","controls","PL",0,-0.948863483911245,0.948863483911245,"323.11",15,0.95,323,NA,534,217,526,527,538,8,NA,NA
+"2020-01-16",9,2020,"abundance","NaiveArima","controls","PL",0,-1.0064217058409,1.0064217058409,"323.11",15,0.95,323,NA,535,217,526,527,538,9,NA,NA
+"2020-01-16",10,2020,"abundance","NaiveArima","controls","PL",0,-1.06086162569641,1.06086162569641,"323.11",15,0.95,323,NA,536,217,526,527,538,10,NA,NA
+"2020-01-16",11,2020,"abundance","NaiveArima","controls","PL",0,-1.11264105971457,1.11264105971457,"323.11",15,0.95,323,NA,537,217,526,527,538,11,NA,NA
+"2020-01-16",12,2020,"abundance","NaiveArima","controls","PL",0,-1.16211568557105,1.16211568557105,"323.11",15,0.95,323,NA,538,217,526,527,538,12,NA,NA

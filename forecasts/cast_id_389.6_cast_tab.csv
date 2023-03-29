@@ -1,0 +1,13 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2020-01-24",1,2020,"abundance","AutoArima","controls","OL",0,-1.5369277932816,1.5369277932816,"389.6",18,0.95,389,NA,527,217,526,527,538,1,NA,NA
+"2020-01-24",2,2020,"abundance","AutoArima","controls","OL",0,-2.173544129647,2.173544129647,"389.6",18,0.95,389,NA,528,217,526,527,538,2,NA,NA
+"2020-01-24",3,2020,"abundance","AutoArima","controls","OL",0,-2.66203702552845,2.66203702552845,"389.6",18,0.95,389,NA,529,217,526,527,538,3,NA,NA
+"2020-01-24",4,2020,"abundance","AutoArima","controls","OL",0,-3.07385558656321,3.07385558656321,"389.6",18,0.95,389,NA,530,217,526,527,538,4,NA,NA
+"2020-01-24",5,2020,"abundance","AutoArima","controls","OL",0,-3.43667502228641,3.43667502228641,"389.6",18,0.95,389,NA,531,217,526,527,538,5,NA,NA
+"2020-01-24",6,2020,"abundance","AutoArima","controls","OL",0,-3.76468886504167,3.76468886504167,"389.6",18,0.95,389,NA,532,217,526,527,538,6,NA,NA
+"2020-01-24",7,2020,"abundance","AutoArima","controls","OL",0,-4.06632872408641,4.06632872408641,"389.6",18,0.95,389,NA,533,217,526,527,538,7,NA,NA
+"2020-01-24",8,2020,"abundance","AutoArima","controls","OL",0,-4.34708825929399,4.34708825929399,"389.6",18,0.95,389,NA,534,217,526,527,538,8,NA,NA
+"2020-01-24",9,2020,"abundance","AutoArima","controls","OL",0,-4.61078337984481,4.61078337984481,"389.6",18,0.95,389,NA,535,217,526,527,538,9,NA,NA
+"2020-01-24",10,2020,"abundance","AutoArima","controls","OL",0,-4.8601924259863,4.8601924259863,"389.6",18,0.95,389,NA,536,217,526,527,538,10,NA,NA
+"2020-01-24",11,2020,"abundance","AutoArima","controls","OL",0,-5.09741282018398,5.09741282018398,"389.6",18,0.95,389,NA,537,217,526,527,538,11,NA,NA
+"2020-01-24",12,2020,"abundance","AutoArima","controls","OL",0,-5.32407405105691,5.32407405105691,"389.6",18,0.95,389,NA,538,217,526,527,538,12,NA,NA

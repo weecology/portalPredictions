@@ -1,0 +1,15 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2020-04-02",2,2020,"abundance","jags_RW","controls","PF",0.015,0,0.096,"707.10",30,0.95,707,NA,528,217,529,528,541,-1,NA,NA
+"2020-04-02",3,2020,"abundance","jags_RW","controls","PF",0.021,0,0.127,"707.10",30,0.95,707,NA,529,217,529,528,541,0,NA,NA
+"2020-04-02",4,2020,"abundance","jags_RW","controls","PF",0.028,0,0.155,"707.10",30,0.95,707,NA,530,217,529,528,541,1,NA,NA
+"2020-04-02",5,2020,"abundance","jags_RW","controls","PF",0.037,0,0.191,"707.10",30,0.95,707,NA,531,217,529,528,541,2,NA,NA
+"2020-04-02",6,2020,"abundance","jags_RW","controls","PF",0.05,0,0.223,"707.10",30,0.95,707,NA,532,217,529,528,541,3,NA,NA
+"2020-04-02",7,2020,"abundance","jags_RW","controls","PF",0.062,0,0.264,"707.10",30,0.95,707,NA,533,217,529,528,541,4,NA,NA
+"2020-04-02",8,2020,"abundance","jags_RW","controls","PF",0.077,0,0.295,"707.10",30,0.95,707,NA,534,217,529,528,541,5,NA,NA
+"2020-04-02",9,2020,"abundance","jags_RW","controls","PF",0.087,0,0.344,"707.10",30,0.95,707,NA,535,217,529,528,541,6,NA,NA
+"2020-04-02",10,2020,"abundance","jags_RW","controls","PF",0.107,0,0.376,"707.10",30,0.95,707,NA,536,217,529,528,541,7,NA,NA
+"2020-04-02",11,2020,"abundance","jags_RW","controls","PF",0.121,0,0.429,"707.10",30,0.95,707,NA,537,217,529,528,541,8,NA,NA
+"2020-04-02",12,2020,"abundance","jags_RW","controls","PF",0.145,0,0.459,"707.10",30,0.95,707,NA,538,217,529,528,541,9,NA,NA
+"2020-04-02",1,2021,"abundance","jags_RW","controls","PF",0.169,0,0.523,"707.10",30,0.95,707,NA,539,217,529,528,541,10,NA,NA
+"2020-04-02",2,2021,"abundance","jags_RW","controls","PF",0.186,0,0.563,"707.10",30,0.95,707,NA,540,217,529,528,541,11,NA,NA
+"2020-04-02",3,2021,"abundance","jags_RW","controls","PF",0.211,0,0.66,"707.10",30,0.95,707,NA,541,217,529,528,541,12,NA,NA

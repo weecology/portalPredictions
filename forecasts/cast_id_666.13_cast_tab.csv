@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2020-03-12",2,2020,"abundance","pevGARCH","exclosures","PP",1.07586855973763,0,3,"666.13",28,0.95,666,NA,528,217,528,528,540,0,NA,NA
+"2020-03-12",3,2020,"abundance","pevGARCH","exclosures","PP",2.37874059074386,0,7,"666.13",28,0.95,666,NA,529,217,528,528,540,1,NA,NA
+"2020-03-12",4,2020,"abundance","pevGARCH","exclosures","PP",3.68052295382012,0,9,"666.13",28,0.95,666,NA,530,217,528,528,540,2,NA,NA
+"2020-03-12",5,2020,"abundance","pevGARCH","exclosures","PP",5.68350610306255,1,13,"666.13",28,0.95,666,NA,531,217,528,528,540,3,NA,NA
+"2020-03-12",6,2020,"abundance","pevGARCH","exclosures","PP",11.2010918240192,2,23,"666.13",28,0.95,666,NA,532,217,528,528,540,4,NA,NA
+"2020-03-12",7,2020,"abundance","pevGARCH","exclosures","PP",13.6335169442872,3,26,"666.13",28,0.95,666,NA,533,217,528,528,540,5,NA,NA
+"2020-03-12",8,2020,"abundance","pevGARCH","exclosures","PP",15.571231405249,4,28,"666.13",28,0.95,666,NA,534,217,528,528,540,6,NA,NA
+"2020-03-12",9,2020,"abundance","pevGARCH","exclosures","PP",18.0591149817892,5,31,"666.13",28,0.95,666,NA,535,217,528,528,540,7,NA,NA
+"2020-03-12",10,2020,"abundance","pevGARCH","exclosures","PP",15.1048779778946,4,27,"666.13",28,0.95,666,NA,536,217,528,528,540,8,NA,NA
+"2020-03-12",11,2020,"abundance","pevGARCH","exclosures","PP",11.640658915122,3,22,"666.13",28,0.95,666,NA,537,217,528,528,540,9,NA,NA
+"2020-03-12",12,2020,"abundance","pevGARCH","exclosures","PP",7.49244276147725,1,15,"666.13",28,0.95,666,NA,538,217,528,528,540,10,NA,NA
+"2020-03-12",1,2021,"abundance","pevGARCH","exclosures","PP",5.69643678127856,0,12,"666.13",28,0.95,666,NA,539,217,528,528,540,11,NA,NA
+"2020-03-12",2,2021,"abundance","pevGARCH","exclosures","PP",4.72276251121291,0,11,"666.13",28,0.95,666,NA,540,217,528,528,540,12,NA,NA

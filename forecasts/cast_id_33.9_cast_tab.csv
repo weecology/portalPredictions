@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2019-11-21",10,2019,"abundance","NaiveArima","exclosures","PF",0,-3.69368061753356,3.69368061753356,"33.9",2,0.95,33,NA,524,217,524,524,536,0,NA,NA
+"2019-11-21",11,2019,"abundance","NaiveArima","exclosures","PF",0,-5.22365322439059,5.22365322439059,"33.9",2,0.95,33,NA,525,217,524,524,536,1,NA,NA
+"2019-11-21",12,2019,"abundance","NaiveArima","exclosures","PF",0,-6.39764249650052,6.39764249650052,"33.9",2,0.95,33,NA,526,217,524,524,536,2,NA,NA
+"2019-11-21",1,2020,"abundance","NaiveArima","exclosures","PF",0,-7.38736123506713,7.38736123506713,"33.9",2,0.95,33,NA,527,217,524,524,536,3,NA,NA
+"2019-11-21",2,2020,"abundance","NaiveArima","exclosures","PF",0,-8.25932094797845,8.25932094797845,"33.9",2,0.95,33,NA,528,217,524,524,536,4,NA,NA
+"2019-11-21",3,2020,"abundance","NaiveArima","exclosures","PF",0,-9.0476327857655,9.0476327857655,"33.9",2,0.95,33,NA,529,217,524,524,536,5,NA,NA
+"2019-11-21",4,2020,"abundance","NaiveArima","exclosures","PF",0,-9.77256033649329,9.77256033649329,"33.9",2,0.95,33,NA,530,217,524,524,536,6,NA,NA
+"2019-11-21",5,2020,"abundance","NaiveArima","exclosures","PF",0,-10.4473064487812,10.4473064487812,"33.9",2,0.95,33,NA,531,217,524,524,536,7,NA,NA
+"2019-11-21",6,2020,"abundance","NaiveArima","exclosures","PF",0,-11.0810418526007,11.0810418526007,"33.9",2,0.95,33,NA,532,217,524,524,536,8,NA,NA
+"2019-11-21",7,2020,"abundance","NaiveArima","exclosures","PF",0,-11.6804437006233,11.6804437006233,"33.9",2,0.95,33,NA,533,217,524,524,536,9,NA,NA
+"2019-11-21",8,2020,"abundance","NaiveArima","exclosures","PF",0,-12.2505527037671,12.2505527037671,"33.9",2,0.95,33,NA,534,217,524,524,536,10,NA,NA
+"2019-11-21",9,2020,"abundance","NaiveArima","exclosures","PF",0,-12.795284993001,12.795284993001,"33.9",2,0.95,33,NA,535,217,524,524,536,11,NA,NA
+"2019-11-21",10,2020,"abundance","NaiveArima","exclosures","PF",0,-13.3177548617048,13.3177548617048,"33.9",2,0.95,33,NA,536,217,524,524,536,12,NA,NA

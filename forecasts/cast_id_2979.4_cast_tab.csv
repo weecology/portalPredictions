@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","cast_group","confidence_level","estimate","lower_pi","upper_pi","cast_id","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2022-10-20",9,2022,"abundance","AutoArima","controls","DS",117,0.95,0,-0.58747529461382,0.58747529461382,"2979.4",2979,NA,560,217,560,560,572,0,NA,NA
+"2022-10-20",10,2022,"abundance","AutoArima","controls","DS",117,0.95,0,-0.630616659821774,0.630616659821774,"2979.4",2979,NA,561,217,560,560,572,1,NA,NA
+"2022-10-20",11,2022,"abundance","AutoArima","controls","DS",117,0.95,0,-0.773370448097182,0.773370448097182,"2979.4",2979,NA,562,217,560,560,572,2,NA,NA
+"2022-10-20",12,2022,"abundance","AutoArima","controls","DS",117,0.95,0,-0.834864693784467,0.834864693784467,"2979.4",2979,NA,563,217,560,560,572,3,NA,NA
+"2022-10-20",1,2023,"abundance","AutoArima","controls","DS",117,0.95,0,-0.923896330072478,0.923896330072478,"2979.4",2979,NA,564,217,560,560,572,4,NA,NA
+"2022-10-20",2,2023,"abundance","AutoArima","controls","DS",117,0.95,0,-0.986621539147668,0.986621539147668,"2979.4",2979,NA,565,217,560,560,572,5,NA,NA
+"2022-10-20",3,2023,"abundance","AutoArima","controls","DS",117,0.95,0,-1.0559755337359,1.0559755337359,"2979.4",2979,NA,566,217,560,560,572,6,NA,NA
+"2022-10-20",4,2023,"abundance","AutoArima","controls","DS",117,0.95,0,-1.11499822701688,1.11499822701688,"2979.4",2979,NA,567,217,560,560,572,7,NA,NA
+"2022-10-20",5,2023,"abundance","AutoArima","controls","DS",117,0.95,0,-1.1745317361214,1.1745317361214,"2979.4",2979,NA,568,217,560,560,572,8,NA,NA
+"2022-10-20",6,2023,"abundance","AutoArima","controls","DS",117,0.95,0,-1.22915351058586,1.22915351058586,"2979.4",2979,NA,569,217,560,560,572,9,NA,NA
+"2022-10-20",7,2023,"abundance","AutoArima","controls","DS",117,0.95,0,-1.28263631589863,1.28263631589863,"2979.4",2979,NA,570,217,560,560,572,10,NA,NA
+"2022-10-20",8,2023,"abundance","AutoArima","controls","DS",117,0.95,0,-1.33327908686568,1.33327908686568,"2979.4",2979,NA,571,217,560,560,572,11,NA,NA
+"2022-10-20",9,2023,"abundance","AutoArima","controls","DS",117,0.95,0,-1.38247720287787,1.38247720287787,"2979.4",2979,NA,572,217,560,560,572,12,NA,NA

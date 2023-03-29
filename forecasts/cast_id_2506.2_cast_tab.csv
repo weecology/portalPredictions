@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","cast_group","confidence_level","dataset","species","estimate","lower_pi","upper_pi","cast_id","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2022-05-19",4,2022,"abundance","nbsGARCH",95,0.95,"exclosures","DM",3.64114433663956,0,8,"2506.2",2506,NA,555,217,555,555,567,0,NA,NA
+"2022-05-19",5,2022,"abundance","nbsGARCH",95,0.95,"exclosures","DM",1.62920178616901,0,5,"2506.2",2506,NA,556,217,555,555,567,1,NA,NA
+"2022-05-19",6,2022,"abundance","nbsGARCH",95,0.95,"exclosures","DM",0.733721725868582,0,3,"2506.2",2506,NA,557,217,555,555,567,2,NA,NA
+"2022-05-19",7,2022,"abundance","nbsGARCH",95,0.95,"exclosures","DM",0.413069949743046,0,2,"2506.2",2506,NA,558,217,555,555,567,3,NA,NA
+"2022-05-19",8,2022,"abundance","nbsGARCH",95,0.95,"exclosures","DM",0.32563324428636,0,2,"2506.2",2506,NA,559,217,555,555,567,4,NA,NA
+"2022-05-19",9,2022,"abundance","nbsGARCH",95,0.95,"exclosures","DM",0.336104439486254,0,2,"2506.2",2506,NA,560,217,555,555,567,5,NA,NA
+"2022-05-19",10,2022,"abundance","nbsGARCH",95,0.95,"exclosures","DM",0.41284703234489,0,2,"2506.2",2506,NA,561,217,555,555,567,6,NA,NA
+"2022-05-19",11,2022,"abundance","nbsGARCH",95,0.95,"exclosures","DM",0.565648765152717,0,3,"2506.2",2506,NA,562,217,555,555,567,7,NA,NA
+"2022-05-19",12,2022,"abundance","nbsGARCH",95,0.95,"exclosures","DM",0.796882272360912,0,3,"2506.2",2506,NA,563,217,555,555,567,8,NA,NA
+"2022-05-19",1,2023,"abundance","nbsGARCH",95,0.95,"exclosures","DM",1.09274570227278,0,4,"2506.2",2506,NA,564,217,555,555,567,9,NA,NA
+"2022-05-19",2,2023,"abundance","nbsGARCH",95,0.95,"exclosures","DM",1.34864635485936,0,5,"2506.2",2506,NA,565,217,555,555,567,10,NA,NA
+"2022-05-19",3,2023,"abundance","nbsGARCH",95,0.95,"exclosures","DM",1.40894506494535,0,5,"2506.2",2506,NA,566,217,555,555,567,11,NA,NA
+"2022-05-19",4,2023,"abundance","nbsGARCH",95,0.95,"exclosures","DM",1.19865683194566,0,5,"2506.2",2506,NA,567,217,555,555,567,12,NA,NA

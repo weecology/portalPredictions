@@ -1,0 +1,15 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2019-12-20",10,2019,"abundance","nbsGARCH","all","NA",0.718722319515253,0,3,"193.5",9,0.95,193,NA,524,217,525,524,537,-1,NA,NA
+"2019-12-20",11,2019,"abundance","nbsGARCH","all","NA",1.2298857491814,0,6,"193.5",9,0.95,193,NA,525,217,525,524,537,0,NA,NA
+"2019-12-20",12,2019,"abundance","nbsGARCH","all","NA",1.52758055669956,0,6,"193.5",9,0.95,193,NA,526,217,525,524,537,1,NA,NA
+"2019-12-20",1,2020,"abundance","nbsGARCH","all","NA",1.72116409768215,0,7,"193.5",9,0.95,193,NA,527,217,525,524,537,2,NA,NA
+"2019-12-20",2,2020,"abundance","nbsGARCH","all","NA",1.86115462798601,0,8,"193.5",9,0.95,193,NA,528,217,525,524,537,3,NA,NA
+"2019-12-20",3,2020,"abundance","nbsGARCH","all","NA",1.93221664306522,0,8,"193.5",9,0.95,193,NA,529,217,525,524,537,4,NA,NA
+"2019-12-20",4,2020,"abundance","nbsGARCH","all","NA",2.01579188712106,0,8,"193.5",9,0.95,193,NA,530,217,525,524,537,5,NA,NA
+"2019-12-20",5,2020,"abundance","nbsGARCH","all","NA",2.16257091991253,0,9,"193.5",9,0.95,193,NA,531,217,525,524,537,6,NA,NA
+"2019-12-20",6,2020,"abundance","nbsGARCH","all","NA",2.27006145924476,0,10,"193.5",9,0.95,193,NA,532,217,525,524,537,7,NA,NA
+"2019-12-20",7,2020,"abundance","nbsGARCH","all","NA",2.27232335871888,0,11,"193.5",9,0.95,193,NA,533,217,525,524,537,8,NA,NA
+"2019-12-20",8,2020,"abundance","nbsGARCH","all","NA",2.25069201481858,0,9,"193.5",9,0.95,193,NA,534,217,525,524,537,9,NA,NA
+"2019-12-20",9,2020,"abundance","nbsGARCH","all","NA",2.26088483452672,0,9,"193.5",9,0.95,193,NA,535,217,525,524,537,10,NA,NA
+"2019-12-20",10,2020,"abundance","nbsGARCH","all","NA",2.15689995018529,0,9,"193.5",9,0.95,193,NA,536,217,525,524,537,11,NA,NA
+"2019-12-20",11,2020,"abundance","nbsGARCH","all","NA",2.11050904058561,0,9,"193.5",9,0.95,193,NA,537,217,525,524,537,12,NA,NA

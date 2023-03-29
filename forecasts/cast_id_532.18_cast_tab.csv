@@ -1,0 +1,13 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2020-02-13",2,2020,"abundance","nbsGARCH","all","SF",0.859995389590449,0,3,"532.18",23,0.95,532,NA,528,217,527,528,539,1,NA,NA
+"2020-02-13",3,2020,"abundance","nbsGARCH","all","SF",1.5179739979867,0,6,"532.18",23,0.95,532,NA,529,217,527,528,539,2,NA,NA
+"2020-02-13",4,2020,"abundance","nbsGARCH","all","SF",1.94547360475836,0,8,"532.18",23,0.95,532,NA,530,217,527,528,539,3,NA,NA
+"2020-02-13",5,2020,"abundance","nbsGARCH","all","SF",2.14900615539923,0,9,"532.18",23,0.95,532,NA,531,217,527,528,539,4,NA,NA
+"2020-02-13",6,2020,"abundance","nbsGARCH","all","SF",2.17241626833383,0,8,"532.18",23,0.95,532,NA,532,217,527,528,539,5,NA,NA
+"2020-02-13",7,2020,"abundance","nbsGARCH","all","SF",2.10017738096839,0,9,"532.18",23,0.95,532,NA,533,217,527,528,539,6,NA,NA
+"2020-02-13",8,2020,"abundance","nbsGARCH","all","SF",2.01638386632213,0,8,"532.18",23,0.95,532,NA,534,217,527,528,539,7,NA,NA
+"2020-02-13",9,2020,"abundance","nbsGARCH","all","SF",1.97715482741089,0,8,"532.18",23,0.95,532,NA,535,217,527,528,539,8,NA,NA
+"2020-02-13",10,2020,"abundance","nbsGARCH","all","SF",2.0112196682288,0,8,"532.18",23,0.95,532,NA,536,217,527,528,539,9,NA,NA
+"2020-02-13",11,2020,"abundance","nbsGARCH","all","SF",2.13033191145146,0,8,"532.18",23,0.95,532,NA,537,217,527,528,539,10,NA,NA
+"2020-02-13",12,2020,"abundance","nbsGARCH","all","SF",2.32411776751434,0,9,"532.18",23,0.95,532,NA,538,217,527,528,539,11,NA,NA
+"2020-02-13",1,2021,"abundance","nbsGARCH","all","SF",2.56789684489067,0,10,"532.18",23,0.95,532,NA,539,217,527,528,539,12,NA,NA

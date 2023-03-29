@@ -1,0 +1,15 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2019-11-28",10,2019,"abundance","pevGARCH","all","RO",0.125606039595953,0,1,"85.17",4,0.95,85,NA,524,217,525,524,537,-1,NA,NA
+"2019-11-28",11,2019,"abundance","pevGARCH","all","RO",0.173705770516981,0,1,"85.17",4,0.95,85,NA,525,217,525,524,537,0,NA,NA
+"2019-11-28",12,2019,"abundance","pevGARCH","all","RO",0.422069333283005,0,2,"85.17",4,0.95,85,NA,526,217,525,524,537,1,NA,NA
+"2019-11-28",1,2020,"abundance","pevGARCH","all","RO",0.929810844168615,0,3,"85.17",4,0.95,85,NA,527,217,525,524,537,2,NA,NA
+"2019-11-28",2,2020,"abundance","pevGARCH","all","RO",1.36350757977878,0,4,"85.17",4,0.95,85,NA,528,217,525,524,537,3,NA,NA
+"2019-11-28",3,2020,"abundance","pevGARCH","all","RO",1.15224439879005,0,4,"85.17",4,0.95,85,NA,529,217,525,524,537,4,NA,NA
+"2019-11-28",4,2020,"abundance","pevGARCH","all","RO",0.25106138134563,0,2,"85.17",4,0.95,85,NA,530,217,525,524,537,5,NA,NA
+"2019-11-28",5,2020,"abundance","pevGARCH","all","RO",0.0861256022596494,0,1,"85.17",4,0.95,85,NA,531,217,525,524,537,6,NA,NA
+"2019-11-28",6,2020,"abundance","pevGARCH","all","RO",0.0391493042417235,0,1,"85.17",4,0.95,85,NA,532,217,525,524,537,7,NA,NA
+"2019-11-28",7,2020,"abundance","pevGARCH","all","RO",0.0352895402969797,0,1,"85.17",4,0.95,85,NA,533,217,525,524,537,8,NA,NA
+"2019-11-28",8,2020,"abundance","pevGARCH","all","RO",0.0526944173777652,0,1,"85.17",4,0.95,85,NA,534,217,525,524,537,9,NA,NA
+"2019-11-28",9,2020,"abundance","pevGARCH","all","RO",0.077741869132007,0,1,"85.17",4,0.95,85,NA,535,217,525,524,537,10,NA,NA
+"2019-11-28",10,2020,"abundance","pevGARCH","all","RO",0.0851311285867404,0,1,"85.17",4,0.95,85,NA,536,217,525,524,537,11,NA,NA
+"2019-11-28",11,2020,"abundance","pevGARCH","all","RO",0.0905606135984254,0,1,"85.17",4,0.95,85,NA,537,217,525,524,537,12,NA,NA

@@ -1,0 +1,13 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2021-12-23",1,2022,"abundance","pevGARCH","exclosures","RF",0.00389032251614515,0,0,"1987.14",76,0.95,1987,NA,551,217,550,551,562,1,NA,NA
+"2021-12-23",2,2022,"abundance","pevGARCH","exclosures","RF",0.0038993469201519,0,0,"1987.14",76,0.95,1987,NA,552,217,550,551,562,2,NA,NA
+"2021-12-23",3,2022,"abundance","pevGARCH","exclosures","RF",0.00389936783770314,0,0,"1987.14",76,0.95,1987,NA,553,217,550,551,562,3,NA,NA
+"2021-12-23",4,2022,"abundance","pevGARCH","exclosures","RF",0.00403050661154128,0,0,"1987.14",76,0.95,1987,NA,554,217,550,551,562,4,NA,NA
+"2021-12-23",4,2022,"abundance","pevGARCH","exclosures","RF",0.00403082079016207,0,0,"1987.14",76,0.95,1987,NA,555,217,550,551,562,5,NA,NA
+"2021-12-23",5,2022,"abundance","pevGARCH","exclosures","RF",0.00403082154284258,0,0,"1987.14",76,0.95,1987,NA,556,217,550,551,562,6,NA,NA
+"2021-12-23",6,2022,"abundance","pevGARCH","exclosures","RF",0.00403082154464579,0,0,"1987.14",76,0.95,1987,NA,557,217,550,551,562,7,NA,NA
+"2021-12-23",7,2022,"abundance","pevGARCH","exclosures","RF",0.00341600322472054,0,0,"1987.14",76,0.95,1987,NA,558,217,550,551,562,8,NA,NA
+"2021-12-23",8,2022,"abundance","pevGARCH","exclosures","RF",0.00402934843711663,0,0,"1987.14",76,0.95,1987,NA,559,217,550,551,562,9,NA,NA
+"2021-12-23",9,2022,"abundance","pevGARCH","exclosures","RF",0.00403081801551248,0,0,"1987.14",76,0.95,1987,NA,560,217,550,551,562,10,NA,NA
+"2021-12-23",10,2022,"abundance","pevGARCH","exclosures","RF",0.00403082153619533,0,0,"1987.14",76,0.95,1987,NA,561,217,550,551,562,11,NA,NA
+"2021-12-23",11,2022,"abundance","pevGARCH","exclosures","RF",0.00403082154462987,0,0,"1987.14",76,0.95,1987,NA,562,217,550,551,562,12,NA,NA

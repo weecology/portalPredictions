@@ -1,0 +1,13 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_group","confidence_level","cast_id","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2023-02-16",2,2023,"abundance","jags_logistic_covariates","controls","DM",13.888,3.327,26.924,119,0.95,"3030.1",3030,NA,565,217,564,565,576,1,NA,NA
+"2023-02-16",3,2023,"abundance","jags_logistic_covariates","controls","DM",13.879,3.31,26.906,119,0.95,"3030.1",3030,NA,566,217,564,565,576,2,NA,NA
+"2023-02-16",4,2023,"abundance","jags_logistic_covariates","controls","DM",13.861,3.293,26.867,119,0.95,"3030.1",3030,NA,567,217,564,565,576,3,NA,NA
+"2023-02-16",5,2023,"abundance","jags_logistic_covariates","controls","DM",13.837,3.276,26.816,119,0.95,"3030.1",3030,NA,568,217,564,565,576,4,NA,NA
+"2023-02-16",6,2023,"abundance","jags_logistic_covariates","controls","DM",13.809,3.26,26.764,119,0.95,"3030.1",3030,NA,569,217,564,565,576,5,NA,NA
+"2023-02-16",7,2023,"abundance","jags_logistic_covariates","controls","DM",13.779,3.243,26.72,119,0.95,"3030.1",3030,NA,570,217,564,565,576,6,NA,NA
+"2023-02-16",8,2023,"abundance","jags_logistic_covariates","controls","DM",13.748,3.227,26.686,119,0.95,"3030.1",3030,NA,571,217,564,565,576,7,NA,NA
+"2023-02-16",9,2023,"abundance","jags_logistic_covariates","controls","DM",13.717,3.21,26.658,119,0.95,"3030.1",3030,NA,572,217,564,565,576,8,NA,NA
+"2023-02-16",10,2023,"abundance","jags_logistic_covariates","controls","DM",13.686,3.194,26.634,119,0.95,"3030.1",3030,NA,573,217,564,565,576,9,NA,NA
+"2023-02-16",11,2023,"abundance","jags_logistic_covariates","controls","DM",13.655,3.177,26.61,119,0.95,"3030.1",3030,NA,574,217,564,565,576,10,NA,NA
+"2023-02-16",12,2023,"abundance","jags_logistic_covariates","controls","DM",13.624,3.161,26.587,119,0.95,"3030.1",3030,NA,575,217,564,565,576,11,NA,NA
+"2023-02-16",1,2024,"abundance","jags_logistic_covariates","controls","DM",13.593,3.145,26.563,119,0.95,"3030.1",3030,NA,576,217,564,565,576,12,NA,NA

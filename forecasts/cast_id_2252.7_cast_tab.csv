@@ -1,0 +1,15 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2022-03-17",1,2022,"abundance","jags_RW","all","OT",1.853,0.2,4.141,"2252.7",86,0.95,2252,NA,552,217,553,552,565,-1,NA,NA
+"2022-03-17",3,2022,"abundance","jags_RW","all","OT",2.892,0,9.577,"2252.7",86,0.95,2252,NA,553,217,553,552,565,0,NA,NA
+"2022-03-17",4,2022,"abundance","jags_RW","all","OT",4.602,0,17.368,"2252.7",86,0.95,2252,NA,554,217,553,552,565,1,NA,NA
+"2022-03-17",4,2022,"abundance","jags_RW","all","OT",7.255,0,27.851,"2252.7",86,0.95,2252,NA,555,217,553,552,565,2,NA,NA
+"2022-03-17",5,2022,"abundance","jags_RW","all","OT",11.406,0,40.661,"2252.7",86,0.95,2252,NA,556,217,553,552,565,3,NA,NA
+"2022-03-17",6,2022,"abundance","jags_RW","all","OT",16.182,0,59.876,"2252.7",86,0.95,2252,NA,557,217,553,552,565,4,NA,NA
+"2022-03-17",7,2022,"abundance","jags_RW","all","OT",21.211,0,83.68,"2252.7",86,0.95,2252,NA,558,217,553,552,565,5,NA,NA
+"2022-03-17",8,2022,"abundance","jags_RW","all","OT",27.654,0,112.622,"2252.7",86,0.95,2252,NA,559,217,553,552,565,6,NA,NA
+"2022-03-17",9,2022,"abundance","jags_RW","all","OT",33.647,0,148.312,"2252.7",86,0.95,2252,NA,560,217,553,552,565,7,NA,NA
+"2022-03-17",10,2022,"abundance","jags_RW","all","OT",40.44,0,190.377,"2252.7",86,0.95,2252,NA,561,217,553,552,565,8,NA,NA
+"2022-03-17",11,2022,"abundance","jags_RW","all","OT",46.732,0,237.202,"2252.7",86,0.95,2252,NA,562,217,553,552,565,9,NA,NA
+"2022-03-17",12,2022,"abundance","jags_RW","all","OT",52.293,0,283.784,"2252.7",86,0.95,2252,NA,563,217,553,552,565,10,NA,NA
+"2022-03-17",1,2023,"abundance","jags_RW","all","OT",56.897,0,327.303,"2252.7",86,0.95,2252,NA,564,217,553,552,565,11,NA,NA
+"2022-03-17",2,2023,"abundance","jags_RW","all","OT",62.838,0,377.689,"2252.7",86,0.95,2252,NA,565,217,553,552,565,12,NA,NA

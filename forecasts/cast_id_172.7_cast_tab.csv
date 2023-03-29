@@ -1,0 +1,15 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2019-12-19",10,2019,"abundance","nbsGARCH","all","OT",9.0867998478135,2,20,"172.7",8,0.95,172,NA,524,217,525,524,537,-1,NA,NA
+"2019-12-19",11,2019,"abundance","nbsGARCH","all","OT",9.98756563460418,1,25,"172.7",8,0.95,172,NA,525,217,525,524,537,0,NA,NA
+"2019-12-19",12,2019,"abundance","nbsGARCH","all","OT",9.46610919360841,1,26,"172.7",8,0.95,172,NA,526,217,525,524,537,1,NA,NA
+"2019-12-19",1,2020,"abundance","nbsGARCH","all","OT",8.19106322181658,0,24,"172.7",8,0.95,172,NA,527,217,525,524,537,2,NA,NA
+"2019-12-19",2,2020,"abundance","nbsGARCH","all","OT",7.18717766502153,0,23,"172.7",8,0.95,172,NA,528,217,525,524,537,3,NA,NA
+"2019-12-19",3,2020,"abundance","nbsGARCH","all","OT",6.41706752219209,0,21,"172.7",8,0.95,172,NA,529,217,525,524,537,4,NA,NA
+"2019-12-19",4,2020,"abundance","nbsGARCH","all","OT",6.18362697466815,0,21,"172.7",8,0.95,172,NA,530,217,525,524,537,5,NA,NA
+"2019-12-19",5,2020,"abundance","nbsGARCH","all","OT",6.66456199439719,0,20,"172.7",8,0.95,172,NA,531,217,525,524,537,6,NA,NA
+"2019-12-19",6,2020,"abundance","nbsGARCH","all","OT",8.01667146181634,0,24,"172.7",8,0.95,172,NA,532,217,525,524,537,7,NA,NA
+"2019-12-19",7,2020,"abundance","nbsGARCH","all","OT",10.0543318732178,0,31,"172.7",8,0.95,172,NA,533,217,525,524,537,8,NA,NA
+"2019-12-19",8,2020,"abundance","nbsGARCH","all","OT",12.9086787597441,1,40,"172.7",8,0.95,172,NA,534,217,525,524,537,9,NA,NA
+"2019-12-19",9,2020,"abundance","nbsGARCH","all","OT",16.0031155927763,1,51,"172.7",8,0.95,172,NA,535,217,525,524,537,10,NA,NA
+"2019-12-19",10,2020,"abundance","nbsGARCH","all","OT",18.0685087521512,1,53,"172.7",8,0.95,172,NA,536,217,525,524,537,11,NA,NA
+"2019-12-19",11,2020,"abundance","nbsGARCH","all","OT",18.0911696253891,1,51,"172.7",8,0.95,172,NA,537,217,525,524,537,12,NA,NA

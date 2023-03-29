@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2022-01-06",1,2022,"abundance","nbGARCH","all","PE",4.1878655205742,0,13,"2033.9",78,0.95,2033,NA,551,217,551,551,563,0,NA,NA
+"2022-01-06",2,2022,"abundance","nbGARCH","all","PE",4.31608564820144,0,16,"2033.9",78,0.95,2033,NA,552,217,551,551,563,1,NA,NA
+"2022-01-06",3,2022,"abundance","nbGARCH","all","PE",4.43019522488986,0,17,"2033.9",78,0.95,2033,NA,553,217,551,551,563,2,NA,NA
+"2022-01-06",4,2022,"abundance","nbGARCH","all","PE",4.32167272583255,0,18,"2033.9",78,0.95,2033,NA,554,217,551,551,563,3,NA,NA
+"2022-01-06",4,2022,"abundance","nbGARCH","all","PE",4.55010146819679,0,18,"2033.9",78,0.95,2033,NA,555,217,551,551,563,4,NA,NA
+"2022-01-06",5,2022,"abundance","nbGARCH","all","PE",4.95803924396145,0,20,"2033.9",78,0.95,2033,NA,556,217,551,551,563,5,NA,NA
+"2022-01-06",6,2022,"abundance","nbGARCH","all","PE",5.25673608663296,0,22,"2033.9",78,0.95,2033,NA,557,217,551,551,563,6,NA,NA
+"2022-01-06",7,2022,"abundance","nbGARCH","all","PE",5.25367505871293,0,19,"2033.9",78,0.95,2033,NA,558,217,551,551,563,7,NA,NA
+"2022-01-06",8,2022,"abundance","nbGARCH","all","PE",5.49876618958351,0,22,"2033.9",78,0.95,2033,NA,559,217,551,551,563,8,NA,NA
+"2022-01-06",9,2022,"abundance","nbGARCH","all","PE",5.43925316974105,0,18,"2033.9",78,0.95,2033,NA,560,217,551,551,563,9,NA,NA
+"2022-01-06",10,2022,"abundance","nbGARCH","all","PE",5.595325892179,0,23,"2033.9",78,0.95,2033,NA,561,217,551,551,563,10,NA,NA
+"2022-01-06",11,2022,"abundance","nbGARCH","all","PE",5.77131895839981,0,24,"2033.9",78,0.95,2033,NA,562,217,551,551,563,11,NA,NA
+"2022-01-06",12,2022,"abundance","nbGARCH","all","PE",5.82895511548355,0,21,"2033.9",78,0.95,2033,NA,563,217,551,551,563,12,NA,NA

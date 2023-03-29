@@ -1,0 +1,15 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2019-11-28",10,2019,"abundance","nbGARCH","all","SF",0.969351574409494,0,3,"79.18",4,0.95,79,NA,524,217,525,524,537,-1,NA,NA
+"2019-11-28",11,2019,"abundance","nbGARCH","all","SF",1.88721835936876,0,7,"79.18",4,0.95,79,NA,525,217,525,524,537,0,NA,NA
+"2019-11-28",12,2019,"abundance","nbGARCH","all","SF",2.74896261619927,0,10,"79.18",4,0.95,79,NA,526,217,525,524,537,1,NA,NA
+"2019-11-28",1,2020,"abundance","nbGARCH","all","SF",3.55368108717267,0,14,"79.18",4,0.95,79,NA,527,217,525,524,537,2,NA,NA
+"2019-11-28",2,2020,"abundance","nbGARCH","all","SF",4.30231445236665,0,17,"79.18",4,0.95,79,NA,528,217,525,524,537,3,NA,NA
+"2019-11-28",3,2020,"abundance","nbGARCH","all","SF",4.99673513360728,0,19,"79.18",4,0.95,79,NA,529,217,525,524,537,4,NA,NA
+"2019-11-28",4,2020,"abundance","nbGARCH","all","SF",5.63935885045911,0,23,"79.18",4,0.95,79,NA,530,217,525,524,537,5,NA,NA
+"2019-11-28",5,2020,"abundance","nbGARCH","all","SF",6.23293822941468,0,28,"79.18",4,0.95,79,NA,531,217,525,524,537,6,NA,NA
+"2019-11-28",6,2020,"abundance","nbGARCH","all","SF",6.78034932517976,0,26,"79.18",4,0.95,79,NA,532,217,525,524,537,7,NA,NA
+"2019-11-28",7,2020,"abundance","nbGARCH","all","SF",7.28450625379713,0,27,"79.18",4,0.95,79,NA,533,217,525,524,537,8,NA,NA
+"2019-11-28",8,2020,"abundance","nbGARCH","all","SF",7.74829578458092,0,35,"79.18",4,0.95,79,NA,534,217,525,524,537,9,NA,NA
+"2019-11-28",9,2020,"abundance","nbGARCH","all","SF",8.17452815904786,0,37,"79.18",4,0.95,79,NA,535,217,525,524,537,10,NA,NA
+"2019-11-28",10,2020,"abundance","nbGARCH","all","SF",8.56590587740876,0,35,"79.18",4,0.95,79,NA,536,217,525,524,537,11,NA,NA
+"2019-11-28",11,2020,"abundance","nbGARCH","all","SF",9.02596019300723,0,36,"79.18",4,0.95,79,NA,537,217,525,524,537,12,NA,NA

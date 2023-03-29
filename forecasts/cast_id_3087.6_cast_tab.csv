@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","cast_group","confidence_level","dataset","species","estimate","lower_pi","upper_pi","cast_id","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2023-03-02",2,2023,"abundance","nbsGARCH",121,0.95,"controls","OT",3.13661313718039,0,7,"3087.6",3087,NA,565,217,565,565,577,0,NA,NA
+"2023-03-02",3,2023,"abundance","nbsGARCH",121,0.95,"controls","OT",2.45863664167984,0,7,"3087.6",3087,NA,566,217,565,565,577,1,NA,NA
+"2023-03-02",4,2023,"abundance","nbsGARCH",121,0.95,"controls","OT",2.05365309842298,0,6,"3087.6",3087,NA,567,217,565,565,577,2,NA,NA
+"2023-03-02",5,2023,"abundance","nbsGARCH",121,0.95,"controls","OT",1.87304096652777,0,6,"3087.6",3087,NA,568,217,565,565,577,3,NA,NA
+"2023-03-02",6,2023,"abundance","nbsGARCH",121,0.95,"controls","OT",1.87059900441944,0,6,"3087.6",3087,NA,569,217,565,565,577,4,NA,NA
+"2023-03-02",7,2023,"abundance","nbsGARCH",121,0.95,"controls","OT",2.02811792049866,0,7,"3087.6",3087,NA,570,217,565,565,577,5,NA,NA
+"2023-03-02",8,2023,"abundance","nbsGARCH",121,0.95,"controls","OT",2.32181221502813,0,7,"3087.6",3087,NA,571,217,565,565,577,6,NA,NA
+"2023-03-02",9,2023,"abundance","nbsGARCH",121,0.95,"controls","OT",2.68974576768084,0,9,"3087.6",3087,NA,572,217,565,565,577,7,NA,NA
+"2023-03-02",10,2023,"abundance","nbsGARCH",121,0.95,"controls","OT",3.06636187904584,0,10,"3087.6",3087,NA,573,217,565,565,577,8,NA,NA
+"2023-03-02",11,2023,"abundance","nbsGARCH",121,0.95,"controls","OT",3.34388845706154,0,10,"3087.6",3087,NA,574,217,565,565,577,9,NA,NA
+"2023-03-02",12,2023,"abundance","nbsGARCH",121,0.95,"controls","OT",3.35229778934204,0,10,"3087.6",3087,NA,575,217,565,565,577,10,NA,NA
+"2023-03-02",1,2024,"abundance","nbsGARCH",121,0.95,"controls","OT",3.09495656303691,0,10,"3087.6",3087,NA,576,217,565,565,577,11,NA,NA
+"2023-03-02",2,2024,"abundance","nbsGARCH",121,0.95,"controls","OT",2.68015158487448,0,9,"3087.6",3087,NA,577,217,565,565,577,12,NA,NA

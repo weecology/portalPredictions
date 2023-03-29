@@ -1,0 +1,15 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2022-03-31",1,2022,"abundance","nbGARCH","controls","DM",19.15541010262,12,28,"2319.2",88,0.95,2319,NA,552,217,553,552,565,-1,NA,NA
+"2022-03-31",3,2022,"abundance","nbGARCH","controls","DM",18.4662243741486,9,31,"2319.2",88,0.95,2319,NA,553,217,553,552,565,0,NA,NA
+"2022-03-31",4,2022,"abundance","nbGARCH","controls","DM",17.8973017509391,8,32,"2319.2",88,0.95,2319,NA,554,217,553,552,565,1,NA,NA
+"2022-03-31",4,2022,"abundance","nbGARCH","controls","DM",17.4216082642049,7,33,"2319.2",88,0.95,2319,NA,555,217,553,552,565,2,NA,NA
+"2022-03-31",5,2022,"abundance","nbGARCH","controls","DM",17.0179184493163,6,32,"2319.2",88,0.95,2319,NA,556,217,553,552,565,3,NA,NA
+"2022-03-31",6,2022,"abundance","nbGARCH","controls","DM",16.6693041218116,5,32,"2319.2",88,0.95,2319,NA,557,217,553,552,565,4,NA,NA
+"2022-03-31",7,2022,"abundance","nbGARCH","controls","DM",16.4123291061325,5,32,"2319.2",88,0.95,2319,NA,558,217,553,552,565,5,NA,NA
+"2022-03-31",8,2022,"abundance","nbGARCH","controls","DM",16.2046841248834,5,30,"2319.2",88,0.95,2319,NA,559,217,553,552,565,6,NA,NA
+"2022-03-31",9,2022,"abundance","nbGARCH","controls","DM",16.0365727251544,4,31,"2319.2",88,0.95,2319,NA,560,217,553,552,565,7,NA,NA
+"2022-03-31",10,2022,"abundance","nbGARCH","controls","DM",15.9207918471776,4,31,"2319.2",88,0.95,2319,NA,561,217,553,552,565,8,NA,NA
+"2022-03-31",11,2022,"abundance","nbGARCH","controls","DM",15.9299512330508,4,30,"2319.2",88,0.95,2319,NA,562,217,553,552,565,9,NA,NA
+"2022-03-31",12,2022,"abundance","nbGARCH","controls","DM",15.9690619700603,5,31,"2319.2",88,0.95,2319,NA,563,217,553,552,565,10,NA,NA
+"2022-03-31",1,2023,"abundance","nbGARCH","controls","DM",16.0104944780146,4,31,"2319.2",88,0.95,2319,NA,564,217,553,552,565,11,NA,NA
+"2022-03-31",2,2023,"abundance","nbGARCH","controls","DM",16.0361411502722,5,30,"2319.2",88,0.95,2319,NA,565,217,553,552,565,12,NA,NA

@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","cast_group","confidence_level","dataset","species","estimate","lower_pi","upper_pi","cast_id","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2022-04-28",4,2022,"abundance","nbsGARCH",92,0.95,"all","total",163.898486219857,100,246,"2426.21",2426,NA,554,217,554,554,566,0,NA,NA
+"2022-04-28",4,2022,"abundance","nbsGARCH",92,0.95,"all","total",183.618901754068,93,318,"2426.21",2426,NA,555,217,554,554,566,1,NA,NA
+"2022-04-28",5,2022,"abundance","nbsGARCH",92,0.95,"all","total",202.416650919408,90,385,"2426.21",2426,NA,556,217,554,554,566,2,NA,NA
+"2022-04-28",6,2022,"abundance","nbsGARCH",92,0.95,"all","total",214.540620111363,83,427,"2426.21",2426,NA,557,217,554,554,566,3,NA,NA
+"2022-04-28",7,2022,"abundance","nbsGARCH",92,0.95,"all","total",215.195657685853,80,441,"2426.21",2426,NA,558,217,554,554,566,4,NA,NA
+"2022-04-28",8,2022,"abundance","nbsGARCH",92,0.95,"all","total",204.672272320793,63,430,"2426.21",2426,NA,559,217,554,554,566,5,NA,NA
+"2022-04-28",9,2022,"abundance","nbsGARCH",92,0.95,"all","total",186.619274319004,57,416,"2426.21",2426,NA,560,217,554,554,566,6,NA,NA
+"2022-04-28",10,2022,"abundance","nbsGARCH",92,0.95,"all","total",167.188348448882,52,384,"2426.21",2426,NA,561,217,554,554,566,7,NA,NA
+"2022-04-28",11,2022,"abundance","nbsGARCH",92,0.95,"all","total",151.134930449883,45,356,"2426.21",2426,NA,562,217,554,554,566,8,NA,NA
+"2022-04-28",12,2022,"abundance","nbsGARCH",92,0.95,"all","total",141.341741115626,41,333,"2426.21",2426,NA,563,217,554,554,566,9,NA,NA
+"2022-04-28",1,2023,"abundance","nbsGARCH",92,0.95,"all","total",139.950939969966,37,326,"2426.21",2426,NA,564,217,554,554,566,10,NA,NA
+"2022-04-28",2,2023,"abundance","nbsGARCH",92,0.95,"all","total",146.979987902119,39,349,"2426.21",2426,NA,565,217,554,554,566,11,NA,NA
+"2022-04-28",3,2023,"abundance","nbsGARCH",92,0.95,"all","total",160.48319013203,40,381,"2426.21",2426,NA,566,217,554,554,566,12,NA,NA

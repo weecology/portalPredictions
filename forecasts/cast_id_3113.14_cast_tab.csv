@@ -1,0 +1,13 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","cast_group","confidence_level","estimate","lower_pi","upper_pi","cast_id","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2023-03-09",3,2023,"abundance","pevGARCH","controls","RO",122,0.95,0.0261744773249222,0,0,"3113.14",3113,NA,566,217,565,566,577,1,NA,NA
+"2023-03-09",4,2023,"abundance","pevGARCH","controls","RO",122,0.95,0.016473523176808,0,0,"3113.14",3113,NA,567,217,565,566,577,2,NA,NA
+"2023-03-09",5,2023,"abundance","pevGARCH","controls","RO",122,0.95,0.000272325871232365,0,0,"3113.14",3113,NA,568,217,565,566,577,3,NA,NA
+"2023-03-09",6,2023,"abundance","pevGARCH","controls","RO",122,0.95,0.00382563974280978,0,0,"3113.14",3113,NA,569,217,565,566,577,4,NA,NA
+"2023-03-09",7,2023,"abundance","pevGARCH","controls","RO",122,0.95,0.0163123000412236,0,0,"3113.14",3113,NA,570,217,565,566,577,5,NA,NA
+"2023-03-09",8,2023,"abundance","pevGARCH","controls","RO",122,0.95,0.000604732593613323,0,0,"3113.14",3113,NA,571,217,565,566,577,6,NA,NA
+"2023-03-09",9,2023,"abundance","pevGARCH","controls","RO",122,0.95,7.33922837166443e-05,0,0,"3113.14",3113,NA,572,217,565,566,577,7,NA,NA
+"2023-03-09",10,2023,"abundance","pevGARCH","controls","RO",122,0.95,2.48032338596626e-05,0,0,"3113.14",3113,NA,573,217,565,566,577,8,NA,NA
+"2023-03-09",11,2023,"abundance","pevGARCH","controls","RO",122,0.95,0.000159035242962176,0,0,"3113.14",3113,NA,574,217,565,566,577,9,NA,NA
+"2023-03-09",12,2023,"abundance","pevGARCH","controls","RO",122,0.95,3.67335626723991e-05,0,0,"3113.14",3113,NA,575,217,565,566,577,10,NA,NA
+"2023-03-09",1,2024,"abundance","pevGARCH","controls","RO",122,0.95,4.51418431130019e-05,0,0,"3113.14",3113,NA,576,217,565,566,577,11,NA,NA
+"2023-03-09",2,2024,"abundance","pevGARCH","controls","RO",122,0.95,0.000138916517462489,0,0,"3113.14",3113,NA,577,217,565,566,577,12,NA,NA

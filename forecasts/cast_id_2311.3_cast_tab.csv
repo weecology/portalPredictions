@@ -1,0 +1,15 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2022-03-31",1,2022,"abundance","jags_RW","controls","DO",1.41,0.146,3.153,"2311.3",88,0.95,2311,NA,552,217,553,552,565,-1,NA,NA
+"2022-03-31",3,2022,"abundance","jags_RW","controls","DO",1.714,0,4.878,"2311.3",88,0.95,2311,NA,553,217,553,552,565,0,NA,NA
+"2022-03-31",4,2022,"abundance","jags_RW","controls","DO",2.117,0,7.008,"2311.3",88,0.95,2311,NA,554,217,553,552,565,1,NA,NA
+"2022-03-31",4,2022,"abundance","jags_RW","controls","DO",2.57,0,9.274,"2311.3",88,0.95,2311,NA,555,217,553,552,565,2,NA,NA
+"2022-03-31",5,2022,"abundance","jags_RW","controls","DO",3.155,0,11.994,"2311.3",88,0.95,2311,NA,556,217,553,552,565,3,NA,NA
+"2022-03-31",6,2022,"abundance","jags_RW","controls","DO",3.83,0,14.957,"2311.3",88,0.95,2311,NA,557,217,553,552,565,4,NA,NA
+"2022-03-31",7,2022,"abundance","jags_RW","controls","DO",4.567,0,18.201,"2311.3",88,0.95,2311,NA,558,217,553,552,565,5,NA,NA
+"2022-03-31",8,2022,"abundance","jags_RW","controls","DO",5.462,0,22.3,"2311.3",88,0.95,2311,NA,559,217,553,552,565,6,NA,NA
+"2022-03-31",9,2022,"abundance","jags_RW","controls","DO",6.264,0,26.843,"2311.3",88,0.95,2311,NA,560,217,553,552,565,7,NA,NA
+"2022-03-31",10,2022,"abundance","jags_RW","controls","DO",7.308,0,32.015,"2311.3",88,0.95,2311,NA,561,217,553,552,565,8,NA,NA
+"2022-03-31",11,2022,"abundance","jags_RW","controls","DO",8.213,0,38.098,"2311.3",88,0.95,2311,NA,562,217,553,552,565,9,NA,NA
+"2022-03-31",12,2022,"abundance","jags_RW","controls","DO",9.037,0,43.429,"2311.3",88,0.95,2311,NA,563,217,553,552,565,10,NA,NA
+"2022-03-31",1,2023,"abundance","jags_RW","controls","DO",10.02,0,50.543,"2311.3",88,0.95,2311,NA,564,217,553,552,565,11,NA,NA
+"2022-03-31",2,2023,"abundance","jags_RW","controls","DO",10.755,0,58.602,"2311.3",88,0.95,2311,NA,565,217,553,552,565,12,NA,NA

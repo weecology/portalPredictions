@@ -1,0 +1,17 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2020-05-28",2,2020,"abundance","NaiveArima","exclosures","PE",2,-0.204108639634493,4.20410863963449,"846.8",35,0.95,846,NA,528,217,531,528,543,-3,NA,NA
+"2020-05-28",3,2020,"abundance","NaiveArima","exclosures","PE",2,-1.11708033111481,5.11708033111481,"846.8",35,0.95,846,NA,529,217,531,528,543,-2,NA,NA
+"2020-05-28",4,2020,"abundance","NaiveArima","exclosures","PE",2,-1.81762814924846,5.81762814924846,"846.8",35,0.95,846,NA,530,217,531,528,543,-1,NA,NA
+"2020-05-28",5,2020,"abundance","NaiveArima","exclosures","PE",2,-2.40821727926899,6.40821727926899,"846.8",35,0.95,846,NA,531,217,531,528,543,0,NA,NA
+"2020-05-28",6,2020,"abundance","NaiveArima","exclosures","PE",2,-2.92853674801731,6.92853674801731,"846.8",35,0.95,846,NA,532,217,531,528,543,1,NA,NA
+"2020-05-28",7,2020,"abundance","NaiveArima","exclosures","PE",2,-3.39894150476448,7.39894150476448,"846.8",35,0.95,846,NA,533,217,531,528,543,2,NA,NA
+"2020-05-28",8,2020,"abundance","NaiveArima","exclosures","PE",2,-3.83152332304175,7.83152332304175,"846.8",35,0.95,846,NA,534,217,531,528,543,3,NA,NA
+"2020-05-28",9,2020,"abundance","NaiveArima","exclosures","PE",2,-4.23416066222963,8.23416066222963,"846.8",35,0.95,846,NA,535,217,531,528,543,4,NA,NA
+"2020-05-28",10,2020,"abundance","NaiveArima","exclosures","PE",2,-4.61232591890348,8.61232591890348,"846.8",35,0.95,846,NA,536,217,531,528,543,5,NA,NA
+"2020-05-28",11,2020,"abundance","NaiveArima","exclosures","PE",2,-4.97000351170027,8.97000351170027,"846.8",35,0.95,846,NA,537,217,531,528,543,6,NA,NA
+"2020-05-28",12,2020,"abundance","NaiveArima","exclosures","PE",2,-5.31020135484828,9.31020135484828,"846.8",35,0.95,846,NA,538,217,531,528,543,7,NA,NA
+"2020-05-28",1,2021,"abundance","NaiveArima","exclosures","PE",2,-5.63525629849693,9.63525629849693,"846.8",35,0.95,846,NA,539,217,531,528,543,8,NA,NA
+"2020-05-28",2,2021,"abundance","NaiveArima","exclosures","PE",2,-5.94702671689535,9.94702671689534,"846.8",35,0.95,846,NA,540,217,531,528,543,9,NA,NA
+"2020-05-28",3,2021,"abundance","NaiveArima","exclosures","PE",2,-6.24701937274066,10.2470193727407,"846.8",35,0.95,846,NA,541,217,531,528,543,10,NA,NA
+"2020-05-28",4,2021,"abundance","NaiveArima","exclosures","PE",2,-6.53647605453628,10.5364760545363,"846.8",35,0.95,846,NA,542,217,531,528,543,11,NA,NA
+"2020-05-28",5,2021,"abundance","NaiveArima","exclosures","PE",2,-6.81643455853797,10.816434558538,"846.8",35,0.95,846,NA,543,217,531,528,543,12,NA,NA

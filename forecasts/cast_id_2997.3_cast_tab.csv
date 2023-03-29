@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","cast_group","confidence_level","estimate","lower_pi","upper_pi","cast_id","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2022-10-20",9,2022,"abundance","pevGARCH","controls","DO",117,0.95,1.47633621975873,0,4,"2997.3",2997,NA,560,217,560,560,572,0,NA,NA
+"2022-10-20",10,2022,"abundance","pevGARCH","controls","DO",117,0.95,1.83607690527367,0,6,"2997.3",2997,NA,561,217,560,560,572,1,NA,NA
+"2022-10-20",11,2022,"abundance","pevGARCH","controls","DO",117,0.95,2.13381552172902,0,7,"2997.3",2997,NA,562,217,560,560,572,2,NA,NA
+"2022-10-20",12,2022,"abundance","pevGARCH","controls","DO",117,0.95,2.40082276379901,0,8,"2997.3",2997,NA,563,217,560,560,572,3,NA,NA
+"2022-10-20",1,2023,"abundance","pevGARCH","controls","DO",117,0.95,2.64808313617957,0,8,"2997.3",2997,NA,564,217,560,560,572,4,NA,NA
+"2022-10-20",2,2023,"abundance","pevGARCH","controls","DO",117,0.95,2.86868625834651,0,9,"2997.3",2997,NA,565,217,560,560,572,5,NA,NA
+"2022-10-20",3,2023,"abundance","pevGARCH","controls","DO",117,0.95,3.06541040796534,0,10,"2997.3",2997,NA,566,217,560,560,572,6,NA,NA
+"2022-10-20",4,2023,"abundance","pevGARCH","controls","DO",117,0.95,3.10953005094296,0,9,"2997.3",2997,NA,567,217,560,560,572,7,NA,NA
+"2022-10-20",5,2023,"abundance","pevGARCH","controls","DO",117,0.95,3.09438551766275,0,9,"2997.3",2997,NA,568,217,560,560,572,8,NA,NA
+"2022-10-20",6,2023,"abundance","pevGARCH","controls","DO",117,0.95,3.04521732692244,0,9,"2997.3",2997,NA,569,217,560,560,572,9,NA,NA
+"2022-10-20",7,2023,"abundance","pevGARCH","controls","DO",117,0.95,2.98835668123036,0,10,"2997.3",2997,NA,570,217,560,560,572,10,NA,NA
+"2022-10-20",8,2023,"abundance","pevGARCH","controls","DO",117,0.95,2.95488425488406,0,10,"2997.3",2997,NA,571,217,560,560,572,11,NA,NA
+"2022-10-20",9,2023,"abundance","pevGARCH","controls","DO",117,0.95,2.92373469591856,0,9,"2997.3",2997,NA,572,217,560,560,572,12,NA,NA

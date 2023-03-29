@@ -1,0 +1,15 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2019-11-28",10,2019,"abundance","nbsGARCH","all","PB",6.26978808806745,1,14,"82.8",4,0.95,82,NA,524,217,525,524,537,-1,NA,NA
+"2019-11-28",11,2019,"abundance","nbsGARCH","all","PB",6.20506284176663,0,19,"82.8",4,0.95,82,NA,525,217,525,524,537,0,NA,NA
+"2019-11-28",12,2019,"abundance","nbsGARCH","all","PB",6.28049954724142,0,21,"82.8",4,0.95,82,NA,526,217,525,524,537,1,NA,NA
+"2019-11-28",1,2020,"abundance","nbsGARCH","all","PB",6.54952785035684,0,23,"82.8",4,0.95,82,NA,527,217,525,524,537,2,NA,NA
+"2019-11-28",2,2020,"abundance","nbsGARCH","all","PB",7.16230083996568,0,25,"82.8",4,0.95,82,NA,528,217,525,524,537,3,NA,NA
+"2019-11-28",3,2020,"abundance","nbsGARCH","all","PB",8.13789570866484,0,28,"82.8",4,0.95,82,NA,529,217,525,524,537,4,NA,NA
+"2019-11-28",4,2020,"abundance","nbsGARCH","all","PB",9.65343861675244,0,38,"82.8",4,0.95,82,NA,530,217,525,524,537,5,NA,NA
+"2019-11-28",5,2020,"abundance","nbsGARCH","all","PB",11.4258516723608,0,40,"82.8",4,0.95,82,NA,531,217,525,524,537,6,NA,NA
+"2019-11-28",6,2020,"abundance","nbsGARCH","all","PB",13.4439398670307,0,47,"82.8",4,0.95,82,NA,532,217,525,524,537,7,NA,NA
+"2019-11-28",7,2020,"abundance","nbsGARCH","all","PB",14.7950343952546,1,52,"82.8",4,0.95,82,NA,533,217,525,524,537,8,NA,NA
+"2019-11-28",8,2020,"abundance","nbsGARCH","all","PB",15.276276570612,0,52,"82.8",4,0.95,82,NA,534,217,525,524,537,9,NA,NA
+"2019-11-28",9,2020,"abundance","nbsGARCH","all","PB",14.7642558161331,0,51,"82.8",4,0.95,82,NA,535,217,525,524,537,10,NA,NA
+"2019-11-28",10,2020,"abundance","nbsGARCH","all","PB",13.8413242343054,0,49,"82.8",4,0.95,82,NA,536,217,525,524,537,11,NA,NA
+"2019-11-28",11,2020,"abundance","nbsGARCH","all","PB",12.6090498412593,0,44,"82.8",4,0.95,82,NA,537,217,525,524,537,12,NA,NA

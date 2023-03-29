@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2019-11-15",10,2019,"abundance","pevGARCH","all","DO",4.6915476773032,1,9,"16.3",1,0.95,16,NA,524,217,524,524,536,0,NA,NA
+"2019-11-15",11,2019,"abundance","pevGARCH","all","DO",5.61675969687492,1,12,"16.3",1,0.95,16,NA,525,217,524,524,536,1,NA,NA
+"2019-11-15",12,2019,"abundance","pevGARCH","all","DO",7.15165038340894,1,16,"16.3",1,0.95,16,NA,526,217,524,524,536,2,NA,NA
+"2019-11-15",1,2020,"abundance","pevGARCH","all","DO",9.20704850772914,1,20,"16.3",1,0.95,16,NA,527,217,524,524,536,3,NA,NA
+"2019-11-15",2,2020,"abundance","pevGARCH","all","DO",11.134384564545,2,24,"16.3",1,0.95,16,NA,528,217,524,524,536,4,NA,NA
+"2019-11-15",3,2020,"abundance","pevGARCH","all","DO",12.4882067653892,2,27,"16.3",1,0.95,16,NA,529,217,524,524,536,5,NA,NA
+"2019-11-15",4,2020,"abundance","pevGARCH","all","DO",11.5903062843568,2,24,"16.3",1,0.95,16,NA,530,217,524,524,536,6,NA,NA
+"2019-11-15",5,2020,"abundance","pevGARCH","all","DO",11.5273360761671,2,25,"16.3",1,0.95,16,NA,531,217,524,524,536,7,NA,NA
+"2019-11-15",6,2020,"abundance","pevGARCH","all","DO",10.1006539803318,2,22,"16.3",1,0.95,16,NA,532,217,524,524,536,8,NA,NA
+"2019-11-15",7,2020,"abundance","pevGARCH","all","DO",8.94750067376605,1,20,"16.3",1,0.95,16,NA,533,217,524,524,536,9,NA,NA
+"2019-11-15",8,2020,"abundance","pevGARCH","all","DO",8.25862117483567,1,19,"16.3",1,0.95,16,NA,534,217,524,524,536,10,NA,NA
+"2019-11-15",9,2020,"abundance","pevGARCH","all","DO",8.12949342663184,1,19,"16.3",1,0.95,16,NA,535,217,524,524,536,11,NA,NA
+"2019-11-15",10,2020,"abundance","pevGARCH","all","DO",8.25009026660872,1,19,"16.3",1,0.95,16,NA,536,217,524,524,536,12,NA,NA

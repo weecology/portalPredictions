@@ -1,0 +1,15 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2020-01-10",11,2019,"abundance","nbsGARCH","all","PE",6.65986639362788,0,18,"304.9",14,0.95,304,NA,525,217,526,525,538,-1,NA,NA
+"2020-01-10",12,2019,"abundance","nbsGARCH","all","PE",7.66735571441955,0,24,"304.9",14,0.95,304,NA,526,217,526,525,538,0,NA,NA
+"2020-01-10",1,2020,"abundance","nbsGARCH","all","PE",7.87629635368754,0,30,"304.9",14,0.95,304,NA,527,217,526,525,538,1,NA,NA
+"2020-01-10",2,2020,"abundance","nbsGARCH","all","PE",7.99038556320225,0,30,"304.9",14,0.95,304,NA,528,217,526,525,538,2,NA,NA
+"2020-01-10",3,2020,"abundance","nbsGARCH","all","PE",6.960792603416,0,30,"304.9",14,0.95,304,NA,529,217,526,525,538,3,NA,NA
+"2020-01-10",4,2020,"abundance","nbsGARCH","all","PE",6.36334910919308,0,28,"304.9",14,0.95,304,NA,530,217,526,525,538,4,NA,NA
+"2020-01-10",5,2020,"abundance","nbsGARCH","all","PE",5.42972896283106,0,21,"304.9",14,0.95,304,NA,531,217,526,525,538,5,NA,NA
+"2020-01-10",6,2020,"abundance","nbsGARCH","all","PE",4.48533909405757,0,15,"304.9",14,0.95,304,NA,532,217,526,525,538,6,NA,NA
+"2020-01-10",7,2020,"abundance","nbsGARCH","all","PE",3.98306821406771,0,15,"304.9",14,0.95,304,NA,533,217,526,525,538,7,NA,NA
+"2020-01-10",8,2020,"abundance","nbsGARCH","all","PE",3.90852198540509,0,15,"304.9",14,0.95,304,NA,534,217,526,525,538,8,NA,NA
+"2020-01-10",9,2020,"abundance","nbsGARCH","all","PE",3.97997504262902,0,16,"304.9",14,0.95,304,NA,535,217,526,525,538,9,NA,NA
+"2020-01-10",10,2020,"abundance","nbsGARCH","all","PE",4.73568394654601,0,19,"304.9",14,0.95,304,NA,536,217,526,525,538,10,NA,NA
+"2020-01-10",11,2020,"abundance","nbsGARCH","all","PE",6.02372458154097,0,21,"304.9",14,0.95,304,NA,537,217,526,525,538,11,NA,NA
+"2020-01-10",12,2020,"abundance","nbsGARCH","all","PE",7.46316982186337,0,29,"304.9",14,0.95,304,NA,538,217,526,525,538,12,NA,NA

@@ -1,0 +1,16 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2019-12-27",10,2019,"abundance","pevGARCH","exclosures","PB",4.66193006116176,1,9,"219.7",10,0.95,219,NA,524,217,526,524,538,-2,NA,NA
+"2019-12-27",11,2019,"abundance","pevGARCH","exclosures","PB",5.21957198798452,1,12,"219.7",10,0.95,219,NA,525,217,526,524,538,-1,NA,NA
+"2019-12-27",12,2019,"abundance","pevGARCH","exclosures","PB",5.71954556003571,1,14,"219.7",10,0.95,219,NA,526,217,526,524,538,0,NA,NA
+"2019-12-27",1,2020,"abundance","pevGARCH","exclosures","PB",6.16359704122601,1,16,"219.7",10,0.95,219,NA,527,217,526,524,538,1,NA,NA
+"2019-12-27",2,2020,"abundance","pevGARCH","exclosures","PB",6.55602038629933,0,17,"219.7",10,0.95,219,NA,528,217,526,524,538,2,NA,NA
+"2019-12-27",3,2020,"abundance","pevGARCH","exclosures","PB",6.89991629917805,0,18,"219.7",10,0.95,219,NA,529,217,526,524,538,3,NA,NA
+"2019-12-27",4,2020,"abundance","pevGARCH","exclosures","PB",7.19494114549474,0,19,"219.7",10,0.95,219,NA,530,217,526,524,538,4,NA,NA
+"2019-12-27",5,2020,"abundance","pevGARCH","exclosures","PB",7.37951988057665,1,20,"219.7",10,0.95,219,NA,531,217,526,524,538,5,NA,NA
+"2019-12-27",6,2020,"abundance","pevGARCH","exclosures","PB",7.67009661983207,0,20,"219.7",10,0.95,219,NA,532,217,526,524,538,6,NA,NA
+"2019-12-27",7,2020,"abundance","pevGARCH","exclosures","PB",7.79337399532268,1,21,"219.7",10,0.95,219,NA,533,217,526,524,538,7,NA,NA
+"2019-12-27",8,2020,"abundance","pevGARCH","exclosures","PB",7.97175834873975,1,21,"219.7",10,0.95,219,NA,534,217,526,524,538,8,NA,NA
+"2019-12-27",9,2020,"abundance","pevGARCH","exclosures","PB",8.05916746306614,1,21,"219.7",10,0.95,219,NA,535,217,526,524,538,9,NA,NA
+"2019-12-27",10,2020,"abundance","pevGARCH","exclosures","PB",8.27220043929789,1,22,"219.7",10,0.95,219,NA,536,217,526,524,538,10,NA,NA
+"2019-12-27",11,2020,"abundance","pevGARCH","exclosures","PB",8.49246258695602,1,23,"219.7",10,0.95,219,NA,537,217,526,524,538,11,NA,NA
+"2019-12-27",12,2020,"abundance","pevGARCH","exclosures","PB",8.7142121196454,0,24,"219.7",10,0.95,219,NA,538,217,526,524,538,12,NA,NA

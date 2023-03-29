@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2021-12-16",12,2021,"abundance","pevGARCH","controls","PB",0.60542953573625,0,3,"1958.8",75,0.95,1958,NA,550,217,550,550,562,0,NA,NA
+"2021-12-16",1,2022,"abundance","pevGARCH","controls","PB",0.804303333565182,0,3,"1958.8",75,0.95,1958,NA,551,217,550,550,562,1,NA,NA
+"2021-12-16",2,2022,"abundance","pevGARCH","controls","PB",0.90683194723052,0,4,"1958.8",75,0.95,1958,NA,552,217,550,550,562,2,NA,NA
+"2021-12-16",3,2022,"abundance","pevGARCH","controls","PB",0.966235805635544,0,4,"1958.8",75,0.95,1958,NA,553,217,550,550,562,3,NA,NA
+"2021-12-16",4,2022,"abundance","pevGARCH","controls","PB",1.08236805981665,0,4,"1958.8",75,0.95,1958,NA,554,217,550,550,562,4,NA,NA
+"2021-12-16",4,2022,"abundance","pevGARCH","controls","PB",1.32708091233561,0,5,"1958.8",75,0.95,1958,NA,555,217,550,550,562,5,NA,NA
+"2021-12-16",5,2022,"abundance","pevGARCH","controls","PB",1.49289197948664,0,5,"1958.8",75,0.95,1958,NA,556,217,550,550,562,6,NA,NA
+"2021-12-16",6,2022,"abundance","pevGARCH","controls","PB",1.64081836901787,0,5,"1958.8",75,0.95,1958,NA,557,217,550,550,562,7,NA,NA
+"2021-12-16",7,2022,"abundance","pevGARCH","controls","PB",1104.44301631382,421,2419,"1958.8",75,0.95,1958,NA,558,217,550,550,562,8,NA,NA
+"2021-12-16",8,2022,"abundance","pevGARCH","controls","PB",235349.205150709,96115,488730,"1958.8",75,0.95,1958,NA,559,217,550,550,562,9,NA,NA
+"2021-12-16",9,2022,"abundance","pevGARCH","controls","PB",41153933.1329431,17861647,81289466,"1958.8",75,0.95,1958,NA,560,217,550,550,562,10,NA,NA
+"2021-12-16",10,2022,"abundance","pevGARCH","controls","PB",3994891069.6372,1835497412,7532553557,"1958.8",75,0.95,1958,NA,561,217,550,550,562,11,NA,NA
+"2021-12-16",11,2022,"abundance","pevGARCH","controls","PB",305569465685.008,148056900471,551741454824,"1958.8",75,0.95,1958,NA,562,217,550,550,562,12,NA,NA

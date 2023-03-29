@@ -1,0 +1,13 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2020-02-14",2,2020,"abundance","NaiveArima","controls","OT",6,2.25326597434223,9.74673402565777,"551.7",24,0.95,551,NA,528,217,527,528,539,1,NA,NA
+"2020-02-14",3,2020,"abundance","NaiveArima","controls","OT",6,0.701317926310043,11.29868207369,"551.7",24,0.95,551,NA,529,217,527,528,539,2,NA,NA
+"2020-02-14",4,2020,"abundance","NaiveArima","controls","OT",6,-0.489533694886324,12.4895336948863,"551.7",24,0.95,551,NA,530,217,527,528,539,3,NA,NA
+"2020-02-14",5,2020,"abundance","NaiveArima","controls","OT",6,-1.49346805131553,13.4934680513155,"551.7",24,0.95,551,NA,531,217,527,528,539,4,NA,NA
+"2020-02-14",6,2020,"abundance","NaiveArima","controls","OT",6,-2.37795197498221,14.3779519749822,"551.7",24,0.95,551,NA,532,217,527,528,539,5,NA,NA
+"2020-02-14",7,2020,"abundance","NaiveArima","controls","OT",6,-3.17758656478542,15.1775865647854,"551.7",24,0.95,551,NA,533,217,527,528,539,6,NA,NA
+"2020-02-14",8,2020,"abundance","NaiveArima","controls","OT",6,-3.91292646059435,15.9129264605943,"551.7",24,0.95,551,NA,534,217,527,528,539,7,NA,NA
+"2020-02-14",9,2020,"abundance","NaiveArima","controls","OT",6,-4.59736414737991,16.5973641473799,"551.7",24,0.95,551,NA,535,217,527,528,539,8,NA,NA
+"2020-02-14",10,2020,"abundance","NaiveArima","controls","OT",6,-5.2402020769733,17.2402020769733,"551.7",24,0.95,551,NA,536,217,527,528,539,9,NA,NA
+"2020-02-14",11,2020,"abundance","NaiveArima","controls","OT",6,-5.84821330793029,17.8482133079303,"551.7",24,0.95,551,NA,537,217,527,528,539,10,NA,NA
+"2020-02-14",12,2020,"abundance","NaiveArima","controls","OT",6,-6.42651095236463,18.4265109523646,"551.7",24,0.95,551,NA,538,217,527,528,539,11,NA,NA
+"2020-02-14",1,2021,"abundance","NaiveArima","controls","OT",6,-6.97906738977265,18.9790673897726,"551.7",24,0.95,551,NA,539,217,527,528,539,12,NA,NA

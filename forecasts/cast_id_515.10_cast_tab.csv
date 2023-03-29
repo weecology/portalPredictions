@@ -1,0 +1,13 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2020-02-13",2,2020,"abundance","AutoArima","controls","PF",0,-2.49511049677142,2.49511049677142,"515.10",23,0.95,515,NA,528,217,527,528,539,1,NA,NA
+"2020-02-13",3,2020,"abundance","AutoArima","controls","PF",0,-2.77326408529731,2.77326408529731,"515.10",23,0.95,515,NA,529,217,527,528,539,2,NA,NA
+"2020-02-13",4,2020,"abundance","AutoArima","controls","PF",0,-3.3458833561734,3.3458833561734,"515.10",23,0.95,515,NA,530,217,527,528,539,3,NA,NA
+"2020-02-13",5,2020,"abundance","AutoArima","controls","PF",0,-3.67969170105121,3.67969170105121,"515.10",23,0.95,515,NA,531,217,527,528,539,4,NA,NA
+"2020-02-13",6,2020,"abundance","AutoArima","controls","PF",0,-4.05622138428411,4.05622138428411,"515.10",23,0.95,515,NA,532,217,527,528,539,5,NA,NA
+"2020-02-13",7,2020,"abundance","AutoArima","controls","PF",0,-4.36644429251581,4.36644429251581,"515.10",23,0.95,515,NA,533,217,527,528,539,6,NA,NA
+"2020-02-13",8,2020,"abundance","AutoArima","controls","PF",0,-4.67237652395756,4.67237652395756,"515.10",23,0.95,515,NA,534,217,527,528,539,7,NA,NA
+"2020-02-13",9,2020,"abundance","AutoArima","controls","PF",0,-4.95150364699523,4.95150364699523,"515.10",23,0.95,515,NA,535,217,527,528,539,8,NA,NA
+"2020-02-13",10,2020,"abundance","AutoArima","controls","PF",0,-5.21959704478389,5.21959704478389,"515.10",23,0.95,515,NA,536,217,527,528,539,9,NA,NA
+"2020-02-13",11,2020,"abundance","AutoArima","controls","PF",0,-5.47266844049315,5.47266844049315,"515.10",23,0.95,515,NA,537,217,527,528,539,10,NA,NA
+"2020-02-13",12,2020,"abundance","AutoArima","controls","PF",0,-5.71548384311401,5.71548384311401,"515.10",23,0.95,515,NA,538,217,527,528,539,11,NA,NA
+"2020-02-13",1,2021,"abundance","AutoArima","controls","PF",0,-5.9479302768686,5.9479302768686,"515.10",23,0.95,515,NA,539,217,527,528,539,12,NA,NA

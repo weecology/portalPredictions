@@ -1,0 +1,388 @@
+cast_group: 23.0
+models: NaiveArima
+datasets: exclosures
+directory_configuration:
+  setup_date: '2020-02-13'
+  setup_R_version:
+    platform: x86_64-pc-linux-gnu
+    arch: x86_64
+    os: linux-gnu
+    system: x86_64, linux-gnu
+    status: ''
+    major: '3'
+    minor: '6.2'
+    year: '2019'
+    month: '12'
+    day: '12'
+    svn rev: '77560'
+    language: R
+    version.string: R version 3.6.2 (2019-12-12)
+    nickname: Dark and Stormy Night
+  setup_portalcasting_version: 0.17.1
+  directory_tree:
+    main: '.'
+    subs:
+    - casts
+    - models
+    - raw
+    - data
+    - tmp
+  downloads_versions:
+  - PortalData-2.11.0
+  - portalPredictions-2020-02-07
+controls_rodents:
+  all:
+    name: all
+    species:
+    - BA
+    - DM
+    - DO
+    - DS
+    - NA
+    - OL
+    - OT
+    - PB
+    - PE
+    - PF
+    - PH
+    - PL
+    - PM
+    - PP
+    - RF
+    - RM
+    - RO
+    - SF
+    - SH
+    - SO
+    total: yes
+    interpolate: no
+    clean: no
+    type: Rodents
+    level: Site
+    plots: all
+    treatment: ~
+    min_plots: 24.0
+    min_traps: 1.0
+    output: abundance
+    fillweight: no
+    unknowns: no
+    time: newmoon
+    na_drop: no
+    zero_drop: yes
+    effort: yes
+    filename: rodents_all.csv
+  all_interp:
+    name: all_interp
+    species:
+    - BA
+    - DM
+    - DO
+    - DS
+    - NA
+    - OL
+    - OT
+    - PB
+    - PE
+    - PF
+    - PH
+    - PL
+    - PM
+    - PP
+    - RF
+    - RM
+    - RO
+    - SF
+    - SH
+    - SO
+    total: yes
+    interpolate: yes
+    clean: no
+    type: Rodents
+    level: Site
+    plots: all
+    treatment: ~
+    min_plots: 24.0
+    min_traps: 1.0
+    output: abundance
+    fillweight: no
+    unknowns: no
+    time: newmoon
+    na_drop: yes
+    zero_drop: yes
+    effort: yes
+    filename: rodents_all_interp.csv
+  controls:
+    name: controls
+    species:
+    - BA
+    - DM
+    - DO
+    - DS
+    - NA
+    - OL
+    - OT
+    - PB
+    - PE
+    - PF
+    - PH
+    - PL
+    - PM
+    - PP
+    - RF
+    - RM
+    - RO
+    - SF
+    - SH
+    - SO
+    total: yes
+    interpolate: no
+    clean: no
+    type: Rodents
+    level: Treatment
+    plots: Longterm
+    treatment: control
+    min_plots: 24.0
+    min_traps: 1.0
+    output: abundance
+    fillweight: no
+    unknowns: no
+    time: newmoon
+    na_drop: no
+    zero_drop: yes
+    effort: yes
+    filename: rodents_controls.csv
+  controls_interp:
+    name: controls_interp
+    species:
+    - BA
+    - DM
+    - DO
+    - DS
+    - NA
+    - OL
+    - OT
+    - PB
+    - PE
+    - PF
+    - PH
+    - PL
+    - PM
+    - PP
+    - RF
+    - RM
+    - RO
+    - SF
+    - SH
+    - SO
+    total: yes
+    interpolate: yes
+    clean: no
+    type: Rodents
+    level: Treatment
+    plots: Longterm
+    treatment: control
+    min_plots: 24.0
+    min_traps: 1.0
+    output: abundance
+    fillweight: no
+    unknowns: no
+    time: newmoon
+    na_drop: no
+    zero_drop: yes
+    effort: yes
+    filename: rodents_controls_interp.csv
+  exclosures:
+    name: exclosures
+    species:
+    - BA
+    - DM
+    - DO
+    - DS
+    - NA
+    - OL
+    - OT
+    - PB
+    - PE
+    - PF
+    - PH
+    - PL
+    - PM
+    - PP
+    - RF
+    - RM
+    - RO
+    - SF
+    - SH
+    - SO
+    total: yes
+    interpolate: no
+    clean: no
+    type: Rodents
+    level: Treatment
+    plots: Longterm
+    treatment: exclosure
+    min_plots: 24.0
+    min_traps: 1.0
+    output: abundance
+    fillweight: no
+    unknowns: no
+    time: newmoon
+    na_drop: no
+    zero_drop: yes
+    effort: yes
+    filename: rodents_exclosures.csv
+  exclosures_interp:
+    name: exclosures_interp
+    species:
+    - BA
+    - DM
+    - DO
+    - DS
+    - NA
+    - OL
+    - OT
+    - PB
+    - PE
+    - PF
+    - PH
+    - PL
+    - PM
+    - PP
+    - RF
+    - RM
+    - RO
+    - SF
+    - SH
+    - SO
+    total: yes
+    interpolate: yes
+    clean: no
+    type: Rodents
+    level: Treatment
+    plots: Longterm
+    treatment: exclosure
+    min_plots: 24.0
+    min_traps: 1.0
+    output: abundance
+    fillweight: no
+    unknowns: no
+    time: newmoon
+    na_drop: no
+    zero_drop: yes
+    effort: yes
+    filename: rodents_exclosures_interp.csv
+cast_type: forecast
+start_moon: 217.0
+end_moon: 527
+last_moon: 527
+lead_time: 12.0
+min_lag: 6.0
+cast_date: '2020-02-13'
+covariate_cast_moons:
+- 534
+- 535
+- 536
+- 537
+- 538
+- 539
+covariate_cast_months:
+- 8.0
+- 9.0
+- 10.0
+- 11.0
+- 12.0
+- 1.0
+covariate_cast_years:
+- 2020.0
+- 2020.0
+- 2020.0
+- 2020.0
+- 2020.0
+- 2021.0
+rodent_cast_moons:
+- 528
+- 529
+- 530
+- 531
+- 532
+- 533
+- 534
+- 535
+- 536
+- 537
+- 538
+- 539
+rodent_cast_months:
+- 2.0
+- 3.0
+- 4.0
+- 5.0
+- 6.0
+- 7.0
+- 8.0
+- 9.0
+- 10.0
+- 11.0
+- 12.0
+- 1.0
+rodent_cast_years:
+- 2020.0
+- 2020.0
+- 2020.0
+- 2020.0
+- 2020.0
+- 2020.0
+- 2020.0
+- 2020.0
+- 2020.0
+- 2020.0
+- 2020.0
+- 2021.0
+confidence_level: 0.95
+controls_r:
+  name: exclosures
+  species:
+  - BA
+  - DM
+  - DO
+  - DS
+  - NA
+  - OL
+  - OT
+  - PB
+  - PE
+  - PF
+  - PH
+  - PL
+  - PM
+  - PP
+  - RF
+  - RM
+  - RO
+  - SF
+  - SH
+  - SO
+  total: yes
+  interpolate: no
+  clean: no
+  type: Rodents
+  level: Treatment
+  plots: Longterm
+  treatment: exclosure
+  min_plots: 24.0
+  min_traps: 1.0
+  output: abundance
+  fillweight: no
+  unknowns: no
+  time: newmoon
+  na_drop: no
+  zero_drop: yes
+  effort: yes
+  filename: rodents_exclosures.csv
+arg_checks: yes
+interpolated_data: no
+model: NaiveArima
+dataset: exclosures
+species: PF
+old_cast_id: 528
+cast_id: '528.9'

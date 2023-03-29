@@ -1,0 +1,16 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2019-12-27",10,2019,"abundance","nbsGARCH","controls","SF",0.090164513788017,0,1,"215.16",10,0.95,215,NA,524,217,526,524,538,-2,NA,NA
+"2019-12-27",11,2019,"abundance","nbsGARCH","controls","SF",0.10286759900524,0,1,"215.16",10,0.95,215,NA,525,217,526,524,538,-1,NA,NA
+"2019-12-27",12,2019,"abundance","nbsGARCH","controls","SF",0.12858659694534,0,1,"215.16",10,0.95,215,NA,526,217,526,524,538,0,NA,NA
+"2019-12-27",1,2020,"abundance","nbsGARCH","controls","SF",0.179944108400194,0,1,"215.16",10,0.95,215,NA,527,217,526,524,538,1,NA,NA
+"2019-12-27",2,2020,"abundance","nbsGARCH","controls","SF",0.266207546927857,0,2,"215.16",10,0.95,215,NA,528,217,526,524,538,2,NA,NA
+"2019-12-27",3,2020,"abundance","nbsGARCH","controls","SF",0.376342494945544,0,2,"215.16",10,0.95,215,NA,529,217,526,524,538,3,NA,NA
+"2019-12-27",4,2020,"abundance","nbsGARCH","controls","SF",0.476629413625967,0,2,"215.16",10,0.95,215,NA,530,217,526,524,538,4,NA,NA
+"2019-12-27",5,2020,"abundance","nbsGARCH","controls","SF",0.502382087456965,0,2,"215.16",10,0.95,215,NA,531,217,526,524,538,5,NA,NA
+"2019-12-27",6,2020,"abundance","nbsGARCH","controls","SF",0.425270304537345,0,2,"215.16",10,0.95,215,NA,532,217,526,524,538,6,NA,NA
+"2019-12-27",7,2020,"abundance","nbsGARCH","controls","SF",0.297573470215296,0,2,"215.16",10,0.95,215,NA,533,217,526,524,538,7,NA,NA
+"2019-12-27",8,2020,"abundance","nbsGARCH","controls","SF",0.193834697062196,0,1,"215.16",10,0.95,215,NA,534,217,526,524,538,8,NA,NA
+"2019-12-27",9,2020,"abundance","nbsGARCH","controls","SF",0.131715320395509,0,1,"215.16",10,0.95,215,NA,535,217,526,524,538,9,NA,NA
+"2019-12-27",10,2020,"abundance","nbsGARCH","controls","SF",0.10457324154537,0,1,"215.16",10,0.95,215,NA,536,217,526,524,538,10,NA,NA
+"2019-12-27",11,2020,"abundance","nbsGARCH","controls","SF",0.100581079497376,0,1,"215.16",10,0.95,215,NA,537,217,526,524,538,11,NA,NA
+"2019-12-27",12,2020,"abundance","nbsGARCH","controls","SF",0.116596322975283,0,1,"215.16",10,0.95,215,NA,538,217,526,524,538,12,NA,NA

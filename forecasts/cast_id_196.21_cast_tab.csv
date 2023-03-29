@@ -1,0 +1,15 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2019-12-20",10,2019,"abundance","pevGARCH","all","total",126.930054406002,106,149,"196.21",9,0.95,196,NA,524,217,525,524,537,-1,NA,NA
+"2019-12-20",11,2019,"abundance","pevGARCH","all","total",133.82908622173,104,165,"196.21",9,0.95,196,NA,525,217,525,524,537,0,NA,NA
+"2019-12-20",12,2019,"abundance","pevGARCH","all","total",140.205373870129,107,177,"196.21",9,0.95,196,NA,526,217,525,524,537,1,NA,NA
+"2019-12-20",1,2020,"abundance","pevGARCH","all","total",148.93013581988,108,192,"196.21",9,0.95,196,NA,527,217,525,524,537,2,NA,NA
+"2019-12-20",2,2020,"abundance","pevGARCH","all","total",158.978043058319,112,206,"196.21",9,0.95,196,NA,528,217,525,524,537,3,NA,NA
+"2019-12-20",3,2020,"abundance","pevGARCH","all","total",168.635488037624,119,222,"196.21",9,0.95,196,NA,529,217,525,524,537,4,NA,NA
+"2019-12-20",4,2020,"abundance","pevGARCH","all","total",172.906899863402,123,229,"196.21",9,0.95,196,NA,530,217,525,524,537,5,NA,NA
+"2019-12-20",5,2020,"abundance","pevGARCH","all","total",179.417053538171,125,237,"196.21",9,0.95,196,NA,531,217,525,524,537,6,NA,NA
+"2019-12-20",6,2020,"abundance","pevGARCH","all","total",190.061209091229,133,251,"196.21",9,0.95,196,NA,532,217,525,524,537,7,NA,NA
+"2019-12-20",7,2020,"abundance","pevGARCH","all","total",195.267595259938,137,255,"196.21",9,0.95,196,NA,533,217,525,524,537,8,NA,NA
+"2019-12-20",8,2020,"abundance","pevGARCH","all","total",197.844246411948,139,260,"196.21",9,0.95,196,NA,534,217,525,524,537,9,NA,NA
+"2019-12-20",9,2020,"abundance","pevGARCH","all","total",199.204972812969,141,263,"196.21",9,0.95,196,NA,535,217,525,524,537,10,NA,NA
+"2019-12-20",10,2020,"abundance","pevGARCH","all","total",199.069734994004,141,264,"196.21",9,0.95,196,NA,536,217,525,524,537,11,NA,NA
+"2019-12-20",11,2020,"abundance","pevGARCH","all","total",198.635731411065,138,266,"196.21",9,0.95,196,NA,537,217,525,524,537,12,NA,NA

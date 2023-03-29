@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2019-11-21",10,2019,"abundance","pevGARCH","exclosures","PP",10.714880603498,5,17,"42.13",2,0.95,42,NA,524,217,524,524,536,0,NA,NA
+"2019-11-21",11,2019,"abundance","pevGARCH","exclosures","PP",7.92432352838244,2,16,"42.13",2,0.95,42,NA,525,217,524,524,536,1,NA,NA
+"2019-11-21",12,2019,"abundance","pevGARCH","exclosures","PP",5.4845843895925,1,12,"42.13",2,0.95,42,NA,526,217,524,524,536,2,NA,NA
+"2019-11-21",1,2020,"abundance","pevGARCH","exclosures","PP",4.74242237181327,1,11,"42.13",2,0.95,42,NA,527,217,524,524,536,3,NA,NA
+"2019-11-21",2,2020,"abundance","pevGARCH","exclosures","PP",4.38489106223446,0,11,"42.13",2,0.95,42,NA,528,217,524,524,536,4,NA,NA
+"2019-11-21",3,2020,"abundance","pevGARCH","exclosures","PP",5.1291455365816,0,12,"42.13",2,0.95,42,NA,529,217,524,524,536,5,NA,NA
+"2019-11-21",4,2020,"abundance","pevGARCH","exclosures","PP",5.9825289993637,1,14,"42.13",2,0.95,42,NA,530,217,524,524,536,6,NA,NA
+"2019-11-21",5,2020,"abundance","pevGARCH","exclosures","PP",6.9038323864058,1,15,"42.13",2,0.95,42,NA,531,217,524,524,536,7,NA,NA
+"2019-11-21",6,2020,"abundance","pevGARCH","exclosures","PP",10.3921509229117,2,20,"42.13",2,0.95,42,NA,532,217,524,524,536,8,NA,NA
+"2019-11-21",7,2020,"abundance","pevGARCH","exclosures","PP",13.3201657089397,3,25,"42.13",2,0.95,42,NA,533,217,524,524,536,9,NA,NA
+"2019-11-21",8,2020,"abundance","pevGARCH","exclosures","PP",15.762410539881,5,28,"42.13",2,0.95,42,NA,534,217,524,524,536,10,NA,NA
+"2019-11-21",9,2020,"abundance","pevGARCH","exclosures","PP",15.4589364293007,5,28,"42.13",2,0.95,42,NA,535,217,524,524,536,11,NA,NA
+"2019-11-21",10,2020,"abundance","pevGARCH","exclosures","PP",14.9196867973806,4,27,"42.13",2,0.95,42,NA,536,217,524,524,536,12,NA,NA

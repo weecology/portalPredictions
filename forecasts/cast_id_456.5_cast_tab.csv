@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2020-01-31",1,2020,"abundance","nbsGARCH","exclosures","OL",0.187854485970252,0,1,"456.5",20,0.95,456,NA,527,217,527,527,539,0,NA,NA
+"2020-01-31",2,2020,"abundance","nbsGARCH","exclosures","OL",0.224352821342624,0,1,"456.5",20,0.95,456,NA,528,217,527,527,539,1,NA,NA
+"2020-01-31",3,2020,"abundance","nbsGARCH","exclosures","OL",0.227213816352949,0,1,"456.5",20,0.95,456,NA,529,217,527,527,539,2,NA,NA
+"2020-01-31",4,2020,"abundance","nbsGARCH","exclosures","OL",0.219268907313273,0,1,"456.5",20,0.95,456,NA,530,217,527,527,539,3,NA,NA
+"2020-01-31",5,2020,"abundance","nbsGARCH","exclosures","OL",0.207953971170531,0,1,"456.5",20,0.95,456,NA,531,217,527,527,539,4,NA,NA
+"2020-01-31",6,2020,"abundance","nbsGARCH","exclosures","OL",0.19667286586333,0,1,"456.5",20,0.95,456,NA,532,217,527,527,539,5,NA,NA
+"2020-01-31",7,2020,"abundance","nbsGARCH","exclosures","OL",0.188565306656611,0,1,"456.5",20,0.95,456,NA,533,217,527,527,539,6,NA,NA
+"2020-01-31",8,2020,"abundance","nbsGARCH","exclosures","OL",0.185323352430403,0,1,"456.5",20,0.95,456,NA,534,217,527,527,539,7,NA,NA
+"2020-01-31",9,2020,"abundance","nbsGARCH","exclosures","OL",0.187344804386097,0,2,"456.5",20,0.95,456,NA,535,217,527,527,539,8,NA,NA
+"2020-01-31",10,2020,"abundance","nbsGARCH","exclosures","OL",0.194049810161787,0,1,"456.5",20,0.95,456,NA,536,217,527,527,539,9,NA,NA
+"2020-01-31",11,2020,"abundance","nbsGARCH","exclosures","OL",0.204562354673307,0,2,"456.5",20,0.95,456,NA,537,217,527,527,539,10,NA,NA
+"2020-01-31",12,2020,"abundance","nbsGARCH","exclosures","OL",0.2162032209571,0,2,"456.5",20,0.95,456,NA,538,217,527,527,539,11,NA,NA
+"2020-01-31",1,2021,"abundance","nbsGARCH","exclosures","OL",0.226342165533878,0,2,"456.5",20,0.95,456,NA,539,217,527,527,539,12,NA,NA

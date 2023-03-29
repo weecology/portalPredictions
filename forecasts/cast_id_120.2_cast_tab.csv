@@ -1,0 +1,15 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2019-12-05",10,2019,"abundance","jags_RW","exclosures","DM",0.088,0,0.406,"120.2",6,0.95,120,NA,524,217,525,524,537,-1,NA,NA
+"2019-12-05",11,2019,"abundance","jags_RW","exclosures","DM",0.115,0,0.55,"120.2",6,0.95,120,NA,525,217,525,524,537,0,NA,NA
+"2019-12-05",12,2019,"abundance","jags_RW","exclosures","DM",0.146,0,0.676,"120.2",6,0.95,120,NA,526,217,525,524,537,1,NA,NA
+"2019-12-05",1,2020,"abundance","jags_RW","exclosures","DM",0.184,0,0.829,"120.2",6,0.95,120,NA,527,217,525,524,537,2,NA,NA
+"2019-12-05",2,2020,"abundance","jags_RW","exclosures","DM",0.228,0,1.002,"120.2",6,0.95,120,NA,528,217,525,524,537,3,NA,NA
+"2019-12-05",3,2020,"abundance","jags_RW","exclosures","DM",0.285,0,1.199,"120.2",6,0.95,120,NA,529,217,525,524,537,4,NA,NA
+"2019-12-05",4,2020,"abundance","jags_RW","exclosures","DM",0.351,0,1.402,"120.2",6,0.95,120,NA,530,217,525,524,537,5,NA,NA
+"2019-12-05",5,2020,"abundance","jags_RW","exclosures","DM",0.406,0,1.602,"120.2",6,0.95,120,NA,531,217,525,524,537,6,NA,NA
+"2019-12-05",6,2020,"abundance","jags_RW","exclosures","DM",0.489,0,1.86,"120.2",6,0.95,120,NA,532,217,525,524,537,7,NA,NA
+"2019-12-05",7,2020,"abundance","jags_RW","exclosures","DM",0.569,0,2.149,"120.2",6,0.95,120,NA,533,217,525,524,537,8,NA,NA
+"2019-12-05",8,2020,"abundance","jags_RW","exclosures","DM",0.663,0,2.404,"120.2",6,0.95,120,NA,534,217,525,524,537,9,NA,NA
+"2019-12-05",9,2020,"abundance","jags_RW","exclosures","DM",0.785,0,2.865,"120.2",6,0.95,120,NA,535,217,525,524,537,10,NA,NA
+"2019-12-05",10,2020,"abundance","jags_RW","exclosures","DM",0.892,0,3.137,"120.2",6,0.95,120,NA,536,217,525,524,537,11,NA,NA
+"2019-12-05",11,2020,"abundance","jags_RW","exclosures","DM",1.023,0,3.506,"120.2",6,0.95,120,NA,537,217,525,524,537,12,NA,NA

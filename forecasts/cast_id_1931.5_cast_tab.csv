@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2021-11-11",11,2021,"abundance","pevGARCH","exclosures","OL",0.103005568298848,0,1,"1931.5",74,0.95,1931,NA,549,217,549,549,561,0,NA,NA
+"2021-11-11",12,2021,"abundance","pevGARCH","exclosures","OL",0.179946549172904,0,1,"1931.5",74,0.95,1931,NA,550,217,549,549,561,1,NA,NA
+"2021-11-11",1,2022,"abundance","pevGARCH","exclosures","OL",0.0920219603138611,0,1,"1931.5",74,0.95,1931,NA,551,217,549,549,561,2,NA,NA
+"2021-11-11",2,2022,"abundance","pevGARCH","exclosures","OL",0.0583094395751249,0,1,"1931.5",74,0.95,1931,NA,552,217,549,549,561,3,NA,NA
+"2021-11-11",3,2022,"abundance","pevGARCH","exclosures","OL",0.0959303139619845,0,1,"1931.5",74,0.95,1931,NA,553,217,549,549,561,4,NA,NA
+"2021-11-11",4,2022,"abundance","pevGARCH","exclosures","OL",0.103748563470623,0,1,"1931.5",74,0.95,1931,NA,554,217,549,549,561,5,NA,NA
+"2021-11-11",4,2022,"abundance","pevGARCH","exclosures","OL",0.148056385094655,0,1,"1931.5",74,0.95,1931,NA,555,217,549,549,561,6,NA,NA
+"2021-11-11",5,2022,"abundance","pevGARCH","exclosures","OL",0.257929767658763,0,1,"1931.5",74,0.95,1931,NA,556,217,549,549,561,7,NA,NA
+"2021-11-11",6,2022,"abundance","pevGARCH","exclosures","OL",0.210069922220403,0,1,"1931.5",74,0.95,1931,NA,557,217,549,549,561,8,NA,NA
+"2021-11-11",7,2022,"abundance","pevGARCH","exclosures","OL",0.195216995539789,0,1,"1931.5",74,0.95,1931,NA,558,217,549,549,561,9,NA,NA
+"2021-11-11",8,2022,"abundance","pevGARCH","exclosures","OL",0.140993235183514,0,1,"1931.5",74,0.95,1931,NA,559,217,549,549,561,10,NA,NA
+"2021-11-11",9,2022,"abundance","pevGARCH","exclosures","OL",0.168582086735402,0,1,"1931.5",74,0.95,1931,NA,560,217,549,549,561,11,NA,NA
+"2021-11-11",10,2022,"abundance","pevGARCH","exclosures","OL",0.170678407948491,0,1,"1931.5",74,0.95,1931,NA,561,217,549,549,561,12,NA,NA

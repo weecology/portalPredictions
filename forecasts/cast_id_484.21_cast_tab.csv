@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2020-02-06",1,2020,"abundance","pevGARCH","all","total",57.8139197414373,42,72,"484.21",21,0.95,484,NA,527,217,527,527,539,0,NA,NA
+"2020-02-06",2,2020,"abundance","pevGARCH","all","total",69.6457370586711,48,94,"484.21",21,0.95,484,NA,528,217,527,527,539,1,NA,NA
+"2020-02-06",3,2020,"abundance","pevGARCH","all","total",87.1097006121756,58,120,"484.21",21,0.95,484,NA,529,217,527,527,539,2,NA,NA
+"2020-02-06",4,2020,"abundance","pevGARCH","all","total",96.857182475844,63,132,"484.21",21,0.95,484,NA,530,217,527,527,539,3,NA,NA
+"2020-02-06",5,2020,"abundance","pevGARCH","all","total",116.227868528741,77,160,"484.21",21,0.95,484,NA,531,217,527,527,539,4,NA,NA
+"2020-02-06",6,2020,"abundance","pevGARCH","all","total",162.173604129597,108,218,"484.21",21,0.95,484,NA,532,217,527,527,539,5,NA,NA
+"2020-02-06",7,2020,"abundance","pevGARCH","all","total",183.614233261825,124,243,"484.21",21,0.95,484,NA,533,217,527,527,539,6,NA,NA
+"2020-02-06",8,2020,"abundance","pevGARCH","all","total",203.558980264451,137,269,"484.21",21,0.95,484,NA,534,217,527,527,539,7,NA,NA
+"2020-02-06",9,2020,"abundance","pevGARCH","all","total",209.710792319495,145,274,"484.21",21,0.95,484,NA,535,217,527,527,539,8,NA,NA
+"2020-02-06",10,2020,"abundance","pevGARCH","all","total",207.099042270043,144,268,"484.21",21,0.95,484,NA,536,217,527,527,539,9,NA,NA
+"2020-02-06",11,2020,"abundance","pevGARCH","all","total",206.956544799132,150,266,"484.21",21,0.95,484,NA,537,217,527,527,539,10,NA,NA
+"2020-02-06",12,2020,"abundance","pevGARCH","all","total",199.824471234776,144,258,"484.21",21,0.95,484,NA,538,217,527,527,539,11,NA,NA
+"2020-02-06",1,2021,"abundance","pevGARCH","all","total",197.077472348773,141,254,"484.21",21,0.95,484,NA,539,217,527,527,539,12,NA,NA

@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","cast_group","confidence_level","dataset","species","estimate","lower_pi","upper_pi","cast_id","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2022-05-19",4,2022,"abundance","nbsGARCH",95,0.95,"exclosures","PE",0.346271060292802,0,2,"2506.8",2506,NA,555,217,555,555,567,0,NA,NA
+"2022-05-19",5,2022,"abundance","nbsGARCH",95,0.95,"exclosures","PE",0.410846882393048,0,2,"2506.8",2506,NA,556,217,555,555,567,1,NA,NA
+"2022-05-19",6,2022,"abundance","nbsGARCH",95,0.95,"exclosures","PE",0.404713680598746,0,2,"2506.8",2506,NA,557,217,555,555,567,2,NA,NA
+"2022-05-19",7,2022,"abundance","nbsGARCH",95,0.95,"exclosures","PE",0.4079733231367,0,2,"2506.8",2506,NA,558,217,555,555,567,3,NA,NA
+"2022-05-19",8,2022,"abundance","nbsGARCH",95,0.95,"exclosures","PE",0.446857322085515,0,2,"2506.8",2506,NA,559,217,555,555,567,4,NA,NA
+"2022-05-19",9,2022,"abundance","nbsGARCH",95,0.95,"exclosures","PE",0.527977014112065,0,3,"2506.8",2506,NA,560,217,555,555,567,5,NA,NA
+"2022-05-19",10,2022,"abundance","nbsGARCH",95,0.95,"exclosures","PE",0.646843959959023,0,3,"2506.8",2506,NA,561,217,555,555,567,6,NA,NA
+"2022-05-19",11,2022,"abundance","nbsGARCH",95,0.95,"exclosures","PE",0.785344425632839,0,3,"2506.8",2506,NA,562,217,555,555,567,7,NA,NA
+"2022-05-19",12,2022,"abundance","nbsGARCH",95,0.95,"exclosures","PE",0.921942399658736,0,4,"2506.8",2506,NA,563,217,555,555,567,8,NA,NA
+"2022-05-19",1,2023,"abundance","nbsGARCH",95,0.95,"exclosures","PE",0.993850262792668,0,4,"2506.8",2506,NA,564,217,555,555,567,9,NA,NA
+"2022-05-19",2,2023,"abundance","nbsGARCH",95,0.95,"exclosures","PE",0.957217516730048,0,4,"2506.8",2506,NA,565,217,555,555,567,10,NA,NA
+"2022-05-19",3,2023,"abundance","nbsGARCH",95,0.95,"exclosures","PE",0.829551030206963,0,3,"2506.8",2506,NA,566,217,555,555,567,11,NA,NA
+"2022-05-19",4,2023,"abundance","nbsGARCH",95,0.95,"exclosures","PE",0.661650007261678,0,3,"2506.8",2506,NA,567,217,555,555,567,12,NA,NA

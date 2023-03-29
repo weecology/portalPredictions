@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2021-12-16",12,2021,"abundance","nbsGARCH","controls","OT",0.75395911155237,0,3,"1954.7",75,0.95,1954,NA,550,217,550,550,562,0,NA,NA
+"2021-12-16",1,2022,"abundance","nbsGARCH","controls","OT",1.23148105232007,0,5,"1954.7",75,0.95,1954,NA,551,217,550,550,562,1,NA,NA
+"2021-12-16",2,2022,"abundance","nbsGARCH","controls","OT",1.4570007421131,0,6,"1954.7",75,0.95,1954,NA,552,217,550,550,562,2,NA,NA
+"2021-12-16",3,2022,"abundance","nbsGARCH","controls","OT",1.52361094829226,0,6,"1954.7",75,0.95,1954,NA,553,217,550,550,562,3,NA,NA
+"2021-12-16",4,2022,"abundance","nbsGARCH","controls","OT",1.53276763899859,0,6,"1954.7",75,0.95,1954,NA,554,217,550,550,562,4,NA,NA
+"2021-12-16",4,2022,"abundance","nbsGARCH","controls","OT",1.56300372002335,0,6,"1954.7",75,0.95,1954,NA,555,217,550,550,562,5,NA,NA
+"2021-12-16",5,2022,"abundance","nbsGARCH","controls","OT",1.65890879997164,0,6,"1954.7",75,0.95,1954,NA,556,217,550,550,562,6,NA,NA
+"2021-12-16",6,2022,"abundance","nbsGARCH","controls","OT",1.83984882406391,0,7,"1954.7",75,0.95,1954,NA,557,217,550,550,562,7,NA,NA
+"2021-12-16",7,2022,"abundance","nbsGARCH","controls","OT",2.11359922192789,0,8,"1954.7",75,0.95,1954,NA,558,217,550,550,562,8,NA,NA
+"2021-12-16",8,2022,"abundance","nbsGARCH","controls","OT",2.44691247702258,0,9,"1954.7",75,0.95,1954,NA,559,217,550,550,562,9,NA,NA
+"2021-12-16",9,2022,"abundance","nbsGARCH","controls","OT",2.78228890162895,0,9,"1954.7",75,0.95,1954,NA,560,217,550,550,562,10,NA,NA
+"2021-12-16",10,2022,"abundance","nbsGARCH","controls","OT",3.02359401591179,0,10,"1954.7",75,0.95,1954,NA,561,217,550,550,562,11,NA,NA
+"2021-12-16",11,2022,"abundance","nbsGARCH","controls","OT",3.07132041769954,0,11,"1954.7",75,0.95,1954,NA,562,217,550,550,562,12,NA,NA

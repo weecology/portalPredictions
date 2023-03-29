@@ -1,0 +1,15 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2022-03-10",1,2022,"abundance","jags_RW","controls","DO",1.384,0.132,3.118,"2224.3",85,0.95,2224,NA,552,217,553,552,565,-1,NA,NA
+"2022-03-10",3,2022,"abundance","jags_RW","controls","DO",1.7,0,4.89,"2224.3",85,0.95,2224,NA,553,217,553,552,565,0,NA,NA
+"2022-03-10",4,2022,"abundance","jags_RW","controls","DO",2.097,0,6.981,"2224.3",85,0.95,2224,NA,554,217,553,552,565,1,NA,NA
+"2022-03-10",4,2022,"abundance","jags_RW","controls","DO",2.592,0,9.244,"2224.3",85,0.95,2224,NA,555,217,553,552,565,2,NA,NA
+"2022-03-10",5,2022,"abundance","jags_RW","controls","DO",3.153,0,11.905,"2224.3",85,0.95,2224,NA,556,217,553,552,565,3,NA,NA
+"2022-03-10",6,2022,"abundance","jags_RW","controls","DO",3.806,0,14.937,"2224.3",85,0.95,2224,NA,557,217,553,552,565,4,NA,NA
+"2022-03-10",7,2022,"abundance","jags_RW","controls","DO",4.599,0,18.304,"2224.3",85,0.95,2224,NA,558,217,553,552,565,5,NA,NA
+"2022-03-10",8,2022,"abundance","jags_RW","controls","DO",5.38,0,22.121,"2224.3",85,0.95,2224,NA,559,217,553,552,565,6,NA,NA
+"2022-03-10",9,2022,"abundance","jags_RW","controls","DO",6.256,0,26.859,"2224.3",85,0.95,2224,NA,560,217,553,552,565,7,NA,NA
+"2022-03-10",10,2022,"abundance","jags_RW","controls","DO",7.12,0,31.501,"2224.3",85,0.95,2224,NA,561,217,553,552,565,8,NA,NA
+"2022-03-10",11,2022,"abundance","jags_RW","controls","DO",8.052,0,36.889,"2224.3",85,0.95,2224,NA,562,217,553,552,565,9,NA,NA
+"2022-03-10",12,2022,"abundance","jags_RW","controls","DO",9.005,0,44.409,"2224.3",85,0.95,2224,NA,563,217,553,552,565,10,NA,NA
+"2022-03-10",1,2023,"abundance","jags_RW","controls","DO",9.908,0,49.2,"2224.3",85,0.95,2224,NA,564,217,553,552,565,11,NA,NA
+"2022-03-10",2,2023,"abundance","jags_RW","controls","DO",10.53,0,56.025,"2224.3",85,0.95,2224,NA,565,217,553,552,565,12,NA,NA

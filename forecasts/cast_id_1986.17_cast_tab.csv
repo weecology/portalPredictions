@@ -1,0 +1,13 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2021-12-23",1,2022,"abundance","pevGARCH","controls","SH",0.548703455283223,0,2,"1986.17",76,0.95,1986,NA,551,217,550,551,562,1,NA,NA
+"2021-12-23",2,2022,"abundance","pevGARCH","controls","SH",463.018986455319,271,929,"1986.17",76,0.95,1986,NA,552,217,550,551,562,2,NA,NA
+"2021-12-23",3,2022,"abundance","pevGARCH","controls","SH",226.161390916392,122,470,"1986.17",76,0.95,1986,NA,553,217,550,551,562,3,NA,NA
+"2021-12-23",4,2022,"abundance","pevGARCH","controls","SH",9.80867617017343,2,23,"1986.17",76,0.95,1986,NA,554,217,550,551,562,4,NA,NA
+"2021-12-23",4,2022,"abundance","pevGARCH","controls","SH",0.224638235718992,0,1,"1986.17",76,0.95,1986,NA,555,217,550,551,562,5,NA,NA
+"2021-12-23",5,2022,"abundance","pevGARCH","controls","SH",0.0281259445431009,0,0,"1986.17",76,0.95,1986,NA,556,217,550,551,562,6,NA,NA
+"2021-12-23",6,2022,"abundance","pevGARCH","controls","SH",0.0272974526591661,0,0,"1986.17",76,0.95,1986,NA,557,217,550,551,562,7,NA,NA
+"2021-12-23",7,2022,"abundance","pevGARCH","controls","SH",2234584502.86096,2176463662,2176718038,"1986.17",76,0.95,1986,NA,558,217,550,551,562,8,NA,NA
+"2021-12-23",8,2022,"abundance","pevGARCH","controls","SH",1045790202190634496,1019205777585869824,1019322164025908992,"1986.17",76,0.95,1986,NA,559,217,550,551,562,9,NA,NA
+"2021-12-23",9,2022,"abundance","pevGARCH","controls","SH",6.89146932590236e+26,6.72025538107115e+26,6.72100517608736e+26,"1986.17",76,0.95,1986,NA,560,217,550,551,562,10,NA,NA
+"2021-12-23",10,2022,"abundance","pevGARCH","controls","SH",1.12256018639733e+35,1.09530315018123e+35,1.09542255102243e+35,"1986.17",76,0.95,1986,NA,561,217,550,551,562,11,NA,NA
+"2021-12-23",11,2022,"abundance","pevGARCH","controls","SH",2.93240960338934e+43,2.86282190615445e+43,2.86312682458233e+43,"1986.17",76,0.95,1986,NA,562,217,550,551,562,12,NA,NA

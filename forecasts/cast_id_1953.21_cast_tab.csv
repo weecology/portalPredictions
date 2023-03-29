@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2021-12-16",12,2021,"abundance","nbsGARCH","all","total",155.329499241002,85,250,"1953.21",75,0.95,1953,NA,550,217,550,550,562,0,NA,NA
+"2021-12-16",1,2022,"abundance","nbsGARCH","all","total",148.334975588066,65,272,"1953.21",75,0.95,1953,NA,551,217,550,550,562,1,NA,NA
+"2021-12-16",2,2022,"abundance","nbsGARCH","all","total",150.891419067735,54,300,"1953.21",75,0.95,1953,NA,552,217,550,550,562,2,NA,NA
+"2021-12-16",3,2022,"abundance","nbsGARCH","all","total",161.809294146491,53,321,"1953.21",75,0.95,1953,NA,553,217,550,550,562,3,NA,NA
+"2021-12-16",4,2022,"abundance","nbsGARCH","all","total",182.250103214909,57,375,"1953.21",75,0.95,1953,NA,554,217,550,550,562,4,NA,NA
+"2021-12-16",4,2022,"abundance","nbsGARCH","all","total",206.853203375025,63,453,"1953.21",75,0.95,1953,NA,555,217,550,550,562,5,NA,NA
+"2021-12-16",5,2022,"abundance","nbsGARCH","all","total",237.731111375328,69,576,"1953.21",75,0.95,1953,NA,556,217,550,550,562,6,NA,NA
+"2021-12-16",6,2022,"abundance","nbsGARCH","all","total",262.856562060229,71,614,"1953.21",75,0.95,1953,NA,557,217,550,550,562,7,NA,NA
+"2021-12-16",7,2022,"abundance","nbsGARCH","all","total",275.458577282114,74,651,"1953.21",75,0.95,1953,NA,558,217,550,550,562,8,NA,NA
+"2021-12-16",8,2022,"abundance","nbsGARCH","all","total",263.146321728517,68,645,"1953.21",75,0.95,1953,NA,559,217,550,550,562,9,NA,NA
+"2021-12-16",9,2022,"abundance","nbsGARCH","all","total",231.23452326199,62,551,"1953.21",75,0.95,1953,NA,560,217,550,550,562,10,NA,NA
+"2021-12-16",10,2022,"abundance","nbsGARCH","all","total",199.104708030763,53,485,"1953.21",75,0.95,1953,NA,561,217,550,550,562,11,NA,NA
+"2021-12-16",11,2022,"abundance","nbsGARCH","all","total",171.974561708003,46,366,"1953.21",75,0.95,1953,NA,562,217,550,550,562,12,NA,NA

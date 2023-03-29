@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","cast_group","confidence_level","dataset","species","estimate","lower_pi","upper_pi","cast_id","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2022-10-20",9,2022,"abundance","nbsGARCH",117,0.95,"all","PM",0.687816246099577,0,3,"2992.13",2992,NA,560,217,560,560,572,0,NA,NA
+"2022-10-20",10,2022,"abundance","nbsGARCH",117,0.95,"all","PM",1.21455086491447,0,4,"2992.13",2992,NA,561,217,560,560,572,1,NA,NA
+"2022-10-20",11,2022,"abundance","nbsGARCH",117,0.95,"all","PM",1.66014966633813,0,5,"2992.13",2992,NA,562,217,560,560,572,2,NA,NA
+"2022-10-20",12,2022,"abundance","nbsGARCH",117,0.95,"all","PM",2.04287230946619,0,7,"2992.13",2992,NA,563,217,560,560,572,3,NA,NA
+"2022-10-20",1,2023,"abundance","nbsGARCH",117,0.95,"all","PM",2.34296168197314,0,9,"2992.13",2992,NA,564,217,560,560,572,4,NA,NA
+"2022-10-20",2,2023,"abundance","nbsGARCH",117,0.95,"all","PM",2.52074420174528,0,9,"2992.13",2992,NA,565,217,560,560,572,5,NA,NA
+"2022-10-20",3,2023,"abundance","nbsGARCH",117,0.95,"all","PM",2.55770485090064,0,8,"2992.13",2992,NA,566,217,560,560,572,6,NA,NA
+"2022-10-20",4,2023,"abundance","nbsGARCH",117,0.95,"all","PM",2.46662725660232,0,9,"2992.13",2992,NA,567,217,560,560,572,7,NA,NA
+"2022-10-20",5,2023,"abundance","nbsGARCH",117,0.95,"all","PM",2.30464140171046,0,9,"2992.13",2992,NA,568,217,560,560,572,8,NA,NA
+"2022-10-20",6,2023,"abundance","nbsGARCH",117,0.95,"all","PM",2.13534159741014,0,8,"2992.13",2992,NA,569,217,560,560,572,9,NA,NA
+"2022-10-20",7,2023,"abundance","nbsGARCH",117,0.95,"all","PM",2.01269372072314,0,8,"2992.13",2992,NA,570,217,560,560,572,10,NA,NA
+"2022-10-20",8,2023,"abundance","nbsGARCH",117,0.95,"all","PM",1.96684648630592,0,8,"2992.13",2992,NA,571,217,560,560,572,11,NA,NA
+"2022-10-20",9,2023,"abundance","nbsGARCH",117,0.95,"all","PM",2.00515760859475,0,8,"2992.13",2992,NA,572,217,560,560,572,12,NA,NA

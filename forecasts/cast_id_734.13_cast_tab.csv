@@ -1,0 +1,15 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2020-04-09",2,2020,"abundance","jags_RW","controls","PP",0.292,0,1.161,"734.13",31,0.95,734,NA,528,217,529,528,541,-1,NA,NA
+"2020-04-09",3,2020,"abundance","jags_RW","controls","PP",0.787,0,3.412,"734.13",31,0.95,734,NA,529,217,529,528,541,0,NA,NA
+"2020-04-09",4,2020,"abundance","jags_RW","controls","PP",1.832,0,6.927,"734.13",31,0.95,734,NA,530,217,529,528,541,1,NA,NA
+"2020-04-09",5,2020,"abundance","jags_RW","controls","PP",3.402,0,11.831,"734.13",31,0.95,734,NA,531,217,529,528,541,2,NA,NA
+"2020-04-09",6,2020,"abundance","jags_RW","controls","PP",5.29,0,20.723,"734.13",31,0.95,734,NA,532,217,529,528,541,3,NA,NA
+"2020-04-09",7,2020,"abundance","jags_RW","controls","PP",7.208,0,33.73,"734.13",31,0.95,734,NA,533,217,529,528,541,4,NA,NA
+"2020-04-09",8,2020,"abundance","jags_RW","controls","PP",8.871,0,47.103,"734.13",31,0.95,734,NA,534,217,529,528,541,5,NA,NA
+"2020-04-09",9,2020,"abundance","jags_RW","controls","PP",10.65,0,65.998,"734.13",31,0.95,734,NA,535,217,529,528,541,6,NA,NA
+"2020-04-09",10,2020,"abundance","jags_RW","controls","PP",12.324,0,87.208,"734.13",31,0.95,734,NA,536,217,529,528,541,7,NA,NA
+"2020-04-09",11,2020,"abundance","jags_RW","controls","PP",13.484,0,99.832,"734.13",31,0.95,734,NA,537,217,529,528,541,8,NA,NA
+"2020-04-09",12,2020,"abundance","jags_RW","controls","PP",15.153,0,123.557,"734.13",31,0.95,734,NA,538,217,529,528,541,9,NA,NA
+"2020-04-09",1,2021,"abundance","jags_RW","controls","PP",15.886,0,136.162,"734.13",31,0.95,734,NA,539,217,529,528,541,10,NA,NA
+"2020-04-09",2,2021,"abundance","jags_RW","controls","PP",16.996,0,150.827,"734.13",31,0.95,734,NA,540,217,529,528,541,11,NA,NA
+"2020-04-09",3,2021,"abundance","jags_RW","controls","PP",17.468,0,157.573,"734.13",31,0.95,734,NA,541,217,529,528,541,12,NA,NA

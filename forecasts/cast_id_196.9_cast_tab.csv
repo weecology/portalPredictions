@@ -1,0 +1,15 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2019-12-20",10,2019,"abundance","pevGARCH","all","PE",2.82308874626128,0,7,"196.9",9,0.95,196,NA,524,217,525,524,537,-1,NA,NA
+"2019-12-20",11,2019,"abundance","pevGARCH","all","PE",3.40270930781665,0,9,"196.9",9,0.95,196,NA,525,217,525,524,537,0,NA,NA
+"2019-12-20",12,2019,"abundance","pevGARCH","all","PE",4.14527737409634,0,10,"196.9",9,0.95,196,NA,526,217,525,524,537,1,NA,NA
+"2019-12-20",1,2020,"abundance","pevGARCH","all","PE",4.7285791482467,0,12,"196.9",9,0.95,196,NA,527,217,525,524,537,2,NA,NA
+"2019-12-20",2,2020,"abundance","pevGARCH","all","PE",5.43009634786924,0,13,"196.9",9,0.95,196,NA,528,217,525,524,537,3,NA,NA
+"2019-12-20",3,2020,"abundance","pevGARCH","all","PE",5.70560232416977,0,14,"196.9",9,0.95,196,NA,529,217,525,524,537,4,NA,NA
+"2019-12-20",4,2020,"abundance","pevGARCH","all","PE",5.90634133528684,0,14,"196.9",9,0.95,196,NA,530,217,525,524,537,5,NA,NA
+"2019-12-20",5,2020,"abundance","pevGARCH","all","PE",5.83086633411101,0,14,"196.9",9,0.95,196,NA,531,217,525,524,537,6,NA,NA
+"2019-12-20",6,2020,"abundance","pevGARCH","all","PE",5.83883131174178,1,14,"196.9",9,0.95,196,NA,532,217,525,524,537,7,NA,NA
+"2019-12-20",7,2020,"abundance","pevGARCH","all","PE",5.53942367093715,0,13,"196.9",9,0.95,196,NA,533,217,525,524,537,8,NA,NA
+"2019-12-20",8,2020,"abundance","pevGARCH","all","PE",5.26543086775777,0,13,"196.9",9,0.95,196,NA,534,217,525,524,537,9,NA,NA
+"2019-12-20",9,2020,"abundance","pevGARCH","all","PE",4.92824966311966,0,11,"196.9",9,0.95,196,NA,535,217,525,524,537,10,NA,NA
+"2019-12-20",10,2020,"abundance","pevGARCH","all","PE",4.99128073629131,0,12,"196.9",9,0.95,196,NA,536,217,525,524,537,11,NA,NA
+"2019-12-20",11,2020,"abundance","pevGARCH","all","PE",5.09502361933149,0,12,"196.9",9,0.95,196,NA,537,217,525,524,537,12,NA,NA

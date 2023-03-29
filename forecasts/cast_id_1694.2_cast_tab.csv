@@ -1,0 +1,16 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2021-09-20",7,2021,"abundance","jags_RW","controls","DM",5.456,1.717,9.801,"1694.2",67,0.95,1694,NA,545,217,547,545,559,-2,NA,NA
+"2021-09-20",8,2021,"abundance","jags_RW","controls","DM",9.548,0,33.494,"1694.2",67,0.95,1694,NA,546,217,547,545,559,-1,NA,NA
+"2021-09-20",9,2021,"abundance","jags_RW","controls","DM",15.271,0,66.605,"1694.2",67,0.95,1694,NA,547,217,547,545,559,0,NA,NA
+"2021-09-20",10,2021,"abundance","jags_RW","controls","DM",20.722,0,110.752,"1694.2",67,0.95,1694,NA,548,217,547,545,559,1,NA,NA
+"2021-09-20",11,2021,"abundance","jags_RW","controls","DM",25.308,0,165.186,"1694.2",67,0.95,1694,NA,549,217,547,545,559,2,NA,NA
+"2021-09-20",12,2021,"abundance","jags_RW","controls","DM",28.765,0,196.9,"1694.2",67,0.95,1694,NA,550,217,547,545,559,3,NA,NA
+"2021-09-20",1,2022,"abundance","jags_RW","controls","DM",31.087,0,196.9,"1694.2",67,0.95,1694,NA,551,217,547,545,559,4,NA,NA
+"2021-09-20",2,2022,"abundance","jags_RW","controls","DM",33.11,0,196.9,"1694.2",67,0.95,1694,NA,552,217,547,545,559,5,NA,NA
+"2021-09-20",3,2022,"abundance","jags_RW","controls","DM",34.105,0,196.9,"1694.2",67,0.95,1694,NA,553,217,547,545,559,6,NA,NA
+"2021-09-20",4,2022,"abundance","jags_RW","controls","DM",34.975,0,196.9,"1694.2",67,0.95,1694,NA,554,217,547,545,559,7,NA,NA
+"2021-09-20",4,2022,"abundance","jags_RW","controls","DM",35.7,0,196.9,"1694.2",67,0.95,1694,NA,555,217,547,545,559,8,NA,NA
+"2021-09-20",5,2022,"abundance","jags_RW","controls","DM",36.742,0,196.9,"1694.2",67,0.95,1694,NA,556,217,547,545,559,9,NA,NA
+"2021-09-20",6,2022,"abundance","jags_RW","controls","DM",36.41,0,196.9,"1694.2",67,0.95,1694,NA,557,217,547,545,559,10,NA,NA
+"2021-09-20",7,2022,"abundance","jags_RW","controls","DM",36.78,0,196.9,"1694.2",67,0.95,1694,NA,558,217,547,545,559,11,NA,NA
+"2021-09-20",8,2022,"abundance","jags_RW","controls","DM",36.393,0,196.9,"1694.2",67,0.95,1694,NA,559,217,547,545,559,12,NA,NA

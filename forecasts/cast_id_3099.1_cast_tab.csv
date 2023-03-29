@@ -1,0 +1,13 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_group","confidence_level","cast_id","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2023-03-09",3,2023,"abundance","jags_logistic_competition","controls","DM",22.032,15.963,27.342,122,0.95,"3099.1",3099,NA,566,217,565,566,577,1,NA,NA
+"2023-03-09",4,2023,"abundance","jags_logistic_competition","controls","DM",21.848,14.04,28.851,122,0.95,"3099.1",3099,NA,567,217,565,566,577,2,NA,NA
+"2023-03-09",5,2023,"abundance","jags_logistic_competition","controls","DM",21.679,12.928,29.835,122,0.95,"3099.1",3099,NA,568,217,565,566,577,3,NA,NA
+"2023-03-09",6,2023,"abundance","jags_logistic_competition","controls","DM",21.523,12.249,30.72,122,0.95,"3099.1",3099,NA,569,217,565,566,577,4,NA,NA
+"2023-03-09",7,2023,"abundance","jags_logistic_competition","controls","DM",21.376,11.224,31.204,122,0.95,"3099.1",3099,NA,570,217,565,566,577,5,NA,NA
+"2023-03-09",8,2023,"abundance","jags_logistic_competition","controls","DM",21.246,10.651,31.543,122,0.95,"3099.1",3099,NA,571,217,565,566,577,6,NA,NA
+"2023-03-09",9,2023,"abundance","jags_logistic_competition","controls","DM",21.112,10.112,31.942,122,0.95,"3099.1",3099,NA,572,217,565,566,577,7,NA,NA
+"2023-03-09",10,2023,"abundance","jags_logistic_competition","controls","DM",20.981,9.726,32.262,122,0.95,"3099.1",3099,NA,573,217,565,566,577,8,NA,NA
+"2023-03-09",11,2023,"abundance","jags_logistic_competition","controls","DM",20.869,9.233,32.169,122,0.95,"3099.1",3099,NA,574,217,565,566,577,9,NA,NA
+"2023-03-09",12,2023,"abundance","jags_logistic_competition","controls","DM",20.764,9.005,32.641,122,0.95,"3099.1",3099,NA,575,217,565,566,577,10,NA,NA
+"2023-03-09",1,2024,"abundance","jags_logistic_competition","controls","DM",20.672,8.582,32.712,122,0.95,"3099.1",3099,NA,576,217,565,566,577,11,NA,NA
+"2023-03-09",2,2024,"abundance","jags_logistic_competition","controls","DM",20.596,8.267,32.863,122,0.95,"3099.1",3099,NA,577,217,565,566,577,12,NA,NA

@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","cast_group","confidence_level","estimate","lower_pi","upper_pi","cast_id","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2022-08-04",7,2022,"abundance","pevGARCH","all","SO",106,0.95,1.957648531761e-11,0,0,"2754.20",2754,NA,558,217,558,558,570,0,NA,NA
+"2022-08-04",8,2022,"abundance","pevGARCH","all","SO",106,0.95,1.7690802933678e-16,0,0,"2754.20",2754,NA,559,217,558,558,570,1,NA,NA
+"2022-08-04",9,2022,"abundance","pevGARCH","all","SO",106,0.95,1.03013081318119e-19,0,0,"2754.20",2754,NA,560,217,558,558,570,2,NA,NA
+"2022-08-04",10,2022,"abundance","pevGARCH","all","SO",106,0.95,1.01920629595387e-19,0,0,"2754.20",2754,NA,561,217,558,558,570,3,NA,NA
+"2022-08-04",11,2022,"abundance","pevGARCH","all","SO",106,0.95,3.04117159509498e-18,0,0,"2754.20",2754,NA,562,217,558,558,570,4,NA,NA
+"2022-08-04",12,2022,"abundance","pevGARCH","all","SO",106,0.95,3.88075810063049e-23,0,0,"2754.20",2754,NA,563,217,558,558,570,5,NA,NA
+"2022-08-04",1,2023,"abundance","pevGARCH","all","SO",106,0.95,5.91694917879621e-33,0,0,"2754.20",2754,NA,564,217,558,558,570,6,NA,NA
+"2022-08-04",2,2023,"abundance","pevGARCH","all","SO",106,0.95,1.05330992604899e-25,0,0,"2754.20",2754,NA,565,217,558,558,570,7,NA,NA
+"2022-08-04",3,2023,"abundance","pevGARCH","all","SO",106,0.95,1.70527807783498e-25,0,0,"2754.20",2754,NA,566,217,558,558,570,8,NA,NA
+"2022-08-04",4,2023,"abundance","pevGARCH","all","SO",106,0.95,2.24775005662326e-26,0,0,"2754.20",2754,NA,567,217,558,558,570,9,NA,NA
+"2022-08-04",5,2023,"abundance","pevGARCH","all","SO",106,0.95,2.68449248373795e-19,0,0,"2754.20",2754,NA,568,217,558,558,570,10,NA,NA
+"2022-08-04",6,2023,"abundance","pevGARCH","all","SO",106,0.95,2.80722399591944e-22,0,0,"2754.20",2754,NA,569,217,558,558,570,11,NA,NA
+"2022-08-04",7,2023,"abundance","pevGARCH","all","SO",106,0.95,5.61066496108126e-25,0,0,"2754.20",2754,NA,570,217,558,558,570,12,NA,NA

@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2020-02-07",1,2020,"abundance","AutoArima","exclosures","PF",0,-3.54431517864135,3.54431517864135,"492.9",22,0.95,492,NA,527,217,527,527,539,0,NA,NA
+"2020-02-07",2,2020,"abundance","AutoArima","exclosures","PF",0,-4.27919252914765,4.27919252914765,"492.9",22,0.95,492,NA,528,217,527,527,539,1,NA,NA
+"2020-02-07",3,2020,"abundance","AutoArima","exclosures","PF",0,-5.09676340393061,5.09676340393061,"492.9",22,0.95,492,NA,529,217,527,527,539,2,NA,NA
+"2020-02-07",4,2020,"abundance","AutoArima","exclosures","PF",0,-5.7439131309596,5.7439131309596,"492.9",22,0.95,492,NA,530,217,527,527,539,3,NA,NA
+"2020-02-07",5,2020,"abundance","AutoArima","exclosures","PF",0,-6.34154437498263,6.34154437498263,"492.9",22,0.95,492,NA,531,217,527,527,539,4,NA,NA
+"2020-02-07",6,2020,"abundance","AutoArima","exclosures","PF",0,-6.88262349478245,6.88262349478245,"492.9",22,0.95,492,NA,532,217,527,527,539,5,NA,NA
+"2020-02-07",7,2020,"abundance","AutoArima","exclosures","PF",0,-7.38563280074692,7.38563280074692,"492.9",22,0.95,492,NA,533,217,527,527,539,6,NA,NA
+"2020-02-07",8,2020,"abundance","AutoArima","exclosures","PF",0,-7.85605498030264,7.85605498030264,"492.9",22,0.95,492,NA,534,217,527,527,539,7,NA,NA
+"2020-02-07",9,2020,"abundance","AutoArima","exclosures","PF",0,-8.2999942212578,8.2999942212578,"492.9",22,0.95,492,NA,535,217,527,527,539,8,NA,NA
+"2020-02-07",10,2020,"abundance","AutoArima","exclosures","PF",0,-8.72132283084613,8.72132283084613,"492.9",22,0.95,492,NA,536,217,527,527,539,9,NA,NA
+"2020-02-07",11,2020,"abundance","AutoArima","exclosures","PF",0,-9.12322738782043,9.12322738782043,"492.9",22,0.95,492,NA,537,217,527,527,539,10,NA,NA
+"2020-02-07",12,2020,"abundance","AutoArima","exclosures","PF",0,-9.50815476124382,9.50815476124382,"492.9",22,0.95,492,NA,538,217,527,527,539,11,NA,NA
+"2020-02-07",1,2021,"abundance","AutoArima","exclosures","PF",0,-9.87809500279804,9.87809500279804,"492.9",22,0.95,492,NA,539,217,527,527,539,12,NA,NA

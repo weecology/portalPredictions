@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","cast_group","confidence_level","dataset","species","estimate","lower_pi","upper_pi","cast_id","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2023-03-02",2,2023,"abundance","nbGARCH",121,0.95,"controls","PP",1.39381473989681,0,5,"3084.12",3084,NA,565,217,565,565,577,0,NA,NA
+"2023-03-02",3,2023,"abundance","nbGARCH",121,0.95,"controls","PP",2.98729865306181,0,11,"3084.12",3084,NA,566,217,565,565,577,1,NA,NA
+"2023-03-02",4,2023,"abundance","nbGARCH",121,0.95,"controls","PP",5.41223758992185,0,21,"3084.12",3084,NA,567,217,565,565,577,2,NA,NA
+"2023-03-02",5,2023,"abundance","nbGARCH",121,0.95,"controls","PP",8.41215640567429,0,31,"3084.12",3084,NA,568,217,565,565,577,3,NA,NA
+"2023-03-02",6,2023,"abundance","nbGARCH",121,0.95,"controls","PP",11.9876181269623,0,43,"3084.12",3084,NA,569,217,565,565,577,4,NA,NA
+"2023-03-02",7,2023,"abundance","nbGARCH",121,0.95,"controls","PP",16.159013132138,0,65,"3084.12",3084,NA,570,217,565,565,577,5,NA,NA
+"2023-03-02",8,2023,"abundance","nbGARCH",121,0.95,"controls","PP",20.1200865638866,0,77,"3084.12",3084,NA,571,217,565,565,577,6,NA,NA
+"2023-03-02",9,2023,"abundance","nbGARCH",121,0.95,"controls","PP",23.5665512475779,0,97,"3084.12",3084,NA,572,217,565,565,577,7,NA,NA
+"2023-03-02",10,2023,"abundance","nbGARCH",121,0.95,"controls","PP",26.4976585987202,0,108,"3084.12",3084,NA,573,217,565,565,577,8,NA,NA
+"2023-03-02",11,2023,"abundance","nbGARCH",121,0.95,"controls","PP",27.80253351425,0,116,"3084.12",3084,NA,574,217,565,565,577,9,NA,NA
+"2023-03-02",12,2023,"abundance","nbGARCH",121,0.95,"controls","PP",26.9187244598782,0,102,"3084.12",3084,NA,575,217,565,565,577,10,NA,NA
+"2023-03-02",1,2024,"abundance","nbGARCH",121,0.95,"controls","PP",22.1656911010477,0,90,"3084.12",3084,NA,576,217,565,565,577,11,NA,NA
+"2023-03-02",2,2024,"abundance","nbGARCH",121,0.95,"controls","PP",15.5119845888467,0,54,"3084.12",3084,NA,577,217,565,565,577,12,NA,NA

@@ -1,0 +1,13 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2022-01-13",2,2022,"abundance","NaiveArima","controls","OT",2,-1.71893640267098,5.71893640267098,"2058.7",79,0.95,2058,NA,552,217,551,552,563,1,NA,NA
+"2022-01-13",3,2022,"abundance","NaiveArima","controls","OT",2,-3.25937029826032,7.25937029826032,"2058.7",79,0.95,2058,NA,553,217,551,552,563,2,NA,NA
+"2022-01-13",4,2022,"abundance","NaiveArima","controls","OT",2,-4.44138679954357,8.44138679954357,"2058.7",79,0.95,2058,NA,554,217,551,552,563,3,NA,NA
+"2022-01-13",4,2022,"abundance","NaiveArima","controls","OT",2,-5.43787280534197,9.43787280534197,"2058.7",79,0.95,2058,NA,555,217,551,552,563,4,NA,NA
+"2022-01-13",5,2022,"abundance","NaiveArima","controls","OT",2,-6.31579460037085,10.3157946003709,"2058.7",79,0.95,2058,NA,556,217,551,552,563,5,NA,NA
+"2022-01-13",6,2022,"abundance","NaiveArima","controls","OT",2,-7.10949657240555,11.1094965724055,"2058.7",79,0.95,2058,NA,557,217,551,552,563,6,NA,NA
+"2022-01-13",7,2022,"abundance","NaiveArima","controls","OT",2,-7.83938086313259,11.8393808631326,"2058.7",79,0.95,2058,NA,558,217,551,552,563,7,NA,NA
+"2022-01-13",8,2022,"abundance","NaiveArima","controls","OT",2,-8.51874059652063,12.5187405965206,"2058.7",79,0.95,2058,NA,559,217,551,552,563,8,NA,NA
+"2022-01-13",9,2022,"abundance","NaiveArima","controls","OT",2,-9.15680920801295,13.156809208013,"2058.7",79,0.95,2058,NA,560,217,551,552,563,9,NA,NA
+"2022-01-13",10,2022,"abundance","NaiveArima","controls","OT",2,-9.76030950575341,13.7603095057534,"2058.7",79,0.95,2058,NA,561,217,551,552,563,10,NA,NA
+"2022-01-13",11,2022,"abundance","NaiveArima","controls","OT",2,-10.3343166668537,14.3343166668537,"2058.7",79,0.95,2058,NA,562,217,551,552,563,11,NA,NA
+"2022-01-13",12,2022,"abundance","NaiveArima","controls","OT",2,-10.8827735990871,14.8827735990871,"2058.7",79,0.95,2058,NA,563,217,551,552,563,12,NA,NA

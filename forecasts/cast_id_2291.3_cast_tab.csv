@@ -1,0 +1,15 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2022-03-24",1,2022,"abundance","nbGARCH","exclosures","DO",0.836324091252502,0,3,"2291.3",87,0.95,2291,NA,552,217,553,552,565,-1,NA,NA
+"2022-03-24",3,2022,"abundance","nbGARCH","exclosures","DO",0.512892448971503,0,2,"2291.3",87,0.95,2291,NA,553,217,553,552,565,0,NA,NA
+"2022-03-24",4,2022,"abundance","nbGARCH","exclosures","DO",0.422873159600413,0,2,"2291.3",87,0.95,2291,NA,554,217,553,552,565,1,NA,NA
+"2022-03-24",4,2022,"abundance","nbGARCH","exclosures","DO",0.397805870025791,0,2,"2291.3",87,0.95,2291,NA,555,217,553,552,565,2,NA,NA
+"2022-03-24",5,2022,"abundance","nbGARCH","exclosures","DO",0.390824413522767,0,2,"2291.3",87,0.95,2291,NA,556,217,553,552,565,3,NA,NA
+"2022-03-24",6,2022,"abundance","nbGARCH","exclosures","DO",0.388879931873365,0,2,"2291.3",87,0.95,2291,NA,557,217,553,552,565,4,NA,NA
+"2022-03-24",7,2022,"abundance","nbGARCH","exclosures","DO",0.388338346359844,0,2,"2291.3",87,0.95,2291,NA,558,217,553,552,565,5,NA,NA
+"2022-03-24",8,2022,"abundance","nbGARCH","exclosures","DO",0.388187501078035,0,2,"2291.3",87,0.95,2291,NA,559,217,553,552,565,6,NA,NA
+"2022-03-24",9,2022,"abundance","nbGARCH","exclosures","DO",0.388145486806239,0,2,"2291.3",87,0.95,2291,NA,560,217,553,552,565,7,NA,NA
+"2022-03-24",10,2022,"abundance","nbGARCH","exclosures","DO",0.388133784753069,0,2,"2291.3",87,0.95,2291,NA,561,217,553,552,565,8,NA,NA
+"2022-03-24",11,2022,"abundance","nbGARCH","exclosures","DO",0.388130525430634,0,2,"2291.3",87,0.95,2291,NA,562,217,553,552,565,9,NA,NA
+"2022-03-24",12,2022,"abundance","nbGARCH","exclosures","DO",0.388129617625585,0,2,"2291.3",87,0.95,2291,NA,563,217,553,552,565,10,NA,NA
+"2022-03-24",1,2023,"abundance","nbGARCH","exclosures","DO",0.387985348229389,0,2,"2291.3",87,0.95,2291,NA,564,217,553,552,565,11,NA,NA
+"2022-03-24",2,2023,"abundance","nbGARCH","exclosures","DO",0.388009511958091,0,2,"2291.3",87,0.95,2291,NA,565,217,553,552,565,12,NA,NA

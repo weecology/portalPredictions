@@ -1,0 +1,15 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2022-03-03",1,2022,"abundance","jags_RW","controls","OT",1.144,0.099,2.613,"2195.7",84,0.95,2195,NA,552,217,553,552,565,-1,NA,NA
+"2022-03-03",3,2022,"abundance","jags_RW","controls","OT",1.338,0,3.777,"2195.7",84,0.95,2195,NA,553,217,553,552,565,0,NA,NA
+"2022-03-03",4,2022,"abundance","jags_RW","controls","OT",1.573,0,5.029,"2195.7",84,0.95,2195,NA,554,217,553,552,565,1,NA,NA
+"2022-03-03",4,2022,"abundance","jags_RW","controls","OT",1.828,0,6.26,"2195.7",84,0.95,2195,NA,555,217,553,552,565,2,NA,NA
+"2022-03-03",5,2022,"abundance","jags_RW","controls","OT",2.113,0,7.735,"2195.7",84,0.95,2195,NA,556,217,553,552,565,3,NA,NA
+"2022-03-03",6,2022,"abundance","jags_RW","controls","OT",2.494,0,9.403,"2195.7",84,0.95,2195,NA,557,217,553,552,565,4,NA,NA
+"2022-03-03",7,2022,"abundance","jags_RW","controls","OT",2.926,0,11.3,"2195.7",84,0.95,2195,NA,558,217,553,552,565,5,NA,NA
+"2022-03-03",8,2022,"abundance","jags_RW","controls","OT",3.375,0,13.232,"2195.7",84,0.95,2195,NA,559,217,553,552,565,6,NA,NA
+"2022-03-03",9,2022,"abundance","jags_RW","controls","OT",3.858,0,15.377,"2195.7",84,0.95,2195,NA,560,217,553,552,565,7,NA,NA
+"2022-03-03",10,2022,"abundance","jags_RW","controls","OT",4.294,0,17.874,"2195.7",84,0.95,2195,NA,561,217,553,552,565,8,NA,NA
+"2022-03-03",11,2022,"abundance","jags_RW","controls","OT",4.798,0,19.594,"2195.7",84,0.95,2195,NA,562,217,553,552,565,9,NA,NA
+"2022-03-03",12,2022,"abundance","jags_RW","controls","OT",5.34,0,22.017,"2195.7",84,0.95,2195,NA,563,217,553,552,565,10,NA,NA
+"2022-03-03",1,2023,"abundance","jags_RW","controls","OT",5.832,0,25.189,"2195.7",84,0.95,2195,NA,564,217,553,552,565,11,NA,NA
+"2022-03-03",2,2023,"abundance","jags_RW","controls","OT",6.352,0,27.652,"2195.7",84,0.95,2195,NA,565,217,553,552,565,12,NA,NA

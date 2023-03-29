@@ -1,0 +1,13 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2021-12-23",1,2022,"abundance","pevGARCH","controls","RM",1.02347526814519,0,3,"1986.14",76,0.95,1986,NA,551,217,550,551,562,1,NA,NA
+"2021-12-23",2,2022,"abundance","pevGARCH","controls","RM",20.9239111319334,6,49,"1986.14",76,0.95,1986,NA,552,217,550,551,562,2,NA,NA
+"2021-12-23",3,2022,"abundance","pevGARCH","controls","RM",13.2735758110021,3,31,"1986.14",76,0.95,1986,NA,553,217,550,551,562,3,NA,NA
+"2021-12-23",4,2022,"abundance","pevGARCH","controls","RM",3.58236689928211,0,9,"1986.14",76,0.95,1986,NA,554,217,550,551,562,4,NA,NA
+"2021-12-23",4,2022,"abundance","pevGARCH","controls","RM",0.576723391243117,0,3,"1986.14",76,0.95,1986,NA,555,217,550,551,562,5,NA,NA
+"2021-12-23",5,2022,"abundance","pevGARCH","controls","RM",0.160742152009257,0,1,"1986.14",76,0.95,1986,NA,556,217,550,551,562,6,NA,NA
+"2021-12-23",6,2022,"abundance","pevGARCH","controls","RM",0.081748507510859,0,1,"1986.14",76,0.95,1986,NA,557,217,550,551,562,7,NA,NA
+"2021-12-23",7,2022,"abundance","pevGARCH","controls","RM",774534.190322838,714776,1426876,"1986.14",76,0.95,1986,NA,558,217,550,551,562,8,NA,NA
+"2021-12-23",8,2022,"abundance","pevGARCH","controls","RM",420790610064.762,388527275182,772130769149,"1986.14",76,0.95,1986,NA,559,217,550,551,562,9,NA,NA
+"2021-12-23",9,2022,"abundance","pevGARCH","controls","RM",353180617221826944,326269911012237888,645523283400385024,"1986.14",76,0.95,1986,NA,560,217,550,551,562,10,NA,NA
+"2021-12-23",10,2022,"abundance","pevGARCH","controls","RM",1.82937273875161e+23,1.6908520175122e+23,3.33057005670088e+23,"1986.14",76,0.95,1986,NA,561,217,550,551,562,11,NA,NA
+"2021-12-23",11,2022,"abundance","pevGARCH","controls","RM",2.34895540365804e+29,2.17220072627605e+29,4.25993996612981e+29,"1986.14",76,0.95,1986,NA,562,217,550,551,562,12,NA,NA

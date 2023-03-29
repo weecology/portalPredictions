@@ -1,0 +1,15 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2020-04-09",2,2020,"abundance","pevGARCH","all","PB",6.92449139718499,2,12,"745.8",31,0.95,745,NA,528,217,529,528,541,-1,NA,NA
+"2020-04-09",3,2020,"abundance","pevGARCH","all","PB",7.17970524832333,1,14,"745.8",31,0.95,745,NA,529,217,529,528,541,0,NA,NA
+"2020-04-09",4,2020,"abundance","pevGARCH","all","PB",7.85198131420397,1,17,"745.8",31,0.95,745,NA,530,217,529,528,541,1,NA,NA
+"2020-04-09",5,2020,"abundance","pevGARCH","all","PB",8.86984422070463,1,20,"745.8",31,0.95,745,NA,531,217,529,528,541,2,NA,NA
+"2020-04-09",6,2020,"abundance","pevGARCH","all","PB",10.9031940219692,1,24,"745.8",31,0.95,745,NA,532,217,529,528,541,3,NA,NA
+"2020-04-09",7,2020,"abundance","pevGARCH","all","PB",12.0284772811234,2,26,"745.8",31,0.95,745,NA,533,217,529,528,541,4,NA,NA
+"2020-04-09",8,2020,"abundance","pevGARCH","all","PB",13.185471707821,2,28,"745.8",31,0.95,745,NA,534,217,529,528,541,5,NA,NA
+"2020-04-09",9,2020,"abundance","pevGARCH","all","PB",14.4568124143376,2,31,"745.8",31,0.95,745,NA,535,217,529,528,541,6,NA,NA
+"2020-04-09",10,2020,"abundance","pevGARCH","all","PB",15.0655551596294,2,34,"745.8",31,0.95,745,NA,536,217,529,528,541,7,NA,NA
+"2020-04-09",11,2020,"abundance","pevGARCH","all","PB",14.5568137599813,2,32,"745.8",31,0.95,745,NA,537,217,529,528,541,8,NA,NA
+"2020-04-09",12,2020,"abundance","pevGARCH","all","PB",13.5694156212651,2,29,"745.8",31,0.95,745,NA,538,217,529,528,541,9,NA,NA
+"2020-04-09",1,2021,"abundance","pevGARCH","all","PB",12.0173095786282,1,26,"745.8",31,0.95,745,NA,539,217,529,528,541,10,NA,NA
+"2020-04-09",2,2021,"abundance","pevGARCH","all","PB",11.230391416571,1,25,"745.8",31,0.95,745,NA,540,217,529,528,541,11,NA,NA
+"2020-04-09",3,2021,"abundance","pevGARCH","all","PB",10.6157624694085,1,24,"745.8",31,0.95,745,NA,541,217,529,528,541,12,NA,NA

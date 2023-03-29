@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","cast_group","confidence_level","estimate","lower_pi","upper_pi","cast_id","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2022-10-20",9,2022,"abundance","pevGARCH","all","SO",117,0.95,2.42396898357791e-11,0,0,"2996.20",2996,NA,560,217,560,560,572,0,NA,NA
+"2022-10-20",10,2022,"abundance","pevGARCH","all","SO",117,0.95,4.33712137106589e-25,0,0,"2996.20",2996,NA,561,217,560,560,572,1,NA,NA
+"2022-10-20",11,2022,"abundance","pevGARCH","all","SO",117,0.95,2.31101965221437e-22,0,0,"2996.20",2996,NA,562,217,560,560,572,2,NA,NA
+"2022-10-20",12,2022,"abundance","pevGARCH","all","SO",117,0.95,1.07551187126337e-35,0,0,"2996.20",2996,NA,563,217,560,560,572,3,NA,NA
+"2022-10-20",1,2023,"abundance","pevGARCH","all","SO",117,0.95,4.1853593095039e-65,0,0,"2996.20",2996,NA,564,217,560,560,572,4,NA,NA
+"2022-10-20",2,2023,"abundance","pevGARCH","all","SO",117,0.95,12476.0249594237,12268,12679,"2996.20",2996,NA,565,217,560,560,572,5,NA,NA
+"2022-10-20",3,2023,"abundance","pevGARCH","all","SO",117,0.95,4.82606760204754e-34,0,0,"2996.20",2996,NA,566,217,560,560,572,6,NA,NA
+"2022-10-20",4,2023,"abundance","pevGARCH","all","SO",117,0.95,5.17648527012183e-23,0,0,"2996.20",2996,NA,567,217,560,560,572,7,NA,NA
+"2022-10-20",5,2023,"abundance","pevGARCH","all","SO",117,0.95,2.57987305099935e-05,0,0,"2996.20",2996,NA,568,217,560,560,572,8,NA,NA
+"2022-10-20",6,2023,"abundance","pevGARCH","all","SO",117,0.95,2.10065409421112e-20,0,0,"2996.20",2996,NA,569,217,560,560,572,9,NA,NA
+"2022-10-20",7,2023,"abundance","pevGARCH","all","SO",117,0.95,1.69288983142053e-25,0,0,"2996.20",2996,NA,570,217,560,560,572,10,NA,NA
+"2022-10-20",8,2023,"abundance","pevGARCH","all","SO",117,0.95,1.53715725323704e-32,0,0,"2996.20",2996,NA,571,217,560,560,572,11,NA,NA
+"2022-10-20",9,2023,"abundance","pevGARCH","all","SO",117,0.95,2.65226545449682e-27,0,0,"2996.20",2996,NA,572,217,560,560,572,12,NA,NA

@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","cast_group","confidence_level","dataset","species","estimate","lower_pi","upper_pi","cast_id","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2022-05-26",4,2022,"abundance","nbsGARCH",96,0.95,"all","PP",228.838938092803,27,628,"2530.14",2530,NA,555,217,555,555,567,0,NA,NA
+"2022-05-26",5,2022,"abundance","nbsGARCH",96,0.95,"all","PP",264.451379547433,17,900,"2530.14",2530,NA,556,217,555,555,567,1,NA,NA
+"2022-05-26",6,2022,"abundance","nbsGARCH",96,0.95,"all","PP",273.889387615202,14,1062,"2530.14",2530,NA,557,217,555,555,567,2,NA,NA
+"2022-05-26",7,2022,"abundance","nbsGARCH",96,0.95,"all","PP",241.176727267467,7,997,"2530.14",2530,NA,558,217,555,555,567,3,NA,NA
+"2022-05-26",8,2022,"abundance","nbsGARCH",96,0.95,"all","PP",182.567332279262,4,853,"2530.14",2530,NA,559,217,555,555,567,4,NA,NA
+"2022-05-26",9,2022,"abundance","nbsGARCH",96,0.95,"all","PP",123.80474362939,2,496,"2530.14",2530,NA,560,217,555,555,567,5,NA,NA
+"2022-05-26",10,2022,"abundance","nbsGARCH",96,0.95,"all","PP",81.7350381889417,1,313,"2530.14",2530,NA,561,217,555,555,567,6,NA,NA
+"2022-05-26",11,2022,"abundance","nbsGARCH",96,0.95,"all","PP",57.4970222675724,0,210,"2530.14",2530,NA,562,217,555,555,567,7,NA,NA
+"2022-05-26",12,2022,"abundance","nbsGARCH",96,0.95,"all","PP",46.539531584248,0,172,"2530.14",2530,NA,563,217,555,555,567,8,NA,NA
+"2022-05-26",1,2023,"abundance","nbsGARCH",96,0.95,"all","PP",44.0347691259978,0,132,"2530.14",2530,NA,564,217,555,555,567,9,NA,NA
+"2022-05-26",2,2023,"abundance","nbsGARCH",96,0.95,"all","PP",48.9421002770595,0,150,"2530.14",2530,NA,565,217,555,555,567,10,NA,NA
+"2022-05-26",3,2023,"abundance","nbsGARCH",96,0.95,"all","PP",64.2387547467864,1,164,"2530.14",2530,NA,566,217,555,555,567,11,NA,NA
+"2022-05-26",4,2023,"abundance","nbsGARCH",96,0.95,"all","PP",95.5892186261365,1,331,"2530.14",2530,NA,567,217,555,555,567,12,NA,NA

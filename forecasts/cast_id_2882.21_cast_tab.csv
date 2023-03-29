@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","cast_group","confidence_level","dataset","species","estimate","lower_pi","upper_pi","cast_id","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2022-09-15",8,2022,"abundance","nbsGARCH",112,0.95,"all","total",368.916694315747,225,539,"2882.21",2882,NA,559,217,559,559,571,0,NA,NA
+"2022-09-15",9,2022,"abundance","nbsGARCH",112,0.95,"all","total",321.044157714605,159,530,"2882.21",2882,NA,560,217,559,559,571,1,NA,NA
+"2022-09-15",10,2022,"abundance","nbsGARCH",112,0.95,"all","total",275.235929491393,118,516,"2882.21",2882,NA,561,217,559,559,571,2,NA,NA
+"2022-09-15",11,2022,"abundance","nbsGARCH",112,0.95,"all","total",238.947311701538,94,461,"2882.21",2882,NA,562,217,559,559,571,3,NA,NA
+"2022-09-15",12,2022,"abundance","nbsGARCH",112,0.95,"all","total",215.589711307808,78,428,"2882.21",2882,NA,563,217,559,559,571,4,NA,NA
+"2022-09-15",1,2023,"abundance","nbsGARCH",112,0.95,"all","total",207.33197536548,66,449,"2882.21",2882,NA,564,217,559,559,571,5,NA,NA
+"2022-09-15",2,2023,"abundance","nbsGARCH",112,0.95,"all","total",212.791808137521,63,475,"2882.21",2882,NA,565,217,559,559,571,6,NA,NA
+"2022-09-15",3,2023,"abundance","nbsGARCH",112,0.95,"all","total",227.699978516317,67,512,"2882.21",2882,NA,566,217,559,559,571,7,NA,NA
+"2022-09-15",4,2023,"abundance","nbsGARCH",112,0.95,"all","total",247.119989738058,70,588,"2882.21",2882,NA,567,217,559,559,571,8,NA,NA
+"2022-09-15",5,2023,"abundance","nbsGARCH",112,0.95,"all","total",266.433265868172,71,652,"2882.21",2882,NA,568,217,559,559,571,9,NA,NA
+"2022-09-15",6,2023,"abundance","nbsGARCH",112,0.95,"all","total",277.604406750254,74,671,"2882.21",2882,NA,569,217,559,559,571,10,NA,NA
+"2022-09-15",7,2023,"abundance","nbsGARCH",112,0.95,"all","total",274.755725219605,73,661,"2882.21",2882,NA,570,217,559,559,571,11,NA,NA
+"2022-09-15",8,2023,"abundance","nbsGARCH",112,0.95,"all","total",257.029218409912,66,598,"2882.21",2882,NA,571,217,559,559,571,12,NA,NA

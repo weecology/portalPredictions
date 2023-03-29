@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2020-01-29",1,2020,"abundance","nbsGARCH","controls","PP",0.94197718253047,0,4,"431.13",19,0.95,431,NA,527,217,527,527,539,0,NA,NA
+"2020-01-29",2,2020,"abundance","nbsGARCH","controls","PP",2.06084068098486,0,7,"431.13",19,0.95,431,NA,528,217,527,527,539,1,NA,NA
+"2020-01-29",3,2020,"abundance","nbsGARCH","controls","PP",3.64297298286951,0,14,"431.13",19,0.95,431,NA,529,217,527,527,539,2,NA,NA
+"2020-01-29",4,2020,"abundance","nbsGARCH","controls","PP",6.44397883843085,0,23,"431.13",19,0.95,431,NA,530,217,527,527,539,3,NA,NA
+"2020-01-29",5,2020,"abundance","nbsGARCH","controls","PP",10.0331203973307,0,37,"431.13",19,0.95,431,NA,531,217,527,527,539,4,NA,NA
+"2020-01-29",6,2020,"abundance","nbsGARCH","controls","PP",13.4842116143948,0,55,"431.13",19,0.95,431,NA,532,217,527,527,539,5,NA,NA
+"2020-01-29",7,2020,"abundance","nbsGARCH","controls","PP",15.4194442671096,0,61,"431.13",19,0.95,431,NA,533,217,527,527,539,6,NA,NA
+"2020-01-29",8,2020,"abundance","nbsGARCH","controls","PP",14.522115918322,0,54,"431.13",19,0.95,431,NA,534,217,527,527,539,7,NA,NA
+"2020-01-29",9,2020,"abundance","nbsGARCH","controls","PP",11.6890874382085,0,49,"431.13",19,0.95,431,NA,535,217,527,527,539,8,NA,NA
+"2020-01-29",10,2020,"abundance","nbsGARCH","controls","PP",8.63444254766983,0,33,"431.13",19,0.95,431,NA,536,217,527,527,539,9,NA,NA
+"2020-01-29",11,2020,"abundance","nbsGARCH","controls","PP",6.02411631937783,0,24,"431.13",19,0.95,431,NA,537,217,527,527,539,10,NA,NA
+"2020-01-29",12,2020,"abundance","nbsGARCH","controls","PP",4.50382101872101,0,17,"431.13",19,0.95,431,NA,538,217,527,527,539,11,NA,NA
+"2020-01-29",1,2021,"abundance","nbsGARCH","controls","PP",3.81260705797663,0,16,"431.13",19,0.95,431,NA,539,217,527,527,539,12,NA,NA

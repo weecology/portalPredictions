@@ -1,0 +1,13 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","cast_group","confidence_level","estimate","lower_pi","upper_pi","cast_id","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2023-02-09",2,2023,"abundance","NaiveArima","exclosures","PB",118,0.95,2,-7.77828004071088,11.7782800407109,"3013.6",3013,NA,565,217,564,565,576,1,NA,NA
+"2023-02-09",3,2023,"abundance","NaiveArima","exclosures","PB",118,0.95,2,-11.8285762502555,15.8285762502555,"3013.6",3013,NA,566,217,564,565,576,2,NA,NA
+"2023-02-09",4,2023,"abundance","NaiveArima","exclosures","PB",118,0.95,2,-14.9364778411479,18.9364778411479,"3013.6",3013,NA,567,217,564,565,576,3,NA,NA
+"2023-02-09",5,2023,"abundance","NaiveArima","exclosures","PB",118,0.95,2,-17.5565600814218,21.5565600814218,"3013.6",3013,NA,568,217,564,565,576,4,NA,NA
+"2023-02-09",6,2023,"abundance","NaiveArima","exclosures","PB",118,0.95,2,-19.8648988740589,23.8648988740589,"3013.6",3013,NA,569,217,564,565,576,5,NA,NA
+"2023-02-09",7,2023,"abundance","NaiveArima","exclosures","PB",118,0.95,2,-21.9517966617828,25.9517966617828,"3013.6",3013,NA,570,217,564,565,576,6,NA,NA
+"2023-02-09",8,2023,"abundance","NaiveArima","exclosures","PB",118,0.95,2,-23.8708972376675,27.8708972376675,"3013.6",3013,NA,571,217,564,565,576,7,NA,NA
+"2023-02-09",9,2023,"abundance","NaiveArima","exclosures","PB",118,0.95,2,-25.6571525005109,29.6571525005109,"3013.6",3013,NA,572,217,564,565,576,8,NA,NA
+"2023-02-09",10,2023,"abundance","NaiveArima","exclosures","PB",118,0.95,2,-27.3348401221326,31.3348401221326,"3013.6",3013,NA,573,217,564,565,576,9,NA,NA
+"2023-02-09",11,2023,"abundance","NaiveArima","exclosures","PB",118,0.95,2,-28.9216365276104,32.9216365276104,"3013.6",3013,NA,574,217,564,565,576,10,NA,NA
+"2023-02-09",12,2023,"abundance","NaiveArima","exclosures","PB",118,0.95,2,-30.4308859900591,34.4308859900591,"3013.6",3013,NA,575,217,564,565,576,11,NA,NA
+"2023-02-09",1,2024,"abundance","NaiveArima","exclosures","PB",118,0.95,2,-31.8729556822958,35.8729556822958,"3013.6",3013,NA,576,217,564,565,576,12,NA,NA

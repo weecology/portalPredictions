@@ -1,0 +1,13 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2021-12-23",1,2022,"abundance","pevGARCH","controls","RO",1.96944717721771,0,5,"1986.15",76,0.95,1986,NA,551,217,550,551,562,1,NA,NA
+"2021-12-23",2,2022,"abundance","pevGARCH","controls","RO",4994229.35301102,1942876,9191433,"1986.15",76,0.95,1986,NA,552,217,550,551,562,2,NA,NA
+"2021-12-23",3,2022,"abundance","pevGARCH","controls","RO",1389260.87400121,612641,2358031,"1986.15",76,0.95,1986,NA,553,217,550,551,562,3,NA,NA
+"2021-12-23",4,2022,"abundance","pevGARCH","controls","RO",2171.68901143952,1042,3468,"1986.15",76,0.95,1986,NA,554,217,550,551,562,4,NA,NA
+"2021-12-23",4,2022,"abundance","pevGARCH","controls","RO",1.37800014758009,0,4,"1986.15",76,0.95,1986,NA,555,217,550,551,562,5,NA,NA
+"2021-12-23",5,2022,"abundance","pevGARCH","controls","RO",0.00425047651252033,0,0,"1986.15",76,0.95,1986,NA,556,217,550,551,562,6,NA,NA
+"2021-12-23",6,2022,"abundance","pevGARCH","controls","RO",0.00263874642020783,0,0,"1986.15",76,0.95,1986,NA,557,217,550,551,562,7,NA,NA
+"2021-12-23",7,2022,"abundance","pevGARCH","controls","RO",36229244.9060725,36134916,36158448,"1986.15",76,0.95,1986,NA,558,217,550,551,562,8,NA,NA
+"2021-12-23",8,2022,"abundance","pevGARCH","controls","RO",39905849389912.3,39815774075622,39838244379510,"1986.15",76,0.95,1986,NA,559,217,550,551,562,9,NA,NA
+"2021-12-23",9,2022,"abundance","pevGARCH","controls","RO",13271167183580366848,13245195132139225088,13251674880769705984,"1986.15",76,0.95,1986,NA,560,217,550,551,562,10,NA,NA
+"2021-12-23",10,2022,"abundance","pevGARCH","controls","RO",3.23511029903869e+23,3.22962114394909e+23,3.23099076337975e+23,"1986.15",76,0.95,1986,NA,561,217,550,551,562,11,NA,NA
+"2021-12-23",11,2022,"abundance","pevGARCH","controls","RO",5.02059197996909e+27,5.01320642594137e+27,5.01504937923768e+27,"1986.15",76,0.95,1986,NA,562,217,550,551,562,12,NA,NA

@@ -1,0 +1,15 @@
+"cast_date","cast_month","cast_year","currency","model","cast_group","confidence_level","dataset","species","estimate","lower_pi","upper_pi","cast_id","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2022-05-05",4,2022,"abundance","nbsGARCH",93,0.95,"all","total",163.898486219857,98,236,"2452.21",2452,NA,554,217,555,554,567,-1,NA,NA
+"2022-05-05",4,2022,"abundance","nbsGARCH",93,0.95,"all","total",183.618901754068,91,304,"2452.21",2452,NA,555,217,555,554,567,0,NA,NA
+"2022-05-05",5,2022,"abundance","nbsGARCH",93,0.95,"all","total",202.416650919408,90,361,"2452.21",2452,NA,556,217,555,554,567,1,NA,NA
+"2022-05-05",6,2022,"abundance","nbsGARCH",93,0.95,"all","total",214.540620111363,88,407,"2452.21",2452,NA,557,217,555,554,567,2,NA,NA
+"2022-05-05",7,2022,"abundance","nbsGARCH",93,0.95,"all","total",215.195657685853,82,418,"2452.21",2452,NA,558,217,555,554,567,3,NA,NA
+"2022-05-05",8,2022,"abundance","nbsGARCH",93,0.95,"all","total",204.672272320793,71,409,"2452.21",2452,NA,559,217,555,554,567,4,NA,NA
+"2022-05-05",9,2022,"abundance","nbsGARCH",93,0.95,"all","total",186.619274319004,62,377,"2452.21",2452,NA,560,217,555,554,567,5,NA,NA
+"2022-05-05",10,2022,"abundance","nbsGARCH",93,0.95,"all","total",167.188348448882,57,344,"2452.21",2452,NA,561,217,555,554,567,6,NA,NA
+"2022-05-05",11,2022,"abundance","nbsGARCH",93,0.95,"all","total",151.134930449883,51,306,"2452.21",2452,NA,562,217,555,554,567,7,NA,NA
+"2022-05-05",12,2022,"abundance","nbsGARCH",93,0.95,"all","total",141.341741115626,44,303,"2452.21",2452,NA,563,217,555,554,567,8,NA,NA
+"2022-05-05",1,2023,"abundance","nbsGARCH",93,0.95,"all","total",139.950939969966,40,301,"2452.21",2452,NA,564,217,555,554,567,9,NA,NA
+"2022-05-05",2,2023,"abundance","nbsGARCH",93,0.95,"all","total",146.979987902119,42,304,"2452.21",2452,NA,565,217,555,554,567,10,NA,NA
+"2022-05-05",3,2023,"abundance","nbsGARCH",93,0.95,"all","total",160.48319013203,43,351,"2452.21",2452,NA,566,217,555,554,567,11,NA,NA
+"2022-05-05",4,2023,"abundance","nbsGARCH",93,0.95,"all","total",179.010181451563,46,391,"2452.21",2452,NA,567,217,555,554,567,12,NA,NA

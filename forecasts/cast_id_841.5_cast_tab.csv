@@ -1,0 +1,17 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2020-05-28",2,2020,"abundance","jags_RW","all","NA",0.149,0,0.583,"841.5",35,0.95,841,NA,528,217,531,528,543,-3,NA,NA
+"2020-05-28",3,2020,"abundance","jags_RW","all","NA",0.181,0,0.742,"841.5",35,0.95,841,NA,529,217,531,528,543,-2,NA,NA
+"2020-05-28",4,2020,"abundance","jags_RW","all","NA",0.218,0,0.92,"841.5",35,0.95,841,NA,530,217,531,528,543,-1,NA,NA
+"2020-05-28",5,2020,"abundance","jags_RW","all","NA",0.261,0,1.151,"841.5",35,0.95,841,NA,531,217,531,528,543,0,NA,NA
+"2020-05-28",6,2020,"abundance","jags_RW","all","NA",0.308,0,1.348,"841.5",35,0.95,841,NA,532,217,531,528,543,1,NA,NA
+"2020-05-28",7,2020,"abundance","jags_RW","all","NA",0.361,0,1.547,"841.5",35,0.95,841,NA,533,217,531,528,543,2,NA,NA
+"2020-05-28",8,2020,"abundance","jags_RW","all","NA",0.423,0,1.827,"841.5",35,0.95,841,NA,534,217,531,528,543,3,NA,NA
+"2020-05-28",9,2020,"abundance","jags_RW","all","NA",0.488,0,2.128,"841.5",35,0.95,841,NA,535,217,531,528,543,4,NA,NA
+"2020-05-28",10,2020,"abundance","jags_RW","all","NA",0.56,0,2.35,"841.5",35,0.95,841,NA,536,217,531,528,543,5,NA,NA
+"2020-05-28",11,2020,"abundance","jags_RW","all","NA",0.66,0,2.726,"841.5",35,0.95,841,NA,537,217,531,528,543,6,NA,NA
+"2020-05-28",12,2020,"abundance","jags_RW","all","NA",0.766,0,3.052,"841.5",35,0.95,841,NA,538,217,531,528,543,7,NA,NA
+"2020-05-28",1,2021,"abundance","jags_RW","all","NA",0.904,0,3.502,"841.5",35,0.95,841,NA,539,217,531,528,543,8,NA,NA
+"2020-05-28",2,2021,"abundance","jags_RW","all","NA",1.089,0,3.801,"841.5",35,0.95,841,NA,540,217,531,528,543,9,NA,NA
+"2020-05-28",3,2021,"abundance","jags_RW","all","NA",1.256,0,4.318,"841.5",35,0.95,841,NA,541,217,531,528,543,10,NA,NA
+"2020-05-28",4,2021,"abundance","jags_RW","all","NA",1.441,0,4.898,"841.5",35,0.95,841,NA,542,217,531,528,543,11,NA,NA
+"2020-05-28",5,2021,"abundance","jags_RW","all","NA",1.646,0,5.362,"841.5",35,0.95,841,NA,543,217,531,528,543,12,NA,NA

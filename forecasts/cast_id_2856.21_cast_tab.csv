@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","cast_group","confidence_level","dataset","species","estimate","lower_pi","upper_pi","cast_id","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2022-09-08",8,2022,"abundance","nbGARCH",111,0.95,"all","total",370.679050629079,223,560,"2856.21",2856,NA,559,217,559,559,571,0,NA,NA
+"2022-09-08",9,2022,"abundance","nbGARCH",111,0.95,"all","total",341.139198907136,169,569,"2856.21",2856,NA,560,217,559,559,571,1,NA,NA
+"2022-09-08",10,2022,"abundance","nbGARCH",111,0.95,"all","total",316.736119769225,140,578,"2856.21",2856,NA,561,217,559,559,571,2,NA,NA
+"2022-09-08",11,2022,"abundance","nbGARCH",111,0.95,"all","total",298.013731781019,118,576,"2856.21",2856,NA,562,217,559,559,571,3,NA,NA
+"2022-09-08",12,2022,"abundance","nbGARCH",111,0.95,"all","total",283.613171985781,104,569,"2856.21",2856,NA,563,217,559,559,571,4,NA,NA
+"2022-09-08",1,2023,"abundance","nbGARCH",111,0.95,"all","total",267.165940595971,97,546,"2856.21",2856,NA,564,217,559,559,571,5,NA,NA
+"2022-09-08",2,2023,"abundance","nbGARCH",111,0.95,"all","total",249.963245089321,86,495,"2856.21",2856,NA,565,217,559,559,571,6,NA,NA
+"2022-09-08",3,2023,"abundance","nbGARCH",111,0.95,"all","total",239.575063248022,79,504,"2856.21",2856,NA,566,217,559,559,571,7,NA,NA
+"2022-09-08",4,2023,"abundance","nbGARCH",111,0.95,"all","total",239.486608817156,79,491,"2856.21",2856,NA,567,217,559,559,571,8,NA,NA
+"2022-09-08",5,2023,"abundance","nbGARCH",111,0.95,"all","total",241.746388867079,76,536,"2856.21",2856,NA,568,217,559,559,571,9,NA,NA
+"2022-09-08",6,2023,"abundance","nbGARCH",111,0.95,"all","total",245.825451541926,73,514,"2856.21",2856,NA,569,217,559,559,571,10,NA,NA
+"2022-09-08",7,2023,"abundance","nbGARCH",111,0.95,"all","total",251.329616904183,78,560,"2856.21",2856,NA,570,217,559,559,571,11,NA,NA
+"2022-09-08",8,2023,"abundance","nbGARCH",111,0.95,"all","total",255.181727214922,75,543,"2856.21",2856,NA,571,217,559,559,571,12,NA,NA

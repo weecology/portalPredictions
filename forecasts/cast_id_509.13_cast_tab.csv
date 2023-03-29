@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2020-02-07",1,2020,"abundance","pevGARCH","controls","PP",1.13258605215067,0,3,"509.13",22,0.95,509,NA,527,217,527,527,539,0,NA,NA
+"2020-02-07",2,2020,"abundance","pevGARCH","controls","PP",2.05103690997541,0,6,"509.13",22,0.95,509,NA,528,217,527,527,539,1,NA,NA
+"2020-02-07",3,2020,"abundance","pevGARCH","controls","PP",3.21534478783293,0,9,"509.13",22,0.95,509,NA,529,217,527,527,539,2,NA,NA
+"2020-02-07",4,2020,"abundance","pevGARCH","controls","PP",4.35201351285556,0,10,"509.13",22,0.95,509,NA,530,217,527,527,539,3,NA,NA
+"2020-02-07",5,2020,"abundance","pevGARCH","controls","PP",6.28325012023266,1,14,"509.13",22,0.95,509,NA,531,217,527,527,539,4,NA,NA
+"2020-02-07",6,2020,"abundance","pevGARCH","controls","PP",11.4984205258209,2,22,"509.13",22,0.95,509,NA,532,217,527,527,539,5,NA,NA
+"2020-02-07",7,2020,"abundance","pevGARCH","controls","PP",13.7196869872105,3,26,"509.13",22,0.95,509,NA,533,217,527,527,539,6,NA,NA
+"2020-02-07",8,2020,"abundance","pevGARCH","controls","PP",16.6814993104208,5,30,"509.13",22,0.95,509,NA,534,217,527,527,539,7,NA,NA
+"2020-02-07",9,2020,"abundance","pevGARCH","controls","PP",16.7748775028706,5,29,"509.13",22,0.95,509,NA,535,217,527,527,539,8,NA,NA
+"2020-02-07",10,2020,"abundance","pevGARCH","controls","PP",15.833171034126,5,29,"509.13",22,0.95,509,NA,536,217,527,527,539,9,NA,NA
+"2020-02-07",11,2020,"abundance","pevGARCH","controls","PP",12.2620577960876,3,22,"509.13",22,0.95,509,NA,537,217,527,527,539,10,NA,NA
+"2020-02-07",12,2020,"abundance","pevGARCH","controls","PP",8.37745050527931,2,16,"509.13",22,0.95,509,NA,538,217,527,527,539,11,NA,NA
+"2020-02-07",1,2021,"abundance","pevGARCH","controls","PP",5.60444407571317,1,12,"509.13",22,0.95,509,NA,539,217,527,527,539,12,NA,NA

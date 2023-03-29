@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2021-12-16",12,2021,"abundance","nbGARCH","controls","PP",21.5430241079237,2,62,"1950.13",75,0.95,1950,NA,550,217,550,550,562,0,NA,NA
+"2021-12-16",1,2022,"abundance","nbGARCH","controls","PP",19.5017029660808,1,69,"1950.13",75,0.95,1950,NA,551,217,550,550,562,1,NA,NA
+"2021-12-16",2,2022,"abundance","nbGARCH","controls","PP",18.158896948352,0,71,"1950.13",75,0.95,1950,NA,552,217,550,550,562,2,NA,NA
+"2021-12-16",3,2022,"abundance","nbGARCH","controls","PP",17.5318105256492,0,73,"1950.13",75,0.95,1950,NA,553,217,550,550,562,3,NA,NA
+"2021-12-16",4,2022,"abundance","nbGARCH","controls","PP",17.3784476465352,0,73,"1950.13",75,0.95,1950,NA,554,217,550,550,562,4,NA,NA
+"2021-12-16",4,2022,"abundance","nbGARCH","controls","PP",17.691168266894,0,73,"1950.13",75,0.95,1950,NA,555,217,550,550,562,5,NA,NA
+"2021-12-16",5,2022,"abundance","nbGARCH","controls","PP",18.144121890745,0,67,"1950.13",75,0.95,1950,NA,556,217,550,550,562,6,NA,NA
+"2021-12-16",6,2022,"abundance","nbGARCH","controls","PP",18.7179433779915,0,69,"1950.13",75,0.95,1950,NA,557,217,550,550,562,7,NA,NA
+"2021-12-16",7,2022,"abundance","nbGARCH","controls","PP",19.3636467395183,0,67,"1950.13",75,0.95,1950,NA,558,217,550,550,562,8,NA,NA
+"2021-12-16",8,2022,"abundance","nbGARCH","controls","PP",20.0646019572863,0,69,"1950.13",75,0.95,1950,NA,559,217,550,550,562,9,NA,NA
+"2021-12-16",9,2022,"abundance","nbGARCH","controls","PP",20.6814056627259,0,68,"1950.13",75,0.95,1950,NA,560,217,550,550,562,10,NA,NA
+"2021-12-16",10,2022,"abundance","nbGARCH","controls","PP",21.3163553563388,0,67,"1950.13",75,0.95,1950,NA,561,217,550,550,562,11,NA,NA
+"2021-12-16",11,2022,"abundance","nbGARCH","controls","PP",21.9363765031559,0,75,"1950.13",75,0.95,1950,NA,562,217,550,550,562,12,NA,NA

@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2022-01-06",1,2022,"abundance","pevGARCH","all","DO",15.379442238041,8,23,"2041.3",78,0.95,2041,NA,551,217,551,551,563,0,NA,NA
+"2022-01-06",2,2022,"abundance","pevGARCH","all","DO",52.6695931800337,28,79,"2041.3",78,0.95,2041,NA,552,217,551,551,563,1,NA,NA
+"2022-01-06",3,2022,"abundance","pevGARCH","all","DO",62.9197330277724,35,94,"2041.3",78,0.95,2041,NA,553,217,551,551,563,2,NA,NA
+"2022-01-06",4,2022,"abundance","pevGARCH","all","DO",52.2107987165099,27,78,"2041.3",78,0.95,2041,NA,554,217,551,551,563,3,NA,NA
+"2022-01-06",4,2022,"abundance","pevGARCH","all","DO",37.7031389573382,19,57,"2041.3",78,0.95,2041,NA,555,217,551,551,563,4,NA,NA
+"2022-01-06",5,2022,"abundance","pevGARCH","all","DO",28.2906699849291,14,44,"2041.3",78,0.95,2041,NA,556,217,551,551,563,5,NA,NA
+"2022-01-06",6,2022,"abundance","pevGARCH","all","DO",31.4984748509291,14,49,"2041.3",78,0.95,2041,NA,557,217,551,551,563,6,NA,NA
+"2022-01-06",7,2022,"abundance","pevGARCH","all","DO",20.7786796004791,8,34,"2041.3",78,0.95,2041,NA,558,217,551,551,563,7,NA,NA
+"2022-01-06",8,2022,"abundance","pevGARCH","all","DO",239.018592609439,115,367,"2041.3",78,0.95,2041,NA,559,217,551,551,563,8,NA,NA
+"2022-01-06",9,2022,"abundance","pevGARCH","all","DO",2038.9285221073,1080,2965,"2041.3",78,0.95,2041,NA,560,217,551,551,563,9,NA,NA
+"2022-01-06",10,2022,"abundance","pevGARCH","all","DO",11889.7835537054,6939,16333,"2041.3",78,0.95,2041,NA,561,217,551,551,563,10,NA,NA
+"2022-01-06",11,2022,"abundance","pevGARCH","all","DO",62880.5511284774,39411,82662,"2041.3",78,0.95,2041,NA,562,217,551,551,563,11,NA,NA
+"2022-01-06",12,2022,"abundance","pevGARCH","all","DO",248764.946131186,166206,314090,"2041.3",78,0.95,2041,NA,563,217,551,551,563,12,NA,NA

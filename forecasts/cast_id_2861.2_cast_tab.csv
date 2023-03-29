@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","cast_group","confidence_level","dataset","species","estimate","lower_pi","upper_pi","cast_id","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2022-09-08",8,2022,"abundance","nbsGARCH",111,0.95,"controls","DM",12.6872930163979,6,21,"2861.2",2861,NA,559,217,559,559,571,0,NA,NA
+"2022-09-08",9,2022,"abundance","nbsGARCH",111,0.95,"controls","DM",12.8641260216745,4,22,"2861.2",2861,NA,560,217,559,559,571,1,NA,NA
+"2022-09-08",10,2022,"abundance","nbsGARCH",111,0.95,"controls","DM",13.5246542327951,5,24,"2861.2",2861,NA,561,217,559,559,571,2,NA,NA
+"2022-09-08",11,2022,"abundance","nbsGARCH",111,0.95,"controls","DM",14.63499175306,4,27,"2861.2",2861,NA,562,217,559,559,571,3,NA,NA
+"2022-09-08",12,2022,"abundance","nbsGARCH",111,0.95,"controls","DM",15.952405423626,5,29,"2861.2",2861,NA,563,217,559,559,571,4,NA,NA
+"2022-09-08",1,2023,"abundance","nbsGARCH",111,0.95,"controls","DM",17.1766534682293,5,31,"2861.2",2861,NA,564,217,559,559,571,5,NA,NA
+"2022-09-08",2,2023,"abundance","nbsGARCH",111,0.95,"controls","DM",17.9672220503208,6,33,"2861.2",2861,NA,565,217,559,559,571,6,NA,NA
+"2022-09-08",3,2023,"abundance","nbsGARCH",111,0.95,"controls","DM",18.1026660685966,5,32,"2861.2",2861,NA,566,217,559,559,571,7,NA,NA
+"2022-09-08",4,2023,"abundance","nbsGARCH",111,0.95,"controls","DM",17.4920040609358,5,31,"2861.2",2861,NA,567,217,559,559,571,8,NA,NA
+"2022-09-08",5,2023,"abundance","nbsGARCH",111,0.95,"controls","DM",16.4021738237808,5,30,"2861.2",2861,NA,568,217,559,559,571,9,NA,NA
+"2022-09-08",6,2023,"abundance","nbsGARCH",111,0.95,"controls","DM",15.170428164271,4,28,"2861.2",2861,NA,569,217,559,559,571,10,NA,NA
+"2022-09-08",7,2023,"abundance","nbsGARCH",111,0.95,"controls","DM",14.130139765847,3,27,"2861.2",2861,NA,570,217,559,559,571,11,NA,NA
+"2022-09-08",8,2023,"abundance","nbsGARCH",111,0.95,"controls","DM",13.5004955633146,3,24,"2861.2",2861,NA,571,217,559,559,571,12,NA,NA

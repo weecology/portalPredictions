@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","cast_group","confidence_level","dataset","species","estimate","lower_pi","upper_pi","cast_id","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2022-10-20",9,2022,"abundance","nbsGARCH",117,0.95,"all","RM",0.840253403743622,0,5,"2992.16",2992,NA,560,217,560,560,572,0,NA,NA
+"2022-10-20",10,2022,"abundance","nbsGARCH",117,0.95,"all","RM",1.8995747935017,0,11,"2992.16",2992,NA,561,217,560,560,572,1,NA,NA
+"2022-10-20",11,2022,"abundance","nbsGARCH",117,0.95,"all","RM",3.51678728463347,0,22,"2992.16",2992,NA,562,217,560,560,572,2,NA,NA
+"2022-10-20",12,2022,"abundance","nbsGARCH",117,0.95,"all","RM",5.83382927298864,0,32,"2992.16",2992,NA,563,217,560,560,572,3,NA,NA
+"2022-10-20",1,2023,"abundance","nbsGARCH",117,0.95,"all","RM",8.39768503855612,0,57,"2992.16",2992,NA,564,217,560,560,572,4,NA,NA
+"2022-10-20",2,2023,"abundance","nbsGARCH",117,0.95,"all","RM",9.89661059118141,0,61,"2992.16",2992,NA,565,217,560,560,572,5,NA,NA
+"2022-10-20",3,2023,"abundance","nbsGARCH",117,0.95,"all","RM",9.18715088798903,0,47,"2992.16",2992,NA,566,217,560,560,572,6,NA,NA
+"2022-10-20",4,2023,"abundance","nbsGARCH",117,0.95,"all","RM",6.93523374668184,0,36,"2992.16",2992,NA,567,217,560,560,572,7,NA,NA
+"2022-10-20",5,2023,"abundance","nbsGARCH",117,0.95,"all","RM",4.53904975444019,0,23,"2992.16",2992,NA,568,217,560,560,572,8,NA,NA
+"2022-10-20",6,2023,"abundance","nbsGARCH",117,0.95,"all","RM",2.90896699508922,0,16,"2992.16",2992,NA,569,217,560,560,572,9,NA,NA
+"2022-10-20",7,2023,"abundance","nbsGARCH",117,0.95,"all","RM",2.10913187123149,0,12,"2992.16",2992,NA,570,217,560,560,572,10,NA,NA
+"2022-10-20",8,2023,"abundance","nbsGARCH",117,0.95,"all","RM",1.9219147833175,0,11,"2992.16",2992,NA,571,217,560,560,572,11,NA,NA
+"2022-10-20",9,2023,"abundance","nbsGARCH",117,0.95,"all","RM",2.20486510742983,0,12,"2992.16",2992,NA,572,217,560,560,572,12,NA,NA

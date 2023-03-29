@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","cast_group","confidence_level","dataset","species","estimate","lower_pi","upper_pi","cast_id","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2022-10-20",9,2022,"abundance","nbGARCH",117,0.95,"controls","BA",0.223127449587262,0,1,"2989.1",2989,NA,560,217,560,560,572,0,NA,NA
+"2022-10-20",10,2022,"abundance","nbGARCH",117,0.95,"controls","BA",0.270484388934984,0,2,"2989.1",2989,NA,561,217,560,560,572,1,NA,NA
+"2022-10-20",11,2022,"abundance","nbGARCH",117,0.95,"controls","BA",0.280483658521497,0,2,"2989.1",2989,NA,562,217,560,560,572,2,NA,NA
+"2022-10-20",12,2022,"abundance","nbGARCH",117,0.95,"controls","BA",0.282592837322103,0,2,"2989.1",2989,NA,563,217,560,560,572,3,NA,NA
+"2022-10-20",1,2023,"abundance","nbGARCH",117,0.95,"controls","BA",0.28303763984857,0,2,"2989.1",2989,NA,564,217,560,560,572,4,NA,NA
+"2022-10-20",2,2023,"abundance","nbGARCH",117,0.95,"controls","BA",0.283131439587308,0,2,"2989.1",2989,NA,565,217,560,560,572,5,NA,NA
+"2022-10-20",3,2023,"abundance","nbGARCH",117,0.95,"controls","BA",0.283151219853727,0,2,"2989.1",2989,NA,566,217,560,560,572,6,NA,NA
+"2022-10-20",4,2023,"abundance","nbGARCH",117,0.95,"controls","BA",0.283155391063932,0,2,"2989.1",2989,NA,567,217,560,560,572,7,NA,NA
+"2022-10-20",5,2023,"abundance","nbGARCH",117,0.95,"controls","BA",0.283156270674525,0,2,"2989.1",2989,NA,568,217,560,560,572,8,NA,NA
+"2022-10-20",6,2023,"abundance","nbGARCH",117,0.95,"controls","BA",0.283156456165003,0,2,"2989.1",2989,NA,569,217,560,560,572,9,NA,NA
+"2022-10-20",7,2023,"abundance","nbGARCH",117,0.95,"controls","BA",0.283156495279243,0,2,"2989.1",2989,NA,570,217,560,560,572,10,NA,NA
+"2022-10-20",8,2023,"abundance","nbGARCH",117,0.95,"controls","BA",0.283156503528279,0,2,"2989.1",2989,NA,571,217,560,560,572,11,NA,NA
+"2022-10-20",9,2023,"abundance","nbGARCH",117,0.95,"controls","BA",0.283156505267074,0,2,"2989.1",2989,NA,572,217,560,560,572,12,NA,NA

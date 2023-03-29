@@ -1,0 +1,15 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2019-12-19",10,2019,"abundance","nbGARCH","all","BA",0.600754866407491,0,3,"169.1",8,0.95,169,NA,524,217,525,524,537,-1,NA,NA
+"2019-12-19",11,2019,"abundance","nbGARCH","all","BA",0.963012673118542,0,5,"169.1",8,0.95,169,NA,525,217,525,524,537,0,NA,NA
+"2019-12-19",12,2019,"abundance","nbGARCH","all","BA",1.17846412888192,0,7,"169.1",8,0.95,169,NA,526,217,525,524,537,1,NA,NA
+"2019-12-19",1,2020,"abundance","nbGARCH","all","BA",1.3100017864617,0,8,"169.1",8,0.95,169,NA,527,217,525,524,537,2,NA,NA
+"2019-12-19",2,2020,"abundance","nbGARCH","all","BA",1.39383157844144,0,8,"169.1",8,0.95,169,NA,528,217,525,524,537,3,NA,NA
+"2019-12-19",3,2020,"abundance","nbGARCH","all","BA",1.44727384403779,0,9,"169.1",8,0.95,169,NA,529,217,525,524,537,4,NA,NA
+"2019-12-19",4,2020,"abundance","nbGARCH","all","BA",1.47929467854242,0,9,"169.1",8,0.95,169,NA,530,217,525,524,537,5,NA,NA
+"2019-12-19",5,2020,"abundance","nbGARCH","all","BA",1.49889977584115,0,9,"169.1",8,0.95,169,NA,531,217,525,524,537,6,NA,NA
+"2019-12-19",6,2020,"abundance","nbGARCH","all","BA",1.51047331783441,0,11,"169.1",8,0.95,169,NA,532,217,525,524,537,7,NA,NA
+"2019-12-19",7,2020,"abundance","nbGARCH","all","BA",1.51740713925867,0,10,"169.1",8,0.95,169,NA,533,217,525,524,537,8,NA,NA
+"2019-12-19",8,2020,"abundance","nbGARCH","all","BA",1.52140258700146,0,10,"169.1",8,0.95,169,NA,534,217,525,524,537,9,NA,NA
+"2019-12-19",9,2020,"abundance","nbGARCH","all","BA",1.52394161737982,0,9,"169.1",8,0.95,169,NA,535,217,525,524,537,10,NA,NA
+"2019-12-19",10,2020,"abundance","nbGARCH","all","BA",1.52494672502004,0,9,"169.1",8,0.95,169,NA,536,217,525,524,537,11,NA,NA
+"2019-12-19",11,2020,"abundance","nbGARCH","all","BA",1.42748676595376,0,9,"169.1",8,0.95,169,NA,537,217,525,524,537,12,NA,NA

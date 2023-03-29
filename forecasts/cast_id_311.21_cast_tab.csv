@@ -1,0 +1,15 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2020-01-10",11,2019,"abundance","simplexEDM","controls","total",18.000007333326,17.9811570182359,18.0188576484161,"311.21",14,0.95,311,NA,525,217,526,525,538,-1,NA,NA
+"2020-01-10",12,2019,"abundance","simplexEDM","controls","total",26.5,11.8002701159496,41.1997298840504,"311.21",14,0.95,311,NA,526,217,526,525,538,0,NA,NA
+"2020-01-10",1,2020,"abundance","simplexEDM","controls","total",34.25,19.9896624752254,48.5103375247746,"311.21",14,0.95,311,NA,527,217,526,525,538,1,NA,NA
+"2020-01-10",2,2020,"abundance","simplexEDM","controls","total",30.25,19.9368825713091,40.5631174286909,"311.21",14,0.95,311,NA,528,217,526,525,538,2,NA,NA
+"2020-01-10",3,2020,"abundance","simplexEDM","controls","total",30.5384615384616,21.4548605011283,39.6220625757948,"311.21",14,0.95,311,NA,529,217,526,525,538,3,NA,NA
+"2020-01-10",4,2020,"abundance","simplexEDM","controls","total",33.7142857142857,9.4886622700993,57.9399091584721,"311.21",14,0.95,311,NA,530,217,526,525,538,4,NA,NA
+"2020-01-10",5,2020,"abundance","simplexEDM","controls","total",30.25,19.9368825713091,40.5631174286909,"311.21",14,0.95,311,NA,531,217,526,525,538,5,NA,NA
+"2020-01-10",6,2020,"abundance","simplexEDM","controls","total",30.5384615384616,21.4548605011283,39.6220625757948,"311.21",14,0.95,311,NA,532,217,526,525,538,6,NA,NA
+"2020-01-10",7,2020,"abundance","simplexEDM","controls","total",33.7142857142857,9.4886622700993,57.9399091584721,"311.21",14,0.95,311,NA,533,217,526,525,538,7,NA,NA
+"2020-01-10",8,2020,"abundance","simplexEDM","controls","total",30.25,19.9368825713091,40.5631174286909,"311.21",14,0.95,311,NA,534,217,526,525,538,8,NA,NA
+"2020-01-10",9,2020,"abundance","simplexEDM","controls","total",30.5384615384616,21.4548605011283,39.6220625757948,"311.21",14,0.95,311,NA,535,217,526,525,538,9,NA,NA
+"2020-01-10",10,2020,"abundance","simplexEDM","controls","total",33.7142857142857,9.4886622700993,57.9399091584721,"311.21",14,0.95,311,NA,536,217,526,525,538,10,NA,NA
+"2020-01-10",11,2020,"abundance","simplexEDM","controls","total",30.25,19.9368825713091,40.5631174286909,"311.21",14,0.95,311,NA,537,217,526,525,538,11,NA,NA
+"2020-01-10",12,2020,"abundance","simplexEDM","controls","total",30.5384615384616,21.4548605011283,39.6220625757948,"311.21",14,0.95,311,NA,538,217,526,525,538,12,NA,NA

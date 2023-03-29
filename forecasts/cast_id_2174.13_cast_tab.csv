@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2022-02-24",1,2022,"abundance","nbGARCH","controls","PP",13.0199291836403,1,36,"2174.13",83,0.95,2174,NA,552,217,552,552,564,0,NA,NA
+"2022-02-24",3,2022,"abundance","nbGARCH","controls","PP",13.4053528353627,0,44,"2174.13",83,0.95,2174,NA,553,217,552,552,564,1,NA,NA
+"2022-02-24",4,2022,"abundance","nbGARCH","controls","PP",14.0560874193562,0,50,"2174.13",83,0.95,2174,NA,554,217,552,552,564,2,NA,NA
+"2022-02-24",4,2022,"abundance","nbGARCH","controls","PP",15.0283504235226,0,54,"2174.13",83,0.95,2174,NA,555,217,552,552,564,3,NA,NA
+"2022-02-24",5,2022,"abundance","nbGARCH","controls","PP",16.0367096842643,0,55,"2174.13",83,0.95,2174,NA,556,217,552,552,564,4,NA,NA
+"2022-02-24",6,2022,"abundance","nbGARCH","controls","PP",17.0917637593699,0,59,"2174.13",83,0.95,2174,NA,557,217,552,552,564,5,NA,NA
+"2022-02-24",7,2022,"abundance","nbGARCH","controls","PP",18.1510707463588,0,63,"2174.13",83,0.95,2174,NA,558,217,552,552,564,6,NA,NA
+"2022-02-24",8,2022,"abundance","nbGARCH","controls","PP",19.2104962972216,0,68,"2174.13",83,0.95,2174,NA,559,217,552,552,564,7,NA,NA
+"2022-02-24",9,2022,"abundance","nbGARCH","controls","PP",20.2456954221374,0,76,"2174.13",83,0.95,2174,NA,560,217,552,552,564,8,NA,NA
+"2022-02-24",10,2022,"abundance","nbGARCH","controls","PP",21.2100101558638,0,67,"2174.13",83,0.95,2174,NA,561,217,552,552,564,9,NA,NA
+"2022-02-24",11,2022,"abundance","nbGARCH","controls","PP",21.9541841333067,0,81,"2174.13",83,0.95,2174,NA,562,217,552,552,564,10,NA,NA
+"2022-02-24",12,2022,"abundance","nbGARCH","controls","PP",22.0634702384532,0,66,"2174.13",83,0.95,2174,NA,563,217,552,552,564,11,NA,NA
+"2022-02-24",1,2023,"abundance","nbGARCH","controls","PP",20.7625718841051,0,57,"2174.13",83,0.95,2174,NA,564,217,552,552,564,12,NA,NA

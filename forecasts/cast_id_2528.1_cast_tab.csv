@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","cast_group","confidence_level","dataset","species","estimate","lower_pi","upper_pi","cast_id","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2022-05-26",4,2022,"abundance","nbGARCH",96,0.95,"exclosures","BA",0.15744623323882,0,1,"2528.1",2528,NA,555,217,555,555,567,0,NA,NA
+"2022-05-26",5,2022,"abundance","nbGARCH",96,0.95,"exclosures","BA",0.181901926887359,0,1,"2528.1",2528,NA,556,217,555,555,567,1,NA,NA
+"2022-05-26",6,2022,"abundance","nbGARCH",96,0.95,"exclosures","BA",0.185696669558077,0,2,"2528.1",2528,NA,557,217,555,555,567,2,NA,NA
+"2022-05-26",7,2022,"abundance","nbGARCH",96,0.95,"exclosures","BA",0.186285403731595,0,2,"2528.1",2528,NA,558,217,555,555,567,3,NA,NA
+"2022-05-26",8,2022,"abundance","nbGARCH",96,0.95,"exclosures","BA",0.186376740594368,0,2,"2528.1",2528,NA,559,217,555,555,567,4,NA,NA
+"2022-05-26",9,2022,"abundance","nbGARCH",96,0.95,"exclosures","BA",0.186390910644118,0,2,"2528.1",2528,NA,560,217,555,555,567,5,NA,NA
+"2022-05-26",10,2022,"abundance","nbGARCH",96,0.95,"exclosures","BA",0.186393108991992,0,2,"2528.1",2528,NA,561,217,555,555,567,6,NA,NA
+"2022-05-26",11,2022,"abundance","nbGARCH",96,0.95,"exclosures","BA",0.186393450044637,0,2,"2528.1",2528,NA,562,217,555,555,567,7,NA,NA
+"2022-05-26",12,2022,"abundance","nbGARCH",96,0.95,"exclosures","BA",0.186393502955692,0,2,"2528.1",2528,NA,563,217,555,555,567,8,NA,NA
+"2022-05-26",1,2023,"abundance","nbGARCH",96,0.95,"exclosures","BA",0.186393511164338,0,2,"2528.1",2528,NA,564,217,555,555,567,9,NA,NA
+"2022-05-26",2,2023,"abundance","nbGARCH",96,0.95,"exclosures","BA",0.18639351243783,0,2,"2528.1",2528,NA,565,217,555,555,567,10,NA,NA
+"2022-05-26",3,2023,"abundance","nbGARCH",96,0.95,"exclosures","BA",0.186393512635399,0,2,"2528.1",2528,NA,566,217,555,555,567,11,NA,NA
+"2022-05-26",4,2023,"abundance","nbGARCH",96,0.95,"exclosures","BA",0.186393512666048,0,2,"2528.1",2528,NA,567,217,555,555,567,12,NA,NA

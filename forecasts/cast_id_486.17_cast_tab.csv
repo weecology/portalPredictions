@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2020-02-06",1,2020,"abundance","pevGARCH","exclosures","SF",0.340460019977821,0,2,"486.17",21,0.95,486,NA,527,217,527,527,539,0,NA,NA
+"2020-02-06",2,2020,"abundance","pevGARCH","exclosures","SF",0.51026058896774,0,2,"486.17",21,0.95,486,NA,528,217,527,527,539,1,NA,NA
+"2020-02-06",3,2020,"abundance","pevGARCH","exclosures","SF",0.429575754755664,0,2,"486.17",21,0.95,486,NA,529,217,527,527,539,2,NA,NA
+"2020-02-06",4,2020,"abundance","pevGARCH","exclosures","SF",0.292395825327266,0,2,"486.17",21,0.95,486,NA,530,217,527,527,539,3,NA,NA
+"2020-02-06",5,2020,"abundance","pevGARCH","exclosures","SF",0.236052282475534,0,1,"486.17",21,0.95,486,NA,531,217,527,527,539,4,NA,NA
+"2020-02-06",6,2020,"abundance","pevGARCH","exclosures","SF",0.190163745499185,0,1,"486.17",21,0.95,486,NA,532,217,527,527,539,5,NA,NA
+"2020-02-06",7,2020,"abundance","pevGARCH","exclosures","SF",0.240569452734317,0,1,"486.17",21,0.95,486,NA,533,217,527,527,539,6,NA,NA
+"2020-02-06",8,2020,"abundance","pevGARCH","exclosures","SF",0.227665940840479,0,2,"486.17",21,0.95,486,NA,534,217,527,527,539,7,NA,NA
+"2020-02-06",9,2020,"abundance","pevGARCH","exclosures","SF",0.193225037063347,0,2,"486.17",21,0.95,486,NA,535,217,527,527,539,8,NA,NA
+"2020-02-06",10,2020,"abundance","pevGARCH","exclosures","SF",0.239440854157176,0,2,"486.17",21,0.95,486,NA,536,217,527,527,539,9,NA,NA
+"2020-02-06",11,2020,"abundance","pevGARCH","exclosures","SF",0.265678307829567,0,2,"486.17",21,0.95,486,NA,537,217,527,527,539,10,NA,NA
+"2020-02-06",12,2020,"abundance","pevGARCH","exclosures","SF",0.304585756097211,0,2,"486.17",21,0.95,486,NA,538,217,527,527,539,11,NA,NA
+"2020-02-06",1,2021,"abundance","pevGARCH","exclosures","SF",0.314289322153281,0,2,"486.17",21,0.95,486,NA,539,217,527,527,539,12,NA,NA

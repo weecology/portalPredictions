@@ -1,0 +1,16 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2020-05-07",2,2020,"abundance","pevGARCH","exclosures","RF",0.0042002730994431,0,0,"774.14",32,0.95,774,NA,528,217,530,528,542,-2,NA,NA
+"2020-05-07",3,2020,"abundance","pevGARCH","exclosures","RF",0.00421053043570505,0,0,"774.14",32,0.95,774,NA,529,217,530,528,542,-1,NA,NA
+"2020-05-07",4,2020,"abundance","pevGARCH","exclosures","RF",0.00440227364884939,0,0,"774.14",32,0.95,774,NA,530,217,530,528,542,0,NA,NA
+"2020-05-07",5,2020,"abundance","pevGARCH","exclosures","RF",0.00440276276860392,0,0,"774.14",32,0.95,774,NA,531,217,530,528,542,1,NA,NA
+"2020-05-07",6,2020,"abundance","pevGARCH","exclosures","RF",0.00440276401625467,0,0,"774.14",32,0.95,774,NA,532,217,530,528,542,2,NA,NA
+"2020-05-07",7,2020,"abundance","pevGARCH","exclosures","RF",0.00440276401943719,0,0,"774.14",32,0.95,774,NA,533,217,530,528,542,3,NA,NA
+"2020-05-07",8,2020,"abundance","pevGARCH","exclosures","RF",0.00349664904303277,0,0,"774.14",32,0.95,774,NA,534,217,530,528,542,4,NA,NA
+"2020-05-07",9,2020,"abundance","pevGARCH","exclosures","RF",0.00440045225798627,0,0,"774.14",32,0.95,774,NA,535,217,530,528,542,5,NA,NA
+"2020-05-07",10,2020,"abundance","pevGARCH","exclosures","RF",0.00440275812258271,0,0,"774.14",32,0.95,774,NA,536,217,530,528,542,6,NA,NA
+"2020-05-07",11,2020,"abundance","pevGARCH","exclosures","RF",0.00440276400440356,0,0,"774.14",32,0.95,774,NA,537,217,530,528,542,7,NA,NA
+"2020-05-07",12,2020,"abundance","pevGARCH","exclosures","RF",0.00440276401940695,0,0,"774.14",32,0.95,774,NA,538,217,530,528,542,8,NA,NA
+"2020-05-07",1,2021,"abundance","pevGARCH","exclosures","RF",0.00440276401944523,0,0,"774.14",32,0.95,774,NA,539,217,530,528,542,9,NA,NA
+"2020-05-07",2,2021,"abundance","pevGARCH","exclosures","RF",0.00440276401944532,0,0,"774.14",32,0.95,774,NA,540,217,530,528,542,10,NA,NA
+"2020-05-07",3,2021,"abundance","pevGARCH","exclosures","RF",0.00439379192432504,0,0,"774.14",32,0.95,774,NA,541,217,530,528,542,11,NA,NA
+"2020-05-07",4,2021,"abundance","pevGARCH","exclosures","RF",0.00423313561903518,0,0,"774.14",32,0.95,774,NA,542,217,530,528,542,12,NA,NA

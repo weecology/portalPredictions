@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_group","confidence_level","cast_id","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2022-09-22",8,2022,"abundance","jags_RW","dm_controls","DM",13.007,6.534,19.789,113,0.95,"2899.1",2899,NA,559,217,559,559,571,0,NA,NA
+"2022-09-22",9,2022,"abundance","jags_RW","dm_controls","DM",22.496,0.092,76.836,113,0.95,"2899.1",2899,NA,560,217,559,559,571,1,NA,NA
+"2022-09-22",10,2022,"abundance","jags_RW","dm_controls","DM",32.057,0,162.634,113,0.95,"2899.1",2899,NA,561,217,559,559,571,2,NA,NA
+"2022-09-22",11,2022,"abundance","jags_RW","dm_controls","DM",38.282,0.462,196.9,113,0.95,"2899.1",2899,NA,562,217,559,559,571,3,NA,NA
+"2022-09-22",12,2022,"abundance","jags_RW","dm_controls","DM",42.508,0.269,196.9,113,0.95,"2899.1",2899,NA,563,217,559,559,571,4,NA,NA
+"2022-09-22",1,2023,"abundance","jags_RW","dm_controls","DM",45.238,0.15,196.9,113,0.95,"2899.1",2899,NA,564,217,559,559,571,5,NA,NA
+"2022-09-22",2,2023,"abundance","jags_RW","dm_controls","DM",46.618,0.065,196.9,113,0.95,"2899.1",2899,NA,565,217,559,559,571,6,NA,NA
+"2022-09-22",3,2023,"abundance","jags_RW","dm_controls","DM",47.378,0.012,196.9,113,0.95,"2899.1",2899,NA,566,217,559,559,571,7,NA,NA
+"2022-09-22",4,2023,"abundance","jags_RW","dm_controls","DM",47.18,0,196.9,113,0.95,"2899.1",2899,NA,567,217,559,559,571,8,NA,NA
+"2022-09-22",5,2023,"abundance","jags_RW","dm_controls","DM",46.997,0,196.9,113,0.95,"2899.1",2899,NA,568,217,559,559,571,9,NA,NA
+"2022-09-22",6,2023,"abundance","jags_RW","dm_controls","DM",46.52,0,196.9,113,0.95,"2899.1",2899,NA,569,217,559,559,571,10,NA,NA
+"2022-09-22",7,2023,"abundance","jags_RW","dm_controls","DM",46.028,0,196.9,113,0.95,"2899.1",2899,NA,570,217,559,559,571,11,NA,NA
+"2022-09-22",8,2023,"abundance","jags_RW","dm_controls","DM",46.053,0,196.9,113,0.95,"2899.1",2899,NA,571,217,559,559,571,12,NA,NA

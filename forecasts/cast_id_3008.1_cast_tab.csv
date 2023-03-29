@@ -1,0 +1,13 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_group","confidence_level","cast_id","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2023-02-09",2,2023,"abundance","jags_logistic_covariates","controls","DM",9.057,0.018,27.246,118,0.95,"3008.1",3008,NA,565,217,564,565,576,1,NA,NA
+"2023-02-09",3,2023,"abundance","jags_logistic_covariates","controls","DM",9.063,0.018,27.263,118,0.95,"3008.1",3008,NA,566,217,564,565,576,2,NA,NA
+"2023-02-09",4,2023,"abundance","jags_logistic_covariates","controls","DM",9.084,0.017,27.294,118,0.95,"3008.1",3008,NA,567,217,564,565,576,3,NA,NA
+"2023-02-09",5,2023,"abundance","jags_logistic_covariates","controls","DM",9.126,0.017,27.341,118,0.95,"3008.1",3008,NA,568,217,564,565,576,4,NA,NA
+"2023-02-09",6,2023,"abundance","jags_logistic_covariates","controls","DM",9.167,0.016,27.379,118,0.95,"3008.1",3008,NA,569,217,564,565,576,5,NA,NA
+"2023-02-09",7,2023,"abundance","jags_logistic_covariates","controls","DM",9.188,0.016,27.397,118,0.95,"3008.1",3008,NA,570,217,564,565,576,6,NA,NA
+"2023-02-09",8,2023,"abundance","jags_logistic_covariates","controls","DM",9.122,0.016,27.367,118,0.95,"3008.1",3008,NA,571,217,564,565,576,7,NA,NA
+"2023-02-09",9,2023,"abundance","jags_logistic_covariates","controls","DM",9.014,0.016,27.291,118,0.95,"3008.1",3008,NA,572,217,564,565,576,8,NA,NA
+"2023-02-09",10,2023,"abundance","jags_logistic_covariates","controls","DM",8.906,0.016,27.178,118,0.95,"3008.1",3008,NA,573,217,564,565,576,9,NA,NA
+"2023-02-09",11,2023,"abundance","jags_logistic_covariates","controls","DM",8.864,0.015,27.127,118,0.95,"3008.1",3008,NA,574,217,564,565,576,10,NA,NA
+"2023-02-09",12,2023,"abundance","jags_logistic_covariates","controls","DM",8.861,0.015,27.138,118,0.95,"3008.1",3008,NA,575,217,564,565,576,11,NA,NA
+"2023-02-09",1,2024,"abundance","jags_logistic_covariates","controls","DM",8.877,0.015,27.179,118,0.95,"3008.1",3008,NA,576,217,564,565,576,12,NA,NA

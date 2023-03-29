@@ -1,0 +1,15 @@
+"cast_date","cast_month","cast_year","currency","model","cast_group","confidence_level","dataset","species","estimate","lower_pi","upper_pi","cast_id","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2022-10-13",8,2022,"abundance","nbsGARCH",116,0.95,"exclosures","PB",7.39237231887707,2,14,"2972.7",2972,NA,559,217,560,559,572,-1,NA,NA
+"2022-10-13",9,2022,"abundance","nbsGARCH",116,0.95,"exclosures","PB",7.36430289295984,1,16,"2972.7",2972,NA,560,217,560,559,572,0,NA,NA
+"2022-10-13",10,2022,"abundance","nbsGARCH",116,0.95,"exclosures","PB",6.9836215716742,1,18,"2972.7",2972,NA,561,217,560,559,572,1,NA,NA
+"2022-10-13",11,2022,"abundance","nbsGARCH",116,0.95,"exclosures","PB",6.4213417772782,1,17,"2972.7",2972,NA,562,217,560,559,572,2,NA,NA
+"2022-10-13",12,2022,"abundance","nbsGARCH",116,0.95,"exclosures","PB",6.14112120265521,0,17,"2972.7",2972,NA,563,217,560,559,572,3,NA,NA
+"2022-10-13",1,2023,"abundance","nbsGARCH",116,0.95,"exclosures","PB",6.02085008052295,0,17,"2972.7",2972,NA,564,217,560,559,572,4,NA,NA
+"2022-10-13",2,2023,"abundance","nbsGARCH",116,0.95,"exclosures","PB",6.04758218576972,0,16,"2972.7",2972,NA,565,217,560,559,572,5,NA,NA
+"2022-10-13",3,2023,"abundance","nbsGARCH",116,0.95,"exclosures","PB",6.57109385455785,0,18,"2972.7",2972,NA,566,217,560,559,572,6,NA,NA
+"2022-10-13",4,2023,"abundance","nbsGARCH",116,0.95,"exclosures","PB",7.36075979178121,0,20,"2972.7",2972,NA,567,217,560,559,572,7,NA,NA
+"2022-10-13",5,2023,"abundance","nbsGARCH",116,0.95,"exclosures","PB",8.45374666609677,1,23,"2972.7",2972,NA,568,217,560,559,572,8,NA,NA
+"2022-10-13",6,2023,"abundance","nbsGARCH",116,0.95,"exclosures","PB",9.64772572554715,1,24,"2972.7",2972,NA,569,217,560,559,572,9,NA,NA
+"2022-10-13",7,2023,"abundance","nbsGARCH",116,0.95,"exclosures","PB",10.6454213675766,0,29,"2972.7",2972,NA,570,217,560,559,572,10,NA,NA
+"2022-10-13",8,2023,"abundance","nbsGARCH",116,0.95,"exclosures","PB",11.1740410265759,1,31,"2972.7",2972,NA,571,217,560,559,572,11,NA,NA
+"2022-10-13",9,2023,"abundance","nbsGARCH",116,0.95,"exclosures","PB",11.0422973044829,1,29,"2972.7",2972,NA,572,217,560,559,572,12,NA,NA

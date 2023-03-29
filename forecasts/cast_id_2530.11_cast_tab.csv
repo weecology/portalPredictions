@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","cast_group","confidence_level","dataset","species","estimate","lower_pi","upper_pi","cast_id","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2022-05-26",4,2022,"abundance","nbsGARCH",96,0.95,"all","PH",0.0537282571287852,0,1,"2530.11",2530,NA,555,217,555,555,567,0,NA,NA
+"2022-05-26",5,2022,"abundance","nbsGARCH",96,0.95,"all","PH",0.0503222360259079,0,1,"2530.11",2530,NA,556,217,555,555,567,1,NA,NA
+"2022-05-26",6,2022,"abundance","nbsGARCH",96,0.95,"all","PH",0.0651063069980458,0,1,"2530.11",2530,NA,557,217,555,555,567,2,NA,NA
+"2022-05-26",7,2022,"abundance","nbsGARCH",96,0.95,"all","PH",0.0726786084545552,0,1,"2530.11",2530,NA,558,217,555,555,567,3,NA,NA
+"2022-05-26",8,2022,"abundance","nbsGARCH",96,0.95,"all","PH",0.0614409108832022,0,1,"2530.11",2530,NA,559,217,555,555,567,4,NA,NA
+"2022-05-26",9,2022,"abundance","nbsGARCH",96,0.95,"all","PH",0.0411177899692523,0,1,"2530.11",2530,NA,560,217,555,555,567,5,NA,NA
+"2022-05-26",10,2022,"abundance","nbsGARCH",96,0.95,"all","PH",0.0284746751126503,0,1,"2530.11",2530,NA,561,217,555,555,567,6,NA,NA
+"2022-05-26",11,2022,"abundance","nbsGARCH",96,0.95,"all","PH",0.018170072164193,0,0,"2530.11",2530,NA,562,217,555,555,567,7,NA,NA
+"2022-05-26",12,2022,"abundance","nbsGARCH",96,0.95,"all","PH",0.0132739066035543,0,0,"2530.11",2530,NA,563,217,555,555,567,8,NA,NA
+"2022-05-26",1,2023,"abundance","nbsGARCH",96,0.95,"all","PH",0.011915953592366,0,0,"2530.11",2530,NA,564,217,555,555,567,9,NA,NA
+"2022-05-26",2,2023,"abundance","nbsGARCH",96,0.95,"all","PH",0.013737171842645,0,0,"2530.11",2530,NA,565,217,555,555,567,10,NA,NA
+"2022-05-26",3,2023,"abundance","nbsGARCH",96,0.95,"all","PH",0.0187668325012329,0,0,"2530.11",2530,NA,566,217,555,555,567,11,NA,NA
+"2022-05-26",4,2023,"abundance","nbsGARCH",96,0.95,"all","PH",0.0224199819869181,0,0,"2530.11",2530,NA,567,217,555,555,567,12,NA,NA

@@ -1,0 +1,15 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2019-12-19",10,2019,"abundance","nbGARCH","all","PB",6.88785756305788,1,15,"169.8",8,0.95,169,NA,524,217,525,524,537,-1,NA,NA
+"2019-12-19",11,2019,"abundance","nbGARCH","all","PB",7.59277679835337,1,23,"169.8",8,0.95,169,NA,525,217,525,524,537,0,NA,NA
+"2019-12-19",12,2019,"abundance","nbGARCH","all","PB",8.36328892827304,0,28,"169.8",8,0.95,169,NA,526,217,525,524,537,1,NA,NA
+"2019-12-19",1,2020,"abundance","nbGARCH","all","PB",9.07962724325553,0,32,"169.8",8,0.95,169,NA,527,217,525,524,537,2,NA,NA
+"2019-12-19",2,2020,"abundance","nbGARCH","all","PB",9.7035750555866,0,35,"169.8",8,0.95,169,NA,528,217,525,524,537,3,NA,NA
+"2019-12-19",3,2020,"abundance","nbGARCH","all","PB",10.2054012772016,0,44,"169.8",8,0.95,169,NA,529,217,525,524,537,4,NA,NA
+"2019-12-19",4,2020,"abundance","nbGARCH","all","PB",10.7434045885557,0,41,"169.8",8,0.95,169,NA,530,217,525,524,537,5,NA,NA
+"2019-12-19",5,2020,"abundance","nbGARCH","all","PB",11.1614093461196,0,51,"169.8",8,0.95,169,NA,531,217,525,524,537,6,NA,NA
+"2019-12-19",6,2020,"abundance","nbGARCH","all","PB",11.6986384426506,0,48,"169.8",8,0.95,169,NA,532,217,525,524,537,7,NA,NA
+"2019-12-19",7,2020,"abundance","nbGARCH","all","PB",12.0294427580265,0,51,"169.8",8,0.95,169,NA,533,217,525,524,537,8,NA,NA
+"2019-12-19",8,2020,"abundance","nbGARCH","all","PB",12.3275025295023,0,48,"169.8",8,0.95,169,NA,534,217,525,524,537,9,NA,NA
+"2019-12-19",9,2020,"abundance","nbGARCH","all","PB",12.6117079991982,0,45,"169.8",8,0.95,169,NA,535,217,525,524,537,10,NA,NA
+"2019-12-19",10,2020,"abundance","nbGARCH","all","PB",13.1085082457601,0,48,"169.8",8,0.95,169,NA,536,217,525,524,537,11,NA,NA
+"2019-12-19",11,2020,"abundance","nbGARCH","all","PB",13.6150242654249,0,47,"169.8",8,0.95,169,NA,537,217,525,524,537,12,NA,NA

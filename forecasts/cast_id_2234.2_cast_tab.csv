@@ -1,0 +1,15 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2022-03-10",1,2022,"abundance","nbGARCH","dm_controls","total",19.15541010262,11,28,"2234.2",85,0.95,2234,NA,552,217,553,552,565,-1,NA,NA
+"2022-03-10",3,2022,"abundance","nbGARCH","dm_controls","total",18.4662243741486,9,30,"2234.2",85,0.95,2234,NA,553,217,553,552,565,0,NA,NA
+"2022-03-10",4,2022,"abundance","nbGARCH","dm_controls","total",17.8973017509391,8,30,"2234.2",85,0.95,2234,NA,554,217,553,552,565,1,NA,NA
+"2022-03-10",4,2022,"abundance","nbGARCH","dm_controls","total",17.4216082642049,7,31,"2234.2",85,0.95,2234,NA,555,217,553,552,565,2,NA,NA
+"2022-03-10",5,2022,"abundance","nbGARCH","dm_controls","total",17.0179184493163,5,32,"2234.2",85,0.95,2234,NA,556,217,553,552,565,3,NA,NA
+"2022-03-10",6,2022,"abundance","nbGARCH","dm_controls","total",16.6693041218116,5,31,"2234.2",85,0.95,2234,NA,557,217,553,552,565,4,NA,NA
+"2022-03-10",7,2022,"abundance","nbGARCH","dm_controls","total",16.4123291061325,5,32,"2234.2",85,0.95,2234,NA,558,217,553,552,565,5,NA,NA
+"2022-03-10",8,2022,"abundance","nbGARCH","dm_controls","total",16.2046841248834,5,31,"2234.2",85,0.95,2234,NA,559,217,553,552,565,6,NA,NA
+"2022-03-10",9,2022,"abundance","nbGARCH","dm_controls","total",16.0365727251544,5,31,"2234.2",85,0.95,2234,NA,560,217,553,552,565,7,NA,NA
+"2022-03-10",10,2022,"abundance","nbGARCH","dm_controls","total",15.9207918471776,4,31,"2234.2",85,0.95,2234,NA,561,217,553,552,565,8,NA,NA
+"2022-03-10",11,2022,"abundance","nbGARCH","dm_controls","total",15.9299512330508,4,29,"2234.2",85,0.95,2234,NA,562,217,553,552,565,9,NA,NA
+"2022-03-10",12,2022,"abundance","nbGARCH","dm_controls","total",15.9690619700603,5,30,"2234.2",85,0.95,2234,NA,563,217,553,552,565,10,NA,NA
+"2022-03-10",1,2023,"abundance","nbGARCH","dm_controls","total",16.0104944780146,4,30,"2234.2",85,0.95,2234,NA,564,217,553,552,565,11,NA,NA
+"2022-03-10",2,2023,"abundance","nbGARCH","dm_controls","total",16.0361411502722,5,30,"2234.2",85,0.95,2234,NA,565,217,553,552,565,12,NA,NA

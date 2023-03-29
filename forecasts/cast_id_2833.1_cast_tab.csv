@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_group","confidence_level","cast_id","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2022-09-01",8,2022,"abundance","jags_RW","dm_controls","DM",13,6.533,19.993,110,0.95,"2833.1",2833,NA,559,217,559,559,571,0,NA,NA
+"2022-09-01",9,2022,"abundance","jags_RW","dm_controls","DM",22.678,0.205,79.026,110,0.95,"2833.1",2833,NA,560,217,559,559,571,1,NA,NA
+"2022-09-01",10,2022,"abundance","jags_RW","dm_controls","DM",32.188,0,158.791,110,0.95,"2833.1",2833,NA,561,217,559,559,571,2,NA,NA
+"2022-09-01",11,2022,"abundance","jags_RW","dm_controls","DM",38.276,0.525,196.9,110,0.95,"2833.1",2833,NA,562,217,559,559,571,3,NA,NA
+"2022-09-01",12,2022,"abundance","jags_RW","dm_controls","DM",42.537,0.287,196.9,110,0.95,"2833.1",2833,NA,563,217,559,559,571,4,NA,NA
+"2022-09-01",1,2023,"abundance","jags_RW","dm_controls","DM",45.098,0.146,196.9,110,0.95,"2833.1",2833,NA,564,217,559,559,571,5,NA,NA
+"2022-09-01",2,2023,"abundance","jags_RW","dm_controls","DM",45.816,0.067,196.9,110,0.95,"2833.1",2833,NA,565,217,559,559,571,6,NA,NA
+"2022-09-01",3,2023,"abundance","jags_RW","dm_controls","DM",46.164,0.024,196.9,110,0.95,"2833.1",2833,NA,566,217,559,559,571,7,NA,NA
+"2022-09-01",4,2023,"abundance","jags_RW","dm_controls","DM",47.068,0,196.9,110,0.95,"2833.1",2833,NA,567,217,559,559,571,8,NA,NA
+"2022-09-01",5,2023,"abundance","jags_RW","dm_controls","DM",46.744,0,196.9,110,0.95,"2833.1",2833,NA,568,217,559,559,571,9,NA,NA
+"2022-09-01",6,2023,"abundance","jags_RW","dm_controls","DM",46.724,0,196.9,110,0.95,"2833.1",2833,NA,569,217,559,559,571,10,NA,NA
+"2022-09-01",7,2023,"abundance","jags_RW","dm_controls","DM",46.51,0,196.9,110,0.95,"2833.1",2833,NA,570,217,559,559,571,11,NA,NA
+"2022-09-01",8,2023,"abundance","jags_RW","dm_controls","DM",45.973,0,196.9,110,0.95,"2833.1",2833,NA,571,217,559,559,571,12,NA,NA

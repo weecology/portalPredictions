@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","cast_group","confidence_level","estimate","lower_pi","upper_pi","cast_id","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2022-10-20",9,2022,"abundance","pevGARCH","controls","PF",117,0.95,0.485989129372639,0,2,"2997.10",2997,NA,560,217,560,560,572,0,NA,NA
+"2022-10-20",10,2022,"abundance","pevGARCH","controls","PF",117,0.95,0.720316108862452,0,3,"2997.10",2997,NA,561,217,560,560,572,1,NA,NA
+"2022-10-20",11,2022,"abundance","pevGARCH","controls","PF",117,0.95,0.829395538880446,0,3,"2997.10",2997,NA,562,217,560,560,572,2,NA,NA
+"2022-10-20",12,2022,"abundance","pevGARCH","controls","PF",117,0.95,0.875656683958792,0,3,"2997.10",2997,NA,563,217,560,560,572,3,NA,NA
+"2022-10-20",1,2023,"abundance","pevGARCH","controls","PF",117,0.95,0.891568631277965,0,3,"2997.10",2997,NA,564,217,560,560,572,4,NA,NA
+"2022-10-20",2,2023,"abundance","pevGARCH","controls","PF",117,0.95,0.894826897653709,0,4,"2997.10",2997,NA,565,217,560,560,572,5,NA,NA
+"2022-10-20",3,2023,"abundance","pevGARCH","controls","PF",117,0.95,0.894839889810717,0,3,"2997.10",2997,NA,566,217,560,560,572,6,NA,NA
+"2022-10-20",4,2023,"abundance","pevGARCH","controls","PF",117,0.95,0.906767973064811,0,3,"2997.10",2997,NA,567,217,560,560,572,7,NA,NA
+"2022-10-20",5,2023,"abundance","pevGARCH","controls","PF",117,0.95,0.918055742522743,0,4,"2997.10",2997,NA,568,217,560,560,572,8,NA,NA
+"2022-10-20",6,2023,"abundance","pevGARCH","controls","PF",117,0.95,0.928402125148801,0,4,"2997.10",2997,NA,569,217,560,560,572,9,NA,NA
+"2022-10-20",7,2023,"abundance","pevGARCH","controls","PF",117,0.95,0.935877419448014,0,4,"2997.10",2997,NA,570,217,560,560,572,10,NA,NA
+"2022-10-20",8,2023,"abundance","pevGARCH","controls","PF",117,0.95,0.938779635392524,0,4,"2997.10",2997,NA,571,217,560,560,572,11,NA,NA
+"2022-10-20",9,2023,"abundance","pevGARCH","controls","PF",117,0.95,0.940186132118703,0,4,"2997.10",2997,NA,572,217,560,560,572,12,NA,NA

@@ -1,0 +1,15 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2022-03-03",1,2022,"abundance","jags_RW","controls","DO",1.385,0.104,3.106,"2195.3",84,0.95,2195,NA,552,217,553,552,565,-1,NA,NA
+"2022-03-03",3,2022,"abundance","jags_RW","controls","DO",1.693,0,4.903,"2195.3",84,0.95,2195,NA,553,217,553,552,565,0,NA,NA
+"2022-03-03",4,2022,"abundance","jags_RW","controls","DO",2.036,0,6.615,"2195.3",84,0.95,2195,NA,554,217,553,552,565,1,NA,NA
+"2022-03-03",4,2022,"abundance","jags_RW","controls","DO",2.526,0,8.921,"2195.3",84,0.95,2195,NA,555,217,553,552,565,2,NA,NA
+"2022-03-03",5,2022,"abundance","jags_RW","controls","DO",3.023,0,11.406,"2195.3",84,0.95,2195,NA,556,217,553,552,565,3,NA,NA
+"2022-03-03",6,2022,"abundance","jags_RW","controls","DO",3.599,0,13.778,"2195.3",84,0.95,2195,NA,557,217,553,552,565,4,NA,NA
+"2022-03-03",7,2022,"abundance","jags_RW","controls","DO",4.34,0,17.411,"2195.3",84,0.95,2195,NA,558,217,553,552,565,5,NA,NA
+"2022-03-03",8,2022,"abundance","jags_RW","controls","DO",5.173,0,21.382,"2195.3",84,0.95,2195,NA,559,217,553,552,565,6,NA,NA
+"2022-03-03",9,2022,"abundance","jags_RW","controls","DO",6.057,0,25.16,"2195.3",84,0.95,2195,NA,560,217,553,552,565,7,NA,NA
+"2022-03-03",10,2022,"abundance","jags_RW","controls","DO",6.857,0,29.31,"2195.3",84,0.95,2195,NA,561,217,553,552,565,8,NA,NA
+"2022-03-03",11,2022,"abundance","jags_RW","controls","DO",7.549,0,33.85,"2195.3",84,0.95,2195,NA,562,217,553,552,565,9,NA,NA
+"2022-03-03",12,2022,"abundance","jags_RW","controls","DO",8.353,0,40.158,"2195.3",84,0.95,2195,NA,563,217,553,552,565,10,NA,NA
+"2022-03-03",1,2023,"abundance","jags_RW","controls","DO",9.233,0,44.686,"2195.3",84,0.95,2195,NA,564,217,553,552,565,11,NA,NA
+"2022-03-03",2,2023,"abundance","jags_RW","controls","DO",10.018,0,51.496,"2195.3",84,0.95,2195,NA,565,217,553,552,565,12,NA,NA

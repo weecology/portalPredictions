@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2021-12-16",12,2021,"abundance","AutoArima","controls","PF",0,-2.48061690671432,2.48061690671432,"1934.10",75,0.95,1934,NA,550,217,550,550,562,0,NA,NA
+"2021-12-16",1,2022,"abundance","AutoArima","controls","PF",0,-2.75621589005333,2.75621589005333,"1934.10",75,0.95,1934,NA,551,217,550,550,562,1,NA,NA
+"2021-12-16",2,2022,"abundance","AutoArima","controls","PF",0,-3.32570643113025,3.32570643113025,"1934.10",75,0.95,1934,NA,552,217,550,550,562,2,NA,NA
+"2021-12-16",3,2022,"abundance","AutoArima","controls","PF",0,-3.65695705173183,3.65695705173183,"1934.10",75,0.95,1934,NA,553,217,550,550,562,3,NA,NA
+"2021-12-16",4,2022,"abundance","AutoArima","controls","PF",0,-4.03122769127295,4.03122769127295,"1934.10",75,0.95,1934,NA,554,217,550,550,562,4,NA,NA
+"2021-12-16",4,2022,"abundance","AutoArima","controls","PF",0,-4.33929520465782,4.33929520465782,"1934.10",75,0.95,1934,NA,555,217,550,550,562,5,NA,NA
+"2021-12-16",5,2022,"abundance","AutoArima","controls","PF",0,-4.6432966057059,4.6432966057059,"1934.10",75,0.95,1934,NA,556,217,550,550,562,6,NA,NA
+"2021-12-16",6,2022,"abundance","AutoArima","controls","PF",0,-4.92056661703989,4.92056661703989,"1934.10",75,0.95,1934,NA,557,217,550,550,562,7,NA,NA
+"2021-12-16",7,2022,"abundance","AutoArima","controls","PF",0,-5.18693717655362,5.18693717655362,"1934.10",75,0.95,1934,NA,558,217,550,550,562,8,NA,NA
+"2021-12-16",8,2022,"abundance","AutoArima","controls","PF",0,-5.43835441914381,5.43835441914381,"1934.10",75,0.95,1934,NA,559,217,550,550,562,9,NA,NA
+"2021-12-16",9,2022,"abundance","AutoArima","controls","PF",0,-5.67960202234761,5.67960202234761,"1934.10",75,0.95,1934,NA,560,217,550,550,562,10,NA,NA
+"2021-12-16",10,2022,"abundance","AutoArima","controls","PF",0,-5.91054039726557,5.91054039726557,"1934.10",75,0.95,1934,NA,561,217,550,550,562,11,NA,NA
+"2021-12-16",11,2022,"abundance","AutoArima","controls","PF",0,-6.13302283102011,6.13302283102011,"1934.10",75,0.95,1934,NA,562,217,550,550,562,12,NA,NA

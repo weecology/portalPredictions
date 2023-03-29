@@ -1,0 +1,16 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2021-09-16",7,2021,"abundance","nbsGARCH","exclosures","PF",0.674379213680935,0,0,"1581.9",63,0.95,1581,NA,545,217,547,545,559,-2,NA,NA
+"2021-09-16",8,2021,"abundance","nbsGARCH","exclosures","PF",1.00748312373379,0,0,"1581.9",63,0.95,1581,NA,546,217,547,545,559,-1,NA,NA
+"2021-09-16",9,2021,"abundance","nbsGARCH","exclosures","PF",1.12948476484784,0,0,"1581.9",63,0.95,1581,NA,547,217,547,545,559,0,NA,NA
+"2021-09-16",10,2021,"abundance","nbsGARCH","exclosures","PF",1.16272992230282,0,0,"1581.9",63,0.95,1581,NA,548,217,547,545,559,1,NA,NA
+"2021-09-16",11,2021,"abundance","nbsGARCH","exclosures","PF",1.19192354653723,0,2,"1581.9",63,0.95,1581,NA,549,217,547,545,559,2,NA,NA
+"2021-09-16",12,2021,"abundance","nbsGARCH","exclosures","PF",1.25931574777081,0,1,"1581.9",63,0.95,1581,NA,550,217,547,545,559,3,NA,NA
+"2021-09-16",1,2022,"abundance","nbsGARCH","exclosures","PF",1.37630264953791,0,3,"1581.9",63,0.95,1581,NA,551,217,547,545,559,4,NA,NA
+"2021-09-16",2,2022,"abundance","nbsGARCH","exclosures","PF",1.5441701301961,0,1,"1581.9",63,0.95,1581,NA,552,217,547,545,559,5,NA,NA
+"2021-09-16",3,2022,"abundance","nbsGARCH","exclosures","PF",1.73399073491489,0,0,"1581.9",63,0.95,1581,NA,553,217,547,545,559,6,NA,NA
+"2021-09-16",4,2022,"abundance","nbsGARCH","exclosures","PF",1.90645077064429,0,0,"1581.9",63,0.95,1581,NA,554,217,547,545,559,7,NA,NA
+"2021-09-16",4,2022,"abundance","nbsGARCH","exclosures","PF",2.00634398783227,0,1,"1581.9",63,0.95,1581,NA,555,217,547,545,559,8,NA,NA
+"2021-09-16",5,2022,"abundance","nbsGARCH","exclosures","PF",1.99275363960682,0,0,"1581.9",63,0.95,1581,NA,556,217,547,545,559,9,NA,NA
+"2021-09-16",6,2022,"abundance","nbsGARCH","exclosures","PF",1.8715863180463,0,0,"1581.9",63,0.95,1581,NA,557,217,547,545,559,10,NA,NA
+"2021-09-16",7,2022,"abundance","nbsGARCH","exclosures","PF",1.68413419041598,0,0,"1581.9",63,0.95,1581,NA,558,217,547,545,559,11,NA,NA
+"2021-09-16",8,2022,"abundance","nbsGARCH","exclosures","PF",1.49657946996194,0,0,"1581.9",63,0.95,1581,NA,559,217,547,545,559,12,NA,NA

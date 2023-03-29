@@ -1,0 +1,17 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2020-06-04",2,2020,"abundance","jags_RW","controls","OT",4.783,1.674,8.417,"869.7",36,0.95,869,NA,528,217,531,528,543,-3,NA,NA
+"2020-06-04",3,2020,"abundance","jags_RW","controls","OT",5.535,0.466,13.306,"869.7",36,0.95,869,NA,529,217,531,528,543,-2,NA,NA
+"2020-06-04",4,2020,"abundance","jags_RW","controls","OT",6.363,0.217,18.149,"869.7",36,0.95,869,NA,530,217,531,528,543,-1,NA,NA
+"2020-06-04",5,2020,"abundance","jags_RW","controls","OT",7.438,0.042,23.482,"869.7",36,0.95,869,NA,531,217,531,528,543,0,NA,NA
+"2020-06-04",6,2020,"abundance","jags_RW","controls","OT",8.598,0,29.359,"869.7",36,0.95,869,NA,532,217,531,528,543,1,NA,NA
+"2020-06-04",7,2020,"abundance","jags_RW","controls","OT",9.801,0,35.715,"869.7",36,0.95,869,NA,533,217,531,528,543,2,NA,NA
+"2020-06-04",8,2020,"abundance","jags_RW","controls","OT",11.021,0,42.876,"869.7",36,0.95,869,NA,534,217,531,528,543,3,NA,NA
+"2020-06-04",9,2020,"abundance","jags_RW","controls","OT",12.371,0,51.391,"869.7",36,0.95,869,NA,535,217,531,528,543,4,NA,NA
+"2020-06-04",10,2020,"abundance","jags_RW","controls","OT",13.595,0,58.386,"869.7",36,0.95,869,NA,536,217,531,528,543,5,NA,NA
+"2020-06-04",11,2020,"abundance","jags_RW","controls","OT",14.954,0,68.51,"869.7",36,0.95,869,NA,537,217,531,528,543,6,NA,NA
+"2020-06-04",12,2020,"abundance","jags_RW","controls","OT",16.209,0,77.789,"869.7",36,0.95,869,NA,538,217,531,528,543,7,NA,NA
+"2020-06-04",1,2021,"abundance","jags_RW","controls","OT",17.057,0,84.335,"869.7",36,0.95,869,NA,539,217,531,528,543,8,NA,NA
+"2020-06-04",2,2021,"abundance","jags_RW","controls","OT",18.206,0,94.137,"869.7",36,0.95,869,NA,540,217,531,528,543,9,NA,NA
+"2020-06-04",3,2021,"abundance","jags_RW","controls","OT",19.415,0,103.209,"869.7",36,0.95,869,NA,541,217,531,528,543,10,NA,NA
+"2020-06-04",4,2021,"abundance","jags_RW","controls","OT",20.257,0,110.666,"869.7",36,0.95,869,NA,542,217,531,528,543,11,NA,NA
+"2020-06-04",5,2021,"abundance","jags_RW","controls","OT",21.124,0,119.869,"869.7",36,0.95,869,NA,543,217,531,528,543,12,NA,NA

@@ -1,0 +1,15 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2019-11-28",10,2019,"abundance","jags_RW","all","OT",6.545,2.362,11.224,"73.7",4,0.95,73,NA,524,217,525,524,537,-1,NA,NA
+"2019-11-28",11,2019,"abundance","jags_RW","all","OT",10.104,0.11,32.724,"73.7",4,0.95,73,NA,525,217,525,524,537,0,NA,NA
+"2019-11-28",12,2019,"abundance","jags_RW","all","OT",15.576,0,58.996,"73.7",4,0.95,73,NA,526,217,525,524,537,1,NA,NA
+"2019-11-28",1,2020,"abundance","jags_RW","all","OT",23.351,0,94.874,"73.7",4,0.95,73,NA,527,217,525,524,537,2,NA,NA
+"2019-11-28",2,2020,"abundance","jags_RW","all","OT",32.87,0,139.739,"73.7",4,0.95,73,NA,528,217,525,524,537,3,NA,NA
+"2019-11-28",3,2020,"abundance","jags_RW","all","OT",44.716,0,199.929,"73.7",4,0.95,73,NA,529,217,525,524,537,4,NA,NA
+"2019-11-28",4,2020,"abundance","jags_RW","all","OT",56.135,0,286.213,"73.7",4,0.95,73,NA,530,217,525,524,537,5,NA,NA
+"2019-11-28",5,2020,"abundance","jags_RW","all","OT",67.942,0,369.092,"73.7",4,0.95,73,NA,531,217,525,524,537,6,NA,NA
+"2019-11-28",6,2020,"abundance","jags_RW","all","OT",79.999,0,487.198,"73.7",4,0.95,73,NA,532,217,525,524,537,7,NA,NA
+"2019-11-28",7,2020,"abundance","jags_RW","all","OT",89.376,0,589.688,"73.7",4,0.95,73,NA,533,217,525,524,537,8,NA,NA
+"2019-11-28",8,2020,"abundance","jags_RW","all","OT",97.107,0,675.268,"73.7",4,0.95,73,NA,534,217,525,524,537,9,NA,NA
+"2019-11-28",9,2020,"abundance","jags_RW","all","OT",105.768,0,756.36,"73.7",4,0.95,73,NA,535,217,525,524,537,10,NA,NA
+"2019-11-28",10,2020,"abundance","jags_RW","all","OT",111.632,0,844.26,"73.7",4,0.95,73,NA,536,217,525,524,537,11,NA,NA
+"2019-11-28",11,2020,"abundance","jags_RW","all","OT",117.162,0,899.885,"73.7",4,0.95,73,NA,537,217,525,524,537,12,NA,NA

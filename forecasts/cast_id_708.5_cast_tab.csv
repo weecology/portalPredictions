@@ -1,0 +1,15 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2020-04-02",2,2020,"abundance","jags_RW","exclosures","OL",0.005,0,0,"708.5",30,0.95,708,NA,528,217,529,528,541,-1,NA,NA
+"2020-04-02",3,2020,"abundance","jags_RW","exclosures","OL",0.007,0,0.008,"708.5",30,0.95,708,NA,529,217,529,528,541,0,NA,NA
+"2020-04-02",4,2020,"abundance","jags_RW","exclosures","OL",0.01,0,0.018,"708.5",30,0.95,708,NA,530,217,529,528,541,1,NA,NA
+"2020-04-02",5,2020,"abundance","jags_RW","exclosures","OL",0.015,0,0.033,"708.5",30,0.95,708,NA,531,217,529,528,541,2,NA,NA
+"2020-04-02",6,2020,"abundance","jags_RW","exclosures","OL",0.02,0,0.05,"708.5",30,0.95,708,NA,532,217,529,528,541,3,NA,NA
+"2020-04-02",7,2020,"abundance","jags_RW","exclosures","OL",0.028,0,0.067,"708.5",30,0.95,708,NA,533,217,529,528,541,4,NA,NA
+"2020-04-02",8,2020,"abundance","jags_RW","exclosures","OL",0.036,0,0.084,"708.5",30,0.95,708,NA,534,217,529,528,541,5,NA,NA
+"2020-04-02",9,2020,"abundance","jags_RW","exclosures","OL",0.046,0,0.104,"708.5",30,0.95,708,NA,535,217,529,528,541,6,NA,NA
+"2020-04-02",10,2020,"abundance","jags_RW","exclosures","OL",0.056,0,0.124,"708.5",30,0.95,708,NA,536,217,529,528,541,7,NA,NA
+"2020-04-02",11,2020,"abundance","jags_RW","exclosures","OL",0.08,0,0.139,"708.5",30,0.95,708,NA,537,217,529,528,541,8,NA,NA
+"2020-04-02",12,2020,"abundance","jags_RW","exclosures","OL",0.102,0,0.166,"708.5",30,0.95,708,NA,538,217,529,528,541,9,NA,NA
+"2020-04-02",1,2021,"abundance","jags_RW","exclosures","OL",0.133,0,0.188,"708.5",30,0.95,708,NA,539,217,529,528,541,10,NA,NA
+"2020-04-02",2,2021,"abundance","jags_RW","exclosures","OL",0.128,0,0.219,"708.5",30,0.95,708,NA,540,217,529,528,541,11,NA,NA
+"2020-04-02",3,2021,"abundance","jags_RW","exclosures","OL",0.152,0,0.243,"708.5",30,0.95,708,NA,541,217,529,528,541,12,NA,NA

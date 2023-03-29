@@ -1,0 +1,13 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_group","confidence_level","cast_id","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2023-03-16",3,2023,"abundance","jags_logistic_covariates","controls","DM",21.781,15.835,28.197,123,0.95,"3123.1",3123,NA,566,217,565,566,577,1,NA,NA
+"2023-03-16",4,2023,"abundance","jags_logistic_covariates","controls","DM",21.569,13.767,29.922,123,0.95,"3123.1",3123,NA,567,217,565,566,577,2,NA,NA
+"2023-03-16",5,2023,"abundance","jags_logistic_covariates","controls","DM",21.392,12.662,31.503,123,0.95,"3123.1",3123,NA,568,217,565,566,577,3,NA,NA
+"2023-03-16",6,2023,"abundance","jags_logistic_covariates","controls","DM",21.226,11.278,32.17,123,0.95,"3123.1",3123,NA,569,217,565,566,577,4,NA,NA
+"2023-03-16",7,2023,"abundance","jags_logistic_covariates","controls","DM",21.054,10.683,33.195,123,0.95,"3123.1",3123,NA,570,217,565,566,577,5,NA,NA
+"2023-03-16",8,2023,"abundance","jags_logistic_covariates","controls","DM",20.938,9.849,33.45,123,0.95,"3123.1",3123,NA,571,217,565,566,577,6,NA,NA
+"2023-03-16",9,2023,"abundance","jags_logistic_covariates","controls","DM",20.892,9.498,34.349,123,0.95,"3123.1",3123,NA,572,217,565,566,577,7,NA,NA
+"2023-03-16",10,2023,"abundance","jags_logistic_covariates","controls","DM",20.847,8.949,35.308,123,0.95,"3123.1",3123,NA,573,217,565,566,577,8,NA,NA
+"2023-03-16",11,2023,"abundance","jags_logistic_covariates","controls","DM",20.657,8.139,34.928,123,0.95,"3123.1",3123,NA,574,217,565,566,577,9,NA,NA
+"2023-03-16",12,2023,"abundance","jags_logistic_covariates","controls","DM",20.454,8.34,35.491,123,0.95,"3123.1",3123,NA,575,217,565,566,577,10,NA,NA
+"2023-03-16",1,2024,"abundance","jags_logistic_covariates","controls","DM",20.3,8.106,35.32,123,0.95,"3123.1",3123,NA,576,217,565,566,577,11,NA,NA
+"2023-03-16",2,2024,"abundance","jags_logistic_covariates","controls","DM",20.163,7.528,35.153,123,0.95,"3123.1",3123,NA,577,217,565,566,577,12,NA,NA

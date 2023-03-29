@@ -1,0 +1,13 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2020-01-23",1,2020,"abundance","NaiveArima","controls","BA",0,-1.49443906850667,1.49443906850667,"374.1",17,0.95,374,NA,527,217,526,527,538,1,NA,NA
+"2020-01-23",2,2020,"abundance","NaiveArima","controls","BA",0,-2.11345599882234,2.11345599882234,"374.1",17,0.95,374,NA,528,217,526,527,538,2,NA,NA
+"2020-01-23",3,2020,"abundance","NaiveArima","controls","BA",0,-2.58844439546945,2.58844439546945,"374.1",17,0.95,374,NA,529,217,526,527,538,3,NA,NA
+"2020-01-23",4,2020,"abundance","NaiveArima","controls","BA",0,-2.98887813701333,2.98887813701333,"374.1",17,0.95,374,NA,530,217,526,527,538,4,NA,NA
+"2020-01-23",5,2020,"abundance","NaiveArima","controls","BA",0,-3.34166734541237,3.34166734541237,"374.1",17,0.95,374,NA,531,217,526,527,538,5,NA,NA
+"2020-01-23",6,2020,"abundance","NaiveArima","controls","BA",0,-3.66061316952152,3.66061316952152,"374.1",17,0.95,374,NA,532,217,526,527,538,6,NA,NA
+"2020-01-23",7,2020,"abundance","NaiveArima","controls","BA",0,-3.95391412480766,3.95391412480766,"374.1",17,0.95,374,NA,533,217,526,527,538,7,NA,NA
+"2020-01-23",8,2020,"abundance","NaiveArima","controls","BA",0,-4.22691199764468,4.22691199764468,"374.1",17,0.95,374,NA,534,217,526,527,538,8,NA,NA
+"2020-01-23",9,2020,"abundance","NaiveArima","controls","BA",0,-4.48331720552,4.48331720552,"374.1",17,0.95,374,NA,535,217,526,527,538,9,NA,NA
+"2020-01-23",10,2020,"abundance","NaiveArima","controls","BA",0,-4.72583128082147,4.72583128082147,"374.1",17,0.95,374,NA,536,217,526,527,538,10,NA,NA
+"2020-01-23",11,2020,"abundance","NaiveArima","controls","BA",0,-4.95649366228484,4.95649366228484,"374.1",17,0.95,374,NA,537,217,526,527,538,11,NA,NA
+"2020-01-23",12,2020,"abundance","NaiveArima","controls","BA",0,-5.1768887909389,5.1768887909389,"374.1",17,0.95,374,NA,538,217,526,527,538,12,NA,NA

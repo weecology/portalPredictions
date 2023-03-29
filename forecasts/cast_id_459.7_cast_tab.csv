@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2020-01-31",1,2020,"abundance","pevGARCH","exclosures","PB",1.74395868305654,0,5,"459.7",20,0.95,459,NA,527,217,527,527,539,0,NA,NA
+"2020-01-31",2,2020,"abundance","pevGARCH","exclosures","PB",2.35134486744448,0,7,"459.7",20,0.95,459,NA,528,217,527,527,539,1,NA,NA
+"2020-01-31",3,2020,"abundance","pevGARCH","exclosures","PB",2.94545721730891,0,8,"459.7",20,0.95,459,NA,529,217,527,527,539,2,NA,NA
+"2020-01-31",4,2020,"abundance","pevGARCH","exclosures","PB",3.72236407061419,0,11,"459.7",20,0.95,459,NA,530,217,527,527,539,3,NA,NA
+"2020-01-31",5,2020,"abundance","pevGARCH","exclosures","PB",4.5305326804592,0,12,"459.7",20,0.95,459,NA,531,217,527,527,539,4,NA,NA
+"2020-01-31",6,2020,"abundance","pevGARCH","exclosures","PB",5.41269188768724,0,15,"459.7",20,0.95,459,NA,532,217,527,527,539,5,NA,NA
+"2020-01-31",7,2020,"abundance","pevGARCH","exclosures","PB",6.20411544140353,0,17,"459.7",20,0.95,459,NA,533,217,527,527,539,6,NA,NA
+"2020-01-31",8,2020,"abundance","pevGARCH","exclosures","PB",7.06769492533931,1,20,"459.7",20,0.95,459,NA,534,217,527,527,539,7,NA,NA
+"2020-01-31",9,2020,"abundance","pevGARCH","exclosures","PB",7.75951300131087,0,22,"459.7",20,0.95,459,NA,535,217,527,527,539,8,NA,NA
+"2020-01-31",10,2020,"abundance","pevGARCH","exclosures","PB",8.24322029180114,0,22,"459.7",20,0.95,459,NA,536,217,527,527,539,9,NA,NA
+"2020-01-31",11,2020,"abundance","pevGARCH","exclosures","PB",8.15699641176787,0,22,"459.7",20,0.95,459,NA,537,217,527,527,539,10,NA,NA
+"2020-01-31",12,2020,"abundance","pevGARCH","exclosures","PB",8.00809011185526,0,21,"459.7",20,0.95,459,NA,538,217,527,527,539,11,NA,NA
+"2020-01-31",1,2021,"abundance","pevGARCH","exclosures","PB",7.69540068207406,0,20,"459.7",20,0.95,459,NA,539,217,527,527,539,12,NA,NA

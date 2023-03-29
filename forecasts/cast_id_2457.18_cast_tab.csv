@@ -1,0 +1,15 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","cast_group","confidence_level","estimate","lower_pi","upper_pi","cast_id","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2022-05-05",4,2022,"abundance","pevGARCH","controls","total",93,0.95,40.7647422133199,29,53,"2457.18",2457,NA,554,217,555,554,567,-1,NA,NA
+"2022-05-05",4,2022,"abundance","pevGARCH","controls","total",93,0.95,41.0829167427115,25,58,"2457.18",2457,NA,555,217,555,554,567,0,NA,NA
+"2022-05-05",5,2022,"abundance","pevGARCH","controls","total",93,0.95,41.1975889558172,24,61,"2457.18",2457,NA,556,217,555,554,567,1,NA,NA
+"2022-05-05",6,2022,"abundance","pevGARCH","controls","total",93,0.95,41.3823644748022,22,64,"2457.18",2457,NA,557,217,555,554,567,2,NA,NA
+"2022-05-05",7,2022,"abundance","pevGARCH","controls","total",93,0.95,41.3651175111273,22,63,"2457.18",2457,NA,558,217,555,554,567,3,NA,NA
+"2022-05-05",8,2022,"abundance","pevGARCH","controls","total",93,0.95,41.1468504894996,21,65,"2457.18",2457,NA,559,217,555,554,567,4,NA,NA
+"2022-05-05",9,2022,"abundance","pevGARCH","controls","total",93,0.95,40.4774375601394,20,61,"2457.18",2457,NA,560,217,555,554,567,5,NA,NA
+"2022-05-05",10,2022,"abundance","pevGARCH","controls","total",93,0.95,39.6892680304376,20,62,"2457.18",2457,NA,561,217,555,554,567,6,NA,NA
+"2022-05-05",11,2022,"abundance","pevGARCH","controls","total",93,0.95,40.1071790072876,20,62,"2457.18",2457,NA,562,217,555,554,567,7,NA,NA
+"2022-05-05",12,2022,"abundance","pevGARCH","controls","total",93,0.95,40.5456771273128,19,63,"2457.18",2457,NA,563,217,555,554,567,8,NA,NA
+"2022-05-05",1,2023,"abundance","pevGARCH","controls","total",93,0.95,40.5538448180536,20,62,"2457.18",2457,NA,564,217,555,554,567,9,NA,NA
+"2022-05-05",2,2023,"abundance","pevGARCH","controls","total",93,0.95,40.4506082342869,20,64,"2457.18",2457,NA,565,217,555,554,567,10,NA,NA
+"2022-05-05",3,2023,"abundance","pevGARCH","controls","total",93,0.95,40.9932226368439,20,64,"2457.18",2457,NA,566,217,555,554,567,11,NA,NA
+"2022-05-05",4,2023,"abundance","pevGARCH","controls","total",93,0.95,42.2158519564287,22,64,"2457.18",2457,NA,567,217,555,554,567,12,NA,NA

@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2022-02-03",1,2022,"abundance","nbGARCH","all","DO",15.8868819533624,4,34,"2089.3",80,0.95,2089,NA,552,217,552,552,564,0,NA,NA
+"2022-02-03",3,2022,"abundance","nbGARCH","all","DO",15.7274929365844,3,40,"2089.3",80,0.95,2089,NA,553,217,552,552,564,1,NA,NA
+"2022-02-03",4,2022,"abundance","nbGARCH","all","DO",15.6528675352141,1,45,"2089.3",80,0.95,2089,NA,554,217,552,552,564,2,NA,NA
+"2022-02-03",4,2022,"abundance","nbGARCH","all","DO",15.5269090432236,1,48,"2089.3",80,0.95,2089,NA,555,217,552,552,564,3,NA,NA
+"2022-02-03",5,2022,"abundance","nbGARCH","all","DO",15.4193056437414,1,49,"2089.3",80,0.95,2089,NA,556,217,552,552,564,4,NA,NA
+"2022-02-03",6,2022,"abundance","nbGARCH","all","DO",15.2814015072207,1,46,"2089.3",80,0.95,2089,NA,557,217,552,552,564,5,NA,NA
+"2022-02-03",7,2022,"abundance","nbGARCH","all","DO",15.1869692473618,0,49,"2089.3",80,0.95,2089,NA,558,217,552,552,564,6,NA,NA
+"2022-02-03",8,2022,"abundance","nbGARCH","all","DO",15.1158396899694,1,46,"2089.3",80,0.95,2089,NA,559,217,552,552,564,7,NA,NA
+"2022-02-03",9,2022,"abundance","nbGARCH","all","DO",15.0100271097312,1,48,"2089.3",80,0.95,2089,NA,560,217,552,552,564,8,NA,NA
+"2022-02-03",10,2022,"abundance","nbGARCH","all","DO",14.964122040953,1,48,"2089.3",80,0.95,2089,NA,561,217,552,552,564,9,NA,NA
+"2022-02-03",11,2022,"abundance","nbGARCH","all","DO",14.8858862094109,1,41,"2089.3",80,0.95,2089,NA,562,217,552,552,564,10,NA,NA
+"2022-02-03",12,2022,"abundance","nbGARCH","all","DO",14.8253599885708,1,42,"2089.3",80,0.95,2089,NA,563,217,552,552,564,11,NA,NA
+"2022-02-03",1,2023,"abundance","nbGARCH","all","DO",14.7393226340707,1,42,"2089.3",80,0.95,2089,NA,564,217,552,552,564,12,NA,NA

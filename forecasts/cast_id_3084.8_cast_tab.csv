@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","cast_group","confidence_level","dataset","species","estimate","lower_pi","upper_pi","cast_id","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2023-03-02",2,2023,"abundance","nbGARCH",121,0.95,"controls","PE",0.203007193448307,0,2,"3084.8",3084,NA,565,217,565,565,577,0,NA,NA
+"2023-03-02",3,2023,"abundance","nbGARCH",121,0.95,"controls","PE",0.24287777901201,0,2,"3084.8",3084,NA,566,217,565,565,577,1,NA,NA
+"2023-03-02",4,2023,"abundance","nbGARCH",121,0.95,"controls","PE",0.250683662762219,0,2,"3084.8",3084,NA,567,217,565,565,577,2,NA,NA
+"2023-03-02",5,2023,"abundance","nbGARCH",121,0.95,"controls","PE",0.252211021727447,0,2,"3084.8",3084,NA,568,217,565,565,577,3,NA,NA
+"2023-03-02",6,2023,"abundance","nbGARCH",121,0.95,"controls","PE",0.252507730717964,0,2,"3084.8",3084,NA,569,217,565,565,577,4,NA,NA
+"2023-03-02",7,2023,"abundance","nbGARCH",121,0.95,"controls","PE",0.252565776082979,0,2,"3084.8",3084,NA,570,217,565,565,577,5,NA,NA
+"2023-03-02",8,2023,"abundance","nbGARCH",121,0.95,"controls","PE",0.252577132031756,0,2,"3084.8",3084,NA,571,217,565,565,577,6,NA,NA
+"2023-03-02",9,2023,"abundance","nbGARCH",121,0.95,"controls","PE",0.257331680295464,0,2,"3084.8",3084,NA,572,217,565,565,577,7,NA,NA
+"2023-03-02",10,2023,"abundance","nbGARCH",121,0.95,"controls","PE",0.253509476178964,0,2,"3084.8",3084,NA,573,217,565,565,577,8,NA,NA
+"2023-03-02",11,2023,"abundance","nbGARCH",121,0.95,"controls","PE",0.252761754602832,0,2,"3084.8",3084,NA,574,217,565,565,577,9,NA,NA
+"2023-03-02",12,2023,"abundance","nbGARCH",121,0.95,"controls","PE",0.252615473109107,0,2,"3084.8",3084,NA,575,217,565,565,577,10,NA,NA
+"2023-03-02",1,2024,"abundance","nbGARCH",121,0.95,"controls","PE",0.252717548474868,0,2,"3084.8",3084,NA,576,217,565,565,577,11,NA,NA
+"2023-03-02",2,2024,"abundance","nbGARCH",121,0.95,"controls","PE",0.25260336616978,0,2,"3084.8",3084,NA,577,217,565,565,577,12,NA,NA

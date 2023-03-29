@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","cast_group","confidence_level","dataset","species","estimate","lower_pi","upper_pi","cast_id","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2022-10-20",9,2022,"abundance","nbGARCH",117,0.95,"controls","OT",0.725379296953788,0,3,"2989.7",2989,NA,560,217,560,560,572,0,NA,NA
+"2022-10-20",10,2022,"abundance","nbGARCH",117,0.95,"controls","OT",1.23552722277302,0,4,"2989.7",2989,NA,561,217,560,560,572,1,NA,NA
+"2022-10-20",11,2022,"abundance","nbGARCH",117,0.95,"controls","OT",1.5910140712971,0,6,"2989.7",2989,NA,562,217,560,560,572,2,NA,NA
+"2022-10-20",12,2022,"abundance","nbGARCH",117,0.95,"controls","OT",1.85162327397141,0,6,"2989.7",2989,NA,563,217,560,560,572,3,NA,NA
+"2022-10-20",1,2023,"abundance","nbGARCH",117,0.95,"controls","OT",2.04232269373301,0,6,"2989.7",2989,NA,564,217,560,560,572,4,NA,NA
+"2022-10-20",2,2023,"abundance","nbGARCH",117,0.95,"controls","OT",2.16580404235822,0,7,"2989.7",2989,NA,565,217,560,560,572,5,NA,NA
+"2022-10-20",3,2023,"abundance","nbGARCH",117,0.95,"controls","OT",2.23453007764548,0,7,"2989.7",2989,NA,566,217,560,560,572,6,NA,NA
+"2022-10-20",4,2023,"abundance","nbGARCH",117,0.95,"controls","OT",2.29930360346555,0,7,"2989.7",2989,NA,567,217,560,560,572,7,NA,NA
+"2022-10-20",5,2023,"abundance","nbGARCH",117,0.95,"controls","OT",2.34404963502414,0,8,"2989.7",2989,NA,568,217,560,560,572,8,NA,NA
+"2022-10-20",6,2023,"abundance","nbGARCH",117,0.95,"controls","OT",2.35708667873384,0,7,"2989.7",2989,NA,569,217,560,560,572,9,NA,NA
+"2022-10-20",7,2023,"abundance","nbGARCH",117,0.95,"controls","OT",2.36605840868086,0,8,"2989.7",2989,NA,570,217,560,560,572,10,NA,NA
+"2022-10-20",8,2023,"abundance","nbGARCH",117,0.95,"controls","OT",2.37223206079416,0,8,"2989.7",2989,NA,571,217,560,560,572,11,NA,NA
+"2022-10-20",9,2023,"abundance","nbGARCH",117,0.95,"controls","OT",2.37647932798469,0,8,"2989.7",2989,NA,572,217,560,560,572,12,NA,NA

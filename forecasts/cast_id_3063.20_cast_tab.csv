@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","cast_group","confidence_level","dataset","species","estimate","lower_pi","upper_pi","cast_id","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2023-02-23",2,2023,"abundance","nbsGARCH",120,0.95,"all","total",143.832591741235,86,213,"3063.20",3063,NA,565,217,565,565,577,0,NA,NA
+"2023-02-23",3,2023,"abundance","nbsGARCH",120,0.95,"all","total",157.049428643062,78,273,"3063.20",3063,NA,566,217,565,565,577,1,NA,NA
+"2023-02-23",4,2023,"abundance","nbsGARCH",120,0.95,"all","total",173.620759180678,77,332,"3063.20",3063,NA,567,217,565,565,577,2,NA,NA
+"2023-02-23",5,2023,"abundance","nbsGARCH",120,0.95,"all","total",190.872209929303,74,390,"3063.20",3063,NA,568,217,565,565,577,3,NA,NA
+"2023-02-23",6,2023,"abundance","nbsGARCH",120,0.95,"all","total",203.101014431718,69,433,"3063.20",3063,NA,569,217,565,565,577,4,NA,NA
+"2023-02-23",7,2023,"abundance","nbsGARCH",120,0.95,"all","total",205.486767601132,69,471,"3063.20",3063,NA,570,217,565,565,577,5,NA,NA
+"2023-02-23",8,2023,"abundance","nbsGARCH",120,0.95,"all","total",196.580107552642,58,437,"3063.20",3063,NA,571,217,565,565,577,6,NA,NA
+"2023-02-23",9,2023,"abundance","nbsGARCH",120,0.95,"all","total",179.766467781077,48,420,"3063.20",3063,NA,572,217,565,565,577,7,NA,NA
+"2023-02-23",10,2023,"abundance","nbsGARCH",120,0.95,"all","total",159.805351643796,43,371,"3063.20",3063,NA,573,217,565,565,577,8,NA,NA
+"2023-02-23",11,2023,"abundance","nbsGARCH",120,0.95,"all","total",142.529260378832,37,319,"3063.20",3063,NA,574,217,565,565,577,9,NA,NA
+"2023-02-23",12,2023,"abundance","nbsGARCH",120,0.95,"all","total",131.051937024649,31,294,"3063.20",3063,NA,575,217,565,565,577,10,NA,NA
+"2023-02-23",1,2024,"abundance","nbsGARCH",120,0.95,"all","total",126.8688651157,28,295,"3063.20",3063,NA,576,217,565,565,577,11,NA,NA
+"2023-02-23",2,2024,"abundance","nbsGARCH",120,0.95,"all","total",130.762249764233,27,312,"3063.20",3063,NA,577,217,565,565,577,12,NA,NA

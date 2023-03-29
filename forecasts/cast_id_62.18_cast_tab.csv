@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2019-11-22",10,2019,"abundance","pevGARCH","controls","total",29.690036080864,19,41,"62.18",3,0.95,62,NA,524,217,524,524,536,0,NA,NA
+"2019-11-22",11,2019,"abundance","pevGARCH","controls","total",29.7429718431686,17,46,"62.18",3,0.95,62,NA,525,217,524,524,536,1,NA,NA
+"2019-11-22",12,2019,"abundance","pevGARCH","controls","total",29.2150835602141,16,46,"62.18",3,0.95,62,NA,526,217,524,524,536,2,NA,NA
+"2019-11-22",1,2020,"abundance","pevGARCH","controls","total",29.455813397649,15,47,"62.18",3,0.95,62,NA,527,217,524,524,536,3,NA,NA
+"2019-11-22",2,2020,"abundance","pevGARCH","controls","total",29.3820135496932,14,46,"62.18",3,0.95,62,NA,528,217,524,524,536,4,NA,NA
+"2019-11-22",3,2020,"abundance","pevGARCH","controls","total",30.9532774017912,14,49,"62.18",3,0.95,62,NA,529,217,524,524,536,5,NA,NA
+"2019-11-22",4,2020,"abundance","pevGARCH","controls","total",31.5149230245062,14,50,"62.18",3,0.95,62,NA,530,217,524,524,536,6,NA,NA
+"2019-11-22",5,2020,"abundance","pevGARCH","controls","total",32.0166480710234,15,50,"62.18",3,0.95,62,NA,531,217,524,524,536,7,NA,NA
+"2019-11-22",6,2020,"abundance","pevGARCH","controls","total",34.8863511857273,17,56,"62.18",3,0.95,62,NA,532,217,524,524,536,8,NA,NA
+"2019-11-22",7,2020,"abundance","pevGARCH","controls","total",37.2484121797318,17,60,"62.18",3,0.95,62,NA,533,217,524,524,536,9,NA,NA
+"2019-11-22",8,2020,"abundance","pevGARCH","controls","total",38.477074998801,20,61,"62.18",3,0.95,62,NA,534,217,524,524,536,10,NA,NA
+"2019-11-22",9,2020,"abundance","pevGARCH","controls","total",38.5906517302269,18,59,"62.18",3,0.95,62,NA,535,217,524,524,536,11,NA,NA
+"2019-11-22",10,2020,"abundance","pevGARCH","controls","total",38.8888746074089,19,58,"62.18",3,0.95,62,NA,536,217,524,524,536,12,NA,NA

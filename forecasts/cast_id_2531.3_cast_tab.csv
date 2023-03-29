@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","cast_group","confidence_level","dataset","species","estimate","lower_pi","upper_pi","cast_id","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2022-05-26",4,2022,"abundance","nbsGARCH",96,0.95,"controls","DO",1.63086828061722,0,5,"2531.3",2531,NA,555,217,555,555,567,0,NA,NA
+"2022-05-26",5,2022,"abundance","nbsGARCH",96,0.95,"controls","DO",2.00446672596772,0,6,"2531.3",2531,NA,556,217,555,555,567,1,NA,NA
+"2022-05-26",6,2022,"abundance","nbsGARCH",96,0.95,"controls","DO",2.15219800154146,0,7,"2531.3",2531,NA,557,217,555,555,567,2,NA,NA
+"2022-05-26",7,2022,"abundance","nbsGARCH",96,0.95,"controls","DO",2.15754596065756,0,7,"2531.3",2531,NA,558,217,555,555,567,3,NA,NA
+"2022-05-26",8,2022,"abundance","nbsGARCH",96,0.95,"controls","DO",2.13371607782,0,7,"2531.3",2531,NA,559,217,555,555,567,4,NA,NA
+"2022-05-26",9,2022,"abundance","nbsGARCH",96,0.95,"controls","DO",2.16168659040431,0,7,"2531.3",2531,NA,560,217,555,555,567,5,NA,NA
+"2022-05-26",10,2022,"abundance","nbsGARCH",96,0.95,"controls","DO",2.28586240483158,0,7,"2531.3",2531,NA,561,217,555,555,567,6,NA,NA
+"2022-05-26",11,2022,"abundance","nbsGARCH",96,0.95,"controls","DO",2.53982890803408,0,8,"2531.3",2531,NA,562,217,555,555,567,7,NA,NA
+"2022-05-26",12,2022,"abundance","nbsGARCH",96,0.95,"controls","DO",2.91356555986033,0,10,"2531.3",2531,NA,563,217,555,555,567,8,NA,NA
+"2022-05-26",1,2023,"abundance","nbsGARCH",96,0.95,"controls","DO",3.37821072680134,0,11,"2531.3",2531,NA,564,217,555,555,567,9,NA,NA
+"2022-05-26",2,2023,"abundance","nbsGARCH",96,0.95,"controls","DO",3.84158621156051,0,12,"2531.3",2531,NA,565,217,555,555,567,10,NA,NA
+"2022-05-26",3,2023,"abundance","nbsGARCH",96,0.95,"controls","DO",4.19967101695052,0,13,"2531.3",2531,NA,566,217,555,555,567,11,NA,NA
+"2022-05-26",4,2023,"abundance","nbsGARCH",96,0.95,"controls","DO",4.3048118883128,0,13,"2531.3",2531,NA,567,217,555,555,567,12,NA,NA

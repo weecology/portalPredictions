@@ -1,0 +1,16 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2021-09-17",7,2021,"abundance","nbsGARCH","controls","BA",0.182772182315871,0,1,"1610.1",64,0.95,1610,NA,545,217,547,545,559,-2,NA,NA
+"2021-09-17",8,2021,"abundance","nbsGARCH","controls","BA",0.17730016433331,0,1,"1610.1",64,0.95,1610,NA,546,217,547,545,559,-1,NA,NA
+"2021-09-17",9,2021,"abundance","nbsGARCH","controls","BA",0.146316327215665,0,1,"1610.1",64,0.95,1610,NA,547,217,547,545,559,0,NA,NA
+"2021-09-17",10,2021,"abundance","nbsGARCH","controls","BA",0.123100341428108,0,1,"1610.1",64,0.95,1610,NA,548,217,547,545,559,1,NA,NA
+"2021-09-17",11,2021,"abundance","nbsGARCH","controls","BA",0.113947898594973,0,1,"1610.1",64,0.95,1610,NA,549,217,547,545,559,2,NA,NA
+"2021-09-17",12,2021,"abundance","nbsGARCH","controls","BA",0.118240114063969,0,1,"1610.1",64,0.95,1610,NA,550,217,547,545,559,3,NA,NA
+"2021-09-17",1,2022,"abundance","nbsGARCH","controls","BA",0.135099598351287,0,1,"1610.1",64,0.95,1610,NA,551,217,547,545,559,4,NA,NA
+"2021-09-17",2,2022,"abundance","nbsGARCH","controls","BA",0.166124316538228,0,1,"1610.1",64,0.95,1610,NA,552,217,547,545,559,5,NA,NA
+"2021-09-17",3,2022,"abundance","nbsGARCH","controls","BA",0.206398902768776,0,2,"1610.1",64,0.95,1610,NA,553,217,547,545,559,6,NA,NA
+"2021-09-17",4,2022,"abundance","nbsGARCH","controls","BA",0.249267536624607,0,2,"1610.1",64,0.95,1610,NA,554,217,547,545,559,7,NA,NA
+"2021-09-17",4,2022,"abundance","nbsGARCH","controls","BA",0.27723966497139,0,2,"1610.1",64,0.95,1610,NA,555,217,547,545,559,8,NA,NA
+"2021-09-17",5,2022,"abundance","nbsGARCH","controls","BA",0.275941423505052,0,2,"1610.1",64,0.95,1610,NA,556,217,547,545,559,9,NA,NA
+"2021-09-17",6,2022,"abundance","nbsGARCH","controls","BA",0.24564875912968,0,2,"1610.1",64,0.95,1610,NA,557,217,547,545,559,10,NA,NA
+"2021-09-17",7,2022,"abundance","nbsGARCH","controls","BA",0.200055407938102,0,2,"1610.1",64,0.95,1610,NA,558,217,547,545,559,11,NA,NA
+"2021-09-17",8,2022,"abundance","nbsGARCH","controls","BA",0.159026018199032,0,1,"1610.1",64,0.95,1610,NA,559,217,547,545,559,12,NA,NA

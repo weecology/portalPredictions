@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2020-02-06",1,2020,"abundance","nbsGARCH","controls","BA",0.141812557763446,0,1,"482.1",21,0.95,482,NA,527,217,527,527,539,0,NA,NA
+"2020-02-06",2,2020,"abundance","nbsGARCH","controls","BA",0.197477046296738,0,2,"482.1",21,0.95,482,NA,528,217,527,527,539,1,NA,NA
+"2020-02-06",3,2020,"abundance","nbsGARCH","controls","BA",0.244933334037454,0,2,"482.1",21,0.95,482,NA,529,217,527,527,539,2,NA,NA
+"2020-02-06",4,2020,"abundance","nbsGARCH","controls","BA",0.282502451276444,0,2,"482.1",21,0.95,482,NA,530,217,527,527,539,3,NA,NA
+"2020-02-06",5,2020,"abundance","nbsGARCH","controls","BA",0.293122188516015,0,2,"482.1",21,0.95,482,NA,531,217,527,527,539,4,NA,NA
+"2020-02-06",6,2020,"abundance","nbsGARCH","controls","BA",0.269933472138251,0,2,"482.1",21,0.95,482,NA,532,217,527,527,539,5,NA,NA
+"2020-02-06",7,2020,"abundance","nbsGARCH","controls","BA",0.224325456705584,0,2,"482.1",21,0.95,482,NA,533,217,527,527,539,6,NA,NA
+"2020-02-06",8,2020,"abundance","nbsGARCH","controls","BA",0.178309590891946,0,1,"482.1",21,0.95,482,NA,534,217,527,527,539,7,NA,NA
+"2020-02-06",9,2020,"abundance","nbsGARCH","controls","BA",0.142912345560092,0,1,"482.1",21,0.95,482,NA,535,217,527,527,539,8,NA,NA
+"2020-02-06",10,2020,"abundance","nbsGARCH","controls","BA",0.123431871626347,0,1,"482.1",21,0.95,482,NA,536,217,527,527,539,9,NA,NA
+"2020-02-06",11,2020,"abundance","nbsGARCH","controls","BA",0.118060076109415,0,1,"482.1",21,0.95,482,NA,537,217,527,527,539,10,NA,NA
+"2020-02-06",12,2020,"abundance","nbsGARCH","controls","BA",0.126207894764098,0,1,"482.1",21,0.95,482,NA,538,217,527,527,539,11,NA,NA
+"2020-02-06",1,2021,"abundance","nbsGARCH","controls","BA",0.148462769584333,0,1,"482.1",21,0.95,482,NA,539,217,527,527,539,12,NA,NA

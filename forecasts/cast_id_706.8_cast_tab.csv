@@ -1,0 +1,15 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2020-04-02",2,2020,"abundance","jags_RW","all","PB",6.074,2.742,9.78,"706.8",30,0.95,706,NA,528,217,529,528,541,-1,NA,NA
+"2020-04-02",3,2020,"abundance","jags_RW","all","PB",6.395,1.875,12.322,"706.8",30,0.95,706,NA,529,217,529,528,541,0,NA,NA
+"2020-04-02",4,2020,"abundance","jags_RW","all","PB",6.741,1.19,14.608,"706.8",30,0.95,706,NA,530,217,529,528,541,1,NA,NA
+"2020-04-02",5,2020,"abundance","jags_RW","all","PB",7.132,0.78,16.863,"706.8",30,0.95,706,NA,531,217,529,528,541,2,NA,NA
+"2020-04-02",6,2020,"abundance","jags_RW","all","PB",7.516,0.506,19.113,"706.8",30,0.95,706,NA,532,217,529,528,541,3,NA,NA
+"2020-04-02",7,2020,"abundance","jags_RW","all","PB",7.92,0.395,21.539,"706.8",30,0.95,706,NA,533,217,529,528,541,4,NA,NA
+"2020-04-02",8,2020,"abundance","jags_RW","all","PB",8.36,0.269,24.262,"706.8",30,0.95,706,NA,534,217,529,528,541,5,NA,NA
+"2020-04-02",9,2020,"abundance","jags_RW","all","PB",8.795,0.204,27.087,"706.8",30,0.95,706,NA,535,217,529,528,541,6,NA,NA
+"2020-04-02",10,2020,"abundance","jags_RW","all","PB",9.266,0.156,29.585,"706.8",30,0.95,706,NA,536,217,529,528,541,7,NA,NA
+"2020-04-02",11,2020,"abundance","jags_RW","all","PB",9.761,0.136,32.257,"706.8",30,0.95,706,NA,537,217,529,528,541,8,NA,NA
+"2020-04-02",12,2020,"abundance","jags_RW","all","PB",10.267,0.071,34.121,"706.8",30,0.95,706,NA,538,217,529,528,541,9,NA,NA
+"2020-04-02",1,2021,"abundance","jags_RW","all","PB",10.84,0,37.249,"706.8",30,0.95,706,NA,539,217,529,528,541,10,NA,NA
+"2020-04-02",2,2021,"abundance","jags_RW","all","PB",11.492,0,40.074,"706.8",30,0.95,706,NA,540,217,529,528,541,11,NA,NA
+"2020-04-02",3,2021,"abundance","jags_RW","all","PB",12.067,0,42.998,"706.8",30,0.95,706,NA,541,217,529,528,541,12,NA,NA

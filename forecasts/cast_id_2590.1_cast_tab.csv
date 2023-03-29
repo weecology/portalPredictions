@@ -1,0 +1,15 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_group","confidence_level","cast_id","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2022-06-16",4,2022,"abundance","jags_logistic","dm_controls","DM",21.154,12.739,29.971,99,0.95,"2590.1",2590,NA,555,217,556,555,568,-1,NA,NA
+"2022-06-16",5,2022,"abundance","jags_logistic","dm_controls","DM",34.133,0.382,119.314,99,0.95,"2590.1",2590,NA,556,217,556,555,568,0,NA,NA
+"2022-06-16",6,2022,"abundance","jags_logistic","dm_controls","DM",43.007,1.581,196.9,99,0.95,"2590.1",2590,NA,557,217,556,555,568,1,NA,NA
+"2022-06-16",7,2022,"abundance","jags_logistic","dm_controls","DM",47.332,0.831,196.9,99,0.95,"2590.1",2590,NA,558,217,556,555,568,2,NA,NA
+"2022-06-16",8,2022,"abundance","jags_logistic","dm_controls","DM",49.057,0.484,196.9,99,0.95,"2590.1",2590,NA,559,217,556,555,568,3,NA,NA
+"2022-06-16",9,2022,"abundance","jags_logistic","dm_controls","DM",49.393,0.276,196.9,99,0.95,"2590.1",2590,NA,560,217,556,555,568,4,NA,NA
+"2022-06-16",10,2022,"abundance","jags_logistic","dm_controls","DM",49.604,0.15,196.9,99,0.95,"2590.1",2590,NA,561,217,556,555,568,5,NA,NA
+"2022-06-16",11,2022,"abundance","jags_logistic","dm_controls","DM",49.445,0.084,196.9,99,0.95,"2590.1",2590,NA,562,217,556,555,568,6,NA,NA
+"2022-06-16",12,2022,"abundance","jags_logistic","dm_controls","DM",48.665,0.026,196.9,99,0.95,"2590.1",2590,NA,563,217,556,555,568,7,NA,NA
+"2022-06-16",1,2023,"abundance","jags_logistic","dm_controls","DM",47.915,0,196.9,99,0.95,"2590.1",2590,NA,564,217,556,555,568,8,NA,NA
+"2022-06-16",2,2023,"abundance","jags_logistic","dm_controls","DM",47.118,0,196.9,99,0.95,"2590.1",2590,NA,565,217,556,555,568,9,NA,NA
+"2022-06-16",3,2023,"abundance","jags_logistic","dm_controls","DM",45.991,0,196.9,99,0.95,"2590.1",2590,NA,566,217,556,555,568,10,NA,NA
+"2022-06-16",4,2023,"abundance","jags_logistic","dm_controls","DM",44.852,0,196.9,99,0.95,"2590.1",2590,NA,567,217,556,555,568,11,NA,NA
+"2022-06-16",5,2023,"abundance","jags_logistic","dm_controls","DM",43.945,0,196.9,99,0.95,"2590.1",2590,NA,568,217,556,555,568,12,NA,NA

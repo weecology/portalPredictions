@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","cast_group","confidence_level","dataset","species","estimate","lower_pi","upper_pi","cast_id","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2023-02-23",2,2023,"abundance","nbGARCH",120,0.95,"controls","PB",1.46665793999925,0,4,"3061.7",3061,NA,565,217,565,565,577,0,NA,NA
+"2023-02-23",3,2023,"abundance","nbGARCH",120,0.95,"controls","PB",1.81230583108316,0,6,"3061.7",3061,NA,566,217,565,565,577,1,NA,NA
+"2023-02-23",4,2023,"abundance","nbGARCH",120,0.95,"controls","PB",2.06503119788024,0,7,"3061.7",3061,NA,567,217,565,565,577,2,NA,NA
+"2023-02-23",5,2023,"abundance","nbGARCH",120,0.95,"controls","PB",2.24972456979656,0,7,"3061.7",3061,NA,568,217,565,565,577,3,NA,NA
+"2023-02-23",6,2023,"abundance","nbGARCH",120,0.95,"controls","PB",2.38863242000825,0,9,"3061.7",3061,NA,569,217,565,565,577,4,NA,NA
+"2023-02-23",7,2023,"abundance","nbGARCH",120,0.95,"controls","PB",2.49026020208527,0,8,"3061.7",3061,NA,570,217,565,565,577,5,NA,NA
+"2023-02-23",8,2023,"abundance","nbGARCH",120,0.95,"controls","PB",2.5676046706043,0,9,"3061.7",3061,NA,571,217,565,565,577,6,NA,NA
+"2023-02-23",9,2023,"abundance","nbGARCH",120,0.95,"controls","PB",2.60933414966249,0,8,"3061.7",3061,NA,572,217,565,565,577,7,NA,NA
+"2023-02-23",10,2023,"abundance","nbGARCH",120,0.95,"controls","PB",2.64724570290093,0,8,"3061.7",3061,NA,573,217,565,565,577,8,NA,NA
+"2023-02-23",11,2023,"abundance","nbGARCH",120,0.95,"controls","PB",2.67938570853937,0,9,"3061.7",3061,NA,574,217,565,565,577,9,NA,NA
+"2023-02-23",12,2023,"abundance","nbGARCH",120,0.95,"controls","PB",2.70293955279412,0,9,"3061.7",3061,NA,575,217,565,565,577,10,NA,NA
+"2023-02-23",1,2024,"abundance","nbGARCH",120,0.95,"controls","PB",2.71561640720236,0,9,"3061.7",3061,NA,576,217,565,565,577,11,NA,NA
+"2023-02-23",2,2024,"abundance","nbGARCH",120,0.95,"controls","PB",2.72483889461063,0,8,"3061.7",3061,NA,577,217,565,565,577,12,NA,NA

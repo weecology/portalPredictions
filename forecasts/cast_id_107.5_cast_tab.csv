@@ -1,0 +1,15 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2019-11-29",10,2019,"abundance","pevGARCH","controls","NA",0.0992860135213525,0,1,"107.5",5,0.95,107,NA,524,217,525,524,537,-1,NA,NA
+"2019-11-29",11,2019,"abundance","pevGARCH","controls","NA",0.103342680973422,0,1,"107.5",5,0.95,107,NA,525,217,525,524,537,0,NA,NA
+"2019-11-29",12,2019,"abundance","pevGARCH","controls","NA",0.0743879584718577,0,1,"107.5",5,0.95,107,NA,526,217,525,524,537,1,NA,NA
+"2019-11-29",1,2020,"abundance","pevGARCH","controls","NA",0.0655910326466422,0,1,"107.5",5,0.95,107,NA,527,217,525,524,537,2,NA,NA
+"2019-11-29",2,2020,"abundance","pevGARCH","controls","NA",0.0590882174882425,0,1,"107.5",5,0.95,107,NA,528,217,525,524,537,3,NA,NA
+"2019-11-29",3,2020,"abundance","pevGARCH","controls","NA",0.0730741303844644,0,1,"107.5",5,0.95,107,NA,529,217,525,524,537,4,NA,NA
+"2019-11-29",4,2020,"abundance","pevGARCH","controls","NA",0.092813698248458,0,1,"107.5",5,0.95,107,NA,530,217,525,524,537,5,NA,NA
+"2019-11-29",5,2020,"abundance","pevGARCH","controls","NA",0.137166685677068,0,1,"107.5",5,0.95,107,NA,531,217,525,524,537,6,NA,NA
+"2019-11-29",6,2020,"abundance","pevGARCH","controls","NA",0.184950039831015,0,1,"107.5",5,0.95,107,NA,532,217,525,524,537,7,NA,NA
+"2019-11-29",7,2020,"abundance","pevGARCH","controls","NA",0.241595917267398,0,2,"107.5",5,0.95,107,NA,533,217,525,524,537,8,NA,NA
+"2019-11-29",8,2020,"abundance","pevGARCH","controls","NA",0.181565129633188,0,1,"107.5",5,0.95,107,NA,534,217,525,524,537,9,NA,NA
+"2019-11-29",9,2020,"abundance","pevGARCH","controls","NA",0.154954998993679,0,1,"107.5",5,0.95,107,NA,535,217,525,524,537,10,NA,NA
+"2019-11-29",10,2020,"abundance","pevGARCH","controls","NA",0.162847860618532,0,1,"107.5",5,0.95,107,NA,536,217,525,524,537,11,NA,NA
+"2019-11-29",11,2020,"abundance","pevGARCH","controls","NA",0.162203958143311,0,1,"107.5",5,0.95,107,NA,537,217,525,524,537,12,NA,NA

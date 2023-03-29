@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","cast_group","confidence_level","dataset","species","estimate","lower_pi","upper_pi","cast_id","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2022-10-20",9,2022,"abundance","nbGARCH",117,0.95,"controls","DO",1.55159410723949,0,4,"2989.3",2989,NA,560,217,560,560,572,0,NA,NA
+"2022-10-20",10,2022,"abundance","nbGARCH",117,0.95,"controls","DO",1.97552901525548,0,6,"2989.3",2989,NA,561,217,560,560,572,1,NA,NA
+"2022-10-20",11,2022,"abundance","nbGARCH",117,0.95,"controls","DO",2.30535975590143,0,7,"2989.3",2989,NA,562,217,560,560,572,2,NA,NA
+"2022-10-20",12,2022,"abundance","nbGARCH",117,0.95,"controls","DO",2.56000641629179,0,8,"2989.3",2989,NA,563,217,560,560,572,3,NA,NA
+"2022-10-20",1,2023,"abundance","nbGARCH",117,0.95,"controls","DO",2.75321678815097,0,8,"2989.3",2989,NA,564,217,560,560,572,4,NA,NA
+"2022-10-20",2,2023,"abundance","nbGARCH",117,0.95,"controls","DO",2.89613538660079,0,9,"2989.3",2989,NA,565,217,560,560,572,5,NA,NA
+"2022-10-20",3,2023,"abundance","nbGARCH",117,0.95,"controls","DO",3.01590932595671,0,9,"2989.3",2989,NA,566,217,560,560,572,6,NA,NA
+"2022-10-20",4,2023,"abundance","nbGARCH",117,0.95,"controls","DO",3.10456092081228,0,10,"2989.3",2989,NA,567,217,560,560,572,7,NA,NA
+"2022-10-20",5,2023,"abundance","nbGARCH",117,0.95,"controls","DO",3.17286344372248,0,10,"2989.3",2989,NA,568,217,560,560,572,8,NA,NA
+"2022-10-20",6,2023,"abundance","nbGARCH",117,0.95,"controls","DO",3.22938773401453,0,10,"2989.3",2989,NA,569,217,560,560,572,9,NA,NA
+"2022-10-20",7,2023,"abundance","nbGARCH",117,0.95,"controls","DO",3.27297678434567,0,10,"2989.3",2989,NA,570,217,560,560,572,10,NA,NA
+"2022-10-20",8,2023,"abundance","nbGARCH",117,0.95,"controls","DO",3.30943437614492,0,10,"2989.3",2989,NA,571,217,560,560,572,11,NA,NA
+"2022-10-20",9,2023,"abundance","nbGARCH",117,0.95,"controls","DO",3.33068308493722,0,11,"2989.3",2989,NA,572,217,560,560,572,12,NA,NA

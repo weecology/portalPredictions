@@ -1,0 +1,15 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2019-12-05",10,2019,"abundance","jags_RW","controls","SH",0.012,0,0.043,"119.17",6,0.95,119,NA,524,217,525,524,537,-1,NA,NA
+"2019-12-05",11,2019,"abundance","jags_RW","controls","SH",0.024,0,0.088,"119.17",6,0.95,119,NA,525,217,525,524,537,0,NA,NA
+"2019-12-05",12,2019,"abundance","jags_RW","controls","SH",0.049,0,0.134,"119.17",6,0.95,119,NA,526,217,525,524,537,1,NA,NA
+"2019-12-05",1,2020,"abundance","jags_RW","controls","SH",0.082,0,0.194,"119.17",6,0.95,119,NA,527,217,525,524,537,2,NA,NA
+"2019-12-05",2,2020,"abundance","jags_RW","controls","SH",0.128,0,0.252,"119.17",6,0.95,119,NA,528,217,525,524,537,3,NA,NA
+"2019-12-05",3,2020,"abundance","jags_RW","controls","SH",0.177,0,0.319,"119.17",6,0.95,119,NA,529,217,525,524,537,4,NA,NA
+"2019-12-05",4,2020,"abundance","jags_RW","controls","SH",0.236,0,0.425,"119.17",6,0.95,119,NA,530,217,525,524,537,5,NA,NA
+"2019-12-05",5,2020,"abundance","jags_RW","controls","SH",0.325,0,0.519,"119.17",6,0.95,119,NA,531,217,525,524,537,6,NA,NA
+"2019-12-05",6,2020,"abundance","jags_RW","controls","SH",0.47,0,0.666,"119.17",6,0.95,119,NA,532,217,525,524,537,7,NA,NA
+"2019-12-05",7,2020,"abundance","jags_RW","controls","SH",0.693,0,0.796,"119.17",6,0.95,119,NA,533,217,525,524,537,8,NA,NA
+"2019-12-05",8,2020,"abundance","jags_RW","controls","SH",0.834,0,0.914,"119.17",6,0.95,119,NA,534,217,525,524,537,9,NA,NA
+"2019-12-05",9,2020,"abundance","jags_RW","controls","SH",1.081,0,1.089,"119.17",6,0.95,119,NA,535,217,525,524,537,10,NA,NA
+"2019-12-05",10,2020,"abundance","jags_RW","controls","SH",1.215,0,1.293,"119.17",6,0.95,119,NA,536,217,525,524,537,11,NA,NA
+"2019-12-05",11,2020,"abundance","jags_RW","controls","SH",1.413,0,1.56,"119.17",6,0.95,119,NA,537,217,525,524,537,12,NA,NA

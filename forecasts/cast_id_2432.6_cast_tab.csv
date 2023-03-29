@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","cast_group","confidence_level","estimate","lower_pi","upper_pi","cast_id","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2022-04-28",4,2022,"abundance","pevGARCH","exclosures","OT",92,0.95,0.485858418120997,0,2,"2432.6",2432,NA,554,217,554,554,566,0,NA,NA
+"2022-04-28",4,2022,"abundance","pevGARCH","exclosures","OT",92,0.95,0.826480030739882,0,3,"2432.6",2432,NA,555,217,554,554,566,1,NA,NA
+"2022-04-28",5,2022,"abundance","pevGARCH","exclosures","OT",92,0.95,1.05703278613096,0,4,"2432.6",2432,NA,556,217,554,554,566,2,NA,NA
+"2022-04-28",6,2022,"abundance","pevGARCH","exclosures","OT",92,0.95,1.29933465888543,0,5,"2432.6",2432,NA,557,217,554,554,566,3,NA,NA
+"2022-04-28",7,2022,"abundance","pevGARCH","exclosures","OT",92,0.95,1.50247726969381,0,5,"2432.6",2432,NA,558,217,554,554,566,4,NA,NA
+"2022-04-28",8,2022,"abundance","pevGARCH","exclosures","OT",92,0.95,1.65221708423471,0,6,"2432.6",2432,NA,559,217,554,554,566,5,NA,NA
+"2022-04-28",9,2022,"abundance","pevGARCH","exclosures","OT",92,0.95,1.67453253575621,0,6,"2432.6",2432,NA,560,217,554,554,566,6,NA,NA
+"2022-04-28",10,2022,"abundance","pevGARCH","exclosures","OT",92,0.95,1.48662444692747,0,6,"2432.6",2432,NA,561,217,554,554,566,7,NA,NA
+"2022-04-28",11,2022,"abundance","pevGARCH","exclosures","OT",92,0.95,1.42487171769487,0,5,"2432.6",2432,NA,562,217,554,554,566,8,NA,NA
+"2022-04-28",12,2022,"abundance","pevGARCH","exclosures","OT",92,0.95,1.25478463493642,0,5,"2432.6",2432,NA,563,217,554,554,566,9,NA,NA
+"2022-04-28",1,2023,"abundance","pevGARCH","exclosures","OT",92,0.95,1.08102029266,0,4,"2432.6",2432,NA,564,217,554,554,566,10,NA,NA
+"2022-04-28",2,2023,"abundance","pevGARCH","exclosures","OT",92,0.95,1.00202492489834,0,4,"2432.6",2432,NA,565,217,554,554,566,11,NA,NA
+"2022-04-28",3,2023,"abundance","pevGARCH","exclosures","OT",92,0.95,1.03103650677312,0,4,"2432.6",2432,NA,566,217,554,554,566,12,NA,NA

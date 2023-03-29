@@ -1,0 +1,16 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2020-01-09",10,2019,"abundance","nbGARCH","all","total",127.186852416214,66,207,"280.21",13,0.95,280,NA,524,217,526,524,538,-2,NA,NA
+"2020-01-09",11,2019,"abundance","nbGARCH","all","total",135.45853221903,60,254,"280.21",13,0.95,280,NA,525,217,526,524,538,-1,NA,NA
+"2020-01-09",12,2019,"abundance","nbGARCH","all","total",143.20395296632,55,297,"280.21",13,0.95,280,NA,526,217,526,524,538,0,NA,NA
+"2020-01-09",1,2020,"abundance","nbGARCH","all","total",152.624920265296,49,340,"280.21",13,0.95,280,NA,527,217,526,524,538,1,NA,NA
+"2020-01-09",2,2020,"abundance","nbGARCH","all","total",166.455073660707,50,393,"280.21",13,0.95,280,NA,528,217,526,524,538,2,NA,NA
+"2020-01-09",3,2020,"abundance","nbGARCH","all","total",176.002353618204,51,442,"280.21",13,0.95,280,NA,529,217,526,524,538,3,NA,NA
+"2020-01-09",4,2020,"abundance","nbGARCH","all","total",182.437112117416,51,454,"280.21",13,0.95,280,NA,530,217,526,524,538,4,NA,NA
+"2020-01-09",5,2020,"abundance","nbGARCH","all","total",190.777423842125,49,465,"280.21",13,0.95,280,NA,531,217,526,524,538,5,NA,NA
+"2020-01-09",6,2020,"abundance","nbGARCH","all","total",196.23109626822,48,454,"280.21",13,0.95,280,NA,532,217,526,524,538,6,NA,NA
+"2020-01-09",7,2020,"abundance","nbGARCH","all","total",200.887360731452,50,426,"280.21",13,0.95,280,NA,533,217,526,524,538,7,NA,NA
+"2020-01-09",8,2020,"abundance","nbGARCH","all","total",202.849461544392,52,454,"280.21",13,0.95,280,NA,534,217,526,524,538,8,NA,NA
+"2020-01-09",9,2020,"abundance","nbGARCH","all","total",204.22245242021,47,439,"280.21",13,0.95,280,NA,535,217,526,524,538,9,NA,NA
+"2020-01-09",10,2020,"abundance","nbGARCH","all","total",202.498265412602,45,459,"280.21",13,0.95,280,NA,536,217,526,524,538,10,NA,NA
+"2020-01-09",11,2020,"abundance","nbGARCH","all","total",200.202682111783,43,453,"280.21",13,0.95,280,NA,537,217,526,524,538,11,NA,NA
+"2020-01-09",12,2020,"abundance","nbGARCH","all","total",197.511385776505,42,441,"280.21",13,0.95,280,NA,538,217,526,524,538,12,NA,NA

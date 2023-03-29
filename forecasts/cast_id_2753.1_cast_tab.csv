@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","cast_group","confidence_level","dataset","species","estimate","lower_pi","upper_pi","cast_id","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2022-08-04",7,2022,"abundance","nbsGARCH",106,0.95,"dm_controls","DM",13.9484242545121,7,21,"2753.1",2753,NA,558,217,558,558,570,0,NA,NA
+"2022-08-04",8,2022,"abundance","nbsGARCH",106,0.95,"dm_controls","DM",13.3607237186421,5,23,"2753.1",2753,NA,559,217,558,558,570,1,NA,NA
+"2022-08-04",9,2022,"abundance","nbsGARCH",106,0.95,"dm_controls","DM",13.3189435222423,4,24,"2753.1",2753,NA,560,217,558,558,570,2,NA,NA
+"2022-08-04",10,2022,"abundance","nbsGARCH",106,0.95,"dm_controls","DM",13.8125626521322,4,26,"2753.1",2753,NA,561,217,558,558,570,3,NA,NA
+"2022-08-04",11,2022,"abundance","nbsGARCH",106,0.95,"dm_controls","DM",14.8205536130282,4,28,"2753.1",2753,NA,562,217,558,558,570,4,NA,NA
+"2022-08-04",12,2022,"abundance","nbsGARCH",106,0.95,"dm_controls","DM",16.0905487315265,4,30,"2753.1",2753,NA,563,217,558,558,570,5,NA,NA
+"2022-08-04",1,2023,"abundance","nbsGARCH",106,0.95,"dm_controls","DM",17.3272072840453,4,32,"2753.1",2753,NA,564,217,558,558,570,6,NA,NA
+"2022-08-04",2,2023,"abundance","nbsGARCH",106,0.95,"dm_controls","DM",18.1855946542093,5,33,"2753.1",2753,NA,565,217,558,558,570,7,NA,NA
+"2022-08-04",3,2023,"abundance","nbsGARCH",106,0.95,"dm_controls","DM",18.4149817276806,5,35,"2753.1",2753,NA,566,217,558,558,570,8,NA,NA
+"2022-08-04",4,2023,"abundance","nbsGARCH",106,0.95,"dm_controls","DM",17.8672866907074,5,34,"2753.1",2753,NA,567,217,558,558,570,9,NA,NA
+"2022-08-04",5,2023,"abundance","nbsGARCH",106,0.95,"dm_controls","DM",16.7894217745631,5,32,"2753.1",2753,NA,568,217,558,558,570,10,NA,NA
+"2022-08-04",6,2023,"abundance","nbsGARCH",106,0.95,"dm_controls","DM",15.5135266640937,4,30,"2753.1",2753,NA,569,217,558,558,570,11,NA,NA
+"2022-08-04",7,2023,"abundance","nbsGARCH",106,0.95,"dm_controls","DM",14.3900996540347,3,27,"2753.1",2753,NA,570,217,558,558,570,12,NA,NA

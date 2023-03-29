@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","cast_group","confidence_level","dataset","species","estimate","lower_pi","upper_pi","cast_id","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2023-03-02",2,2023,"abundance","nbGARCH",121,0.95,"controls","DO",4.65980590634627,1,9,"3084.3",3084,NA,565,217,565,565,577,0,NA,NA
+"2023-03-02",3,2023,"abundance","nbGARCH",121,0.95,"controls","DO",4.41652632453081,0,10,"3084.3",3084,NA,566,217,565,565,577,1,NA,NA
+"2023-03-02",4,2023,"abundance","nbGARCH",121,0.95,"controls","DO",4.22055744799709,0,11,"3084.3",3084,NA,567,217,565,565,577,2,NA,NA
+"2023-03-02",5,2023,"abundance","nbGARCH",121,0.95,"controls","DO",4.06853775306204,0,12,"3084.3",3084,NA,568,217,565,565,577,3,NA,NA
+"2023-03-02",6,2023,"abundance","nbGARCH",121,0.95,"controls","DO",3.95713804788906,0,12,"3084.3",3084,NA,569,217,565,565,577,4,NA,NA
+"2023-03-02",7,2023,"abundance","nbGARCH",121,0.95,"controls","DO",3.87053650956296,0,11,"3084.3",3084,NA,570,217,565,565,577,5,NA,NA
+"2023-03-02",8,2023,"abundance","nbGARCH",121,0.95,"controls","DO",3.80769103938905,0,11,"3084.3",3084,NA,571,217,565,565,577,6,NA,NA
+"2023-03-02",9,2023,"abundance","nbGARCH",121,0.95,"controls","DO",3.74815936822952,0,11,"3084.3",3084,NA,572,217,565,565,577,7,NA,NA
+"2023-03-02",10,2023,"abundance","nbGARCH",121,0.95,"controls","DO",3.70806433690053,0,11,"3084.3",3084,NA,573,217,565,565,577,8,NA,NA
+"2023-03-02",11,2023,"abundance","nbGARCH",121,0.95,"controls","DO",3.67083703072351,0,11,"3084.3",3084,NA,574,217,565,565,577,9,NA,NA
+"2023-03-02",12,2023,"abundance","nbGARCH",121,0.95,"controls","DO",3.65226269739898,0,11,"3084.3",3084,NA,575,217,565,565,577,10,NA,NA
+"2023-03-02",1,2024,"abundance","nbGARCH",121,0.95,"controls","DO",3.64380652167614,0,11,"3084.3",3084,NA,576,217,565,565,577,11,NA,NA
+"2023-03-02",2,2024,"abundance","nbGARCH",121,0.95,"controls","DO",3.63717113604325,0,11,"3084.3",3084,NA,577,217,565,565,577,12,NA,NA

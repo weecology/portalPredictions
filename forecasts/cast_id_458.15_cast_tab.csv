@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","estimate","lower_pi","upper_pi","cast_id","cast_group","confidence_level","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2020-01-31",1,2020,"abundance","pevGARCH","controls","RO",0.0106779837727321,0,0,"458.15",20,0.95,458,NA,527,217,527,527,539,0,NA,NA
+"2020-01-31",2,2020,"abundance","pevGARCH","controls","RO",0.00903281404814968,0,0,"458.15",20,0.95,458,NA,528,217,527,527,539,1,NA,NA
+"2020-01-31",3,2020,"abundance","pevGARCH","controls","RO",0.0258397095738923,0,1,"458.15",20,0.95,458,NA,529,217,527,527,539,2,NA,NA
+"2020-01-31",4,2020,"abundance","pevGARCH","controls","RO",0.00252743920791233,0,0,"458.15",20,0.95,458,NA,530,217,527,527,539,3,NA,NA
+"2020-01-31",5,2020,"abundance","pevGARCH","controls","RO",0.00456487703836654,0,0,"458.15",20,0.95,458,NA,531,217,527,527,539,4,NA,NA
+"2020-01-31",6,2020,"abundance","pevGARCH","controls","RO",0.0965896039188253,0,1,"458.15",20,0.95,458,NA,532,217,527,527,539,5,NA,NA
+"2020-01-31",7,2020,"abundance","pevGARCH","controls","RO",0.00420268568774901,0,0,"458.15",20,0.95,458,NA,533,217,527,527,539,6,NA,NA
+"2020-01-31",8,2020,"abundance","pevGARCH","controls","RO",0.0055975060526867,0,0,"458.15",20,0.95,458,NA,534,217,527,527,539,7,NA,NA
+"2020-01-31",9,2020,"abundance","pevGARCH","controls","RO",0.0021163627273763,0,0,"458.15",20,0.95,458,NA,535,217,527,527,539,8,NA,NA
+"2020-01-31",10,2020,"abundance","pevGARCH","controls","RO",0.00230548067005369,0,0,"458.15",20,0.95,458,NA,536,217,527,527,539,9,NA,NA
+"2020-01-31",11,2020,"abundance","pevGARCH","controls","RO",0.00318843020699442,0,0,"458.15",20,0.95,458,NA,537,217,527,527,539,10,NA,NA
+"2020-01-31",12,2020,"abundance","pevGARCH","controls","RO",0.00239843577970619,0,0,"458.15",20,0.95,458,NA,538,217,527,527,539,11,NA,NA
+"2020-01-31",1,2021,"abundance","pevGARCH","controls","RO",0.00243816568827527,0,0,"458.15",20,0.95,458,NA,539,217,527,527,539,12,NA,NA

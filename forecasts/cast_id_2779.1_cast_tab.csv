@@ -1,0 +1,14 @@
+"cast_date","cast_month","cast_year","currency","model","dataset","species","cast_group","confidence_level","estimate","lower_pi","upper_pi","cast_id","old_cast_id","origin","newmoonnumber","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"2022-08-11",7,2022,"abundance","pevGARCH","dm_controls","DM",107,0.95,14.2915782337076,7,22,"2779.1",2779,NA,558,217,558,558,570,0,NA,NA
+"2022-08-11",8,2022,"abundance","pevGARCH","dm_controls","DM",107,0.95,13.8565417874554,5,24,"2779.1",2779,NA,559,217,558,558,570,1,NA,NA
+"2022-08-11",9,2022,"abundance","pevGARCH","dm_controls","DM",107,0.95,13.9334985253144,5,25,"2779.1",2779,NA,560,217,558,558,570,2,NA,NA
+"2022-08-11",10,2022,"abundance","pevGARCH","dm_controls","DM",107,0.95,14.5837203191831,5,27,"2779.1",2779,NA,561,217,558,558,570,3,NA,NA
+"2022-08-11",11,2022,"abundance","pevGARCH","dm_controls","DM",107,0.95,15.4954643735979,4,28,"2779.1",2779,NA,562,217,558,558,570,4,NA,NA
+"2022-08-11",12,2022,"abundance","pevGARCH","dm_controls","DM",107,0.95,16.5030743452085,5,30,"2779.1",2779,NA,563,217,558,558,570,5,NA,NA
+"2022-08-11",1,2023,"abundance","pevGARCH","dm_controls","DM",107,0.95,17.3966394571685,5,31,"2779.1",2779,NA,564,217,558,558,570,6,NA,NA
+"2022-08-11",2,2023,"abundance","pevGARCH","dm_controls","DM",107,0.95,17.895189156109,5,32,"2779.1",2779,NA,565,217,558,558,570,7,NA,NA
+"2022-08-11",3,2023,"abundance","pevGARCH","dm_controls","DM",107,0.95,18.0241851539452,6,33,"2779.1",2779,NA,566,217,558,558,570,8,NA,NA
+"2022-08-11",4,2023,"abundance","pevGARCH","dm_controls","DM",107,0.95,17.7854932491904,5,33,"2779.1",2779,NA,567,217,558,558,570,9,NA,NA
+"2022-08-11",5,2023,"abundance","pevGARCH","dm_controls","DM",107,0.95,16.8134483079371,5,31,"2779.1",2779,NA,568,217,558,558,570,10,NA,NA
+"2022-08-11",6,2023,"abundance","pevGARCH","dm_controls","DM",107,0.95,15.7403046866106,4,30,"2779.1",2779,NA,569,217,558,558,570,11,NA,NA
+"2022-08-11",7,2023,"abundance","pevGARCH","dm_controls","DM",107,0.95,14.8323574527802,4,28,"2779.1",2779,NA,570,217,558,558,570,12,NA,NA
