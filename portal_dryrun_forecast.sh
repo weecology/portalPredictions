@@ -7,6 +7,7 @@
 #SBATCH --time=12:00:00
 #SBATCH --partition=hpg2-compute
 #SBATCH --output=portal_dryrun_forecast_log.out
+#SBATCH --error=portal_dryrun_forecast_log.err
 
 echo "INFO: [$(date "+%Y-%m-%d %H:%M:%S")] Starting Weekly Forecast on $(hostname) in $(pwd)"
 
