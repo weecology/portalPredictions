@@ -1,0 +1,13 @@
+"currency","model","dataset","species","estimate","lower_pi","upper_pi","confidence_level","old_cast_id","forecast_id","origin","newmoonnumber","forecast_date","forecast_month","forecast_year","forecast_group","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"abundance","AutoArima","exclosures","PF",0,-3.54431517864135,3.54431517864135,0.95,315,"315.09",,527,2020-01-16,1,2020,15,217,526,527,538,1,,
+"abundance","AutoArima","exclosures","PF",0,-4.27919252914765,4.27919252914765,0.95,315,"315.09",,528,2020-01-16,2,2020,15,217,526,527,538,2,,
+"abundance","AutoArima","exclosures","PF",0,-5.09676340393061,5.09676340393061,0.95,315,"315.09",,529,2020-01-16,3,2020,15,217,526,527,538,3,,
+"abundance","AutoArima","exclosures","PF",0,-5.7439131309596,5.7439131309596,0.95,315,"315.09",,530,2020-01-16,4,2020,15,217,526,527,538,4,,
+"abundance","AutoArima","exclosures","PF",0,-6.34154437498263,6.34154437498263,0.95,315,"315.09",,531,2020-01-16,5,2020,15,217,526,527,538,5,,
+"abundance","AutoArima","exclosures","PF",0,-6.88262349478245,6.88262349478245,0.95,315,"315.09",,532,2020-01-16,6,2020,15,217,526,527,538,6,,
+"abundance","AutoArima","exclosures","PF",0,-7.38563280074692,7.38563280074692,0.95,315,"315.09",,533,2020-01-16,7,2020,15,217,526,527,538,7,,
+"abundance","AutoArima","exclosures","PF",0,-7.85605498030264,7.85605498030264,0.95,315,"315.09",,534,2020-01-16,8,2020,15,217,526,527,538,8,,
+"abundance","AutoArima","exclosures","PF",0,-8.2999942212578,8.2999942212578,0.95,315,"315.09",,535,2020-01-16,9,2020,15,217,526,527,538,9,,
+"abundance","AutoArima","exclosures","PF",0,-8.72132283084613,8.72132283084613,0.95,315,"315.09",,536,2020-01-16,10,2020,15,217,526,527,538,10,,
+"abundance","AutoArima","exclosures","PF",0,-9.12322738782043,9.12322738782043,0.95,315,"315.09",,537,2020-01-16,11,2020,15,217,526,527,538,11,,
+"abundance","AutoArima","exclosures","PF",0,-9.50815476124382,9.50815476124382,0.95,315,"315.09",,538,2020-01-16,12,2020,15,217,526,527,538,12,,

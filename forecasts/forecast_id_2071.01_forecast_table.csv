@@ -1,0 +1,13 @@
+"currency","model","dataset","species","estimate","lower_pi","upper_pi","confidence_level","old_cast_id","forecast_id","origin","newmoonnumber","forecast_date","forecast_month","forecast_year","forecast_group","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"abundance","pevGARCH","exclosures","BA",0.772691141611969,0,3,0.95,2071,"2071.01",,552,2022-01-13,2,2022,79,217,551,552,563,1,,
+"abundance","pevGARCH","exclosures","BA",0.337073142931838,0,2,0.95,2071,"2071.01",,553,2022-01-13,3,2022,79,217,551,552,563,2,,
+"abundance","pevGARCH","exclosures","BA",0.149623233474391,0,1,0.95,2071,"2071.01",,554,2022-01-13,4,2022,79,217,551,552,563,3,,
+"abundance","pevGARCH","exclosures","BA",0.107661548655028,0,1,0.95,2071,"2071.01",,555,2022-01-13,4,2022,79,217,551,552,563,4,,
+"abundance","pevGARCH","exclosures","BA",0.104829926730751,0,1,0.95,2071,"2071.01",,556,2022-01-13,5,2022,79,217,551,552,563,5,,
+"abundance","pevGARCH","exclosures","BA",0.206123647522895,0,1,0.95,2071,"2071.01",,557,2022-01-13,6,2022,79,217,551,552,563,6,,
+"abundance","pevGARCH","exclosures","BA",0.111980862964663,0,1,0.95,2071,"2071.01",,558,2022-01-13,7,2022,79,217,551,552,563,7,,
+"abundance","pevGARCH","exclosures","BA",1067589720.7434,963243789,1884918879,0.95,2071,"2071.01",,559,2022-01-13,8,2022,79,217,551,552,563,8,,
+"abundance","pevGARCH","exclosures","BA",1.191596884757344e+18,1.0786295433053551e+18,2.0664178951047928e+18,0.95,2071,"2071.01",,560,2022-01-13,9,2022,79,217,551,552,563,9,,
+"abundance","pevGARCH","exclosures","BA",3.06020678317345e+26,2.77881903788619e+26,5.21538625303855e+26,0.95,2071,"2071.01",,561,2022-01-13,10,2022,79,217,551,552,563,10,,
+"abundance","pevGARCH","exclosures","BA",9.75985523129335e+34,8.88947754706929e+34,1.63555291933198e+35,0.95,2071,"2071.01",,562,2022-01-13,11,2022,79,217,551,552,563,11,,
+"abundance","pevGARCH","exclosures","BA",7.61984625338447e+42,6.9608236757443e+42,1.25627300163193e+43,0.95,2071,"2071.01",,563,2022-01-13,12,2022,79,217,551,552,563,12,,

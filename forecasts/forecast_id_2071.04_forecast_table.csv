@@ -1,0 +1,13 @@
+"currency","model","dataset","species","estimate","lower_pi","upper_pi","confidence_level","old_cast_id","forecast_id","origin","newmoonnumber","forecast_date","forecast_month","forecast_year","forecast_group","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"abundance","pevGARCH","exclosures","NA",5.44249463713774e-7,0,0,0.95,2071,"2071.04",,552,2022-01-13,2,2022,79,217,551,552,563,1,,
+"abundance","pevGARCH","exclosures","NA",0.00114433619580084,0,0,0.95,2071,"2071.04",,553,2022-01-13,3,2022,79,217,551,552,563,2,,
+"abundance","pevGARCH","exclosures","NA",0.022250534082961,0,0,0.95,2071,"2071.04",,554,2022-01-13,4,2022,79,217,551,552,563,3,,
+"abundance","pevGARCH","exclosures","NA",0.0586675864013872,0,1,0.95,2071,"2071.04",,555,2022-01-13,4,2022,79,217,551,552,563,4,,
+"abundance","pevGARCH","exclosures","NA",0.0566300185100571,0,1,0.95,2071,"2071.04",,556,2022-01-13,5,2022,79,217,551,552,563,5,,
+"abundance","pevGARCH","exclosures","NA",0.00131509359992995,0,0,0.95,2071,"2071.04",,557,2022-01-13,6,2022,79,217,551,552,563,6,,
+"abundance","pevGARCH","exclosures","NA",0.0567851340377199,0,1,0.95,2071,"2071.04",,558,2022-01-13,7,2022,79,217,551,552,563,7,,
+"abundance","pevGARCH","exclosures","NA",3472884173.66051,3296095414,6347511204,0.95,2071,"2071.04",,559,2022-01-13,8,2022,79,217,551,552,563,8,,
+"abundance","pevGARCH","exclosures","NA",9.52252758513218e+18,9.063607259527169e+18,1.684068065694859e+19,0.95,2071,"2071.04",,560,2022-01-13,9,2022,79,217,551,552,563,9,,
+"abundance","pevGARCH","exclosures","NA",3.34477056348094e+27,3.19217609081729e+27,5.73388981850243e+27,0.95,2071,"2071.04",,561,2022-01-13,10,2022,79,217,551,552,563,10,,
+"abundance","pevGARCH","exclosures","NA",9.42447963655429e+35,9.01748773528318e+35,1.5687534983095e+36,0.95,2071,"2071.04",,562,2022-01-13,11,2022,79,217,551,552,563,11,,
+"abundance","pevGARCH","exclosures","NA",2.87263139473532e+43,2.75521346986545e+43,4.65039564569176e+43,0.95,2071,"2071.04",,563,2022-01-13,12,2022,79,217,551,552,563,12,,

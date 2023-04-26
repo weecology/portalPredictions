@@ -1,0 +1,13 @@
+"currency","model","dataset","species","estimate","lower_pi","upper_pi","confidence_level","old_cast_id","forecast_id","origin","newmoonnumber","forecast_date","forecast_month","forecast_year","forecast_group","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"abundance","AutoArima","exclosures","PF",0,-3.51026933819403,3.51026933819403,0.95,1963,"1963.09",,551,2021-12-23,1,2022,76,217,550,551,562,1,,
+"abundance","AutoArima","exclosures","PF",0,-4.23362688693768,4.23362688693768,0.95,1963,"1963.09",,552,2021-12-23,2,2022,76,217,550,551,562,2,,
+"abundance","AutoArima","exclosures","PF",0,-5.04254132754805,5.04254132754805,0.95,1963,"1963.09",,553,2021-12-23,3,2022,76,217,550,551,562,3,,
+"abundance","AutoArima","exclosures","PF",0,-5.68161721114465,5.68161721114465,0.95,1963,"1963.09",,554,2021-12-23,4,2022,76,217,550,551,562,4,,
+"abundance","AutoArima","exclosures","PF",0,-6.27238856216691,6.27238856216691,0.95,1963,"1963.09",,555,2021-12-23,4,2022,76,217,550,551,562,5,,
+"abundance","AutoArima","exclosures","PF",0,-6.80710422373813,6.80710422373813,0.95,1963,"1963.09",,556,2021-12-23,5,2022,76,217,550,551,562,6,,
+"abundance","AutoArima","exclosures","PF",0,-7.30429203230216,7.30429203230216,0.95,1963,"1963.09",,557,2021-12-23,6,2022,76,217,550,551,562,7,,
+"abundance","AutoArima","exclosures","PF",0,-7.76926374261559,7.76926374261559,0.95,1963,"1963.09",,558,2021-12-23,7,2022,76,217,550,551,562,8,,
+"abundance","AutoArima","exclosures","PF",0,-8.20808097349429,8.20808097349429,0.95,1963,"1963.09",,559,2021-12-23,8,2022,76,217,550,551,562,9,,
+"abundance","AutoArima","exclosures","PF",0,-8.62455561328992,8.62455561328992,0.95,1963,"1963.09",,560,2021-12-23,9,2022,76,217,550,551,562,10,,
+"abundance","AutoArima","exclosures","PF",0,-9.02183883323329,9.02183883323329,0.95,1963,"1963.09",,561,2021-12-23,10,2022,76,217,550,551,562,11,,
+"abundance","AutoArima","exclosures","PF",0,-9.40234602911086,9.40234602911086,0.95,1963,"1963.09",,562,2021-12-23,11,2022,76,217,550,551,562,12,,

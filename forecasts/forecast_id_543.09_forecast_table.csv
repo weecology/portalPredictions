@@ -1,0 +1,13 @@
+"currency","model","dataset","species","estimate","lower_pi","upper_pi","confidence_level","old_cast_id","forecast_id","origin","newmoonnumber","forecast_date","forecast_month","forecast_year","forecast_group","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"abundance","AutoArima","exclosures","PF",0,-3.53733925423028,3.53733925423028,0.95,543,"543.09",,528,2020-02-14,2,2020,24,217,527,528,539,1,,
+"abundance","AutoArima","exclosures","PF",0,-4.27103928179029,4.27103928179029,0.95,543,"543.09",,529,2020-02-14,3,2020,24,217,527,528,539,2,,
+"abundance","AutoArima","exclosures","PF",0,-5.08704996667052,5.08704996667052,0.95,543,"543.09",,530,2020-02-14,4,2020,24,217,527,528,539,3,,
+"abundance","AutoArima","exclosures","PF",0,-5.73303781782775,5.73303781782775,0.95,543,"543.09",,531,2020-02-14,5,2020,24,217,527,528,539,4,,
+"abundance","AutoArima","exclosures","PF",0,-6.32956047422515,6.32956047422515,0.95,543,"543.09",,532,2020-02-14,6,2020,24,217,527,528,539,5,,
+"abundance","AutoArima","exclosures","PF",0,-6.86964494774062,6.86964494774062,0.95,543,"543.09",,533,2020-02-14,7,2020,24,217,527,528,539,6,,
+"abundance","AutoArima","exclosures","PF",0,-7.37172398127203,7.37172398127203,0.95,543,"543.09",,534,2020-02-14,8,2020,24,217,527,528,539,7,,
+"abundance","AutoArima","exclosures","PF",0,-7.84127649171272,7.84127649171272,0.95,543,"543.09",,535,2020-02-14,9,2020,24,217,527,528,539,8,,
+"abundance","AutoArima","exclosures","PF",0,-8.28439373141687,8.28439373141687,0.95,543,"543.09",,536,2020-02-14,10,2020,24,217,527,528,539,9,,
+"abundance","AutoArima","exclosures","PF",0,-8.70494176824537,8.70494176824537,0.95,543,"543.09",,537,2020-02-14,11,2020,24,217,527,528,539,10,,
+"abundance","AutoArima","exclosures","PF",0,-9.10610120616102,9.10610120616102,0.95,543,"543.09",,538,2020-02-14,12,2020,24,217,527,528,539,11,,
+"abundance","AutoArima","exclosures","PF",0,-9.49031457633072,9.49031457633072,0.95,543,"543.09",,539,2020-02-14,1,2021,24,217,527,528,539,12,,

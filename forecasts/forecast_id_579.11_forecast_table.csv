@@ -1,0 +1,13 @@
+"currency","model","dataset","species","estimate","lower_pi","upper_pi","confidence_level","old_cast_id","forecast_id","origin","newmoonnumber","forecast_date","forecast_month","forecast_year","forecast_group","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"abundance","NaiveArima","exclosures","PH",0,-0.229172303767662,0.229172303767662,0.95,579,"579.11",,528,2020-02-20,2,2020,25,217,527,528,539,1,,
+"abundance","NaiveArima","exclosures","PH",0,-0.324098580108514,0.324098580108514,0.95,579,"579.11",,529,2020-02-20,3,2020,25,217,527,528,539,2,,
+"abundance","NaiveArima","exclosures","PH",0,-0.396938073813199,0.396938073813199,0.95,579,"579.11",,530,2020-02-20,4,2020,25,217,527,528,539,3,,
+"abundance","NaiveArima","exclosures","PH",0,-0.458344607535324,0.458344607535324,0.95,579,"579.11",,531,2020-02-20,5,2020,25,217,527,528,539,4,,
+"abundance","NaiveArima","exclosures","PH",0,-0.512444849784723,0.512444849784723,0.95,579,"579.11",,532,2020-02-20,6,2020,25,217,527,528,539,5,,
+"abundance","NaiveArima","exclosures","PH",0,-0.561355207408878,0.561355207408878,0.95,579,"579.11",,533,2020-02-20,7,2020,25,217,527,528,539,6,,
+"abundance","NaiveArima","exclosures","PH",0,-0.606332923152984,0.606332923152984,0.95,579,"579.11",,534,2020-02-20,8,2020,25,217,527,528,539,7,,
+"abundance","NaiveArima","exclosures","PH",0,-0.648197160217028,0.648197160217028,0.95,579,"579.11",,535,2020-02-20,9,2020,25,217,527,528,539,8,,
+"abundance","NaiveArima","exclosures","PH",0,-0.687516911302986,0.687516911302986,0.95,579,"579.11",,536,2020-02-20,10,2020,25,217,527,528,539,9,,
+"abundance","NaiveArima","exclosures","PH",0,-0.724706456533799,0.724706456533799,0.95,579,"579.11",,537,2020-02-20,11,2020,25,217,527,528,539,10,,
+"abundance","NaiveArima","exclosures","PH",0,-0.760078543938685,0.760078543938685,0.95,579,"579.11",,538,2020-02-20,12,2020,25,217,527,528,539,11,,
+"abundance","NaiveArima","exclosures","PH",0,-0.793876147626397,0.793876147626397,0.95,579,"579.11",,539,2020-02-20,1,2021,25,217,527,528,539,12,,

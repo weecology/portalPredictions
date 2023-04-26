@@ -9,4 +9,4 @@ setup_production()
 portalcast(models = c("ESSS"))
 
 #Evaluate model forecast
-evaluate_cast()
+evaluate_forecast()

@@ -1,0 +1,171 @@
+cast_group: 123.0
+cast_type: forecast
+models: AutoArima
+datasets: all
+dataset_controls:
+  metadata:
+    name: all
+    descriptor: classic dataset, all plots combined
+    text: Twenty focal species and total abundance summed across all plots at the
+      newmoon.
+  fun: prepare_dataset
+  args:
+    name: all
+    species:
+    - BA
+    - DM
+    - DO
+    - DS
+    - NA
+    - OL
+    - OT
+    - PB
+    - PE
+    - PF
+    - PH
+    - PL
+    - PM
+    - PP
+    - RF
+    - RM
+    - RO
+    - SF
+    - SH
+    - SO
+    total: yes
+    clean: no
+    type: Rodents
+    level: Site
+    plots: all
+    treatment: ~
+    min_plots: 24.0
+    min_traps: 1.0
+    output: abundance
+    fillweight: no
+    unknowns: no
+    time: newmoon
+    na_drop: no
+    zero_drop: yes
+    effort: yes
+    filename: rodents_all.csv
+time:
+  start_moon: 217.0
+  end_moon: 565
+  last_moon: 565
+  cast_date: '2023-03-16'
+  lead_time: 12.0
+  covariate_cast_moons:
+  - 566
+  - 567
+  - 568
+  - 569
+  - 570
+  - 571
+  - 572
+  - 573
+  - 574
+  - 575
+  - 576
+  - 577
+  covariate_cast_months:
+  - 3.0
+  - 4.0
+  - 5.0
+  - 6.0
+  - 7.0
+  - 8.0
+  - 9.0
+  - 10.0
+  - 11.0
+  - 12.0
+  - 1.0
+  - 2.0
+  covariate_cast_years:
+  - 2023.0
+  - 2023.0
+  - 2023.0
+  - 2023.0
+  - 2023.0
+  - 2023.0
+  - 2023.0
+  - 2023.0
+  - 2023.0
+  - 2023.0
+  - 2024.0
+  - 2024.0
+  rodent_cast_moons:
+  - 566
+  - 567
+  - 568
+  - 569
+  - 570
+  - 571
+  - 572
+  - 573
+  - 574
+  - 575
+  - 576
+  - 577
+  rodent_cast_months:
+  - 3.0
+  - 4.0
+  - 5.0
+  - 6.0
+  - 7.0
+  - 8.0
+  - 9.0
+  - 10.0
+  - 11.0
+  - 12.0
+  - 1.0
+  - 2.0
+  rodent_cast_years:
+  - 2023.0
+  - 2023.0
+  - 2023.0
+  - 2023.0
+  - 2023.0
+  - 2023.0
+  - 2023.0
+  - 2023.0
+  - 2023.0
+  - 2023.0
+  - 2024.0
+  - 2024.0
+confidence_level: 0.95
+directory_configuration:
+  setup:
+    date: '2023-03-16'
+    R_version:
+      platform: x86_64-pc-linux-gnu
+      arch: x86_64
+      os: linux-gnu
+      system: x86_64, linux-gnu
+      status: ''
+      major: '4'
+      minor: '2.2'
+      year: '2022'
+      month: '10'
+      day: '31'
+      svn rev: '83211'
+      language: R
+      version.string: R version 4.2.2 (2022-10-31)
+      nickname: Innocent and Trusting
+    core_package_name: portalcasting
+    core_package_version: 0.50.0
+  tree:
+    main: '.'
+    subdirectories:
+      forecasts: forecasts
+      fits: fits
+      models: models
+      resources: resources
+      data: data
+  raw:
+    PortalData_version: 4.0.0
+    archive_version: latest
+    climate_forecast_version: '2023-03-16'
+model: AutoArima
+dataset: all
+species: SO
+forecast_id: '3115.21'

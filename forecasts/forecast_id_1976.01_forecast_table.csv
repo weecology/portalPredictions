@@ -1,0 +1,13 @@
+"currency","model","dataset","species","estimate","lower_pi","upper_pi","confidence_level","old_cast_id","forecast_id","origin","newmoonnumber","forecast_date","forecast_month","forecast_year","forecast_group","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"abundance","NaiveArima","dm_controls","DM",19,10.7120572672854,27.2879427327146,0.95,1976,"1976.01",,551,2021-12-23,1,2022,76,217,550,551,562,1,,
+"abundance","NaiveArima","dm_controls","DM",19,7.27907898322353,30.7209210167765,0.95,1976,"1976.01",,552,2021-12-23,2,2022,76,217,550,551,562,2,,
+"abundance","NaiveArima","dm_controls","DM",19,4.64486209671713,33.3551379032829,0.95,1976,"1976.01",,553,2021-12-23,3,2022,76,217,550,551,562,3,,
+"abundance","NaiveArima","dm_controls","DM",19,2.42411453457087,35.5758854654291,0.95,1976,"1976.01",,554,2021-12-23,4,2022,76,217,550,551,562,4,,
+"abundance","NaiveArima","dm_controls","DM",19,0.467596656024863,37.5324033439751,0.95,1976,"1976.01",,555,2021-12-23,4,2022,76,217,550,551,562,5,,
+"abundance","NaiveArima","dm_controls","DM",19,-1.30123071255871,39.3012307125587,0.95,1976,"1976.01",,556,2021-12-23,5,2022,76,217,550,551,562,6,,
+"abundance","NaiveArima","dm_controls","DM",19,-2.92783535110781,40.9278353511078,0.95,1976,"1976.01",,557,2021-12-23,6,2022,76,217,550,551,562,7,,
+"abundance","NaiveArima","dm_controls","DM",19,-4.44184203355294,42.4418420335529,0.95,1976,"1976.01",,558,2021-12-23,7,2022,76,217,550,551,562,8,,
+"abundance","NaiveArima","dm_controls","DM",19,-5.86382819814369,43.8638281981437,0.95,1976,"1976.01",,559,2021-12-23,8,2022,76,217,550,551,562,9,,
+"abundance","NaiveArima","dm_controls","DM",19,-7.20877615241814,45.2087761524181,0.95,1976,"1976.01",,560,2021-12-23,9,2022,76,217,550,551,562,10,,
+"abundance","NaiveArima","dm_controls","DM",19,-8.487996328367,46.487996328367,0.95,1976,"1976.01",,561,2021-12-23,10,2022,76,217,550,551,562,11,,
+"abundance","NaiveArima","dm_controls","DM",19,-9.71027580656574,47.7102758065657,0.95,1976,"1976.01",,562,2021-12-23,11,2022,76,217,550,551,562,12,,

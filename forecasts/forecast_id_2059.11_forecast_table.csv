@@ -1,0 +1,13 @@
+"currency","model","dataset","species","estimate","lower_pi","upper_pi","confidence_level","old_cast_id","forecast_id","origin","newmoonnumber","forecast_date","forecast_month","forecast_year","forecast_group","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"abundance","NaiveArima","exclosures","PH",0,-0.226966551727733,0.226966551727733,0.95,2059,"2059.11",,552,2022-01-13,2,2022,79,217,551,552,563,1,,
+"abundance","NaiveArima","exclosures","PH",0,-0.320979175658415,0.320979175658415,0.95,2059,"2059.11",,553,2022-01-13,3,2022,79,217,551,552,563,2,,
+"abundance","NaiveArima","exclosures","PH",0,-0.393117599211144,0.393117599211144,0.95,2059,"2059.11",,554,2022-01-13,4,2022,79,217,551,552,563,3,,
+"abundance","NaiveArima","exclosures","PH",0,-0.453933103455467,0.453933103455467,0.95,2059,"2059.11",,555,2022-01-13,4,2022,79,217,551,552,563,4,,
+"abundance","NaiveArima","exclosures","PH",0,-0.507512638281934,0.507512638281934,0.95,2059,"2059.11",,556,2022-01-13,5,2022,79,217,551,552,563,5,,
+"abundance","NaiveArima","exclosures","PH",0,-0.555952240411951,0.555952240411951,0.95,2059,"2059.11",,557,2022-01-13,6,2022,79,217,551,552,563,6,,
+"abundance","NaiveArima","exclosures","PH",0,-0.60049705180146,0.60049705180146,0.95,2059,"2059.11",,558,2022-01-13,7,2022,79,217,551,552,563,7,,
+"abundance","NaiveArima","exclosures","PH",0,-0.641958351316831,0.641958351316831,0.95,2059,"2059.11",,559,2022-01-13,8,2022,79,217,551,552,563,8,,
+"abundance","NaiveArima","exclosures","PH",0,-0.6808996551832,0.6808996551832,0.95,2059,"2059.11",,560,2022-01-13,9,2022,79,217,551,552,563,9,,
+"abundance","NaiveArima","exclosures","PH",0,-0.717731256134062,0.717731256134062,0.95,2059,"2059.11",,561,2022-01-13,10,2022,79,217,551,552,563,10,,
+"abundance","NaiveArima","exclosures","PH",0,-0.752762892041682,0.752762892041682,0.95,2059,"2059.11",,562,2022-01-13,11,2022,79,217,551,552,563,11,,
+"abundance","NaiveArima","exclosures","PH",0,-0.786235198422288,0.786235198422288,0.95,2059,"2059.11",,563,2022-01-13,12,2022,79,217,551,552,563,12,,

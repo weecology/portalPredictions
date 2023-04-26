@@ -1,0 +1,13 @@
+"currency","model","dataset","species","estimate","lower_pi","upper_pi","confidence_level","old_cast_id","forecast_id","origin","newmoonnumber","forecast_date","forecast_month","forecast_year","forecast_group","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"abundance","NaiveArima","exclosures","OT",0,-3.21074690963508,3.21074690963508,0.95,2059,"2059.06",,552,2022-01-13,2,2022,79,217,551,552,563,1,,
+"abundance","NaiveArima","exclosures","OT",0,-4.54068182495343,4.54068182495343,0.95,2059,"2059.06",,553,2022-01-13,3,2022,79,217,551,552,563,2,,
+"abundance","NaiveArima","exclosures","OT",0,-5.56117677773271,5.56117677773271,0.95,2059,"2059.06",,554,2022-01-13,4,2022,79,217,551,552,563,3,,
+"abundance","NaiveArima","exclosures","OT",0,-6.42149381927015,6.42149381927015,0.95,2059,"2059.06",,555,2022-01-13,4,2022,79,217,551,552,563,4,,
+"abundance","NaiveArima","exclosures","OT",0,-7.17944834849141,7.17944834849141,0.95,2059,"2059.06",,556,2022-01-13,5,2022,79,217,551,552,563,5,,
+"abundance","NaiveArima","exclosures","OT",0,-7.86469162182391,7.86469162182391,0.95,2059,"2059.06",,557,2022-01-13,6,2022,79,217,551,552,563,6,,
+"abundance","NaiveArima","exclosures","OT",0,-8.49483784566359,8.49483784566359,0.95,2059,"2059.06",,558,2022-01-13,7,2022,79,217,551,552,563,7,,
+"abundance","NaiveArima","exclosures","OT",0,-9.08136364990686,9.08136364990686,0.95,2059,"2059.06",,559,2022-01-13,8,2022,79,217,551,552,563,8,,
+"abundance","NaiveArima","exclosures","OT",0,-9.63224072890523,9.63224072890523,0.95,2059,"2059.06",,560,2022-01-13,9,2022,79,217,551,552,563,9,,
+"abundance","NaiveArima","exclosures","OT",0,-10.1532732247937,10.1532732247937,0.95,2059,"2059.06",,561,2022-01-13,10,2022,79,217,551,552,563,10,,
+"abundance","NaiveArima","exclosures","OT",0,-10.6488427960527,10.6488427960527,0.95,2059,"2059.06",,562,2022-01-13,11,2022,79,217,551,552,563,11,,
+"abundance","NaiveArima","exclosures","OT",0,-11.1223535554654,11.1223535554654,0.95,2059,"2059.06",,563,2022-01-13,12,2022,79,217,551,552,563,12,,

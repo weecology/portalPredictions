@@ -1,0 +1,13 @@
+"currency","model","dataset","species","estimate","lower_pi","upper_pi","confidence_level","old_cast_id","forecast_id","origin","newmoonnumber","forecast_date","forecast_month","forecast_year","forecast_group","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"abundance","jags_logistic_covariates","controls","DM",13.888,3.327,26.924,0.95,3030,"3030.01",,565,2023-02-16,2,2023,119,217,564,565,576,1,,
+"abundance","jags_logistic_covariates","controls","DM",13.879,3.31,26.906,0.95,3030,"3030.01",,566,2023-02-16,3,2023,119,217,564,565,576,2,,
+"abundance","jags_logistic_covariates","controls","DM",13.861,3.293,26.867,0.95,3030,"3030.01",,567,2023-02-16,4,2023,119,217,564,565,576,3,,
+"abundance","jags_logistic_covariates","controls","DM",13.837,3.276,26.816,0.95,3030,"3030.01",,568,2023-02-16,5,2023,119,217,564,565,576,4,,
+"abundance","jags_logistic_covariates","controls","DM",13.809,3.26,26.764,0.95,3030,"3030.01",,569,2023-02-16,6,2023,119,217,564,565,576,5,,
+"abundance","jags_logistic_covariates","controls","DM",13.779,3.243,26.72,0.95,3030,"3030.01",,570,2023-02-16,7,2023,119,217,564,565,576,6,,
+"abundance","jags_logistic_covariates","controls","DM",13.748,3.227,26.686,0.95,3030,"3030.01",,571,2023-02-16,8,2023,119,217,564,565,576,7,,
+"abundance","jags_logistic_covariates","controls","DM",13.717,3.21,26.658,0.95,3030,"3030.01",,572,2023-02-16,9,2023,119,217,564,565,576,8,,
+"abundance","jags_logistic_covariates","controls","DM",13.686,3.194,26.634,0.95,3030,"3030.01",,573,2023-02-16,10,2023,119,217,564,565,576,9,,
+"abundance","jags_logistic_covariates","controls","DM",13.655,3.177,26.61,0.95,3030,"3030.01",,574,2023-02-16,11,2023,119,217,564,565,576,10,,
+"abundance","jags_logistic_covariates","controls","DM",13.624,3.161,26.587,0.95,3030,"3030.01",,575,2023-02-16,12,2023,119,217,564,565,576,11,,
+"abundance","jags_logistic_covariates","controls","DM",13.593,3.145,26.563,0.95,3030,"3030.01",,576,2023-02-16,1,2024,119,217,564,565,576,12,,

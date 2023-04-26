@@ -1,0 +1,13 @@
+"currency","model","dataset","species","estimate","lower_pi","upper_pi","confidence_level","old_cast_id","forecast_id","origin","newmoonnumber","forecast_date","forecast_month","forecast_year","forecast_group","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"abundance","NaiveArima","exclosures","DM",1,-0.982979630640354,2.98297963064035,0.95,2003,"2003.02",,551,2021-12-30,1,2022,77,217,550,551,562,1,,
+"abundance","NaiveArima","exclosures","DM",1,-1.80435668756118,3.80435668756118,0.95,2003,"2003.02",,552,2021-12-30,2,2022,77,217,550,551,562,2,,
+"abundance","NaiveArima","exclosures","DM",1,-2.43462147064326,4.43462147064326,0.95,2003,"2003.02",,553,2021-12-30,3,2022,77,217,550,551,562,3,,
+"abundance","NaiveArima","exclosures","DM",1,-2.96595926128071,4.96595926128071,0.95,2003,"2003.02",,554,2021-12-30,4,2022,77,217,550,551,562,4,,
+"abundance","NaiveArima","exclosures","DM",1,-3.43407725210926,5.43407725210926,0.95,2003,"2003.02",,555,2021-12-30,4,2022,77,217,550,551,562,5,,
+"abundance","NaiveArima","exclosures","DM",1,-3.85728826540152,5.85728826540152,0.95,2003,"2003.02",,556,2021-12-30,5,2022,77,217,550,551,562,6,,
+"abundance","NaiveArima","exclosures","DM",1,-4.24647095758109,6.24647095758109,0.95,2003,"2003.02",,557,2021-12-30,6,2022,77,217,550,551,562,7,,
+"abundance","NaiveArima","exclosures","DM",1,-4.60871337512236,6.60871337512236,0.95,2003,"2003.02",,558,2021-12-30,7,2022,77,217,550,551,562,8,,
+"abundance","NaiveArima","exclosures","DM",1,-4.94893889192106,6.94893889192106,0.95,2003,"2003.02",,559,2021-12-30,8,2022,77,217,550,551,562,9,,
+"abundance","NaiveArima","exclosures","DM",1,-5.27073218654294,7.27073218654294,0.95,2003,"2003.02",,560,2021-12-30,9,2022,77,217,550,551,562,10,,
+"abundance","NaiveArima","exclosures","DM",1,-5.57679940175159,7.57679940175159,0.95,2003,"2003.02",,561,2021-12-30,10,2022,77,217,550,551,562,11,,
+"abundance","NaiveArima","exclosures","DM",1,-5.86924294128652,7.86924294128652,0.95,2003,"2003.02",,562,2021-12-30,11,2022,77,217,550,551,562,12,,

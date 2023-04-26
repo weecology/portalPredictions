@@ -1,0 +1,91 @@
+setup:
+  date: '2023-04-25'
+  R_version:
+    platform: x86_64-w64-mingw32
+    arch: x86_64
+    os: mingw32
+    crt: ucrt
+    system: x86_64, mingw32
+    status: ''
+    major: '4'
+    minor: '2.2'
+    year: '2022'
+    month: '10'
+    day: '31'
+    svn rev: '83211'
+    language: R
+    version.string: R version 4.2.2 (2022-10-31 ucrt)
+    nickname: Innocent and Trusting
+  core_package_name: portalcasting
+  core_package_version: 0.52.0
+tree:
+  main: '.'
+  subdirectories:
+    forecasts: forecasts
+    fits: fits
+    models: models
+    resources: resources
+    data: data
+    app: app
+settings:
+  files:
+    newmoons: newmoons.csv
+    covariates: covariates.csv
+    datasets_controls: datasets_controls.yaml
+    models_controls: models_controls.yaml
+    forecasts_evaluations: forecasts_evaluations.csv
+    forecasts_results: forecasts_results.csv
+    forecasts_metadata: forecasts_metadata.csv
+    about_md: about.md
+    models_rmd: models.Rmd
+    models_html: models.html
+    rodents_profiles_html: rodents_profiles.html
+    rodents_profiles_csv: rodents_profiles.csv
+    metadata: metadata.yaml
+  subdirectories:
+    forecasts: forecasts
+    fits: fits
+    models: models
+    resources: resources
+    data: data
+    app: app
+  resources:
+    PortalData:
+      source: github
+      version: latest
+    portalPredictions:
+      source: github
+      version: latest
+    climate_forecasts:
+      source: NMME
+      version: '2023-04-25'
+      data:
+        mintemp: tasmin
+        meantemp: tasmean
+        maxtemp: tasmax
+        precipitation: pr
+    PortalData_version: 4.7.0
+    archive_version: latest
+    climate_forecast_version: '2023-04-25'
+  repository: portalPredictions
+  confidence_level: 0.95
+  nsamples: 10000.0
+  time:
+    timeseries_start: '1995-01-01'
+    timeseries_start_lagged: '1993-11-02'
+    forecast_start: '2023-04-26'
+    forecast_end: '2024-04-24'
+    forecast_end_buffered: '2024-05-24'
+    origin: '2023-04-25'
+    forecast_date: '2023-04-25'
+    lead_time: 365.0
+    lead_time_buffer: 30.0
+    max_lag: 365.0
+    lag_buffer: 60.0
+  save: yes
+  force: no
+  overwrite: yes
+  unzip_pause: 30.0
+  download_timeout: 600.0
+  quiet: no
+  verbose: no

@@ -1,0 +1,13 @@
+"currency","model","dataset","species","confidence_level","estimate","lower_pi","upper_pi","old_cast_id","forecast_id","origin","newmoonnumber","forecast_date","forecast_month","forecast_year","forecast_group","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"abundance","NaiveArima","exclosures","PL",0.95,0,-0.617512169916814,0.617512169916814,3128,"3128.11",,566,2023-03-16,3,2023,123,217,565,566,577,1,,
+"abundance","NaiveArima","exclosures","PL",0.95,0,-0.873294085626798,0.873294085626798,3128,"3128.11",,567,2023-03-16,4,2023,123,217,565,566,577,2,,
+"abundance","NaiveArima","exclosures","PL",0.95,0,-1.06956245258803,1.06956245258803,3128,"3128.11",,568,2023-03-16,5,2023,123,217,565,566,577,3,,
+"abundance","NaiveArima","exclosures","PL",0.95,0,-1.23502433983363,1.23502433983363,3128,"3128.11",,569,2023-03-16,6,2023,123,217,565,566,577,4,,
+"abundance","NaiveArima","exclosures","PL",0.95,0,-1.3807991888674,1.3807991888674,3128,"3128.11",,570,2023-03-16,7,2023,123,217,565,566,577,5,,
+"abundance","NaiveArima","exclosures","PL",0.95,0,-1.51258972625502,1.51258972625502,3128,"3128.11",,571,2023-03-16,8,2023,123,217,565,566,577,6,,
+"abundance","NaiveArima","exclosures","PL",0.95,0,-1.63378363315575,1.63378363315575,3128,"3128.11",,572,2023-03-16,9,2023,123,217,565,566,577,7,,
+"abundance","NaiveArima","exclosures","PL",0.95,0,-1.7465881712536,1.7465881712536,3128,"3128.11",,573,2023-03-16,10,2023,123,217,565,566,577,8,,
+"abundance","NaiveArima","exclosures","PL",0.95,0,-1.85253650975044,1.85253650975044,3128,"3128.11",,574,2023-03-16,11,2023,123,217,565,566,577,9,,
+"abundance","NaiveArima","exclosures","PL",0.95,0,-1.95274493981004,1.95274493981004,3128,"3128.11",,575,2023-03-16,12,2023,123,217,565,566,577,10,,
+"abundance","NaiveArima","exclosures","PL",0.95,0,-2.04805617109226,2.04805617109226,3128,"3128.11",,576,2023-03-16,1,2024,123,217,565,566,577,11,,
+"abundance","NaiveArima","exclosures","PL",0.95,0,-2.13912490517606,2.13912490517606,3128,"3128.11",,577,2023-03-16,2,2024,123,217,565,566,577,12,,

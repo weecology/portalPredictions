@@ -10,4 +10,4 @@ setup_production()
 portalcast()
 
 #Evaluate all un-evaluated forecasts
-evaluate_casts()
+evaluate_forecasts()

@@ -1,0 +1,13 @@
+"currency","model","dataset","species","estimate","lower_pi","upper_pi","confidence_level","old_cast_id","forecast_id","origin","newmoonnumber","forecast_date","forecast_month","forecast_year","forecast_group","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"abundance","NaiveArima","exclosures","PF",0,-3.62943779308153,3.62943779308153,0.95,2059,"2059.09",,552,2022-01-13,2,2022,79,217,551,552,563,1,,
+"abundance","NaiveArima","exclosures","PF",0,-5.13280015076538,5.13280015076538,0.95,2059,"2059.09",,553,2022-01-13,3,2022,79,217,551,552,563,2,,
+"abundance","NaiveArima","exclosures","PF",0,-6.28637066052787,6.28637066052787,0.95,2059,"2059.09",,554,2022-01-13,4,2022,79,217,551,552,563,3,,
+"abundance","NaiveArima","exclosures","PF",0,-7.25887558616306,7.25887558616306,0.95,2059,"2059.09",,555,2022-01-13,4,2022,79,217,551,552,563,4,,
+"abundance","NaiveArima","exclosures","PF",0,-8.11566962543712,8.11566962543712,0.95,2059,"2059.09",,556,2022-01-13,5,2022,79,217,551,552,563,5,,
+"abundance","NaiveArima","exclosures","PF",0,-8.89027064622283,8.89027064622283,0.95,2059,"2059.09",,557,2022-01-13,6,2022,79,217,551,552,563,6,,
+"abundance","NaiveArima","exclosures","PF",0,-9.60258979947283,9.60258979947283,0.95,2059,"2059.09",,558,2022-01-13,7,2022,79,217,551,552,563,7,,
+"abundance","NaiveArima","exclosures","PF",0,-10.2656003015308,10.2656003015308,0.95,2059,"2059.09",,559,2022-01-13,8,2022,79,217,551,552,563,8,,
+"abundance","NaiveArima","exclosures","PF",0,-10.8883133792446,10.8883133792446,0.95,2059,"2059.09",,560,2022-01-13,9,2022,79,217,551,552,563,9,,
+"abundance","NaiveArima","exclosures","PF",0,-11.4772900520326,11.4772900520326,0.95,2059,"2059.09",,561,2022-01-13,10,2022,79,217,551,552,563,10,,
+"abundance","NaiveArima","exclosures","PF",0,-12.037483359587,12.037483359587,0.95,2059,"2059.09",,562,2022-01-13,11,2022,79,217,551,552,563,11,,
+"abundance","NaiveArima","exclosures","PF",0,-12.5727413210557,12.5727413210557,0.95,2059,"2059.09",,563,2022-01-13,12,2022,79,217,551,552,563,12,,

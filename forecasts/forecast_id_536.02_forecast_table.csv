@@ -1,0 +1,13 @@
+"currency","model","dataset","species","estimate","lower_pi","upper_pi","confidence_level","old_cast_id","forecast_id","origin","newmoonnumber","forecast_date","forecast_month","forecast_year","forecast_group","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"abundance","pevGARCH","controls","DM",23.7353486982773,15,33,0.95,536,"536.02",,528,2020-02-13,2,2020,23,217,527,528,539,1,,
+"abundance","pevGARCH","controls","DM",22.9517768297509,12,36,0.95,536,"536.02",,529,2020-02-13,3,2020,23,217,527,528,539,2,,
+"abundance","pevGARCH","controls","DM",21.6638663352657,10,35,0.95,536,"536.02",,530,2020-02-13,4,2020,23,217,527,528,539,3,,
+"abundance","pevGARCH","controls","DM",19.8072873862458,8,34,0.95,536,"536.02",,531,2020-02-13,5,2020,23,217,527,528,539,4,,
+"abundance","pevGARCH","controls","DM",17.928125606596,6,32,0.95,536,"536.02",,532,2020-02-13,6,2020,23,217,527,528,539,5,,
+"abundance","pevGARCH","controls","DM",16.446403968824,5,29,0.95,536,"536.02",,533,2020-02-13,7,2020,23,217,527,528,539,6,,
+"abundance","pevGARCH","controls","DM",15.7126139842785,4,28,0.95,536,"536.02",,534,2020-02-13,8,2020,23,217,527,528,539,7,,
+"abundance","pevGARCH","controls","DM",15.4430674560434,4,29,0.95,536,"536.02",,535,2020-02-13,9,2020,23,217,527,528,539,8,,
+"abundance","pevGARCH","controls","DM",15.3811690507233,4,30,0.95,536,"536.02",,536,2020-02-13,10,2020,23,217,527,528,539,9,,
+"abundance","pevGARCH","controls","DM",15.8798284357681,4,29,0.95,536,"536.02",,537,2020-02-13,11,2020,23,217,527,528,539,10,,
+"abundance","pevGARCH","controls","DM",16.7901553178714,5,31,0.95,536,"536.02",,538,2020-02-13,12,2020,23,217,527,528,539,11,,
+"abundance","pevGARCH","controls","DM",17.7388407023651,4,33,0.95,536,"536.02",,539,2020-02-13,1,2021,23,217,527,528,539,12,,

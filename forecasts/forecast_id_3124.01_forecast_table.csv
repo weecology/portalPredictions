@@ -1,0 +1,13 @@
+"currency","model","dataset","species","estimate","lower_pi","upper_pi","confidence_level","old_cast_id","forecast_id","origin","newmoonnumber","forecast_date","forecast_month","forecast_year","forecast_group","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"abundance","jags_logistic","controls","DM",21.627,15.71,27.805,0.95,3124,"3124.01",,566,2023-03-16,3,2023,123,217,565,566,577,1,,
+"abundance","jags_logistic","controls","DM",21.308,13.769,29.415,0.95,3124,"3124.01",,567,2023-03-16,4,2023,123,217,565,566,577,2,,
+"abundance","jags_logistic","controls","DM",20.986,12.455,30.32,0.95,3124,"3124.01",,568,2023-03-16,5,2023,123,217,565,566,577,3,,
+"abundance","jags_logistic","controls","DM",20.684,11.286,30.866,0.95,3124,"3124.01",,569,2023-03-16,6,2023,123,217,565,566,577,4,,
+"abundance","jags_logistic","controls","DM",20.41,10.802,31.606,0.95,3124,"3124.01",,570,2023-03-16,7,2023,123,217,565,566,577,5,,
+"abundance","jags_logistic","controls","DM",20.147,10.188,31.894,0.95,3124,"3124.01",,571,2023-03-16,8,2023,123,217,565,566,577,6,,
+"abundance","jags_logistic","controls","DM",19.918,9.277,31.691,0.95,3124,"3124.01",,572,2023-03-16,9,2023,123,217,565,566,577,7,,
+"abundance","jags_logistic","controls","DM",19.69,8.963,31.807,0.95,3124,"3124.01",,573,2023-03-16,10,2023,123,217,565,566,577,8,,
+"abundance","jags_logistic","controls","DM",19.491,9.077,32.454,0.95,3124,"3124.01",,574,2023-03-16,11,2023,123,217,565,566,577,9,,
+"abundance","jags_logistic","controls","DM",19.316,8.663,32.389,0.95,3124,"3124.01",,575,2023-03-16,12,2023,123,217,565,566,577,10,,
+"abundance","jags_logistic","controls","DM",19.135,8.025,31.939,0.95,3124,"3124.01",,576,2023-03-16,1,2024,123,217,565,566,577,11,,
+"abundance","jags_logistic","controls","DM",18.982,7.953,32.214,0.95,3124,"3124.01",,577,2023-03-16,2,2024,123,217,565,566,577,12,,

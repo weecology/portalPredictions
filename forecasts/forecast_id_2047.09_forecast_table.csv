@@ -1,0 +1,13 @@
+"currency","model","dataset","species","estimate","lower_pi","upper_pi","confidence_level","old_cast_id","forecast_id","origin","newmoonnumber","forecast_date","forecast_month","forecast_year","forecast_group","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"abundance","AutoArima","exclosures","PF",0,-3.50349139215354,3.50349139215354,0.95,2047,"2047.09",,552,2022-01-13,2,2022,79,217,551,552,563,1,,
+"abundance","AutoArima","exclosures","PF",0,-4.22572581933114,4.22572581933114,0.95,2047,"2047.09",,553,2022-01-13,3,2022,79,217,551,552,563,2,,
+"abundance","AutoArima","exclosures","PF",0,-5.03312712447725,5.03312712447725,0.95,2047,"2047.09",,554,2022-01-13,4,2022,79,217,551,552,563,3,,
+"abundance","AutoArima","exclosures","PF",0,-5.67108312879321,5.67108312879321,0.95,2047,"2047.09",,555,2022-01-13,4,2022,79,217,551,552,563,4,,
+"abundance","AutoArima","exclosures","PF",0,-6.26078226353894,6.26078226353894,0.95,2047,"2047.09",,556,2022-01-13,5,2022,79,217,551,552,563,5,,
+"abundance","AutoArima","exclosures","PF",0,-6.79453698593685,6.79453698593685,0.95,2047,"2047.09",,557,2022-01-13,6,2022,79,217,551,552,563,6,,
+"abundance","AutoArima","exclosures","PF",0,-7.29082543550487,7.29082543550487,0.95,2047,"2047.09",,558,2022-01-13,7,2022,79,217,551,552,563,7,,
+"abundance","AutoArima","exclosures","PF",0,-7.75495646766982,7.75495646766982,0.95,2047,"2047.09",,559,2022-01-13,8,2022,79,217,551,552,563,8,,
+"abundance","AutoArima","exclosures","PF",0,-8.19297896775623,8.19297896775623,0.95,2047,"2047.09",,560,2022-01-13,9,2022,79,217,551,552,563,9,,
+"abundance","AutoArima","exclosures","PF",0,-8.60869890519205,8.60869890519205,0.95,2047,"2047.09",,561,2022-01-13,10,2022,79,217,551,552,563,10,,
+"abundance","AutoArima","exclosures","PF",0,-9.0052616539375,9.0052616539375,0.95,2047,"2047.09",,562,2022-01-13,11,2022,79,217,551,552,563,11,,
+"abundance","AutoArima","exclosures","PF",0,-9.38507843715869,9.38507843715869,0.95,2047,"2047.09",,563,2022-01-13,12,2022,79,217,551,552,563,12,,

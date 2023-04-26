@@ -1,0 +1,14 @@
+"lead_time_newmoons","max_lag","lag_buffer","origin","forecast_date","forecast_month","forecast_year","newmoonnumber","currency","model","dataset","species","estimate","lower_pi","upper_pi","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","confidence_level","forecast_group","old_cast_id","forecast_id"
+1,365,60,"2023-04-25","2023-04-25","05","2023",568,"abundance","jags_logistic_competition_covariates","controls","DM",22.524,9,35,217,567,568,580,0.95,126,,3639
+2,365,60,"2023-04-25","2023-04-25","06","2023",569,"abundance","jags_logistic_competition_covariates","controls","DM",22.126,9,36,217,567,568,580,0.95,126,,3639
+3,365,60,"2023-04-25","2023-04-25","07","2023",570,"abundance","jags_logistic_competition_covariates","controls","DM",21.491,7,36,217,567,568,580,0.95,126,,3639
+4,365,60,"2023-04-25","2023-04-25","08","2023",571,"abundance","jags_logistic_competition_covariates","controls","DM",21.209,7,37,217,567,568,580,0.95,126,,3639
+5,365,60,"2023-04-25","2023-04-25","09","2023",572,"abundance","jags_logistic_competition_covariates","controls","DM",20.607,6,37,217,567,568,580,0.95,126,,3639
+6,365,60,"2023-04-25","2023-04-25","10","2023",573,"abundance","jags_logistic_competition_covariates","controls","DM",20.874,5,38,217,567,568,580,0.95,126,,3639
+7,365,60,"2023-04-25","2023-04-25","11","2023",574,"abundance","jags_logistic_competition_covariates","controls","DM",24.474,8,44,217,567,568,580,0.95,126,,3639
+8,365,60,"2023-04-25","2023-04-25","12","2023",575,"abundance","jags_logistic_competition_covariates","controls","DM",25.941,7,46,217,567,568,580,0.95,126,,3639
+9,365,60,"2023-04-25","2023-04-25","01","2024",576,"abundance","jags_logistic_competition_covariates","controls","DM",26.392,6,47,217,567,568,580,0.95,126,,3639
+10,365,60,"2023-04-25","2023-04-25","02","2024",577,"abundance","jags_logistic_competition_covariates","controls","DM",26.74,6,49,217,567,568,580,0.95,126,,3639
+11,365,60,"2023-04-25","2023-04-25","03","2024",578,"abundance","jags_logistic_competition_covariates","controls","DM",26.459,5,50,217,567,568,580,0.95,126,,3639
+12,365,60,"2023-04-25","2023-04-25","04","2024",579,"abundance","jags_logistic_competition_covariates","controls","DM",26.153,4,51,217,567,568,580,0.95,126,,3639
+13,365,60,"2023-04-25","2023-04-25","05","2024",580,"abundance","jags_logistic_competition_covariates","controls","DM",25.763,3,52,217,567,568,580,0.95,126,,3639

@@ -1,0 +1,13 @@
+"currency","model","dataset","species","confidence_level","estimate","lower_pi","upper_pi","old_cast_id","forecast_id","origin","newmoonnumber","forecast_date","forecast_month","forecast_year","forecast_group","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"abundance","NaiveArima","exclosures","SH",0.95,0,-1.42208220744944,1.42208220744944,3013,"3013.18",,565,2023-02-09,2,2023,118,217,564,565,576,1,,
+"abundance","NaiveArima","exclosures","SH",0.95,0,-2.01112794458446,2.01112794458446,3013,"3013.18",,566,2023-02-09,3,2023,118,217,564,565,576,2,,
+"abundance","NaiveArima","exclosures","SH",0.95,0,-2.46311863584213,2.46311863584213,3013,"3013.18",,567,2023-02-09,4,2023,118,217,564,565,576,3,,
+"abundance","NaiveArima","exclosures","SH",0.95,0,-2.84416441489887,2.84416441489887,3013,"3013.18",,568,2023-02-09,5,2023,118,217,564,565,576,4,,
+"abundance","NaiveArima","exclosures","SH",0.95,0,-3.1798724854499,3.1798724854499,3013,"3013.18",,569,2023-02-09,6,2023,118,217,564,565,576,5,,
+"abundance","NaiveArima","exclosures","SH",0.95,0,-3.48337578054185,3.48337578054185,3013,"3013.18",,570,2023-02-09,7,2023,118,217,564,565,576,6,,
+"abundance","NaiveArima","exclosures","SH",0.95,0,-3.76247586480097,3.76247586480097,3013,"3013.18",,571,2023-02-09,8,2023,118,217,564,565,576,7,,
+"abundance","NaiveArima","exclosures","SH",0.95,0,-4.02225588916892,4.02225588916892,3013,"3013.18",,572,2023-02-09,9,2023,118,217,564,565,576,8,,
+"abundance","NaiveArima","exclosures","SH",0.95,0,-4.26624662234831,4.26624662234831,3013,"3013.18",,573,2023-02-09,10,2023,118,217,564,565,576,9,,
+"abundance","NaiveArima","exclosures","SH",0.95,0,-4.49701879554029,4.49701879554029,3013,"3013.18",,574,2023-02-09,11,2023,118,217,564,565,576,10,,
+"abundance","NaiveArima","exclosures","SH",0.95,0,-4.71651310315013,4.71651310315013,3013,"3013.18",,575,2023-02-09,12,2023,118,217,564,565,576,11,,
+"abundance","NaiveArima","exclosures","SH",0.95,0,-4.92623727168426,4.92623727168426,3013,"3013.18",,576,2023-02-09,1,2024,118,217,564,565,576,12,,

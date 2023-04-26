@@ -1,0 +1,164 @@
+cast_group: 13.0
+models: simplexEDM
+datasets: all
+directory_configuration:
+  setup_date: '2020-01-09'
+  setup_R_version:
+    platform: x86_64-pc-linux-gnu
+    arch: x86_64
+    os: linux-gnu
+    system: x86_64, linux-gnu
+    status: ''
+    major: '3'
+    minor: '6.1'
+    year: '2019'
+    month: '07'
+    day: '05'
+    svn rev: '76782'
+    language: R
+    version.string: R version 3.6.1 (2019-07-05)
+    nickname: Action of the Toes
+  setup_portalcasting_version: 0.15.1
+  directory_tree:
+    main: '.'
+    subs:
+    - casts
+    - models
+    - raw
+    - data
+    - tmp
+  downloads_versions:
+  - PortalData-2.4.0
+  - portalPredictions-2020-01-03
+controls_rodents:
+  name: all_interp
+  species:
+  - BA
+  - DM
+  - DO
+  - DS
+  - NA
+  - OL
+  - OT
+  - PB
+  - PE
+  - PF
+  - PH
+  - PL
+  - PM
+  - PP
+  - RF
+  - RM
+  - RO
+  - SF
+  - SH
+  - SO
+  total: yes
+  interpolate: yes
+  clean: no
+  type: Rodents
+  level: Site
+  plots: all
+  treatment: ~
+  min_plots: 24.0
+  min_traps: 1.0
+  output: abundance
+  fillweight: no
+  unknowns: no
+  time: newmoon
+  na_drop: yes
+  zero_drop: yes
+  effort: yes
+  filename: rodents_all_interp.csv
+cast_type: forecast
+start_moon: 217.0
+end_moon: 526
+last_moon: 526
+lead_time: 12.0
+min_lag: 6.0
+cast_date: '2020-01-09'
+covariate_cast_moons:
+- 530
+- 531
+- 532
+- 533
+- 534
+- 535
+- 536
+- 537
+- 538
+covariate_cast_months:
+- 4.0
+- 5.0
+- 6.0
+- 7.0
+- 8.0
+- 9.0
+- 10.0
+- 11.0
+- 12.0
+covariate_cast_years:
+- 2020.0
+- 2020.0
+- 2020.0
+- 2020.0
+- 2020.0
+- 2020.0
+- 2020.0
+- 2020.0
+- 2020.0
+rodent_cast_moons:
+- 524
+- 525
+- 526
+- 527
+- 528
+- 529
+- 530
+- 531
+- 532
+- 533
+- 534
+- 535
+- 536
+- 537
+- 538
+rodent_cast_months:
+- 10.0
+- 11.0
+- 12.0
+- 1.0
+- 2.0
+- 3.0
+- 4.0
+- 5.0
+- 6.0
+- 7.0
+- 8.0
+- 9.0
+- 10.0
+- 11.0
+- 12.0
+rodent_cast_years:
+- 2019.0
+- 2019.0
+- 2019.0
+- 2020.0
+- 2020.0
+- 2020.0
+- 2020.0
+- 2020.0
+- 2020.0
+- 2020.0
+- 2020.0
+- 2020.0
+- 2020.0
+- 2020.0
+- 2020.0
+confidence_level: 0.95
+arg_checks: yes
+interpolated_data: yes
+model: simplexEDM
+dataset: all
+species: DS
+forecast_id: '289.04'

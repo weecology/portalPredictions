@@ -1,0 +1,13 @@
+"currency","model","dataset","species","estimate","lower_pi","upper_pi","confidence_level","old_cast_id","forecast_id","origin","newmoonnumber","forecast_date","forecast_month","forecast_year","forecast_group","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"abundance","nbGARCH","controls","DO",2.34079845858986,0,6,0.95,2006,"2006.03",,551,2021-12-30,1,2022,77,217,550,551,562,1,,
+"abundance","nbGARCH","controls","DO",2.60576169342628,0,7,0.95,2006,"2006.03",,552,2021-12-30,2,2022,77,217,550,551,562,2,,
+"abundance","nbGARCH","controls","DO",2.81170087400461,0,9,0.95,2006,"2006.03",,553,2021-12-30,3,2022,77,217,550,551,562,3,,
+"abundance","nbGARCH","controls","DO",2.97172875230286,0,9,0.95,2006,"2006.03",,554,2021-12-30,4,2022,77,217,550,551,562,4,,
+"abundance","nbGARCH","controls","DO",3.09879492410221,0,10,0.95,2006,"2006.03",,555,2021-12-30,4,2022,77,217,550,551,562,5,,
+"abundance","nbGARCH","controls","DO",3.19759243503534,0,10,0.95,2006,"2006.03",,556,2021-12-30,5,2022,77,217,550,551,562,6,,
+"abundance","nbGARCH","controls","DO",3.2744029679601,0,11,0.95,2006,"2006.03",,557,2021-12-30,6,2022,77,217,550,551,562,7,,
+"abundance","nbGARCH","controls","DO",3.33119465946618,0,10,0.95,2006,"2006.03",,558,2021-12-30,7,2022,77,217,550,551,562,8,,
+"abundance","nbGARCH","controls","DO",3.37530347934191,0,11,0.95,2006,"2006.03",,559,2021-12-30,8,2022,77,217,550,551,562,9,,
+"abundance","nbGARCH","controls","DO",3.40956044665974,0,11,0.95,2006,"2006.03",,560,2021-12-30,9,2022,77,217,550,551,562,10,,
+"abundance","nbGARCH","controls","DO",3.43193637141363,0,11,0.95,2006,"2006.03",,561,2021-12-30,10,2022,77,217,550,551,562,11,,
+"abundance","nbGARCH","controls","DO",3.45355551849637,0,10,0.95,2006,"2006.03",,562,2021-12-30,11,2022,77,217,550,551,562,12,,

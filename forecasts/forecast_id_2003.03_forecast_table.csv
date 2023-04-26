@@ -1,0 +1,13 @@
+"currency","model","dataset","species","estimate","lower_pi","upper_pi","confidence_level","old_cast_id","forecast_id","origin","newmoonnumber","forecast_date","forecast_month","forecast_year","forecast_group","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"abundance","NaiveArima","exclosures","DO",0,-1.39033872792284,1.39033872792284,0.95,2003,"2003.03",,551,2021-12-30,1,2022,77,217,550,551,562,1,,
+"abundance","NaiveArima","exclosures","DO",0,-1.96623588532104,1.96623588532104,0.95,2003,"2003.03",,552,2021-12-30,2,2022,77,217,550,551,562,2,,
+"abundance","NaiveArima","exclosures","DO",0,-2.40813731649304,2.40813731649304,0.95,2003,"2003.03",,553,2021-12-30,3,2022,77,217,550,551,562,3,,
+"abundance","NaiveArima","exclosures","DO",0,-2.78067745584568,2.78067745584568,0.95,2003,"2003.03",,554,2021-12-30,4,2022,77,217,550,551,562,4,,
+"abundance","NaiveArima","exclosures","DO",0,-3.10889190738606,3.10889190738606,0.95,2003,"2003.03",,555,2021-12-30,4,2022,77,217,550,551,562,5,,
+"abundance","NaiveArima","exclosures","DO",0,-3.40562045304121,3.40562045304121,0.95,2003,"2003.03",,556,2021-12-30,5,2022,77,217,550,551,562,6,,
+"abundance","NaiveArima","exclosures","DO",0,-3.67849051222574,3.67849051222574,0.95,2003,"2003.03",,557,2021-12-30,6,2022,77,217,550,551,562,7,,
+"abundance","NaiveArima","exclosures","DO",0,-3.93247177064208,3.93247177064208,0.95,2003,"2003.03",,558,2021-12-30,7,2022,77,217,550,551,562,8,,
+"abundance","NaiveArima","exclosures","DO",0,-4.17101618376853,4.17101618376853,0.95,2003,"2003.03",,559,2021-12-30,8,2022,77,217,550,551,562,9,,
+"abundance","NaiveArima","exclosures","DO",0,-4.39663709937733,4.39663709937733,0.95,2003,"2003.03",,560,2021-12-30,9,2022,77,217,550,551,562,10,,
+"abundance","NaiveArima","exclosures","DO",0,-4.61123189202009,4.61123189202009,0.95,2003,"2003.03",,561,2021-12-30,10,2022,77,217,550,551,562,11,,
+"abundance","NaiveArima","exclosures","DO",0,-4.81627463298609,4.81627463298609,0.95,2003,"2003.03",,562,2021-12-30,11,2022,77,217,550,551,562,12,,
