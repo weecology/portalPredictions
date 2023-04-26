@@ -1,0 +1,14 @@
+"lead_time_newmoons","max_lag","lag_buffer","origin","forecast_date","forecast_month","forecast_year","newmoonnumber","currency","model","dataset","species","estimate","lower_pi","upper_pi","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","confidence_level","forecast_group","old_cast_id","forecast_id"
+1,365,60,"2023-04-25","2023-04-25","05","2023",568,"abundance","jags_logistic","controls","DM",21.159,8,33,217,567,568,580,0.95,126,,3636
+2,365,60,"2023-04-25","2023-04-25","06","2023",569,"abundance","jags_logistic","controls","DM",20.996,8,34,217,567,568,580,0.95,126,,3636
+3,365,60,"2023-04-25","2023-04-25","07","2023",570,"abundance","jags_logistic","controls","DM",20.775,7,34,217,567,568,580,0.95,126,,3636
+4,365,60,"2023-04-25","2023-04-25","08","2023",571,"abundance","jags_logistic","controls","DM",20.641,7,35,217,567,568,580,0.95,126,,3636
+5,365,60,"2023-04-25","2023-04-25","09","2023",572,"abundance","jags_logistic","controls","DM",20.465,6,35,217,567,568,580,0.95,126,,3636
+6,365,60,"2023-04-25","2023-04-25","10","2023",573,"abundance","jags_logistic","controls","DM",20.288,6,35,217,567,568,580,0.95,126,,3636
+7,365,60,"2023-04-25","2023-04-25","11","2023",574,"abundance","jags_logistic","controls","DM",20.126,5,35,217,567,568,580,0.95,126,,3636
+8,365,60,"2023-04-25","2023-04-25","12","2023",575,"abundance","jags_logistic","controls","DM",20.052,5,35,217,567,568,580,0.95,126,,3636
+9,365,60,"2023-04-25","2023-04-25","01","2024",576,"abundance","jags_logistic","controls","DM",19.926,5,36,217,567,568,580,0.95,126,,3636
+10,365,60,"2023-04-25","2023-04-25","02","2024",577,"abundance","jags_logistic","controls","DM",19.822,5,36,217,567,568,580,0.95,126,,3636
+11,365,60,"2023-04-25","2023-04-25","03","2024",578,"abundance","jags_logistic","controls","DM",19.651,5,36,217,567,568,580,0.95,126,,3636
+12,365,60,"2023-04-25","2023-04-25","04","2024",579,"abundance","jags_logistic","controls","DM",19.584,4,36,217,567,568,580,0.95,126,,3636
+13,365,60,"2023-04-25","2023-04-25","05","2024",580,"abundance","jags_logistic","controls","DM",19.52,4,36,217,567,568,580,0.95,126,,3636
