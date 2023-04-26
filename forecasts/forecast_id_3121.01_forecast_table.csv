@@ -1,0 +1,13 @@
+"currency","model","dataset","species","estimate","lower_pi","upper_pi","confidence_level","old_cast_id","forecast_id","origin","newmoonnumber","forecast_date","forecast_month","forecast_year","forecast_group","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"abundance","jags_logistic_competition_covariates","controls","DM",21.949,15.969,28.565,0.95,3121,"3121.01",,566,2023-03-16,3,2023,123,217,565,566,577,1,,
+"abundance","jags_logistic_competition_covariates","controls","DM",21.853,13.976,30.629,0.95,3121,"3121.01",,567,2023-03-16,4,2023,123,217,565,566,577,2,,
+"abundance","jags_logistic_competition_covariates","controls","DM",21.766,12.336,31.951,0.95,3121,"3121.01",,568,2023-03-16,5,2023,123,217,565,566,577,3,,
+"abundance","jags_logistic_competition_covariates","controls","DM",21.704,11.338,33.399,0.95,3121,"3121.01",,569,2023-03-16,6,2023,123,217,565,566,577,4,,
+"abundance","jags_logistic_competition_covariates","controls","DM",21.655,10.613,34.769,0.95,3121,"3121.01",,570,2023-03-16,7,2023,123,217,565,566,577,5,,
+"abundance","jags_logistic_competition_covariates","controls","DM",21.588,10.125,35.35,0.95,3121,"3121.01",,571,2023-03-16,8,2023,123,217,565,566,577,6,,
+"abundance","jags_logistic_competition_covariates","controls","DM",21.527,9.464,35.771,0.95,3121,"3121.01",,572,2023-03-16,9,2023,123,217,565,566,577,7,,
+"abundance","jags_logistic_competition_covariates","controls","DM",21.445,8.629,36.18,0.95,3121,"3121.01",,573,2023-03-16,10,2023,123,217,565,566,577,8,,
+"abundance","jags_logistic_competition_covariates","controls","DM",21.286,8.262,36.582,0.95,3121,"3121.01",,574,2023-03-16,11,2023,123,217,565,566,577,9,,
+"abundance","jags_logistic_competition_covariates","controls","DM",21.121,8.142,36.95,0.95,3121,"3121.01",,575,2023-03-16,12,2023,123,217,565,566,577,10,,
+"abundance","jags_logistic_competition_covariates","controls","DM",20.976,7.626,36.608,0.95,3121,"3121.01",,576,2023-03-16,1,2024,123,217,565,566,577,11,,
+"abundance","jags_logistic_competition_covariates","controls","DM",20.868,7.594,37.044,0.95,3121,"3121.01",,577,2023-03-16,2,2024,123,217,565,566,577,12,,

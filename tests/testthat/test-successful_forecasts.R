@@ -5,7 +5,7 @@ context("checks that a production pipeline has been setup and run correctly")
 
 test_that("folders exist as needed",{
   fnames <- list.files()
-  expect_equal(all(c("forecasts", "data", "models", "resources", "fits") %in% fnames), TRUE)
+  expect_equal(all(c("app", "forecasts", "data", "models", "resources", "fits") %in% fnames), TRUE)
 })
 
 test_that("dir_config is present",{
@@ -14,9 +14,9 @@ test_that("dir_config is present",{
 })
 
 test_that("cast_metadata file", {
-  expect_is(read_cast_metadata(), "list")
+  expect_is(read_forecasts_metadata(), "list")
 })
 
 test_that("new casts have been made", {
-  expect_true(Sys.Date() == as.Date(read_metadata()$time$cast_date))
+  expect_true(Sys.Date() == as.Date(read_metadata()$time$forecast_date))
 })

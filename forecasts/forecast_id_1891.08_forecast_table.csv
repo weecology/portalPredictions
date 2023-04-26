@@ -1,0 +1,13 @@
+"currency","model","dataset","species","estimate","lower_pi","upper_pi","confidence_level","old_cast_id","forecast_id","origin","newmoonnumber","forecast_date","forecast_month","forecast_year","forecast_group","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"abundance","NaiveArima","exclosures","PE",2,-0.199733620839484,4.19973362083948,0.95,1891,"1891.08",,549,2021-10-28,11,2021,73,217,548,549,560,1,,
+"abundance","NaiveArima","exclosures","PE",2,-1.11089312019927,5.11089312019927,0.95,1891,"1891.08",,550,2021-10-28,12,2021,73,217,548,549,560,2,,
+"abundance","NaiveArima","exclosures","PE",2,-1.81005039441144,5.81005039441144,0.95,1891,"1891.08",,551,2021-10-28,1,2022,73,217,548,549,560,3,,
+"abundance","NaiveArima","exclosures","PE",2,-2.39946724167897,6.39946724167897,0.95,1891,"1891.08",,552,2021-10-28,2,2022,73,217,548,549,560,4,,
+"abundance","NaiveArima","exclosures","PE",2,-2.91875390858883,6.91875390858883,0.95,1891,"1891.08",,553,2021-10-28,3,2022,73,217,548,549,560,5,,
+"abundance","NaiveArima","exclosures","PE",2,-3.38822494110162,7.38822494110162,0.95,1891,"1891.08",,554,2021-10-28,4,2022,73,217,548,549,560,6,,
+"abundance","NaiveArima","exclosures","PE",2,-3.81994811132892,7.81994811132892,0.95,1891,"1891.08",,555,2021-10-28,4,2022,73,217,548,549,560,7,,
+"abundance","NaiveArima","exclosures","PE",2,-4.22178624039855,8.22178624039855,0.95,1891,"1891.08",,556,2021-10-28,5,2022,73,217,548,549,560,8,,
+"abundance","NaiveArima","exclosures","PE",2,-4.59920086251845,8.59920086251845,0.95,1891,"1891.08",,557,2021-10-28,6,2022,73,217,548,549,560,9,,
+"abundance","NaiveArima","exclosures","PE",2,-4.956168487502,8.956168487502,0.95,1891,"1891.08",,558,2021-10-28,7,2022,73,217,548,549,560,10,,
+"abundance","NaiveArima","exclosures","PE",2,-5.29569105905448,9.29569105905448,0.95,1891,"1891.08",,559,2021-10-28,8,2022,73,217,548,549,560,11,,
+"abundance","NaiveArima","exclosures","PE",2,-5.62010078882288,9.62010078882288,0.95,1891,"1891.08",,560,2021-10-28,9,2022,73,217,548,549,560,12,,

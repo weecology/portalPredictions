@@ -1,0 +1,13 @@
+"currency","model","dataset","species","confidence_level","estimate","lower_pi","upper_pi","old_cast_id","forecast_id","origin","newmoonnumber","forecast_date","forecast_month","forecast_year","forecast_group","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"abundance","NaiveArima","exclosures","OL",0.95,0,-1.20414384440028,1.20414384440028,3128,"3128.04",,566,2023-03-16,3,2023,123,217,565,566,577,1,,
+"abundance","NaiveArima","exclosures","OL",0.95,0,-1.70291655579896,1.70291655579896,3128,"3128.04",,567,2023-03-16,4,2023,123,217,565,566,577,2,,
+"abundance","NaiveArima","exclosures","OL",0.95,0,-2.0856383181226,2.0856383181226,3128,"3128.04",,568,2023-03-16,5,2023,123,217,565,566,577,3,,
+"abundance","NaiveArima","exclosures","OL",0.95,0,-2.40828768880057,2.40828768880057,3128,"3128.04",,569,2023-03-16,6,2023,123,217,565,566,577,4,,
+"abundance","NaiveArima","exclosures","OL",0.95,0,-2.69254749076696,2.69254749076696,3128,"3128.04",,570,2023-03-16,7,2023,123,217,565,566,577,5,,
+"abundance","NaiveArima","exclosures","OL",0.95,0,-2.949537995694,2.949537995694,3128,"3128.04",,571,2023-03-16,8,2023,123,217,565,566,577,6,,
+"abundance","NaiveArima","exclosures","OL",0.95,0,-3.18586515503241,3.18586515503241,3128,"3128.04",,572,2023-03-16,9,2023,123,217,565,566,577,7,,
+"abundance","NaiveArima","exclosures","OL",0.95,0,-3.40583311159792,3.40583311159792,3128,"3128.04",,573,2023-03-16,10,2023,123,217,565,566,577,8,,
+"abundance","NaiveArima","exclosures","OL",0.95,0,-3.61243153320085,3.61243153320085,3128,"3128.04",,574,2023-03-16,11,2023,123,217,565,566,577,9,,
+"abundance","NaiveArima","exclosures","OL",0.95,0,-3.80783717877629,3.80783717877629,3128,"3128.04",,575,2023-03-16,12,2023,123,217,565,566,577,10,,
+"abundance","NaiveArima","exclosures","OL",0.95,0,-3.99369332549184,3.99369332549184,3128,"3128.04",,576,2023-03-16,1,2024,123,217,565,566,577,11,,
+"abundance","NaiveArima","exclosures","OL",0.95,0,-4.17127663624521,4.17127663624521,3128,"3128.04",,577,2023-03-16,2,2024,123,217,565,566,577,12,,

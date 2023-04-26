@@ -1,0 +1,13 @@
+"currency","model","dataset","species","estimate","lower_pi","upper_pi","confidence_level","old_cast_id","forecast_id","origin","newmoonnumber","forecast_date","forecast_month","forecast_year","forecast_group","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"abundance","NaiveArima","exclosures","total",34,13.9350722583477,54.0649277416523,0.95,1975,"1975.21",,551,2021-12-23,1,2022,76,217,550,551,562,1,,
+"abundance","NaiveArima","exclosures","total",34,5.62390705971922,62.3760929402808,0.95,1975,"1975.21",,552,2021-12-23,2,2022,76,217,550,551,562,2,,
+"abundance","NaiveArima","exclosures","total",34,-0.75347429873996,68.75347429874,0.95,1975,"1975.21",,553,2021-12-23,3,2022,76,217,550,551,562,3,,
+"abundance","NaiveArima","exclosures","total",34,-6.12985548330451,74.1298554833045,0.95,1975,"1975.21",,554,2021-12-23,4,2022,76,217,550,551,562,4,,
+"abundance","NaiveArima","exclosures","total",34,-10.8665423939558,78.8665423939558,0.95,1975,"1975.21",,555,2021-12-23,4,2022,76,217,550,551,562,5,,
+"abundance","NaiveArima","exclosures","total",34,-15.1488346928628,83.1488346928628,0.95,1975,"1975.21",,556,2021-12-23,5,2022,76,217,550,551,562,6,,
+"abundance","NaiveArima","exclosures","total",34,-19.0868088788927,87.0868088788927,0.95,1975,"1975.21",,557,2021-12-23,6,2022,76,217,550,551,562,7,,
+"abundance","NaiveArima","exclosures","total",34,-22.7521858805616,90.7521858805616,0.95,1975,"1975.21",,558,2021-12-23,7,2022,76,217,550,551,562,8,,
+"abundance","NaiveArima","exclosures","total",34,-26.1947832249568,94.1947832249568,0.95,1975,"1975.21",,559,2021-12-23,8,2022,76,217,550,551,562,9,,
+"abundance","NaiveArima","exclosures","total",34,-29.4508727503197,97.4508727503197,0.95,1975,"1975.21",,560,2021-12-23,9,2022,76,217,550,551,562,10,,
+"abundance","NaiveArima","exclosures","total",34,-32.5478367646537,100.547836764654,0.95,1975,"1975.21",,561,2021-12-23,10,2022,76,217,550,551,562,11,,
+"abundance","NaiveArima","exclosures","total",34,-35.5069485974799,103.50694859748,0.95,1975,"1975.21",,562,2021-12-23,11,2022,76,217,550,551,562,12,,

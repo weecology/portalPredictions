@@ -1,0 +1,13 @@
+"currency","model","dataset","species","estimate","lower_pi","upper_pi","confidence_level","old_cast_id","forecast_id","origin","newmoonnumber","forecast_date","forecast_month","forecast_year","forecast_group","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"abundance","NaiveArima","exclosures","RM",0,-3.33217446869346,3.33217446869346,0.95,1891,"1891.16",,549,2021-10-28,11,2021,73,217,548,549,560,1,,
+"abundance","NaiveArima","exclosures","RM",0,-4.71240632581965,4.71240632581965,0.95,1891,"1891.16",,550,2021-10-28,12,2021,73,217,548,549,560,2,,
+"abundance","NaiveArima","exclosures","RM",0,-5.7714954794609,5.7714954794609,0.95,1891,"1891.16",,551,2021-10-28,1,2022,73,217,548,549,560,3,,
+"abundance","NaiveArima","exclosures","RM",0,-6.66434893738691,6.66434893738691,0.95,1891,"1891.16",,552,2021-10-28,2,2022,73,217,548,549,560,4,,
+"abundance","NaiveArima","exclosures","RM",0,-7.45096862488781,7.45096862488781,0.95,1891,"1891.16",,553,2021-10-28,3,2022,73,217,548,549,560,5,,
+"abundance","NaiveArima","exclosures","RM",0,-8.16212718222861,8.16212718222861,0.95,1891,"1891.16",,554,2021-10-28,4,2022,73,217,548,549,560,6,,
+"abundance","NaiveArima","exclosures","RM",0,-8.81610496924167,8.81610496924167,0.95,1891,"1891.16",,555,2021-10-28,4,2022,73,217,548,549,560,7,,
+"abundance","NaiveArima","exclosures","RM",0,-9.4248126516393,9.4248126516393,0.95,1891,"1891.16",,556,2021-10-28,5,2022,73,217,548,549,560,8,,
+"abundance","NaiveArima","exclosures","RM",0,-9.99652340608037,9.99652340608037,0.95,1891,"1891.16",,557,2021-10-28,6,2022,73,217,548,549,560,9,,
+"abundance","NaiveArima","exclosures","RM",0,-10.5372608821328,10.5372608821328,0.95,1891,"1891.16",,558,2021-10-28,7,2022,73,217,548,549,560,10,,
+"abundance","NaiveArima","exclosures","RM",0,-11.0515724486581,11.0515724486581,0.95,1891,"1891.16",,559,2021-10-28,8,2022,73,217,548,549,560,11,,
+"abundance","NaiveArima","exclosures","RM",0,-11.5429909589218,11.5429909589218,0.95,1891,"1891.16",,560,2021-10-28,9,2022,73,217,548,549,560,12,,

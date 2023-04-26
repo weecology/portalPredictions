@@ -1,0 +1,13 @@
+"currency","model","dataset","species","estimate","lower_pi","upper_pi","confidence_level","old_cast_id","forecast_id","origin","newmoonnumber","forecast_date","forecast_month","forecast_year","forecast_group","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"abundance","NaiveArima","exclosures","PM",0,-1.72329427702552,1.72329427702552,0.95,2003,"2003.13",,551,2021-12-30,1,2022,77,217,550,551,562,1,,
+"abundance","NaiveArima","exclosures","PM",0,-2.43710613852943,2.43710613852943,0.95,2003,"2003.13",,552,2021-12-30,2,2022,77,217,550,551,562,2,,
+"abundance","NaiveArima","exclosures","PM",0,-2.98483324420088,2.98483324420088,0.95,2003,"2003.13",,553,2021-12-30,3,2022,77,217,550,551,562,3,,
+"abundance","NaiveArima","exclosures","PM",0,-3.44658855405104,3.44658855405104,0.95,2003,"2003.13",,554,2021-12-30,4,2022,77,217,550,551,562,4,,
+"abundance","NaiveArima","exclosures","PM",0,-3.85340314866542,3.85340314866542,0.95,2003,"2003.13",,555,2021-12-30,4,2022,77,217,550,551,562,5,,
+"abundance","NaiveArima","exclosures","PM",0,-4.22119165537097,4.22119165537097,0.95,2003,"2003.13",,556,2021-12-30,5,2022,77,217,550,551,562,6,,
+"abundance","NaiveArima","exclosures","PM",0,-4.55940809279038,4.55940809279038,0.95,2003,"2003.13",,557,2021-12-30,6,2022,77,217,550,551,562,7,,
+"abundance","NaiveArima","exclosures","PM",0,-4.87421227705886,4.87421227705886,0.95,2003,"2003.13",,558,2021-12-30,7,2022,77,217,550,551,562,8,,
+"abundance","NaiveArima","exclosures","PM",0,-5.16988283107657,5.16988283107657,0.95,2003,"2003.13",,559,2021-12-30,8,2022,77,217,550,551,562,9,,
+"abundance","NaiveArima","exclosures","PM",0,-5.44953499413383,5.44953499413383,0.95,2003,"2003.13",,560,2021-12-30,9,2022,77,217,550,551,562,10,,
+"abundance","NaiveArima","exclosures","PM",0,-5.71552052026043,5.71552052026043,0.95,2003,"2003.13",,561,2021-12-30,10,2022,77,217,550,551,562,11,,
+"abundance","NaiveArima","exclosures","PM",0,-5.96966648840176,5.96966648840176,0.95,2003,"2003.13",,562,2021-12-30,11,2022,77,217,550,551,562,12,,

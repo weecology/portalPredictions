@@ -1,0 +1,13 @@
+"currency","model","dataset","species","estimate","lower_pi","upper_pi","confidence_level","old_cast_id","forecast_id","origin","newmoonnumber","forecast_date","forecast_month","forecast_year","forecast_group","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"abundance","NaiveArima","exclosures","PL",0,-0.630390586696806,0.630390586696806,0.95,2059,"2059.12",,552,2022-01-13,2,2022,79,217,551,552,563,1,,
+"abundance","NaiveArima","exclosures","PL",0,-0.891506917298956,0.891506917298956,0.95,2059,"2059.12",,553,2022-01-13,3,2022,79,217,551,552,563,2,,
+"abundance","NaiveArima","exclosures","PL",0,-1.09186852477202,1.09186852477202,0.95,2059,"2059.12",,554,2022-01-13,4,2022,79,217,551,552,563,3,,
+"abundance","NaiveArima","exclosures","PL",0,-1.26078117339361,1.26078117339361,0.95,2059,"2059.12",,555,2022-01-13,4,2022,79,217,551,552,563,4,,
+"abundance","NaiveArima","exclosures","PL",0,-1.40959620423003,1.40959620423003,0.95,2059,"2059.12",,556,2022-01-13,5,2022,79,217,551,552,563,5,,
+"abundance","NaiveArima","exclosures","PL",0,-1.5441352760609,1.5441352760609,0.95,2059,"2059.12",,557,2022-01-13,6,2022,79,217,551,552,563,6,,
+"abundance","NaiveArima","exclosures","PL",0,-1.66785672123585,1.66785672123585,0.95,2059,"2059.12",,558,2022-01-13,7,2022,79,217,551,552,563,7,,
+"abundance","NaiveArima","exclosures","PL",0,-1.78301383459791,1.78301383459791,0.95,2059,"2059.12",,559,2022-01-13,8,2022,79,217,551,552,563,8,,
+"abundance","NaiveArima","exclosures","PL",0,-1.89117176009042,1.89117176009042,0.95,2059,"2059.12",,560,2022-01-13,9,2022,79,217,551,552,563,9,,
+"abundance","NaiveArima","exclosures","PL",0,-1.99347006949175,1.99347006949175,0.95,2059,"2059.12",,561,2022-01-13,10,2022,79,217,551,552,563,10,,
+"abundance","NaiveArima","exclosures","PL",0,-2.09076904744531,2.09076904744531,0.95,2059,"2059.12",,562,2022-01-13,11,2022,79,217,551,552,563,11,,
+"abundance","NaiveArima","exclosures","PL",0,-2.18373704954404,2.18373704954404,0.95,2059,"2059.12",,563,2022-01-13,12,2022,79,217,551,552,563,12,,

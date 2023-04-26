@@ -1,0 +1,13 @@
+"currency","model","dataset","species","estimate","lower_pi","upper_pi","confidence_level","old_cast_id","forecast_id","origin","newmoonnumber","forecast_date","forecast_month","forecast_year","forecast_group","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"abundance","NaiveArima","exclosures","OT",0,-3.21691549728083,3.21691549728083,0.95,1975,"1975.06",,551,2021-12-23,1,2022,76,217,550,551,562,1,,
+"abundance","NaiveArima","exclosures","OT",0,-4.54940552526273,4.54940552526273,0.95,1975,"1975.06",,552,2021-12-23,2,2022,76,217,550,551,562,2,,
+"abundance","NaiveArima","exclosures","OT",0,-5.57186108494609,5.57186108494609,0.95,1975,"1975.06",,553,2021-12-23,3,2022,76,217,550,551,562,3,,
+"abundance","NaiveArima","exclosures","OT",0,-6.43383099456165,6.43383099456165,0.95,1975,"1975.06",,554,2021-12-23,4,2022,76,217,550,551,562,4,,
+"abundance","NaiveArima","exclosures","OT",0,-7.19324172979247,7.19324172979247,0.95,1975,"1975.06",,555,2021-12-23,4,2022,76,217,550,551,562,5,,
+"abundance","NaiveArima","exclosures","OT",0,-7.87980151398963,7.87980151398963,0.95,1975,"1975.06",,556,2021-12-23,5,2022,76,217,550,551,562,6,,
+"abundance","NaiveArima","exclosures","OT",0,-8.51115839451475,8.51115839451475,0.95,1975,"1975.06",,557,2021-12-23,6,2022,76,217,550,551,562,7,,
+"abundance","NaiveArima","exclosures","OT",0,-9.09881105052547,9.09881105052547,0.95,1975,"1975.06",,558,2021-12-23,7,2022,76,217,550,551,562,8,,
+"abundance","NaiveArima","exclosures","OT",0,-9.65074649184248,9.65074649184248,0.95,1975,"1975.06",,559,2021-12-23,8,2022,76,217,550,551,562,9,,
+"abundance","NaiveArima","exclosures","OT",0,-10.1727800117006,10.1727800117006,0.95,1975,"1975.06",,560,2021-12-23,9,2022,76,217,550,551,562,10,,
+"abundance","NaiveArima","exclosures","OT",0,-10.6693016867601,10.6693016867601,0.95,1975,"1975.06",,561,2021-12-23,10,2022,76,217,550,551,562,11,,
+"abundance","NaiveArima","exclosures","OT",0,-11.1437221698922,11.1437221698922,0.95,1975,"1975.06",,562,2021-12-23,11,2022,76,217,550,551,562,12,,

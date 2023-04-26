@@ -30,8 +30,8 @@ The version of `portal_weekly_forecast.sh` in the repo is automatically updated 
 * Updates the `portalPredictions` repository to it's current version
 * Updates the `forecasts` repository to it's current version (this repository is used for archiving full forecasts)
 * Runs the forecasts
-* Pushes the results of the forecasts in the `casts` and `models` and `data` directories to the `portalPredictions` repository
-* Pushes the results of the forecasts in the `casts` and `models` and `data` directories and also the `fits` directory to the `forecasts` repository
+* Pushes the results of the forecasts in the `forecasts` and `models` and `data` directories to the `portalPredictions` repository
+* Pushes the results of the forecasts in the `forecasts` and `models` and `data` directories and also the `fits` directory to the `forecasts` repository
 * Tests to see if forecasts ran correctly
 
 `portal_dryrun_forecast.sh` is automatically run twice each week to check to see if the forecasts are working prior to a production run.

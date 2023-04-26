@@ -1,0 +1,13 @@
+"currency","model","dataset","species","estimate","lower_pi","upper_pi","confidence_level","old_cast_id","forecast_id","origin","newmoonnumber","forecast_date","forecast_month","forecast_year","forecast_group","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"abundance","NaiveArima","exclosures","DO",0,-1.40390332941054,1.40390332941054,0.95,348,"348.03",,527,2020-01-17,1,2020,16,217,526,527,538,1,,
+"abundance","NaiveArima","exclosures","DO",0,-1.98541912871312,1.98541912871312,0.95,348,"348.03",,528,2020-01-17,2,2020,16,217,526,527,538,2,,
+"abundance","NaiveArima","exclosures","DO",0,-2.43163189545416,2.43163189545416,0.95,348,"348.03",,529,2020-01-17,3,2020,16,217,526,527,538,3,,
+"abundance","NaiveArima","exclosures","DO",0,-2.80780665882107,2.80780665882107,0.95,348,"348.03",,530,2020-01-17,4,2020,16,217,526,527,538,4,,
+"abundance","NaiveArima","exclosures","DO",0,-3.13922327840024,3.13922327840024,0.95,348,"348.03",,531,2020-01-17,5,2020,16,217,526,527,538,5,,
+"abundance","NaiveArima","exclosures","DO",0,-3.43884680525026,3.43884680525026,0.95,348,"348.03",,532,2020-01-17,6,2020,16,217,526,527,538,6,,
+"abundance","NaiveArima","exclosures","DO",0,-3.71437907439587,3.71437907439587,0.95,348,"348.03",,533,2020-01-17,7,2020,16,217,526,527,538,7,,
+"abundance","NaiveArima","exclosures","DO",0,-3.97083825742625,3.97083825742625,0.95,348,"348.03",,534,2020-01-17,8,2020,16,217,526,527,538,8,,
+"abundance","NaiveArima","exclosures","DO",0,-4.21170998823161,4.21170998823161,0.95,348,"348.03",,535,2020-01-17,9,2020,16,217,526,527,538,9,,
+"abundance","NaiveArima","exclosures","DO",0,-4.43953213563095,4.43953213563095,0.95,348,"348.03",,536,2020-01-17,10,2020,16,217,526,527,538,10,,
+"abundance","NaiveArima","exclosures","DO",0,-4.65622058558547,4.65622058558547,0.95,348,"348.03",,537,2020-01-17,11,2020,16,217,526,527,538,11,,
+"abundance","NaiveArima","exclosures","DO",0,-4.86326379090831,4.86326379090831,0.95,348,"348.03",,538,2020-01-17,12,2020,16,217,526,527,538,12,,

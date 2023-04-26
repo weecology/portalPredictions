@@ -1,0 +1,18 @@
+# Cron job for weekly runs on the HiPerGator
+# This is currently running under ethanwhite's account on daemon2
+# To recreate copy, paste, and modify this text into the editor resulting
+# from `crontab -e`
+# WEECOLOGYDEPLOYGITHUBPAT needs to be replaced with the appropriate GITHUB
+# Personal Access Token
+
+# cron jobs on HiPerGator run from a blank environment so we need to set both
+# basic environmental variables (HOME and PATH) and also the GitHub tokens
+# because they are not loaded into the cronjob environment
+
+HOME=/home/ethanwhite
+PATH=/opt/slurm/bin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/bin:/home/ethanwhite/bin
+MAILTO=ethanwhite@ufl.edu
+GITHUB_TOKEN="WEECOLOGYDEPLOYGITHUBPAT"
+GITHUB_RELEASE_TOKEN="WEECOLOGYDEPLOYGITHUBPAT"
+TRAVIS_EVENT_TYPE="cron"
+16 14 * * 2 sbatch ${HOME}/portal_weekly_forecast.sh >> ${HOME}/cron.log 2>&1

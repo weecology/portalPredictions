@@ -1,0 +1,13 @@
+"currency","model","dataset","species","estimate","lower_pi","upper_pi","confidence_level","old_cast_id","forecast_id","origin","newmoonnumber","forecast_date","forecast_month","forecast_year","forecast_group","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"abundance","pevGARCH","controls","SF",1.37382131226338,0,4,0.95,2070,"2070.17",,552,2022-01-13,2,2022,79,217,551,552,563,1,,
+"abundance","pevGARCH","controls","SF",0.524433811555738,0,3,0.95,2070,"2070.17",,553,2022-01-13,3,2022,79,217,551,552,563,2,,
+"abundance","pevGARCH","controls","SF",0.142624539843811,0,1,0.95,2070,"2070.17",,554,2022-01-13,4,2022,79,217,551,552,563,3,,
+"abundance","pevGARCH","controls","SF",0.0959562510979814,0,1,0.95,2070,"2070.17",,555,2022-01-13,4,2022,79,217,551,552,563,4,,
+"abundance","pevGARCH","controls","SF",0.125794106866293,0,1,0.95,2070,"2070.17",,556,2022-01-13,5,2022,79,217,551,552,563,5,,
+"abundance","pevGARCH","controls","SF",0.41958037992432,0,2,0.95,2070,"2070.17",,557,2022-01-13,6,2022,79,217,551,552,563,6,,
+"abundance","pevGARCH","controls","SF",0.221445978632426,0,2,0.95,2070,"2070.17",,558,2022-01-13,7,2022,79,217,551,552,563,7,,
+"abundance","pevGARCH","controls","SF",15173.4619927076,12592,31793,0.95,2070,"2070.17",,559,2022-01-13,8,2022,79,217,551,552,563,8,,
+"abundance","pevGARCH","controls","SF",51512802.6666351,44009794,96208556,0.95,2070,"2070.17",,560,2022-01-13,9,2022,79,217,551,552,563,9,,
+"abundance","pevGARCH","controls","SF",2.98832495200171e+10,2.6163156928e+10,5.0645852532e+10,0.95,2070,"2070.17",,561,2022-01-13,10,2022,79,217,551,552,563,10,,
+"abundance","pevGARCH","controls","SF",7.55390877048406e+12,6.751667944231e+12,1.1794128130761e+13,0.95,2070,"2070.17",,562,2022-01-13,11,2022,79,217,551,552,563,11,,
+"abundance","pevGARCH","controls","SF",6.1225760885208e+14,5.5687103555991e+14,8.9195835824203e+14,0.95,2070,"2070.17",,563,2022-01-13,12,2022,79,217,551,552,563,12,,

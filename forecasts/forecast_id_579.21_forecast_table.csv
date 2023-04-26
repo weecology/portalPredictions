@@ -1,0 +1,13 @@
+"currency","model","dataset","species","estimate","lower_pi","upper_pi","confidence_level","old_cast_id","forecast_id","origin","newmoonnumber","forecast_date","forecast_month","forecast_year","forecast_group","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"abundance","NaiveArima","exclosures","total",6,-14.1985131496387,26.1985131496387,0.95,579,"579.21",,528,2020-02-20,2,2020,25,217,527,528,539,1,,
+"abundance","NaiveArima","exclosures","total",6,-22.5650112359904,34.5650112359904,0.95,579,"579.21",,529,2020-02-20,3,2020,25,217,527,528,539,2,,
+"abundance","NaiveArima","exclosures","total",6,-28.9848510125223,40.9848510125223,0.95,579,"579.21",,530,2020-02-20,4,2020,25,217,527,528,539,3,,
+"abundance","NaiveArima","exclosures","total",6,-34.3970262992774,46.3970262992774,0.95,579,"579.21",,531,2020-02-20,5,2020,25,217,527,528,539,4,,
+"abundance","NaiveArima","exclosures","total",6,-39.1652484470155,51.1652484470155,0.95,579,"579.21",,532,2020-02-20,6,2020,25,217,527,528,539,5,,
+"abundance","NaiveArima","exclosures","total",6,-43.4760507795112,55.4760507795112,0.95,579,"579.21",,533,2020-02-20,7,2020,25,217,527,528,539,6,,
+"abundance","NaiveArima","exclosures","total",6,-47.440242647212,59.440242647212,0.95,579,"579.21",,534,2020-02-20,8,2020,25,217,527,528,539,7,,
+"abundance","NaiveArima","exclosures","total",6,-51.1300224719807,63.1300224719807,0.95,579,"579.21",,535,2020-02-20,9,2020,25,217,527,528,539,8,,
+"abundance","NaiveArima","exclosures","total",6,-54.5955394489161,66.5955394489161,0.95,579,"579.21",,536,2020-02-20,10,2020,25,217,527,528,539,9,,
+"abundance","NaiveArima","exclosures","total",6,-57.8733069017197,69.8733069017197,0.95,579,"579.21",,537,2020-02-20,11,2020,25,217,527,528,539,10,,
+"abundance","NaiveArima","exclosures","total",6,-60.9908894404113,72.9908894404113,0.95,579,"579.21",,538,2020-02-20,12,2020,25,217,527,528,539,11,,
+"abundance","NaiveArima","exclosures","total",6,-63.9697020250446,75.9697020250446,0.95,579,"579.21",,539,2020-02-20,1,2021,25,217,527,528,539,12,,

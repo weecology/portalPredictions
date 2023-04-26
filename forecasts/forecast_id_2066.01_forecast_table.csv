@@ -1,0 +1,13 @@
+"currency","model","dataset","species","estimate","lower_pi","upper_pi","confidence_level","old_cast_id","forecast_id","origin","newmoonnumber","forecast_date","forecast_month","forecast_year","forecast_group","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"abundance","nbsGARCH","controls","BA",0.117817672884628,0,1,0.95,2066,"2066.01",,552,2022-01-13,2,2022,79,217,551,552,563,1,,
+"abundance","nbsGARCH","controls","BA",0.176078449732821,0,2,0.95,2066,"2066.01",,553,2022-01-13,3,2022,79,217,551,552,563,2,,
+"abundance","nbsGARCH","controls","BA",0.233825618723361,0,2,0.95,2066,"2066.01",,554,2022-01-13,4,2022,79,217,551,552,563,3,,
+"abundance","nbsGARCH","controls","BA",0.271504268444447,0,2,0.95,2066,"2066.01",,555,2022-01-13,4,2022,79,217,551,552,563,4,,
+"abundance","nbsGARCH","controls","BA",0.26582460995027,0,2,0.95,2066,"2066.01",,556,2022-01-13,5,2022,79,217,551,552,563,5,,
+"abundance","nbsGARCH","controls","BA",0.219782834663139,0,2,0.95,2066,"2066.01",,557,2022-01-13,6,2022,79,217,551,552,563,6,,
+"abundance","nbsGARCH","controls","BA",0.158571345672771,0,2,0.95,2066,"2066.01",,558,2022-01-13,7,2022,79,217,551,552,563,7,,
+"abundance","nbsGARCH","controls","BA",0.112005336044805,0,1,0.95,2066,"2066.01",,559,2022-01-13,8,2022,79,217,551,552,563,8,,
+"abundance","nbsGARCH","controls","BA",0.083607570255386,0,1,0.95,2066,"2066.01",,560,2022-01-13,9,2022,79,217,551,552,563,9,,
+"abundance","nbsGARCH","controls","BA",0.071658122034818,0,1,0.95,2066,"2066.01",,561,2022-01-13,10,2022,79,217,551,552,563,10,,
+"abundance","nbsGARCH","controls","BA",0.0724349444291396,0,1,0.95,2066,"2066.01",,562,2022-01-13,11,2022,79,217,551,552,563,11,,
+"abundance","nbsGARCH","controls","BA",0.0853119668237847,0,1,0.95,2066,"2066.01",,563,2022-01-13,12,2022,79,217,551,552,563,12,,

@@ -1,0 +1,13 @@
+"currency","model","dataset","species","estimate","lower_pi","upper_pi","confidence_level","old_cast_id","forecast_id","origin","newmoonnumber","forecast_date","forecast_month","forecast_year","forecast_group","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"abundance","nbsGARCH","controls","PP",16.1812438757534,2,39,0.95,1982,"1982.14",,551,2021-12-23,1,2022,76,217,550,551,562,1,,
+"abundance","nbsGARCH","controls","PP",15.3368044924865,1,47,0.95,1982,"1982.14",,552,2021-12-23,2,2022,76,217,550,551,562,2,,
+"abundance","nbsGARCH","controls","PP",17.4765388818925,0,62,0.95,1982,"1982.14",,553,2021-12-23,3,2022,76,217,550,551,562,3,,
+"abundance","nbsGARCH","controls","PP",22.5902300744226,1,95,0.95,1982,"1982.14",,554,2021-12-23,4,2022,76,217,550,551,562,4,,
+"abundance","nbsGARCH","controls","PP",30.4858901415057,1,122,0.95,1982,"1982.14",,555,2021-12-23,4,2022,76,217,550,551,562,5,,
+"abundance","nbsGARCH","controls","PP",39.0685132713868,1,159,0.95,1982,"1982.14",,556,2021-12-23,5,2022,76,217,550,551,562,6,,
+"abundance","nbsGARCH","controls","PP",44.3493090595766,1,175,0.95,1982,"1982.14",,557,2021-12-23,6,2022,76,217,550,551,562,7,,
+"abundance","nbsGARCH","controls","PP",42.5523591545786,0,187,0.95,1982,"1982.14",,558,2021-12-23,7,2022,76,217,550,551,562,8,,
+"abundance","nbsGARCH","controls","PP",34.8681255395037,0,148,0.95,1982,"1982.14",,559,2021-12-23,8,2022,76,217,550,551,562,9,,
+"abundance","nbsGARCH","controls","PP",25.3719234032237,0,98,0.95,1982,"1982.14",,560,2021-12-23,9,2022,76,217,550,551,562,10,,
+"abundance","nbsGARCH","controls","PP",17.7973240542274,0,74,0.95,1982,"1982.14",,561,2021-12-23,10,2022,76,217,550,551,562,11,,
+"abundance","nbsGARCH","controls","PP",13.1385868890957,0,53,0.95,1982,"1982.14",,562,2021-12-23,11,2022,76,217,550,551,562,12,,

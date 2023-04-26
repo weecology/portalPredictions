@@ -1,0 +1,13 @@
+"currency","model","dataset","species","confidence_level","estimate","lower_pi","upper_pi","old_cast_id","forecast_id","origin","newmoonnumber","forecast_date","forecast_month","forecast_year","forecast_group","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"abundance","NaiveArima","exclosures","RF",0.95,0,-0.222739616589938,0.222739616589938,3013,"3013.14",,565,2023-02-09,2,2023,118,217,564,565,576,1,,
+"abundance","NaiveArima","exclosures","RF",0.95,0,-0.315001386659274,0.315001386659274,3013,"3013.14",,566,2023-02-09,3,2023,118,217,564,565,576,2,,
+"abundance","NaiveArima","exclosures","RF",0.95,0,-0.385796332792184,0.385796332792184,3013,"3013.14",,567,2023-02-09,4,2023,118,217,564,565,576,3,,
+"abundance","NaiveArima","exclosures","RF",0.95,0,-0.445479233179876,0.445479233179876,3013,"3013.14",,568,2023-02-09,5,2023,118,217,564,565,576,4,,
+"abundance","NaiveArima","exclosures","RF",0.95,0,-0.498060923977341,0.498060923977341,3013,"3013.14",,569,2023-02-09,6,2023,118,217,564,565,576,5,,
+"abundance","NaiveArima","exclosures","RF",0.95,0,-0.545598406148511,0.545598406148511,3013,"3013.14",,570,2023-02-09,7,2023,118,217,564,565,576,6,,
+"abundance","NaiveArima","exclosures","RF",0.95,0,-0.589313632618853,0.589313632618853,3013,"3013.14",,571,2023-02-09,8,2023,118,217,564,565,576,7,,
+"abundance","NaiveArima","exclosures","RF",0.95,0,-0.630002773318547,0.630002773318547,3013,"3013.14",,572,2023-02-09,9,2023,118,217,564,565,576,8,,
+"abundance","NaiveArima","exclosures","RF",0.95,0,-0.668218849769814,0.668218849769814,3013,"3013.14",,573,2023-02-09,10,2023,118,217,564,565,576,9,,
+"abundance","NaiveArima","exclosures","RF",0.95,0,-0.704364513576831,0.704364513576831,3013,"3013.14",,574,2023-02-09,11,2023,118,217,564,565,576,10,,
+"abundance","NaiveArima","exclosures","RF",0.95,0,-0.738743734176445,0.738743734176445,3013,"3013.14",,575,2023-02-09,12,2023,118,217,564,565,576,11,,
+"abundance","NaiveArima","exclosures","RF",0.95,0,-0.771592665584368,0.771592665584368,3013,"3013.14",,576,2023-02-09,1,2024,118,217,564,565,576,12,,

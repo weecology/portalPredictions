@@ -1,0 +1,13 @@
+"currency","model","dataset","species","estimate","lower_pi","upper_pi","confidence_level","old_cast_id","forecast_id","origin","newmoonnumber","forecast_date","forecast_month","forecast_year","forecast_group","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"abundance","NaiveArima","controls","OT",6,2.25326597434223,9.74673402565777,0.95,527,"527.07",,528,2020-02-13,2,2020,23,217,527,528,539,1,,
+"abundance","NaiveArima","controls","OT",6,0.701317926310043,11.29868207369,0.95,527,"527.07",,529,2020-02-13,3,2020,23,217,527,528,539,2,,
+"abundance","NaiveArima","controls","OT",6,-0.489533694886324,12.4895336948863,0.95,527,"527.07",,530,2020-02-13,4,2020,23,217,527,528,539,3,,
+"abundance","NaiveArima","controls","OT",6,-1.49346805131553,13.4934680513155,0.95,527,"527.07",,531,2020-02-13,5,2020,23,217,527,528,539,4,,
+"abundance","NaiveArima","controls","OT",6,-2.37795197498221,14.3779519749822,0.95,527,"527.07",,532,2020-02-13,6,2020,23,217,527,528,539,5,,
+"abundance","NaiveArima","controls","OT",6,-3.17758656478542,15.1775865647854,0.95,527,"527.07",,533,2020-02-13,7,2020,23,217,527,528,539,6,,
+"abundance","NaiveArima","controls","OT",6,-3.91292646059435,15.9129264605943,0.95,527,"527.07",,534,2020-02-13,8,2020,23,217,527,528,539,7,,
+"abundance","NaiveArima","controls","OT",6,-4.59736414737991,16.5973641473799,0.95,527,"527.07",,535,2020-02-13,9,2020,23,217,527,528,539,8,,
+"abundance","NaiveArima","controls","OT",6,-5.2402020769733,17.2402020769733,0.95,527,"527.07",,536,2020-02-13,10,2020,23,217,527,528,539,9,,
+"abundance","NaiveArima","controls","OT",6,-5.84821330793029,17.8482133079303,0.95,527,"527.07",,537,2020-02-13,11,2020,23,217,527,528,539,10,,
+"abundance","NaiveArima","controls","OT",6,-6.42651095236463,18.4265109523646,0.95,527,"527.07",,538,2020-02-13,12,2020,23,217,527,528,539,11,,
+"abundance","NaiveArima","controls","OT",6,-6.97906738977265,18.9790673897726,0.95,527,"527.07",,539,2020-02-13,1,2021,23,217,527,528,539,12,,

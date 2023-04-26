@@ -1,0 +1,13 @@
+"currency","model","dataset","species","estimate","lower_pi","upper_pi","confidence_level","old_cast_id","forecast_id","origin","newmoonnumber","forecast_date","forecast_month","forecast_year","forecast_group","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"abundance","NaiveArima","exclosures","BA",0,-1.54025121121804,1.54025121121804,0.95,1891,"1891.01",,549,2021-10-28,11,2021,73,217,548,549,560,1,,
+"abundance","NaiveArima","exclosures","BA",0,-2.17824415236614,2.17824415236614,0.95,1891,"1891.01",,550,2021-10-28,12,2021,73,217,548,549,560,2,,
+"abundance","NaiveArima","exclosures","BA",0,-2.66779335424915,2.66779335424915,0.95,1891,"1891.01",,551,2021-10-28,1,2022,73,217,548,549,560,3,,
+"abundance","NaiveArima","exclosures","BA",0,-3.08050242243608,3.08050242243608,0.95,1891,"1891.01",,552,2021-10-28,2,2022,73,217,548,549,560,4,,
+"abundance","NaiveArima","exclosures","BA",0,-3.44410641070993,3.44410641070993,0.95,1891,"1891.01",,553,2021-10-28,3,2022,73,217,548,549,560,5,,
+"abundance","NaiveArima","exclosures","BA",0,-3.77282954318796,3.77282954318796,0.95,1891,"1891.01",,554,2021-10-28,4,2022,73,217,548,549,560,6,,
+"abundance","NaiveArima","exclosures","BA",0,-4.07512166144896,4.07512166144896,0.95,1891,"1891.01",,555,2021-10-28,4,2022,73,217,548,549,560,7,,
+"abundance","NaiveArima","exclosures","BA",0,-4.35648830473228,4.35648830473228,0.95,1891,"1891.01",,556,2021-10-28,5,2022,73,217,548,549,560,8,,
+"abundance","NaiveArima","exclosures","BA",0,-4.62075363365413,4.62075363365413,0.95,1891,"1891.01",,557,2021-10-28,6,2022,73,217,548,549,560,9,,
+"abundance","NaiveArima","exclosures","BA",0,-4.8707019962821,4.8707019962821,0.95,1891,"1891.01",,558,2021-10-28,7,2022,73,217,548,549,560,10,,
+"abundance","NaiveArima","exclosures","BA",0,-5.10843535050069,5.10843535050069,0.95,1891,"1891.01",,559,2021-10-28,8,2022,73,217,548,549,560,11,,
+"abundance","NaiveArima","exclosures","BA",0,-5.3355867084983,5.3355867084983,0.95,1891,"1891.01",,560,2021-10-28,9,2022,73,217,548,549,560,12,,

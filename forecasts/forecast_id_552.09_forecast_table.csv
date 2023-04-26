@@ -1,0 +1,13 @@
+"currency","model","dataset","species","estimate","lower_pi","upper_pi","confidence_level","old_cast_id","forecast_id","origin","newmoonnumber","forecast_date","forecast_month","forecast_year","forecast_group","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"abundance","NaiveArima","exclosures","PF",0,-3.66471012618498,3.66471012618498,0.95,552,"552.09",,528,2020-02-14,2,2020,24,217,527,528,539,1,,
+"abundance","NaiveArima","exclosures","PF",0,-5.18268276261682,5.18268276261682,0.95,552,"552.09",,529,2020-02-14,3,2020,24,217,527,528,539,2,,
+"abundance","NaiveArima","exclosures","PF",0,-6.34746413356454,6.34746413356454,0.95,552,"552.09",,530,2020-02-14,4,2020,24,217,527,528,539,3,,
+"abundance","NaiveArima","exclosures","PF",0,-7.32942025236997,7.32942025236997,0.95,552,"552.09",,531,2020-02-14,5,2020,24,217,527,528,539,4,,
+"abundance","NaiveArima","exclosures","PF",0,-8.19454095998146,8.19454095998146,0.95,552,"552.09",,532,2020-02-14,6,2020,24,217,527,528,539,5,,
+"abundance","NaiveArima","exclosures","PF",0,-8.97666986436377,8.97666986436377,0.95,552,"552.09",,533,2020-02-14,7,2020,24,217,527,528,539,6,,
+"abundance","NaiveArima","exclosures","PF",0,-9.6959116210256,9.6959116210256,0.95,552,"552.09",,534,2020-02-14,8,2020,24,217,527,528,539,7,,
+"abundance","NaiveArima","exclosures","PF",0,-10.3653655252336,10.3653655252336,0.95,552,"552.09",,535,2020-02-14,9,2020,24,217,527,528,539,8,,
+"abundance","NaiveArima","exclosures","PF",0,-10.994130378555,10.994130378555,0.95,552,"552.09",,536,2020-02-14,10,2020,24,217,527,528,539,9,,
+"abundance","NaiveArima","exclosures","PF",0,-11.5888309630276,11.5888309630276,0.95,552,"552.09",,537,2020-02-14,11,2020,24,217,527,528,539,10,,
+"abundance","NaiveArima","exclosures","PF",0,-12.1544684539716,12.1544684539716,0.95,552,"552.09",,538,2020-02-14,12,2020,24,217,527,528,539,11,,
+"abundance","NaiveArima","exclosures","PF",0,-12.6949282671291,12.6949282671291,0.95,552,"552.09",,539,2020-02-14,1,2021,24,217,527,528,539,12,,

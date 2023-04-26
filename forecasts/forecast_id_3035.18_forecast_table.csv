@@ -1,0 +1,13 @@
+"currency","model","dataset","species","confidence_level","estimate","lower_pi","upper_pi","old_cast_id","forecast_id","origin","newmoonnumber","forecast_date","forecast_month","forecast_year","forecast_group","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"abundance","NaiveArima","controls","total",0.95,31,9.48696430479491,52.5130356952051,3035,"3035.18",,565,2023-02-16,2,2023,119,217,564,565,576,1,,
+"abundance","NaiveArima","controls","total",0.95,31,0.575973152024453,61.4240268479755,3035,"3035.18",,566,2023-02-16,3,2023,119,217,564,565,576,2,,
+"abundance","NaiveArima","controls","total",0.95,31,-6.26167084913806,68.2616708491381,3035,"3035.18",,567,2023-02-16,4,2023,119,217,564,565,576,3,,
+"abundance","NaiveArima","controls","total",0.95,31,-12.0260713904102,74.0260713904102,3035,"3035.18",,568,2023-02-16,5,2023,119,217,564,565,576,4,,
+"abundance","NaiveArima","controls","total",0.95,31,-17.104610216858,79.104610216858,3035,"3035.18",,569,2023-02-16,6,2023,119,217,564,565,576,5,,
+"abundance","NaiveArima","controls","total",0.95,31,-21.6959602715333,83.6959602715333,3035,"3035.18",,570,2023-02-16,7,2023,119,217,564,565,576,6,,
+"abundance","NaiveArima","controls","total",0.95,31,-25.9181423955682,87.9181423955682,3035,"3035.18",,571,2023-02-16,8,2023,119,217,564,565,576,7,,
+"abundance","NaiveArima","controls","total",0.95,31,-29.8480536959511,91.8480536959511,3035,"3035.18",,572,2023-02-16,9,2023,119,217,564,565,576,8,,
+"abundance","NaiveArima","controls","total",0.95,31,-33.5391070856153,95.5391070856153,3035,"3035.18",,573,2023-02-16,10,2023,119,217,564,565,576,9,,
+"abundance","NaiveArima","controls","total",0.95,31,-37.030192181352,99.030192181352,3035,"3035.18",,574,2023-02-16,11,2023,119,217,564,565,576,10,,
+"abundance","NaiveArima","controls","total",0.95,31,-40.3506675025178,102.350667502518,3035,"3035.18",,575,2023-02-16,12,2023,119,217,564,565,576,11,,
+"abundance","NaiveArima","controls","total",0.95,31,-43.5233416982761,105.523341698276,3035,"3035.18",,576,2023-02-16,1,2024,119,217,564,565,576,12,,

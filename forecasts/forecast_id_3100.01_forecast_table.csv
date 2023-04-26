@@ -1,0 +1,13 @@
+"currency","model","dataset","species","estimate","lower_pi","upper_pi","confidence_level","old_cast_id","forecast_id","origin","newmoonnumber","forecast_date","forecast_month","forecast_year","forecast_group","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"abundance","jags_logistic_covariates","controls","DM",21.796,15.924,28.299,0.95,3100,"3100.01",,566,2023-03-09,3,2023,122,217,565,566,577,1,,
+"abundance","jags_logistic_covariates","controls","DM",21.58,13.767,30,0.95,3100,"3100.01",,567,2023-03-09,4,2023,122,217,565,566,577,2,,
+"abundance","jags_logistic_covariates","controls","DM",21.388,12.307,31.335,0.95,3100,"3100.01",,568,2023-03-09,5,2023,122,217,565,566,577,3,,
+"abundance","jags_logistic_covariates","controls","DM",21.21,11.382,32.334,0.95,3100,"3100.01",,569,2023-03-09,6,2023,122,217,565,566,577,4,,
+"abundance","jags_logistic_covariates","controls","DM",21.059,10.611,33.329,0.95,3100,"3100.01",,570,2023-03-09,7,2023,122,217,565,566,577,5,,
+"abundance","jags_logistic_covariates","controls","DM",20.913,9.619,33.176,0.95,3100,"3100.01",,571,2023-03-09,8,2023,122,217,565,566,577,6,,
+"abundance","jags_logistic_covariates","controls","DM",20.843,9.373,34.231,0.95,3100,"3100.01",,572,2023-03-09,9,2023,122,217,565,566,577,7,,
+"abundance","jags_logistic_covariates","controls","DM",20.79,9.275,35.613,0.95,3100,"3100.01",,573,2023-03-09,10,2023,122,217,565,566,577,8,,
+"abundance","jags_logistic_covariates","controls","DM",20.608,8.189,35.012,0.95,3100,"3100.01",,574,2023-03-09,11,2023,122,217,565,566,577,9,,
+"abundance","jags_logistic_covariates","controls","DM",20.391,8.106,35.044,0.95,3100,"3100.01",,575,2023-03-09,12,2023,122,217,565,566,577,10,,
+"abundance","jags_logistic_covariates","controls","DM",20.254,7.57,34.734,0.95,3100,"3100.01",,576,2023-03-09,1,2024,122,217,565,566,577,11,,
+"abundance","jags_logistic_covariates","controls","DM",20.084,7.508,34.793,0.95,3100,"3100.01",,577,2023-03-09,2,2024,122,217,565,566,577,12,,

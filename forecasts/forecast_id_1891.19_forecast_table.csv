@@ -1,0 +1,13 @@
+"currency","model","dataset","species","estimate","lower_pi","upper_pi","confidence_level","old_cast_id","forecast_id","origin","newmoonnumber","forecast_date","forecast_month","forecast_year","forecast_group","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"abundance","NaiveArima","exclosures","SH",0,-1.45746956712373,1.45746956712373,0.95,1891,"1891.19",,549,2021-10-28,11,2021,73,217,548,549,560,1,,
+"abundance","NaiveArima","exclosures","SH",0,-2.06117322857243,2.06117322857243,0.95,1891,"1891.19",,550,2021-10-28,12,2021,73,217,548,549,560,2,,
+"abundance","NaiveArima","exclosures","SH",0,-2.52441134074372,2.52441134074372,0.95,1891,"1891.19",,551,2021-10-28,1,2022,73,217,548,549,560,3,,
+"abundance","NaiveArima","exclosures","SH",0,-2.91493913424747,2.91493913424747,0.95,1891,"1891.19",,552,2021-10-28,2,2022,73,217,548,549,560,4,,
+"abundance","NaiveArima","exclosures","SH",0,-3.25900102722586,3.25900102722586,0.95,1891,"1891.19",,553,2021-10-28,3,2022,73,217,548,549,560,5,,
+"abundance","NaiveArima","exclosures","SH",0,-3.57005675508822,3.57005675508822,0.95,1891,"1891.19",,554,2021-10-28,4,2022,73,217,548,549,560,6,,
+"abundance","NaiveArima","exclosures","SH",0,-3.85610201805436,3.85610201805436,0.95,1891,"1891.19",,555,2021-10-28,4,2022,73,217,548,549,560,7,,
+"abundance","NaiveArima","exclosures","SH",0,-4.12234645714485,4.12234645714485,0.95,1891,"1891.19",,556,2021-10-28,5,2022,73,217,548,549,560,8,,
+"abundance","NaiveArima","exclosures","SH",0,-4.3724087013712,4.3724087013712,0.95,1891,"1891.19",,557,2021-10-28,6,2022,73,217,548,549,560,9,,
+"abundance","NaiveArima","exclosures","SH",0,-4.60892345249066,4.60892345249066,0.95,1891,"1891.19",,558,2021-10-28,7,2022,73,217,548,549,560,10,,
+"abundance","NaiveArima","exclosures","SH",0,-4.83387969751112,4.83387969751112,0.95,1891,"1891.19",,559,2021-10-28,8,2022,73,217,548,549,560,11,,
+"abundance","NaiveArima","exclosures","SH",0,-5.04882268148745,5.04882268148745,0.95,1891,"1891.19",,560,2021-10-28,9,2022,73,217,548,549,560,12,,

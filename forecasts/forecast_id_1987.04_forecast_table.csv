@@ -1,0 +1,13 @@
+"currency","model","dataset","species","estimate","lower_pi","upper_pi","confidence_level","old_cast_id","forecast_id","origin","newmoonnumber","forecast_date","forecast_month","forecast_year","forecast_group","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"abundance","pevGARCH","exclosures","NA",0.00131557816610174,0,0,0.95,1987,"1987.04",,551,2021-12-23,1,2022,76,217,550,551,562,1,,
+"abundance","pevGARCH","exclosures","NA",6.14510012677958e-7,0,0,0.95,1987,"1987.04",,552,2021-12-23,2,2022,76,217,550,551,562,2,,
+"abundance","pevGARCH","exclosures","NA",0.00131997211817211,0,0,0.95,1987,"1987.04",,553,2021-12-23,3,2022,76,217,550,551,562,3,,
+"abundance","pevGARCH","exclosures","NA",0.0259342043733499,0,0,0.95,1987,"1987.04",,554,2021-12-23,4,2022,76,217,550,551,562,4,,
+"abundance","pevGARCH","exclosures","NA",0.0686452276824393,0,1,0.95,1987,"1987.04",,555,2021-12-23,4,2022,76,217,550,551,562,5,,
+"abundance","pevGARCH","exclosures","NA",0.0664967615321887,0,1,0.95,1987,"1987.04",,556,2021-12-23,5,2022,76,217,550,551,562,6,,
+"abundance","pevGARCH","exclosures","NA",0.0555695780018496,0,1,0.95,1987,"1987.04",,557,2021-12-23,6,2022,76,217,550,551,562,7,,
+"abundance","pevGARCH","exclosures","NA",231356949.470953,219909680,420766703,0.95,1987,"1987.04",,558,2021-12-23,7,2022,76,217,550,551,562,8,,
+"abundance","pevGARCH","exclosures","NA",8.541890682603907e+15,8.145696871850973e+15,1.4950813271973506e+16,0.95,1987,"1987.04",,559,2021-12-23,8,2022,76,217,550,551,562,9,,
+"abundance","pevGARCH","exclosures","NA",2.43046021291889e+23,2.32479499396915e+23,4.10410338257354e+23,0.95,1987,"1987.04",,560,2021-12-23,9,2022,76,217,550,551,562,10,,
+"abundance","pevGARCH","exclosures","NA",1.1970455084781e+30,1.14826994067359e+30,1.95460046465738e+30,0.95,1987,"1987.04",,561,2021-12-23,10,2022,76,217,550,551,562,11,,
+"abundance","pevGARCH","exclosures","NA",4.486929411139e+36,4.31559288981731e+36,7.09984268189965e+36,0.95,1987,"1987.04",,562,2021-12-23,11,2022,76,217,550,551,562,12,,

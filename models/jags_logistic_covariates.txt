@@ -1,0 +1,46 @@
+"model { 
+ 
+  # priors
+
+  mu          ~  dnorm(log_mean_count, 5)
+  sigma       ~  dunif(0, 1) 
+  tau         <- pow(sigma, -2)
+  r_int       ~  dnorm(0, 5)
+  r_slope     ~  dnorm(0, 1)
+  log_K_int   ~  dnorm(log_max_count, 5)
+  log_K_slope ~  dnorm(0, 1)
+ 
+  # initial state
+
+  log_X[1]      <- mu
+  X[1]          <- exp(log_X[1])
+  count[1]      ~  dpois(X[1]) 
+
+  # expand parameters
+
+  for (i in 1:N) {
+
+    r[i] <- r_int + r_slope * warm_rain_three_newmoons[i]
+    K[i] <- exp(log_K_int + log_K_slope * ndvi_thirteen_newmoons[i]) 
+
+  }
+
+  # through time
+
+  for(i in 2:N) {
+
+    # Process model
+
+    pred_X[i]     <- X[i-1] * exp(r[i] * (1 - (X[i - 1] / K[i])))
+    pred_log_X[i] <- log(pred_X[i])
+    log_X[i]      ~  dnorm(pred_log_X[i], tau)
+    X[i]          <- exp(log_X[i])
+
+    # observation model
+
+    count[i]           ~ dpois(X[i])
+    count_predicted[i] ~ dpois(X[i])
+
+  }
+
+}"

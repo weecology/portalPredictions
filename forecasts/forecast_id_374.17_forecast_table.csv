@@ -1,0 +1,13 @@
+"currency","model","dataset","species","estimate","lower_pi","upper_pi","confidence_level","old_cast_id","forecast_id","origin","newmoonnumber","forecast_date","forecast_month","forecast_year","forecast_group","historic_start_newmoonnumber","historic_end_newmoonnumber","forecast_start_newmoonnumber","forecast_end_newmoonnumber","lead_time_newmoons","max_lag","lag_buffer"
+"abundance","NaiveArima","controls","SF",0,-1.1115166116661,1.1115166116661,0.95,374,"374.17",,527,2020-01-23,1,2020,17,217,526,527,538,1,,
+"abundance","NaiveArima","controls","SF",0,-1.57192186702119,1.57192186702119,0.95,374,"374.17",,528,2020-01-23,2,2020,17,217,526,527,538,2,,
+"abundance","NaiveArima","controls","SF",0,-1.9252032448625,1.9252032448625,0.95,374,"374.17",,529,2020-01-23,3,2020,17,217,526,527,538,3,,
+"abundance","NaiveArima","controls","SF",0,-2.22303322333221,2.22303322333221,0.95,374,"374.17",,530,2020-01-23,4,2020,17,217,526,527,538,4,,
+"abundance","NaiveArima","controls","SF",0,-2.48542670180565,2.48542670180565,0.95,374,"374.17",,531,2020-01-23,5,2020,17,217,526,527,538,5,,
+"abundance","NaiveArima","controls","SF",0,-2.72264853920924,2.72264853920924,0.95,374,"374.17",,532,2020-01-23,6,2020,17,217,526,527,538,6,,
+"abundance","NaiveArima","controls","SF",0,-2.94079653258567,2.94079653258567,0.95,374,"374.17",,533,2020-01-23,7,2020,17,217,526,527,538,7,,
+"abundance","NaiveArima","controls","SF",0,-3.14384373404239,3.14384373404239,0.95,374,"374.17",,534,2020-01-23,8,2020,17,217,526,527,538,8,,
+"abundance","NaiveArima","controls","SF",0,-3.33454983499831,3.33454983499831,0.95,374,"374.17",,535,2020-01-23,9,2020,17,217,526,527,538,9,,
+"abundance","NaiveArima","controls","SF",0,-3.51492414997778,3.51492414997778,0.95,374,"374.17",,536,2020-01-23,10,2020,17,217,526,527,538,10,,
+"abundance","NaiveArima","controls","SF",0,-3.68648354914364,3.68648354914364,0.95,374,"374.17",,537,2020-01-23,11,2020,17,217,526,527,538,11,,
+"abundance","NaiveArima","controls","SF",0,-3.850406489725,3.850406489725,0.95,374,"374.17",,538,2020-01-23,12,2020,17,217,526,527,538,12,,
