@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=portal_weekly_forecast
-#SBATCH --mail-user=ethanwhite@ufl.edu
-#SBATCH --mail-type=FAIL,END
+#SBATCH --mail-user=portal-forecasts-aaaaamelbeyabgcqol6s4p4cja@weecology.slack.com
+#SBATCH --mail-type=FAIL
 #SBATCH --ntasks=1
 #SBATCH --mem=2gb
 #SBATCH --time=12:00:00
