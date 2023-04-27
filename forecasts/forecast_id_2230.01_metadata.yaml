@@ -406,6 +406,6 @@ controls_r:
 arg_checks: yes
 interpolated_data: no
 model: NaiveArima
-dataset: dm_controls
+dataset: controls
 species: DM
 forecast_id: '2230.01'

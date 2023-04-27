@@ -158,6 +158,6 @@ directory_configuration:
     climate_forecast_version: '2022-04-21'
 interpolated_data: yes
 model: pevGARCH
-dataset: dm_controls
+dataset: controls
 species: DM
 forecast_id: '2407.01'

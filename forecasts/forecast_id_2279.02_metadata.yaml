@@ -406,6 +406,6 @@ controls_r:
 arg_checks: yes
 interpolated_data: yes
 model: ESSS
-dataset: dm_controls
+dataset: controls
 species: total
 forecast_id: '2279.02'

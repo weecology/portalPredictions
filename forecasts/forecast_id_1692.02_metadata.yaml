@@ -130,6 +130,6 @@ confidence_level: 0.95
 arg_checks: yes
 interpolated_data: yes
 model: GPEDM
-dataset: dm_controls
+dataset: controls
 species: total
 forecast_id: '1692.02'

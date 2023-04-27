@@ -153,6 +153,6 @@ directory_configuration:
     archive_version: latest
     climate_forecast_version: '2022-07-28'
 model: AutoArima
-dataset: dm_controls
+dataset: controls
 species: DM
 forecast_id: '2717.01'

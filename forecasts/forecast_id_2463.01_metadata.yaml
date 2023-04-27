@@ -151,6 +151,6 @@ directory_configuration:
     climate_forecast_version: '2022-05-12'
 interpolated_data: no
 model: AutoArima
-dataset: dm_controls
+dataset: controls
 species: DM
 forecast_id: '2463.01'

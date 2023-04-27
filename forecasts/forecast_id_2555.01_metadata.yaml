@@ -150,6 +150,6 @@ directory_configuration:
     archive_version: latest
     climate_forecast_version: '2022-06-02'
 model: nbsGARCH
-dataset: dm_controls
+dataset: controls
 species: DM
 forecast_id: '2555.01'

@@ -400,6 +400,6 @@ controls_r:
 arg_checks: yes
 interpolated_data: yes
 model: nbsGARCH
-dataset: dm_controls
+dataset: controls
 species: total
 forecast_id: '1984.02'
