@@ -148,6 +148,6 @@ directory_configuration:
     climate_forecast_version: '2022-05-19'
 interpolated_data: no
 model: jags_RW
-dataset: dm_controls
+dataset: controls
 species: DM
 forecast_id: '2494.01'

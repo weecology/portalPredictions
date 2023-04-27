@@ -159,6 +159,6 @@ directory_configuration:
     climate_forecast_version: '2022-04-07'
 interpolated_data: yes
 model: nbsGARCH
-dataset: dm_controls
+dataset: controls
 species: DM
 forecast_id: '2351.01'

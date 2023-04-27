@@ -403,6 +403,6 @@ controls_r:
 arg_checks: yes
 interpolated_data: yes
 model: ESSS
-dataset: dm_controls
+dataset: controls
 species: DM
 forecast_id: '1940.01'

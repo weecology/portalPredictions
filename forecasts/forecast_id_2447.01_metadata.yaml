@@ -151,6 +151,6 @@ directory_configuration:
     climate_forecast_version: '2022-05-05'
 interpolated_data: no
 model: NaiveArima
-dataset: dm_controls
+dataset: controls
 species: DM
 forecast_id: '2447.01'

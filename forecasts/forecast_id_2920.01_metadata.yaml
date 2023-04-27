@@ -150,6 +150,6 @@ directory_configuration:
     archive_version: latest
     climate_forecast_version: '2022-09-29'
 model: jags_RW
-dataset: dm_controls
+dataset: controls
 species: DM
 forecast_id: '2920.01'
