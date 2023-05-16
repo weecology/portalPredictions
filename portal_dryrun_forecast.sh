@@ -28,7 +28,7 @@ git clone https://github.com/weecology/portalPredictions.git
 cd portalPredictions
 
 echo "INFO [$(date "+%Y-%m-%d %H:%M:%S")] Running Portal Forecasts"
-singularity run ../portalcasting_latest.sif Rscript PortalForecasts.R
+singularity run ../portalcasting_latest.sif Rscript PortalForecasts_dryrun.R
 
 echo "INFO [$(date "+%Y-%m-%d %H:%M:%S")] Checking if forecasts were successful"
 # Redirect stderr(2) to stdout(1) if command fails, and exit script with 1
