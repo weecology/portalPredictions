@@ -1,3 +1,4 @@
+#!/bin/bash
 # Archive forecasts by pushing weekly forecasts to GitHub and tagging a
 # release so that the GitHub-Zenodo integration archives the forecasts to
 # Zenodo
@@ -17,7 +18,7 @@ git config user.name "Weecology Deploy Bot"
 
 # Commit changes to portalPredictions repo
 git checkout main
-git add data/* models/* forecasts/* portal_weekly_forecast.sh portal_dryrun_forecast.sh
+git add data/ models/ forecasts/ portal_weekly_forecast.sh portal_dryrun_forecast.sh
 git commit -m "Update forecasts: HiperGator Build $current_date [ci skip]"
 
 # Add deploy remote
@@ -41,8 +42,10 @@ curl -v -i -X POST -H "Content-Type:application/json" -H "Authorization: token $
 # Clone forecasts archive repo
 cd ../
 git clone https://github.com/weecology/forecasts
-cp portalPredictions/forecasts/*.* forecasts/portal/
-cp portalPredictions/fits/*.* forecasts/portal/
+
+# cp portalPredictions/forecasts and /fits to forecasts/portal
+for file in portalPredictions/forecasts/*.*; do cp "$file" forecasts/portal/; done
+for file in portalPredictions/fits/*.*; do cp "$file" forecasts/portal/; done
 cd forecasts
 
 # Setup on weecologydeploy user
